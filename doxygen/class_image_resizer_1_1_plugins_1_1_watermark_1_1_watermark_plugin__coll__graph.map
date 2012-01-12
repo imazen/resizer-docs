@@ -1,0 +1,18 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_image_resizer_1_1_plugins_1_1_watermark_1_1_legacy_watermark_features.html" title="Provides extensibility points for drawing watermarks and even modifying resizing/image settings..." alt="" coords="2707,334,3111,381"/>
+<area shape="rect" id="node4" href="$class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods." alt="" coords="1355,373,1613,419"/>
+<area shape="rect" id="node6" href="$class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html" title="Not for external use. Inherit from BuilderExtension instead. Dual&#45;purpose base class for both ImageBu..." alt="" coords="126,334,493,381"/>
+<area shape="rect" id="node10" href="$class_image_resizer_1_1_image_builder.html" title="Provides methods for generating resized images, and for reading and writing them to disk..." alt="" coords="921,170,1330,217"/>
+<area shape="rect" id="node8" href="$class_image_resizer_1_1_configuration_1_1_config.html" title="ImageResizer.Configuration.Config" alt="" coords="1744,207,2259,254"/>
+<area shape="rect" id="node21" href="$class_image_resizer_1_1_configuration_1_1_plugin_config.html" title="Provides thread&#45;safe access to plugin addition, removal, and querying methods." alt="" coords="2608,165,3211,211"/>
+<area shape="rect" id="node13" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="168,6,451,53"/>
+<area shape="rect" id="node15" href="$interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions." alt="" coords="156,241,463,287"/>
+<area shape="rect" id="node17" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html" title="A provider (or selector) of IEncoder instances." alt="" coords="6,99,613,146"/>
+<area shape="rect" id="node19" href="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="ImageResizer.Plugins.ISettingsModifier" alt="" coords="23,170,596,217"/>
+<area shape="rect" id="node23" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html" title="IssueSink" alt="" coords="1921,311,2081,358"/>
+<area shape="rect" id="node25" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html" title="IIssueProvider" alt="" coords="1014,241,1237,287"/>
+<area shape="rect" id="node27" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_receiver.html" title="IIssueReceiver" alt="" coords="1010,311,1241,358"/>
+<area shape="rect" id="node29" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html" title="A provider (or selector) of IEncoder instances." alt="" coords="1869,45,2133,91"/>
+<area shape="rect" id="node32" href="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html" title="ImageResizer.Configuration.Logging.ILogManager" alt="" coords="1638,115,2365,162"/>
+<area shape="rect" id="node36" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="2850,405,2969,451"/>
+</map>

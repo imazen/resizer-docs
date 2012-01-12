@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_image_builder.html" title="Provides methods for generating resized images, and for reading and writing them to disk..." alt="" coords="961,5,1370,51"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_free_image_decoder_1_1_free_image_decoder_plugin.html" title="ImageResizer.Plugins.FreeImageDecoder.FreeImageDecoderPlugin" alt="" coords="678,75,1653,122"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_pdf_renderer_plugin.html" title="Ghostscript image resizer decoder capable of rendering postscript&#45;based files to bitmaps." alt="" coords="769,146,1561,193"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html" title="ImageResizer.Plugins.PsdComposer.PsdComposerPlugin" alt="" coords="749,217,1581,263"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_psd_reader_1_1_psd_reader.html" title="ImageResizer.Plugins.PsdReader.PsdReader" alt="" coords="836,287,1495,334"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_wic_builder_1_1_wic_builder_plugin.html" title="ImageResizer.Plugins.WicBuilder.WicBuilderPlugin" alt="" coords="795,358,1535,405"/>
+<area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html" title="Note: This decoder produces Bitmaps that require special disposal instructions. While ImageBuilder ha..." alt="" coords="775,429,1555,475"/>
+</map>

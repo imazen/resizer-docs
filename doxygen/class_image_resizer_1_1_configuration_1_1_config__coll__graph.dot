@@ -1,0 +1,32 @@
+digraph G
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ImageResizer.Configuration.Config",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _imageBuilder" ,fontname="Helvetica"];
+  Node2 [label="ImageResizer.ImageBuilder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_image_builder.html",tooltip="Provides methods for generating resized images, and for reading and writing them to disk..."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="AbstractImageProcessor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html",tooltip="Not for external use. Inherit from BuilderExtension instead. Dual-purpose base class for both ImageBu..."];
+  Node4 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="IQuerystringPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html",tooltip="For plugins that access the query string (important!)"];
+  Node5 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node5 [label="IFileExtensionPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html",tooltip="For plugins that add support for new source file image extensions."];
+  Node6 -> Node2 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _encoderProvider" ,fontname="Helvetica"];
+  Node6 [label="ImageResizer.Encoding.IEncoderProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html",tooltip="A provider (or selector) of IEncoder instances."];
+  Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _settingsModifier" ,fontname="Helvetica"];
+  Node7 [label="ImageResizer.Plugins.ISettingsModifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html"];
+  Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" plugins" ,fontname="Helvetica"];
+  Node8 [label="ImageResizer.Configuration.PluginConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_plugin_config.html",tooltip="Provides thread-safe access to plugin addition, removal, and querying methods."];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node9 [label="IssueSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html"];
+  Node10 -> Node9 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node10 [label="IIssueProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html"];
+  Node11 -> Node9 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node11 [label="IIssueReceiver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_receiver.html"];
+  Node12 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node12 [label="IEncoderProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html",tooltip="A provider (or selector) of IEncoder instances."];
+  Node1 -> Node8 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" c" ,fontname="Helvetica"];
+  Node13 -> Node8 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _logManager" ,fontname="Helvetica"];
+  Node13 [label="ImageResizer.Configuration.Logging.ILogManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html"];
+}

@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>PluginConfig - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm" class="current">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer.Configuration</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer.Configuration/CacheSelectionHandler.htm">CacheSelectionHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/Config.htm">Config</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/ICacheSelectionEventArgs.htm">ICacheSelectionEventArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/IPipelineConfig.htm">IPipelineConfig</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/IUrlAuthorizationEventArgs.htm">IUrlAuthorizationEventArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/IUrlEventArgs.htm">IUrlEventArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/LoggingAvaialbleEvent.htm">LoggingAvaialbleEvent</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/PipelineConfig.htm">PipelineConfig</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/PluginConfig.htm" class="current">PluginConfig</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/PreHandleImageEventHandler.htm">PreHandleImageEventHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/RequestEventHandler.htm">RequestEventHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/UrlAuthorizationEventArgs.htm">UrlAuthorizationEventArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/UrlAuthorizationEventHandler.htm">UrlAuthorizationEventHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/UrlEventArgs.htm">UrlEventArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/UrlEventHandler.htm">UrlEventHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/UrlRewritingEventHandler.htm">UrlRewritingEventHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/VppUsageOption.htm">VppUsageOption</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> PluginConfig</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer.Configuration</p>
+		<p><strong>Parent</strong> <a href="../ImageResizer.Configuration.Issues/IssueSink.htm">IssueSink</a></p>
+		<p><strong>Interfaces</strong> <a href="../ImageResizer.Encoding/IEncoderProvider.htm">IEncoderProvider</a></p>
+		</header>
+    <div class="sub-header">
+			<div id="summary">Provides thread-safe access to plugin addition, removal, and querying methods 
+			</div>
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#add_plugin">add_plugin</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#FindPluginType">FindPluginType</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#Get``1">Get&lt;T&gt;</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#GetAll``1">GetAll&lt;T&gt;</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#GetPlugins">GetPlugins</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#Has``1">Has&lt;T&gt;</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#HasPlugin">HasPlugin</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#Install">Install</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#LoadPlugins">LoadPlugins</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#remove_plugin">remove_plugin</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#RemoveAll">RemoveAll</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#Uninstall">Uninstall</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#AllPlugins">AllPlugins</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#CachingSystems">CachingSystems</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#EncoderProvider">EncoderProvider</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#FileExtensionPlugins">FileExtensionPlugins</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#ImageBuilderExtensions">ImageBuilderExtensions</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#ImageEncoders">ImageEncoders</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#LogManager">LogManager</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#PluginsLoaded">PluginsLoaded</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#QuerystringPlugins">QuerystringPlugins</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#SettingsModifierPlugins">SettingsModifierPlugins</a></li>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#VirtualProviderPlugins">VirtualProviderPlugins</a></li>
+			</ul>
+		
+			<h3 class="section">Fields</h3>
+			<ul>
+				<li><a href="../ImageResizer.Configuration/PluginConfig.htm#LoggingAvailable">LoggingAvailable</a></li>
+			</ul>
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="add_plugin" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>add_plugin</strong>(<a href="../ImageResizer.Plugins/IPlugin.htm">IPlugin</a> plugin)
+		</h4>
+		<div class="content">Only for use by plugins during IPlugin.Install. Call Plugin.Install instead of this method, since plugins often must perform other initialization actions.
+Adds the specified plugin to AllPlugins, QuerystringPlugins, CachingSystems, ImageEncoders, and ImageBuiderExtensions, based
+on which interfaces the instance implements. For ICache and IEncoder, the plugin is inserted at the beginning of CachingSystems and ImageEncoders respectively.
+To reiterate, plugins may register event handlers and modify settings - thus you should use the plugin's method to uninstall them vs. using this method.
+Will not register a plugin that is already installed, unless it implementes IMultiInstancePlugin. 
+
+
+
+
+		</div>
+	</div>
+	<div id="FindPluginType" class="method">
+		<h4>
+			<span title="System.Type">Type</span> <strong>FindPluginType</strong>(<span title="System.string">string</span> searchName)
+		</h4>
+		<div class="content">Searches all loaded assemblies for the specified type, applying rules and prefixes to resolve the namespace and assembly.
+Returns null if it could not find the type, and logs an issue. 
+
+
+
+
+		</div>
+	</div>
+	<div id="Get``1" class="method">
+		<h4>
+			<span title="ImageResizer.Configuration.T">T</span> <strong>Get&lt;T&gt;</strong>()
+		</h4>
+		<div class="content">Returns the first registerd instance of the specified plugin. For IMultiInstancePlugins, use GetAll() 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetAll``1" class="method">
+		<h4>
+			<span title="System.Collections.Generic.IList<T>">IList&lt;T&gt;</span> <strong>GetAll&lt;T&gt;</strong>()
+		</h4>
+		<div class="content">Returns all registered instances of the specified plugins 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetPlugins" class="method">
+		<h4>
+			<span title="System.Collections.Generic.IList<IPlugin>">IList&lt;IPlugin&gt;</span> <strong>GetPlugins</strong>(<span title="System.Type">Type</span> type)
+		</h4>
+		<div class="content">Returns the subset of AllPlugins which implement the specified type or interface 
+
+
+
+
+		</div>
+	</div>
+	<div id="Has``1" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>Has&lt;T&gt;</strong>()
+		</h4>
+		<div class="content">Returns true if 1 or more instances of the type are registered. 
+
+
+
+
+		</div>
+	</div>
+	<div id="HasPlugin" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>HasPlugin</strong>(<span title="System.Type">Type</span> type)
+		</h4>
+		<div class="content">Returns true if at least one plugin of the specified type is registered. 
+
+
+
+
+		</div>
+	</div>
+	<div id="Install" class="method">
+		<h4>
+			<a href="../ImageResizer.Plugins/IPlugin.htm">IPlugin</a> <strong>Install</strong>(<a href="../ImageResizer.Plugins/IPlugin.htm">IPlugin</a> plugin)
+		</h4>
+		<div class="content">Installs the specified plugin, returning the plugin instance.
+Convenience method, same as plugin.Install(Config.Current). 
+
+
+
+
+		</div>
+	</div>
+	<div id="LoadPlugins" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>LoadPlugins</strong>()
+		</h4>
+		<div class="content">Processes the <plugins> section if they are not already loaded. Thread safe.
+Only executes once. 
+
+
+
+
+		</div>
+	</div>
+	<div id="remove_plugin" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>remove_plugin</strong>(<span title="System.object">object</span> plugin)
+		</h4>
+		<div class="content">For use only by plugins during.Uninstall.
+Removes the specified plugin from AllPlugins, QuerystringPlugins, CachingSystems, ImageEncoders, and ImageBuiderExtensions, based
+on which interfaces the instance implements.
+Plugins may register event handlers and modify settings - thus you should use the plugin's method to uninstall them vs. using this method. 
+
+
+
+
+		</div>
+	</div>
+	<div id="RemoveAll" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>RemoveAll</strong>()
+		</h4>
+		<div class="content">Removes all plugins, of every kind. Logs any errors encountered. (Not all plugins support uninstallation) 
+
+
+
+
+		</div>
+	</div>
+	<div id="Uninstall" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>Uninstall</strong>(<a href="../ImageResizer.Plugins/IPlugin.htm">IPlugin</a> plugin)
+		</h4>
+		<div class="content">Attempts uninstallation of the specified plugin, returning true if successful.
+Convenience method, same as plugin.Uninstall(Config.Current). 
+
+
+
+
+		</div>
+	</div>
+	
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="AllPlugins" class="method">
+		<h4>
+			<a href="../ImageResizer.Collections/SafeList`1.htm">SafeList&lt;T&gt;</a> <strong>AllPlugins</strong> get; 
+		</h4>
+		<div class="content">All plugins should be registered here. Used for diagnostic purposes. 
+
+		</div>
+	</div>
+	<div id="CachingSystems" class="method">
+		<h4>
+			<a href="../ImageResizer.Collections/SafeList`1.htm">SafeList&lt;T&gt;</a> <strong>CachingSystems</strong> get; 
+		</h4>
+		<div class="content">Currently registered ICache instances 
+
+		</div>
+	</div>
+	<div id="EncoderProvider" class="method">
+		<h4>
+			<a href="../ImageResizer.Encoding/IEncoderProvider.htm">IEncoderProvider</a> <strong>EncoderProvider</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="FileExtensionPlugins" class="method">
+		<h4>
+			<a href="../ImageResizer.Collections/SafeList`1.htm">SafeList&lt;T&gt;</a> <strong>FileExtensionPlugins</strong> get; 
+		</h4>
+		<div class="content">Plugins which accept new file extensions (in the url) are registered here. 
+
+		</div>
+	</div>
+	<div id="ImageBuilderExtensions" class="method">
+		<h4>
+			<a href="../ImageResizer.Collections/SafeList`1.htm">SafeList&lt;T&gt;</a> <strong>ImageBuilderExtensions</strong> get; 
+		</h4>
+		<div class="content">Currently registered set of ImageBuilderExtensions. 
+
+		</div>
+	</div>
+	<div id="ImageEncoders" class="method">
+		<h4>
+			<a href="../ImageResizer.Collections/SafeList`1.htm">SafeList&lt;T&gt;</a> <strong>ImageEncoders</strong> get; 
+		</h4>
+		<div class="content">Currently registered IEncoders. 
+
+		</div>
+	</div>
+	<div id="LogManager" class="method">
+		<h4>
+			<a href="../ImageResizer.Configuration.Logging/ILogManager.htm">ILogManager</a> <strong>LogManager</strong> get; set;
+		</h4>
+		<div class="content">Returns the most recently registered Logging plugin, or null. 
+
+		</div>
+	</div>
+	<div id="PluginsLoaded" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>PluginsLoaded</strong> get; 
+		</h4>
+		<div class="content">Returns true if the <plugins> section has been processed 
+
+		</div>
+	</div>
+	<div id="QuerystringPlugins" class="method">
+		<h4>
+			<a href="../ImageResizer.Collections/SafeList`1.htm">SafeList&lt;T&gt;</a> <strong>QuerystringPlugins</strong> get; 
+		</h4>
+		<div class="content">Plugins which accept querystring arguments are registered here. 
+
+		</div>
+	</div>
+	<div id="SettingsModifierPlugins" class="method">
+		<h4>
+			<a href="../ImageResizer.Collections/SafeList`1.htm">SafeList&lt;T&gt;</a> <strong>SettingsModifierPlugins</strong> get; 
+		</h4>
+		<div class="content">Plugins which modify image processing settings. 
+
+		</div>
+	</div>
+	<div id="VirtualProviderPlugins" class="method">
+		<h4>
+			<a href="../ImageResizer.Collections/SafeList`1.htm">SafeList&lt;T&gt;</a> <strong>VirtualProviderPlugins</strong> get; 
+		</h4>
+		<div class="content">Plugins which provide virtual files are registered here. 
+
+		</div>
+	</div>
+  <h3 class="section">Public fields</h3>
+
+  <div id="LoggingAvailable" class="method">
+    <h4>LoggingAvaialbleEvent <strong>LoggingAvailable</strong></h4>
+    <div class="content">
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../ImageResizer.Configuration/LoggingAvaialbleEvent.htm">LoggingAvaialbleEvent</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

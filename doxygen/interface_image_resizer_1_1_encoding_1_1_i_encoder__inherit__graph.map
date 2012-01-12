@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html" title="Provides basic encoding functionality for Jpeg, png, and gif output. Allows adjustable Jpeg compressi..." alt="" coords="710,5,1351,51"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html" title="ImageResizer.Plugins.WicEncoder.WicEncoderPlugin" alt="" coords="1565,35,2344,82"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_free_image_encoder_1_1_free_image_encoder_plugin.html" title="ImageResizer.Plugins.FreeImageEncoder.FreeImageEncoderPlugin" alt="" coords="545,127,1517,174"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_pretty_gifs.html" title="ImageResizer.Plugins.PrettyGifs.PrettyGifs" alt="" coords="717,198,1344,245"/>
+</map>

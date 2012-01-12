@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i..." alt="" coords="5,6,328,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="353,6,471,53"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once..." alt="" coords="496,6,803,53"/>
+<area shape="rect" id="node8" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html" title="IIssueProvider" alt="" coords="827,6,1049,53"/>
+</map>

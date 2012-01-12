@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html" title="IssueSink" alt="" coords="285,102,445,149"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html" title="IIssueProvider" alt="" coords="129,6,351,53"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_receiver.html" title="IIssueReceiver" alt="" coords="375,6,605,53"/>
+</map>

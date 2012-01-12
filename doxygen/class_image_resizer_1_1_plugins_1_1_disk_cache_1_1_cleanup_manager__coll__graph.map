@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html" title="IIssueProvider" alt="" coords="10,15,233,62"/>
+<area shape="rect" id="node8" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html" title="IssueSink" alt="" coords="591,83,751,130"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_logger_provider.html" title="ImageResizer.Configuration.Logging.ILoggerProvider" alt="" coords="289,258,1053,304"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html" title="Handles access to a disk&#45;based file cache. Handles locking and versioning. Supports subfolders for sc..." alt="" coords="1309,302,2072,348"/>
+<area shape="rect" id="node6" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html" title="ImageResizer.Plugins.DiskCache.CleanupStrategy" alt="" coords="1325,76,2057,123"/>
+<area shape="rect" id="node18" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html" title="ImageResizer.Plugins.DiskCache.CleanupWorker" alt="" coords="1331,147,2051,194"/>
+<area shape="rect" id="node11" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_receiver.html" title="IIssueReceiver" alt="" coords="6,86,237,132"/>
+<area shape="rect" id="node16" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_lock_provider.html" title="Provides locking based on a string key. Locks are local to the LockProvider instance. The class handles disposing of unused locks. Generally used for coordinating writes to files (of which there can be millions). Only keeps key/lock pairs in memory which are in use. Thread&#45;safe." alt="" coords="329,384,1012,431"/>
+<area shape="rect" id="node21" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_1_1_cleanup_queue.html" title="ImageResizer.Plugins.DiskCache.Cleanup.CleanupQueue" alt="" coords="1272,372,2109,419"/>
+</map>

@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>Utils - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm" class="current">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer.Util</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer.Util/BuildTypeAttribute.htm">BuildTypeAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/BundleAttribute.htm">BundleAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/CommitAttribute.htm">CommitAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/ForEachFunction.htm">ForEachFunction</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/PathUtils.htm">PathUtils</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/PolygonMath.htm">PolygonMath</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/StreamUtils.htm">StreamUtils</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/UrlHasher.htm">UrlHasher</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/Utils.htm" class="current">Utils</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/VariableResolverCallback.htm">VariableResolverCallback</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> Utils</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer.Util</p>
+		</header>
+    <div class="sub-header">
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../ImageResizer.Util/Utils.htm#combineFlipAndRotate">combineFlipAndRotate</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#copyStream">copyStream</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#DrawOuterGradient">DrawOuterGradient</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#getBool">getBool</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#getDouble">getDouble</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#getFloat">getFloat</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#getInt">getInt</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#normalizeTo90Intervals">normalizeTo90Intervals</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parseColor">parseColor</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parseCrop">parseCrop</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parseCropUnits">parseCropUnits</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parseEnum``1">parseEnum&lt;T&gt;</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parseFlip">parseFlip</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parseList">parseList</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parsePadding">parsePadding</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parsePointF">parsePointF</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parseRotate">parseRotate</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parseScale">parseScale</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#parseStretch">parseStretch</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#writeColor">writeColor</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#writeCrop">writeCrop</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#writeCropUnits">writeCropUnits</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#writeFlip">writeFlip</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#writePadding">writePadding</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#writeScale">writeScale</a></li>
+				<li><a href="../ImageResizer.Util/Utils.htm#writeStretch">writeStretch</a></li>
+			</ul>
+		
+		
+	</div>
+	
+	
+	<h3 class="section">Public static methods</h3>
+
+	<div id="combineFlipAndRotate" class="method">
+		<h4>
+			<span title="System.Drawing.RotateFlipType">RotateFlipType</span> <strong>combineFlipAndRotate</strong>(<span title="System.Drawing.RotateFlipType">RotateFlipType</span> flip, <span title="System.double">double</span> angle)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="copyStream" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>copyStream</strong>(<span title="System.IO.Stream">Stream</span> source, <span title="System.IO.Stream">Stream</span> dest)
+		</h4>
+		<div class="content">Copies all remaining data from 'source' to 'dest' 
+
+
+
+
+		</div>
+	</div>
+	<div id="DrawOuterGradient" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>DrawOuterGradient</strong>(<span title="System.Drawing.Graphics">Graphics</span> g, <span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.Drawing.Color">Color</span> inner, <span title="System.Drawing.Color">Color</span> outer, <span title="System.float">float</span> width)
+		</h4>
+		<div class="content">Draws a gradient around the specified polygon. Fades from 'inner' to 'outer' over a distance of 'width' pixels. 
+
+
+
+
+		</div>
+	</div>
+	<div id="getBool" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>getBool</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> q, <span title="System.string">string</span> name, <span title="System.bool">bool</span> defaultValue)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="getDouble" class="method">
+		<h4>
+			<span title="System.double">double</span> <strong>getDouble</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> q, <span title="System.string">string</span> name, <span title="System.double">double</span> defaultValue)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="getFloat" class="method">
+		<h4>
+			<span title="System.float">float</span> <strong>getFloat</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> q, <span title="System.string">string</span> name, <span title="System.float">float</span> defaultValue)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="getInt" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>getInt</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> q, <span title="System.string">string</span> name, <span title="System.int">int</span> defaultValue)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="normalizeTo90Intervals" class="method">
+		<h4>
+			<span title="System.double">double</span> <strong>normalizeTo90Intervals</strong>(<span title="System.double">double</span> d)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="parseColor" class="method">
+		<h4>
+			<span title="System.Drawing.Color">Color</span> <strong>parseColor</strong>(<span title="System.string">string</span> value, <span title="System.Drawing.Color">Color</span> defaultValue)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="parseCrop" class="method">
+		<h4>
+			<span title="System.Collections.Generic.KeyValuePair<CropMode, Double[]>">KeyValuePair&lt;CropMode, Double[]&gt;</span> <strong>parseCrop</strong>(<span title="System.string">string</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="parseCropUnits" class="method">
+		<h4>
+			<span title="System.Collections.Generic.KeyValuePair<CropUnits, double>">KeyValuePair&lt;CropUnits, double&gt;</span> <strong>parseCropUnits</strong>(<span title="System.string">string</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="parseEnum``1" class="method">
+		<h4>
+			<span title="ImageResizer.Util.T">T</span> <strong>parseEnum&lt;T&gt;</strong>(<span title="System.string">string</span> value, <span title="ImageResizer.Util.T">T</span> defaultValue)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="parseFlip" class="method">
+		<h4>
+			<span title="System.Drawing.RotateFlipType">RotateFlipType</span> <strong>parseFlip</strong>(<span title="System.string">string</span> sFlip)
+		</h4>
+		<div class="content">Returns RotateNoneFlipNone if not a recognized value. 
+
+
+
+
+		</div>
+	</div>
+	<div id="parseList" class="method">
+		<h4>
+			<span title="System.Double[]">Double[]</span> <strong>parseList</strong>(<span title="System.string">string</span> text, <span title="System.double">double</span> defaultValue)
+		</h4>
+		<div class="content">Parses lists in the form "3,4,5,2,5" and "(3,4,40,50)". If a number cannot be parsed (i.e, number 2 in "5,,2,3") defaultValue is used. 
+
+
+
+
+		</div>
+	</div>
+	<div id="parsePadding" class="method">
+		<h4>
+			<a href="../ImageResizer.Resizing/BoxPadding.htm">BoxPadding</a> <strong>parsePadding</strong>(<span title="System.string">string</span> value)
+		</h4>
+		<div class="content">Parses padding, allowing syntax (all) and (left, top, right, bottom). Parens are optional. 
+
+
+
+
+		</div>
+	</div>
+	<div id="parsePointF" class="method">
+		<h4>
+			<span title="System.Drawing.PointF">PointF</span> <strong>parsePointF</strong>(<span title="System.string">string</span> value, <span title="System.Drawing.PointF">PointF</span> defaultValue)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="parseRotate" class="method">
+		<h4>
+			<span title="System.double">double</span> <strong>parseRotate</strong>(<span title="System.string">string</span> s)
+		</h4>
+		<div class="content">Returns 0 if not a recognized value. Rounds the value to 0, 90, 180, or 270 
+
+
+
+
+		</div>
+	</div>
+	<div id="parseScale" class="method">
+		<h4>
+			<a href="../ImageResizer/ScaleMode.htm">ScaleMode</a> <strong>parseScale</strong>(<span title="System.string">string</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="parseStretch" class="method">
+		<h4>
+			<a href="../ImageResizer/StretchMode.htm">StretchMode</a> <strong>parseStretch</strong>(<span title="System.string">string</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="writeColor" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>writeColor</strong>(<span title="System.Drawing.Color">Color</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="writeCrop" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>writeCrop</strong>(<a href="../ImageResizer/CropMode.htm">CropMode</a> mode, <span title="System.Double[]">Double[]</span> coords)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="writeCropUnits" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>writeCropUnits</strong>(<span title="System.Collections.Generic.KeyValuePair<CropUnits, double>">KeyValuePair&lt;CropUnits, double&gt;</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="writeFlip" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>writeFlip</strong>(<span title="System.Drawing.RotateFlipType">RotateFlipType</span> flip)
+		</h4>
+		<div class="content">Throws an exception if the specified value is unsupported. Rotation values are not supported, and should be specified with the Rotate or srcRotate command. 
+
+
+
+
+		</div>
+	</div>
+	<div id="writePadding" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>writePadding</strong>(<a href="../ImageResizer.Resizing/BoxPadding.htm">BoxPadding</a> p)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="writeScale" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>writeScale</strong>(<a href="../ImageResizer/ScaleMode.htm">ScaleMode</a> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="writeStretch" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>writeStretch</strong>(<a href="../ImageResizer/StretchMode.htm">StretchMode</a> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

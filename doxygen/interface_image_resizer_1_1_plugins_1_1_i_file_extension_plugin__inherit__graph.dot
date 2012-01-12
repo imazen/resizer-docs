@@ -1,0 +1,21 @@
+digraph G
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ImageResizer.Plugins.IFileExtensionPlugin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="ImageResizer.ImageBuilder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_image_builder.html",tooltip="Provides methods for generating resized images, and for reading and writing them to disk..."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="ImageResizer.Plugins.FreeImageDecoder.FreeImageDecoderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_free_image_decoder_1_1_free_image_decoder_plugin.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="ImageResizer.Plugins.PdfRenderer.PdfRendererPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_pdf_renderer_plugin.html",tooltip="Ghostscript image resizer decoder capable of rendering postscript-based files to bitmaps."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node5 [label="ImageResizer.Plugins.PsdComposer.PsdComposerPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node6 [label="ImageResizer.Plugins.PsdReader.PsdReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_psd_reader_1_1_psd_reader.html"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node7 [label="ImageResizer.Plugins.WicBuilder.WicBuilderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_wic_builder_1_1_wic_builder_plugin.html"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node8 [label="ImageResizer.Plugins.WicDecoder.WicDecoderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html",tooltip="Note: This decoder produces Bitmaps that require special disposal instructions. While ImageBuilder ha..."];
+}

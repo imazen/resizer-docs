@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>PolygonMath - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm" class="current">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer.Util</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer.Util/BuildTypeAttribute.htm">BuildTypeAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/BundleAttribute.htm">BundleAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/CommitAttribute.htm">CommitAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/ForEachFunction.htm">ForEachFunction</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/PathUtils.htm">PathUtils</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/PolygonMath.htm" class="current">PolygonMath</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/StreamUtils.htm">StreamUtils</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/UrlHasher.htm">UrlHasher</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/Utils.htm">Utils</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/VariableResolverCallback.htm">VariableResolverCallback</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> PolygonMath</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer.Util</p>
+		</header>
+    <div class="sub-header">
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#AlignWith">AlignWith</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#AlignWith">AlignWith</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ArraysEqual">ArraysEqual</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#Average">Average</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#CenterInside">CenterInside</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#CenterInside">CenterInside</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ChangeMagnitude">ChangeMagnitude</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#DownScaleInside">DownScaleInside</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#FitsInside">FitsInside</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ForEach">ForEach</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#GenerateRadialBrush">GenerateRadialBrush</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetBoundingBox">GetBoundingBox</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetCorners">GetCorners</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetCorners">GetCorners</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#getParallelogram">getParallelogram</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#getParallelogramSize">getParallelogramSize</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetSides">GetSides</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetSubArray">GetSubArray</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#InflatePoly">InflatePoly</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#InflatePoly">InflatePoly</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#IsUnrotated">IsUnrotated</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#MovePoly">MovePoly</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#NormalizePoly">NormalizePoly</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#RotatePoly">RotatePoly</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#RotatePoly">RotatePoly</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#RotateVector">RotateVector</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#RotateVector">RotateVector</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#RoundPoints">RoundPoints</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#RoundPoints">RoundPoints</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#RoundPoints">RoundPoints</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ScaleInside">ScaleInside</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ScaleOutside">ScaleOutside</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ScalePoint">ScalePoint</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ScalePoints">ScalePoints</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ToPoly">ToPoly</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ToRectangle">ToRectangle</a></li>
+			</ul>
+		
+		
+	</div>
+	
+	
+	<h3 class="section">Public static methods</h3>
+
+	<div id="AlignWith" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>AlignWith</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> obj, <span title="System.Drawing.PointF[]">PointF[]</span> container, <span title="System.Drawing.ContentAlignment">ContentAlignment</span> align)
+		</h4>
+		<div class="content">Aligns the specified polygon with its container (reference) polygon using the specified alignment. The container can be smaller than 'obj'. 
+
+
+
+
+		</div>
+	</div>
+	<div id="AlignWith" class="method">
+		<h4>
+			<span title="System.Drawing.RectangleF">RectangleF</span> <strong>AlignWith</strong>(<span title="System.Drawing.RectangleF">RectangleF</span> obj, <span title="System.Drawing.RectangleF">RectangleF</span> container, <span title="System.Drawing.ContentAlignment">ContentAlignment</span> align)
+		</h4>
+		<div class="content">Aligns the specified rectangle object with its reference ('container') rectangle using the specified alignment. The container can be smaller than 'obj'. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ArraysEqual" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>ArraysEqual</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> a1, <span title="System.Drawing.PointF[]">PointF[]</span> a2)
+		</h4>
+		<div class="content">Returns true if the member elements of the specified arrays match, and the arrays
+are of the same length. 
+
+
+
+
+		</div>
+	</div>
+	<div id="Average" class="method">
+		<h4>
+			<span title="System.Drawing.PointF">PointF</span> <strong>Average</strong>(<span title="System.Drawing.PointF">PointF</span> a, <span title="System.Drawing.PointF">PointF</span> b)
+		</h4>
+		<div class="content">Returns a point equidistant beweteen A and B 
+
+
+
+
+		</div>
+	</div>
+	<div id="CenterInside" class="method">
+		<h4>
+			<span title="System.Drawing.RectangleF">RectangleF</span> <strong>CenterInside</strong>(<span title="System.Drawing.SizeF">SizeF</span> size, <span title="System.Drawing.RectangleF">RectangleF</span> bounds)
+		</h4>
+		<div class="content">Creates a rectangle of size 'size' with a center matching that of bounds. 
+
+
+
+
+		</div>
+	</div>
+	<div id="CenterInside" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>CenterInside</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> inner, <span title="System.Drawing.PointF[]">PointF[]</span> outer)
+		</h4>
+		<div class="content">Moves 'inner' so that the center of its bounding box equals the center of the bounding box of 'outer' 
+
+
+
+
+		</div>
+	</div>
+	<div id="ChangeMagnitude" class="method">
+		<h4>
+			<span title="System.Drawing.PointF">PointF</span> <strong>ChangeMagnitude</strong>(<span title="System.Drawing.PointF">PointF</span> v, <span title="System.float">float</span> length)
+		</h4>
+		<div class="content">Returns a modified version of the specified vector with the desired length. 
+
+
+
+
+		</div>
+	</div>
+	<div id="DownScaleInside" class="method">
+		<h4>
+			<span title="System.Drawing.SizeF">SizeF</span> <strong>DownScaleInside</strong>(<span title="System.Drawing.SizeF">SizeF</span> inner, <span title="System.Drawing.SizeF">SizeF</span> bounding)
+		</h4>
+		<div class="content">Scales 'inner' to fit inside 'bounding' while maintaining aspect ratio. Only downscales. 
+
+
+
+
+		</div>
+	</div>
+	<div id="FitsInside" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>FitsInside</strong>(<span title="System.Drawing.SizeF">SizeF</span> inner, <span title="System.Drawing.SizeF">SizeF</span> outer)
+		</h4>
+		<div class="content">Returns true if 'inner' fits inside or equals 'outer' 
+
+
+
+
+		</div>
+	</div>
+	<div id="ForEach" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>ForEach</strong>(<span title="System.Array">Array</span> a, <a href="../ImageResizer.Util/ForEachFunction.htm">ForEachFunction</a> func)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GenerateRadialBrush" class="method">
+		<h4>
+			<span title="System.Drawing.Brush">Brush</span> <strong>GenerateRadialBrush</strong>(<span title="System.Drawing.Color">Color</span> inner, <span title="System.Drawing.Color">Color</span> outer, <span title="System.Drawing.PointF">PointF</span> pt, <span title="System.float">float</span> width)
+		</h4>
+		<div class="content">Approximates a radial brush using a high-rez PathGradientBrush. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetBoundingBox" class="method">
+		<h4>
+			<span title="System.Drawing.RectangleF">RectangleF</span> <strong>GetBoundingBox</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> points)
+		</h4>
+		<div class="content">Returns a bounding box for the specified set of points. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetCorners" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[,]">PointF[,]</span> <strong>GetCorners</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.float">float</span> width)
+		</h4>
+		<div class="content">Returns an array of parallelograms. These parallelgrams are the 'corners' outside each vertex in 'poly'.
+The adjacent edges are perpendicular to 'poly'. Point 1 of each parallelogram will match the respective point in 'poly'
+Points are clockwise.
+TODO - some rounding issues going on, not exact numbers here 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetCorners" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[,]">PointF[,]</span> <strong>GetCorners</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.Single[]">Single[]</span> widths)
+		</h4>
+		<div class="content">Returns an array of parallelograms. These parallelgrams are the 'corners' outside each vertex in 'poly'.
+The adjacent edges are perpendicular to 'poly'. Point 1 of each parallelogram will match the respective point in 'poly'
+Points are clockwise.
+Each float in widths[] corresponds to the point in poly[]. This is the distance to go perpendicularly from
+the line beween poly[i] and poly[i +1]. 
+
+
+
+
+		</div>
+	</div>
+	<div id="getParallelogram" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>getParallelogram</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> quad)
+		</h4>
+		<div class="content">Moves element 4 to spot 3 and truncates to 3 elements.
+For compatiblity with Graphics.DrawImage 
+
+
+
+
+		</div>
+	</div>
+	<div id="getParallelogramSize" class="method">
+		<h4>
+			<span title="System.Drawing.SizeF">SizeF</span> <strong>getParallelogramSize</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> p)
+		</h4>
+		<div class="content">Determines the width and height of the paralellogram. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetSides" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[,]">PointF[,]</span> <strong>GetSides</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.float">float</span> width)
+		</h4>
+		<div class="content">Returns an array of parallelograms. These parallelgrams are the 'sides' bounding the polygon.
+Points are clockwise. Point 1 is the top-left outer point, point 2 the top-right, point 3 the bottom-right, and point 4 the bottom-left. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetSubArray" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>GetSubArray</strong>(<span title="System.Drawing.PointF[,]">PointF[,]</span> array, <span title="System.int">int</span> index)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="InflatePoly" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>InflatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.float">float</span> offset)
+		</h4>
+		<div class="content">Expands all sides on the specified polygon by the specified offset. Assumes the polygon is concave.
+Returns a new polygon 
+
+
+
+
+		</div>
+	</div>
+	<div id="InflatePoly" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>InflatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.Single[]">Single[]</span> offsets)
+		</h4>
+		<div class="content">Expands all sides on the specified polygon by the specified offsets. Assumes the polygon is concave.
+Returns a new polygon. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.Drawing.PointF[]">PointF[]</span></code> poly
+						</dt>
+						<dt>
+							<code><span title="System.Single[]">Single[]</span></code> offsets
+						</dt>
+						<dd>An array the same size as poly[], with the distances to expand the edges. Edges are between i and i+1 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="IsUnrotated" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>IsUnrotated</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> a)
+		</h4>
+		<div class="content">Verifies that the specified 4 points are not rotated - that each point shares either the x or y coordinate with the previous point 
+
+
+
+
+		</div>
+	</div>
+	<div id="MovePoly" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>MovePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> points, <span title="System.Drawing.PointF">PointF</span> offset)
+		</h4>
+		<div class="content">Returns a modified version of the array, with each element being offset by the specified amount. 
+
+
+
+
+		</div>
+	</div>
+	<div id="NormalizePoly" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>NormalizePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly)
+		</h4>
+		<div class="content">Moves the polygon so that the upper-left corner of its bounding box is located at 0,0. 
+
+
+
+
+		</div>
+	</div>
+	<div id="RotatePoly" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>RotatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.double">double</span> degrees, <span title="System.Drawing.PointF">PointF</span> origin)
+		</h4>
+		<div class="content">Rotates the specified polygon (or set of points) around the origin. 
+
+
+
+
+		</div>
+	</div>
+	<div id="RotatePoly" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>RotatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.double">double</span> degrees)
+		</h4>
+		<div class="content">Rotates the specified polygon (or set of points) around the origin. 
+
+
+
+
+		</div>
+	</div>
+	<div id="RotateVector" class="method">
+		<h4>
+			<span title="System.Drawing.PointF">PointF</span> <strong>RotateVector</strong>(<span title="System.Drawing.PointF">PointF</span> v, <span title="System.double">double</span> radians)
+		</h4>
+		<div class="content">Rotates the specified point around the origin. 
+
+
+
+
+		</div>
+	</div>
+	<div id="RotateVector" class="method">
+		<h4>
+			<span title="System.Drawing.PointF">PointF</span> <strong>RotateVector</strong>(<span title="System.Drawing.PointF">PointF</span> v, <span title="System.double">double</span> radians, <span title="System.Drawing.PointF">PointF</span> origin)
+		</h4>
+		<div class="content">Rotates the specified point around the specified origin. 
+
+
+
+
+		</div>
+	</div>
+	<div id="RoundPoints" class="method">
+		<h4>
+			<span title="System.Drawing.Size">Size</span> <strong>RoundPoints</strong>(<span title="System.Drawing.SizeF">SizeF</span> sizeF)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="RoundPoints" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>RoundPoints</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> a)
+		</h4>
+		<div class="content">Rounds the elements of the specified array [not used] 
+
+
+
+
+		</div>
+	</div>
+	<div id="RoundPoints" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[,]">PointF[,]</span> <strong>RoundPoints</strong>(<span title="System.Drawing.PointF[,]">PointF[,]</span> a)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ScaleInside" class="method">
+		<h4>
+			<span title="System.Drawing.SizeF">SizeF</span> <strong>ScaleInside</strong>(<span title="System.Drawing.SizeF">SizeF</span> inner, <span title="System.Drawing.SizeF">SizeF</span> bounding)
+		</h4>
+		<div class="content">Scales 'inner' to fit inside 'bounding' while maintaining aspect ratio. Upscales and downscales. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ScaleOutside" class="method">
+		<h4>
+			<span title="System.Drawing.SizeF">SizeF</span> <strong>ScaleOutside</strong>(<span title="System.Drawing.SizeF">SizeF</span> innerBounds, <span title="System.Drawing.SizeF">SizeF</span> outer)
+		</h4>
+		<div class="content">Scales 'outer' to be equal or larger than 'innerBounds' while maintaining aspect ratio. Upscales and downscales. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ScalePoint" class="method">
+		<h4>
+			<span title="System.Drawing.PointF">PointF</span> <strong>ScalePoint</strong>(<span title="System.Drawing.PointF">PointF</span> point, <span title="System.double">double</span> xfactor, <span title="System.double">double</span> yfactor, <span title="System.Drawing.PointF">PointF</span> origin)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ScalePoints" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>ScalePoints</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.double">double</span> xfactor, <span title="System.double">double</span> yfactor, <span title="System.Drawing.PointF">PointF</span> origin)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ToPoly" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>ToPoly</strong>(<span title="System.Drawing.RectangleF">RectangleF</span> rect)
+		</h4>
+		<div class="content">Returns a clockwise array of points on the rectangle.
+Point 0 is top-left. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ToRectangle" class="method">
+		<h4>
+			<span title="System.Drawing.Rectangle">Rectangle</span> <strong>ToRectangle</strong>(<span title="System.Drawing.RectangleF">RectangleF</span> r)
+		</h4>
+		<div class="content">Rounds a floating-point rectangle to an integer rectangle using System.Round 
+
+
+
+
+		</div>
+	</div>
+	
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

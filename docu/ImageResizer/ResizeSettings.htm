@@ -1,0 +1,619 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>ResizeSettings - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm" class="current">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer/CropMode.htm">CropMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/CropUnits.htm">CropUnits</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/FitMode.htm">FitMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageBuilder.htm">ImageBuilder</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageCorruptedException.htm">ImageCorruptedException</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageJob.htm">ImageJob</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageMissingException.htm">ImageMissingException</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageProcessingException.htm">ImageProcessingException</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/InterceptModule.htm">InterceptModule</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ProcessWhen.htm">ProcessWhen</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ResizerSection.htm">ResizerSection</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ResizeSettings.htm" class="current">ResizeSettings</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ScaleMode.htm">ScaleMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ServerCacheMode.htm">ServerCacheMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/StretchMode.htm">StretchMode</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> ResizeSettings</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer</p>
+		<p><strong>Parent</strong> <span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span></p>
+		</header>
+    <div class="sub-header">
+			<div id="summary">Represents the settings which will be used to process the image.
+Extends NameValueCollection to provide friendly property names for commonly used settings. 
+			</div>
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Add">Add</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Add">Add</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#CopyTo">CopyTo</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Get">Get</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Get">Get</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#getCustomCropSourceRect">getCustomCropSourceRect</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#GetKey">GetKey</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#GetValues">GetValues</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#GetValues">GetValues</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#HasKeys">HasKeys</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#OnDeserialization">OnDeserialization</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Set">Set</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#SetDefaultImageFormat">SetDefaultImageFormat</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#ToStringEncoded">ToStringEncoded</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#WasOneSpecified">WasOneSpecified</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../ImageResizer/ResizeSettings.htm#AllKeys">AllKeys</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Anchor">Anchor</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#BackgroundColor">BackgroundColor</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Border">Border</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#BorderColor">BorderColor</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Cache">Cache</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Count">Count</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#CropBottomRight">CropBottomRight</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#CropMode">CropMode</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#CropTopLeft">CropTopLeft</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#CropXUnits">CropXUnits</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#CropYUnits">CropYUnits</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Flip">Flip</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Format">Format</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Height">Height</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Item">Item</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Keys">Keys</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Margin">Margin</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#MaxHeight">MaxHeight</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#MaxWidth">MaxWidth</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Mode">Mode</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Padding">Padding</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#PaddingColor">PaddingColor</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Process">Process</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Quality">Quality</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Rotate">Rotate</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Scale">Scale</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#SourceFlip">SourceFlip</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Stretch">Stretch</a></li>
+				<li><a href="../ImageResizer/ResizeSettings.htm#Width">Width</a></li>
+			</ul>
+		
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="Add" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Add</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> c)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Add" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Add</strong>(<span title="System.string">string</span> name, <span title="System.string">string</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="CopyTo" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>CopyTo</strong>(<span title="System.Array">Array</span> dest, <span title="System.int">int</span> index)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Get" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Get</strong>(<span title="System.string">string</span> name)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Get" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Get</strong>(<span title="System.int">int</span> index)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="getCustomCropSourceRect" class="method">
+		<h4>
+			<span title="System.Drawing.RectangleF">RectangleF</span> <strong>getCustomCropSourceRect</strong>(<span title="System.Drawing.SizeF">SizeF</span> imageSize)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetKey" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetKey</strong>(<span title="System.int">int</span> index)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetValues" class="method">
+		<h4>
+			<span title="System.String[]">String[]</span> <strong>GetValues</strong>(<span title="System.string">string</span> name)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetValues" class="method">
+		<h4>
+			<span title="System.String[]">String[]</span> <strong>GetValues</strong>(<span title="System.int">int</span> index)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="HasKeys" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>HasKeys</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="OnDeserialization" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>OnDeserialization</strong>(<span title="System.object">object</span> sender)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Set" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Set</strong>(<span title="System.string">string</span> name, <span title="System.string">string</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SetDefaultImageFormat" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>SetDefaultImageFormat</strong>(<span title="System.string">string</span> format)
+		</h4>
+		<div class="content">If 'thumbnail' and 'format' are not specified, sets 'format' to the specified value. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ToStringEncoded" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ToStringEncoded</strong>()
+		</h4>
+		<div class="content">Returns a querystring with all the settings in this class. Querystring keys and values are URL encoded properly. 
+
+
+
+
+		</div>
+	</div>
+	<div id="WasOneSpecified" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>WasOneSpecified</strong>(<span title="System.String[]">String[]</span> keys)
+		</h4>
+		<div class="content">Returns true if any of the specified keys are present in this NameValueCollection 
+
+
+
+
+		</div>
+	</div>
+	
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="AllKeys" class="method">
+		<h4>
+			<span title="System.String[]">String[]</span> <strong>AllKeys</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Anchor" class="method">
+		<h4>
+			<span title="System.Drawing.ContentAlignment">ContentAlignment</span> <strong>Anchor</strong> get; set;
+		</h4>
+		<div class="content">How to anchor the image when cropping or adding whitespace to meet sizing requirements. 
+
+		</div>
+	</div>
+	<div id="BackgroundColor" class="method">
+		<h4>
+			<span title="System.Drawing.Color">Color</span> <strong>BackgroundColor</strong> get; set;
+		</h4>
+		<div class="content">["bgcolor"]: Named and hex values are supported. (rgb and rgba, both 3, 6, and 8 digits). 
+
+		</div>
+	</div>
+	<div id="Border" class="method">
+		<h4>
+			<a href="../ImageResizer.Resizing/BoxPadding.htm">BoxPadding</a> <strong>Border</strong> get; set;
+		</h4>
+		<div class="content">Friendly get/set accessor for the ["borderWidth"] value. Returns BoxPadding.Empty when unspecified. 
+
+		</div>
+	</div>
+	<div id="BorderColor" class="method">
+		<h4>
+			<span title="System.Drawing.Color">Color</span> <strong>BorderColor</strong> get; set;
+		</h4>
+		<div class="content">Gets/sets ["borderColor"]. Named and hex values are supported. (rgb and rgba, both 3, 6, and 8 digits). 
+
+		</div>
+	</div>
+	<div id="Cache" class="method">
+		<h4>
+			<a href="../ImageResizer/ServerCacheMode.htm">ServerCacheMode</a> <strong>Cache</strong> get; set;
+		</h4>
+		<div class="content">["cache"]: Server caching mode suggestion for the result 
+
+		</div>
+	</div>
+	<div id="Count" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>Count</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CropBottomRight" class="method">
+		<h4>
+			<span title="System.Drawing.PointF">PointF</span> <strong>CropBottomRight</strong> get; set;
+		</h4>
+		<div class="content">["crop"]=(x1,y1,[x2],[y2]). Sets x2 and y2, the bottom-right corner of the crop rectangle. If 1 or greater, the coordinate is relative to the top-left corner of the image.
+If 0 or less, the value is relative to the bottom-right corner. This allows for easy trimming: crop=(10,10,-10,-10).
+Set ["cropxunits"] and ["cropyunits"] to the width/height of the rectangle your coordinates are relative to, if different from the original image size. 
+
+		</div>
+	</div>
+	<div id="CropMode" class="method">
+		<h4>
+			<a href="../ImageResizer/CropMode.htm">CropMode</a> <strong>CropMode</strong> get; set;
+		</h4>
+		<div class="content">["crop"]=none|auto Defaults to None - letterboxing is used if both width and height are supplied, and stretch = proportionally.
+Set CropTopLeft and CropBottomRight when you need to specify a custom crop rectangle. 
+
+		</div>
+	</div>
+	<div id="CropTopLeft" class="method">
+		<h4>
+			<span title="System.Drawing.PointF">PointF</span> <strong>CropTopLeft</strong> get; set;
+		</h4>
+		<div class="content">["crop"]=([x1],[y1],x2,y2). Sets x1 and y21, the top-right corner of the crop rectangle. If 0 or greater, the coordinate is relative to the top-left corner of the image.
+If less than 0, the value is relative to the bottom-right corner. This allows for easy trimming: crop=(10,10,-10,-10).
+Set ["cropxunits"] and ["cropyunits"] to the width/height of the rectangle your coordinates are relative to, if different from the original image size. 
+
+		</div>
+	</div>
+	<div id="CropXUnits" class="method">
+		<h4>
+			<span title="System.double">double</span> <strong>CropXUnits</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CropYUnits" class="method">
+		<h4>
+			<span title="System.double">double</span> <strong>CropYUnits</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Flip" class="method">
+		<h4>
+			<span title="System.Drawing.RotateFlipType">RotateFlipType</span> <strong>Flip</strong> get; set;
+		</h4>
+		<div class="content">Allows you to flip the entire resulting image vertically, horizontally, or both. Rotation is not supported. 
+
+		</div>
+	</div>
+	<div id="Format" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Format</strong> get; set;
+		</h4>
+		<div class="content">Like this["format"].
+Gets or sets the output file format to use. "png", "jpg", and "gif" are valid values.
+Returns null if unspecified. When format is not specified, the original format of the image is used (unless it is not a web safe format  - jpeg is the fallback in that scenario). 
+
+		</div>
+	</div>
+	<div id="Height" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>Height</strong> get; set;
+		</h4>
+		<div class="content">["height"]: Sets the desired height of the image.  (minus padding, borders, margins, effects, and rotation)
+The only instance the resulting image will be smaller is if the original source image is smaller.
+Set Scale=Both to upscale these images and ensure the output always matches 'width' and 'height'.
+If both width and height are specified, the image will be 'letterboxed' to match the desired aspect ratio.
+Use maxwidth/maxheight, crop=auto, or stretch=fill to avoid this behavior. 
+
+		</div>
+	</div>
+	<div id="Item" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Item</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Keys" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.KeysCollection">KeysCollection</span> <strong>Keys</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Margin" class="method">
+		<h4>
+			<a href="../ImageResizer.Resizing/BoxPadding.htm">BoxPadding</a> <strong>Margin</strong> get; set;
+		</h4>
+		<div class="content">["margin"]: Gets/sets the width(s) of the margin outside the image border and effects. 
+
+		</div>
+	</div>
+	<div id="MaxHeight" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>MaxHeight</strong> get; set;
+		</h4>
+		<div class="content">["maxheight"]: Sets the maximum desired height of the image.  (minus padding, borders, margins, effects, and rotation).
+The image may be smaller than this value to maintain aspect ratio when both maxwidth and maxheight are specified. 
+
+		</div>
+	</div>
+	<div id="MaxWidth" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>MaxWidth</strong> get; set;
+		</h4>
+		<div class="content">["maxwidth"]: Sets the maximum desired width of the image.  (minus padding, borders, margins, effects, and rotation).
+The image may be smaller than this value to maintain aspect ratio when both maxwidth and maxheight are specified. 
+
+		</div>
+	</div>
+	<div id="Mode" class="method">
+		<h4>
+			<a href="../ImageResizer/FitMode.htm">FitMode</a> <strong>Mode</strong> get; set;
+		</h4>
+		<div class="content">["mode"]: Sets the fit mode for the image. max, min, pad, crop, carve, stretch 
+
+		</div>
+	</div>
+	<div id="Padding" class="method">
+		<h4>
+			<a href="../ImageResizer.Resizing/BoxPadding.htm">BoxPadding</a> <strong>Padding</strong> get; set;
+		</h4>
+		<div class="content">["paddingWidth"]: Gets/sets the width(s) of padding inside the image border. 
+
+		</div>
+	</div>
+	<div id="PaddingColor" class="method">
+		<h4>
+			<span title="System.Drawing.Color">Color</span> <strong>PaddingColor</strong> get; set;
+		</h4>
+		<div class="content">Gets/sets ["paddingColor"]. Named and hex values are supported. (rgb and rgba, both 3, 6, and 8 digits). 
+
+		</div>
+	</div>
+	<div id="Process" class="method">
+		<h4>
+			<a href="../ImageResizer/ProcessWhen.htm">ProcessWhen</a> <strong>Process</strong> get; set;
+		</h4>
+		<div class="content">["process"]: Server processing suggestion for the result. Allows you to 'disable' processing of the image (so you can use disk caching with non-image files). Allows you to 'force' processing of the image, for images without a querystring. 
+
+		</div>
+	</div>
+	<div id="Quality" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>Quality</strong> get; set;
+		</h4>
+		<div class="content">["quality"]: The jpeg encoding quality to use. (10..100). 90 is the default and best value, you should leave it. 
+
+		</div>
+	</div>
+	<div id="Rotate" class="method">
+		<h4>
+			<span title="System.double">double</span> <strong>Rotate</strong> get; set;
+		</h4>
+		<div class="content">["rotate"] The degress to rotate the image clockwise. -360 to 360. 
+
+		</div>
+	</div>
+	<div id="Scale" class="method">
+		<h4>
+			<a href="../ImageResizer/ScaleMode.htm">ScaleMode</a> <strong>Scale</strong> get; set;
+		</h4>
+		<div class="content">["scale"] Whether to downscale, upscale, upscale the canvas, or both upscale or downscale the image as needed. Defaults to
+DownscaleOnly when maxwidth/maxheight is used, and Both when width/height are used. 
+
+		</div>
+	</div>
+	<div id="SourceFlip" class="method">
+		<h4>
+			<span title="System.Drawing.RotateFlipType">RotateFlipType</span> <strong>SourceFlip</strong> get; set;
+		</h4>
+		<div class="content">["sFlip"] Allows you to flip the source image vertically, horizontally, or both. Rotation is not supported. 
+
+		</div>
+	</div>
+	<div id="Stretch" class="method">
+		<h4>
+			<a href="../ImageResizer/StretchMode.htm">StretchMode</a> <strong>Stretch</strong> get; set;
+		</h4>
+		<div class="content">[Depreciated] (Replaced by mode=stretch) Whether to preserve aspect ratio or stretch to fill the bounds. 
+
+		</div>
+	</div>
+	<div id="Width" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>Width</strong> get; set;
+		</h4>
+		<div class="content">["width"]: Sets the desired width of the image. (minus padding, borders, margins, effects, and rotation).
+The only instance the resulting image will be smaller is if the original source image is smaller.
+Set Scale=Both to upscale these images and ensure the output always matches 'width' and 'height'.
+If both width and height are specified, the image will be 'letterboxed' to match the desired aspect ratio.
+Use maxwidth/maxheight, crop=auto, or stretch=fill to avoid this behavior. 
+
+		</div>
+	</div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

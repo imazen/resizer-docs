@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>IResponseHeaders - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm" class="current">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer.Caching</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer.Caching/ApplyResponseHeadersDelegate.htm">ApplyResponseHeadersDelegate</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Caching/ICache.htm">ICache</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Caching/ICacheProvider.htm">ICacheProvider</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Caching/IResponseArgs.htm">IResponseArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Caching/IResponseHeaders.htm" class="current">IResponseHeaders</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Caching/ModifiedDateDelegate.htm">ModifiedDateDelegate</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Caching/ResizeImageDelegate.htm">ResizeImageDelegate</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Caching/ResponseArgs.htm">ResponseArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Caching/ResponseHeaders.htm">ResponseHeaders</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> IResponseHeaders</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer.Caching</p>
+		</header>
+    <div class="sub-header">
+			<div id="summary">Allows customization of response headers for a processed image, as well as configuration of the caching system. 
+			</div>
+		
+		
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#ApplyDuringPreSendRequestHeaders">ApplyDuringPreSendRequestHeaders</a></li>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#ApplyToResponse">ApplyToResponse</a></li>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#CacheControl">CacheControl</a></li>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#ContentType">ContentType</a></li>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#DefaultHeaders">DefaultHeaders</a></li>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#Expires">Expires</a></li>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#Headers">Headers</a></li>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#LastModified">LastModified</a></li>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#ServerCacheDependencies">ServerCacheDependencies</a></li>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#SuppressVaryHeader">SuppressVaryHeader</a></li>
+				<li><a href="../ImageResizer.Caching/IResponseHeaders.htm#ValidUntilExpires">ValidUntilExpires</a></li>
+			</ul>
+		
+	</div>
+	
+	
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="ApplyDuringPreSendRequestHeaders" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>ApplyDuringPreSendRequestHeaders</strong> get; set;
+		</h4>
+		<div class="content">True if the application should automatically execute ApplyToResponse() during the PreSendRequestHeaders event. 
+
+		</div>
+	</div>
+	<div id="ApplyToResponse" class="method">
+		<h4>
+			<a href="../ImageResizer.Caching/ApplyResponseHeadersDelegate.htm">ApplyResponseHeadersDelegate</a> <strong>ApplyToResponse</strong> get; set;
+		</h4>
+		<div class="content">A delegate method to apply the values stored in IResponseHeaders to the specified HttpContext. 
+
+		</div>
+	</div>
+	<div id="CacheControl" class="method">
+		<h4>
+			<span title="System.Web.HttpCacheability">HttpCacheability</span> <strong>CacheControl</strong> get; set;
+		</h4>
+		<div class="content">The cache setting. Defaults to private 
+
+		</div>
+	</div>
+	<div id="ContentType" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ContentType</strong> get; set;
+		</h4>
+		<div class="content">The mime-type of the output data. Defaults to null. 
+
+		</div>
+	</div>
+	<div id="DefaultHeaders" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>DefaultHeaders</strong> get; set;
+		</h4>
+		<div class="content">These headers should be applied first, prior to the application of other settings 
+
+		</div>
+	</div>
+	<div id="Expires" class="method">
+		<h4>
+			<span title="System.DateTime">DateTime</span> <strong>Expires</strong> get; set;
+		</h4>
+		<div class="content">The UTC time at which the cached data should expire.
+Browsers generally don't re-request resources until the they have expired (unlike modififeddate).
+If MinValue, will be ignored. 
+
+		</div>
+	</div>
+	<div id="Headers" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>Headers</strong> get; set;
+		</h4>
+		<div class="content">These headers are applied after applying all of the other settings. (and they will overwrite exisiting values). 
+
+		</div>
+	</div>
+	<div id="LastModified" class="method">
+		<h4>
+			<span title="System.DateTime">DateTime</span> <strong>LastModified</strong> get; set;
+		</h4>
+		<div class="content">The UTC modified date send with the response. Used by browsers with If-Modified-Since to check a cached value is still valid.
+If = MinValue, will be ignored. 
+
+		</div>
+	</div>
+	<div id="ServerCacheDependencies" class="method">
+		<h4>
+			<span title="System.Collections.Generic.List<CacheDependency>">List&lt;CacheDependency&gt;</span> <strong>ServerCacheDependencies</strong> get; set;
+		</h4>
+		<div class="content">Returns a collection of dependencies used for invalidating the server cache.
+Note, having items here will disable kernel-mode caching. Perhaps it is better to simply use LastModified 
+
+		</div>
+	</div>
+	<div id="SuppressVaryHeader" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>SuppressVaryHeader</strong> get; set;
+		</h4>
+		<div class="content">ASP.Net sometimes sends Vary: * which obliterates caching. Vary is to be avoided anyhow.
+Defaults to true 
+
+		</div>
+	</div>
+	<div id="ValidUntilExpires" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>ValidUntilExpires</strong> get; set;
+		</h4>
+		<div class="content">When true: If a client requests a refresh, the response will *still* be served from the server cache.
+Defaults to false 
+
+		</div>
+	</div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

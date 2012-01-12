@@ -1,0 +1,538 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>ImageBuilder - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm" class="current">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer/CropMode.htm">CropMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/CropUnits.htm">CropUnits</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/FitMode.htm">FitMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageBuilder.htm" class="current">ImageBuilder</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageCorruptedException.htm">ImageCorruptedException</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageJob.htm">ImageJob</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageMissingException.htm">ImageMissingException</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageProcessingException.htm">ImageProcessingException</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/InterceptModule.htm">InterceptModule</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ProcessWhen.htm">ProcessWhen</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ResizerSection.htm">ResizerSection</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ScaleMode.htm">ScaleMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ServerCacheMode.htm">ServerCacheMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/StretchMode.htm">StretchMode</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> ImageBuilder</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer</p>
+		<p><strong>Parent</strong> <a href="../ImageResizer.Resizing/AbstractImageProcessor.htm">AbstractImageProcessor</a></p>
+		<p><strong>Interfaces</strong> <a href="../ImageResizer.Plugins/IQuerystringPlugin.htm">IQuerystringPlugin</a>, <a href="../ImageResizer.Plugins/IFileExtensionPlugin.htm">IFileExtensionPlugin</a></p>
+		</header>
+    <div class="sub-header">
+			<div id="summary">Provides methods for generating resized images, and for reading and writing them to disk.
+Use ImageBuilder.Current to get the current instance (as configured in the application configuration), or use ImageBuilder.Current.Create() to control which extensions are used. 
+			</div>
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Build">Build</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Build">Build</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Build">Build</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Build">Build</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Build">Build</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Build">Build</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Copy">Copy</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Create">Create</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#GetFinalSize">GetFinalSize</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#GetStreamFromSource">GetStreamFromSource</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#LoadImage">LoadImage</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#LoadImage">LoadImage</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Process">Process</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#TranslatePoints">TranslatePoints</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Current">Current</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#EncoderProvider">EncoderProvider</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#SettingsModifier">SettingsModifier</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#VirtualFileProvider">VirtualFileProvider</a></li>
+			</ul>
+		
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="Build" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Build</strong>(<span title="System.object">object</span> source, <span title="System.object">object</span> dest, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.bool">bool</span> disposeSource)
+		</h4>
+		<div class="content">Resizes and processes the specified source image and stores the encoded result in the specified destination.
+If passed a source Stream, Bitmap, or Image instance, it will not be disposed unless disposeSource=true. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dd>May be an instance of string (a physical path or app-relative virtual path), VirtualFile, IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream. App-relative virtual paths will use the VirtualPathProvider system 
+						</dd>
+						<dt>
+							<code><span title="System.object">object</span></code> dest
+						</dt>
+						<dd>May be a physical path (string), or a Stream instance. Does not have to be seekable. 
+						</dd>
+						<dt>
+							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
+						</dt>
+						<dd>Resizing and processing command to apply to the image. 
+						</dd>
+						<dt>
+							<code><span title="System.bool">bool</span></code> disposeSource
+						</dt>
+						<dd>True to dispose 'source' after use. False to leave intact. 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="Build" class="method">
+		<h4>
+			<span title="System.Drawing.Bitmap">Bitmap</span> <strong>Build</strong>(<span title="System.object">object</span> source, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings)
+		</h4>
+		<div class="content">Resizes and processes the specified source image and returns a bitmap of the result.
+Note!
+This method assumes that transparency will be supported in the final output format, and therefore does not apply a matte color. Use &bgcolor to specify a background color
+if you use this method with a non-transparent format such as Jpeg.
+If passed a source Stream, Bitmap, or Image instance, it will be disposed after use. Use disposeSource=False to disable that behavior. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dd>May be an instance of string (a physical path), VirtualFile, IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream. 
+						</dd>
+						<dt>
+							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
+						</dt>
+						<dd>Resizing and processing command to apply to the. 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="Build" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Build</strong>(<span title="System.object">object</span> source, <span title="System.object">object</span> dest, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings)
+		</h4>
+		<div class="content">Resizes and processes the specified source image and stores the encoded result in the specified destination.
+If passed a source Stream, Bitmap, or Image instance, it will be disposed after use. Use disposeSource=False to disable that behavior. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dd>May be an instance of string (a physical path or app-relative virtual path), VirtualFile, IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream. App-relative virtual paths will use the VirtualPathProvider system 
+						</dd>
+						<dt>
+							<code><span title="System.object">object</span></code> dest
+						</dt>
+						<dd>May be a physical path (string), or a Stream instance. Does not have to be seekable. 
+						</dd>
+						<dt>
+							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
+						</dt>
+						<dd>Resizing and processing command to apply to the image. 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="Build" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Build</strong>(<span title="System.object">object</span> source, <span title="System.object">object</span> dest, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.bool">bool</span> disposeSource, <span title="System.bool">bool</span> addFileExtension)
+		</h4>
+		<div class="content">Resizes and processes the specified source image and stores the encoded result in the specified destination.
+If passed a source Stream, Bitmap, or Image instance, it will not be disposed unless disposeSource=true.
+If passed a path destination, the physical path of the written file will be returned. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dd>May be an instance of string (a physical path or app-relative virtual path), VirtualFile, IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream. App-relative virtual paths will use the VirtualPathProvider system 
+						</dd>
+						<dt>
+							<code><span title="System.object">object</span></code> dest
+						</dt>
+						<dd>May be a physical path (string), or a Stream instance. Does not have to be seekable. 
+						</dd>
+						<dt>
+							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
+						</dt>
+						<dd>Resizing and processing command to apply to the image. 
+						</dd>
+						<dt>
+							<code><span title="System.bool">bool</span></code> disposeSource
+						</dt>
+						<dd>True to dispose 'source' after use. False to leave intact. 
+						</dd>
+						<dt>
+							<code><span title="System.bool">bool</span></code> addFileExtension
+						</dt>
+						<dd>If true, will add the correct file extension to 'dest' if it is a string. 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="Build" class="method">
+		<h4>
+			<span title="System.Drawing.Bitmap">Bitmap</span> <strong>Build</strong>(<span title="System.object">object</span> source, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.bool">bool</span> disposeSource)
+		</h4>
+		<div class="content">Resizes and processes the specified source image and returns a bitmap of the result.
+Note!
+This method assumes that transparency will be supported in the final output format, and therefore does not apply a matte color. Use &bgcolor to specify a background color
+if you use this method with a non-transparent format such as Jpeg.
+If passed a source Stream, Bitmap, or Image instance, it will not be disposed unless disposeSource=true. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dd>May be an instance of string (a physical path), VirtualFile, IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream. 
+						</dd>
+						<dt>
+							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
+						</dt>
+						<dd>Resizing and processing command to apply to the. 
+						</dd>
+						<dt>
+							<code><span title="System.bool">bool</span></code> disposeSource
+						</dt>
+						<dd>If false, 'source' will not be disposed. 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="Build" class="method">
+		<h4>
+			<a href="../ImageResizer/ImageJob.htm">ImageJob</a> <strong>Build</strong>(<a href="../ImageResizer/ImageJob.htm">ImageJob</a> job)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Copy" class="method">
+		<h4>
+			<a href="../ImageResizer/ImageBuilder.htm">ImageBuilder</a> <strong>Copy</strong>()
+		</h4>
+		<div class="content">Copies the instance along with extensions. Subclasses must override this. 
+
+
+
+
+		</div>
+	</div>
+	<div id="Create" class="method">
+		<h4>
+			<a href="../ImageResizer/ImageBuilder.htm">ImageBuilder</a> <strong>Create</strong>(<span title="System.Collections.Generic.IEnumerable<BuilderExtension>">IEnumerable&lt;BuilderExtension&gt;</span> extensions, <a href="../ImageResizer.Encoding/IEncoderProvider.htm">IEncoderProvider</a> writer, <a href="../ImageResizer.Plugins/IVirtualImageProvider.htm">IVirtualImageProvider</a> virtualFileProvider, <a href="../ImageResizer.Plugins/ISettingsModifier.htm">ISettingsModifier</a> settingsModifier)
+		</h4>
+		<div class="content">Creates another instance of the class using the specified extensions. Subclasses should override this and point to their own constructor. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetFinalSize" class="method">
+		<h4>
+			<span title="System.Drawing.Size">Size</span> <strong>GetFinalSize</strong>(<span title="System.Drawing.Size">Size</span> originalSize, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> q)
+		</h4>
+		<div class="content">Gets the final size of an image 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetStreamFromSource" class="method">
+		<h4>
+			<span title="System.IO.Stream">Stream</span> <strong>GetStreamFromSource</strong>(<span title="System.object">object</span> source, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.Boolean&">Boolean&amp;</span> disposeStream, <span title="System.String&">String&amp;</span> path, <span title="System.Boolean&">Boolean&amp;</span> restoreStreamPosition)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="LoadImage" class="method">
+		<h4>
+			<span title="System.Drawing.Bitmap">Bitmap</span> <strong>LoadImage</strong>(<span title="System.object">object</span> source, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings)
+		</h4>
+		<div class="content">Loads a Bitmap from the specified source. If a filename is available, it will be attached to bitmap.Tag in a BitmapTag instance. The Bitmap.Tag.Path value may be a virtual, relative, UNC, windows, or unix path.
+Does not dispose 'source' if it is a Stream or Image instance - that's the responsibility of the calling code. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dd>May  be an instance of string, VirtualFile, IVirtualFile IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream.  If passed an Image instance, the image will be cloned, which will cause metadata, indexed state, and any additional frames to be lost. Accepts physical paths and application relative paths. (C:\... and ~/path) 
+						</dd>
+						<dt>
+							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
+						</dt>
+						<dd>Will ignore ICC profile if ?ignoreicc=true. 
+						</dd>
+				</dl>
+			</div>
+
+			<div class="return">
+
+				<h5>Returns</h5>
+				<dl>
+					<dt>
+						<code><span title="System.Drawing.Bitmap">Bitmap</span></code>
+					</dt>
+					<dd>A Bitmap. The.Tag property will include a BitmapTag instance. If.Tag.Source is not null, remember to dispose it when you dispose the Bitmap. 
+					</dd>
+				</dl>
+			</div>
+
+		</div>
+	</div>
+	<div id="LoadImage" class="method">
+		<h4>
+			<span title="System.Drawing.Bitmap">Bitmap</span> <strong>LoadImage</strong>(<span title="System.object">object</span> source, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.bool">bool</span> restoreStreamPos)
+		</h4>
+		<div class="content">Loads a Bitmap from the specified source. If a filename is available, it will be attached to bitmap.Tag in a BitmapTag instance. The Bitmap.Tag.Path value may be a virtual, relative, UNC, windows, or unix path.
+Does not dispose 'source' if it is a Stream or Image instance - that's the responsibility of the calling code. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dd>May  be an instance of string, VirtualFile, IVirtualFile IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream.  If passed an Image instance, the image will be cloned, which will cause metadata, indexed state, and any additional frames to be lost. Accepts physical paths and application relative paths. (C:\... and ~/path) 
+						</dd>
+						<dt>
+							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
+						</dt>
+						<dd>Will ignore ICC profile if ?ignoreicc=true. 
+						</dd>
+						<dt>
+							<code><span title="System.bool">bool</span></code> restoreStreamPos
+						</dt>
+						<dd>If true, the position of the source stream will be restored after being read 
+						</dd>
+				</dl>
+			</div>
+
+			<div class="return">
+
+				<h5>Returns</h5>
+				<dl>
+					<dt>
+						<code><span title="System.Drawing.Bitmap">Bitmap</span></code>
+					</dt>
+					<dd>A Bitmap. The.Tag property will include a BitmapTag instance. If.Tag.Source is not null, remember to dispose it when you dispose the Bitmap. 
+					</dd>
+				</dl>
+			</div>
+
+		</div>
+	</div>
+	<div id="Process" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Process</strong>(<a href="../ImageResizer.Resizing/ImageState.htm">ImageState</a> s)
+		</h4>
+		<div class="content">Processes an ImageState instance. Used by Build, GetFinalSize, and TranslatePoint.
+Can be overriden by a plugin with the OnProcess method 
+
+
+
+
+		</div>
+	</div>
+	<div id="TranslatePoints" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>TranslatePoints</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> sourcePoints, <span title="System.Drawing.Size">Size</span> originalSize, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> q)
+		</h4>
+		<div class="content">Doesn't support flipping. Translate a point on the original bitmap to a point on the new bitmap. If the original point no longer exists, returns Empty 
+
+
+
+
+		</div>
+	</div>
+	
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="Current" class="method">
+		<h4>
+			<a href="../ImageResizer/ImageBuilder.htm">ImageBuilder</a> <strong>Current</strong> get; 
+		</h4>
+		<div class="content">Returns a shared instance of ImageBuilder or a subclass, equivalent to  Config.Current.CurrentImageBuilder 
+
+		</div>
+	</div>
+	<div id="EncoderProvider" class="method">
+		<h4>
+			<a href="../ImageResizer.Encoding/IEncoderProvider.htm">IEncoderProvider</a> <strong>EncoderProvider</strong> get; 
+		</h4>
+		<div class="content">Handles the encoder selection and provision proccess. 
+
+		</div>
+	</div>
+	<div id="SettingsModifier" class="method">
+		<h4>
+			<a href="../ImageResizer.Plugins/ISettingsModifier.htm">ISettingsModifier</a> <strong>SettingsModifier</strong> get; 
+		</h4>
+		<div class="content">May be null. A class to modify or normalize ResizeSettings instances before they are used. 
+
+		</div>
+	</div>
+	<div id="VirtualFileProvider" class="method">
+		<h4>
+			<a href="../ImageResizer.Plugins/IVirtualImageProvider.htm">IVirtualImageProvider</a> <strong>VirtualFileProvider</strong> get; 
+		</h4>
+		<div class="content">Provides a resolution service for app-relative URLs. 
+
+		</div>
+	</div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

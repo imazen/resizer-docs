@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['s3patheventargs',['S3PathEventArgs',['../class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_path_event_args.html#a92b4f00c4a48cf0c57d43bdd5f6b1140',1,'ImageResizer::Plugins::S3Reader::S3PathEventArgs']]],
+  ['s3virtualpathprovider',['S3VirtualPathProvider',['../class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a6a3c5d5b26d0795aedc36bee9d8cac5f',1,'ImageResizer::Plugins::S3Reader::S3VirtualPathProvider.S3VirtualPathProvider(S3Service service, String virtualFilesystemPrefix, TimeSpan absoluteMetadataExpiration, TimeSpan slidingMetadataExpiration, RewriteBucketAndKeyPath bucketFilterCallback, Boolean fastMode)'],['../class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a04017b8607a46423cc5279884b42c361',1,'ImageResizer::Plugins::S3Reader::S3VirtualPathProvider.S3VirtualPathProvider(RewriteBucketAndKeyPath bucketFilterCallback, Boolean fastMode)']]],
+  ['saveindexed',['SaveIndexed',['../class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_pretty_gifs.html#a9bc2765e264c62853e3c5fc5e5cc788e',1,'ImageResizer::Plugins::PrettyGifs::PrettyGifs']]],
+  ['savejpeg',['SaveJpeg',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a00f0d540dc7b93015a9ef435a37a3e30',1,'ImageResizer::Plugins::Basic::DefaultEncoder']]],
+  ['savepng',['SavePng',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a0f22c5561167bc2644cb0557c456d2b2',1,'ImageResizer::Plugins::Basic::DefaultEncoder']]],
+  ['scale',['Scale',['../class_image_resizer_1_1_resizing_1_1_layout_builder.html#ab1001b42022b3a6cd14f9c9b0c877761',1,'ImageResizer::Resizing::LayoutBuilder']]],
+  ['scaleinside',['ScaleInside',['../class_image_resizer_1_1_util_1_1_polygon_math.html#a0495fc6849c286b9f880c900d1b66e7d',1,'ImageResizer::Util::PolygonMath']]],
+  ['scaleoutside',['ScaleOutside',['../class_image_resizer_1_1_util_1_1_polygon_math.html#a63ca79f538e9c19e38f14ad57de06958',1,'ImageResizer::Util::PolygonMath']]],
+  ['setall',['SetAll',['../class_image_resizer_1_1_resizing_1_1_box_padding.html#a19f57445b1f9cba1b2b55fcd94c5e407',1,'ImageResizer::Resizing::BoxPadding']]],
+  ['setattr',['setAttr',['../class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ade0fa8eed7dcde42449533de26726fbc',1,'ImageResizer::Configuration::Xml::Node.setAttr(string selector, string attrValue)'],['../class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#adbb01f74fb00cb70fa68701b3accc67c',1,'ImageResizer::Configuration::Xml::Node.setAttr(string nodeSelector, string attrName, string attrValue)']]],
+  ['setcachedfileinfo',['setCachedFileInfo',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a012c28fb85d000f9ee679d04f738f6ec',1,'ImageResizer::Plugins::DiskCache::CachedFolder']]],
+  ['setconfigxml',['setConfigXml',['../class_image_resizer_1_1_configuration_1_1_config.html#a468ac88535db0f845428bb1d6af7b34e',1,'ImageResizer::Configuration::Config']]],
+  ['setconfigxmltext',['setConfigXmlText',['../class_image_resizer_1_1_configuration_1_1_config.html#ae8b40511d70c16c123dd4f531e842187',1,'ImageResizer::Configuration::Config']]],
+  ['setdefaultimageformat',['SetDefaultImageFormat',['../class_image_resizer_1_1_resize_settings.html#a6fbf09424feccb7bc4dc6e20b9fb8b89',1,'ImageResizer::ResizeSettings']]],
+  ['setextension',['SetExtension',['../class_image_resizer_1_1_util_1_1_path_utils.html#a6e47130783374c72a73f97760843bb07',1,'ImageResizer::Util::PathUtils']]],
+  ['setimmutable',['SetImmutable',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_batch_resize_item.html#a5ab07c057a9b3d0e415a801ec87c5a97',1,'ImageResizer::Plugins::BatchZipper::BatchResizeItem']]],
+  ['setlist',['SetList',['../class_image_resizer_1_1_collections_1_1_safe_list-g.html#a9a6e8bf441dccfbcd5ad8067ab05b008',1,'ImageResizer::Collections::SafeList-g']]],
+  ['setprogress',['SetProgress',['../interface_seven_zip_reduced_1_1_i_code_progress.html#ac02bc6fffeef436e25463b8cf242c8e1',1,'SevenZipReduced::ICodeProgress']]],
+  ['shift',['Shift',['../class_image_resizer_1_1_resizing_1_1_layout_builder.html#a69742c38ab6136c7ef2978d8d2bec5b0',1,'ImageResizer::Resizing::LayoutBuilder']]],
+  ['start',['Start',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#a6c81fcb56683a5658456227469fa5d9a',1,'ImageResizer::Plugins::DiskCache::DiskCache']]],
+  ['stop',['Stop',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#a5cb5580fe25f56de3d31ca75ed91fa8c',1,'ImageResizer::Plugins::DiskCache::DiskCache']]],
+  ['stoproutingroute',['StopRoutingRoute',['../class_image_resizer_1_1_plugins_1_1_mvc_routing_shim_1_1_stop_routing_route.html#aada99858f5798711f35dc62c5e769822',1,'ImageResizer::Plugins::MvcRoutingShim::StopRoutingRoute']]]
+];

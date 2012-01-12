@@ -1,0 +1,22 @@
+var searchData=
+[
+  ['acceptedimageextensions',['AcceptedImageExtensions',['../class_image_resizer_1_1_configuration_1_1_pipeline_config.html#a8f026db1293e7c0fd0b97ed493ee8c15',1,'ImageResizer::Configuration::PipelineConfig']]],
+  ['accessedutc',['AccessedUtc',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_file_info.html#a3e7faf66c5b288b68eb63b2e9488e56c',1,'ImageResizer::Plugins::DiskCache::CachedFileInfo']]],
+  ['addfileextension',['AddFileExtension',['../class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5',1,'ImageResizer::ImageJob']]],
+  ['align',['Align',['../class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#aa3dac6214bab1e78459fc7da2c3feae6',1,'ImageResizer::Plugins::Watermark::Layer']]],
+  ['all',['All',['../class_image_resizer_1_1_resizing_1_1_box_padding.html#a5a549837cdd68bdbd6fa61c9d11f9e52',1,'ImageResizer::Resizing::BoxPadding']]],
+  ['allissues',['AllIssues',['../class_image_resizer_1_1_configuration_1_1_config.html#aaf802e5ba3f0fb8edfb5dbe46ee361da',1,'ImageResizer::Configuration::Config']]],
+  ['allowdestinationpathvariables',['AllowDestinationPathVariables',['../class_image_resizer_1_1_image_job.html#a2261abf085c33a0bc38cbde02f33c729',1,'ImageResizer::ImageJob']]],
+  ['allplugins',['AllPlugins',['../class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab9e6deb9f5ec91b7d9aff1304dae8470',1,'ImageResizer::Configuration::PluginConfig']]],
+  ['anchor',['Anchor',['../class_image_resizer_1_1_resize_settings.html#a753bf2d269715c21237d0786255167ad',1,'ImageResizer::ResizeSettings']]],
+  ['angle',['Angle',['../class_image_resizer_1_1_plugins_1_1_watermark_1_1_text_layer.html#a8d5e4e07a431d50b6d46ac92259b646d',1,'ImageResizer::Plugins::Watermark::TextLayer']]],
+  ['applyduringpresendrequestheaders',['ApplyDuringPreSendRequestHeaders',['../interface_image_resizer_1_1_caching_1_1_i_response_headers.html#a0fcec2a5cc51fc00c036a01921a59a44',1,'ImageResizer::Caching::IResponseHeaders.ApplyDuringPreSendRequestHeaders()'],['../class_image_resizer_1_1_caching_1_1_response_headers.html#a5a053b17df155c0e821d3d3ab943c79f',1,'ImageResizer::Caching::ResponseHeaders.ApplyDuringPreSendRequestHeaders()']]],
+  ['applytoresponse',['ApplyToResponse',['../interface_image_resizer_1_1_caching_1_1_i_response_headers.html#aa77ccbaf6e27fb602035a10a4f4b9667',1,'ImageResizer::Caching::IResponseHeaders.ApplyToResponse()'],['../class_image_resizer_1_1_caching_1_1_response_headers.html#a5466c4bff12520d1dc0d5b5e4114bec0',1,'ImageResizer::Caching::ResponseHeaders.ApplyToResponse()']]],
+  ['appphysicalpath',['AppPhysicalPath',['../class_image_resizer_1_1_util_1_1_path_utils.html#a3a5c9196381928db82048058cb62dc19',1,'ImageResizer::Util::PathUtils']]],
+  ['appvirtualpath',['AppVirtualPath',['../class_image_resizer_1_1_util_1_1_path_utils.html#a210e3c7584b66cf195a0b81ff74e3b2c',1,'ImageResizer::Util::PathUtils']]],
+  ['asyncbuffersize',['AsyncBufferSize',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#ad36ae61ace9fdb78f7daf1c5a672c6c4',1,'ImageResizer::Plugins::DiskCache::DiskCache']]],
+  ['asyncwrites',['AsyncWrites',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#a041942b5394c38fd989fa268d69348a7',1,'ImageResizer::Plugins::DiskCache::DiskCache']]],
+  ['attrs',['Attrs',['../class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31',1,'ImageResizer::Configuration::Xml::Node']]],
+  ['autoclean',['AutoClean',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#a21e3a602d75eec0399962ae9b04b2b9b',1,'ImageResizer::Plugins::DiskCache::DiskCache']]],
+  ['avoidremovalifusedwithin',['AvoidRemovalIfUsedWithin',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html#a9e1559718f9cd46757831f7d34ec0467',1,'ImageResizer::Plugins::DiskCache::CleanupStrategy']]]
+];

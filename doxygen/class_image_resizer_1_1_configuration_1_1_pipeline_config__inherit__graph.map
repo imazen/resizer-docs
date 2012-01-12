@@ -1,0 +1,6 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html" title="IPipelineConfig" alt="" coords="49,102,284,149"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i..." alt="" coords="5,6,328,53"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_caching_1_1_i_cache_provider.html" title="Provides cache selection logic." alt="" coords="309,102,547,149"/>
+<area shape="rect" id="node8" href="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="ISettingsModifier" alt="" coords="572,102,831,149"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file. Implementing this allows usage of your VirtualProvider without registering it with AS..." alt="" coords="289,6,460,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html" title="Always implement this if possible. Allows caching systems to detect changes to source files and inval..." alt="" coords="163,102,585,149"/>
+<area shape="rect" id="node7" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_bitmap_file.html" title="For virtual files who want to provide their data in Bitmap form (like a PSD reader or gradient genera..." alt="" coords="610,102,880,149"/>
+</map>

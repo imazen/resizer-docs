@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html" title="Not for external use. Inherit from BuilderExtension instead. Dual&#45;purpose base class for both ImageBu..." alt="" coords="5,6,371,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="396,6,679,53"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions." alt="" coords="703,6,1009,53"/>
+</map>

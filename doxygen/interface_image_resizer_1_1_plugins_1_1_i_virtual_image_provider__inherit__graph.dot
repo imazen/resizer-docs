@@ -1,0 +1,25 @@
+digraph G
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ImageResizer.Plugins.IVirtualImageProvider",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="ImageResizer.Configuration.IPipelineConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="ImageResizer.Configuration.PipelineConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_pipeline_config.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="ImageResizer.Plugins.AzureReader.AzureVirtualPathProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_virtual_path_provider.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node5 [label="ImageResizer.Plugins.Basic.Gradient",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient.html",tooltip="Allows gradients to be dynamically generated like so:"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node6 [label="ImageResizer.Plugins.Basic.VirtualFolder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html",tooltip="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node7 [label="ImageResizer.Plugins.PsdComposer.PsdComposerPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node8 [label="ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node9 [label="ImageResizer.Plugins.S3Reader.S3VirtualPathProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html",tooltip="Allows clients to request objects located on another amazon S3 server through this server..."];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node10 [label="ImageResizer.Plugins.SqlReader.SqlReaderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html",tooltip="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..."];
+}

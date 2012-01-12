@@ -1,0 +1,315 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>ImageState - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm" class="current">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer.Resizing</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer.Resizing/AbstractImageProcessor.htm">AbstractImageProcessor</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/BitmapTag.htm">BitmapTag</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/BoxPadding.htm">BoxPadding</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/BuilderExtension.htm">BuilderExtension</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/ImageState.htm" class="current">ImageState</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/LayoutBuilder.htm">LayoutBuilder</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/PointFlags.htm">PointFlags</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/PointSet.htm">PointSet</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/PointTranslationBehavior.htm">PointTranslationBehavior</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/RequestedAction.htm">RequestedAction</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> ImageState</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer.Resizing</p>
+		<p><strong>Interfaces</strong> <span title="System.IDisposable">IDisposable</span></p>
+		</header>
+    <div class="sub-header">
+			<div id="summary">Encapsulates the state of an image being resized.
+Can be used to simulate a resize as well as actually perform one.
+All code should ignore when Bitmaps and Graphics objects are null, and go about simulating all the mathematical functions as normal. 
+			</div>
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#Dispose">Dispose</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#copySize">copySize</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#Data">Data</a></li>
+			</ul>
+		
+			<h3 class="section">Fields</h3>
+			<ul>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#settings">settings</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#originalSize">originalSize</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#supportsTransparency">supportsTransparency</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#layout">layout</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#destSize">destSize</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#finalSize">finalSize</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#copyRect">copyRect</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#sourceBitmap">sourceBitmap</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#destBitmap">destBitmap</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#destGraphics">destGraphics</a></li>
+				<li><a href="../ImageResizer.Resizing/ImageState.htm#copyAttibutes">copyAttibutes</a></li>
+			</ul>
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="Dispose" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Dispose</strong>()
+		</h4>
+		<div class="content">Disposes sourceBitmap, destGraphics, destBitmap, and copyAttributes if they are non-null 
+
+
+
+
+		</div>
+	</div>
+	
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="copySize" class="method">
+		<h4>
+			<span title="System.Drawing.SizeF">SizeF</span> <strong>copySize</strong> get; 
+		</h4>
+		<div class="content">(read-only) Same as copyRect.Size, convenience property. 
+
+		</div>
+	</div>
+	<div id="Data" class="method">
+		<h4>
+			<span title="System.Collections.Generic.Dictionary<string, object>">Dictionary&lt;string, object&gt;</span> <strong>Data</strong> get; 
+		</h4>
+		<div class="content">Allows extensions to store data along with the image state 
+
+		</div>
+	</div>
+  <h3 class="section">Public fields</h3>
+
+  <div id="settings" class="method">
+    <h4>ResizeSettings <strong>settings</strong></h4>
+    <div class="content">The commands to apply to the bitmap 
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="originalSize" class="method">
+    <h4>Size <strong>originalSize</strong></h4>
+    <div class="content">The original size of the source bitmap. Use this instead of accessing the bitmap directly for this information, since the bitmap may not always be available 
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.Drawing.Size">Size</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="supportsTransparency" class="method">
+    <h4>bool <strong>supportsTransparency</strong></h4>
+    <div class="content">Rendering choices can depend on whether the output format supports transparency. 
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.bool">bool</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="layout" class="method">
+    <h4>LayoutBuilder <strong>layout</strong></h4>
+    <div class="content">The layout object. Used for calculated and flowing the layout of the various rings around the image (padding, border, effect, margin, etc). 
+      <table>
+        <tr>
+          <td>
+            <code>return <a href="../ImageResizer.Resizing/LayoutBuilder.htm">LayoutBuilder</a></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="destSize" class="method">
+    <h4>Size <strong>destSize</strong></h4>
+    <div class="content">The size of the target bitmap image. Set after all sizing operations have completed. 
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.Drawing.Size">Size</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="finalSize" class="method">
+    <h4>Size <strong>finalSize</strong></h4>
+    <div class="content">The dimensions of the bitmap afer all operations have been applied to it (Calling FlipRotate can change the bitmap dimensions). 
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.Drawing.Size">Size</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="copyRect" class="method">
+    <h4>RectangleF <strong>copyRect</strong></h4>
+    <div class="content">The rectangular portion of the source image to copy 
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.Drawing.RectangleF">RectangleF</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="sourceBitmap" class="method">
+    <h4>Bitmap <strong>sourceBitmap</strong></h4>
+    <div class="content">The source bitmap.  If null, skip drawing commands, but continue layout logic. 
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.Drawing.Bitmap">Bitmap</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="destBitmap" class="method">
+    <h4>Bitmap <strong>destBitmap</strong></h4>
+    <div class="content">The destination bitmap.  If null, skip drawing commands, but continue layout logic. 
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.Drawing.Bitmap">Bitmap</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="destGraphics" class="method">
+    <h4>Graphics <strong>destGraphics</strong></h4>
+    <div class="content">A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic. 
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.Drawing.Graphics">Graphics</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div id="copyAttibutes" class="method">
+    <h4>ImageAttributes <strong>copyAttibutes</strong></h4>
+    <div class="content">Allows color correction/modification during the image copy. 
+      <table>
+        <tr>
+          <td>
+            <code>return <span title="System.Drawing.Imaging.ImageAttributes">ImageAttributes</span></code>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

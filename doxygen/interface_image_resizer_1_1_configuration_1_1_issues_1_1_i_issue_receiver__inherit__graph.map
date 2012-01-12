@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html" title="ImageResizer.Configuration.Issues.IssueSink" alt="" coords="784,111,1445,158"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_configuration_1_1_plugin_config.html" title="Provides thread&#45;safe access to plugin addition, removal, and querying methods." alt="" coords="1559,5,2161,51"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_size_limits.html" title="Enforces two kinds of maximum size constraints: a Total size limit, and an Image size limit..." alt="" coords="1577,75,2143,122"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html" title="ImageResizer.Plugins.DiskCache.CleanupStrategy" alt="" coords="1494,146,2226,193"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html" title="ImageResizer.Plugins.DiskCache.CleanupWorker" alt="" coords="1500,217,2220,263"/>
+</map>

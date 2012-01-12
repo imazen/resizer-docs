@@ -1,0 +1,21 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_image_builder.html" title="Provides methods for generating resized images, and for reading and writing them to disk..." alt="" coords="951,9,1361,56"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html" title="ImageResizer.Plugins.AdvancedFilters.AdvancedFilters" alt="" coords="758,80,1554,126"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_auto_rotate.html" title="ImageResizer.Plugins.Basic.AutoRotate" alt="" coords="866,150,1446,197"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_caption_1_1_caption.html" title="ImageResizer.Plugins.Basic.Caption.Caption" alt="" coords="832,221,1480,268"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html" title="Provides basic encoding functionality for Jpeg, png, and gif output. Allows adjustable Jpeg compressi..." alt="" coords="835,292,1477,338"/>
+<area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_drop_shadow.html" title="Adds drop shadow capabilities (shadowColor, shadowOffset, and shadowWidth commands)" alt="" coords="854,362,1458,409"/>
+<area shape="rect" id="node17" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient.html" title="Allows gradients to be dynamically generated like so:" alt="" coords="884,433,1428,480"/>
+<area shape="rect" id="node19" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_i_e_png_fix.html" title="Causes IE6 and earlier to use GIF versions of PNG files. By default, only fixes requests with ..." alt="" coords="881,504,1431,550"/>
+<area shape="rect" id="node21" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_image404.html" title="Redirects image 404 errors to a querystring&#45;specified server&#45;local location, while maintaining querys..." alt="" coords="874,574,1438,621"/>
+<area shape="rect" id="node23" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_presets.html" title="ImageResizer.Plugins.Basic.Presets" alt="" coords="891,645,1421,692"/>
+<area shape="rect" id="node25" href="$class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html" title="ImageResizer.Plugins.FreeImageScaling.FreeImageScalingPlugin" alt="" coords="684,716,1628,762"/>
+<area shape="rect" id="node27" href="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_pdf_renderer_plugin.html" title="Ghostscript image resizer decoder capable of rendering postscript&#45;based files to bitmaps." alt="" coords="760,786,1552,833"/>
+<area shape="rect" id="node29" href="$class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_pretty_gifs.html" title="ImageResizer.Plugins.PrettyGifs.PrettyGifs" alt="" coords="843,857,1469,904"/>
+<area shape="rect" id="node31" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html" title="ImageResizer.Plugins.PsdComposer.PsdComposerPlugin" alt="" coords="740,928,1572,974"/>
+<area shape="rect" id="node33" href="$class_image_resizer_1_1_plugins_1_1_seam_carving_1_1_seam_carving_plugin.html" title="ImageResizer.Plugins.SeamCarving.SeamCarvingPlugin" alt="" coords="749,998,1563,1045"/>
+<area shape="rect" id="node35" href="$class_image_resizer_1_1_plugins_1_1_simple_filters_1_1_simple_filters.html" title="ImageResizer.Plugins.SimpleFilters.SimpleFilters" alt="" coords="800,1069,1512,1116"/>
+<area shape="rect" id="node37" href="$class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html" title="Provides extensibility points for drawing watermarks and even modifying resizing/image settings..." alt="" coords="782,1140,1530,1186"/>
+<area shape="rect" id="node39" href="$class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html" title="ImageResizer.Plugins.WhitespaceTrimmer.WhitespaceTrimmerPlugin" alt="" coords="654,1210,1658,1257"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html" title="ImageResizer.Plugins.WicEncoder.WicEncoderPlugin" alt="" coords="1707,292,2485,338"/>
+</map>

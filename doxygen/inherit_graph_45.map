@@ -1,0 +1,13 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file. Implementing this allows usage of your VirtualProvider without registering it with AS..." alt="" coords="6,270,493,317"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_file.html" title="ImageResizer.Plugins.AzureReader.AzureFile" alt="" coords="597,5,1259,51"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient_1_1_gradient_virtual_file.html" title="ImageResizer.Plugins.Basic.Gradient.GradientVirtualFile" alt="" coords="1479,93,2294,139"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder_1_1_virtual_folder_provider_virtual_file.html" title="ImageResizer.Plugins.Basic.VirtualFolder.VirtualFolderProviderVirtualFile" alt="" coords="1363,261,2410,307"/>
+<area shape="rect" id="node9" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_bitmap_file.html" title="For virtual files who want to provide their data in Bitmap form (like a PSD reader or gradient genera..." alt="" coords="635,127,1221,174"/>
+<area shape="rect" id="node12" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_virtual_file.html" title="ImageResizer.Plugins.PsdComposer.PsdVirtualFile" alt="" coords="1517,189,2257,235"/>
+<area shape="rect" id="node14" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html" title="Always implement this if possible. Allows caching systems to detect changes to source files and inval..." alt="" coords="559,301,1297,347"/>
+<area shape="rect" id="node18" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html" title="ImageResizer.Plugins.S3Reader.S3File" alt="" coords="1598,334,2175,381"/>
+<area shape="rect" id="node20" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_database_file.html" title="Represents a blob stored in the database. Provides methods for verifying existence, opening a stream, and checking the modified date. Modified date and existence values are cached after the first query." alt="" coords="1548,410,2225,457"/>
+<area shape="rect" id="node23" href="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html" title="ImageResizer.Plugins.RemoteReader.RemoteSiteFile" alt="" coords="541,474,1315,521"/>
+<area shape="rect" id="node27" href="$class_image_resizer_1_1_plugins_1_1_virtual_file_wrapper.html" title="Wraps a standard ASP.NET VirtualFile instance in an IVirtualFile&#45;compatible wrapper." alt="" coords="628,545,1228,591"/>
+</map>

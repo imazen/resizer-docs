@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>IEncoder - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm" class="current">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer.Encoding</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer.Encoding/IEncoder.htm" class="current">IEncoder</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Encoding/IEncoderProvider.htm">IEncoderProvider</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> IEncoder</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer.Encoding</p>
+		</header>
+    <div class="sub-header">
+			<div id="summary">An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility checking, and mime-type/extension calculation. 
+			</div>
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../ImageResizer.Encoding/IEncoder.htm#CreateIfSuitable">CreateIfSuitable</a></li>
+				<li><a href="../ImageResizer.Encoding/IEncoder.htm#Write">Write</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../ImageResizer.Encoding/IEncoder.htm#Extension">Extension</a></li>
+				<li><a href="../ImageResizer.Encoding/IEncoder.htm#MimeType">MimeType</a></li>
+				<li><a href="../ImageResizer.Encoding/IEncoder.htm#SupportsTransparency">SupportsTransparency</a></li>
+			</ul>
+		
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="CreateIfSuitable" class="method">
+		<h4>
+			<a href="../ImageResizer.Encoding/IEncoder.htm">IEncoder</a> <strong>CreateIfSuitable</strong>(<a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.object">object</span> original)
+		</h4>
+		<div class="content">If the encoder can handle the requirements specified by 'settings' and 'source', it should return an encoder instance.
+If not, it should return null. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
+						</dt>
+						<dd>Request settings, like format, quality, colors, dither, etc. 
+						</dd>
+						<dt>
+							<code><span title="System.object">object</span></code> original
+						</dt>
+						<dd>May be a Drawing.Image instance, a path, or null. To provide both, set Image.tag to the path. Helps the encoder detect the original format if the format was not specified.
+May also be used for palette generation hinting by some encoders. 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="Write" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Write</strong>(<span title="System.Drawing.Image">Image</span> i, <span title="System.IO.Stream">Stream</span> s)
+		</h4>
+		<div class="content">Encodes the image to the specified stream 
+
+
+
+
+		</div>
+	</div>
+	
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="Extension" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Extension</strong> get; 
+		</h4>
+		<div class="content">Returns a file extension appropriate for the output format as currently configured, without a leading dot. 
+
+		</div>
+	</div>
+	<div id="MimeType" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>MimeType</strong> get; 
+		</h4>
+		<div class="content">Returns the appropriate mime-time for the output format as currently configured. 
+
+		</div>
+	</div>
+	<div id="SupportsTransparency" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>SupportsTransparency</strong> get; 
+		</h4>
+		<div class="content">True if the output format will support transparency as it is currently configured. 
+
+		</div>
+	</div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

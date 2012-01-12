@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>PipelineConfig - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm" class="current">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer.Configuration</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer.Configuration/CacheSelectionHandler.htm">CacheSelectionHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/Config.htm">Config</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/ICacheSelectionEventArgs.htm">ICacheSelectionEventArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/IPipelineConfig.htm">IPipelineConfig</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/IUrlAuthorizationEventArgs.htm">IUrlAuthorizationEventArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/IUrlEventArgs.htm">IUrlEventArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/LoggingAvaialbleEvent.htm">LoggingAvaialbleEvent</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/PipelineConfig.htm" class="current">PipelineConfig</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/PluginConfig.htm">PluginConfig</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/PreHandleImageEventHandler.htm">PreHandleImageEventHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/RequestEventHandler.htm">RequestEventHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/UrlAuthorizationEventArgs.htm">UrlAuthorizationEventArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/UrlAuthorizationEventHandler.htm">UrlAuthorizationEventHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/UrlEventArgs.htm">UrlEventArgs</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/UrlEventHandler.htm">UrlEventHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/UrlRewritingEventHandler.htm">UrlRewritingEventHandler</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Configuration/VppUsageOption.htm">VppUsageOption</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> PipelineConfig</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer.Configuration</p>
+		<p><strong>Interfaces</strong> <a href="../ImageResizer.Configuration/IPipelineConfig.htm">IPipelineConfig</a>, <a href="../ImageResizer.Caching/ICacheProvider.htm">ICacheProvider</a>, <a href="../ImageResizer.Plugins/ISettingsModifier.htm">ISettingsModifier</a></p>
+		</header>
+    <div class="sub-header">
+		
+			<h3 class="section">Events</h3>
+			<ul>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#OnFirstRequest">OnFirstRequest</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#PostAuthorizeRequestStart">PostAuthorizeRequestStart</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#Rewrite">Rewrite</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#RewriteDefaults">RewriteDefaults</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#PostRewrite">PostRewrite</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#AuthorizeImage">AuthorizeImage</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#ImageMissing">ImageMissing</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#PreHandleImage">PreHandleImage</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#SelectCachingSystem">SelectCachingSystem</a></li>
+			</ul>
+		
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#AcceptedImageExtensions">AcceptedImageExtensions</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#FakeExtensions">FakeExtensions</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#IsHandlingRequest">IsHandlingRequest</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#ModifiedPathKey">ModifiedPathKey</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#ModifiedQueryString">ModifiedQueryString</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#ModifiedQueryStringKey">ModifiedQueryStringKey</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#ModuleInstalled">ModuleInstalled</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#PreRewritePath">PreRewritePath</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#ProcessedCount">ProcessedCount</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#ResponseArgsKey">ResponseArgsKey</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#SkipFileTypeCheck">SkipFileTypeCheck</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#SkipFileTypeCheckKey">SkipFileTypeCheckKey</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#StopRoutingKey">StopRoutingKey</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#SupportedQuerystringKeys">SupportedQuerystringKeys</a></li>
+				<li><a href="../ImageResizer.Configuration/PipelineConfig.htm#VppUsage">VppUsage</a></li>
+			</ul>
+		
+	</div>
+  <h3 class="section">Events</h3>
+
+  <div id="OnFirstRequest" class="method">
+    <h4><strong>OnFirstRequest</strong></h4>
+    <div class="content">Fired once, on the first PostAuthorizeRequest event. 
+    </div>
+  </div>
+  <div id="PostAuthorizeRequestStart" class="method">
+    <h4><strong>PostAuthorizeRequestStart</strong></h4>
+    <div class="content">Fires during the PostAuthorizeRequest phase, prior to any module-specific logic.
+Executes for every request to the website. Use only as a last resort. Other events occur only for image requests, and thus have lower overhead. 
+    </div>
+  </div>
+  <div id="Rewrite" class="method">
+    <h4><strong>Rewrite</strong></h4>
+    <div class="content">Fired during PostAuthorizeRequest, after ResizeExtension has been removed.
+On fired on requests with extensions that match supported image types. <p>You can add additonal supported image extentions by registering a plugin that implementes IQuerystringPlugin, or you can add an
+extra extension in the URL and remove it here. Example:.psd.jpg </p> 
+    </div>
+  </div>
+  <div id="RewriteDefaults" class="method">
+    <h4><strong>RewriteDefaults</strong></h4>
+    <div class="content">Fired during PostAuthorizeRequest, after Rewrite.
+Any changes made here (which conflict) will be overwritten by the the current querystring values. I.e, this is a good place to specify default settings. <p>Only fired on accepted image types. (see Rewrite) </p> 
+    </div>
+  </div>
+  <div id="PostRewrite" class="method">
+    <h4><strong>PostRewrite</strong></h4>
+    <div class="content">Fired after all other rewrite events. <p>Only fired on accepted image types. (see Rewrite) </p> 
+    </div>
+  </div>
+  <div id="AuthorizeImage" class="method">
+    <h4><strong>AuthorizeImage</strong></h4>
+    <div class="content">Fired after all rewriting is finished.
+e.AllowAccess defaults to the result of the UrlAuthorization module's verdict. It can be changed.
+Set e.AllowAccess to true to cause and 403 Access Dened result. 
+    </div>
+  </div>
+  <div id="ImageMissing" class="method">
+    <h4><strong>ImageMissing</strong></h4>
+    <div class="content">Fired when the specified image doesn't exist. Only called for images that would normally be processed.
+May be called during PostAuthorizeRequest or later - End the request completely with a redirect if you want alternate behavior. 
+    </div>
+  </div>
+  <div id="PreHandleImage" class="method">
+    <h4><strong>PreHandleImage</strong></h4>
+    <div class="content">Fired immediately before the image request is sent off to the caching system for proccessing.
+Allows modification of response headers, caching arguments, and callbacks. 
+    </div>
+  </div>
+  <div id="SelectCachingSystem" class="method">
+    <h4><strong>SelectCachingSystem</strong></h4>
+    <div class="content">
+    </div>
+  </div>
+	
+	
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="AcceptedImageExtensions" class="method">
+		<h4>
+			<span title="System.Collections.Generic.ICollection<string>">ICollection&lt;string&gt;</span> <strong>AcceptedImageExtensions</strong> get; 
+		</h4>
+		<div class="content">Returns a unqiue copy of the image extensions supported by the pipeline. Performs a cached query to all registered IQuerystringPlugin instances.
+Use IsAcceptedImageType for better performance. 
+
+		</div>
+	</div>
+	<div id="FakeExtensions" class="method">
+		<h4>
+			<span title="System.Collections.Generic.IList<string>">IList&lt;string&gt;</span> <strong>FakeExtensions</strong> get; 
+		</h4>
+		<div class="content">Cached access to pipeline.fakeExtensions 
+
+		</div>
+	</div>
+	<div id="IsHandlingRequest" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>IsHandlingRequest</strong> get; 
+		</h4>
+		<div class="content">Returns true if the current request is being processed and/or cached by the pipeline.
+Will return false until *after* the FileExists method is called on the VirtualPathProviders, which is after the
+AuthorizeImage event fires.
+This will return a usable value if used from VirtualFile.Open(), or if used inside the PreHandleImage event or later. 
+
+		</div>
+	</div>
+	<div id="ModifiedPathKey" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ModifiedPathKey</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ModifiedQueryString" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>ModifiedQueryString</strong> get; set;
+		</h4>
+		<div class="content">Returns the modified query string. If never set, returns a copy of Request.QueryString.
+Returns the same instance if called multiple times. Copy it if you want to make changes without causing issues. 
+
+		</div>
+	</div>
+	<div id="ModifiedQueryStringKey" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ModifiedQueryStringKey</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="ModuleInstalled" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>ModuleInstalled</strong> get; set;
+		</h4>
+		<div class="content">True once the InterceptModule has been installed and is intercepting requests. 
+
+		</div>
+	</div>
+	<div id="PreRewritePath" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>PreRewritePath</strong> get; set;
+		</h4>
+		<div class="content">Returns the value of Context.Items["resizer.newPath"] if present. If not, returns FilePath + PathInfo.
+Sets Context.Items["resizer.newPath"].
+Only useful during the Pipeline.PostAuthorizeRequestStart event. 
+
+		</div>
+	</div>
+	<div id="ProcessedCount" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>ProcessedCount</strong> get; 
+		</h4>
+		<div class="content">The number of images processed by this pipeline. 
+
+		</div>
+	</div>
+	<div id="ResponseArgsKey" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ResponseArgsKey</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="SkipFileTypeCheck" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>SkipFileTypeCheck</strong> get; set;
+		</h4>
+		<div class="content">Get or sets whether the file extension check should be applied to the current request. Defaults to true.
+If set to true, will only affect the current request, and will only cause the Resizer to evaluate the rewriting rules on the request.
+Processing may still not occur if no querystring values are specified. Add 'cache=always' to force caching to occur. 
+
+		</div>
+	</div>
+	<div id="SkipFileTypeCheckKey" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>SkipFileTypeCheckKey</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="StopRoutingKey" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>StopRoutingKey</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="SupportedQuerystringKeys" class="method">
+		<h4>
+			<span title="System.Collections.Generic.ICollection<string>">ICollection&lt;string&gt;</span> <strong>SupportedQuerystringKeys</strong> get; 
+		</h4>
+		<div class="content">Returns a unqiue copy of all querystring keys supported by the pipeline. Performs a cached query to all registered IQuerystringPlugin instances.
+Use HasPipelineDirective for better performance. (binary search) 
+
+		</div>
+	</div>
+	<div id="VppUsage" class="method">
+		<h4>
+			<a href="../ImageResizer.Configuration/VppUsageOption.htm">VppUsageOption</a> <strong>VppUsage</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

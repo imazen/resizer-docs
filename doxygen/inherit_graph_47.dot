@@ -1,0 +1,7 @@
+digraph G
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ImageResizer.Plugins.MvcRoutingShim.StopRoutingRoute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_mvc_routing_shim_1_1_stop_routing_route.html"];
+}

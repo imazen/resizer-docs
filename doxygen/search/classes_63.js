@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['cachedfileinfo',['CachedFileInfo',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_file_info.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['cachedfolder',['CachedFolder',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['cacheindex',['CacheIndex',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_index.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['cacheresult',['CacheResult',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['cacheselectioneventargs',['CacheSelectionEventArgs',['../class_image_resizer_1_1_configuration_1_1_cache_selection_event_args.html',1,'ImageResizer::Configuration']]],
+  ['cairjob',['CairJob',['../class_image_resizer_1_1_plugins_1_1_seam_carving_1_1_cair_job.html',1,'ImageResizer::Plugins::SeamCarving']]],
+  ['caption',['Caption',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_caption_1_1_caption.html',1,'ImageResizer::Plugins::Basic::Caption']]],
+  ['cax',['CAX',['../struct_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_unmanaged_prop_variant_1_1_c_a_x.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes::UnmanagedPropVariant']]],
+  ['cleanupmanager',['CleanupManager',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_manager.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['cleanupqueue',['CleanupQueue',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_1_1_cleanup_queue.html',1,'ImageResizer::Plugins::DiskCache::Cleanup']]],
+  ['cleanupstrategy',['CleanupStrategy',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['cleanupworker',['CleanupWorker',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['cleanupworkitem',['CleanupWorkItem',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_work_item.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['clientcache',['ClientCache',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_client_cache.html',1,'ImageResizer::Plugins::Basic']]],
+  ['cloudfrontplugin',['CloudFrontPlugin',['../class_image_resizer_1_1_plugins_1_1_cloud_front_1_1_cloud_front_plugin.html',1,'ImageResizer::Plugins::CloudFront']]],
+  ['color32',['Color32',['../struct_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_quantizer_1_1_color32.html',1,'ImageResizer::Plugins::PrettyGifs::Quantizer']]],
+  ['commitattribute',['CommitAttribute',['../class_image_resizer_1_1_util_1_1_commit_attribute.html',1,'ImageResizer::Util']]],
+  ['config',['Config',['../class_image_resizer_1_1_configuration_1_1_config.html',1,'ImageResizer::Configuration']]],
+  ['configchecker',['ConfigChecker',['../class_image_resizer_1_1_configuration_1_1_issues_1_1_config_checker.html',1,'ImageResizer::Configuration::Issues']]],
+  ['consts',['Consts',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_consts.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes']]],
+  ['conversionutils',['ConversionUtils',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_conversion_utils.html',1,'ImageResizer::Plugins::Wic']]],
+  ['crc',['CRC',['../class_seven_zip_reduced_1_1_c_r_c.html',1,'SevenZipReduced']]],
+  ['customdiskcache',['CustomDiskCache',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['cy',['CY',['../struct_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_unmanaged_prop_variant_1_1_c_y.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes::UnmanagedPropVariant']]]
+];

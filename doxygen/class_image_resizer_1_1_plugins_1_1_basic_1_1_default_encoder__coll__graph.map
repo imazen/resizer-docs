@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec..." alt="" coords="11,6,159,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="184,6,467,53"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="491,6,609,53"/>
+</map>

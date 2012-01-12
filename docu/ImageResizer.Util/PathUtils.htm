@@ -1,0 +1,465 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>PathUtils - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm" class="current">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer.Util</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer.Util/BuildTypeAttribute.htm">BuildTypeAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/BundleAttribute.htm">BundleAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/CommitAttribute.htm">CommitAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/ForEachFunction.htm">ForEachFunction</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/PathUtils.htm" class="current">PathUtils</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/PolygonMath.htm">PolygonMath</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/StreamUtils.htm">StreamUtils</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/UrlHasher.htm">UrlHasher</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/Utils.htm">Utils</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/VariableResolverCallback.htm">VariableResolverCallback</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> PathUtils</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer.Util</p>
+		</header>
+    <div class="sub-header">
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#AddExtension">AddExtension</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#AddQueryString">AddQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#BuildQueryString">BuildQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#BuildQueryString">BuildQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#FromBase64UToButes">FromBase64UToButes</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#FromBase64UToString">FromBase64UToString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#GenerateImageUrl">GenerateImageUrl</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#GetExtension">GetExtension</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#GetFullExtension">GetFullExtension</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#GuessVirtualPath">GuessVirtualPath</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#MapPathIfAppRelative">MapPathIfAppRelative</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#MergeOverwriteQueryString">MergeOverwriteQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#MergeQueryString">MergeQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ParseQueryString">ParseQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ParseQueryStringFriendly">ParseQueryStringFriendly</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ParseQueryStringFriendlyAllowSemicolons">ParseQueryStringFriendlyAllowSemicolons</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#RemoveExtension">RemoveExtension</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#RemoveFullExtension">RemoveFullExtension</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#RemoveQueryString">RemoveQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ResolveAppRelative">ResolveAppRelative</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ResolveAppRelativeAssumeAppRelative">ResolveAppRelativeAssumeAppRelative</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ResolveVariablesInPath">ResolveVariablesInPath</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#SetExtension">SetExtension</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ToBase64U">ToBase64U</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ToBase64U">ToBase64U</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#AppPhysicalPath">AppPhysicalPath</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#AppVirtualPath">AppVirtualPath</a></li>
+			</ul>
+		
+	</div>
+	
+	
+	<h3 class="section">Public static methods</h3>
+
+	<div id="AddExtension" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AddExtension</strong>(<span title="System.string">string</span> path, <span title="System.string">string</span> newExtension)
+		</h4>
+		<div class="content">Adds the specified extension to path, returning the result. Multiple calls will result in "path.ext.ext.ext.ext".
+maintains the querystring as-is. 
+
+
+
+
+		</div>
+	</div>
+	<div id="AddQueryString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AddQueryString</strong>(<span title="System.string">string</span> virtualPath, <span title="System.string">string</span> querystring)
+		</h4>
+		<div class="content">Joins the path and querystring. If the path already contains a querystring, they are 'append joined' with the correct character. 
+
+
+
+
+		</div>
+	</div>
+	<div id="BuildQueryString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>BuildQueryString</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> QueryString, <span title="System.bool">bool</span> urlEncode)
+		</h4>
+		<div class="content">Returns a string querystring in the form "?key=value&key=value".
+Keys and values are UrlEncoded if urlEncode=true. 
+
+
+
+
+		</div>
+	</div>
+	<div id="BuildQueryString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>BuildQueryString</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> QueryString)
+		</h4>
+		<div class="content">Returns a string querystring in the form "?key=value&key=value".
+Keys and values are UrlEncoded as they should be. 
+
+
+
+
+		</div>
+	</div>
+	<div id="FromBase64UToButes" class="method">
+		<h4>
+			<span title="System.Byte[]">Byte[]</span> <strong>FromBase64UToButes</strong>(<span title="System.string">string</span> data)
+		</h4>
+		<div class="content">Converts a URL-safe version of base64 to a byte array.  (no = padding, with - instead of + and _ instead of /) 
+
+
+
+
+		</div>
+	</div>
+	<div id="FromBase64UToString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>FromBase64UToString</strong>(<span title="System.string">string</span> data)
+		</h4>
+		<div class="content">Converts a URL-safe version of base64 to a string. 64U is (no = padding, with - instead of + and _ instead of /) 
+
+
+
+
+		</div>
+	</div>
+	<div id="GenerateImageUrl" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GenerateImageUrl</strong>(<span title="System.string">string</span> path, <span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> query)
+		</h4>
+		<div class="content">Generates a resized image url for the specified physical or virtual path.
+Not CloudFront compatible. Does not support remote URLs, use RemoteReader for that.
+If you're running in IIS classic, add ".ashx" to the 'path' parameter. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetExtension" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetExtension</strong>(<span title="System.string">string</span> path)
+		</h4>
+		<div class="content">Ignores the querystring. Grabs the last segment of the filename extension. Returns an empty string if there is no extension, or if the extension contains a space.
+Includes the leading '.' 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetFullExtension" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GetFullExtension</strong>(<span title="System.string">string</span> path)
+		</h4>
+		<div class="content">Will return the full extension, like ".jpg.ashx", not just the last bit.
+Ignores the querystring part. Excludes extensions containing spaces or slashes. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GuessVirtualPath" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>GuessVirtualPath</strong>(<span title="System.string">string</span> path)
+		</h4>
+		<div class="content">Attempts to guess the virtual path from physical path. Will be thrwarted if the path is mapped as a virtual folder inside the application.
+If the path is a non-physical path, it will be returned as is.
+Returns null if the physical path isn't a subfolder of the application's physical path. 
+
+
+
+
+		</div>
+	</div>
+	<div id="MapPathIfAppRelative" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>MapPathIfAppRelative</strong>(<span title="System.string">string</span> path)
+		</h4>
+		<div class="content">Returns the physcial mapped path for the specified virtual path if it starts with ~, otherwise retuns the original path. 
+
+
+
+
+		</div>
+	</div>
+	<div id="MergeOverwriteQueryString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>MergeOverwriteQueryString</strong>(<span title="System.string">string</span> path, <span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> newQuerystring)
+		</h4>
+		<div class="content">Overwrites exisisting querystring values in 'path' with the values in 'newQuerystring'. Doesn't support ; querystrings 
+
+
+
+
+		</div>
+	</div>
+	<div id="MergeQueryString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>MergeQueryString</strong>(<span title="System.string">string</span> path, <span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> newQuerystring)
+		</h4>
+		<div class="content">Adds the querystring values in 'newQuerystring' to the querystring in Path, but does not overwrite values. Doesn't support ; querystrings 
+
+
+
+
+		</div>
+	</div>
+	<div id="ParseQueryString" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>ParseQueryString</strong>(<span title="System.string">string</span> path)
+		</h4>
+		<div class="content">Parses the querystring from the given path into a NameValueCollection.
+accepts "file?key=value" and "?key=value&key2=value2" formats. (no path is required)
+UrlDecodes keys and values. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ParseQueryStringFriendly" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>ParseQueryStringFriendly</strong>(<span title="System.string">string</span> path)
+		</h4>
+		<div class="content">Like ParseQueryString, but permits the leading '?' to be omitted. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ParseQueryStringFriendlyAllowSemicolons" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>ParseQueryStringFriendlyAllowSemicolons</strong>(<span title="System.string">string</span> path)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="RemoveExtension" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>RemoveExtension</strong>(<span title="System.string">string</span> path)
+		</h4>
+		<div class="content">Removes the extension from the filename or URL, leaving the querystring intact, where the extension is only the last extension segment.
+I.e, image.jpg.bmp.tiff?hi would be image.jpg.bmp?hi after this call. 
+
+
+
+
+		</div>
+	</div>
+	<div id="RemoveFullExtension" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>RemoveFullExtension</strong>(<span title="System.string">string</span> path)
+		</h4>
+		<div class="content">Removes all extension segments from the filename or URL, leaving the querystring intact. I.e, image.jpg.bmp.tiff?hi would be image?hi 
+
+
+
+
+		</div>
+	</div>
+	<div id="RemoveQueryString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>RemoveQueryString</strong>(<span title="System.string">string</span> path)
+		</h4>
+		<div class="content">Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ResolveAppRelative" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ResolveAppRelative</strong>(<span title="System.string">string</span> virtualPath)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ResolveAppRelativeAssumeAppRelative" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ResolveAppRelativeAssumeAppRelative</strong>(<span title="System.string">string</span> virtualPath)
+		</h4>
+		<div class="content">Turns relative paths into domain-relative paths.
+Turns app-relative paths into domain relative paths. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ResolveVariablesInPath" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ResolveVariablesInPath</strong>(<span title="System.string">string</span> pathWithVars, <a href="../ImageResizer.Util/VariableResolverCallback.htm">VariableResolverCallback</a> resolver)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="SetExtension" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>SetExtension</strong>(<span title="System.string">string</span> path, <span title="System.string">string</span> newExtension)
+		</h4>
+		<div class="content">Sets the file extension of the specified path to the specified value, returning the result.
+If an extension has multiple parts, it will replace all of them.
+Leading dots will be stripped from 'newExtension' and re-addd as required. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ToBase64U" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ToBase64U</strong>(<span title="System.string">string</span> data)
+		</h4>
+		<div class="content">Converts aribtrary strings to a URL-safe version of base64 (no = padding, with - instead of + and _ instead of /) 
+
+
+
+
+		</div>
+	</div>
+	<div id="ToBase64U" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ToBase64U</strong>(<span title="System.Byte[]">Byte[]</span> data)
+		</h4>
+		<div class="content">Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ instead of /) 
+
+
+
+
+		</div>
+	</div>
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="AppPhysicalPath" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AppPhysicalPath</strong> get; 
+		</h4>
+		<div class="content">If not running in ASP.NET, returns the folder containing the DLL. 
+
+		</div>
+	</div>
+	<div id="AppVirtualPath" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>AppVirtualPath</strong> get; 
+		</h4>
+		<div class="content">Returns HostingEnvironment.ApplicationVirtualPath or "/", if asp.net is not running 
+
+		</div>
+	</div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

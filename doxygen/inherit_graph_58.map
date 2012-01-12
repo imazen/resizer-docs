@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_quantizer.html" title="Abstract Quantizer class &#45; handles the messy, algorithm&#45;independent details of quantization. Subclasses must implement InitialQuantizePixel, GetPallete(), and QuantizePixel. Not thread&#45;safe!" alt="" coords="6,5,629,51"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_octree_quantizer.html" title="Quantize using an Octree." alt="" coords="678,5,1397,51"/>
+</map>

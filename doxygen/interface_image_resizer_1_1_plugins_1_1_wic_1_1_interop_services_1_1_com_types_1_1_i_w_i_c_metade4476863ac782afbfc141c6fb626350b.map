@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node5" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_reader_info.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataReaderInfo" alt="" coords="1568,5,2715,51"/>
+<area shape="rect" id="node7" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_writer_info.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataWriterInfo" alt="" coords="1575,75,2707,122"/>
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_component_info.html" title="IWICComponentInfo" alt="" coords="5,41,317,87"/>
+</map>

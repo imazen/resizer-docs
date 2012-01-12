@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>AbstractImageProcessor - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm" class="current">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer.Resizing</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer.Resizing/AbstractImageProcessor.htm" class="current">AbstractImageProcessor</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/BitmapTag.htm">BitmapTag</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/BoxPadding.htm">BoxPadding</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/BuilderExtension.htm">BuilderExtension</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/ImageState.htm">ImageState</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/LayoutBuilder.htm">LayoutBuilder</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/PointFlags.htm">PointFlags</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/PointSet.htm">PointSet</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/PointTranslationBehavior.htm">PointTranslationBehavior</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Resizing/RequestedAction.htm">RequestedAction</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> AbstractImageProcessor</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer.Resizing</p>
+		</header>
+    <div class="sub-header">
+			<div id="summary">Not for external use. Inherit from BuilderExtension instead.
+Dual-purpose base class for both ImageBuilder and BuilderExtension
+Extensions can inherit and override certain methods.
+ImageBuilder inherits this method to utilize its extension invocation code.
+Each method of AbstractImageProcessor loops through all extensions and executes the same method on each. Provides a sort of multiple-inheritance mechanisim. 
+			</div>
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../ImageResizer.Resizing/AbstractImageProcessor.htm#DecodeStream">DecodeStream</a></li>
+				<li><a href="../ImageResizer.Resizing/AbstractImageProcessor.htm#DecodeStreamFailed">DecodeStreamFailed</a></li>
+				<li><a href="../ImageResizer.Resizing/AbstractImageProcessor.htm#Equals">Equals</a></li>
+				<li><a href="../ImageResizer.Resizing/AbstractImageProcessor.htm#GetHashCode">GetHashCode</a></li>
+				<li><a href="../ImageResizer.Resizing/AbstractImageProcessor.htm#GetType">GetType</a></li>
+				<li><a href="../ImageResizer.Resizing/AbstractImageProcessor.htm#ToString">ToString</a></li>
+			</ul>
+		
+		
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="DecodeStream" class="method">
+		<h4>
+			<span title="System.Drawing.Bitmap">Bitmap</span> <strong>DecodeStream</strong>(<span title="System.IO.Stream">Stream</span> s, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.string">string</span> optionalPath)
+		</h4>
+		<div class="content">Extend this to support alternate image source formats.
+If the Bitmap class is used for decoding, read gdi-bugs.txt and make sure you set b.Tag to new BitmapTag(optionalPath,stream); 
+
+
+
+
+		</div>
+	</div>
+	<div id="DecodeStreamFailed" class="method">
+		<h4>
+			<span title="System.Drawing.Bitmap">Bitmap</span> <strong>DecodeStreamFailed</strong>(<span title="System.IO.Stream">Stream</span> s, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.string">string</span> optionalPath)
+		</h4>
+		<div class="content">Extensions are executed until one extension returns a non-null value.
+This is taken to mean that the error has been resolved.
+Extensions should not throw an exception unless they wish to cause subsequent extensions to not execute.
+If extensions throw an ArgumentException or ExternalException, it will be wrapped in an ImageCorruptedException instance.
+If the Bitmap class is used for decoding, read gdi-bugs.txt and make sure you set b.Tag to new BitmapTag(optionalPath,stream); 
+
+
+
+
+		</div>
+	</div>
+	<div id="Equals" class="method">
+		<h4>
+			<span title="System.bool">bool</span> <strong>Equals</strong>(<span title="System.object">object</span> obj)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetHashCode" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>GetHashCode</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetType" class="method">
+		<h4>
+			<span title="System.Type">Type</span> <strong>GetType</strong>()
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="ToString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ToString</strong>()
+		</h4>
+		<div class="content">Returns a string containing all the settings in the class, in querystring form. Use ToStringEncoded() to get a URL-safe querystring.
+This method does not encode commas, spaces, etc. 
+
+
+
+
+		</div>
+	</div>
+	
+	
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>
