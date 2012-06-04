@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -132,8 +132,8 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>CustomDiskCache</b> (<a class="el" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_logger_provider.html">ILoggerProvider</a> lp, string physicalCachePath, int subfolders, bool hashModifiedDate, long asyncMaxQueuedBytes)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html">CacheResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a262bea285f70f5a8a05732e1e6a8c794">GetCachedFile</a> (string keyBasis, string extension, ResizeImageDelegate writeCallback, DateTime sourceModifiedUtc, int timeoutMs)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If the cached data exists and is up-to-date, returns the path to it. Otherwise, this function tries to cache the data and return the path.  <a href="#a262bea285f70f5a8a05732e1e6a8c794"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html">CacheResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a0392ef12cc0ebd1e3ef01e53775cf62e">GetCachedFile</a> (string keyBasis, string extension, ResizeImageDelegate writeCallback, DateTime sourceModifiedUtc, int timeoutMs, bool async)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">May return either a physical file name or a MemoryStream with the data. Faster than GetCachedFile, as writes are (usually) asynchronous. If the write queue is full, the write is forced to be synchronous again. Identical to <a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a262bea285f70f5a8a05732e1e6a8c794" title="If the cached data exists and is up-to-date, returns the path to it. Otherwise, this function tries t...">GetCachedFile()</a> when async=false.  <a href="#a0392ef12cc0ebd1e3ef01e53775cf62e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html">CacheResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a43cbe092ec6180f6f30fff0c7dd4d270">GetCachedFile</a> (string keyBasis, string extension, ResizeImageDelegate writeCallback, DateTime sourceModifiedUtc, int timeoutMs, bool asynchronous)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">May return either a physical file name or a MemoryStream with the data. Faster than GetCachedFile, as writes are (usually) asynchronous. If the write queue is full, the write is forced to be synchronous again. Identical to <a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a262bea285f70f5a8a05732e1e6a8c794" title="If the cached data exists and is up-to-date, returns the path to it. Otherwise, this function tries t...">GetCachedFile()</a> when asynchronous=false.  <a href="#a43cbe092ec6180f6f30fff0c7dd4d270"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0f4fe512032fd04d911f145ad3ade5b9"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CustomDiskCache::physicalCachePath" ref="a0f4fe512032fd04d911f145ad3ade5b9" args="" -->
@@ -155,7 +155,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>PhysicalCachePath</
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_lock_provider.html">LockProvider</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#ad6e28a6622b78c69d52b492ac1cd84dc">Locks</a><code> [get]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides string-based locking for file write access.  <a href="#ad6e28a6622b78c69d52b492ac1cd84dc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_lock_provider.html">LockProvider</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a43828a7d93f9850dd2497a48013cbcd6">QueueLocks</a><code> [get]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides string-based locking for image resizing (not writing, just processing). Prevents duplication of efforts in async mode, where 'Locks' is not being used.  <a href="#a43828a7d93f9850dd2497a48013cbcd6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides string-based locking for image resizing (not writing, just processing). Prevents duplication of efforts in asynchronous mode, where 'Locks' is not being used.  <a href="#a43828a7d93f9850dd2497a48013cbcd6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_async_1_1_async_write_collection.html">AsyncWriteCollection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a561a334189a8a0169f3e204bdb825502">CurrentWrites</a><code> [get]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all the queued and in-progress writes to the cache.  <a href="#a561a334189a8a0169f3e204bdb825502"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_index.html">CacheIndex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef">Index</a><code> [get]</code></td></tr>
@@ -233,7 +233,7 @@ Events</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a0392ef12cc0ebd1e3ef01e53775cf62e"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CustomDiskCache::GetCachedFile" ref="a0392ef12cc0ebd1e3ef01e53775cf62e" args="(string keyBasis, string extension, ResizeImageDelegate writeCallback, DateTime sourceModifiedUtc, int timeoutMs, bool async)" -->
+<a class="anchor" id="a43cbe092ec6180f6f30fff0c7dd4d270"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CustomDiskCache::GetCachedFile" ref="a43cbe092ec6180f6f30fff0c7dd4d270" args="(string keyBasis, string extension, ResizeImageDelegate writeCallback, DateTime sourceModifiedUtc, int timeoutMs, bool asynchronous)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -271,7 +271,7 @@ Events</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>async</em>&#160;</td>
+          <td class="paramname"><em>asynchronous</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -282,7 +282,7 @@ Events</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>May return either a physical file name or a MemoryStream with the data. Faster than GetCachedFile, as writes are (usually) asynchronous. If the write queue is full, the write is forced to be synchronous again. Identical to <a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a262bea285f70f5a8a05732e1e6a8c794" title="If the cached data exists and is up-to-date, returns the path to it. Otherwise, this function tries t...">GetCachedFile()</a> when async=false. </p>
+<p>May return either a physical file name or a MemoryStream with the data. Faster than GetCachedFile, as writes are (usually) asynchronous. If the write queue is full, the write is forced to be synchronous again. Identical to <a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a262bea285f70f5a8a05732e1e6a8c794" title="If the cached data exists and is up-to-date, returns the path to it. Otherwise, this function tries t...">GetCachedFile()</a> when asynchronous=false. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">keyBasis</td><td></td></tr>
@@ -296,7 +296,7 @@ Events</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 <p>Definition at line <a class="el" href="_custom_disk_cache_8cs_source.html#l00106">106</a> of file <a class="el" href="_custom_disk_cache_8cs_source.html">CustomDiskCache.cs</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                                                                                                                      {
+<div class="fragment"><pre class="fragment">                                                                                                                                                                             {
             Stopwatch sw = null;
             <span class="keywordflow">if</span> (lp.Logger != null) { sw = <span class="keyword">new</span> Stopwatch(); sw.Start(); }
 
@@ -306,10 +306,10 @@ Events</h2></td></tr>
 
             <span class="comment">//Hash the modified date if needed.</span>
             <span class="keywordflow">if</span> (hashModifiedDate &amp;&amp; hasModifiedDate)
-                keyBasis += <span class="stringliteral">&quot;|&quot;</span> + sourceModifiedUtc.Ticks.ToString();
+                keyBasis += <span class="stringliteral">&quot;|&quot;</span> + sourceModifiedUtc.Ticks.ToString(NumberFormatInfo.InvariantInfo);
 
             <span class="comment">//Relative to the cache directory. Not relative to the app or domain root</span>
-            <span class="keywordtype">string</span> relativePath = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_util_1_1_url_hasher.html">UrlHasher</a>().<a class="code" href="class_image_resizer_1_1_util_1_1_url_hasher.html#a8e8e85712a708fbb8d92fb3ca1b85991" title="Builds a key for the cached version, using the hashcode of the normalized URL. if subfolders &gt; 1...">hash</a>(keyBasis, subfolders, <span class="stringliteral">&quot;/&quot;</span>) + <span class="charliteral">&#39;.&#39;</span> + extension;
+            <span class="keywordtype">string</span> relativePath = <span class="keyword">new</span> UrlHasher().hash(keyBasis, subfolders, <span class="stringliteral">&quot;/&quot;</span>) + <span class="charliteral">&#39;.&#39;</span> + extension;
 
             <span class="comment">//Physical path</span>
             <span class="keywordtype">string</span> physicalPath = PhysicalCachePath.TrimEnd(<span class="charliteral">&#39;\\&#39;</span>, <span class="charliteral">&#39;/&#39;</span>) + System.IO.Path.DirectorySeparatorChar +
@@ -321,7 +321,7 @@ Events</h2></td></tr>
             <span class="keywordtype">bool</span> asyncFailed = <span class="keyword">false</span>;
 
              <span class="comment">//On the first check, verify the file exists using System.IO directly (the last &#39;true&#39; parameter).</span>
-            <span class="keywordflow">if</span> (!async) {
+            <span class="keywordflow">if</span> (!asynchronous) {
                 <span class="comment">//On the first check, verify the file exists using System.IO directly (the last &#39;true&#39; parameter)</span>
                 <span class="comment">//May throw an IOException if the file cannot be opened, and is locked by an external processes for longer than timeoutMs. </span>
                 <span class="comment">//This method may take longer than timeoutMs under absolute worst conditions. </span>
@@ -329,8 +329,8 @@ Events</h2></td></tr>
                     <span class="comment">//On failure</span>
                     result.Result = <a class="code" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html#afb29b25106a646c2ee694841e4b57fa8">CacheQueryResult</a>.Failed;
                 }
-            }<span class="keywordflow">else</span> <span class="keywordflow">if</span> (((!hasModifiedDate || hashModifiedDate) &amp;&amp; !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.existsCertain(relativePath, physicalPath)) || !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.modifiedDateMatchesCertainExists(sourceModifiedUtc, relativePath, physicalPath)) {
-
+            }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ((!hasModifiedDate || hashModifiedDate) ? !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.existsCertain(relativePath, physicalPath) : !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.modifiedDateMatchesCertainExists(sourceModifiedUtc, relativePath, physicalPath)) {
+                
                 <span class="comment">//Looks like a miss. Let&#39;s enter a lock for the creation of the file. This is a different locking system than for writing to the file - far less contention, as it doesn&#39;t include the </span>
                 <span class="comment">//This prevents two identical requests from duplicating efforts. Different requests don&#39;t lock.</span>
 
@@ -347,7 +347,7 @@ Events</h2></td></tr>
 
                         <span class="comment">//On the second check, use cached data for speed. The cached data should be updated if another thread updated a file (but not if another process did).</span>
                         <span class="keywordflow">if</span> (t == null &amp;&amp;
-                            (((!hasModifiedDate || hashModifiedDate) &amp;&amp; !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.exists(relativePath, physicalPath)) || !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.modifiedDateMatches(sourceModifiedUtc, relativePath, physicalPath))) {
+                            ((!hasModifiedDate || hashModifiedDate) ? !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.exists(relativePath, physicalPath) : !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.modifiedDateMatches(sourceModifiedUtc, relativePath, physicalPath))) {
 
                                 result.Result = <a class="code" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html#afb29b25106a646c2ee694841e4b57fa8">CacheQueryResult</a>.Miss;
                             <span class="comment">//Still a miss, we even rechecked the filesystem. Write to memory.</span>
@@ -408,7 +408,7 @@ Events</h2></td></tr>
             }
             <span class="keywordflow">if</span> (lp.Logger != null) {
                 sw.Stop();
-                lp.Logger.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_logger.html#a5125ea275ed8c2dda55c6f8e9f082b97" title="Writes the diagnostic message at the Trace level.">Trace</a>(<span class="stringliteral">&quot;{0}ms: {3}{1} for {2}, Key: {4}&quot;</span>, sw.ElapsedMilliseconds.ToString().PadLeft(4), result.Result.ToString(), result.RelativePath, async ? (asyncFailed ? <span class="stringliteral">&quot;Fallback to sync  &quot;</span> : <span class="stringliteral">&quot;Async &quot;</span>) : <span class="stringliteral">&quot;&quot;</span>, keyBasis);
+                lp.Logger.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_logger.html#a5125ea275ed8c2dda55c6f8e9f082b97" title="Writes the diagnostic message at the Trace level.">Trace</a>(<span class="stringliteral">&quot;{0}ms: {3}{1} for {2}, Key: {4}&quot;</span>, sw.ElapsedMilliseconds.ToString(NumberFormatInfo.InvariantInfo).PadLeft(4), result.Result.ToString(), result.RelativePath, asynchronous ? (asyncFailed ? <span class="stringliteral">&quot;Fallback to sync  &quot;</span> : <span class="stringliteral">&quot;Async &quot;</span>) : <span class="stringliteral">&quot;&quot;</span>, keyBasis);
             }
             <span class="comment">//Fire event</span>
             <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a3c6eebab73d41d608b5638aa0d992806" title="Fired immediately before GetCachedFile return the result value.">CacheResultReturned</a> != null) <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a3c6eebab73d41d608b5638aa0d992806" title="Fired immediately before GetCachedFile return the result value.">CacheResultReturned</a>(<span class="keyword">this</span>, result);
@@ -480,7 +480,7 @@ Events</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Provides string-based locking for image resizing (not writing, just processing). Prevents duplication of efforts in async mode, where 'Locks' is not being used. </p>
+<p>Provides string-based locking for image resizing (not writing, just processing). Prevents duplication of efforts in asynchronous mode, where 'Locks' is not being used. </p>
 
 <p>Definition at line <a class="el" href="_custom_disk_cache_8cs_source.html#l00057">57</a> of file <a class="el" href="_custom_disk_cache_8cs_source.html">CustomDiskCache.cs</a>.</p>
 

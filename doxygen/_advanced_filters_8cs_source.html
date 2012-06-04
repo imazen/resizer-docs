@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -89,170 +89,193 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00006"></a>00006 <span class="keyword">using</span> ImageResizer.Resizing;
 <a name="l00007"></a>00007 <span class="keyword">using</span> AForge.Imaging.Filters;
 <a name="l00008"></a>00008 <span class="keyword">using</span> AForge;
-<a name="l00009"></a><a class="code" href="namespace_image_resizer_1_1_plugins_1_1_advanced_filters.html">00009</a> <span class="keyword">namespace </span>ImageResizer.Plugins.<a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html">AdvancedFilters</a> {
-<a name="l00010"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html">00010</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html">AdvancedFilters</a>:<a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)">IQuerystringPlugin</a> {
-<a name="l00011"></a>00011         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html">AdvancedFilters</a>() {
-<a name="l00012"></a>00012         }
+<a name="l00009"></a>00009 <span class="keyword">using</span> System.Globalization;
+<a name="l00010"></a>00010 <span class="keyword">using</span> ImageResizer.Util;
+<a name="l00011"></a>00011 <span class="keyword">using</span> System.Drawing;
+<a name="l00012"></a>00012 <span class="keyword">using</span> ImageResizer.ExtensionMethods;
 <a name="l00013"></a>00013 
-<a name="l00014"></a>00014         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
-<a name="l00015"></a>00015             c.Plugins.add_plugin(<span class="keyword">this</span>);
-<a name="l00016"></a>00016             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00014"></a><a class="code" href="namespace_image_resizer_1_1_plugins_1_1_advanced_filters.html">00014</a> <span class="keyword">namespace </span>ImageResizer.Plugins.<a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html">AdvancedFilters</a> {
+<a name="l00015"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html">00015</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html">AdvancedFilters</a>:<a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)">IQuerystringPlugin</a> {
+<a name="l00016"></a>00016         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html">AdvancedFilters</a>() {
 <a name="l00017"></a>00017         }
 <a name="l00018"></a>00018 
-<a name="l00019"></a>00019         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
-<a name="l00020"></a>00020             c.Plugins.remove_plugin(<span class="keyword">this</span>);
-<a name="l00021"></a>00021             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00019"></a>00019         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
+<a name="l00020"></a>00020             c.Plugins.add_plugin(<span class="keyword">this</span>);
+<a name="l00021"></a>00021             <span class="keywordflow">return</span> <span class="keyword">this</span>;
 <a name="l00022"></a>00022         }
-<a name="l00023"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#a2f14f3c178492dbc8ba82dfe94db7545">00023</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#a2f14f3c178492dbc8ba82dfe94db7545" title="Process.5(Render).10: After the image is drawn.">PostRenderImage</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a> == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-<a name="l00026"></a>00026             <span class="keywordtype">string</span> str = null;
-<a name="l00027"></a>00027             <span class="keywordtype">int</span> i = 0;
-<a name="l00028"></a>00028             
-<a name="l00029"></a>00029             
-<a name="l00030"></a>00030             str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;blur&quot;</span>]; <span class="comment">//radius</span>
-<a name="l00031"></a>00031             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(str)) str= s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.blur&quot;</span>];
-<a name="l00032"></a>00032             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">int</span>.TryParse(str, out i))
-<a name="l00033"></a>00033                 <span class="keyword">new</span> GaussianBlur(1.4, i).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
-<a name="l00034"></a>00034             
-<a name="l00035"></a>00035             str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;sharpen&quot;</span>]; <span class="comment">//radius</span>
-<a name="l00036"></a>00036             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(str)) str= s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.sharpen&quot;</span>];
-<a name="l00037"></a>00037             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">int</span>.TryParse(str, out i))
-<a name="l00038"></a>00038                 <span class="keyword">new</span> GaussianSharpen(1.4, i).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040             str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.oilpainting&quot;</span>]; <span class="comment">//radius</span>
-<a name="l00041"></a>00041             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">int</span>.TryParse(str, out i))
-<a name="l00042"></a>00042                 <span class="keyword">new</span> OilPainting(i).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
+<a name="l00025"></a>00025             c.Plugins.remove_plugin(<span class="keyword">this</span>);
+<a name="l00026"></a>00026             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00027"></a>00027         }
+<a name="l00028"></a>00028 <span class="comment"></span>
+<a name="l00029"></a>00029 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00030"></a>00030 <span class="comment">        /// Calculates a radius based on the provided value, using min(width/height) as the normalizing factor. Querystring values are interpreted as 1/1000ths of the normalizing factor.</span>
+<a name="l00031"></a>00031 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00032"></a>00032 <span class="comment">        /// &lt;param name=&quot;s&quot;&gt;&lt;/param&gt;</span>
+<a name="l00033"></a>00033 <span class="comment">        /// &lt;param name=&quot;key&quot;&gt;&lt;/param&gt;</span>
+<a name="l00034"></a>00034 <span class="comment">        /// &lt;param name=&quot;key2&quot;&gt;&lt;/param&gt;</span>
+<a name="l00035"></a>00035 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00036"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#ac64f3ef30b544c1bb33b706978d6dee6">00036</a> <span class="comment"></span>        <span class="keyword">protected</span> <span class="keywordtype">int</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#ac64f3ef30b544c1bb33b706978d6dee6" title="Calculates a radius based on the provided value, using min(width/height) as the normalizing factor...">GetRadius</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s, <span class="keywordtype">string</span> key, <span class="keywordtype">string</span> key2, <span class="keywordtype">double</span> units) {
+<a name="l00037"></a>00037             <span class="keywordtype">string</span> str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[key];
+<a name="l00038"></a>00038             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; key2 != null) str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[key2];
+<a name="l00039"></a>00039             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(str)) <span class="keywordflow">return</span> -1;
+<a name="l00040"></a>00040             <span class="keywordtype">double</span> d;
+<a name="l00041"></a>00041             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.TryParse(str, <a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html" title="Provides invariant parsing &amp; serialization of primitive types, like Enums, integers, floats, and booleans.">ParseUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html#a42453d70c2d660deaffbf5554be90f03" title="Defines a parsing style that permits leading/trailing whitespace, a leading negitve/postiive sign...">FloatingPointStyle</a>, NumberFormatInfo.InvariantInfo, out d) &amp;&amp; d &gt; 0) {
+<a name="l00042"></a>00042                 <span class="keywordtype">double</span> factor = Util.PolygonMath.GetShortestPair(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]) / units;
 <a name="l00043"></a>00043 
-<a name="l00044"></a>00044             str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.removenoise&quot;</span>]; <span class="comment">//radius</span>
-<a name="l00045"></a>00045             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(str, StringComparison.OrdinalIgnoreCase)) str = <span class="stringliteral">&quot;3&quot;</span>;
-<a name="l00046"></a>00046             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">int</span>.TryParse(str, out i))
-<a name="l00047"></a>00047                 <span class="keyword">new</span> ConservativeSmoothing(i).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>); 
-<a name="l00048"></a>00048 
-<a name="l00049"></a>00049             <span class="comment">//Sobel only supports 8bpp grayscale images.</span>
-<a name="l00050"></a>00050             <span class="comment">//true/false</span>
-<a name="l00051"></a>00051             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.sobel&quot;</span>], StringComparison.OrdinalIgnoreCase)){
-<a name="l00052"></a>00052                 <span class="keyword">using</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>){
-<a name="l00053"></a>00053                     s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a> = Grayscale.CommonAlgorithms.Y.Apply(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
-<a name="l00054"></a>00054                     
-<a name="l00055"></a>00055                 }
-<a name="l00056"></a>00056                 <span class="keyword">new</span> SobelEdgeDetector().ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058                 str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.threshold&quot;</span>]; <span class="comment">//radius</span>
-<a name="l00059"></a>00059                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">int</span>.TryParse(str, out i))
-<a name="l00060"></a>00060                  <span class="keyword">new</span> Threshold(i).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
-<a name="l00061"></a>00061     
-<a name="l00062"></a>00062             }
-<a name="l00063"></a>00063             <span class="comment">//Canny Edge Detector only supports 8bpp grayscale images.</span>
-<a name="l00064"></a>00064             <span class="comment">//true/false</span>
-<a name="l00065"></a>00065             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.canny&quot;</span>], StringComparison.OrdinalIgnoreCase)) {
-<a name="l00066"></a>00066                 <span class="keyword">using</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>) {
-<a name="l00067"></a>00067                     s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a> = Grayscale.CommonAlgorithms.Y.Apply(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00044"></a>00044                 <span class="keywordflow">return</span> (<span class="keywordtype">int</span>)Math.Round(factor * d);
+<a name="l00045"></a>00045             }
+<a name="l00046"></a>00046             <span class="keywordflow">return</span> -1;
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048         }
+<a name="l00049"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#a2f14f3c178492dbc8ba82dfe94db7545">00049</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#a2f14f3c178492dbc8ba82dfe94db7545" title="Process.5(Render).11: After the image is drawn.">PostRenderImage</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
+<a name="l00050"></a>00050             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a> == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052             <span class="comment">//TODO: if the image is unrotated, use a rectangle to limit the effect to the desired area</span>
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054             <span class="keywordtype">string</span> str = null;
+<a name="l00055"></a>00055             <span class="keywordtype">int</span> i = 0;
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057             <span class="comment">//If radiusunits is specified, use that code path.</span>
+<a name="l00058"></a>00058             <span class="keywordtype">double</span> units = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.Get&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;a.radiusunits&quot;</span>,1000);
+<a name="l00059"></a>00059            
+<a name="l00060"></a>00060             i = GetRadius(s, <span class="stringliteral">&quot;blur&quot;</span>, <span class="stringliteral">&quot;a.blur&quot;</span>, units);
+<a name="l00061"></a>00061             <span class="keywordflow">if</span> (i &gt; 0) <span class="keyword">new</span> GaussianBlur(1.4, i).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063             i = GetRadius(s, <span class="stringliteral">&quot;sharpen&quot;</span>, <span class="stringliteral">&quot;a.sharpen&quot;</span>, units);
+<a name="l00064"></a>00064             <span class="keywordflow">if</span> (i &gt; 0) <span class="keyword">new</span> GaussianSharpen(1.4, i).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066             i = GetRadius(s, <span class="stringliteral">&quot;a.oilpainting&quot;</span>, null, units);
+<a name="l00067"></a>00067             <span class="keywordflow">if</span> (i &gt; 0) <span class="keyword">new</span> OilPainting(i).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
 <a name="l00068"></a>00068 
-<a name="l00069"></a>00069                 }
-<a name="l00070"></a>00070                 <span class="keyword">new</span> CannyEdgeDetector().ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073             }
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075             <span class="comment">//true/false - duplicate with SimpleFilters?</span>
-<a name="l00076"></a>00076             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.sepia&quot;</span>], StringComparison.OrdinalIgnoreCase))
-<a name="l00077"></a>00077                 <span class="keyword">new</span> Sepia().ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
-<a name="l00078"></a>00078             
+<a name="l00069"></a>00069             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.removenoise&quot;</span>], StringComparison.OrdinalIgnoreCase)) {
+<a name="l00070"></a>00070                 <span class="keyword">new</span> ConservativeSmoothing(3).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00071"></a>00071             } <span class="keywordflow">else</span> {
+<a name="l00072"></a>00072                 i = GetRadius(s, <span class="stringliteral">&quot;a.removenoise&quot;</span>, null, units);
+<a name="l00073"></a>00073                 <span class="keywordflow">if</span> (i &gt; 0) <span class="keyword">new</span> ConservativeSmoothing(i).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00074"></a>00074             }
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078             <span class="comment">//Sobel only supports 8bpp grayscale images.</span>
 <a name="l00079"></a>00079             <span class="comment">//true/false</span>
-<a name="l00080"></a>00080             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.equalize&quot;</span>], StringComparison.OrdinalIgnoreCase))
-<a name="l00081"></a>00081                 <span class="keyword">new</span> HistogramEqualization().ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
-<a name="l00082"></a>00082 
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084             str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.posterize&quot;</span>]; <span class="comment">//number of colors to merge</span>
-<a name="l00085"></a>00085             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">int</span>.TryParse(str, out i)){
-<a name="l00086"></a>00086                 SimplePosterization sp = <span class="keyword">new</span> SimplePosterization();
-<a name="l00087"></a>00087                 <span class="keywordflow">if</span> (i &lt; 1) i = 1; 
-<a name="l00088"></a>00088                 <span class="keywordflow">if</span> (i &gt; 255) i = 255;
-<a name="l00089"></a>00089                 sp.PosterizationInterval =(byte)i;
-<a name="l00090"></a>00090                 sp.ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>); 
+<a name="l00080"></a>00080             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.sobel&quot;</span>], StringComparison.OrdinalIgnoreCase)){
+<a name="l00081"></a>00081                 <span class="keyword">using</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>){
+<a name="l00082"></a>00082                     s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a> = Grayscale.CommonAlgorithms.Y.Apply(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00083"></a>00083                     
+<a name="l00084"></a>00084                 }
+<a name="l00085"></a>00085                 <span class="keyword">new</span> SobelEdgeDetector().ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087                 str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.threshold&quot;</span>]; <span class="comment">//radius</span>
+<a name="l00088"></a>00088                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">int</span>.TryParse(str, NumberStyles.Integer, NumberFormatInfo.InvariantInfo, out i) &amp;&amp; i &gt; 0)
+<a name="l00089"></a>00089                  <span class="keyword">new</span> Threshold(i).ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00090"></a>00090     
 <a name="l00091"></a>00091             }
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093             <span class="comment">//Pixellate doesn&#39;t support 32-bit images, only 24-bit</span>
-<a name="l00094"></a>00094             <span class="comment">//str = s.settings[&quot;a.pixelate&quot;]; //number of colors to merge</span>
-<a name="l00095"></a>00095             <span class="comment">//if (!string.IsNullOrEmpty(str) &amp;&amp; int.TryParse(str, out i)){</span>
-<a name="l00096"></a>00096             <span class="comment">//     if (i &lt; 2) i = 2; </span>
-<a name="l00097"></a>00097             <span class="comment">//    if (i &gt; 32) i = 32;</span>
-<a name="l00098"></a>00098             <span class="comment">//    new Pixellate(i).ApplyInPlace(s.destBitmap); </span>
-<a name="l00099"></a>00099             <span class="comment">//}</span>
-<a name="l00100"></a>00100             
+<a name="l00092"></a>00092             <span class="comment">//Canny Edge Detector only supports 8bpp grayscale images.</span>
+<a name="l00093"></a>00093             <span class="comment">//true/false</span>
+<a name="l00094"></a>00094             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.canny&quot;</span>], StringComparison.OrdinalIgnoreCase)) {
+<a name="l00095"></a>00095                 <span class="keyword">using</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>) {
+<a name="l00096"></a>00096                     s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a> = Grayscale.CommonAlgorithms.Y.Apply(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098                 }
+<a name="l00099"></a>00099                 <span class="keyword">new</span> CannyEdgeDetector().ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00100"></a>00100 
 <a name="l00101"></a>00101 
-<a name="l00102"></a>00102             str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.contrast&quot;</span>];
-<a name="l00103"></a>00103             <span class="keywordtype">string</span> strB = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.brightness&quot;</span>];
-<a name="l00104"></a>00104             <span class="keywordtype">string</span> strS = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.saturation&quot;</span>];
-<a name="l00105"></a>00105             
-<a name="l00106"></a>00106 
-<a name="l00107"></a>00107             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) || !<span class="keywordtype">string</span>.IsNullOrEmpty(strB) || !<span class="keywordtype">string</span>.IsNullOrEmpty(strS)) {
-<a name="l00108"></a>00108                 <span class="keywordtype">float</span> contrast, brightness, saturation;
-<a name="l00109"></a>00109                 <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(str) || !<span class="keywordtype">float</span>.TryParse(str, out contrast)) contrast = 0;
-<a name="l00110"></a>00110                 <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(strB) || !<span class="keywordtype">float</span>.TryParse(strB, out brightness)) brightness = 0;
-<a name="l00111"></a>00111                 <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(strS) || !<span class="keywordtype">float</span>.TryParse(strS, out saturation)) saturation = 0;
+<a name="l00102"></a>00102             }
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104             <span class="comment">//true/false - duplicate with SimpleFilters?</span>
+<a name="l00105"></a>00105             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.sepia&quot;</span>], StringComparison.OrdinalIgnoreCase))
+<a name="l00106"></a>00106                 <span class="keyword">new</span> Sepia().ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00107"></a>00107             
+<a name="l00108"></a>00108             <span class="comment">//true/false</span>
+<a name="l00109"></a>00109             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.equalize&quot;</span>], StringComparison.OrdinalIgnoreCase))
+<a name="l00110"></a>00110                 <span class="keyword">new</span> HistogramEqualization().ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00111"></a>00111 
 <a name="l00112"></a>00112 
-<a name="l00113"></a>00113                 HSLLinear adjust = <span class="keyword">new</span> HSLLinear();
-<a name="l00114"></a>00114                 AdjustContrastBrightnessSaturation(adjust, contrast, brightness, saturation, <span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.truncate&quot;</span>]));
-<a name="l00115"></a>00115                 adjust.ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
-<a name="l00116"></a>00116             }
-<a name="l00117"></a>00117             <span class="comment">//TODO - add grayscale?</span>
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119             <span class="comment">//For adding fax-like thresholding, use BradleyLocalThresholding</span>
-<a name="l00120"></a>00120 
-<a name="l00121"></a>00121             <span class="comment">//For trimming solid-color whitespace, use Shrink</span>
-<a name="l00122"></a>00122 
-<a name="l00123"></a>00123             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-<a name="l00124"></a>00124         }
-<a name="l00125"></a>00125 <span class="comment"></span>
-<a name="l00126"></a>00126 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00127"></a>00127 <span class="comment">        /// </span>
-<a name="l00128"></a>00128 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00129"></a>00129 <span class="comment">        /// &lt;param name=&quot;f&quot;&gt;&lt;/param&gt;</span>
-<a name="l00130"></a>00130 <span class="comment">        /// &lt;param name=&quot;contrast&quot;&gt;-1..1 float to adjust contrast. &lt;/param&gt;</span>
-<a name="l00131"></a>00131 <span class="comment">        /// &lt;param name=&quot;brightness&quot;&gt;-1..1 float to adjust luminance (brightness). 0 does nothing&lt;/param&gt;</span>
-<a name="l00132"></a>00132 <span class="comment">        /// &lt;param name=&quot;saturation&quot;&gt;-1..1 float to adjust saturation.  0 does nothing  &lt;/param&gt;</span>
-<a name="l00133"></a>00133 <span class="comment">        /// &lt;param name=&quot;truncate&quot;&gt;If false, adjusting brightness and luminance will adjust contrast also. True causes white/black washout instead.&lt;/param&gt;</span>
-<a name="l00134"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#af52859902b49d2eb03b00262889f5f78">00134</a> <span class="comment"></span>        <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#af52859902b49d2eb03b00262889f5f78">AdjustContrastBrightnessSaturation</a>(HSLLinear f, <span class="keywordtype">float</span> contrast, <span class="keywordtype">float</span> brightness, <span class="keywordtype">float</span> saturation, <span class="keywordtype">bool</span> truncate) {
-<a name="l00135"></a>00135             brightness = Math.Max(-1.0f, Math.Min(1.0f, brightness));
-<a name="l00136"></a>00136             saturation = Math.Max(-1.0f, Math.Min(1.0f, saturation));
-<a name="l00137"></a>00137             contrast = Math.Max(-1.0f, Math.Min(1.0f, contrast));
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139 
-<a name="l00140"></a>00140             <span class="comment">// create luminance filter</span>
-<a name="l00141"></a>00141             <span class="keywordflow">if</span> (brightness &gt; 0) {
-<a name="l00142"></a>00142                 f.InLuminance = <span class="keyword">new</span> Range(0.0f, 1.0f - (truncate ? brightness : 0)); <span class="comment">//TODO - isn&#39;t it better not to truncate, but compress?</span>
-<a name="l00143"></a>00143                 f.OutLuminance = <span class="keyword">new</span> Range(brightness, 1.0f);
-<a name="l00144"></a>00144             } <span class="keywordflow">else</span> {
-<a name="l00145"></a>00145                 f.InLuminance = <span class="keyword">new</span> Range((truncate ? -brightness : 0), 1.0f);
-<a name="l00146"></a>00146                 f.OutLuminance = <span class="keyword">new</span> Range(0.0f, 1.0f + brightness);
-<a name="l00147"></a>00147             }
-<a name="l00148"></a>00148             <span class="comment">// create saturation filter</span>
-<a name="l00149"></a>00149             <span class="keywordflow">if</span> (saturation &gt; 0) {
-<a name="l00150"></a>00150                 f.InSaturation = <span class="keyword">new</span> Range(0.0f, 1.0f - (truncate ? saturation : 0)); <span class="comment">//Ditto?</span>
-<a name="l00151"></a>00151                 f.OutSaturation = <span class="keyword">new</span> Range(saturation, 1.0f);
-<a name="l00152"></a>00152             } <span class="keywordflow">else</span> {
-<a name="l00153"></a>00153                 f.InSaturation = <span class="keyword">new</span> Range((truncate ? -saturation : 0), 1.0f);
-<a name="l00154"></a>00154                 f.OutSaturation = <span class="keyword">new</span> Range(0.0f, 1.0f + saturation);
-<a name="l00155"></a>00155             }
-<a name="l00156"></a>00156 
-<a name="l00157"></a>00157             <span class="keywordflow">if</span> (contrast &gt; 0) {
-<a name="l00158"></a>00158                 <span class="keywordtype">float</span> adjustment =  contrast * (f.InLuminance.Max - f.InLuminance.Min) / 2;
-<a name="l00159"></a>00159                 f.InLuminance = <span class="keyword">new</span> Range(f.InLuminance.Min + adjustment, f.InLuminance.Max - adjustment);
-<a name="l00160"></a>00160             } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (contrast &lt; 0) {
-<a name="l00161"></a>00161                 <span class="keywordtype">float</span> adjustment = -contrast * (f.OutLuminance.Max - f.OutLuminance.Min) / 2;
-<a name="l00162"></a>00162                 f.OutLuminance = <span class="keyword">new</span> Range(f.OutLuminance.Min + adjustment, f.OutLuminance.Max - adjustment);
-<a name="l00163"></a>00163             }
-<a name="l00164"></a>00164         }
-<a name="l00165"></a>00165 
-<a name="l00166"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#a7d79aa20acf3b420d028e3249ecbdcd4">00166</a>         <span class="keyword">public</span> IEnumerable&lt;string&gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#a7d79aa20acf3b420d028e3249ecbdcd4" title="If the plugin reads any values from the querystring, the names of the keys should be specified here...">GetSupportedQuerystringKeys</a>() {
-<a name="l00167"></a>00167             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;blur&quot;</span>, <span class="stringliteral">&quot;sharpen&quot;</span> , <span class="stringliteral">&quot;a.blur&quot;</span>, <span class="stringliteral">&quot;a.sharpen&quot;</span>, <span class="stringliteral">&quot;a.oilpainting&quot;</span>, <span class="stringliteral">&quot;a.removenoise&quot;</span>, 
-<a name="l00168"></a>00168                                 <span class="stringliteral">&quot;a.sobel&quot;</span>, <span class="stringliteral">&quot;a.threshold&quot;</span>, <span class="stringliteral">&quot;a.canny&quot;</span>, <span class="stringliteral">&quot;a.sepia&quot;</span>, <span class="stringliteral">&quot;a.equalize&quot;</span>, <span class="stringliteral">&quot;a.posterize&quot;</span>, 
-<a name="l00169"></a>00169                                 <span class="stringliteral">&quot;a.contrast&quot;</span>, <span class="stringliteral">&quot;a.brightness&quot;</span>, <span class="stringliteral">&quot;a.saturation&quot;</span>,<span class="stringliteral">&quot;a.truncate&quot;</span>};
-<a name="l00170"></a>00170         }
-<a name="l00171"></a>00171     }
-<a name="l00172"></a>00172 }
+<a name="l00113"></a>00113             str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.posterize&quot;</span>]; <span class="comment">//number of colors to merge</span>
+<a name="l00114"></a>00114             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">int</span>.TryParse(str, NumberStyles.Integer, NumberFormatInfo.InvariantInfo, out i) &amp;&amp; i &gt; 0) {
+<a name="l00115"></a>00115                 SimplePosterization sp = <span class="keyword">new</span> SimplePosterization();
+<a name="l00116"></a>00116                 <span class="keywordflow">if</span> (i &lt; 1) i = 1; 
+<a name="l00117"></a>00117                 <span class="keywordflow">if</span> (i &gt; 255) i = 255;
+<a name="l00118"></a>00118                 sp.PosterizationInterval =(byte)i;
+<a name="l00119"></a>00119                 sp.ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>); 
+<a name="l00120"></a>00120             }
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122             <span class="comment">//Pixellate doesn&#39;t support 32-bit images, only 24-bit</span>
+<a name="l00123"></a>00123             <span class="comment">//str = s.settings[&quot;a.pixelate&quot;]; //number of colors to merge</span>
+<a name="l00124"></a>00124             <span class="comment">//if (!string.IsNullOrEmpty(str) &amp;&amp; int.TryParse(str, out i)){</span>
+<a name="l00125"></a>00125             <span class="comment">//     if (i &lt; 2) i = 2; </span>
+<a name="l00126"></a>00126             <span class="comment">//    if (i &gt; 32) i = 32;</span>
+<a name="l00127"></a>00127             <span class="comment">//    new Pixellate(i).ApplyInPlace(s.destBitmap); </span>
+<a name="l00128"></a>00128             <span class="comment">//}</span>
+<a name="l00129"></a>00129             
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131             <span class="keywordtype">float</span> contrast = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.Get&lt;<span class="keywordtype">float</span>&gt;(<span class="stringliteral">&quot;a.contrast&quot;</span>, 0);
+<a name="l00132"></a>00132             <span class="keywordtype">float</span> brightness = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.Get&lt;<span class="keywordtype">float</span>&gt;(<span class="stringliteral">&quot;a.brightness&quot;</span>, 0);
+<a name="l00133"></a>00133             <span class="keywordtype">float</span> saturation = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.Get&lt;<span class="keywordtype">float</span>&gt;(<span class="stringliteral">&quot;a.saturation&quot;</span>, 0);
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135             <span class="keywordflow">if</span> (contrast != 0 || brightness != 0 || saturation != 0){
+<a name="l00136"></a>00136                 HSLLinear adjust = <span class="keyword">new</span> HSLLinear();
+<a name="l00137"></a>00137                 AdjustContrastBrightnessSaturation(adjust, contrast, brightness, saturation, <span class="stringliteral">&quot;true&quot;</span>.Equals(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;a.truncate&quot;</span>]));
+<a name="l00138"></a>00138                 adjust.ApplyInPlace(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a3ecc996b00bfe20e621a43107312233d" title="The destination bitmap. If null, skip drawing commands, but continue layout logic.">destBitmap</a>);
+<a name="l00139"></a>00139             }
+<a name="l00140"></a>00140             <span class="comment">//TODO - add grayscale?</span>
+<a name="l00141"></a>00141 
+<a name="l00142"></a>00142             <span class="comment">//For adding fax-like thresholding, use BradleyLocalThresholding</span>
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144             <span class="comment">//For trimming solid-color whitespace, use Shrink</span>
+<a name="l00145"></a>00145 
+<a name="l00146"></a>00146             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+<a name="l00147"></a>00147         }
+<a name="l00148"></a>00148 <span class="comment"></span>
+<a name="l00149"></a>00149 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00150"></a>00150 <span class="comment">        /// </span>
+<a name="l00151"></a>00151 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00152"></a>00152 <span class="comment">        /// &lt;param name=&quot;f&quot;&gt;&lt;/param&gt;</span>
+<a name="l00153"></a>00153 <span class="comment">        /// &lt;param name=&quot;contrast&quot;&gt;-1..1 float to adjust contrast. &lt;/param&gt;</span>
+<a name="l00154"></a>00154 <span class="comment">        /// &lt;param name=&quot;brightness&quot;&gt;-1..1 float to adjust luminance (brightness). 0 does nothing&lt;/param&gt;</span>
+<a name="l00155"></a>00155 <span class="comment">        /// &lt;param name=&quot;saturation&quot;&gt;-1..1 float to adjust saturation.  0 does nothing  &lt;/param&gt;</span>
+<a name="l00156"></a>00156 <span class="comment">        /// &lt;param name=&quot;truncate&quot;&gt;If false, adjusting brightness and luminance will adjust contrast also. True causes white/black washout instead.&lt;/param&gt;</span>
+<a name="l00157"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#af52859902b49d2eb03b00262889f5f78">00157</a> <span class="comment"></span>        <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#af52859902b49d2eb03b00262889f5f78">AdjustContrastBrightnessSaturation</a>(HSLLinear f, <span class="keywordtype">float</span> contrast, <span class="keywordtype">float</span> brightness, <span class="keywordtype">float</span> saturation, <span class="keywordtype">bool</span> truncate) {
+<a name="l00158"></a>00158             brightness = Math.Max(-1.0f, Math.Min(1.0f, brightness));
+<a name="l00159"></a>00159             saturation = Math.Max(-1.0f, Math.Min(1.0f, saturation));
+<a name="l00160"></a>00160             contrast = Math.Max(-1.0f, Math.Min(1.0f, contrast));
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163             <span class="comment">// create luminance filter</span>
+<a name="l00164"></a>00164             <span class="keywordflow">if</span> (brightness &gt; 0) {
+<a name="l00165"></a>00165                 f.InLuminance = <span class="keyword">new</span> Range(0.0f, 1.0f - (truncate ? brightness : 0)); <span class="comment">//TODO - isn&#39;t it better not to truncate, but compress?</span>
+<a name="l00166"></a>00166                 f.OutLuminance = <span class="keyword">new</span> Range(brightness, 1.0f);
+<a name="l00167"></a>00167             } <span class="keywordflow">else</span> {
+<a name="l00168"></a>00168                 f.InLuminance = <span class="keyword">new</span> Range((truncate ? -brightness : 0), 1.0f);
+<a name="l00169"></a>00169                 f.OutLuminance = <span class="keyword">new</span> Range(0.0f, 1.0f + brightness);
+<a name="l00170"></a>00170             }
+<a name="l00171"></a>00171             <span class="comment">// create saturation filter</span>
+<a name="l00172"></a>00172             <span class="keywordflow">if</span> (saturation &gt; 0) {
+<a name="l00173"></a>00173                 f.InSaturation = <span class="keyword">new</span> Range(0.0f, 1.0f - (truncate ? saturation : 0)); <span class="comment">//Ditto?</span>
+<a name="l00174"></a>00174                 f.OutSaturation = <span class="keyword">new</span> Range(saturation, 1.0f);
+<a name="l00175"></a>00175             } <span class="keywordflow">else</span> {
+<a name="l00176"></a>00176                 f.InSaturation = <span class="keyword">new</span> Range((truncate ? -saturation : 0), 1.0f);
+<a name="l00177"></a>00177                 f.OutSaturation = <span class="keyword">new</span> Range(0.0f, 1.0f + saturation);
+<a name="l00178"></a>00178             }
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180             <span class="keywordflow">if</span> (contrast &gt; 0) {
+<a name="l00181"></a>00181                 <span class="keywordtype">float</span> adjustment =  contrast * (f.InLuminance.Max - f.InLuminance.Min) / 2;
+<a name="l00182"></a>00182                 f.InLuminance = <span class="keyword">new</span> Range(f.InLuminance.Min + adjustment, f.InLuminance.Max - adjustment);
+<a name="l00183"></a>00183             } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (contrast &lt; 0) {
+<a name="l00184"></a>00184                 <span class="keywordtype">float</span> adjustment = -contrast * (f.OutLuminance.Max - f.OutLuminance.Min) / 2;
+<a name="l00185"></a>00185                 f.OutLuminance = <span class="keyword">new</span> Range(f.OutLuminance.Min + adjustment, f.OutLuminance.Max - adjustment);
+<a name="l00186"></a>00186             }
+<a name="l00187"></a>00187         }
+<a name="l00188"></a>00188 
+<a name="l00189"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#a7d79aa20acf3b420d028e3249ecbdcd4">00189</a>         <span class="keyword">public</span> IEnumerable&lt;string&gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#a7d79aa20acf3b420d028e3249ecbdcd4" title="If the plugin reads any values from the querystring, the names of the keys should be specified here...">GetSupportedQuerystringKeys</a>() {
+<a name="l00190"></a>00190             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;blur&quot;</span>, <span class="stringliteral">&quot;sharpen&quot;</span> , <span class="stringliteral">&quot;a.blur&quot;</span>, <span class="stringliteral">&quot;a.sharpen&quot;</span>, <span class="stringliteral">&quot;a.oilpainting&quot;</span>, <span class="stringliteral">&quot;a.removenoise&quot;</span>, 
+<a name="l00191"></a>00191                                 <span class="stringliteral">&quot;a.sobel&quot;</span>, <span class="stringliteral">&quot;a.threshold&quot;</span>, <span class="stringliteral">&quot;a.canny&quot;</span>, <span class="stringliteral">&quot;a.sepia&quot;</span>, <span class="stringliteral">&quot;a.equalize&quot;</span>, <span class="stringliteral">&quot;a.posterize&quot;</span>, 
+<a name="l00192"></a>00192                                 <span class="stringliteral">&quot;a.contrast&quot;</span>, <span class="stringliteral">&quot;a.brightness&quot;</span>, <span class="stringliteral">&quot;a.saturation&quot;</span>,<span class="stringliteral">&quot;a.truncate&quot;</span>};
+<a name="l00193"></a>00193         }
+<a name="l00194"></a>00194     }
+<a name="l00195"></a>00195 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

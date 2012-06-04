@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -109,19 +109,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ImageResizer.Plugins.S3Reader.S3Reader Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="ImageResizer::Plugins::S3Reader::S3Reader" --><!-- doxytag: inherits="ImageResizer::Plugins::IPlugin" --><div class="dynheader">
+<!-- doxytag: class="ImageResizer::Plugins::S3Reader::S3Reader" --><!-- doxytag: inherits="ImageResizer::Plugins::IPlugin,ImageResizer::Plugins::IMultiInstancePlugin" --><div class="dynheader">
 Inheritance diagram for ImageResizer.Plugins.S3Reader.S3Reader:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader__inherit__graph.png" border="0" usemap="#_image_resizer_8_plugins_8_s3_reader_8_s3_reader_inherit__map" alt="Inheritance graph"/></div>
 <map name="_image_resizer_8_plugins_8_s3_reader_8_s3_reader_inherit__map" id="_image_resizer_8_plugins_8_s3_reader_8_s3_reader_inherit__map">
-<area shape="rect" id="node2" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="259,6,377,53"/></map>
+<area shape="rect" id="node2" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="141,6,259,53"/><area shape="rect" id="node4" href="interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once..." alt="" coords="284,6,591,53"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for ImageResizer.Plugins.S3Reader.S3Reader:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader__coll__graph.png" border="0" usemap="#_image_resizer_8_plugins_8_s3_reader_8_s3_reader_coll__map" alt="Collaboration graph"/></div>
 <map name="_image_resizer_8_plugins_8_s3_reader_8_s3_reader_coll__map" id="_image_resizer_8_plugins_8_s3_reader_8_s3_reader_coll__map">
-<area shape="rect" id="node2" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="259,6,377,53"/></map>
+<area shape="rect" id="node2" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="141,6,259,53"/><area shape="rect" id="node4" href="interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once..." alt="" coords="284,6,591,53"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 
 <p><a href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader-members.html">List of all members.</a></p>
@@ -138,10 +138,16 @@ Public Member Functions</h2></td></tr>
 Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">S3Service&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#a5868222801c0e683d01b5a9f75a6e8e9">S3config</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure S3 authentication and encryption details.  <a href="#a5868222801c0e683d01b5a9f75a6e8e9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#ae3cbfefc58fb5204adc901d6adfdd5c7">RequireImageExtension</a><code> [get, set]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">(default true) When false, all URLs inside the PathPrefix folder will be assumed to be images, and will be handled by this plugin. You should still use image extensions, otherwise we don't know what content type to send with the response, and browsers will choke. It's also the cleanest way to tell the image resizer what kind of file type you'd like back when you request resizing. This setting is designed to support non-image file serving from the DB. It will also cause conflicts if PathPrefix overlaps with a folder name used for something else.  <a href="#ae3cbfefc58fb5204adc901d6adfdd5c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#a6025bd7ab1327b8eb6c664bf092f4865">UntrustedData</a><code> [get, set]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">(default: false) When true, all requests will be re-encoded before being served to the client. Invalid or malicious images will fail with an error if they cannot be read as images. This should prevent malicious files from being served to the client.  <a href="#a6025bd7ab1327b8eb6c664bf092f4865"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#ae6f9607cf76141cb55f6473228d41510">CacheUnmodifiedFiles</a><code> [get, set]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">(default true). When true, files and unmodified images (i.e, no querystring) will be cached to disk (if they are requested that way) instead of only caching requests for resized images. <a class="el" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html">DiskCache</a> plugin must be installed for this to have any effect.  <a href="#ae6f9607cf76141cb55f6473228d41510"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_s3_reader_8cs_source.html#l00013">13</a> of file <a class="el" href="_s3_reader_8cs_source.html">S3Reader.cs</a>.</p>
+<p>Definition at line <a class="el" href="_s3_reader_8cs_source.html#l00016">16</a> of file <a class="el" href="_s3_reader_8cs_source.html">S3Reader.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a16cd4769ac4eaf71fddb78f4cd1924aa"></a><!-- doxytag: member="ImageResizer::Plugins::S3Reader::S3Reader::Uninstall" ref="a16cd4769ac4eaf71fddb78f4cd1924aa" args="(Configuration.Config c)" -->
 <div class="memitem">
@@ -167,7 +173,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_s3_reader_8cs_source.html#l00112">112</a> of file <a class="el" href="_s3_reader_8cs_source.html">S3Reader.cs</a>.</p>
+<p>Definition at line <a class="el" href="_s3_reader_8cs_source.html#l00175">175</a> of file <a class="el" href="_s3_reader_8cs_source.html">S3Reader.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                      {
             <span class="keywordflow">if</span> (!asVpp) {
                 c.Plugins.VirtualProviderPlugins.Remove(vpp);
@@ -179,6 +185,40 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Property Documentation</h2>
+<a class="anchor" id="ae6f9607cf76141cb55f6473228d41510"></a><!-- doxytag: member="ImageResizer::Plugins::S3Reader::S3Reader::CacheUnmodifiedFiles" ref="ae6f9607cf76141cb55f6473228d41510" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#ae6f9607cf76141cb55f6473228d41510">ImageResizer.Plugins.S3Reader.S3Reader.CacheUnmodifiedFiles</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>(default true). When true, files and unmodified images (i.e, no querystring) will be cached to disk (if they are requested that way) instead of only caching requests for resized images. <a class="el" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html">DiskCache</a> plugin must be installed for this to have any effect. </p>
+
+<p>Definition at line <a class="el" href="_s3_reader_8cs_source.html#l00086">86</a> of file <a class="el" href="_s3_reader_8cs_source.html">S3Reader.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae3cbfefc58fb5204adc901d6adfdd5c7"></a><!-- doxytag: member="ImageResizer::Plugins::S3Reader::S3Reader::RequireImageExtension" ref="ae3cbfefc58fb5204adc901d6adfdd5c7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#ae3cbfefc58fb5204adc901d6adfdd5c7">ImageResizer.Plugins.S3Reader.S3Reader.RequireImageExtension</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>(default true) When false, all URLs inside the PathPrefix folder will be assumed to be images, and will be handled by this plugin. You should still use image extensions, otherwise we don't know what content type to send with the response, and browsers will choke. It's also the cleanest way to tell the image resizer what kind of file type you'd like back when you request resizing. This setting is designed to support non-image file serving from the DB. It will also cause conflicts if PathPrefix overlaps with a folder name used for something else. </p>
+
+<p>Definition at line <a class="el" href="_s3_reader_8cs_source.html#l00066">66</a> of file <a class="el" href="_s3_reader_8cs_source.html">S3Reader.cs</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a5868222801c0e683d01b5a9f75a6e8e9"></a><!-- doxytag: member="ImageResizer::Plugins::S3Reader::S3Reader::S3config" ref="a5868222801c0e683d01b5a9f75a6e8e9" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +232,24 @@ Properties</h2></td></tr>
 
 <p>Configure S3 authentication and encryption details. </p>
 
-<p>Definition at line <a class="el" href="_s3_reader_8cs_source.html#l00045">45</a> of file <a class="el" href="_s3_reader_8cs_source.html">S3Reader.cs</a>.</p>
+<p>Definition at line <a class="el" href="_s3_reader_8cs_source.html#l00052">52</a> of file <a class="el" href="_s3_reader_8cs_source.html">S3Reader.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6025bd7ab1327b8eb6c664bf092f4865"></a><!-- doxytag: member="ImageResizer::Plugins::S3Reader::S3Reader::UntrustedData" ref="a6025bd7ab1327b8eb6c664bf092f4865" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#a6025bd7ab1327b8eb6c664bf092f4865">ImageResizer.Plugins.S3Reader.S3Reader.UntrustedData</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>(default: false) When true, all requests will be re-encoded before being served to the client. Invalid or malicious images will fail with an error if they cannot be read as images. This should prevent malicious files from being served to the client. </p>
+
+<p>Definition at line <a class="el" href="_s3_reader_8cs_source.html#l00076">76</a> of file <a class="el" href="_s3_reader_8cs_source.html">S3Reader.cs</a>.</p>
 
 </div>
 </div>

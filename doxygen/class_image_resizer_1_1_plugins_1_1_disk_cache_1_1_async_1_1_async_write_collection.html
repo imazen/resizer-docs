@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -134,7 +134,7 @@ Properties</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00007">7</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
+<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00008">8</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a002c466579c94e379c32f7aabc675254"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::Async::AsyncWriteCollection::Get" ref="a002c466579c94e379c32f7aabc675254" args="(string relativePath, DateTime modifiedUtc)" -->
 <div class="memitem">
@@ -171,7 +171,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00032">32</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
+<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00033">33</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                         {
             lock (_sync) {
                 AsyncWrite result;
@@ -198,7 +198,7 @@ Properties</h2></td></tr>
 <p>Returns how many bytes are allocated by buffers in the queue. May be 2x the amount of data. Represents how much ram is being used by the queue, not the amount of encoded bytes that will actually be written. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00043">43</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
+<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00044">44</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                           {
             lock (_sync) {
                 <span class="keywordtype">long</span> total = 0;
@@ -246,7 +246,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00068">68</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
+<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00069">69</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                      {
             lock (_sync) {
                 <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_async_1_1_async_write_collection.html#ac15496ee661c56506120dd0a5a09c16f" title="Returns how many bytes are allocated by buffers in the queue. May be 2x the amount of data...">GetQueuedBufferBytes</a>() + w.GetBufferLength() &gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_async_1_1_async_write_collection.html#accd19b4886af197047ce6d12953157bf" title="How many bytes of buffered file data to hold in memory before refusing futher queue requests and forc...">MaxQueueBytes</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">//Because we would use too much ram.</span>
@@ -284,7 +284,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00058">58</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
+<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00059">59</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                         {
             lock (_sync) {
                 c.Remove(HashTogether(w.RelativePath, w.ModifiedDateUtc));
@@ -307,7 +307,7 @@ Properties</h2></td></tr>
 
 <p>How many bytes of buffered file data to hold in memory before refusing futher queue requests and forcing them to be executed synchronously. </p>
 
-<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00021">21</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
+<p>Definition at line <a class="el" href="_async_write_collection_8cs_source.html#l00022">22</a> of file <a class="el" href="_async_write_collection_8cs_source.html">AsyncWriteCollection.cs</a>.</p>
 
 </div>
 </div>

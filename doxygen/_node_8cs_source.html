@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00084"></a>00084 <span class="comment">        /// &lt;param name=&quot;elementName&quot;&gt;&lt;/param&gt;</span>
 <a name="l00085"></a>00085 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
 <a name="l00086"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#a65a52ff622b046154ae1e1b05fe7f541">00086</a> <span class="comment"></span>        <span class="keyword">public</span> IList&lt;Node&gt; <a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#a65a52ff622b046154ae1e1b05fe7f541" title="Returns the subset of Children with a matching element name. (Case-insensitive)">childrenByName</a>(<span class="keywordtype">string</span> elementName) {
-<a name="l00087"></a>00087             <span class="keywordflow">if</span> (children == null || children.Count == 0) <span class="keywordflow">return</span> null;
+<a name="l00087"></a>00087             <span class="comment">//if (children == null || children.Count == 0) return null;</span>
 <a name="l00088"></a>00088             List&lt;Node&gt; results = null;
 <a name="l00089"></a>00089             <span class="keywordflow">foreach</span>(<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> n <span class="keywordflow">in</span> children){
 <a name="l00090"></a>00090                 <span class="keywordflow">if</span> (n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(elementName, StringComparison.OrdinalIgnoreCase)) {

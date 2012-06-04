@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['empty',['Empty',['../class_image_resizer_1_1_resizing_1_1_box_padding.html#a64b892955b3ab945a3585fb5283bf979',1,'ImageResizer::Resizing::BoxPadding']]],
+  ['empty',['Empty',['../class_image_resizer_1_1_box_edges.html#a66593a23bc145a92a257aed18349ce5d',1,'ImageResizer::BoxEdges.Empty()'],['../class_image_resizer_1_1_resizing_1_1_box_padding.html#a64b892955b3ab945a3585fb5283bf979',1,'ImageResizer::Resizing::BoxPadding.Empty()']]],
   ['enabled',['Enabled',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#a20fdd8f25afd3e712d4331a28886e7e1',1,'ImageResizer::Plugins::DiskCache::DiskCache']]],
+  ['encoder',['Encoder',['../class_image_resizer_1_1_instructions.html#a16fd9b778f0efb61b771c30a9ee017d5',1,'ImageResizer::Instructions']]],
   ['encoderprovider',['EncoderProvider',['../class_image_resizer_1_1_image_builder.html#a9bd254f85a8c846eb287a985b3accbde',1,'ImageResizer::ImageBuilder']]],
+  ['estimatedcountersize',['EstimatedCounterSize',['../class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_event_counting_strategy.html#a7b313d05e81651451f33fbf251ae5bab',1,'ImageResizer::Plugins::SourceMemCache::EventCountingStrategy']]],
   ['executiontime',['ExecutionTime',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_job_stats.html#a1a26a5c51832cdc0639a86cdee3ba254',1,'ImageResizer::Plugins::BatchZipper::JobStats']]],
   ['exists',['Exists',['../class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_virtual_file.html#a500703cb67630ae47a72721d8f8eed64',1,'ImageResizer::Plugins::PsdComposer::PsdVirtualFile.Exists()'],['../class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_database_file.html#ac880888a15ebf5d3529c5e110ecded66',1,'ImageResizer::Plugins::SqlReader::DatabaseFile.Exists()']]],
   ['expires',['Expires',['../interface_image_resizer_1_1_caching_1_1_i_response_headers.html#a92e5dfc0667983db5f7fa6ac10566ca8',1,'ImageResizer::Caching::IResponseHeaders.Expires()'],['../class_image_resizer_1_1_caching_1_1_response_headers.html#ad9a44bbeca55bc68c5767bfe21fc813a',1,'ImageResizer::Caching::ResponseHeaders.Expires()']]],

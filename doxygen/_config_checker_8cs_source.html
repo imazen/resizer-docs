@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -87,60 +87,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00004"></a>00004 <span class="keyword">using</span> System.Text;
 <a name="l00005"></a>00005 <span class="keyword">using</span> ImageResizer.Plugins.Basic;
 <a name="l00006"></a>00006 <span class="keyword">using</span> System.Reflection;
-<a name="l00007"></a>00007 
-<a name="l00008"></a><a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html">00008</a> <span class="keyword">namespace </span>ImageResizer.Configuration.Issues {
-<a name="l00009"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_config_checker.html">00009</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_config_checker.html">ConfigChecker</a>:<a class="code" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html">IIssueProvider</a> {
-<a name="l00010"></a>00010         <a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html">Config</a> c;
-<a name="l00011"></a>00011         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_config_checker.html">ConfigChecker</a>(<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html">Config</a> c) {
-<a name="l00012"></a>00012             this.c = c;
-<a name="l00013"></a>00013         }
-<a name="l00014"></a>00014         <span class="keyword">public</span> IEnumerable&lt;IIssue&gt; GetIssues() {
-<a name="l00015"></a>00015             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;();
-<a name="l00016"></a>00016             <span class="comment">//If a plugin has a configuration section, but is not installed, log an issue.</span>
-<a name="l00017"></a>00017             <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a88b0d3c3b0457e5f8f0cacb35cb7d267" title="Returns a deep copy of the specified node.">getNode</a>(<span class="stringliteral">&quot;sizelimiting&quot;</span>) != null) issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Use &lt;sizelimits&gt;, not &lt;sizelimiting&gt; to configure the SizeLimiting plugin&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
-<a name="l00018"></a>00018             <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a88b0d3c3b0457e5f8f0cacb35cb7d267" title="Returns a deep copy of the specified node.">getNode</a>(<span class="stringliteral">&quot;sizelimits&quot;</span>) != null &amp;&amp; 
-<a name="l00019"></a>00019                 !c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.Has&lt;<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_size_limiting.html" title="Implements app-wide size Limits on image size.">SizeLimiting</a>&gt;())
-<a name="l00020"></a>00020                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;You have specified configuration settings for the SizeLimiting plugin, but it is not installed. &quot;</span>,
-<a name="l00021"></a>00021                     <span class="stringliteral">&quot;Use &lt;add name=\&quot;SizeLimiting\&quot; /&gt; inside &lt;plugins&gt; to install.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023             <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#ab7d8e32249817ef77f91508c087140d9" title="Access and modify settings related to the HttpModule pipline. Register URL rewriting hooks...">Pipeline</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#ab6cf7932946b293d427e307b55d3c3bf" title="The number of images processed by this pipeline.">ProcessedCount</a> &lt; 1)
-<a name="l00024"></a>00024                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;To potentially see additional errors here, perform an image resize request.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
+<a name="l00007"></a>00007 <span class="keyword">using</span> System.Security.Principal;
+<a name="l00008"></a>00008 <span class="keyword">using</span> System.Web.Security;
+<a name="l00009"></a>00009 <span class="keyword">using</span> System.Web.Hosting;
+<a name="l00010"></a>00010 
+<a name="l00011"></a><a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html">00011</a> <span class="keyword">namespace </span>ImageResizer.Configuration.Issues {
+<a name="l00012"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_config_checker.html">00012</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_config_checker.html">ConfigChecker</a>:<a class="code" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html">IIssueProvider</a> {
+<a name="l00013"></a>00013         <a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html">Config</a> c;
+<a name="l00014"></a>00014         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_config_checker.html">ConfigChecker</a>(<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html">Config</a> c) {
+<a name="l00015"></a>00015             this.c = c;
+<a name="l00016"></a>00016         }
+<a name="l00017"></a>00017         <span class="keyword">public</span> IEnumerable&lt;IIssue&gt; GetIssues() {
+<a name="l00018"></a>00018             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;();
+<a name="l00019"></a>00019             <span class="comment">//If a plugin has a configuration section, but is not installed, log an issue.</span>
+<a name="l00020"></a>00020             <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a88b0d3c3b0457e5f8f0cacb35cb7d267" title="Returns a deep copy of the specified node.">getNode</a>(<span class="stringliteral">&quot;sizelimiting&quot;</span>) != null) issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Use &lt;sizelimits&gt;, not &lt;sizelimiting&gt; to configure the SizeLimiting plugin&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
+<a name="l00021"></a>00021             <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a88b0d3c3b0457e5f8f0cacb35cb7d267" title="Returns a deep copy of the specified node.">getNode</a>(<span class="stringliteral">&quot;sizelimits&quot;</span>) != null &amp;&amp; 
+<a name="l00022"></a>00022                 !c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.Has&lt;<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_size_limiting.html" title="Implements app-wide size Limits on image size.">SizeLimiting</a>&gt;())
+<a name="l00023"></a>00023                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;You have specified configuration settings for the SizeLimiting plugin, but it is not installed. &quot;</span>,
+<a name="l00024"></a>00024                     <span class="stringliteral">&quot;Use &lt;add name=\&quot;SizeLimiting\&quot; /&gt; inside &lt;plugins&gt; to install.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026             <span class="keywordtype">bool</span> canCheckUrls = System.Security.SecurityManager.IsGranted(<span class="keyword">new</span> System.Security.Permissions.SecurityPermission(System.Security.Permissions.PermissionState.Unrestricted));
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028             <span class="keywordflow">if</span> (!canCheckUrls)
-<a name="l00029"></a>00029                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Grant the website SecurityPermission to call UrlAuthorizationModule.CheckUrlAccessForPrincipal&quot;</span>,
-<a name="l00030"></a>00030                       <span class="stringliteral">&quot;Without this permission, it may be possible for users to bypass UrlAuthorization rules you have defined for your website, and access images that would otherwise be protected. If you do not use UrlAuthorization rules, this should not be a concern. &quot;</span> +
-<a name="l00031"></a>00031                     <span class="stringliteral">&quot;You may also re-implement your security rules by handling the Config.Current.Pipeline.AuthorizeImage event.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Critical));
-<a name="l00032"></a>00032 
-<a name="l00033"></a>00033             
-<a name="l00034"></a>00034             <span class="keywordtype">string</span> assembliesRunningHotfix = <span class="stringliteral">&quot;&quot;</span>;
-<a name="l00035"></a>00035             Assembly[] asms = AppDomain.CurrentDomain.GetAssemblies();
-<a name="l00036"></a>00036             <span class="keywordflow">foreach</span> (Assembly a <span class="keywordflow">in</span> asms) {
-<a name="l00037"></a>00037                 <span class="comment">//Only check DLLs with ImageResizer in their name</span>
-<a name="l00038"></a>00038                                 AssemblyName assemblyName = <span class="keyword">new</span> AssemblyName(a.FullName);
-<a name="l00039"></a>00039                 <span class="keywordflow">if</span> (assemblyName.Name.IndexOf(<span class="stringliteral">&quot;ImageResizer&quot;</span>,  StringComparison.OrdinalIgnoreCase) &lt; 0) <span class="keywordflow">continue</span>;
-<a name="l00040"></a>00040                 
-<a name="l00041"></a>00041                 <span class="keywordtype">object</span>[] attrs;
-<a name="l00042"></a>00042                 
-<a name="l00043"></a>00043                 attrs = a.GetCustomAttributes(typeof(AssemblyInformationalVersionAttribute), <span class="keyword">false</span>);
-<a name="l00044"></a>00044                 <span class="keywordflow">if</span> (attrs != null &amp;&amp; attrs.Length &gt; 0) 
-<a name="l00045"></a>00045                     <span class="keywordflow">if</span> (((AssemblyInformationalVersionAttribute)attrs[0]).InformationalVersion.IndexOf(<span class="stringliteral">&quot;hotfix&quot;</span>,StringComparison.OrdinalIgnoreCase) &gt; -1)
-<a name="l00046"></a>00046                         assembliesRunningHotfix += assemblyName.Name + <span class="stringliteral">&quot;, &quot;</span>;
-<a name="l00047"></a>00047             }
-<a name="l00048"></a>00048             assembliesRunningHotfix = assembliesRunningHotfix.TrimEnd(<span class="charliteral">&#39;,&#39;</span>,<span class="charliteral">&#39; &#39;</span>);
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(assembliesRunningHotfix))
-<a name="l00051"></a>00051                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;You are running a hotfix version of the ImageResizer.&quot;</span>,
-<a name="l00052"></a>00052                     <span class="stringliteral">&quot;You should upgrade to a released version with an equal or higher version number as soon as possible. &quot;</span> +
-<a name="l00053"></a>00053                     <span class="stringliteral">&quot;Hotfix and release DLLs with the same version number are not the same - the release DLL should be used instead.&quot;</span> +
-<a name="l00054"></a>00054                     <span class="stringliteral">&quot;\nAssemblies marked as hotfix versions: &quot;</span> + assembliesRunningHotfix, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
-<a name="l00055"></a>00055                     
-<a name="l00056"></a>00056    
-<a name="l00057"></a>00057             <span class="keywordflow">return</span> issues;
-<a name="l00058"></a>00058         }
-<a name="l00059"></a>00059     }
-<a name="l00060"></a>00060 }
+<a name="l00026"></a>00026             <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#ab7d8e32249817ef77f91508c087140d9" title="Access and modify settings related to the HttpModule pipline. Register URL rewriting hooks...">Pipeline</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#ab6cf7932946b293d427e307b55d3c3bf" title="The number of images processed by this pipeline.">ProcessedCount</a> &lt; 1)
+<a name="l00027"></a>00027                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;To potentially see additional errors here, perform an image resize request.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029             <span class="keywordtype">bool</span> canCheckUrls = System.Security.SecurityManager.IsGranted(<span class="keyword">new</span> System.Security.Permissions.SecurityPermission(System.Security.Permissions.PermissionState.Unrestricted));
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031             <span class="keywordflow">if</span> (canCheckUrls) {
+<a name="l00032"></a>00032                 <span class="keywordflow">try</span> {
+<a name="l00033"></a>00033                     IPrincipal user = <span class="keyword">new</span> GenericPrincipal(<span class="keyword">new</span> GenericIdentity(<span class="keywordtype">string</span>.Empty, <span class="keywordtype">string</span>.Empty), <span class="keyword">new</span> <span class="keywordtype">string</span>[0]);
+<a name="l00034"></a>00034                     UrlAuthorizationModule.CheckUrlAccessForPrincipal(HostingEnvironment.ApplicationVirtualPath.TrimEnd(<span class="charliteral">&#39;/&#39;</span>) + <span class="charliteral">&#39;/&#39;</span>, user, <span class="stringliteral">&quot;GET&quot;</span>);
+<a name="l00035"></a>00035                 } <span class="keywordflow">catch</span> (NotImplementedException) {
+<a name="l00036"></a>00036                     issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;UrlAuthorizationModule.CheckUrlAccessForPrincipal is not supported on this runtime (are you running Mono?)&quot;</span>,
+<a name="l00037"></a>00037                          <span class="stringliteral">&quot;It may be possible for users to bypass UrlAuthorization rules you have defined for your website, and access images that would otherwise be protected. If you do not use UrlAuthorization rules, this should not be a concern. &quot;</span> +
+<a name="l00038"></a>00038                        <span class="stringliteral">&quot;You may also re-implement your security rules by handling the Config.Current.Pipeline.AuthorizeImage event.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
+<a name="l00039"></a>00039                 }
+<a name="l00040"></a>00040             }
+<a name="l00041"></a>00041                     
+<a name="l00042"></a>00042             <span class="keywordflow">if</span> (!canCheckUrls)
+<a name="l00043"></a>00043                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Grant the website SecurityPermission to call UrlAuthorizationModule.CheckUrlAccessForPrincipal&quot;</span>,
+<a name="l00044"></a>00044                       <span class="stringliteral">&quot;Without this permission, it may be possible for users to bypass UrlAuthorization rules you have defined for your website, and access images that would otherwise be protected. If you do not use UrlAuthorization rules, this should not be a concern. &quot;</span> +
+<a name="l00045"></a>00045                     <span class="stringliteral">&quot;You may also re-implement your security rules by handling the Config.Current.Pipeline.AuthorizeImage event.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Critical));
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047             
+<a name="l00048"></a>00048             <span class="keywordtype">string</span> assembliesRunningHotfix = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00049"></a>00049             Assembly[] asms = AppDomain.CurrentDomain.GetAssemblies();
+<a name="l00050"></a>00050             <span class="keywordflow">foreach</span> (Assembly a <span class="keywordflow">in</span> asms) {
+<a name="l00051"></a>00051                 <span class="comment">//Only check DLLs with ImageResizer in their name</span>
+<a name="l00052"></a>00052                                 AssemblyName assemblyName = <span class="keyword">new</span> AssemblyName(a.FullName);
+<a name="l00053"></a>00053                 <span class="keywordflow">if</span> (assemblyName.Name.IndexOf(<span class="stringliteral">&quot;ImageResizer&quot;</span>,  StringComparison.OrdinalIgnoreCase) &lt; 0) <span class="keywordflow">continue</span>;
+<a name="l00054"></a>00054                 
+<a name="l00055"></a>00055                 <span class="keywordtype">object</span>[] attrs;
+<a name="l00056"></a>00056                 
+<a name="l00057"></a>00057                 attrs = a.GetCustomAttributes(typeof(AssemblyInformationalVersionAttribute), <span class="keyword">false</span>);
+<a name="l00058"></a>00058                 <span class="keywordflow">if</span> (attrs != null &amp;&amp; attrs.Length &gt; 0) 
+<a name="l00059"></a>00059                     <span class="keywordflow">if</span> (((AssemblyInformationalVersionAttribute)attrs[0]).InformationalVersion.IndexOf(<span class="stringliteral">&quot;hotfix&quot;</span>,StringComparison.OrdinalIgnoreCase) &gt; -1)
+<a name="l00060"></a>00060                         assembliesRunningHotfix += assemblyName.Name + <span class="stringliteral">&quot;, &quot;</span>;
+<a name="l00061"></a>00061             }
+<a name="l00062"></a>00062             assembliesRunningHotfix = assembliesRunningHotfix.TrimEnd(<span class="charliteral">&#39;,&#39;</span>,<span class="charliteral">&#39; &#39;</span>);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(assembliesRunningHotfix))
+<a name="l00065"></a>00065                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;You are running a hotfix version of the ImageResizer.&quot;</span>,
+<a name="l00066"></a>00066                     <span class="stringliteral">&quot;You should upgrade to a released version with an equal or higher version number as soon as possible. &quot;</span> +
+<a name="l00067"></a>00067                     <span class="stringliteral">&quot;Hotfix and release DLLs with the same version number are not the same - the release DLL should be used instead.&quot;</span> +
+<a name="l00068"></a>00068                     <span class="stringliteral">&quot;\nAssemblies marked as hotfix versions: &quot;</span> + assembliesRunningHotfix, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
+<a name="l00069"></a>00069                     
+<a name="l00070"></a>00070    
+<a name="l00071"></a>00071             <span class="keywordflow">return</span> issues;
+<a name="l00072"></a>00072         }
+<a name="l00073"></a>00073     }
+<a name="l00074"></a>00074 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

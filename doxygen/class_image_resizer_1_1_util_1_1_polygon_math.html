@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -109,6 +109,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="ImageResizer::Util::PolygonMath" -->
+<p>Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved in future releases; be prepared.  
+ <a href="class_image_resizer_1_1_util_1_1_polygon_math.html#details">More...</a></p>
+
 <p><a href="class_image_resizer_1_1_util_1_1_polygon_math-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
@@ -188,10 +191,23 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a point equidistant beweteen A and B.  <a href="#a826b109164045c010e8458296f566b2c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a6a28a2a5551836ef6fbc3dc5db592f74">IsUnrotated</a> (PointF[] a)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifies that the specified 4 points are not rotated - that each point shares either the x or y coordinate with the previous point.  <a href="#a6a28a2a5551836ef6fbc3dc5db592f74"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a0ca59a6970387e9157091eed76789844">GetShortestPair</a> (PointF[] poly)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the length of the shortest line segment in the given polygon.  <a href="#a0ca59a6970387e9157091eed76789844"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#ab8532ae5b7883d9a019a5bf1c9308c17">Dist</a> (PointF a, PointF b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the distance between two points.  <a href="#ab8532ae5b7883d9a019a5bf1c9308c17"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a9ebf3d2f01749ccafc6babc589cecd4d">NormalizeTo90Intervals</a> (double d)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Normalizes the given angle to a positive multiple of 90 degrees between 0 and 270.  <a href="#a9ebf3d2f01749ccafc6babc589cecd4d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad44349a1cd0f60a0b6f55fb9284ad83a"></a><!-- doxytag: member="ImageResizer::Util::PolygonMath::CombineFlipAndRotate" ref="ad44349a1cd0f60a0b6f55fb9284ad83a" args="(RotateFlipType flip, double angle)" -->
+static RotateFlipType&#160;</td><td class="memItemRight" valign="bottom"><b>CombineFlipAndRotate</b> (RotateFlipType flip, double angle)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static RotateFlipType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#af4561654d597d5c300b0c9097743e230">CombineFlipAndRotate</a> (<a class="el" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362">FlipMode</a> flip, double angle)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines the given flipping info and rotation angle into a RotateFlipType value. Rotation angle will snap to nearest 90-degree multiple.  <a href="#af4561654d597d5c300b0c9097743e230"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static RectangleF&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a1816d2cd0df332902b2e40beef049da0">GetCroppingRectangle</a> (double[] cropValues, double xunits, double yunits, SizeF imageSize)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Used for converting custom crop rectangle coordinates into a valid cropping rectangle. Positive values are relative to 0,0, negative values relative to width, height. X2 and Y2 values of 0 become width and height respectively.  <a href="#a1816d2cd0df332902b2e40beef049da0"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00010">10</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<div class="textblock"><p>Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved in future releases; be prepared. </p>
+
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00013">13</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ac55469f83724581600d27eabd617c582"></a><!-- doxytag: member="ImageResizer::Util::PolygonMath::AlignWith" ref="ac55469f83724581600d27eabd617c582" args="(RectangleF obj, RectangleF container, ContentAlignment align)" -->
 <div class="memitem">
@@ -235,9 +251,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00577">577</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00578">578</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                         {
             <span class="keywordflow">if</span> (align == ContentAlignment.BottomLeft || align == ContentAlignment.MiddleLeft || align == ContentAlignment.TopLeft)
                 obj.X = container.X;
@@ -299,7 +315,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00600">600</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00601">601</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                   {
             RectangleF origBounds = PolygonMath.GetBoundingBox(obj);
             RectangleF newBounds = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#ac55469f83724581600d27eabd617c582" title="Aligns the specified rectangle object with its reference (&#39;container&#39;) rectangle using the specified ...">AlignWith</a>(PolygonMath.GetBoundingBox(obj), PolygonMath.GetBoundingBox(container), align);
@@ -343,9 +359,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00253">253</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00256">256</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00692">ImageResizer.ImageBuilder.RenderBackground()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00711">ImageResizer.ImageBuilder.RenderBackground()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
 
             <span class="keywordflow">if</span> (a1.Length != a2.Length) <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -393,9 +409,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00612">612</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00613">613</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00759">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00789">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                         {
             <span class="keywordflow">return</span> <span class="keyword">new</span> PointF((a.X + b.X) / 2, (a.Y + b.Y) / 2);
         }
@@ -437,7 +453,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00534">534</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00537">537</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             RectangleF inBox = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(inner);
             RectangleF outBox = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(outer);
@@ -474,16 +490,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 <div class="memdoc">
 
 <p>Creates a rectangle of size 'size' with a center matching that of bounds. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">sizeF</td><td></td></tr>
-    <tr><td class="paramname">imgBounds</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00550">550</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00551">551</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                             {
             <span class="keywordflow">return</span> <span class="keyword">new</span> RectangleF(bounds.Width / 2 + bounds.X - (size.Width / 2), bounds.Height / 2 + bounds.Y - (size.Height / 2), size.Width, size.Height);
         }
@@ -525,11 +534,113 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00202">202</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00205">205</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordtype">double</span> curLength = Math.Sqrt((v.X * v.X) + (v.Y * v.Y));
             <span class="keywordtype">float</span> factor = (float)(length / curLength);
             <span class="keywordflow">return</span> <span class="keyword">new</span> PointF(v.X * factor, v.Y * factor);
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="af4561654d597d5c300b0c9097743e230"></a><!-- doxytag: member="ImageResizer::Util::PolygonMath::CombineFlipAndRotate" ref="af4561654d597d5c300b0c9097743e230" args="(FlipMode flip, double angle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static RotateFlipType ImageResizer.Util.PolygonMath.CombineFlipAndRotate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362">FlipMode</a>&#160;</td>
+          <td class="paramname"><em>flip</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Combines the given flipping info and rotation angle into a RotateFlipType value. Rotation angle will snap to nearest 90-degree multiple. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">flip</td><td></td></tr>
+    <tr><td class="paramname">angle</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00686">686</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                       {
+            angle = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a9ebf3d2f01749ccafc6babc589cecd4d" title="Normalizes the given angle to a positive multiple of 90 degrees between 0 and 270.">NormalizeTo90Intervals</a>(angle);
+            <span class="keywordflow">if</span> (flip == <a class="code" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362" title="Horizontal and vertical flipping. Convertible to System.Drawing.RotateFlipType by casting...">FlipMode</a>.None) {
+                <span class="keywordflow">return</span> (RotateFlipType)(int)(angle / 90);
+            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (flip == <a class="code" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362" title="Horizontal and vertical flipping. Convertible to System.Drawing.RotateFlipType by casting...">FlipMode</a>.X) {
+                <span class="keywordflow">return</span> (RotateFlipType)(int)(4 + (angle / 90));
+            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (flip == <a class="code" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362" title="Horizontal and vertical flipping. Convertible to System.Drawing.RotateFlipType by casting...">FlipMode</a>.Y) {
+                <span class="keywordflow">if</span> (angle == 0) <span class="keywordflow">return</span> (RotateFlipType)6;
+                <span class="keywordflow">if</span> (angle == 90) <span class="keywordflow">return</span> (RotateFlipType)7;
+                <span class="keywordflow">if</span> (angle == 180) <span class="keywordflow">return</span> (RotateFlipType)4;
+                <span class="keywordflow">if</span> (angle == 270) <span class="keywordflow">return</span> (RotateFlipType)5;
+            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (flip == <a class="code" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362" title="Horizontal and vertical flipping. Convertible to System.Drawing.RotateFlipType by casting...">FlipMode</a>.XY) {
+                <span class="keywordflow">if</span> (angle == 0) <span class="keywordflow">return</span> (RotateFlipType)2;
+                <span class="keywordflow">if</span> (angle == 90) <span class="keywordflow">return</span> (RotateFlipType)3;
+                <span class="keywordflow">if</span> (angle == 180) <span class="keywordflow">return</span> (RotateFlipType)0;
+                <span class="keywordflow">if</span> (angle == 270) <span class="keywordflow">return</span> (RotateFlipType)1;
+            } <span class="keywordflow">else</span> {
+                <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Invalid FlipMode value &quot;</span> + flip.ToString());
+            }
+            <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Invalid angle value &quot;</span> + angle.ToString());
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ab8532ae5b7883d9a019a5bf1c9308c17"></a><!-- doxytag: member="ImageResizer::Util::PolygonMath::Dist" ref="ab8532ae5b7883d9a019a5bf1c9308c17" args="(PointF a, PointF b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#ab8532ae5b7883d9a019a5bf1c9308c17">ImageResizer.Util.PolygonMath.Dist</a> </td>
+          <td>(</td>
+          <td class="paramtype">PointF&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PointF&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the distance between two points. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pointF</td><td></td></tr>
+    <tr><td class="paramname">pointF_2</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00649">649</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                      {
+            <span class="keywordflow">return</span> Math.Sqrt((b.X - a.X) * (b.X - a.X) + (b.Y - a.Y) * (b.Y - a.Y));
         }
 </pre></div>
 </div>
@@ -569,7 +680,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00385">385</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00388">388</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             SizeF result = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a0495fc6849c286b9f880c900d1b66e7d" title="Scales &#39;inner&#39; to fit inside &#39;bounding&#39; while maintaining aspect ratio. Upscales and downscales...">ScaleInside</a>(inner, bounding);
             <span class="keywordflow">if</span> (result.Width &gt; inner.Width || result.Height &gt; inner.Height) <span class="keywordflow">return</span> inner;
@@ -613,9 +724,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00397">397</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00400">400</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordflow">if</span> (inner.Width &gt; outer.Width) <span class="keywordflow">return</span> <span class="keyword">false</span>;
             <span class="keywordflow">if</span> (inner.Height &gt; outer.Height) <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -659,7 +770,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00054">54</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00057">57</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordtype">long</span>[] ix = <span class="keyword">new</span> <span class="keywordtype">long</span>[a.Rank];
             <span class="comment">//Init index</span>
@@ -745,9 +856,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00312">312</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00315">315</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_utils_8cs_source.html#l00329">ImageResizer.Util.Utils.DrawOuterGradient()</a>.</p>
+<p>Referenced by <a class="el" href="_drop_shadow_8cs_source.html#l00088">ImageResizer.Plugins.Basic.DropShadow.DrawOuterGradient()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="comment">//This should approximate one outer point per pixel.</span>
             PointF[] path = <span class="keyword">new</span> PointF[(int)Math.Round(width * 2 * Math.PI) + 1];
@@ -797,9 +908,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00215">215</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00218">218</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_polygon_math_8cs_source.html#l00600">ImageResizer.Util.PolygonMath.AlignWith()</a>, <a class="el" href="_free_image_builder_8cs_source.html#l00123">ImageResizer.Plugins.FreeImageBuilder.FreeImageBuilderPlugin.buildFiBitmap()</a>, <a class="el" href="_wic_builder_8cs_source.html#l00109">ImageResizer.Plugins.WicBuilder.WicBuilderPlugin.BuildJobWic()</a>, <a class="el" href="_layer_8cs_source.html#l00166">ImageResizer.Plugins.Watermark.Layer.CalculateLayerCoordinates()</a>, <a class="el" href="_layout_builder_8cs_source.html#l00127">ImageResizer.Resizing.LayoutBuilder.GetBoundingBox()</a>, <a class="el" href="_trial_8cs_source.html#l00054">ImageResizer.Plugins.Basic.Trial.PreFlushChanges()</a>, and <a class="el" href="_speed_or_quality_8cs_source.html#l00024">ImageResizer.Plugins.Basic.SpeedOrQuality.RenderImage()</a>.</p>
+<p>Referenced by <a class="el" href="_polygon_math_8cs_source.html#l00601">ImageResizer.Util.PolygonMath.AlignWith()</a>, <a class="el" href="_free_image_builder_8cs_source.html#l00123">ImageResizer.Plugins.FreeImageBuilder.FreeImageBuilderPlugin.buildFiBitmap()</a>, <a class="el" href="_wic_builder_8cs_source.html#l00098">ImageResizer.Plugins.WicBuilder.WicBuilderPlugin.BuildJobWic()</a>, <a class="el" href="_layer_8cs_source.html#l00167">ImageResizer.Plugins.Watermark.Layer.CalculateLayerCoordinates()</a>, <a class="el" href="_layout_builder_8cs_source.html#l00127">ImageResizer.Resizing.LayoutBuilder.GetBoundingBox()</a>, <a class="el" href="_trial_8cs_source.html#l00054">ImageResizer.Plugins.Basic.Trial.PreFlushChanges()</a>, <a class="el" href="_detection_plugin_8cs_source.html#l00052">ImageResizer.Plugins.RedEye.DetectionPlugin.Render()</a>, and <a class="el" href="_speed_or_quality_8cs_source.html#l00025">ImageResizer.Plugins.Basic.SpeedOrQuality.RenderImage()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordtype">float</span> left = <span class="keywordtype">float</span>.MaxValue;
             <span class="keywordtype">float</span> top = <span class="keywordtype">float</span>.MaxValue;
@@ -853,9 +964,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00413">413</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00416">416</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_utils_8cs_source.html#l00329">ImageResizer.Util.Utils.DrawOuterGradient()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00759">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
+<p>Referenced by <a class="el" href="_drop_shadow_8cs_source.html#l00088">ImageResizer.Plugins.Basic.DropShadow.DrawOuterGradient()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00789">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="comment">//Build the widths array.</span>
             <span class="keywordtype">float</span>[] widths = <span class="keyword">new</span> <span class="keywordtype">float</span>[poly.Length];
@@ -902,7 +1013,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00433">433</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00436">436</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordflow">if</span> (poly.Length != widths.Length) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Arrays &#39;poly&#39; and &#39;widths&#39; must have the same number of elements&quot;</span>);
 
@@ -942,6 +1053,109 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </pre></div>
 </div>
 </div>
+<a class="anchor" id="a1816d2cd0df332902b2e40beef049da0"></a><!-- doxytag: member="ImageResizer::Util::PolygonMath::GetCroppingRectangle" ref="a1816d2cd0df332902b2e40beef049da0" args="(double[] cropValues, double xunits, double yunits, SizeF imageSize)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static RectangleF <a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a1816d2cd0df332902b2e40beef049da0">ImageResizer.Util.PolygonMath.GetCroppingRectangle</a> </td>
+          <td>(</td>
+          <td class="paramtype">double[]&#160;</td>
+          <td class="paramname"><em>cropValues</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>xunits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>yunits</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">SizeF&#160;</td>
+          <td class="paramname"><em>imageSize</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Used for converting custom crop rectangle coordinates into a valid cropping rectangle. Positive values are relative to 0,0, negative values relative to width, height. X2 and Y2 values of 0 become width and height respectively. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cropValues</td><td>An array of 4 elements defining x1, y1, x2, and y2 of the cropping rectangle</td></tr>
+    <tr><td class="paramname">xunits</td><td>The width x1 and x2 are relative to</td></tr>
+    <tr><td class="paramname">yunits</td><td>The height y1 and y2 are relative to</td></tr>
+    <tr><td class="paramname">imageSize</td><td>The size of the uncropped image</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00718">718</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                                                          {
+            RectangleF defValue = <span class="keyword">new</span> RectangleF(<span class="keyword">new</span> PointF(0, 0), imageSize);
+            <span class="keywordtype">double</span>[] c = cropValues;
+
+            <span class="comment">//Step 2, Apply units to values, resolving against imageSize</span>
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; c.Length; i++) {
+                <span class="keywordtype">bool</span> xvalue = i % 2 == 0;
+                <span class="keywordflow">if</span> (xvalue &amp;&amp; xunits != 0) c[i] *= (imageSize.Width / xunits);
+                <span class="keywordflow">if</span> (!xvalue &amp;&amp; xunits != 0) c[i] *= (imageSize.Height / yunits);
+
+                <span class="comment">//Prohibit values larger than imageSize</span>
+                <span class="keywordflow">if</span> (xvalue &amp;&amp; c[i] &gt; imageSize.Width) c[i] = imageSize.Width;
+                <span class="keywordflow">if</span> (!xvalue &amp;&amp; c[i] &gt; imageSize.Height) c[i] = imageSize.Height;
+            }
+
+            <span class="comment">//Step 3, expand width/height crop to 4-value crop (not currently used)</span>
+            <span class="keywordflow">if</span> (c.Length == 2) {
+                <span class="keywordflow">if</span> (c[0] &lt; 1 || c[1] &lt; 1) <span class="keywordflow">return</span> defValue; <span class="comment">//We can&#39;t do anything with negative values here</span>
+                <span class="comment">//Center horizontally and vertically.</span>
+                <span class="keywordtype">double</span> x = (imageSize.Width - c[0]) / 2;
+                <span class="keywordtype">double</span> y = (imageSize.Height - c[1]) / 2;
+
+                c = <span class="keyword">new</span> <span class="keywordtype">double</span>[] { x, y, x + c[0], y + c[1] };
+            }
+
+            <span class="keywordtype">double</span> x1 = c[0], y1 = c[1], x2 = c[2], y2 = c[3];
+
+            <span class="comment">//allow negative offsets </span>
+            <span class="keywordflow">if</span> (x1 &lt; 0) x1 += imageSize.Width;
+            <span class="keywordflow">if</span> (y1 &lt; 0) y1 += imageSize.Height;
+            <span class="keywordflow">if</span> (x2 &lt;= 0) x2 += imageSize.Width;
+            <span class="keywordflow">if</span> (y2 &lt;= 0) y2 += imageSize.Height;
+
+
+            <span class="comment">//Require box stay in bounds.</span>
+            <span class="keywordflow">if</span> (x1 &lt; 0) x1 = 0; <span class="keywordflow">if</span> (x2 &lt; 0) x2 = 0;
+            <span class="keywordflow">if</span> (y1 &lt; 0) y1 = 0; <span class="keywordflow">if</span> (y2 &lt; 0) y2 = 0;
+            <span class="keywordflow">if</span> (x1 &gt; imageSize.Width) x1 = imageSize.Width;
+            <span class="keywordflow">if</span> (x2 &gt; imageSize.Width) x2 = imageSize.Width;
+            <span class="keywordflow">if</span> (y1 &gt; imageSize.Height) y1 = imageSize.Height;
+            <span class="keywordflow">if</span> (y2 &gt; imageSize.Height) y2 = imageSize.Height;
+
+            <span class="comment">//Require positive width and height.</span>
+            <span class="keywordflow">if</span> (x2 &lt;= x1 || y2 &lt;= y1) {
+                <span class="comment">//Use original dimensions - can&#39;t recover from negative width or height in cropping rectangle</span>
+                <span class="keywordflow">return</span> <span class="keyword">new</span> RectangleF(<span class="keyword">new</span> PointF(0, 0), imageSize);
+            }
+
+            <span class="keywordflow">return</span> <span class="keyword">new</span> RectangleF((<span class="keywordtype">float</span>)x1, (<span class="keywordtype">float</span>)y1, (<span class="keywordtype">float</span>)(x2 - x1), (<span class="keywordtype">float</span>)(y2 - y1));
+        }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a28d60a0db031946a534a4efbc85e2728"></a><!-- doxytag: member="ImageResizer::Util::PolygonMath::getParallelogram" ref="a28d60a0db031946a534a4efbc85e2728" args="(PointF[] quad)" -->
 <div class="memitem">
 <div class="memproto">
@@ -966,9 +1180,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00270">270</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00273">273</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_speed_or_quality_8cs_source.html#l00024">ImageResizer.Plugins.Basic.SpeedOrQuality.RenderImage()</a>, <a class="el" href="_free_image_resizer_8cs_source.html#l00043">ImageResizer.Plugins.FreeImageScaling.FreeImageScalingPlugin.RenderImage()</a>, <a class="el" href="_seam_carving_plugin_8cs_source.html#l00048">ImageResizer.Plugins.SeamCarving.SeamCarvingPlugin.RenderImage()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00747">ImageResizer.ImageBuilder.RenderImage()</a>.</p>
+<p>Referenced by <a class="el" href="_speed_or_quality_8cs_source.html#l00025">ImageResizer.Plugins.Basic.SpeedOrQuality.RenderImage()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00768">ImageResizer.ImageBuilder.RenderImage()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             PointF[] p = <span class="keyword">new</span> PointF[3];
             p[0] = quad[0];
@@ -1003,13 +1217,45 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00284">284</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00287">287</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_free_image_resizer_8cs_source.html#l00043">ImageResizer.Plugins.FreeImageScaling.FreeImageScalingPlugin.RenderImage()</a>, and <a class="el" href="_seam_carving_plugin_8cs_source.html#l00048">ImageResizer.Plugins.SeamCarving.SeamCarvingPlugin.RenderImage()</a>.</p>
+<p>Referenced by <a class="el" href="_free_image_resizer_8cs_source.html#l00043">ImageResizer.Plugins.FreeImageScaling.FreeImageScalingPlugin.PreRenderImage()</a>, and <a class="el" href="_seam_carving_plugin_8cs_source.html#l00092">ImageResizer.Plugins.SeamCarving.SeamCarvingPlugin.PreRenderImage()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                             {
             <span class="keywordtype">double</span> width = Math.Sqrt(Math.Pow(p[0].X - p[1].X,2) + Math.Pow(p[0].Y - p[1].Y,2));
             <span class="keywordtype">double</span> height = Math.Sqrt(Math.Pow(p[1].X - p[2].X,2) + Math.Pow(p[1].Y - p[2].Y,2));
             <span class="keywordflow">return</span> <span class="keyword">new</span> SizeF((<span class="keywordtype">float</span>)width, (<span class="keywordtype">float</span>)height);
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a0ca59a6970387e9157091eed76789844"></a><!-- doxytag: member="ImageResizer::Util::PolygonMath::GetShortestPair" ref="a0ca59a6970387e9157091eed76789844" args="(PointF[] poly)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a0ca59a6970387e9157091eed76789844">ImageResizer.Util.PolygonMath.GetShortestPair</a> </td>
+          <td>(</td>
+          <td class="paramtype">PointF[]&#160;</td>
+          <td class="paramname"><em>poly</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the length of the shortest line segment in the given polygon. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00632">632</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                            {
+            PointF last = poly[poly.Length - 1];
+            <span class="keywordtype">double</span> max = 0;
+            <span class="keywordflow">foreach</span> (PointF p <span class="keywordflow">in</span> poly) {
+                <span class="keywordtype">double</span> dist = Math.Sqrt((p.X - last.X) * (p.X - last.X) + (p.Y - last.Y) * (p.Y - last.Y));
+                <span class="keywordflow">if</span> (dist &gt; max) max = dist;
+                last = p;
+            }
+            <span class="keywordflow">return</span> max;
         }
 </pre></div>
 </div>
@@ -1049,9 +1295,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00477">477</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00480">480</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_utils_8cs_source.html#l00329">ImageResizer.Util.Utils.DrawOuterGradient()</a>.</p>
+<p>Referenced by <a class="el" href="_drop_shadow_8cs_source.html#l00088">ImageResizer.Plugins.Basic.DropShadow.DrawOuterGradient()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="comment">//Just grab the sides between the corners.</span>
             PointF[,] corners = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a9533ccbfea8b33beaea2fb9dd3f38004" title="Returns an array of parallelograms. These parallelgrams are the &#39;corners&#39; outside each vertex in &#39;pol...">GetCorners</a>(poly, width);
@@ -1104,9 +1350,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00297">297</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00300">300</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_utils_8cs_source.html#l00329">ImageResizer.Util.Utils.DrawOuterGradient()</a>.</p>
+<p>Referenced by <a class="el" href="_drop_shadow_8cs_source.html#l00088">ImageResizer.Plugins.Basic.DropShadow.DrawOuterGradient()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             PointF[] sub = <span class="keyword">new</span> PointF[array.GetUpperBound(1) + 1];
             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; array.GetUpperBound(1) + 1; i++)
@@ -1151,9 +1397,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00499">499</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00502">502</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_layout_builder_8cs_source.html#l00105">ImageResizer.Resizing.LayoutBuilder.AddRing()</a>, <a class="el" href="_drop_shadow_8cs_source.html#l00030">ImageResizer.Plugins.Basic.DropShadow.LayoutEffects()</a>, <a class="el" href="_image_builder_8cs_source.html#l00759">ImageResizer.ImageBuilder.RenderBorder()</a>, and <a class="el" href="_drop_shadow_8cs_source.html#l00054">ImageResizer.Plugins.Basic.DropShadow.RenderEffects()</a>.</p>
+<p>Referenced by <a class="el" href="_layout_builder_8cs_source.html#l00105">ImageResizer.Resizing.LayoutBuilder.AddRing()</a>, <a class="el" href="_drop_shadow_8cs_source.html#l00032">ImageResizer.Plugins.Basic.DropShadow.LayoutEffects()</a>, <a class="el" href="_image_builder_8cs_source.html#l00789">ImageResizer.ImageBuilder.RenderBorder()</a>, and <a class="el" href="_drop_shadow_8cs_source.html#l00053">ImageResizer.Plugins.Basic.DropShadow.RenderEffects()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             PointF[,] corners = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a9533ccbfea8b33beaea2fb9dd3f38004" title="Returns an array of parallelograms. These parallelgrams are the &#39;corners&#39; outside each vertex in &#39;pol...">GetCorners</a>(poly, offset);
             PointF[] newPoly = <span class="keyword">new</span> PointF[poly.Length];
@@ -1201,7 +1447,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00517">517</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00520">520</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             PointF[,] corners = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a9533ccbfea8b33beaea2fb9dd3f38004" title="Returns an array of parallelograms. These parallelgrams are the &#39;corners&#39; outside each vertex in &#39;pol...">GetCorners</a>(poly, offsets);
             PointF[] newPoly = <span class="keyword">new</span> PointF[poly.Length];
@@ -1230,17 +1476,11 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 <div class="memdoc">
 
 <p>Verifies that the specified 4 points are not rotated - that each point shares either the x or y coordinate with the previous point. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pointF</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 <p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00620">620</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00692">ImageResizer.ImageBuilder.RenderBackground()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00711">ImageResizer.ImageBuilder.RenderBackground()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                   {
             PointF lastPoint = a[a.GetUpperBound(0)];
             <span class="keywordflow">foreach</span> (PointF p <span class="keywordflow">in</span> a) {
@@ -1287,9 +1527,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00236">236</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00239">239</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_polygon_math_8cs_source.html#l00600">ImageResizer.Util.PolygonMath.AlignWith()</a>, <a class="el" href="_drop_shadow_8cs_source.html#l00030">ImageResizer.Plugins.Basic.DropShadow.LayoutEffects()</a>, <a class="el" href="_layout_builder_8cs_source.html#l00152">ImageResizer.Resizing.LayoutBuilder.Normalize()</a>, <a class="el" href="_polygon_math_8cs_source.html#l00148">ImageResizer.Util.PolygonMath.NormalizePoly()</a>, and <a class="el" href="_layout_builder_8cs_source.html#l00182">ImageResizer.Resizing.LayoutBuilder.Shift()</a>.</p>
+<p>Referenced by <a class="el" href="_polygon_math_8cs_source.html#l00601">ImageResizer.Util.PolygonMath.AlignWith()</a>, <a class="el" href="_drop_shadow_8cs_source.html#l00032">ImageResizer.Plugins.Basic.DropShadow.LayoutEffects()</a>, <a class="el" href="_layout_builder_8cs_source.html#l00152">ImageResizer.Resizing.LayoutBuilder.Normalize()</a>, <a class="el" href="_polygon_math_8cs_source.html#l00151">ImageResizer.Util.PolygonMath.NormalizePoly()</a>, and <a class="el" href="_layout_builder_8cs_source.html#l00182">ImageResizer.Resizing.LayoutBuilder.Shift()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             PointF[] pts = <span class="keyword">new</span> PointF[points.Length];
             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; points.Length; i++)
@@ -1326,10 +1566,50 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00148">148</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00151">151</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             RectangleF box = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(poly);
             <span class="keywordflow">return</span> PolygonMath.MovePoly(poly, <span class="keyword">new</span> PointF(-box.X, -box.Y));
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a9ebf3d2f01749ccafc6babc589cecd4d"></a><!-- doxytag: member="ImageResizer::Util::PolygonMath::NormalizeTo90Intervals" ref="a9ebf3d2f01749ccafc6babc589cecd4d" args="(double d)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static double <a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a9ebf3d2f01749ccafc6babc589cecd4d">ImageResizer.Util.PolygonMath.NormalizeTo90Intervals</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>d</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Normalizes the given angle to a positive multiple of 90 degrees between 0 and 270. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00658">658</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                              {
+            d = d % 360;
+            <span class="keywordflow">if</span> (d &lt; 0) d += 360;
+
+            <span class="keywordflow">if</span> (d &gt;= 315 &amp;&amp; d &lt; 360) <span class="keywordflow">return</span> 0;
+            <span class="keywordflow">if</span> (d &gt;= 0 &amp;&amp; d &lt; 45) <span class="keywordflow">return</span> 0;
+            <span class="keywordflow">if</span> (d &gt;= 45 &amp;&amp; d &lt; 135) <span class="keywordflow">return</span> 90;
+            <span class="keywordflow">if</span> (d &gt;= 135 &amp;&amp; d &lt; 225) <span class="keywordflow">return</span> 180;
+            <span class="keywordflow">if</span> (d &gt;= 225 &amp;&amp; d &lt; 315) <span class="keywordflow">return</span> 270;
+
+            <span class="keywordflow">throw</span> <span class="keyword">new</span> Exception(<span class="stringliteral">&quot;Impossible&quot;</span>);
         }
 </pre></div>
 </div>
@@ -1369,7 +1649,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00095">95</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00098">98</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_layout_builder_8cs_source.html#l00141">ImageResizer.Resizing.LayoutBuilder.Rotate()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
@@ -1423,7 +1703,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00110">110</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00113">113</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                        {
             PointF[] pts = <span class="keyword">new</span> PointF[poly.Length];
             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; poly.Length; i++)
@@ -1468,7 +1748,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00159">159</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00162">162</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
 <span class="comment">/*</span>
 <span class="comment">             *  2D Rotation</span>
@@ -1525,7 +1805,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00180">180</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00183">183</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
 <span class="comment">/*</span>
 <span class="comment">                         * 2D Rotation</span>
@@ -1565,9 +1845,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00017">17</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00020">20</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00652">ImageResizer.ImageBuilder.EndLayout()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00671">ImageResizer.ImageBuilder.EndLayout()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             
             <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#ad1cd2d1a9e6f7cfb99df05710619beda" title="Modifies the specified array by applying the specified function to each element.">ForEach</a>(a, delegate(<span class="keywordtype">object</span> o){
@@ -1605,7 +1885,7 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00034">34</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00037">37</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             
             <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#ad1cd2d1a9e6f7cfb99df05710619beda" title="Modifies the specified array by applying the specified function to each element.">ForEach</a>(a, delegate(<span class="keywordtype">object</span> o)
@@ -1655,9 +1935,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00342">342</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00345">345</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordtype">double</span> innerRatio = inner.Width / inner.Height;
             <span class="keywordtype">double</span> outerRatio = bounding.Width / bounding.Height;
@@ -1711,9 +1991,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00365">365</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00368">368</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_free_image_resizer_8cs_source.html#l00043">ImageResizer.Plugins.FreeImageScaling.FreeImageScalingPlugin.RenderImage()</a>, and <a class="el" href="_seam_carving_plugin_8cs_source.html#l00048">ImageResizer.Plugins.SeamCarving.SeamCarvingPlugin.RenderImage()</a>.</p>
+<p>Referenced by <a class="el" href="_free_image_resizer_8cs_source.html#l00043">ImageResizer.Plugins.FreeImageScaling.FreeImageScalingPlugin.PreRenderImage()</a>, and <a class="el" href="_seam_carving_plugin_8cs_source.html#l00092">ImageResizer.Plugins.SeamCarving.SeamCarvingPlugin.PreRenderImage()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                         {
             <span class="keywordtype">double</span> innerRatio = innerBounds.Width / innerBounds.Height;
             <span class="keywordtype">double</span> outerRatio = outer.Width / outer.Height;
@@ -1753,9 +2033,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00134">134</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00137">137</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             PointF[] r = <span class="keyword">new</span> PointF[4];
             r[0] = rect.Location;
@@ -1791,9 +2071,9 @@ static Size&#160;</td><td class="memItemRight" valign="bottom"><b>RoundPoints</b
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00560">560</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
+<p>Definition at line <a class="el" href="_polygon_math_8cs_source.html#l00561">561</a> of file <a class="el" href="_polygon_math_8cs_source.html">PolygonMath.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_wic_builder_8cs_source.html#l00109">ImageResizer.Plugins.WicBuilder.WicBuilderPlugin.BuildJobWic()</a>, <a class="el" href="_bounding_box_finder_8cs_source.html#l00020">ImageResizer.Plugins.WhitespaceTrimmer.BoundingBoxFinder.FindBoxSobel()</a>, <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>, and <a class="el" href="_speed_or_quality_8cs_source.html#l00024">ImageResizer.Plugins.Basic.SpeedOrQuality.RenderImage()</a>.</p>
+<p>Referenced by <a class="el" href="_wic_builder_8cs_source.html#l00098">ImageResizer.Plugins.WicBuilder.WicBuilderPlugin.BuildJobWic()</a>, <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>, and <a class="el" href="_speed_or_quality_8cs_source.html#l00025">ImageResizer.Plugins.Basic.SpeedOrQuality.RenderImage()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordflow">return</span> <span class="keyword">new</span> Rectangle((<span class="keywordtype">int</span>)Math.Round(r.X), (int)Math.Round(r.Y), (int)Math.Round(r.Width),(int)Math.Round( r.Height));
         }

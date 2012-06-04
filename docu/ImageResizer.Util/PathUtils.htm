@@ -38,10 +38,16 @@
           <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
       </li>
 			<li>
+          <a href="../ImageResizer.Configuration.Plugins/index.htm">ImageResizer.Configuration.Plugins</a>
+      </li>
+			<li>
           <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
       </li>
 			<li>
           <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.ExtensionMethods/index.htm">ImageResizer.ExtensionMethods</a>
       </li>
 			<li>
           <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
@@ -74,6 +80,12 @@
             <a href="../ImageResizer.Util/ForEachFunction.htm">ForEachFunction</a>
         </li>
 				<li>
+            <a href="../ImageResizer.Util/NativeDependenciesAttribute.htm">NativeDependenciesAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/ParseUtils.htm">ParseUtils</a>
+        </li>
+				<li>
             <a href="../ImageResizer.Util/PathUtils.htm" class="current">PathUtils</a>
         </li>
 				<li>
@@ -103,6 +115,8 @@
 		<p><strong>Namespace</strong> ImageResizer.Util</p>
 		</header>
     <div class="sub-header">
+			<div id="summary">A set of utility methods for manipulating virtual paths 
+			</div>
 		
 		
 			<h3 class="section">Methods</h3>
@@ -111,7 +125,10 @@
 				<li><a href="../ImageResizer.Util/PathUtils.htm#AddQueryString">AddQueryString</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#BuildQueryString">BuildQueryString</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#BuildQueryString">BuildQueryString</a></li>
-				<li><a href="../ImageResizer.Util/PathUtils.htm#FromBase64UToButes">FromBase64UToButes</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#BuildQueryString">BuildQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#BuildSemicolonQueryString">BuildSemicolonQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#FilterQueryString">FilterQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#FromBase64UToBytes">FromBase64UToBytes</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#FromBase64UToString">FromBase64UToString</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#GenerateImageUrl">GenerateImageUrl</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#GetExtension">GetExtension</a></li>
@@ -120,11 +137,15 @@
 				<li><a href="../ImageResizer.Util/PathUtils.htm#MapPathIfAppRelative">MapPathIfAppRelative</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#MergeOverwriteQueryString">MergeOverwriteQueryString</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#MergeQueryString">MergeQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ParseQueryOnly">ParseQueryOnly</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ParseQueryString">ParseQueryString</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#ParseQueryString">ParseQueryString</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#ParseQueryString">ParseQueryString</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#ParseQueryStringFriendly">ParseQueryStringFriendly</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#ParseQueryStringFriendlyAllowSemicolons">ParseQueryStringFriendlyAllowSemicolons</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#RemoveExtension">RemoveExtension</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#RemoveFullExtension">RemoveFullExtension</a></li>
+				<li><a href="../ImageResizer.Util/PathUtils.htm#RemoveNonMatchingChars">RemoveNonMatchingChars</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#RemoveQueryString">RemoveQueryString</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#ResolveAppRelative">ResolveAppRelative</a></li>
 				<li><a href="../ImageResizer.Util/PathUtils.htm#ResolveAppRelativeAssumeAppRelative">ResolveAppRelativeAssumeAppRelative</a></li>
@@ -150,7 +171,7 @@
 			<span title="System.string">string</span> <strong>AddExtension</strong>(<span title="System.string">string</span> path, <span title="System.string">string</span> newExtension)
 		</h4>
 		<div class="content">Adds the specified extension to path, returning the result. Multiple calls will result in "path.ext.ext.ext.ext".
-maintains the querystring as-is. 
+The querystring and fragment is maintained as-is. Semicolon syntax not supported. 
 
 
 
@@ -161,7 +182,64 @@ maintains the querystring as-is.
 		<h4>
 			<span title="System.string">string</span> <strong>AddQueryString</strong>(<span title="System.string">string</span> virtualPath, <span title="System.string">string</span> querystring)
 		</h4>
-		<div class="content">Joins the path and querystring. If the path already contains a querystring, they are 'append joined' with the correct character. 
+		<div class="content">Joins the path and querystring. If the path already contains a querystring, they are 'append joined' with the correct character. Fragment is maintained as-is.
+Does not support the semicolon syntax. 
+
+
+
+
+		</div>
+	</div>
+	<div id="BuildQueryString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>BuildQueryString</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> QueryString, <span title="System.bool">bool</span> urlEncode, <span title="System.bool">bool</span> skipNullValues, <span title="System.Char">Char</span> firstSeparator, <span title="System.Char">Char</span> laterSeparators, <span title="System.Char">Char</span> equals)
+		</h4>
+		<div class="content">Build a customized querystring from a NameValueCollection 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span></code> QueryString
+						</dt>
+						<dt>
+							<code><span title="System.bool">bool</span></code> urlEncode
+						</dt>
+						<dd>True to URL encode all values 
+						</dd>
+						<dt>
+							<code><span title="System.bool">bool</span></code> skipNullValues
+						</dt>
+						<dd>If true, null-valued keys will be skipped 
+						</dd>
+						<dt>
+							<code><span title="System.Char">Char</span></code> firstSeparator
+						</dt>
+						<dd>Usually ? or ; 
+						</dd>
+						<dt>
+							<code><span title="System.Char">Char</span></code> laterSeparators
+						</dt>
+						<dd>Usually & or ; 
+						</dd>
+						<dt>
+							<code><span title="System.Char">Char</span></code> equals
+						</dt>
+						<dd>Always = 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="BuildQueryString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>BuildQueryString</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> QueryString)
+		</h4>
+		<div class="content">Returns a string querystring in the form "?key=value&key=value".
+Keys and values are UrlEncoded as they should be. 
 
 
 
@@ -180,21 +258,32 @@ Keys and values are UrlEncoded if urlEncode=true.
 
 		</div>
 	</div>
-	<div id="BuildQueryString" class="method">
+	<div id="BuildSemicolonQueryString" class="method">
 		<h4>
-			<span title="System.string">string</span> <strong>BuildQueryString</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> QueryString)
+			<span title="System.string">string</span> <strong>BuildSemicolonQueryString</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> QueryString, <span title="System.bool">bool</span> urlEncode)
 		</h4>
-		<div class="content">Returns a string querystring in the form "?key=value&key=value".
-Keys and values are UrlEncoded as they should be. 
+		<div class="content">Returns a string querystring in the form ";key=value;key=value".
+Keys and values are UrlEncoded if urlEncode=true. 
 
 
 
 
 		</div>
 	</div>
-	<div id="FromBase64UToButes" class="method">
+	<div id="FilterQueryString" class="method">
 		<h4>
-			<span title="System.Byte[]">Byte[]</span> <strong>FromBase64UToButes</strong>(<span title="System.string">string</span> data)
+			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>FilterQueryString</strong>(<a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> query, <span title="System.String[]">String[]</span> keepKeys)
+		</h4>
+		<div class="content">Returns a new collection containing only the specified keys from the old one 
+
+
+
+
+		</div>
+	</div>
+	<div id="FromBase64UToBytes" class="method">
+		<h4>
+			<span title="System.Byte[]">Byte[]</span> <strong>FromBase64UToBytes</strong>(<span title="System.string">string</span> data)
 		</h4>
 		<div class="content">Converts a URL-safe version of base64 to a byte array.  (no = padding, with - instead of + and _ instead of /) 
 
@@ -231,8 +320,9 @@ If you're running in IIS classic, add ".ashx" to the 'path' parameter.
 		<h4>
 			<span title="System.string">string</span> <strong>GetExtension</strong>(<span title="System.string">string</span> path)
 		</h4>
-		<div class="content">Ignores the querystring. Grabs the last segment of the filename extension. Returns an empty string if there is no extension, or if the extension contains a space.
-Includes the leading '.' 
+		<div class="content">Grabs the last segment of the filename extension. Returns an empty string if there is no extension, or if the extension contains a space.
+Includes the leading '.'
+The querystring and fragment is ignored. Semicolon syntax not supported. 
 
 
 
@@ -244,7 +334,8 @@ Includes the leading '.'
 			<span title="System.string">string</span> <strong>GetFullExtension</strong>(<span title="System.string">string</span> path)
 		</h4>
 		<div class="content">Will return the full extension, like ".jpg.ashx", not just the last bit.
-Ignores the querystring part. Excludes extensions containing spaces or slashes. 
+Excludes extensions containing spaces or slashes.
+The querystring and fragment is ignored. Semicolon syntax not supported. 
 
 
 
@@ -279,7 +370,7 @@ Returns null if the physical path isn't a subfolder of the application's physica
 		<h4>
 			<span title="System.string">string</span> <strong>MergeOverwriteQueryString</strong>(<span title="System.string">string</span> path, <span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> newQuerystring)
 		</h4>
-		<div class="content">Overwrites exisisting querystring values in 'path' with the values in 'newQuerystring'. Doesn't support ; querystrings 
+		<div class="content">Overwrites exisisting querystring values in 'path' with the values in 'newQuerystring'. Does not support the semicolon syntax. 
 
 
 
@@ -290,7 +381,29 @@ Returns null if the physical path isn't a subfolder of the application's physica
 		<h4>
 			<span title="System.string">string</span> <strong>MergeQueryString</strong>(<span title="System.string">string</span> path, <span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> newQuerystring)
 		</h4>
-		<div class="content">Adds the querystring values in 'newQuerystring' to the querystring in Path, but does not overwrite values. Doesn't support ; querystrings 
+		<div class="content">Adds the querystring values in 'newQuerystring' to the querystring in Path, but does not overwrite values. Does not support the semicolon syntax. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ParseQueryOnly" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>ParseQueryOnly</strong>(<span title="System.string">string</span> query, <span title="System.bool">bool</span> allowSemicolons, <span title="System.bool">bool</span> urlDecode)
+		</h4>
+		<div class="content">Parses a querystring into a name/value collection. The given string cannot include path or fragment information - it must be *just* the querystring. 
+
+
+
+
+		</div>
+	</div>
+	<div id="ParseQueryString" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>ParseQueryString</strong>(<span title="System.string">string</span> path, <span title="System.bool">bool</span> allowSemicolons, <span title="System.String&">String&amp;</span> beforeQuery, <span title="System.String&">String&amp;</span> fragment)
+		</h4>
+		<div class="content">
 
 
 
@@ -310,11 +423,22 @@ UrlDecodes keys and values.
 
 		</div>
 	</div>
+	<div id="ParseQueryString" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>ParseQueryString</strong>(<span title="System.string">string</span> path, <span title="System.bool">bool</span> allowSemicolons)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
 	<div id="ParseQueryStringFriendly" class="method">
 		<h4>
 			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>ParseQueryStringFriendly</strong>(<span title="System.string">string</span> path)
 		</h4>
-		<div class="content">Like ParseQueryString, but permits the leading '?' to be omitted. 
+		<div class="content">Like ParseQueryString, but permits the leading '?' to be omitted. Does not support the semicolon syntax. 
 
 
 
@@ -325,7 +449,7 @@ UrlDecodes keys and values.
 		<h4>
 			<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> <strong>ParseQueryStringFriendlyAllowSemicolons</strong>(<span title="System.string">string</span> path)
 		</h4>
-		<div class="content">
+		<div class="content">Like ParseQueryString, but permits the leading '?' to be omitted, and semicolons can be substituted for '&' 
 
 
 
@@ -337,7 +461,8 @@ UrlDecodes keys and values.
 			<span title="System.string">string</span> <strong>RemoveExtension</strong>(<span title="System.string">string</span> path)
 		</h4>
 		<div class="content">Removes the extension from the filename or URL, leaving the querystring intact, where the extension is only the last extension segment.
-I.e, image.jpg.bmp.tiff?hi would be image.jpg.bmp?hi after this call. 
+I.e, image.jpg.bmp.tiff?hi would be image.jpg.bmp?hi after this call.
+The querystring and fragment is maintained as-is. Semicolon syntax not supported. 
 
 
 
@@ -348,7 +473,20 @@ I.e, image.jpg.bmp.tiff?hi would be image.jpg.bmp?hi after this call.
 		<h4>
 			<span title="System.string">string</span> <strong>RemoveFullExtension</strong>(<span title="System.string">string</span> path)
 		</h4>
-		<div class="content">Removes all extension segments from the filename or URL, leaving the querystring intact. I.e, image.jpg.bmp.tiff?hi would be image?hi 
+		<div class="content">Removes all extension segments from the filename or URL, leaving the querystring intact. I.e, image.jpg.bmp.tiff?hi would be image?hi
+The querystring and fragment is maintained as-is. Semicolon syntax not supported. 
+
+
+
+
+		</div>
+	</div>
+	<div id="RemoveNonMatchingChars" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>RemoveNonMatchingChars</strong>(<span title="System.string">string</span> text, <span title="System.string">string</span> chars)
+		</h4>
+		<div class="content">Allows a string to be filtered using the specified whitelisting expression (regex style).
+I.e, "hi YOU 3", "a-z3" will produce "hi3". 
 
 
 
@@ -359,7 +497,7 @@ I.e, image.jpg.bmp.tiff?hi would be image.jpg.bmp?hi after this call.
 		<h4>
 			<span title="System.string">string</span> <strong>RemoveQueryString</strong>(<span title="System.string">string</span> path)
 		</h4>
-		<div class="content">Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned. 
+		<div class="content">Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned. Does not support the semicolon syntax.  Fragment is maintained as-is. 
 
 
 
@@ -370,7 +508,7 @@ I.e, image.jpg.bmp.tiff?hi would be image.jpg.bmp?hi after this call.
 		<h4>
 			<span title="System.string">string</span> <strong>ResolveAppRelative</strong>(<span title="System.string">string</span> virtualPath)
 		</h4>
-		<div class="content">
+		<div class="content">Resolves app-relative paths to virtual paths. Does nothing with virtual or relative paths. 
 
 
 
@@ -404,9 +542,11 @@ Turns app-relative paths into domain relative paths.
 		<h4>
 			<span title="System.string">string</span> <strong>SetExtension</strong>(<span title="System.string">string</span> path, <span title="System.string">string</span> newExtension)
 		</h4>
-		<div class="content">Sets the file extension of the specified path to the specified value, returning the result.
+		<div class="content">Should be called SetFullExtension.
+Sets the file extension of the specified path to the specified value, returning the result.
 If an extension has multiple parts, it will replace all of them.
-Leading dots will be stripped from 'newExtension' and re-addd as required. 
+Leading dots will be stripped from 'newExtension' and re-addd as required.
+The querystring and fragment is maintained as-is. Semicolon syntax not supported. 
 
 
 
@@ -456,7 +596,7 @@ Leading dots will be stripped from 'newExtension' and re-addd as required.
 	</div>
 	</section>
 	</article><footer>
-	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="version">Built from v3.2.1.497 of ImageResizer.Core (Image Resizer)</span>
 	<span id="docu-link">
 		Generated by <a href="http://docu.jagregory.com">docu</a>
 	</span>

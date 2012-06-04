@@ -1,5 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file. Implementing this allows usage of your VirtualProvider without registering it with AS..." alt="" coords="203,6,375,53"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_bitmap_file.html" title="For virtual files who want to provide their data in Bitmap form (like a PSD reader or gradient genera..." alt="" coords="277,105,547,151"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="571,105,1004,151"/>
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="6,5,178,51"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_bitmap_file.html" title="For virtual files who want to provide their data in Bitmap form (like a PSD reader or gradient genera..." alt="" coords="311,42,582,89"/>
+<area shape="rect" id="node7" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..." alt="" coords="239,113,655,159"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="230,183,663,230"/>
 </map>

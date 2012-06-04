@@ -15,7 +15,7 @@ digraph G
   Node6 -> Node2 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _encoderProvider" ,fontname="Helvetica"];
   Node6 [label="ImageResizer.Encoding.IEncoderProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html",tooltip="A provider (or selector) of IEncoder instances."];
   Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _settingsModifier" ,fontname="Helvetica"];
-  Node7 [label="ImageResizer.Plugins.ISettingsModifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html"];
+  Node7 [label="ImageResizer.Plugins.ISettingsModifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html",tooltip="Provides a way to modify settings before they reach the managed API. Does not execute early enough to..."];
   Node8 -> Node1 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" plugins" ,fontname="Helvetica"];
   Node8 [label="ImageResizer.Configuration.PluginConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_plugin_config.html",tooltip="Provides thread-safe access to plugin addition, removal, and querying methods."];
   Node9 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
@@ -27,6 +27,12 @@ digraph G
   Node12 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
   Node12 [label="IEncoderProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html",tooltip="A provider (or selector) of IEncoder instances."];
   Node1 -> Node8 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" c" ,fontname="Helvetica"];
-  Node13 -> Node8 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _logManager" ,fontname="Helvetica"];
-  Node13 [label="ImageResizer.Configuration.Logging.ILogManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html"];
+  Node13 -> Node8 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" ndeps" ,fontname="Helvetica"];
+  Node13 [label="ImageResizer.Configuration.Plugins.NativeDependencyManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_plugins_1_1_native_dependency_manager.html",tooltip="Provides automatic download of native dependencies (which VS doesn&#39;t see). Gets the correct bitness a..."];
+  Node14 -> Node13 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node14 [label="Issues::IssueSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html"];
+  Node10 -> Node14 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node11 -> Node14 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node15 -> Node8 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _logManager" ,fontname="Helvetica"];
+  Node15 [label="ImageResizer.Configuration.Logging.ILogManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html"];
 }

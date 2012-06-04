@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -83,146 +83,311 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 ﻿<span class="comment">/* Copyright (c) 2011 Nathanael Jones. See license.txt */</span>
 <a name="l00002"></a>00002 <span class="keyword">using</span> System;
-<a name="l00003"></a>00003 <span class="keyword">using</span> System.Collections.Generic;
-<a name="l00004"></a>00004 <span class="keyword">using</span> System.Text;
-<a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="keyword">namespace </span>ImageResizer {
-<a name="l00007"></a>00007 <span class="comment"></span>
-<a name="l00008"></a>00008 <span class="comment">    /// &lt;summary&gt;</span>
-<a name="l00009"></a>00009 <span class="comment">    /// When to disk cache the image</span>
-<a name="l00010"></a>00010 <span class="comment">    /// &lt;/summary&gt;</span>
-<a name="l00011"></a><a class="code" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c">00011</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c" title="When to disk cache the image.">ServerCacheMode</a> {<span class="comment"></span>
-<a name="l00012"></a>00012 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00013"></a>00013 <span class="comment">        /// Request no caching of the resulting image.</span>
-<a name="l00014"></a>00014 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00015"></a>00015 <span class="comment"></span>        No,<span class="comment"></span>
-<a name="l00016"></a>00016 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00017"></a>00017 <span class="comment">        /// Request that the resulting image always be cached on the server, even if no modifications are made. </span>
-<a name="l00018"></a>00018 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00019"></a>00019 <span class="comment"></span>        Always,<span class="comment"></span>
-<a name="l00020"></a>00020 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00021"></a>00021 <span class="comment">        /// Default caching behavior. Modified images are cached, unmodified images are not cached.</span>
-<a name="l00022"></a>00022 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00023"></a>00023 <span class="comment"></span>        Default
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025     }<span class="comment"></span>
-<a name="l00026"></a>00026 <span class="comment">    /// &lt;summary&gt;</span>
-<a name="l00027"></a>00027 <span class="comment">    /// When to process and re-encode the image. </span>
-<a name="l00028"></a>00028 <span class="comment">    /// &lt;/summary&gt;</span>
-<a name="l00029"></a><a class="code" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a">00029</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a" title="When to process and re-encode the image.">ProcessWhen</a> {<span class="comment"></span>
-<a name="l00030"></a>00030 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00031"></a>00031 <span class="comment">        /// Request no processing of the image or file (generally used with cache=always).</span>
-<a name="l00032"></a>00032 <span class="comment">        /// The file contents will be used as-is.</span>
-<a name="l00033"></a>00033 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00034"></a>00034 <span class="comment"></span>        No,<span class="comment"></span>
-<a name="l00035"></a>00035 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00036"></a>00036 <span class="comment">        /// Require the file or image to be processed. Will cause non-image files to fail with an ImageCorruptedException.</span>
-<a name="l00037"></a>00037 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00038"></a>00038 <span class="comment"></span>        Always,<span class="comment"></span>
-<a name="l00039"></a>00039 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00040"></a>00040 <span class="comment">        /// Default. Only files with both a supported image extension and resizing settings specified in the querystring will be processed.</span>
-<a name="l00041"></a>00041 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00042"></a>00042 <span class="comment"></span>        Default
-<a name="l00043"></a>00043     }
-<a name="l00044"></a>00044 
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046 <span class="comment"></span>
-<a name="l00047"></a>00047 <span class="comment">    /// &lt;summary&gt;</span>
-<a name="l00048"></a>00048 <span class="comment">    /// Controls whether the image is allowed to upscale, downscale, both, or if only the canvas gets to be upscaled.</span>
-<a name="l00049"></a>00049 <span class="comment">    /// &lt;/summary&gt;</span>
-<a name="l00050"></a><a class="code" href="namespace_image_resizer.html#aca52f6f1e90c78a5e5e79c6d709a571c">00050</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#aca52f6f1e90c78a5e5e79c6d709a571c" title="Controls whether the image is allowed to upscale, downscale, both, or if only the canvas gets to be u...">ScaleMode</a> {<span class="comment"></span>
-<a name="l00051"></a>00051 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00052"></a>00052 <span class="comment">        /// The default. Only downsamples images - never enlarges. If an image is smaller than &#39;width&#39; and &#39;height&#39;, the image coordinates are used instead.</span>
-<a name="l00053"></a>00053 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00054"></a>00054 <span class="comment"></span>        DownscaleOnly,<span class="comment"></span>
+<a name="l00003"></a>00003 <span class="keyword">using</span> ImageResizer.ExtensionMethods;
+<a name="l00004"></a>00004 
+<a name="l00005"></a>00005 <span class="keyword">namespace </span>ImageResizer {
+<a name="l00006"></a>00006 <span class="comment"></span>
+<a name="l00007"></a>00007 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00008"></a>00008 <span class="comment">    /// Output image formats</span>
+<a name="l00009"></a>00009 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00010"></a><a class="code" href="namespace_image_resizer.html#ad8a20ccdc3ff113284bb7760d959aca3">00010</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#ad8a20ccdc3ff113284bb7760d959aca3" title="Output image formats.">OutputFormat</a> {<span class="comment"></span>
+<a name="l00011"></a>00011 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00012"></a>00012 <span class="comment">        /// Jpeg - the best format for photographs and thumbnails</span>
+<a name="l00013"></a>00013 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00014"></a>00014 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;jpg&quot;</span>,<span class="keyword">true</span>)]
+<a name="l00015"></a>00015         [EnumString(<span class="stringliteral">&quot;jpe&quot;</span>)]
+<a name="l00016"></a>00016         [EnumString(<span class="stringliteral">&quot;jif&quot;</span>)]
+<a name="l00017"></a>00017         [EnumString(<span class="stringliteral">&quot;jfif&quot;</span>)]
+<a name="l00018"></a>00018         [EnumString(<span class="stringliteral">&quot;jfi&quot;</span>)]
+<a name="l00019"></a>00019         [EnumString(<span class="stringliteral">&quot;exif&quot;</span>)]
+<a name="l00020"></a>00020         Jpeg = 8,<span class="comment"></span>
+<a name="l00021"></a>00021 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00022"></a>00022 <span class="comment">        /// The best format for transparent images and vector graphics</span>
+<a name="l00023"></a>00023 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00024"></a>00024 <span class="comment"></span>        Png = 16,<span class="comment"></span>
+<a name="l00025"></a>00025 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00026"></a>00026 <span class="comment">        /// A really poor choice for pretty much everything except animation</span>
+<a name="l00027"></a>00027 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00028"></a>00028 <span class="comment"></span>        Gif = 32
+<a name="l00029"></a>00029     }
+<a name="l00030"></a>00030            
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="comment"></span>
+<a name="l00033"></a>00033 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00034"></a>00034 <span class="comment">    /// When to disk cache the image</span>
+<a name="l00035"></a>00035 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00036"></a><a class="code" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c">00036</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c" title="When to disk cache the image.">ServerCacheMode</a> {<span class="comment"></span>
+<a name="l00037"></a>00037 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00038"></a>00038 <span class="comment">        /// Request no disk caching of the resulting image.</span>
+<a name="l00039"></a>00039 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00040"></a>00040 <span class="comment"></span>        No,<span class="comment"></span>
+<a name="l00041"></a>00041 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00042"></a>00042 <span class="comment">        /// Request that the resulting image always be disk cached on the server, even if no modifications are made. </span>
+<a name="l00043"></a>00043 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00044"></a>00044 <span class="comment"></span>        Always,<span class="comment"></span>
+<a name="l00045"></a>00045 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00046"></a>00046 <span class="comment">        /// Default caching behavior. Modified images are disk cached, unmodified images are not.</span>
+<a name="l00047"></a>00047 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00048"></a>00048 <span class="comment"></span>        Default
+<a name="l00049"></a>00049 
+<a name="l00050"></a>00050     }<span class="comment"></span>
+<a name="l00051"></a>00051 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00052"></a>00052 <span class="comment">    /// When to process and re-encode the file. </span>
+<a name="l00053"></a>00053 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00054"></a><a class="code" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a">00054</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a" title="When to process and re-encode the file.">ProcessWhen</a> {<span class="comment"></span>
 <a name="l00055"></a>00055 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00056"></a>00056 <span class="comment">        /// Only upscales (zooms) images - never downsamples except to meet web.config restrictions. If an image is larger than &#39;width&#39; and &#39;height&#39;, the image coordinates are used instead.</span>
-<a name="l00057"></a>00057 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00058"></a>00058 <span class="comment"></span>        UpscaleOnly,<span class="comment"></span>
-<a name="l00059"></a>00059 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00060"></a>00060 <span class="comment">        /// Upscales and downscales images according to &#39;width&#39; and &#39;height&#39;, within web.config restrictions.</span>
-<a name="l00061"></a>00061 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00062"></a>00062 <span class="comment"></span>        Both,<span class="comment"></span>
-<a name="l00063"></a>00063 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00064"></a>00064 <span class="comment">        /// When the image is smaller than the requested size, padding is added instead of stretching the image</span>
-<a name="l00065"></a>00065 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00066"></a>00066 <span class="comment"></span>        UpscaleCanvas
-<a name="l00067"></a>00067     }
-<a name="l00068"></a>00068 <span class="comment"></span>
-<a name="l00069"></a>00069 <span class="comment">    /// &lt;summary&gt;</span>
-<a name="l00070"></a>00070 <span class="comment">    /// [Depreciated (Use FitMode.Stretch)] Previously used to force an image to be &#39;stretched&#39; to match a different aspect ratio.</span>
-<a name="l00071"></a>00071 <span class="comment">    /// &lt;/summary&gt;</span>
-<a name="l00072"></a><a class="code" href="namespace_image_resizer.html#ac2f2172bdae0792555449bdc8547b8bc">00072</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#ac2f2172bdae0792555449bdc8547b8bc" title="[Depreciated (Use FitMode.Stretch)] Previously used to force an image to be &#39;stretched&#39; to match a di...">StretchMode</a> {<span class="comment"></span>
-<a name="l00073"></a>00073 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00074"></a>00074 <span class="comment">        /// [Depreciated (Use FitMode)] Maintains aspect ratio. Default.</span>
-<a name="l00075"></a>00075 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00076"></a>00076 <span class="comment"></span>        Proportionally,<span class="comment"></span>
-<a name="l00077"></a>00077 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00078"></a>00078 <span class="comment">        /// [Depreciated (Use FitMode)] Skews image to fit the new aspect ratio defined by &#39;width&#39; and &#39;height&#39;</span>
-<a name="l00079"></a>00079 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00080"></a>00080 <span class="comment"></span>        Fill
-<a name="l00081"></a>00081     }<span class="comment"></span>
-<a name="l00082"></a>00082 <span class="comment">    /// &lt;summary&gt;</span>
-<a name="l00083"></a>00083 <span class="comment">    /// How do deal with aspect ratio differences between the requested size and the original image&#39;s size.</span>
-<a name="l00084"></a>00084 <span class="comment">    /// &lt;/summary&gt;</span>
-<a name="l00085"></a><a class="code" href="namespace_image_resizer.html#affd730f8b2250fecace497124be5a37d">00085</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#affd730f8b2250fecace497124be5a37d" title="How do deal with aspect ratio differences between the requested size and the original image&#39;s size...">FitMode</a> {<span class="comment"></span>
+<a name="l00056"></a>00056 <span class="comment">        /// Request no processing of the image or file (generally used with cache=always).</span>
+<a name="l00057"></a>00057 <span class="comment">        /// The file contents will be used as-is.</span>
+<a name="l00058"></a>00058 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00059"></a>00059 <span class="comment"></span>        No,<span class="comment"></span>
+<a name="l00060"></a>00060 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00061"></a>00061 <span class="comment">        /// Require the file or image to be processed. Will cause non-image files to fail with an ImageCorruptedException.</span>
+<a name="l00062"></a>00062 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00063"></a>00063 <span class="comment"></span>        Always,<span class="comment"></span>
+<a name="l00064"></a>00064 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00065"></a>00065 <span class="comment">        /// Default. Only files with both a supported image extension and resizing settings specified in the querystring will be processed.</span>
+<a name="l00066"></a>00066 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00067"></a>00067 <span class="comment"></span>        Default
+<a name="l00068"></a>00068     }
+<a name="l00069"></a>00069 
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 <span class="comment"></span>
+<a name="l00072"></a>00072 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00073"></a>00073 <span class="comment">    /// Controls whether the image is allowed to upscale, downscale, both, or if only the canvas gets to be upscaled.</span>
+<a name="l00074"></a>00074 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00075"></a><a class="code" href="namespace_image_resizer.html#aca52f6f1e90c78a5e5e79c6d709a571c">00075</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#aca52f6f1e90c78a5e5e79c6d709a571c" title="Controls whether the image is allowed to upscale, downscale, both, or if only the canvas gets to be u...">ScaleMode</a> {<span class="comment"></span>
+<a name="l00076"></a>00076 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00077"></a>00077 <span class="comment">        /// The default. Only downsamples images - never enlarges. If an image is smaller than &#39;width&#39; and &#39;height&#39;, the image coordinates are used instead.</span>
+<a name="l00078"></a>00078 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00079"></a>00079 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;down&quot;</span>)]
+<a name="l00080"></a>00080         DownscaleOnly,<span class="comment"></span>
+<a name="l00081"></a>00081 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00082"></a>00082 <span class="comment">        /// Only upscales (zooms) images - never downsamples except to meet web.config restrictions. If an image is larger than &#39;width&#39; and &#39;height&#39;, the image coordinates are used instead.</span>
+<a name="l00083"></a>00083 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00084"></a>00084 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;up&quot;</span>)]
+<a name="l00085"></a>00085         UpscaleOnly,<span class="comment"></span>
 <a name="l00086"></a>00086 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00087"></a>00087 <span class="comment">        /// Fit mode will be determined by other settings, such as &amp;amp;carve=true, &amp;amp;stretch=fill, and &amp;amp;crop=auto. If none are specified and width/height are specified , &amp;amp;mode=pad will be used. If maxwidth/maxheight are used, &amp;amp;mode=max will be used.</span>
+<a name="l00087"></a>00087 <span class="comment">        /// Upscales and downscales images according to &#39;width&#39; and &#39;height&#39;, within web.config restrictions.</span>
 <a name="l00088"></a>00088 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00089"></a>00089 <span class="comment"></span>        None,
-<a name="l00090"></a>00090 <span class="comment"></span>
-<a name="l00091"></a>00091 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00092"></a>00092 <span class="comment">        /// Width and height are considered maximum values. The resulting image may be smaller to maintain its aspect ratio. The image may also be smaller if the source image is smaller</span>
-<a name="l00093"></a>00093 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00094"></a>00094 <span class="comment"></span>        Max,
-<a name="l00095"></a>00095        <span class="comment"></span>
-<a name="l00096"></a>00096 <span class="comment">        /// Width and height are considered exact values - padding is used if there is an aspect ratio difference. Use &amp;anchor to override the MiddleCenter default.</span>
-<a name="l00097"></a>00097 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00098"></a>00098 <span class="comment"></span>        Pad,<span class="comment"></span>
-<a name="l00099"></a>00099 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00100"></a>00100 <span class="comment">        /// Width and height are considered exact values - cropping is used if there is an aspect ratio difference. Use &amp;anchor to override the MiddleCenter default.</span>
-<a name="l00101"></a>00101 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00102"></a>00102 <span class="comment"></span>        Crop,<span class="comment"></span>
-<a name="l00103"></a>00103 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00104"></a>00104 <span class="comment">        /// Width and height are considered exact values - seam carving is used if there is an aspect ratio difference. Requires the SeamCarving plugin to be installed, otherwise behaves like &#39;pad&#39;.</span>
-<a name="l00105"></a>00105 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00106"></a>00106 <span class="comment"></span>        Carve,<span class="comment"></span>
-<a name="l00107"></a>00107 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00108"></a>00108 <span class="comment">        /// Width and height are considered exact values - if there is an aspect ratio difference, the image is stretched.</span>
-<a name="l00109"></a>00109 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00110"></a>00110 <span class="comment"></span>        Stretch,
-<a name="l00111"></a>00111        
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113     }
-<a name="l00114"></a><a class="code" href="namespace_image_resizer.html#a288a233240980da59e426df4651ec850">00114</a>     <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#a288a233240980da59e426df4651ec850">CropMode</a> {<span class="comment"></span>
+<a name="l00089"></a>00089 <span class="comment"></span>        Both,<span class="comment"></span>
+<a name="l00090"></a>00090 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00091"></a>00091 <span class="comment">        /// When the image is smaller than the requested size, padding is added instead of stretching the image</span>
+<a name="l00092"></a>00092 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00093"></a>00093 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;canvas&quot;</span>)]
+<a name="l00094"></a>00094         UpscaleCanvas
+<a name="l00095"></a>00095     }
+<a name="l00096"></a>00096 <span class="comment"></span>
+<a name="l00097"></a>00097 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00098"></a>00098 <span class="comment">    /// [Deprecated (Use FitMode.Stretch)] Previously used to force an image to be &#39;stretched&#39; to match a different aspect ratio.</span>
+<a name="l00099"></a>00099 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00100"></a>00100 <span class="comment"></span>    [Obsolete(<span class="stringliteral">&quot;Use Mode=FitMode.Stretch instead. Will be removed in V3.5 or V4.&quot;</span>)]
+<a name="l00101"></a><a class="code" href="namespace_image_resizer.html#ac2f2172bdae0792555449bdc8547b8bc">00101</a>     <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#ac2f2172bdae0792555449bdc8547b8bc" title="[Deprecated (Use FitMode.Stretch)] Previously used to force an image to be &#39;stretched&#39; to match a dif...">StretchMode</a> {<span class="comment"></span>
+<a name="l00102"></a>00102 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00103"></a>00103 <span class="comment">        /// [Deprecated (Use FitMode)] Maintains aspect ratio. Default.</span>
+<a name="l00104"></a>00104 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00105"></a>00105 <span class="comment"></span>        Proportionally,<span class="comment"></span>
+<a name="l00106"></a>00106 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00107"></a>00107 <span class="comment">        /// [Deprecated (Use FitMode)] Skews image to fit the new aspect ratio defined by &#39;width&#39; and &#39;height&#39;</span>
+<a name="l00108"></a>00108 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00109"></a>00109 <span class="comment"></span>        Fill
+<a name="l00110"></a>00110     }<span class="comment"></span>
+<a name="l00111"></a>00111 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00112"></a>00112 <span class="comment">    /// How to resolve aspect ratio differences between the requested size and the original image&#39;s size.</span>
+<a name="l00113"></a>00113 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00114"></a><a class="code" href="namespace_image_resizer.html#affd730f8b2250fecace497124be5a37d">00114</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#affd730f8b2250fecace497124be5a37d" title="How to resolve aspect ratio differences between the requested size and the original image&#39;s size...">FitMode</a> {<span class="comment"></span>
 <a name="l00115"></a>00115 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00116"></a>00116 <span class="comment">        /// Default. No cropping - uses letterboxing if strecth=proportionally and both width and height are specified.</span>
+<a name="l00116"></a>00116 <span class="comment">        /// Fit mode will be determined by other settings, such as &amp;amp;carve=true, &amp;amp;stretch=fill, and &amp;amp;crop=auto. If none are specified and width/height are specified , &amp;amp;mode=pad will be used. If maxwidth/maxheight are used, &amp;amp;mode=max will be used.</span>
 <a name="l00117"></a>00117 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00118"></a>00118 <span class="comment"></span>        None,<span class="comment"></span>
-<a name="l00119"></a>00119 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00120"></a>00120 <span class="comment">        /// [Depreciated] Use Mode=Crop. Minimally crops to preserve aspect ratio if stretch=proportionally.</span>
-<a name="l00121"></a>00121 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00122"></a>00122 <span class="comment"></span>        Auto,<span class="comment"></span>
-<a name="l00123"></a>00123 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00124"></a>00124 <span class="comment">        /// Crops using the custom crop rectangle. Letterboxes if stretch=proportionally and both widht and height are specified.</span>
-<a name="l00125"></a>00125 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00126"></a>00126 <span class="comment"></span>        Custom
-<a name="l00127"></a>00127     }
-<a name="l00128"></a>00128 
-<a name="l00129"></a><a class="code" href="namespace_image_resizer.html#a61ab7fe7c809fcf6568d33b8524b8c6e">00129</a>     <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#a61ab7fe7c809fcf6568d33b8524b8c6e">CropUnits</a> {<span class="comment"></span>
-<a name="l00130"></a>00130 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00131"></a>00131 <span class="comment">        /// Indicates the crop units are pixels on the original image.</span>
-<a name="l00132"></a>00132 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00133"></a>00133 <span class="comment"></span>        SourcePixels,<span class="comment"></span>
-<a name="l00134"></a>00134 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00135"></a>00135 <span class="comment">        /// Indicates a custom range is being specified for the values. Base 0.</span>
-<a name="l00136"></a>00136 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00137"></a>00137 <span class="comment"></span>        Custom
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139 
-<a name="l00140"></a>00140     }
+<a name="l00118"></a>00118 <span class="comment"></span>        None,
+<a name="l00119"></a>00119 <span class="comment"></span>
+<a name="l00120"></a>00120 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00121"></a>00121 <span class="comment">        /// Width and height are considered maximum values. The resulting image may be smaller to maintain its aspect ratio. The image may also be smaller if the source image is smaller</span>
+<a name="l00122"></a>00122 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00123"></a>00123 <span class="comment"></span>        Max,<span class="comment"></span>
+<a name="l00124"></a>00124 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00125"></a>00125 <span class="comment">        /// Width and height are considered exact values - padding is used if there is an aspect ratio difference. Use &amp;amp;anchor to override the MiddleCenter default.</span>
+<a name="l00126"></a>00126 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00127"></a>00127 <span class="comment"></span>        Pad,<span class="comment"></span>
+<a name="l00128"></a>00128 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00129"></a>00129 <span class="comment">        /// Width and height are considered exact values - cropping is used if there is an aspect ratio difference. Use &amp;amp;anchor to override the MiddleCenter default.</span>
+<a name="l00130"></a>00130 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00131"></a>00131 <span class="comment"></span>        Crop,<span class="comment"></span>
+<a name="l00132"></a>00132 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00133"></a>00133 <span class="comment">        /// Width and height are considered exact values - seam carving is used if there is an aspect ratio difference. Requires the SeamCarving plugin to be installed, otherwise behaves like &#39;pad&#39;.</span>
+<a name="l00134"></a>00134 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00135"></a>00135 <span class="comment"></span>        Carve,<span class="comment"></span>
+<a name="l00136"></a>00136 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00137"></a>00137 <span class="comment">        /// Width and height are considered exact values - if there is an aspect ratio difference, the image is stretched.</span>
+<a name="l00138"></a>00138 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00139"></a>00139 <span class="comment"></span>        Stretch,
+<a name="l00140"></a>00140        
 <a name="l00141"></a>00141 
-<a name="l00142"></a>00142 }
+<a name="l00142"></a>00142     }
+<a name="l00143"></a>00143 
+<a name="l00144"></a>00144     [Obsolete(<span class="stringliteral">&quot;Obsolete. Use Mode=Crop to specify automatic cropping. Set CropTopLeft and CropTopRight to specify custom coordinates. Will be removed in V3.5 or V4.&quot;</span>)]
+<a name="l00145"></a><a class="code" href="namespace_image_resizer.html#a288a233240980da59e426df4651ec850">00145</a>     <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#a288a233240980da59e426df4651ec850">CropMode</a> {<span class="comment"></span>
+<a name="l00146"></a>00146 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00147"></a>00147 <span class="comment">        /// Default. No cropping - uses letterboxing if strecth=proportionally and both width and height are specified.</span>
+<a name="l00148"></a>00148 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00149"></a>00149 <span class="comment"></span>        None,<span class="comment"></span>
+<a name="l00150"></a>00150 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00151"></a>00151 <span class="comment">        /// [Deprecated] Use Mode=Crop. Minimally crops to preserve aspect ratio if stretch=proportionally.</span>
+<a name="l00152"></a>00152 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00153"></a>00153 <span class="comment"></span>        [Obsolete(<span class="stringliteral">&quot;Use Mode=Crop instead.&quot;</span>)]
+<a name="l00154"></a>00154         Auto,<span class="comment"></span>
+<a name="l00155"></a>00155 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00156"></a>00156 <span class="comment">        /// Crops using the custom crop rectangle. Letterboxes if stretch=proportionally and both widht and height are specified.</span>
+<a name="l00157"></a>00157 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00158"></a>00158 <span class="comment"></span>        Custom
+<a name="l00159"></a>00159     }
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161     [Obsolete(<span class="stringliteral">&quot;Obsolete. Specify 0 for a crop unit to indicate source pixel coordinates.  Will be removed in V3.5 or V4.&quot;</span>)]
+<a name="l00162"></a><a class="code" href="namespace_image_resizer.html#a61ab7fe7c809fcf6568d33b8524b8c6e">00162</a>     <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#a61ab7fe7c809fcf6568d33b8524b8c6e">CropUnits</a> {<span class="comment"></span>
+<a name="l00163"></a>00163 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00164"></a>00164 <span class="comment">        /// Indicates the crop units are pixels on the original image.</span>
+<a name="l00165"></a>00165 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00166"></a>00166 <span class="comment"></span>        SourcePixels,<span class="comment"></span>
+<a name="l00167"></a>00167 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00168"></a>00168 <span class="comment">        /// Indicates a custom range is being specified for the values. Base 0.</span>
+<a name="l00169"></a>00169 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00170"></a>00170 <span class="comment"></span>        Custom
+<a name="l00171"></a>00171 
+<a name="l00172"></a>00172 
+<a name="l00173"></a>00173     }<span class="comment"></span>
+<a name="l00174"></a>00174 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00175"></a>00175 <span class="comment">    /// Horizontal and vertical flipping. Convertible to System.Drawing.RotateFlipType by casting.</span>
+<a name="l00176"></a>00176 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00177"></a><a class="code" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362">00177</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362" title="Horizontal and vertical flipping. Convertible to System.Drawing.RotateFlipType by casting...">FlipMode</a>{<span class="comment"></span>
+<a name="l00178"></a>00178 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00179"></a>00179 <span class="comment">        /// No flipping</span>
+<a name="l00180"></a>00180 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00181"></a>00181 <span class="comment"></span>        None = 0,<span class="comment"></span>
+<a name="l00182"></a>00182 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00183"></a>00183 <span class="comment">        /// Flip horizontally</span>
+<a name="l00184"></a>00184 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00185"></a>00185 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;h&quot;</span>)]
+<a name="l00186"></a>00186         X = 4,<span class="comment"></span>
+<a name="l00187"></a>00187 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00188"></a>00188 <span class="comment">        /// Flip vertically (identical to 180 degree rotation)</span>
+<a name="l00189"></a>00189 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00190"></a>00190 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;v&quot;</span>)]
+<a name="l00191"></a>00191         Y = 6,<span class="comment"></span>
+<a name="l00192"></a>00192 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00193"></a>00193 <span class="comment">        /// Flip horizontally and vertically</span>
+<a name="l00194"></a>00194 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00195"></a>00195 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;both&quot;</span>)]
+<a name="l00196"></a>00196         XY = 2
+<a name="l00197"></a>00197     }
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199 <span class="comment"></span>
+<a name="l00200"></a>00200 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00201"></a>00201 <span class="comment">    /// Anchor location. Convertible to System.Drawing.ContentAlignment by casting.</span>
+<a name="l00202"></a>00202 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00203"></a>00203 <span class="comment"></span>    [Flags]
+<a name="l00204"></a><a class="code" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">00204</a>     <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38" title="Anchor location. Convertible to System.Drawing.ContentAlignment by casting.">AnchorLocation</a> {<span class="comment"></span>
+<a name="l00205"></a>00205 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00206"></a>00206 <span class="comment">        /// Content is vertically aligned at the top, and horizontally aligned on the left.</span>
+<a name="l00207"></a>00207 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00208"></a>00208 <span class="comment"></span>        TopLeft = 1,
+<a name="l00209"></a>00209 <span class="comment"></span>
+<a name="l00210"></a>00210 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00211"></a>00211 <span class="comment">        /// Content is vertically aligned at the top, and horizontally aligned at the center.</span>
+<a name="l00212"></a>00212 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00213"></a>00213 <span class="comment"></span>        TopCenter = 2,
+<a name="l00214"></a>00214 <span class="comment"></span>
+<a name="l00215"></a>00215 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00216"></a>00216 <span class="comment">        /// Content is vertically aligned at the top, and horizontally aligned on the right.</span>
+<a name="l00217"></a>00217 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00218"></a>00218 <span class="comment"></span>        TopRight = 4,
+<a name="l00219"></a>00219         <span class="comment"></span>
+<a name="l00220"></a>00220 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00221"></a>00221 <span class="comment">        /// Content is vertically aligned in the middle, and horizontally aligned onthe left.</span>
+<a name="l00222"></a>00222 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00223"></a>00223 <span class="comment"></span>        MiddleLeft = 16,
+<a name="l00224"></a>00224         <span class="comment"></span>
+<a name="l00225"></a>00225 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00226"></a>00226 <span class="comment">        /// Content is vertically aligned in the middle, and horizontally aligned at the center.</span>
+<a name="l00227"></a>00227 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00228"></a>00228 <span class="comment"></span>        MiddleCenter = 32,
+<a name="l00229"></a>00229 <span class="comment"></span>
+<a name="l00230"></a>00230 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00231"></a>00231 <span class="comment">        /// Content is vertically aligned in the middle, and horizontally aligned on  the right.</span>
+<a name="l00232"></a>00232 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00233"></a>00233 <span class="comment"></span>        MiddleRight = 64,
+<a name="l00234"></a>00234 <span class="comment"></span>
+<a name="l00235"></a>00235 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00236"></a>00236 <span class="comment">        /// Content is vertically aligned at the bottom, and horizontally aligned on the left.</span>
+<a name="l00237"></a>00237 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00238"></a>00238 <span class="comment"></span>        BottomLeft = 256,
+<a name="l00239"></a>00239         <span class="comment"></span>
+<a name="l00240"></a>00240 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00241"></a>00241 <span class="comment">        /// Content is vertically aligned at the bottom, and horizontally aligned at  the center.</span>
+<a name="l00242"></a>00242 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00243"></a>00243 <span class="comment"></span>        BottomCenter = 512,
+<a name="l00244"></a>00244 <span class="comment"></span>
+<a name="l00245"></a>00245 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00246"></a>00246 <span class="comment">        /// Content is vertically aligned at the bottom, and horizontally aligned on the right.</span>
+<a name="l00247"></a>00247 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00248"></a>00248 <span class="comment"></span>        BottomRight = 1024,
+<a name="l00249"></a>00249     }
+<a name="l00250"></a>00250 <span class="comment"></span>
+<a name="l00251"></a>00251 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00252"></a>00252 <span class="comment">    /// Modes of converting the image to Grayscale. GrayscaleMode.Y usually produces the best resuts</span>
+<a name="l00253"></a>00253 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00254"></a><a class="code" href="namespace_image_resizer.html#adffe2a56e4ff9b1ea25b933fc7517a9c">00254</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#adffe2a56e4ff9b1ea25b933fc7517a9c" title="Modes of converting the image to Grayscale. GrayscaleMode.Y usually produces the best resuts...">GrayscaleMode</a> {
+<a name="l00255"></a>00255         [EnumString(<span class="stringliteral">&quot;false&quot;</span>)]
+<a name="l00256"></a>00256         None = 0,<span class="comment"></span>
+<a name="l00257"></a>00257 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00258"></a>00258 <span class="comment">        /// The reccomended value. Y and NTSC are identical.</span>
+<a name="l00259"></a>00259 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00260"></a>00260 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;true&quot;</span>)]
+<a name="l00261"></a>00261         Y = 1,
+<a name="l00262"></a>00262         
+<a name="l00263"></a>00263         NTSC = 1,
+<a name="l00264"></a>00264         RY = 2,
+<a name="l00265"></a>00265         BT709= 3,
+<a name="l00266"></a>00266 <span class="comment"></span>
+<a name="l00267"></a>00267 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00268"></a>00268 <span class="comment">        /// Red, green, and blue are averaged to get the grayscale image. Usually produces poor results compared to other algorithms.</span>
+<a name="l00269"></a>00269 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00270"></a>00270 <span class="comment"></span>        Flat = 4
+<a name="l00271"></a>00271     }<span class="comment"></span>
+<a name="l00272"></a>00272 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00273"></a>00273 <span class="comment">    /// The Jpeg subsampling mode to use. Requires FreeImageEncoder, FreeImageBuilder, WicEncoder, or WicBuilder.</span>
+<a name="l00274"></a>00274 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00275"></a><a class="code" href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632">00275</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">enum</span> <a class="code" href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632" title="The Jpeg subsampling mode to use. Requires FreeImageEncoder, FreeImageBuilder, WicEncoder, or WicBuilder.">JpegSubsamplingMode</a> {<span class="comment"></span>
+<a name="l00276"></a>00276 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00277"></a>00277 <span class="comment">        /// The encoder&#39;s default subsampling method will be used.</span>
+<a name="l00278"></a>00278 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00279"></a>00279 <span class="comment"></span>        Default = 0,<span class="comment"></span>
+<a name="l00280"></a>00280 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00281"></a>00281 <span class="comment">        /// 411 Subsampling - Only supported by FreeImageBuilder and FreeImageEncoder. Poor quality.</span>
+<a name="l00282"></a>00282 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00283"></a>00283 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;411&quot;</span>,<span class="keyword">true</span>)]
+<a name="l00284"></a>00284         Y4Cb1Cr1 = 4,<span class="comment"></span>
+<a name="l00285"></a>00285 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00286"></a>00286 <span class="comment">        /// 420 Subsampling - Commonly used in H262 and H264. Low quality compared to 422 and 444. </span>
+<a name="l00287"></a>00287 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00288"></a>00288 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;420&quot;</span>,<span class="keyword">true</span>)]
+<a name="l00289"></a>00289         Y4Cb2Cr0 = 8,<span class="comment"></span>
+<a name="l00290"></a>00290 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00291"></a>00291 <span class="comment">        /// 422 Subsampling - Great balance of quality and file size, commonly used in high-end video formats.</span>
+<a name="l00292"></a>00292 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00293"></a>00293 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;422&quot;</span>,<span class="keyword">true</span>)]
+<a name="l00294"></a>00294         Y4Cb2Cr2 = 16,<span class="comment"></span>
+<a name="l00295"></a>00295 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00296"></a>00296 <span class="comment">        /// 444 subsampling - Highest quality, largest file size.</span>
+<a name="l00297"></a>00297 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00298"></a>00298 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;444&quot;</span>,<span class="keyword">true</span>)]
+<a name="l00299"></a>00299         HighestQuality =32,<span class="comment"></span>
+<a name="l00300"></a>00300 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00301"></a>00301 <span class="comment">        /// 444 subsampling - Highest quality, largest file size.</span>
+<a name="l00302"></a>00302 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00303"></a>00303 <span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;444&quot;</span>,<span class="keyword">true</span>)]
+<a name="l00304"></a>00304         Y4Cb4Cr4 = 32
+<a name="l00305"></a>00305     }
+<a name="l00306"></a>00306     
+<a name="l00307"></a>00307 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

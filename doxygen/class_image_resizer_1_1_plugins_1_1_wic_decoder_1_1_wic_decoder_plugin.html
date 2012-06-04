@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -148,7 +148,7 @@ IEnumerable&lt; <a class="el" href="interface_image_resizer_1_1_configuration_1_
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Note: This decoder produces Bitmaps that require special disposal instructions. While <a class="el" href="class_image_resizer_1_1_image_builder.html" title="Provides methods for generating resized images, and for reading and writing them to disk...">ImageBuilder</a> handles this, your code may not. It's best not to directly call LoadImage with &amp;decoder=wic. This decoder returns Bitmap instances with .Tag set to a GCHandle instance. You must call ((GCHandle)b.Tag).Free() after disposing the Bitmap. </p>
 
-<p>Definition at line <a class="el" href="_wic_decoder_8cs_source.html#l00020">20</a> of file <a class="el" href="_wic_decoder_8cs_source.html">WicDecoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_wic_decoder_8cs_source.html#l00022">22</a> of file <a class="el" href="_wic_decoder_8cs_source.html">WicDecoder.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a7ad94bb5fff301ca386158d09e89a74d"></a><!-- doxytag: member="ImageResizer::Plugins::WicDecoder::WicDecoderPlugin::GetSupportedFileExtensions" ref="a7ad94bb5fff301ca386158d09e89a74d" args="()" -->
 <div class="memitem">
@@ -169,7 +169,7 @@ IEnumerable&lt; <a class="el" href="interface_image_resizer_1_1_configuration_1_
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html#a53672fd2aee854a01f313f099c95b330">ImageResizer.Plugins.IFileExtensionPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_wic_decoder_8cs_source.html#l00033">33</a> of file <a class="el" href="_wic_decoder_8cs_source.html">WicDecoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_wic_decoder_8cs_source.html#l00035">35</a> of file <a class="el" href="_wic_decoder_8cs_source.html">WicDecoder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                {
             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { }; <span class="comment">//Same as default</span>
         }

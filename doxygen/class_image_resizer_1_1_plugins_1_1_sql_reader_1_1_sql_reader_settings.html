@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -138,6 +138,8 @@ Properties</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">(default: false) When true, all requests will be re-encoded before being served to the client. Invalid or malicious images will fail with an error if they cannot be read as images. This should prevent malicious files from being served to the client.  <a href="#a48748a7cf3bbbecb791d2869d8435eca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_settings.html#a488c082cb9ce6b93ef2183e28e393c9e">CacheUnmodifiedFiles</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">(default false). When true, files and unmodified images (i.e, no querystring) will be cached to disk (if they are requested that way) instead of only caching requests for resized images. <a class="el" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html">DiskCache</a> plugin must be installed for this to have any effect.  <a href="#a488c082cb9ce6b93ef2183e28e393c9e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_settings.html#a1302990f3bedd38e3c8a6aec91f642ff">CheckForModifiedFiles</a><code> [get, set]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, SQL will be consulted on each image view to ensure the cached image is up to date and the original still exists.  <a href="#a1302990f3bedd38e3c8a6aec91f642ff"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_settings.html#a3a9b8fb1e4f9c104027d2af70c52d5a0">PathPrefix</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines a virtual path where database images can be accessed. Defaults to "~/databaseimages/" Ex image URL: localhost/databaseimages/4953.jpg.  <a href="#a3a9b8fb1e4f9c104027d2af70c52d5a0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_settings.html#abc5532ef395a5786b1cf7ea97ea3ef5e">VirtualPathPrefix</a><code> [get]</code></td></tr>
@@ -160,7 +162,7 @@ Events</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Holds settings used to create a <a class="el" href="namespace_image_resizer_1_1_plugins_1_1_sql_reader.html">SqlReader</a>. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00015">15</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00016">16</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="af60ebca9fe3475d7bf6f931bef5b31ae"></a><!-- doxytag: member="ImageResizer::Plugins::SqlReader::SqlReaderSettings::FireBeforeAccess" ref="af60ebca9fe3475d7bf6f931bef5b31ae" args="(string id)" -->
 <div class="memitem">
@@ -185,7 +187,7 @@ Events</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00046">46</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00047">47</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00104">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.FireAuthorizeEvent()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                {
@@ -218,7 +220,7 @@ Events</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00189">189</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00196">196</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                           {
             <span class="keywordflow">return</span> t == System.Data.SqlDbType.Int || t == System.Data.SqlDbType.TinyInt ||
                     t == System.Data.SqlDbType.SmallInt || t == System.Data.SqlDbType.BigInt;
@@ -244,7 +246,7 @@ Events</h2></td></tr>
 
 <p>Returns true if the specified type is a kind of strings. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00179">179</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00186">186</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                              {
                 <span class="keywordflow">return</span> t == System.Data.SqlDbType.VarChar || t == System.Data.SqlDbType.NVarChar ||
                  t == System.Data.SqlDbType.NChar || t == System.Data.SqlDbType.Char;
@@ -267,9 +269,28 @@ Events</h2></td></tr>
 
 <p>(default false). When true, files and unmodified images (i.e, no querystring) will be cached to disk (if they are requested that way) instead of only caching requests for resized images. <a class="el" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html">DiskCache</a> plugin must be installed for this to have any effect. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00098">98</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00099">99</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00052">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.Install()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1302990f3bedd38e3c8a6aec91f642ff"></a><!-- doxytag: member="ImageResizer::Plugins::SqlReader::SqlReaderSettings::CheckForModifiedFiles" ref="a1302990f3bedd38e3c8a6aec91f642ff" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_settings.html#a1302990f3bedd38e3c8a6aec91f642ff">ImageResizer.Plugins.SqlReader.SqlReaderSettings.CheckForModifiedFiles</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>If true, SQL will be consulted on each image view to ensure the cached image is up to date and the original still exists. </p>
+
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00107">107</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00328">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.FileExists()</a>.</p>
 
 </div>
 </div>
@@ -286,9 +307,9 @@ Events</h2></td></tr>
 
 <p>The database connection string. Defaults to null. You can specify an existing web.config connection string using the "ConnectionStrings:namedKey" convention. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00126">126</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00133">133</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00221">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.GetConnectionObj()</a>, and <a class="el" href="_sql_reader_8cs_source.html#l00391">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.GetIssues()</a>.</p>
+<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00223">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.GetConnectionObj()</a>, and <a class="el" href="_sql_reader_8cs_source.html#l00393">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.GetIssues()</a>.</p>
 
 </div>
 </div>
@@ -305,7 +326,7 @@ Events</h2></td></tr>
 
 <p>The query that returns the binary image data based on the ID. Defaults to "SELECT Content FROM Images WHERE ImageID=@id". </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00136">136</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00143">143</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00112">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.GetStream()</a>.</p>
 
@@ -324,7 +345,7 @@ Events</h2></td></tr>
 
 <p>The query that returns whether an image exists or not. Defaults to "Select COUNT(ImageID) From Images WHERE ImageID=@id". </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00156">156</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00163">163</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00172">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.RowExists()</a>.</p>
 
@@ -343,9 +364,9 @@ Events</h2></td></tr>
 
 <p>Specifies the type of ID used for images. Int, string, and GUID types are the only valid values. Throws an ArgumentOutOfRange exception if set to an invalid value. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00166">166</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00173">173</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00136">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.CreateIdParameter()</a>, and <a class="el" href="_sql_reader_8cs_source.html#l00266">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.ParseIdFromVirtualPath()</a>.</p>
+<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00136">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.CreateIdParameter()</a>, and <a class="el" href="_sql_reader_8cs_source.html#l00268">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.ParseIdFromVirtualPath()</a>.</p>
 
 </div>
 </div>
@@ -362,9 +383,9 @@ Events</h2></td></tr>
 
 <p>The query that returns the modified and created date of the image. Defaults to "Select ModifiedDate, CreatedDate From Images WHERE ImageID=@id". Of all the dates returned by the query, the first non-empty date is used. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00147">147</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00154">154</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00248">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.GetCacheDependencyQuery()</a>, and <a class="el" href="_sql_reader_8cs_source.html#l00192">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.GetDateModifiedUtc()</a>.</p>
+<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00250">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.GetCacheDependencyQuery()</a>, and <a class="el" href="_sql_reader_8cs_source.html#l00192">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.GetDateModifiedUtc()</a>.</p>
 
 </div>
 </div>
@@ -381,7 +402,7 @@ Events</h2></td></tr>
 
 <p>Defines a virtual path where database images can be accessed. Defaults to "~/databaseimages/" Ex image URL: localhost/databaseimages/4953.jpg. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00108">108</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00115">115</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
 </div>
 </div>
@@ -398,7 +419,7 @@ Events</h2></td></tr>
 
 <p>(default: true) When true, the <a class="el" href="namespace_image_resizer_1_1_plugins_1_1_sql_reader.html">SqlReader</a> will be registered as a VirtualPathProvider with ASP.NET, which will make this plugin's virtual files accessible from all code which depends on the VirtualPathProvider system. If trust levels don't allow that, it falls back to <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a> mode, which allows the image resizer to access the files, but not other systems, so you'll need to enable cacheUnmodifiedFiles if you want to access files without resizing them. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00065">65</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00066">66</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00052">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.Install()</a>.</p>
 
@@ -417,7 +438,7 @@ Events</h2></td></tr>
 
 <p>(default true) When false, all URLs inside the PathPrefix folder will be assumed to be images, and will be handled by this plugin. You should still use image extensions, otherwise we don't know what content type to send with the response, and browsers will choke. It's also the cleanest way to tell the image resizer what kind of file type you'd like back when you request resizing. This setting is designed to support non-image file serving from the DB. It will also cause conflicts if PathPrefix overlaps with a folder name used for something else. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00078">78</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00079">79</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00052">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.Install()</a>.</p>
 
@@ -436,9 +457,9 @@ Events</h2></td></tr>
 
 <p>When true, the last file extension segment will be removed from the URL before the SQL Id is parsed. Only relevant when ImageIdType is a string type. Always true for other values. Configured by setting 'extensionPartOfId' to the opposite value. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00055">55</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00056">56</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00266">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.ParseIdFromVirtualPath()</a>.</p>
+<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00268">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.ParseIdFromVirtualPath()</a>.</p>
 
 </div>
 </div>
@@ -455,7 +476,7 @@ Events</h2></td></tr>
 
 <p>(default: false) When true, all requests will be re-encoded before being served to the client. Invalid or malicious images will fail with an error if they cannot be read as images. This should prevent malicious files from being served to the client. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00088">88</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00089">89</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00052">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.Install()</a>.</p>
 
@@ -474,9 +495,9 @@ Events</h2></td></tr>
 
 <p>Returns PathPrefix, but with the "~" resolved - I.e, a full virtual path. If the string doesn't start with / or ~, the application path is prepended as if it started with ~/. </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00117">117</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00124">124</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00052">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.Install()</a>, and <a class="el" href="_sql_reader_8cs_source.html#l00266">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.ParseIdFromVirtualPath()</a>.</p>
+<p>Referenced by <a class="el" href="_sql_reader_8cs_source.html#l00052">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.Install()</a>, and <a class="el" href="_sql_reader_8cs_source.html#l00268">ImageResizer.Plugins.SqlReader.SqlReaderPlugin.ParseIdFromVirtualPath()</a>.</p>
 
 </div>
 </div>
@@ -494,7 +515,7 @@ Events</h2></td></tr>
 
 <p>Called before accessing any row in the database. The row ID is passed as a string argument. If the current user should not access the row, throw an HttpException(403, "message") </p>
 
-<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00040">40</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_sql_reader_settings_8cs_source.html#l00041">41</a> of file <a class="el" href="_sql_reader_settings_8cs_source.html">SqlReaderSettings.cs</a>.</p>
 
 </div>
 </div>

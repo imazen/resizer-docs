@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -136,7 +136,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa36e56083931b95bae7caaffa91a5419"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::Uninstall" ref="aa36e56083931b95bae7caaffa91a5419" args="(Configuration.Config c)" -->
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>Uninstall</b> (<a class="el" href="class_image_resizer_1_1_configuration_1_1_config.html">Configuration.Config</a> c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0bc06d6fbf592be8748c64ebd3428b2b">CreateSignedUrl</a> (string remoteUrl, NameValueCollection settings)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a signed domain-relative URL in the form "/app/remote.jpg.ashx?width=200&amp;urlb64=aHnSh3haSh...&amp;hmac=913f3KJGK3hj".  <a href="#a0bc06d6fbf592be8748c64ebd3428b2b"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a signed domain-relative URL in the form "/app/remote.jpg.ashx?width=200&amp;amp;urlb64=aHnSh3haSh...&amp;amp;hmac=913f3KJGK3hj".  <a href="#a0bc06d6fbf592be8748c64ebd3428b2b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af7cbe157c5e3f60cd56e27f277d6b4fe"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::CreateSignedUrl" ref="af7cbe157c5e3f60cd56e27f277d6b4fe" args="(string remoteUrl, string settings)" -->
 string&#160;</td><td class="memItemRight" valign="bottom"><b>CreateSignedUrl</b> (string remoteUrl, string settings)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a69a54038acf4a45516b49e6c1579a7ff"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::CreateSignedUrlWithKey" ref="a69a54038acf4a45516b49e6c1579a7ff" args="(string remoteUrl, string settings, string key)" -->
@@ -155,8 +155,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>FileExists</b> (strin
 <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html">IVirtualFile</a>&#160;</td><td class="memItemRight" valign="bottom"><b>GetFile</b> (string virtualPath, System.Collections.Specialized.NameValueCollection queryString)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ef2be95fd938874b7f6e5ed7dfa1ea4"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::GetIssues" ref="a8ef2be95fd938874b7f6e5ed7dfa1ea4" args="()" -->
 IEnumerable&lt; <a class="el" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue.html">IIssue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetIssues</b> ()</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4cd6a8adb89310e7abe10874574d843e"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::GetUriStream" ref="a4cd6a8adb89310e7abe10874574d843e" args="(Uri uri)" -->
-Stream&#160;</td><td class="memItemRight" valign="bottom"><b>GetUriStream</b> (Uri uri)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Stream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a01552f4561205bceb33b5f12bd748f18">GetUriStream</a> (Uri uri, int maxRedirects=-1)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a stream of the HTTP response to the specified URL with a 15 second timeout. Throws a FileNotFoundException instead of a WebException for 404 errors. Can throw a variety of exceptions: ProtocolViolationException, WebException, FileNotFoundException, SecurityException, NotSupportedException?, and InvalidOperationException?.  <a href="#a01552f4561205bceb33b5f12bd748f18"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">override Stream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0f381f2e35cc7aca5e283fe4a76bf334">GetStream</a> (object source, <a class="el" href="class_image_resizer_1_1_resize_settings.html">ResizeSettings</a> settings, ref bool disposeStream, out string path, out bool restoreStreamPosition)</td></tr>
@@ -171,16 +171,18 @@ Properties</h2></td></tr>
 static string&#160;</td><td class="memItemRight" valign="bottom"><b>Base64UrlKey</b><code> [get]</code></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19d861f8ac2cffbc9c0915156a6feca3"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::HmacKey" ref="a19d861f8ac2cffbc9c0915156a6feca3" args="" -->
 static string&#160;</td><td class="memItemRight" valign="bottom"><b>HmacKey</b><code> [get]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0593946e4683688cc986c63ba2aec3b4">AllowedRedirects</a><code> [get, set]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">How many redirects to follow before throwing an exception. Defaults to 5.  <a href="#a0593946e4683688cc986c63ba2aec3b4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#ae11c0f899b3c0ce0a113eb3467ec654e">Current</a><code> [get]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the currently registered <a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>, or adds a new <a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a> automatically if one is not registered.  <a href="#ae11c0f899b3c0ce0a113eb3467ec654e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="events"></a>
 Events</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb3c680f1e0c528fe3a146fcb3e93076"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::AllowRemoteRequest" ref="aeb3c680f1e0c528fe3a146fcb3e93076" args="" -->
-RemoteRequest&#160;</td><td class="memItemRight" valign="bottom"><b>AllowRemoteRequest</b></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">RemoteRequest&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#aeb3c680f1e0c528fe3a146fcb3e93076">AllowRemoteRequest</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows you to perform programmatic white or blacklisting of remote URLs.  <a href="#aeb3c680f1e0c528fe3a146fcb3e93076"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00015">15</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00019">19</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a0bc06d6fbf592be8748c64ebd3428b2b"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::CreateSignedUrl" ref="a0bc06d6fbf592be8748c64ebd3428b2b" args="(string remoteUrl, NameValueCollection settings)" -->
 <div class="memitem">
@@ -207,7 +209,7 @@ RemoteRequest&#160;</td><td class="memItemRight" valign="bottom"><b>AllowRemoteR
 </div>
 <div class="memdoc">
 
-<p>Generates a signed domain-relative URL in the form "/app/remote.jpg.ashx?width=200&amp;urlb64=aHnSh3haSh...&amp;hmac=913f3KJGK3hj". </p>
+<p>Generates a signed domain-relative URL in the form "/app/remote.jpg.ashx?width=200&amp;amp;urlb64=aHnSh3haSh...&amp;amp;hmac=913f3KJGK3hj". </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">remoteUrl</td><td></td></tr>
@@ -217,11 +219,11 @@ RemoteRequest&#160;</td><td class="memItemRight" valign="bottom"><b>AllowRemoteR
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00118">118</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00137">137</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                      {
-            settings[Base64UrlKey] = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acc45f67bc1e770b2971878b809d3a98e" title="Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ ins...">ToBase64U</a>(remoteUrl);
+            settings[Base64UrlKey] = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acc45f67bc1e770b2971878b809d3a98e" title="Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ ins...">ToBase64U</a>(remoteUrl);
             settings[HmacKey] = SignData(settings[Base64UrlKey]);
-            <span class="keywordflow">return</span> remotePrefix + <span class="stringliteral">&quot;.jpg.ashx&quot;</span> + <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(settings);
+            <span class="keywordflow">return</span> remotePrefix + <span class="stringliteral">&quot;.jpg.ashx&quot;</span> + <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(settings);
         }
 </pre></div>
 </div>
@@ -284,7 +286,7 @@ RemoteRequest&#160;</td><td class="memItemRight" valign="bottom"><b>AllowRemoteR
 
 <p>Reimplemented from <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#acebc7c3d46684a34664e1ba1154d44fd">ImageResizer.Resizing.AbstractImageProcessor</a>.</p>
 
-<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00062">62</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00083">83</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                                                                             {
             <span class="comment">//Turn remote URLs into URI instances</span>
             <span class="keywordflow">if</span> (source is <span class="keywordtype">string</span> &amp;&amp; (((<span class="keywordtype">string</span>)source).StartsWith(<span class="stringliteral">&quot;http://&quot;</span>, StringComparison.OrdinalIgnoreCase) ||
@@ -298,9 +300,84 @@ RemoteRequest&#160;</td><td class="memItemRight" valign="bottom"><b>AllowRemoteR
             <span class="comment">//Turn URI instances into streams</span>
             <span class="keywordflow">if</span> (source is Uri) {
                 path = ((Uri)source).ToString();
-                <span class="keywordflow">return</span> GetUriStream((Uri)source);
+                <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a01552f4561205bceb33b5f12bd748f18" title="Returns a stream of the HTTP response to the specified URL with a 15 second timeout. Throws a FileNotFoundException instead of a WebException for 404 errors. Can throw a variety of exceptions: ProtocolViolationException, WebException, FileNotFoundException, SecurityException, NotSupportedException?, and InvalidOperationException?.">GetUriStream</a>((Uri)source);
             }
             <span class="keywordflow">return</span> null;
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a01552f4561205bceb33b5f12bd748f18"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::GetUriStream" ref="a01552f4561205bceb33b5f12bd748f18" args="(Uri uri, int maxRedirects=&#45;1)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Stream <a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a01552f4561205bceb33b5f12bd748f18">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.GetUriStream</a> </td>
+          <td>(</td>
+          <td class="paramtype">Uri&#160;</td>
+          <td class="paramname"><em>uri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxRedirects</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns a stream of the HTTP response to the specified URL with a 15 second timeout. Throws a FileNotFoundException instead of a WebException for 404 errors. Can throw a variety of exceptions: ProtocolViolationException, WebException, FileNotFoundException, SecurityException, NotSupportedException?, and InvalidOperationException?. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uri</td><td></td></tr>
+    <tr><td class="paramname">maxRedirects</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00295">295</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00347">ImageResizer.Plugins.RemoteReader.RemoteSiteFile.Open()</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                   {
+            <span class="keywordflow">if</span> (maxRedirects == -1) maxRedirects = <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0593946e4683688cc986c63ba2aec3b4" title="How many redirects to follow before throwing an exception. Defaults to 5.">AllowedRedirects</a>;
+
+            HttpWebResponse response = null;
+            <span class="keywordflow">try</span> {
+                HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+                request.Timeout = 15000; <span class="comment">//Default to 15 seconds. Browser timeout is usually 30.</span>
+                
+                <span class="comment">//This is IDisposable, but only disposes the stream we are returning. So we can&#39;t dispose it, and don&#39;t need to</span>
+                response = request.GetResponse() as HttpWebResponse;
+                <span class="keywordflow">return</span> response.GetResponseStream();
+            } <span class="keywordflow">catch</span> (WebException e) {
+                var resp = e.Response as HttpWebResponse;
+
+                <span class="keywordflow">if</span> (e.Status == WebExceptionStatus.ProtocolError &amp;&amp; resp != null) {
+                    <span class="keywordflow">if</span> (resp.StatusCode == HttpStatusCode.NotFound) <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="stringliteral">&quot;404 error: \&quot;&quot;</span> + uri.ToString() + <span class="stringliteral">&quot;\&quot; not found.&quot;</span>, e);
+
+                    <span class="keywordflow">if</span> (resp.StatusCode == HttpStatusCode.Forbidden) <span class="keywordflow">throw</span> <span class="keyword">new</span> HttpException(403, <span class="stringliteral">&quot;403 Not Authorized (from remote server) for : \&quot;&quot;</span> + uri.ToString() + <span class="stringliteral">&quot;\&quot;.&quot;</span>, e);
+                    <span class="keywordflow">if</span> (resp.StatusCode == HttpStatusCode.Moved ||
+                        resp.StatusCode == HttpStatusCode.Redirect) {
+                            <span class="keywordflow">if</span> (maxRedirects &lt; 1) <span class="keywordflow">throw</span> <span class="keyword">new</span> HttpException(500, <span class="stringliteral">&quot;Too many redirects, stopped while looking for \&quot;&quot;</span> + uri.ToString() + <span class="stringliteral">&quot;\&quot;.&quot;</span>);
+                            <span class="keywordtype">string</span> loc = resp.GetResponseHeader(<span class="stringliteral">&quot;Location&quot;</span>);
+                            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(loc) &amp;&amp; Uri.IsWellFormedUriString(loc, UriKind.RelativeOrAbsolute)) {
+                                Uri newLoc = Uri.IsWellFormedUriString(loc, UriKind.Absolute) ? <span class="keyword">new</span> Uri(loc) : new Uri(uri, new Uri(loc));
+                                response.Close(); response = null; 
+                                <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a01552f4561205bceb33b5f12bd748f18" title="Returns a stream of the HTTP response to the specified URL with a 15 second timeout. Throws a FileNotFoundException instead of a WebException for 404 errors. Can throw a variety of exceptions: ProtocolViolationException, WebException, FileNotFoundException, SecurityException, NotSupportedException?, and InvalidOperationException?.">GetUriStream</a>(newLoc, maxRedirects - 1);
+                            }
+                    }
+                }
+                <span class="comment">//if (resp != null)resp.Close();</span>
+                <span class="keywordflow">if</span> (response != null) response.Close();
+                <span class="keywordflow">throw</span> e;
+            } 
         }
 </pre></div>
 </div>
@@ -340,7 +417,7 @@ RemoteRequest&#160;</td><td class="memItemRight" valign="bottom"><b>AllowRemoteR
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00158">158</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00177">177</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                  {
             query = <span class="keyword">new</span> NameValueCollection(query);
             <span class="keywordflow">if</span> (!IsRemotePath(virtualPath)) <span class="keywordflow">return</span> null;
@@ -356,11 +433,12 @@ RemoteRequest&#160;</td><td class="memItemRight" valign="bottom"><b>AllowRemoteR
                 query.Remove(HmacKey);
                 <span class="keywordflow">if</span> (!SignData(data).Equals(hmac))
                     <span class="keywordflow">throw</span> <span class="keyword">new</span> ImageProcessingException(<span class="stringliteral">&quot;Invalid request! This request was not properly signed, or has been tampered with since transmission.&quot;</span>);
-                args.RemoteUrl = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a5ffc6a49feee3133b31fdd4adeaef151" title="Converts a URL-safe version of base64 to a string. 64U is (no = padding, with - instead of + and _ in...">FromBase64UToString</a>(data);
+                args.RemoteUrl = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a5ffc6a49feee3133b31fdd4adeaef151" title="Converts a URL-safe version of base64 to a string. 64U is (no = padding, with - instead of + and _ in...">FromBase64UToString</a>(data);
                 args.SignedRequest = <span class="keyword">true</span>;
-            } <span class="keywordflow">else</span>
-                args.RemoteUrl = <span class="stringliteral">&quot;http://&quot;</span> + ReplaceInLeadingSegment(virtualPath.Substring(remotePrefix.Length).TrimStart(<span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span>),<span class="stringliteral">&quot;_&quot;</span>,<span class="stringliteral">&quot;.&quot;</span>);
-
+            } <span class="keywordflow">else</span> {
+                args.RemoteUrl = <span class="stringliteral">&quot;http://&quot;</span> + ReplaceInLeadingSegment(virtualPath.Substring(remotePrefix.Length).TrimStart(<span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span>), <span class="stringliteral">&quot;_&quot;</span>, <span class="stringliteral">&quot;.&quot;</span>);
+                args.RemoteUrl = Uri.EscapeUriString(args.RemoteUrl);
+            }
             <span class="keywordflow">if</span> (!Uri.IsWellFormedUriString(args.RemoteUrl, UriKind.Absolute))
                 <span class="keywordflow">throw</span> <span class="keyword">new</span> ImageProcessingException(<span class="stringliteral">&quot;Invalid request! The specified Uri is invalid: &quot;</span> + args.RemoteUrl);
             <span class="keywordflow">return</span> args;
@@ -369,6 +447,23 @@ RemoteRequest&#160;</td><td class="memItemRight" valign="bottom"><b>AllowRemoteR
 </div>
 </div>
 <hr/><h2>Property Documentation</h2>
+<a class="anchor" id="a0593946e4683688cc986c63ba2aec3b4"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::AllowedRedirects" ref="a0593946e4683688cc986c63ba2aec3b4" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0593946e4683688cc986c63ba2aec3b4">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.AllowedRedirects</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>How many redirects to follow before throwing an exception. Defaults to 5. </p>
+
+<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00036">36</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ae11c0f899b3c0ce0a113eb3467ec654e"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::Current" ref="ae11c0f899b3c0ce0a113eb3467ec654e" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -382,7 +477,25 @@ RemoteRequest&#160;</td><td class="memItemRight" valign="bottom"><b>AllowRemoteR
 
 <p>Returns the currently registered <a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>, or adds a new <a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a> automatically if one is not registered. </p>
 
-<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00104">104</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00125">125</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
+
+</div>
+</div>
+<hr/><h2>Event Documentation</h2>
+<a class="anchor" id="aeb3c680f1e0c528fe3a146fcb3e93076"></a><!-- doxytag: member="ImageResizer::Plugins::RemoteReader::RemoteReaderPlugin::AllowRemoteRequest" ref="aeb3c680f1e0c528fe3a146fcb3e93076" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">RemoteRequest <a class="el" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#aeb3c680f1e0c528fe3a146fcb3e93076">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.AllowRemoteRequest</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Allows you to perform programmatic white or blacklisting of remote URLs. </p>
+
+<p>Definition at line <a class="el" href="_remote_reader_plugin_8cs_source.html#l00224">224</a> of file <a class="el" href="_remote_reader_plugin_8cs_source.html">RemoteReaderPlugin.cs</a>.</p>
 
 </div>
 </div>

@@ -18,4 +18,6 @@ digraph G
   Node7 [label="ImageResizer.Plugins.WicBuilder.WicBuilderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_wic_builder_1_1_wic_builder_plugin.html"];
   Node1 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
   Node8 [label="ImageResizer.Plugins.WicDecoder.WicDecoderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html",tooltip="Note: This decoder produces Bitmaps that require special disposal instructions. While ImageBuilder ha..."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node9 [label="ImageResizer.Plugins.WpfBuilder.WpfBuilderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_builder_plugin.html"];
 }

@@ -1,3 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_mvc_1_1_image_request_action.html" title="This action result is NOT a replacement for the InterceptModule and MvcRoutingShim. It cannot hope to achieve the same performance, compatibility, or flexibility. It does not support all the plugins, nor all the Pipeline events. It does not support the CloudFront, Image404, or ImageHandlerSyntax plugins. RemoteReader, SqlReader, S3Reader, , Image404, ClientCache, It doesn&#39;t even work yet." alt="" coords="6,5,589,51"/>
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_extension_methods_1_1_name_value_collection_extensions.html" title="ImageResizer.ExtensionMethods.NameValueCollectionExtensions" alt="" coords="5,5,952,51"/>
 </map>

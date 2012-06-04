@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -86,72 +86,73 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 <span class="keyword">using</span> System.Text;
 <a name="l00004"></a>00004 <span class="keyword">using</span> System.Text.RegularExpressions;
 <a name="l00005"></a>00005 <span class="keyword">using</span> System.Collections.Specialized;
-<a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="keyword">namespace </span>ImageResizer.Plugins.Basic {
-<a name="l00008"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html">00008</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html">FolderResizeSyntax</a> : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> {
-<a name="l00009"></a>00009 
-<a name="l00010"></a>00010         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html">FolderResizeSyntax</a>() {
-<a name="l00011"></a>00011         }
-<a name="l00012"></a>00012 
-<a name="l00013"></a>00013         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
-<a name="l00014"></a>00014             c.Plugins.add_plugin(<span class="keyword">this</span>);
-<a name="l00015"></a>00015             c.Pipeline.RewriteDefaults += Pipeline_RewriteDefaults;
-<a name="l00016"></a>00016             <span class="keywordflow">return</span> <span class="keyword">this</span>;
-<a name="l00017"></a>00017         }
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019         <span class="keywordtype">void</span> Pipeline_RewriteDefaults(System.Web.IHttpModule sender, System.Web.HttpContext context, Configuration.IUrlEventArgs e) {
-<a name="l00020"></a>00020             <span class="comment">//Handles /resize(width,height,format)/ and /resize(width,height)/ syntaxes.</span>
-<a name="l00021"></a>00021             e.VirtualPath = parseResizeFolderSyntax(e.VirtualPath, e.QueryString);
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023         }
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
-<a name="l00026"></a>00026             c.Plugins.remove_plugin(<span class="keyword">this</span>);
-<a name="l00027"></a>00027             c.Pipeline.RewriteDefaults -= Pipeline_RewriteDefaults;
-<a name="l00028"></a>00028             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00029"></a>00029         }
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="comment"></span>
-<a name="l00032"></a>00032 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00033"></a>00033 <span class="comment">        /// Matches /resize(x,y,f)/ syntax</span>
-<a name="l00034"></a>00034 <span class="comment">        /// Fixed Bug - will replace both slashes.. make first a lookbehind</span>
-<a name="l00035"></a>00035 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00036"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html#a33f427224208c1350785c158b2821b6a">00036</a> <span class="comment"></span>        <span class="keyword">protected</span> Regex resizeFolder = <span class="keyword">new</span> Regex(<span class="stringliteral">@&quot;(?&lt;=^|\/)resize\(\s*(?&lt;maxwidth&gt;\d+)\s*,\s*(?&lt;maxheight&gt;\d+)\s*(?:,\s*(?&lt;format&gt;jpg|png|gif)\s*)?\)\/&quot;</span>, RegexOptions.Compiled
-<a name="l00037"></a>00037            | RegexOptions.IgnoreCase);
-<a name="l00038"></a>00038 
-<a name="l00039"></a>00039 <span class="comment"></span>
-<a name="l00040"></a>00040 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00041"></a>00041 <span class="comment">        /// Parses and removes the resize folder syntax &quot;resize(x,y,f)/&quot; from the specified file path. </span>
-<a name="l00042"></a>00042 <span class="comment">        /// Places settings into the referenced querystring</span>
-<a name="l00043"></a>00043 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00044"></a>00044 <span class="comment">        /// &lt;param name=&quot;path&quot;&gt;&lt;/param&gt;</span>
-<a name="l00045"></a>00045 <span class="comment">        /// &lt;param name=&quot;q&quot;&gt;The collection to place parsed values into&lt;/param&gt;</span>
-<a name="l00046"></a>00046 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00047"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html#a657ca2ab78322cec76dc47c322397625">00047</a> <span class="comment"></span>        <span class="keyword">protected</span> <span class="keywordtype">string</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html#a657ca2ab78322cec76dc47c322397625" title="Parses and removes the resize folder syntax &quot;resize(x,y,f)/&quot; from the specified file path...">parseResizeFolderSyntax</a>(<span class="keywordtype">string</span> path, NameValueCollection q) {
-<a name="l00048"></a>00048             Match m = resizeFolder.Match(path);
-<a name="l00049"></a>00049             <span class="keywordflow">if</span> (m.Success) {
-<a name="l00050"></a>00050                 <span class="comment">//Parse capture groups</span>
-<a name="l00051"></a>00051                 <span class="keywordtype">int</span> maxwidth = -1; <span class="keywordflow">if</span> (!<span class="keywordtype">int</span>.TryParse(m.Groups[<span class="stringliteral">&quot;maxwidth&quot;</span>].Value, out maxwidth)) maxwidth = -1;
-<a name="l00052"></a>00052                 <span class="keywordtype">int</span> maxheight = -1; <span class="keywordflow">if</span> (!<span class="keywordtype">int</span>.TryParse(m.Groups[<span class="stringliteral">&quot;maxheight&quot;</span>].Value, out maxheight)) maxheight = -1;
-<a name="l00053"></a>00053                 <span class="keywordtype">string</span> format = (m.Groups[<span class="stringliteral">&quot;format&quot;</span>].Captures.Count &gt; 0) ? format = m.Groups[<span class="stringliteral">&quot;format&quot;</span>].Captures[0].Value : null;
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055                 <span class="comment">//Remove first resize folder from URL</span>
-<a name="l00056"></a>00056                 path = resizeFolder.Replace(path, <span class="stringliteral">&quot;&quot;</span>, 1);
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058                 <span class="comment">//Add values to querystring</span>
-<a name="l00059"></a>00059                 <span class="keywordflow">if</span> (maxwidth &gt; 0) q[<span class="stringliteral">&quot;maxwidth&quot;</span>] = maxwidth.ToString();
-<a name="l00060"></a>00060                 <span class="keywordflow">if</span> (maxheight &gt; 0) q[<span class="stringliteral">&quot;maxheight&quot;</span>] = maxheight.ToString();
-<a name="l00061"></a>00061                 <span class="keywordflow">if</span> (format != null) q[<span class="stringliteral">&quot;format&quot;</span>] = format;
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063                 <span class="comment">//Call recursive - this handles multiple /resize(w,h)/resize(w,h)/ occurrences</span>
-<a name="l00064"></a>00064                 <span class="keywordflow">return</span> parseResizeFolderSyntax(path, q);
-<a name="l00065"></a>00065             }
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067             <span class="keywordflow">return</span> path;
-<a name="l00068"></a>00068         }
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070     }
-<a name="l00071"></a>00071 }
+<a name="l00006"></a>00006 <span class="keyword">using</span> System.Globalization;
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="keyword">namespace </span>ImageResizer.Plugins.Basic {
+<a name="l00009"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html">00009</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html">FolderResizeSyntax</a> : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> {
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html">FolderResizeSyntax</a>() {
+<a name="l00012"></a>00012         }
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
+<a name="l00015"></a>00015             c.Plugins.add_plugin(<span class="keyword">this</span>);
+<a name="l00016"></a>00016             c.Pipeline.RewriteDefaults += Pipeline_RewriteDefaults;
+<a name="l00017"></a>00017             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00018"></a>00018         }
+<a name="l00019"></a>00019 
+<a name="l00020"></a>00020         <span class="keywordtype">void</span> Pipeline_RewriteDefaults(System.Web.IHttpModule sender, System.Web.HttpContext context, Configuration.IUrlEventArgs e) {
+<a name="l00021"></a>00021             <span class="comment">//Handles /resize(width,height,format)/ and /resize(width,height)/ syntaxes.</span>
+<a name="l00022"></a>00022             e.VirtualPath = parseResizeFolderSyntax(e.VirtualPath, e.QueryString);
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024         }
+<a name="l00025"></a>00025 
+<a name="l00026"></a>00026         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
+<a name="l00027"></a>00027             c.Plugins.remove_plugin(<span class="keyword">this</span>);
+<a name="l00028"></a>00028             c.Pipeline.RewriteDefaults -= Pipeline_RewriteDefaults;
+<a name="l00029"></a>00029             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00030"></a>00030         }
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032 <span class="comment"></span>
+<a name="l00033"></a>00033 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00034"></a>00034 <span class="comment">        /// Matches /resize(x,y,f)/ syntax</span>
+<a name="l00035"></a>00035 <span class="comment">        /// Fixed Bug - will replace both slashes.. make first a lookbehind</span>
+<a name="l00036"></a>00036 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00037"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html#a33f427224208c1350785c158b2821b6a">00037</a> <span class="comment"></span>        <span class="keyword">protected</span> Regex resizeFolder = <span class="keyword">new</span> Regex(<span class="stringliteral">@&quot;(?&lt;=^|\/)resize\(\s*(?&lt;maxwidth&gt;\d+)\s*,\s*(?&lt;maxheight&gt;\d+)\s*(?:,\s*(?&lt;format&gt;jpg|png|gif)\s*)?\)\/&quot;</span>, RegexOptions.Compiled
+<a name="l00038"></a>00038            | RegexOptions.IgnoreCase);
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040 <span class="comment"></span>
+<a name="l00041"></a>00041 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00042"></a>00042 <span class="comment">        /// Parses and removes the resize folder syntax &quot;resize(x,y,f)/&quot; from the specified file path. </span>
+<a name="l00043"></a>00043 <span class="comment">        /// Places settings into the referenced querystring</span>
+<a name="l00044"></a>00044 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00045"></a>00045 <span class="comment">        /// &lt;param name=&quot;path&quot;&gt;&lt;/param&gt;</span>
+<a name="l00046"></a>00046 <span class="comment">        /// &lt;param name=&quot;q&quot;&gt;The collection to place parsed values into&lt;/param&gt;</span>
+<a name="l00047"></a>00047 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00048"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html#a657ca2ab78322cec76dc47c322397625">00048</a> <span class="comment"></span>        <span class="keyword">protected</span> <span class="keywordtype">string</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html#a657ca2ab78322cec76dc47c322397625" title="Parses and removes the resize folder syntax &quot;resize(x,y,f)/&quot; from the specified file path...">parseResizeFolderSyntax</a>(<span class="keywordtype">string</span> path, NameValueCollection q) {
+<a name="l00049"></a>00049             Match m = resizeFolder.Match(path);
+<a name="l00050"></a>00050             <span class="keywordflow">if</span> (m.Success) {
+<a name="l00051"></a>00051                 <span class="comment">//Parse capture groups</span>
+<a name="l00052"></a>00052                 <span class="keywordtype">int</span> maxwidth = -1; <span class="keywordflow">if</span> (!<span class="keywordtype">int</span>.TryParse(m.Groups[<span class="stringliteral">&quot;maxwidth&quot;</span>].Value, NumberStyles.Integer, NumberFormatInfo.InvariantInfo, out maxwidth)) maxwidth = -1;
+<a name="l00053"></a>00053                 <span class="keywordtype">int</span> maxheight = -1; <span class="keywordflow">if</span> (!<span class="keywordtype">int</span>.TryParse(m.Groups[<span class="stringliteral">&quot;maxheight&quot;</span>].Value, NumberStyles.Integer, NumberFormatInfo.InvariantInfo, out maxheight)) maxheight = -1;
+<a name="l00054"></a>00054                 <span class="keywordtype">string</span> format = (m.Groups[<span class="stringliteral">&quot;format&quot;</span>].Captures.Count &gt; 0) ? format = m.Groups[<span class="stringliteral">&quot;format&quot;</span>].Captures[0].Value : null;
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056                 <span class="comment">//Remove first resize folder from URL</span>
+<a name="l00057"></a>00057                 path = resizeFolder.Replace(path, <span class="stringliteral">&quot;&quot;</span>, 1);
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059                 <span class="comment">//Add values to querystring</span>
+<a name="l00060"></a>00060                 <span class="keywordflow">if</span> (maxwidth &gt; 0) q[<span class="stringliteral">&quot;maxwidth&quot;</span>] = maxwidth.ToString(NumberFormatInfo.InvariantInfo);
+<a name="l00061"></a>00061                 <span class="keywordflow">if</span> (maxheight &gt; 0) q[<span class="stringliteral">&quot;maxheight&quot;</span>] = maxheight.ToString(NumberFormatInfo.InvariantInfo);
+<a name="l00062"></a>00062                 <span class="keywordflow">if</span> (format != null) q[<span class="stringliteral">&quot;format&quot;</span>] = format;
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064                 <span class="comment">//Call recursive - this handles multiple /resize(w,h)/resize(w,h)/ occurrences</span>
+<a name="l00065"></a>00065                 <span class="keywordflow">return</span> parseResizeFolderSyntax(path, q);
+<a name="l00066"></a>00066             }
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068             <span class="keywordflow">return</span> path;
+<a name="l00069"></a>00069         }
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071     }
+<a name="l00072"></a>00072 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

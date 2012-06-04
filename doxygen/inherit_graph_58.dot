@@ -3,7 +3,5 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.PrettyGifs.Quantizer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_quantizer.html",tooltip="Abstract Quantizer class - handles the messy, algorithm-independent details of quantization. Subclasses must implement InitialQuantizePixel, GetPallete(), and QuantizePixel. Not thread-safe!"];
-  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
-  Node2 [label="ImageResizer.Plugins.PrettyGifs.OctreeQuantizer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_octree_quantizer.html",tooltip="Quantize using an Octree."];
+  Node1 [label="ImageResizer.Plugins.PdfRenderer.Ghostscript.GhostscriptArgument",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_argument.html",tooltip="Ghostscript argument names."];
 }

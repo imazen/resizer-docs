@@ -3,5 +3,5 @@
 <area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="168,75,451,122"/>
 <area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions." alt="" coords="156,146,463,193"/>
 <area shape="rect" id="node8" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html" title="A provider (or selector) of IEncoder instances." alt="" coords="6,217,613,263"/>
-<area shape="rect" id="node10" href="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="ImageResizer.Plugins.ISettingsModifier" alt="" coords="23,287,596,334"/>
+<area shape="rect" id="node10" href="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to..." alt="" coords="23,287,596,334"/>
 </map>

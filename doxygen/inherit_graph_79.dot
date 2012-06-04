@@ -3,5 +3,5 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICBitmapCodecProgressNotification",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_codec_progress_notification.html"];
+  Node1 [label="ImageResizer.Plugins.RedEye.GridSearch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_red_eye_1_1_grid_search.html"];
 }

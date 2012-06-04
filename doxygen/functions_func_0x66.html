@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -100,6 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_0x67.html#index_g"><span>g</span></a></li>
       <li><a href="functions_func_0x68.html#index_h"><span>h</span></a></li>
       <li><a href="functions_func_0x69.html#index_i"><span>i</span></a></li>
+      <li><a href="functions_func_0x6b.html#index_k"><span>k</span></a></li>
       <li><a href="functions_func_0x6c.html#index_l"><span>l</span></a></li>
       <li><a href="functions_func_0x6d.html#index_m"><span>m</span></a></li>
       <li><a href="functions_func_0x6e.html#index_n"><span>n</span></a></li>
@@ -128,8 +129,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#a1abc7d07064e5c4e583406be7a3ebcab">ImageResizer.Configuration.PipelineConfig</a>
 , <a class="el" href="class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_virtual_path_provider.html#a037d1395c2aad18ad6649b49dd4db6ac">ImageResizer.Plugins.AzureReader.AzureVirtualPathProvider</a>
 , <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#aa42b7d6fda2cea008cec82fae9627a9c">ImageResizer.Plugins.Basic.VirtualFolder</a>
+, <a class="el" href="class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin.html#a020bddd2b064bb71e467e42a9d34d7d4">ImageResizer.Plugins.MongoReader.MongoReaderPlugin</a>
 , <a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a9a4ff24e792a504fe1a8a40821ac2550">ImageResizer.Plugins.PsdComposer.PsdComposerPlugin</a>
-, <a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a09d7db433f81e2274d07d7bf75158be8">ImageResizer.Configuration.IPipelineConfig</a>
+, <a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#af29d01f9928d72fb9bd0aaf8fa787758">ImageResizer.Configuration.IPipelineConfig</a>
 , <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a0b8f145683df85bb4b0032a21ebc52b5">ImageResizer.Plugins.Basic.VirtualFolder</a>
 , <a class="el" href="class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html#a552757feb1045449b79814cc467108c8">ImageResizer.Plugins.SqlReader.SqlReaderPlugin</a>
 , <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html#adc1f2caa76c242e3c0bb8ed2d824f9c3">ImageResizer.Plugins.IVirtualImageProvider</a>
@@ -137,17 +139,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>FilterPath()
 : <a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a448159e9a178355e5f0baecf555de3fe">ImageResizer.Plugins.S3Reader.S3VirtualPathProvider</a>
 </li>
+<li>FilterQueryString()
+: <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a61591f3c488e5945a25528336f0a4b2d">ImageResizer.Util.PathUtils</a>
+</li>
 <li>FilterQuerystring()
 : <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_presets.html#a84c48c8cd791381a955b44f7b4141d3b">ImageResizer.Plugins.Basic.Presets</a>
 </li>
-<li>FindBoxExact()
-: <a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a9046af3598e4b54cab4fb88641fcc60f">ImageResizer.Plugins.WhitespaceTrimmer.BoundingBoxFinder</a>
+<li>FindBoxExactGrayscale()
+: <a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#aa674b4eff1b6e8eef439e94028b6050e">ImageResizer.Plugins.WhitespaceTrimmer.BoundingBoxFinder</a>
 </li>
 <li>FindBoxSobel()
-: <a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a50a5b55fa51dfcd4b20ea4f5b4f8061c">ImageResizer.Plugins.WhitespaceTrimmer.BoundingBoxFinder</a>
+: <a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a611e8dffa65c85edeb11ea0d39698325">ImageResizer.Plugins.WhitespaceTrimmer.BoundingBoxFinder</a>
 </li>
 <li>FindClosestMatch()
 : <a class="el" href="class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_octree_quantizer_1_1_octree_1_1_octree_node.html#a524ae5cbbc091e252fae8c54e197e77a">ImageResizer.Plugins.PrettyGifs.OctreeQuantizer.Octree.OctreeNode</a>
+</li>
+<li>FindMaxPixel()
+: <a class="el" href="class_manual_searcher.html#acbfd48dbfca864fdd2bee79372d63d32">ManualSearcher</a>
 </li>
 <li>FindPluginType()
 : <a class="el" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a6157bc4f920bfe02b0190353daef3faa">ImageResizer.Configuration.PluginConfig</a>
@@ -168,14 +176,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#a5e94c1414ba792ae6689bf2fbb1f7e2c">ImageResizer.Resizing.AbstractImageProcessor</a>
 </li>
 <li>FlushChanges()
-: <a class="el" href="class_image_resizer_1_1_image_builder.html#af7321daa43947075d5963a33f3473883">ImageResizer.ImageBuilder</a>
-, <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#a49c8c02cfd568675f9ab8929f0cb94a2">ImageResizer.Resizing.AbstractImageProcessor</a>
+: <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#a49c8c02cfd568675f9ab8929f0cb94a2">ImageResizer.Resizing.AbstractImageProcessor</a>
+, <a class="el" href="class_image_resizer_1_1_image_builder.html#af7321daa43947075d5963a33f3473883">ImageResizer.ImageBuilder</a>
 </li>
 <li>ForEach()
 : <a class="el" href="class_image_resizer_1_1_util_1_1_polygon_math.html#ad1cd2d1a9e6f7cfb99df05710619beda">ImageResizer.Util.PolygonMath</a>
 </li>
-<li>FromBase64UToButes()
-: <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#aefb5e8343a4b516f0b74814f6970ca74">ImageResizer.Util.PathUtils</a>
+<li>FromBase64UToBytes()
+: <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a6943e50a715d4daf25cb6aa6e07d1a0a">ImageResizer.Util.PathUtils</a>
 </li>
 <li>FromBase64UToString()
 : <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a5ffc6a49feee3133b31fdd4adeaef151">ImageResizer.Util.PathUtils</a>

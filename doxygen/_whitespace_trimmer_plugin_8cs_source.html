@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -90,74 +90,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00007"></a>00007 <span class="keyword">using</span> System.Drawing.Imaging;
 <a name="l00008"></a>00008 <span class="keyword">using</span> ImageResizer.Util;
 <a name="l00009"></a>00009 <span class="keyword">using</span> AForge.Imaging;
-<a name="l00010"></a>00010 
-<a name="l00011"></a>00011 <span class="keyword">namespace </span>ImageResizer.Plugins.WhitespaceTrimmer {
-<a name="l00012"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html">00012</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html">WhitespaceTrimmerPlugin</a>:<a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)">IQuerystringPlugin</a> {
-<a name="l00013"></a>00013 
-<a name="l00014"></a>00014         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html">WhitespaceTrimmerPlugin</a>() {
-<a name="l00015"></a>00015         }
-<a name="l00016"></a>00016 
-<a name="l00017"></a>00017         <span class="keyword">public</span> readonly <span class="keywordtype">string</span> RectDataKey = <span class="stringliteral">&quot;whitespacetrimbox&quot;</span>;
+<a name="l00010"></a>00010 <span class="keyword">using</span> System.Globalization;
+<a name="l00011"></a>00011 <span class="keyword">using</span> ImageResizer.ExtensionMethods;
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013 <span class="keyword">namespace </span>ImageResizer.Plugins.WhitespaceTrimmer {
+<a name="l00014"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html">00014</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html">WhitespaceTrimmerPlugin</a>:<a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)">IQuerystringPlugin</a> {
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html">WhitespaceTrimmerPlugin</a>() {
+<a name="l00017"></a>00017         }
 <a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a59b958a7dbfeab752ff6bf3a53b59096">00019</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a59b958a7dbfeab752ff6bf3a53b59096" title="Process.3(Layout).2: Rings &#39;image&#39; and &#39;imageArea&#39; are added to the layout.">LayoutImage</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
-<a name="l00020"></a>00020             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a> == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022             <span class="keywordtype">string</span> str = null;
-<a name="l00023"></a>00023             str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;trim.percentpadding&quot;</span>]; <span class="comment">//percentpadding. Percentage is 0-100, multiplied by the average of the width and height.</span>
-<a name="l00024"></a>00024             <span class="keywordtype">double</span> percentpadding = 0;
-<a name="l00025"></a>00025             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">double</span>.TryParse(str, out percentpadding))
-<a name="l00026"></a>00026                 percentpadding /= 100;
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029             <span class="keywordtype">int</span> threshold = 0;
-<a name="l00030"></a>00030             str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;trim.threshold&quot;</span>]; <span class="comment">//threshold</span>
-<a name="l00031"></a>00031             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">int</span>.TryParse(str, out threshold)) {
-<a name="l00032"></a>00032                 <span class="keywordflow">if</span> (threshold &lt; 0) threshold = 0; <span class="keywordflow">if</span> (threshold &gt; 255) threshold = 255;
-<a name="l00033"></a>00033 
-<a name="l00034"></a>00034                 
-<a name="l00035"></a>00035                 
-<a name="l00036"></a>00036                 Rectangle box = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html">BoundingBoxFinder</a>().<a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a50a5b55fa51dfcd4b20ea4f5b4f8061c" title="Returns a rectangle inside &#39;lookInside&#39; that bounds any energy greater than &#39;threshold&#39;.">FindBoxSobel</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>, <span class="keyword">new</span> Rectangle(0, 0, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Width, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Height), (byte)threshold);
-<a name="l00037"></a>00037                 <span class="comment">//Add padding</span>
-<a name="l00038"></a>00038                 <span class="keywordtype">int</span> paddingPixels = (int)Math.Ceiling(percentpadding * (box.Width + box.Height) / 2);
-<a name="l00039"></a>00039                 box.X = Math.Max(0, box.X - paddingPixels);
-<a name="l00040"></a>00040                 box.Y= Math.Max(0, box.Y - paddingPixels);
-<a name="l00041"></a>00041                 box.Width = Math.Min(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Width, box.Width + paddingPixels * 2);
-<a name="l00042"></a>00042                 box.Height = Math.Min(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Height, box.Height + paddingPixels * 2);
-<a name="l00043"></a>00043 
-<a name="l00044"></a>00044                 <span class="comment">//Adjust s.originalSize so the layout occurs properly.</span>
-<a name="l00045"></a>00045                 s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a72e11433b4c36caccab68577e864202c" title="The original size of the source bitmap. Use this instead of accessing the bitmap directly for this in...">originalSize</a> = box.Size;
-<a name="l00046"></a>00046                 s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a995d9c7d9b9c8faf2f8cc1cbf15d8174" title="Allows extensions to store data along with the image state.">Data</a>[RectDataKey] = box;
-<a name="l00047"></a>00047             }
-<a name="l00048"></a>00048             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         }
-<a name="l00051"></a>00051 
-<a name="l00052"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a62ea85500659e1b51a0b6ab3dae46fae">00052</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a62ea85500659e1b51a0b6ab3dae46fae" title="Process.3(Layout).3: Add rings here to insert them between the image area and the padding...">PostLayoutImage</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
-<a name="l00053"></a>00053             <span class="comment">//Now we offset copyRect so it works properly.</span>
-<a name="l00054"></a>00054             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a995d9c7d9b9c8faf2f8cc1cbf15d8174" title="Allows extensions to store data along with the image state.">Data</a>.ContainsKey(RectDataKey)){
-<a name="l00055"></a>00055                 Rectangle box = (Rectangle)s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a995d9c7d9b9c8faf2f8cc1cbf15d8174" title="Allows extensions to store data along with the image state.">Data</a>[RectDataKey];
-<a name="l00056"></a>00056                 s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a> = <span class="keyword">new</span> RectangleF(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.X + box.X, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Y + box.Y,s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Width,s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Height);
-<a name="l00057"></a>00057             }
-<a name="l00058"></a>00058             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-<a name="l00059"></a>00059         }
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061 
+<a name="l00019"></a>00019         <span class="keyword">public</span> readonly <span class="keywordtype">string</span> RectDataKey = <span class="stringliteral">&quot;whitespacetrimbox&quot;</span>;
+<a name="l00020"></a>00020 
+<a name="l00021"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a59b958a7dbfeab752ff6bf3a53b59096">00021</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a59b958a7dbfeab752ff6bf3a53b59096" title="Process.3(Layout).2: Rings &#39;image&#39; and &#39;imageArea&#39; are added to the layout.">LayoutImage</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
+<a name="l00022"></a>00022             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a> == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024             <span class="comment">//percentpadding. Percentage is 0-100, multiplied by the average of the width and height.</span>
+<a name="l00025"></a>00025             <span class="keywordtype">double</span> percentpadding = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.Get&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;trim.percentpadding&quot;</span>, 0) / 100;
+<a name="l00026"></a>00026             
+<a name="l00027"></a>00027             <span class="keywordtype">int</span>? threshold = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.Get&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;trim.threshold&quot;</span>);
+<a name="l00028"></a>00028             <span class="keywordflow">if</span> (threshold != null) {
+<a name="l00029"></a>00029                 <span class="keywordflow">if</span> (threshold &lt; 0) threshold = 0; <span class="keywordflow">if</span> (threshold &gt; 255) threshold = 255;
+<a name="l00030"></a>00030                 
+<a name="l00031"></a>00031                 Rectangle box = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html">BoundingBoxFinder</a>().<a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a611e8dffa65c85edeb11ea0d39698325" title="Returns a rectangle inside &#39;lookInside&#39; that bounds any energy greater than &#39;threshold&#39;.">FindBoxSobel</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>, <span class="keyword">new</span> Rectangle(0, 0, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Width, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Height), (byte)threshold);
+<a name="l00032"></a>00032                 <span class="comment">//Add padding</span>
+<a name="l00033"></a>00033                 <span class="keywordtype">int</span> paddingPixels = (int)Math.Ceiling(percentpadding * (box.Width + box.Height) / 2);
+<a name="l00034"></a>00034                 box.X = Math.Max(0, box.X - paddingPixels);
+<a name="l00035"></a>00035                 box.Y= Math.Max(0, box.Y - paddingPixels);
+<a name="l00036"></a>00036                 box.Width = Math.Min(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Width, box.Width + paddingPixels * 2);
+<a name="l00037"></a>00037                 box.Height = Math.Min(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Height, box.Height + paddingPixels * 2);
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039                 <span class="comment">//Adjust s.originalSize so the layout occurs properly.</span>
+<a name="l00040"></a>00040                 s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a72e11433b4c36caccab68577e864202c" title="The original size of the source bitmap. Use this instead of accessing the bitmap directly for this in...">originalSize</a> = box.Size;
+<a name="l00041"></a>00041                 s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a995d9c7d9b9c8faf2f8cc1cbf15d8174" title="Allows extensions to store data along with the image state.">Data</a>[RectDataKey] = box;
+<a name="l00042"></a>00042             }
+<a name="l00043"></a>00043             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045         }
+<a name="l00046"></a>00046 
+<a name="l00047"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a62ea85500659e1b51a0b6ab3dae46fae">00047</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a62ea85500659e1b51a0b6ab3dae46fae" title="Process.3(Layout).3: Add rings here to insert them between the image area and the padding...">PostLayoutImage</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
+<a name="l00048"></a>00048             <span class="comment">//Now we offset copyRect so it works properly.</span>
+<a name="l00049"></a>00049             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a995d9c7d9b9c8faf2f8cc1cbf15d8174" title="Allows extensions to store data along with the image state.">Data</a>.ContainsKey(RectDataKey)){
+<a name="l00050"></a>00050                 Rectangle box = (Rectangle)s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a995d9c7d9b9c8faf2f8cc1cbf15d8174" title="Allows extensions to store data along with the image state.">Data</a>[RectDataKey];
+<a name="l00051"></a>00051                 s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a> = <span class="keyword">new</span> RectangleF(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.X + box.X, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Y + box.Y,s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Width,s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Height);
+<a name="l00052"></a>00052             }
+<a name="l00053"></a>00053             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+<a name="l00054"></a>00054         }
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
+<a name="l00059"></a>00059             c.Plugins.add_plugin(<span class="keyword">this</span>);
+<a name="l00060"></a>00060             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00061"></a>00061         }
 <a name="l00062"></a>00062 
-<a name="l00063"></a>00063         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
-<a name="l00064"></a>00064             c.Plugins.add_plugin(<span class="keyword">this</span>);
-<a name="l00065"></a>00065             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00063"></a>00063         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
+<a name="l00064"></a>00064             c.Plugins.remove_plugin(<span class="keyword">this</span>);
+<a name="l00065"></a>00065             <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00066"></a>00066         }
 <a name="l00067"></a>00067 
-<a name="l00068"></a>00068         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
-<a name="l00069"></a>00069             c.Plugins.remove_plugin(<span class="keyword">this</span>);
-<a name="l00070"></a>00070             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00071"></a>00071         }
-<a name="l00072"></a>00072 
-<a name="l00073"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a0f4fd28b3a72ff3f5ea7b5400270f3a3">00073</a>         <span class="keyword">public</span> IEnumerable&lt;string&gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a0f4fd28b3a72ff3f5ea7b5400270f3a3" title="If the plugin reads any values from the querystring, the names of the keys should be specified here...">GetSupportedQuerystringKeys</a>() {
-<a name="l00074"></a>00074             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;trim.percentpadding&quot;</span>, <span class="stringliteral">&quot;trim.threshold&quot;</span> };
-<a name="l00075"></a>00075         }
-<a name="l00076"></a>00076     }
-<a name="l00077"></a>00077 }
+<a name="l00068"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a0f4fd28b3a72ff3f5ea7b5400270f3a3">00068</a>         <span class="keyword">public</span> IEnumerable&lt;string&gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html#a0f4fd28b3a72ff3f5ea7b5400270f3a3" title="If the plugin reads any values from the querystring, the names of the keys should be specified here...">GetSupportedQuerystringKeys</a>() {
+<a name="l00069"></a>00069             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;trim.percentpadding&quot;</span>, <span class="stringliteral">&quot;trim.threshold&quot;</span> };
+<a name="l00070"></a>00070         }
+<a name="l00071"></a>00071     }
+<a name="l00072"></a>00072 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

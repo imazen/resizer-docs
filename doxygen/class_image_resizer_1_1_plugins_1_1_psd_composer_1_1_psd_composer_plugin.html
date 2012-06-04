@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -150,12 +150,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a collection of all the layers for the specified file (memcached)  <a href="#a254fc91b19f5eac0e4bcb5e6745e120c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IList&lt; <a class="el" href="interface_image_resizer_1_1_plugins_1_1_psd_composer_1_1_i_psd_layer.html">IPsdLayer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#aea2bdfcce28f129035890243ae7b3a48">GetVisibleTextLayers</a> (string virtualPath, NameValueCollection queryString)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a collection of all visible text layers for the file (memcached). Useful for building image maps.  <a href="#aea2bdfcce28f129035890243ae7b3a48"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a13024ab1a94ec975993798ff59bbcee9">FileExists</a> (string virtualPath)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For internal VPP use only.  <a href="#a13024ab1a94ec975993798ff59bbcee9"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">override VirtualFile&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a79c4222fe7cade07b3d792b42ac844d3">GetFile</a> (string virtualPath)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For internal VPP use only.  <a href="#a79c4222fe7cade07b3d792b42ac844d3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">override CacheDependency&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a66e6f630ae3fd204a54f1d677497db44">GetCacheDependency</a> (string virtualPath, System.Collections.IEnumerable virtualPathDependencies, DateTime utcStart)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For internal VPP use only.  <a href="#a66e6f630ae3fd204a54f1d677497db44"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea7a7e651bdcdb6137e837d60441dca0"></a><!-- doxytag: member="ImageResizer::Plugins::PsdComposer::PsdComposerPlugin::isStrictMode" ref="aea7a7e651bdcdb6137e837d60441dca0" args="()" -->
@@ -165,13 +159,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>isStrictMode</b> ()</
 <tr><td class="memItemLeft" align="right" valign="top">KeyValuePair&lt; Size, IList<br class="typebreak"/>
 &lt; <a class="el" href="interface_image_resizer_1_1_plugins_1_1_psd_composer_1_1_i_psd_layer.html">IPsdLayer</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a6fca6874ee6f5fc7972eea04b292646b">GetFileMetadata</a> (string virtualPath, NameValueCollection queryString)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a collection of all the layers for the specified file and the size of the file (memcached)  <a href="#a6fca6874ee6f5fc7972eea04b292646b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a94eafcc1bd526d2a6a01a2263e47c6fd"></a><!-- doxytag: member="ImageResizer::Plugins::PsdComposer::PsdComposerPlugin::IsPathPSDToCompose" ref="a94eafcc1bd526d2a6a01a2263e47c6fd" args="(string virtualPath, NameValueCollection queryString=null)" -->
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a94eafcc1bd526d2a6a01a2263e47c6fd">IsPathPSDToCompose</a> (string virtualPath, NameValueCollection queryString=null)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the file is a .psd.jpeg, .psd.png, etc file. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a94eafcc1bd526d2a6a01a2263e47c6fd">IsPathPSDToCompose</a> (string virtualPath, NameValueCollection queryString=null)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">True if the file is a .psd.jpeg, .psd.png, etc file.  <a href="#a94eafcc1bd526d2a6a01a2263e47c6fd"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00022">22</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00023">23</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a08ed070326d9e4f8637a279ca7394080"></a><!-- doxytag: member="ImageResizer::Plugins::PsdComposer::PsdComposerPlugin::ComposeBitmap" ref="a08ed070326d9e4f8637a279ca7394080" args="(string virtualPath, NameValueCollection queryString)" -->
 <div class="memitem">
@@ -207,7 +200,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00125">125</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00123">123</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                        {
             <span class="comment">//Renderer object</span>
             IPsdRenderer renderer = <a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a081cb0470034a93aed7445bc65ed1a42" title="Returns the renderer object selected in the querystring.">GetSelectedRenderer</a>(queryString);
@@ -215,7 +208,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
             <span class="comment">//Bitmap we will render to</span>
             System.Drawing.Bitmap b = null;
 
-            MemCachedFile file = MemCachedFile.GetCachedFile(GetPhysicalPath(virtualPath));
+            MemCachedFile file = MemCachedFile.GetCachedVirtualFile(StripFakeExtension(virtualPath),c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#ab7d8e32249817ef77f91508c087140d9" title="Access and modify settings related to the HttpModule pipline. Register URL rewriting hooks...">Pipeline</a>, <span class="keyword">new</span> NameValueCollection());
             <span class="keyword">using</span> (Stream s = file.GetStream()) {
                 <span class="comment">//Time just the parsing/rendering</span>
                 Stopwatch swRender = <span class="keyword">new</span> Stopwatch();
@@ -230,11 +223,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
                 file.SetSubkey(<span class="stringliteral">&quot;layers_&quot;</span> + renderer.ToString(), layers);
                 file.SetSubkey(<span class="stringliteral">&quot;size_&quot;</span> + renderer.ToString(), size);
 
-
                 <span class="comment">//How fast?</span>
                 swRender.Stop();
                 trace(<span class="stringliteral">&quot;Using encoder &quot;</span> + renderer.ToString() + <span class="stringliteral">&quot;, rendering stream to a composed Bitmap instance took &quot;</span> + swRender.ElapsedMilliseconds.ToString() + <span class="stringliteral">&quot;ms&quot;</span>);
             }
+
+
             <span class="keywordflow">return</span> b;
         }
 </pre></div>
@@ -274,12 +268,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00098">98</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00094">94</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                         {
 
             Stopwatch sw = <span class="keyword">new</span> Stopwatch();
             sw.Start();
 
+        
             System.Drawing.Bitmap b = <a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a08ed070326d9e4f8637a279ca7394080" title="Returns a Bitmap instance of the composed result.">ComposeBitmap</a>(virtualPath, queryString);
             <span class="comment">//Memory stream for encoding the file</span>
             MemoryStream ms = <span class="keyword">new</span> MemoryStream();
@@ -290,6 +285,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
                 encoder.<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#a9cf9397f4528608e91785410afb73eb6" title="Encodes the image to the specified stream.">Write</a>(b, ms);
                 ms.Seek(0, SeekOrigin.Begin); <span class="comment">//Reset stream for reading</span>
             }
+
 
             sw.Stop();
             trace(<span class="stringliteral">&quot;Total time, including encoding: &quot;</span> + sw.ElapsedMilliseconds.ToString() + <span class="stringliteral">&quot;ms&quot;</span>);
@@ -338,41 +334,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00046">46</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                    {
-            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a94eafcc1bd526d2a6a01a2263e47c6fd" title="True if the file is a .psd.jpeg, .psd.png, etc file. ">IsPathPSDToCompose</a>(virtualPath,queryString) &amp;&amp; System.IO.File.Exists(GetPhysicalPath(virtualPath));
-        }
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a13024ab1a94ec975993798ff59bbcee9"></a><!-- doxytag: member="ImageResizer::Plugins::PsdComposer::PsdComposerPlugin::FileExists" ref="a13024ab1a94ec975993798ff59bbcee9" args="(string virtualPath)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">override bool <a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a9a4ff24e792a504fe1a8a40821ac2550">ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.FileExists</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>virtualPath</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>For internal VPP use only. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">virtualPath</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00403">403</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a94eafcc1bd526d2a6a01a2263e47c6fd" title="True if the file is a .psd.jpeg, .psd.png, etc file. ">IsPathPSDToCompose</a>(virtualPath))
-                <span class="keywordflow">return</span> System.IO.File.Exists(GetPhysicalPath(virtualPath));
-            <span class="keywordflow">else</span>
-                <span class="keywordflow">return</span> Previous.FileExists(virtualPath);
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a94eafcc1bd526d2a6a01a2263e47c6fd" title="True if the file is a .psd.jpeg, .psd.png, etc file.">IsPathPSDToCompose</a>(virtualPath,queryString) &amp;&amp; c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#ab7d8e32249817ef77f91508c087140d9" title="Access and modify settings related to the HttpModule pipline. Register URL rewriting hooks...">Pipeline</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#a1abc7d07064e5c4e583406be7a3ebcab" title="Returns true if (a) A registered IVirtualImageProvider says it exists, or (b) if the VirtualPathProvi...">FileExists</a>(StripFakeExtension(virtualPath),<span class="keyword">new</span> NameValueCollection());
         }
 </pre></div>
 </div>
@@ -412,59 +374,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00171">171</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00170">170</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                  {
             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a6fca6874ee6f5fc7972eea04b292646b" title="Returns a collection of all the layers for the specified file and the size of the file (memcached)...">GetFileMetadata</a>(virtualPath, queryString).Value;
-        }
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a66e6f630ae3fd204a54f1d677497db44"></a><!-- doxytag: member="ImageResizer::Plugins::PsdComposer::PsdComposerPlugin::GetCacheDependency" ref="a66e6f630ae3fd204a54f1d677497db44" args="(string virtualPath, System.Collections.IEnumerable virtualPathDependencies, DateTime utcStart)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">override CacheDependency <a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a66e6f630ae3fd204a54f1d677497db44">ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.GetCacheDependency</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>virtualPath</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">System.Collections.IEnumerable&#160;</td>
-          <td class="paramname"><em>virtualPathDependencies</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">DateTime&#160;</td>
-          <td class="paramname"><em>utcStart</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>For internal VPP use only. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">virtualPath</td><td></td></tr>
-    <tr><td class="paramname">virtualPathDependencies</td><td></td></tr>
-    <tr><td class="paramname">utcStart</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00430">430</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="comment">//Maybe the database is also involved? </span>
-            <span class="keywordflow">return</span> Previous.GetCacheDependency(virtualPath, virtualPathDependencies, utcStart);
         }
 </pre></div>
 </div>
@@ -508,44 +420,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00057">57</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                         {
-            <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a94eafcc1bd526d2a6a01a2263e47c6fd" title="True if the file is a .psd.jpeg, .psd.png, etc file. ">IsPathPSDToCompose</a>(virtualPath,queryString) &amp;&amp; System.IO.File.Exists(GetPhysicalPath(virtualPath)))
-                <span class="keywordflow">return</span> <span class="keyword">new</span> PsdVirtualFile(virtualPath, <span class="keyword">this</span>);
+            <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a94eafcc1bd526d2a6a01a2263e47c6fd" title="True if the file is a .psd.jpeg, .psd.png, etc file.">IsPathPSDToCompose</a>(virtualPath, queryString) &amp;&amp; c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#ab7d8e32249817ef77f91508c087140d9" title="Access and modify settings related to the HttpModule pipline. Register URL rewriting hooks...">Pipeline</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#a1abc7d07064e5c4e583406be7a3ebcab" title="Returns true if (a) A registered IVirtualImageProvider says it exists, or (b) if the VirtualPathProvi...">FileExists</a>(StripFakeExtension(virtualPath), <span class="keyword">new</span> NameValueCollection()))
+                <span class="keywordflow">return</span> <span class="keyword">new</span> PsdVirtualFile(virtualPath, queryString, <span class="keyword">this</span>);
             <span class="keywordflow">else</span>
                 <span class="keywordflow">return</span> null;
-        }
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a79c4222fe7cade07b3d792b42ac844d3"></a><!-- doxytag: member="ImageResizer::Plugins::PsdComposer::PsdComposerPlugin::GetFile" ref="a79c4222fe7cade07b3d792b42ac844d3" args="(string virtualPath)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">override VirtualFile <a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a5c412d8253cbbdbb6b15fd404d08db09">ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.GetFile</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>virtualPath</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>For internal VPP use only. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">virtualPath</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00415">415</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
-<div class="fragment"><pre class="fragment">        {
-            <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a94eafcc1bd526d2a6a01a2263e47c6fd" title="True if the file is a .psd.jpeg, .psd.png, etc file. ">IsPathPSDToCompose</a>(virtualPath) &amp;&amp; System.IO.File.Exists(GetPhysicalPath(virtualPath)))
-                <span class="keywordflow">return</span> <span class="keyword">new</span> PsdVirtualFile(virtualPath, <span class="keyword">this</span>);
-            <span class="keywordflow">else</span>
-                <span class="keywordflow">return</span> Previous.GetFile(virtualPath);
         }
 </pre></div>
 </div>
@@ -585,15 +463,16 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00180">180</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00179">179</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                                           {
             Stopwatch sw = <span class="keyword">new</span> Stopwatch();
             sw.Start();
 
+
             <span class="comment">//Renderer object</span>
             IPsdRenderer renderer = <a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a081cb0470034a93aed7445bc65ed1a42" title="Returns the renderer object selected in the querystring.">GetSelectedRenderer</a>(queryString);
             <span class="comment">//File</span>
-            MemCachedFile file = MemCachedFile.GetCachedFile(GetPhysicalPath(virtualPath));
+            MemCachedFile file = MemCachedFile.GetCachedVirtualFile(StripFakeExtension(virtualPath), c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#ab7d8e32249817ef77f91508c087140d9" title="Access and modify settings related to the HttpModule pipline. Register URL rewriting hooks...">Pipeline</a>, <span class="keyword">new</span> NameValueCollection());
             <span class="comment">//key</span>
             <span class="keywordtype">string</span> layersKey = <span class="stringliteral">&quot;layers_&quot;</span> + renderer.ToString();
             <span class="keywordtype">string</span> sizeKey = <span class="stringliteral">&quot;size_&quot;</span> + renderer.ToString();
@@ -618,7 +497,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 
             sw.Stop();
-            trace(<span class="stringliteral">&quot;Total time for enumerating, including file reading: &quot;</span> + sw.ElapsedMilliseconds.ToString() + <span class="stringliteral">&quot;ms&quot;</span>);
+            trace(<span class="stringliteral">&quot;Total time for enumerating, including file reading: &quot;</span> + sw.ElapsedMilliseconds.ToString(NumberFormatInfo.InvariantInfo) + <span class="stringliteral">&quot;ms&quot;</span>);
             <span class="keywordflow">return</span> <span class="keyword">new</span> KeyValuePair&lt;Size,IList&lt;IPsdLayer&gt;&gt;(size,layers);
         }
 </pre></div>
@@ -659,7 +538,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00161">161</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00160">160</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                          {
             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a6fca6874ee6f5fc7972eea04b292646b" title="Returns a collection of all the layers for the specified file and the size of the file (memcached)...">GetFileMetadata</a>(virtualPath, queryString).Key;
         }
@@ -686,11 +565,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 
 <p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00083">83</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
-            <span class="comment">//Renderer object</span>
-            IPsdRenderer renderer = null;
-            <span class="comment">//There is only ONE renderer now - The Agurigma one was horrible</span>
-            renderer = <span class="keyword">new</span> PsdPluginRenderer();
-            <span class="keywordflow">return</span> renderer;
+            <span class="keywordflow">return</span> <span class="keyword">new</span> PsdPluginRenderer(); <span class="comment">//There is only ONE renderer now - The Agurigma one was horrible</span>
         }
 </pre></div>
 </div>
@@ -842,6 +717,52 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
             this.c = c;
             this.c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a24a5d36dc59eee7d980a8e9b4d00ead1" title="Only for use by plugins during IPlugin.Install. Call Plugin.Install instead of this method...">add_plugin</a>(<span class="keyword">this</span>);
             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a94eafcc1bd526d2a6a01a2263e47c6fd"></a><!-- doxytag: member="ImageResizer::Plugins::PsdComposer::PsdComposerPlugin::IsPathPSDToCompose" ref="a94eafcc1bd526d2a6a01a2263e47c6fd" args="(string virtualPath, NameValueCollection queryString=null)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html#a94eafcc1bd526d2a6a01a2263e47c6fd">ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.IsPathPSDToCompose</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>virtualPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">NameValueCollection&#160;</td>
+          <td class="paramname"><em>queryString</em> = <code>null</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>True if the file is a .psd.jpeg, .psd.png, etc file. </p>
+
+<p>Definition at line <a class="el" href="_psd_composer_plugin_8cs_source.html#l00364">364</a> of file <a class="el" href="_psd_composer_plugin_8cs_source.html">PsdComposerPlugin.cs</a>.</p>
+<div class="fragment"><pre class="fragment">        {
+            <span class="keywordtype">string</span> fileName = System.IO.Path.GetFileName(virtualPath); <span class="comment">//Exclude the folders, just looking at the filename here.</span>
+            <span class="keywordtype">int</span> psd = fileName.IndexOf(<span class="stringliteral">&quot;.psd&quot;</span>,StringComparison.OrdinalIgnoreCase);
+            <span class="keywordflow">if</span> (psd &gt; -1){
+                <span class="comment">//We always take the .psd. syntax</span>
+                <span class="keywordflow">if</span> (fileName.IndexOf(<span class="stringliteral">&quot;.psd.&quot;</span>,StringComparison.OrdinalIgnoreCase) &gt; -1) <span class="keywordflow">return</span> <span class="keyword">true</span>;
+
+                <span class="keywordflow">if</span> (queryString == null) queryString = c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#ab7d8e32249817ef77f91508c087140d9" title="Access and modify settings related to the HttpModule pipline. Register URL rewriting hooks...">Pipeline</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#a84692589f794762a95f605f2afd7bfe9" title="Returns the modified query string. If never set, returns a copy of Request.QueryString. Returns the same instance if called multiple times. Copy it if you want to make changes without causing issues.">ModifiedQueryString</a>;
+                <span class="comment">//But we only grab the .psd syntax if we detect our commands</span>
+                <span class="keywordflow">foreach</span>(<span class="keywordtype">string</span> s <span class="keywordflow">in</span> PsdCommandBuilder.GetSupportedQuerystringKeys()){
+                    <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(queryString[s])) <span class="keywordflow">return</span> <span class="keyword">true</span>;
+                }
+            }
+            <span class="keywordflow">return</span> <span class="keyword">false</span>;
         }
 </pre></div>
 </div>

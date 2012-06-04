@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -113,30 +113,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Rectangle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a50a5b55fa51dfcd4b20ea4f5b4f8061c">FindBoxSobel</a> (Bitmap image, Rectangle lookInside, byte threshold)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a rectangle inside 'lookInside' that bounds any energy greater than 'threshold'.  <a href="#a50a5b55fa51dfcd4b20ea4f5b4f8061c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Rectangle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a9046af3598e4b54cab4fb88641fcc60f">FindBoxExact</a> (UnmanagedImage sourceData, Color colorToRemove)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bounding box that only excludes the specified color.  <a href="#a9046af3598e4b54cab4fb88641fcc60f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Rectangle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a611e8dffa65c85edeb11ea0d39698325">FindBoxSobel</a> (Bitmap originalImage, Rectangle lookInside, byte threshold)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a rectangle inside 'lookInside' that bounds any energy greater than 'threshold'.  <a href="#a611e8dffa65c85edeb11ea0d39698325"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Rectangle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a871d3b4f93837dbfc16cbcbc571dc06e">FindBoxSobel</a> (Bitmap rgb, byte threshold)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requires 24 bit or 32 bit (A) RGB image.  <a href="#a871d3b4f93837dbfc16cbcbc571dc06e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Rectangle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#aa674b4eff1b6e8eef439e94028b6050e">FindBoxExactGrayscale</a> (BitmapData sourceData, byte indexToRemove)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a bounding box that only excludes the specified color. Only works on 8-bit images.  <a href="#aa674b4eff1b6e8eef439e94028b6050e"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_bounding_box_finder_8cs_source.html#l00011">11</a> of file <a class="el" href="_bounding_box_finder_8cs_source.html">BoundingBoxFinder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_bounding_box_finder_8cs_source.html#l00012">12</a> of file <a class="el" href="_bounding_box_finder_8cs_source.html">BoundingBoxFinder.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a9046af3598e4b54cab4fb88641fcc60f"></a><!-- doxytag: member="ImageResizer::Plugins::WhitespaceTrimmer::BoundingBoxFinder::FindBoxExact" ref="a9046af3598e4b54cab4fb88641fcc60f" args="(UnmanagedImage sourceData, Color colorToRemove)" -->
+<a class="anchor" id="aa674b4eff1b6e8eef439e94028b6050e"></a><!-- doxytag: member="ImageResizer::Plugins::WhitespaceTrimmer::BoundingBoxFinder::FindBoxExactGrayscale" ref="aa674b4eff1b6e8eef439e94028b6050e" args="(BitmapData sourceData, byte indexToRemove)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Rectangle <a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a9046af3598e4b54cab4fb88641fcc60f">ImageResizer.Plugins.WhitespaceTrimmer.BoundingBoxFinder.FindBoxExact</a> </td>
+          <td class="memname">Rectangle <a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#aa674b4eff1b6e8eef439e94028b6050e">ImageResizer.Plugins.WhitespaceTrimmer.BoundingBoxFinder.FindBoxExactGrayscale</a> </td>
           <td>(</td>
-          <td class="paramtype">UnmanagedImage&#160;</td>
+          <td class="paramtype">BitmapData&#160;</td>
           <td class="paramname"><em>sourceData</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Color&#160;</td>
-          <td class="paramname"><em>colorToRemove</em>&#160;</td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>indexToRemove</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -147,29 +149,23 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Returns a bounding box that only excludes the specified color. </p>
+<p>Returns a bounding box that only excludes the specified color. Only works on 8-bit images. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">sourceData</td><td></td></tr>
-    <tr><td class="paramname">colorToRemove</td><td></td></tr>
+    <tr><td class="paramname">colorToRemove</td><td>The palette index to remove.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_bounding_box_finder_8cs_source.html#l00077">77</a> of file <a class="el" href="_bounding_box_finder_8cs_source.html">BoundingBoxFinder.cs</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                                      {
-
+<p>Definition at line <a class="el" href="_bounding_box_finder_8cs_source.html#l00083">83</a> of file <a class="el" href="_bounding_box_finder_8cs_source.html">BoundingBoxFinder.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                          {
+            <span class="keywordflow">if</span> (sourceData.PixelFormat != PixelFormat.Format8bppIndexed) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException(<span class="stringliteral">&quot;FindBoxExact only operates on 8-bit grayscale images&quot;</span>);
             <span class="comment">// get source image size</span>
             <span class="keywordtype">int</span> width = sourceData.Width;
             <span class="keywordtype">int</span> height = sourceData.Height;
-            <span class="keywordtype">int</span> offset = sourceData.Stride -
-                ((sourceData.PixelFormat == PixelFormat.Format8bppIndexed) ? width : width * 3);
-
-            <span class="comment">// color to remove</span>
-            byte r = colorToRemove.R;
-            byte g = colorToRemove.G;
-            byte b = colorToRemove.B;
+            <span class="keywordtype">int</span> offset = sourceData.Stride - width;
 
             <span class="keywordtype">int</span> minX = width;
             <span class="keywordtype">int</span> minY = height;
@@ -178,44 +174,22 @@ Public Member Functions</h2></td></tr>
 
             <span class="comment">// find rectangle which contains something except color to remove</span>
             unsafe {
-                byte* src = (byte*)sourceData.ImageData.ToPointer();
+                byte* src = (byte*)sourceData.Scan0;
 
-                <span class="keywordflow">if</span> (sourceData.PixelFormat == PixelFormat.Format8bppIndexed) {
-                    <span class="comment">// grayscale</span>
-                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; height; y++) {
-                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; x++, src++) {
-                            <span class="keywordflow">if</span> (*src != g) {
-                                <span class="keywordflow">if</span> (x &lt; minX)
-                                    minX = x;
-                                <span class="keywordflow">if</span> (x &gt; maxX)
-                                    maxX = x;
-                                <span class="keywordflow">if</span> (y &lt; minY)
-                                    minY = y;
-                                <span class="keywordflow">if</span> (y &gt; maxY)
-                                    maxY = y;
-                            }
+                for (<span class="keywordtype">int</span> y = 0; y &lt; height; y++) {
+                    <span class="keywordflow">if</span> (y &gt; 0) src += offset; <span class="comment">//Don&#39;t adjust for offset until after first row</span>
+                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; x++) {
+                        <span class="keywordflow">if</span> (x &gt; 0 || y &gt; 0) src++; <span class="comment">//Don&#39;t increment until after the first pixel.</span>
+                        <span class="keywordflow">if</span> (*src != indexToRemove) {
+                            <span class="keywordflow">if</span> (x &lt; minX)
+                                minX = x;
+                            <span class="keywordflow">if</span> (x &gt; maxX)
+                                maxX = x;
+                            <span class="keywordflow">if</span> (y &lt; minY)
+                                minY = y;
+                            <span class="keywordflow">if</span> (y &gt; maxY)
+                                maxY = y;
                         }
-                        src += offset;
-                    }
-                } <span class="keywordflow">else</span> {
-                    <span class="comment">// RGB</span>
-                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; height; y++) {
-                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; x++, src += 3) {
-                            <span class="keywordflow">if</span> (
-                                (src[RGB.R] != r) ||
-                                (src[RGB.G] != g) ||
-                                (src[RGB.B] != b)) {
-                                <span class="keywordflow">if</span> (x &lt; minX)
-                                    minX = x;
-                                <span class="keywordflow">if</span> (x &gt; maxX)
-                                    maxX = x;
-                                <span class="keywordflow">if</span> (y &lt; minY)
-                                    minY = y;
-                                <span class="keywordflow">if</span> (y &gt; maxY)
-                                    maxY = y;
-                            }
-                        }
-                        src += offset;
                     }
                 }
             }
@@ -230,15 +204,15 @@ Public Member Functions</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="a50a5b55fa51dfcd4b20ea4f5b4f8061c"></a><!-- doxytag: member="ImageResizer::Plugins::WhitespaceTrimmer::BoundingBoxFinder::FindBoxSobel" ref="a50a5b55fa51dfcd4b20ea4f5b4f8061c" args="(Bitmap image, Rectangle lookInside, byte threshold)" -->
+<a class="anchor" id="a611e8dffa65c85edeb11ea0d39698325"></a><!-- doxytag: member="ImageResizer::Plugins::WhitespaceTrimmer::BoundingBoxFinder::FindBoxSobel" ref="a611e8dffa65c85edeb11ea0d39698325" args="(Bitmap originalImage, Rectangle lookInside, byte threshold)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Rectangle <a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a50a5b55fa51dfcd4b20ea4f5b4f8061c">ImageResizer.Plugins.WhitespaceTrimmer.BoundingBoxFinder.FindBoxSobel</a> </td>
+          <td class="memname">Rectangle <a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a611e8dffa65c85edeb11ea0d39698325">ImageResizer.Plugins.WhitespaceTrimmer.BoundingBoxFinder.FindBoxSobel</a> </td>
           <td>(</td>
           <td class="paramtype">Bitmap&#160;</td>
-          <td class="paramname"><em>image</em>, </td>
+          <td class="paramname"><em>originalImage</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -272,59 +246,96 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_bounding_box_finder_8cs_source.html#l00020">20</a> of file <a class="el" href="_bounding_box_finder_8cs_source.html">BoundingBoxFinder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_bounding_box_finder_8cs_source.html#l00021">21</a> of file <a class="el" href="_bounding_box_finder_8cs_source.html">BoundingBoxFinder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html#l00019">ImageResizer.Plugins.WhitespaceTrimmer.WhitespaceTrimmerPlugin.LayoutImage()</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                                          {
+<p>Referenced by <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html#l00021">ImageResizer.Plugins.WhitespaceTrimmer.WhitespaceTrimmerPlugin.LayoutImage()</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                                  {
 
-
-            <span class="keywordtype">bool</span> disposeImage = <span class="keyword">false</span>;
+            Bitmap image = originalImage;
             <span class="keywordflow">try</span> {
-                <span class="keywordflow">if</span> (image.PixelFormat != PixelFormat.Format24bppRgb &amp;&amp; 
-                    image.PixelFormat != PixelFormat.Format32bppArgb &amp;&amp; 
+                <span class="comment">//Convert if needed (makes an extra copy)</span>
+                <span class="keywordflow">if</span> (image.PixelFormat != PixelFormat.Format24bppRgb &amp;&amp;
+                    image.PixelFormat != PixelFormat.Format32bppArgb &amp;&amp;
                     image.PixelFormat != PixelFormat.Format32bppRgb) {
-                        image = AForge.Imaging.Image.Clone(image, PixelFormat.Format24bppRgb);
-                        disposeImage = <span class="keyword">true</span>;
+                    image = AForge.Imaging.Image.Clone(image, PixelFormat.Format24bppRgb);
                 }
-                
-                <span class="comment">//We do this mess of try/finally so we never have more than 1 copy in memory at a time.</span>
-                UnmanagedImage croppedCopy = null;
-                UnmanagedImage grayscaleCopy = null;
-                
-                Rectangle imageSize = <span class="keyword">new</span> Rectangle(0, 0, image.Width, image.Height);
-                <span class="keywordflow">try</span> {
-                    <span class="keywordflow">try</span> {
-                        <span class="comment">// lock source bitmap data</span>
-                        BitmapData data = image.LockBits(imageSize, ImageLockMode.ReadWrite, image.PixelFormat);
-                        <span class="keywordflow">try</span> {
 
-                            <span class="comment">//Crop original image if needed.</span>
-                            <span class="keywordflow">if</span> (lookInside.Equals(imageSize))
-                                grayscaleCopy = Grayscale.CommonAlgorithms.Y.Apply(<span class="keyword">new</span> UnmanagedImage(data));
-                            <span class="keywordflow">else</span>
-                                croppedCopy = <span class="keyword">new</span> Crop(<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a61b50db80ba6c732565d07ef6163c0a0" title="Rounds a floating-point rectangle to an integer rectangle using System.Round.">ToRectangle</a>(lookInside)).Apply(<span class="keyword">new</span> UnmanagedImage(data));
-                        } <span class="keywordflow">finally</span> {
-                            image.UnlockBits(data);
-                        }
-                        <span class="comment">//Convert to 8bpp grayscale</span>
-                        <span class="keywordflow">if</span> (grayscaleCopy == null) grayscaleCopy = Grayscale.CommonAlgorithms.Y.Apply(croppedCopy);
+                <span class="comment">//Crop if needed (makes an extra copy unless we converted too, then only 1 extra copy)</span>
+                <span class="keywordflow">if</span> (!lookInside.Equals(<span class="keyword">new</span> Rectangle(0, 0, image.Width, image.Height))) {
+                    Bitmap oldImage = image;
+                    <span class="keywordflow">try</span> {
+                        image = <span class="keyword">new</span> Crop(lookInside).Apply(image);
                     } <span class="keywordflow">finally</span> {
-                        <span class="keywordflow">if</span> (croppedCopy != null) croppedCopy.Dispose(); ;
+                        <span class="keywordflow">if</span> (oldImage != originalImage) oldImage.Dispose(); <span class="comment">//Dispose the cloned </span>
                     }
-                    <span class="comment">//Apply sobel operator to grayscale image</span>
-                    <span class="keyword">new</span> SobelEdgeDetector().ApplyInPlace(grayscaleCopy);
-                    <span class="comment">//Threshold into black and white.</span>
-                    <span class="keyword">new</span> Threshold(threshold).ApplyInPlace(grayscaleCopy);
-                    <span class="comment">//Trim only exact black pixels</span>
-                    Rectangle result = <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a9046af3598e4b54cab4fb88641fcc60f" title="Returns a bounding box that only excludes the specified color.">FindBoxExact</a>(grayscaleCopy, Color.Black);
-                    <span class="keywordflow">return</span> <span class="keyword">new</span> Rectangle(lookInside.X + result.X, lookInside.Y + result.Y, result.Width, result.Height);
-                } <span class="keywordflow">finally</span> {
-                    <span class="keywordflow">if</span> (grayscaleCopy != null) grayscaleCopy.Dispose();
                 }
+
+
+                <span class="comment">//Makes 1 more copy at 1/3rd the size, in grayscale</span>
+                Rectangle result = <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a611e8dffa65c85edeb11ea0d39698325" title="Returns a rectangle inside &#39;lookInside&#39; that bounds any energy greater than &#39;threshold&#39;.">FindBoxSobel</a>(image, threshold);
+                <span class="keywordflow">return</span> <span class="keyword">new</span> Rectangle(lookInside.X + result.X, lookInside.Y + result.Y, result.Width, result.Height);
+
+
             } <span class="keywordflow">finally</span> {
-                <span class="keywordflow">if</span> (disposeImage) image.Dispose();
+                <span class="keywordflow">if</span> (image != originalImage) image.Dispose();
             }
 
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a871d3b4f93837dbfc16cbcbc571dc06e"></a><!-- doxytag: member="ImageResizer::Plugins::WhitespaceTrimmer::BoundingBoxFinder::FindBoxSobel" ref="a871d3b4f93837dbfc16cbcbc571dc06e" args="(Bitmap rgb, byte threshold)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rectangle <a class="el" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a611e8dffa65c85edeb11ea0d39698325">ImageResizer.Plugins.WhitespaceTrimmer.BoundingBoxFinder.FindBoxSobel</a> </td>
+          <td>(</td>
+          <td class="paramtype">Bitmap&#160;</td>
+          <td class="paramname"><em>rgb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">byte&#160;</td>
+          <td class="paramname"><em>threshold</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Requires 24 bit or 32 bit (A) RGB image. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rgb</td><td></td></tr>
+    <tr><td class="paramname">threshold</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_bounding_box_finder_8cs_source.html#l00059">59</a> of file <a class="el" href="_bounding_box_finder_8cs_source.html">BoundingBoxFinder.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                  {
+            <span class="keyword">using</span> (Bitmap gray = Grayscale.CommonAlgorithms.Y.Apply(rgb)) {
+
+                <span class="comment">//Apply sobel operator to grayscale image</span>
+                <span class="keyword">new</span> SobelEdgeDetector().ApplyInPlace(gray);
+                <span class="comment">//Threshold into black and white.</span>
+                <span class="keyword">new</span> Threshold(threshold).ApplyInPlace(gray);
+                <span class="comment">//Trim only exact black pixels</span>
+                <span class="comment">// lock source bitmap data</span>
+                BitmapData data = gray.LockBits(<span class="keyword">new</span> Rectangle(0, 0, gray.Width, gray.Height), ImageLockMode.ReadOnly, gray.PixelFormat);
+                <span class="keywordflow">try</span> {
+                    <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#aa674b4eff1b6e8eef439e94028b6050e" title="Returns a bounding box that only excludes the specified color. Only works on 8-bit images...">FindBoxExactGrayscale</a>(data, 0);
+                } <span class="keywordflow">finally</span> {
+                    gray.UnlockBits(data);
+                }
+            }
         }
 </pre></div>
 </div>

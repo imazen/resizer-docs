@@ -1,4 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_imaging_factory.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICImagingFactory" alt="" coords="6,5,1085,51"/>
-<area shape="rect" id="node3" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_component_factory.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICComponentFactory" alt="" coords="1134,5,2263,51"/>
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_security_1_1_cryptography_1_1_i_key_provider.html" title="ImageResizer.Plugins.Security.Cryptography.IKeyProvider" alt="" coords="5,41,840,87"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_security_1_1_cryptography_1_1_app_data_key_provider.html" title="ImageResizer.Plugins.Security.Cryptography.AppDataKeyProvider" alt="" coords="888,5,1835,51"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_security_1_1_cryptography_1_1_volatile_key_provider.html" title="ImageResizer.Plugins.Security.Cryptography.VolatileKeyProvider" alt="" coords="898,75,1825,122"/>
 </map>

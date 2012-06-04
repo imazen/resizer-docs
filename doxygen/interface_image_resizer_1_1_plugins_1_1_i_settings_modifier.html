@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -107,7 +107,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ImageResizer.Plugins.ISettingsModifier Interface Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<!-- doxytag: class="ImageResizer::Plugins::ISettingsModifier" --><div class="dynheader">
+<!-- doxytag: class="ImageResizer::Plugins::ISettingsModifier" -->
+<p>Provides a way to modify settings before they reach the managed API. Does not execute early enough to affect disk caching, although that may change in a later version.  
+ <a href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html#details">More...</a></p>
+<div class="dynheader">
 Inheritance diagram for ImageResizer.Plugins.ISettingsModifier:</div>
 <div class="dyncontent">
 <div class="center"><img src="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier__inherit__graph.png" border="0" usemap="#_image_resizer_8_plugins_8_i_settings_modifier_inherit__map" alt="Inheritance graph"/></div>
@@ -120,11 +123,12 @@ Inheritance diagram for ImageResizer.Plugins.ISettingsModifier:</div>
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image_resizer_1_1_resize_settings.html">ResizeSettings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html#a8cdb3583477eb87a90d7689c80b9a9cb">Modify</a> (<a class="el" href="class_image_resizer_1_1_resize_settings.html">ResizeSettings</a> settings)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementations should support being called on their own result multiple result without behavioral differences.  <a href="#a8cdb3583477eb87a90d7689c80b9a9cb"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Implementations should support being called on their own result multiple times without behavioral differences. Currently only executed in the managed API, too late to affect the disk cache, but that will probably change (it's likely all ISettingsModifiers will get executed twice, once after PostRewrite and once before the managed API executes).  <a href="#a8cdb3583477eb87a90d7689c80b9a9cb"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_i_settings_modifier_8cs_source.html#l00006">6</a> of file <a class="el" href="_i_settings_modifier_8cs_source.html">ISettingsModifier.cs</a>.</p>
+<div class="textblock"><p>Provides a way to modify settings before they reach the managed API. Does not execute early enough to affect disk caching, although that may change in a later version. </p>
+
+<p>Definition at line <a class="el" href="_i_settings_modifier_8cs_source.html#l00009">9</a> of file <a class="el" href="_i_settings_modifier_8cs_source.html">ISettingsModifier.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a8cdb3583477eb87a90d7689c80b9a9cb"></a><!-- doxytag: member="ImageResizer::Plugins::ISettingsModifier::Modify" ref="a8cdb3583477eb87a90d7689c80b9a9cb" args="(ResizeSettings settings)" -->
 <div class="memitem">
@@ -141,7 +145,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Implementations should support being called on their own result multiple result without behavioral differences. </p>
+<p>Implementations should support being called on their own result multiple times without behavioral differences. Currently only executed in the managed API, too late to affect the disk cache, but that will probably change (it's likely all ISettingsModifiers will get executed twice, once after PostRewrite and once before the managed API executes). </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">settings</td><td></td></tr>
@@ -152,7 +156,7 @@ Public Member Functions</h2></td></tr>
 
 <p>Implemented in <a class="el" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#ac5305a41fb712c41f3e2caba61def4d2">ImageResizer.Configuration.PipelineConfig</a>, <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_presets.html#a3c736803bf896287b9aaf9c7595fbc6f">ImageResizer.Plugins.Basic.Presets</a>, and <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_settings.html#a96af26c4a4b037f48ef3476bec2051d9">ImageResizer.Plugins.Basic.DefaultSettings</a>.</p>
 
-<p>Referenced by <a class="el" href="_pipeline_config_8cs_source.html#l00445">ImageResizer.Configuration.PipelineConfig.Modify()</a>.</p>
+<p>Referenced by <a class="el" href="_pipeline_config_8cs_source.html#l00455">ImageResizer.Configuration.PipelineConfig.Modify()</a>.</p>
 
 </div>
 </div>

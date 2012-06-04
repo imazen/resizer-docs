@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -201,7 +201,7 @@ Protected Member Functions</h2></td></tr>
                 <span class="comment">//Calculate the new size of the image and the canvas.</span>
                 <a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> state = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a>(settings, orig, <span class="keyword">true</span>);
                 c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a9b11da5f1856427a835034d52700c093" title="Returns a shared instance of ImageManager, (or a subclass if it has been upgraded). Instances change whenever ImageBuilderExtensions change.">CurrentImageBuilder</a>.<a class="code" href="class_image_resizer_1_1_image_builder.html#a8e2f4b3bbf8bb38e54249490122ebb71" title="Processes an ImageState instance. Used by Build, GetFinalSize, and TranslatePoint. Can be overriden by a plugin with the OnProcess method.">Process</a>(state);
-                RectangleF imageDest = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(state.layout[<span class="stringliteral">&quot;image&quot;</span>]);
+                RectangleF imageDest = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(state.layout[<span class="stringliteral">&quot;image&quot;</span>]);
 
                 <span class="keywordflow">if</span> (imageDest.Width != orig.Width || imageDest.Height != orig.Height) {
                     <span class="comment">//Rescale</span>

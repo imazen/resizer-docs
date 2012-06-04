@@ -6,4 +6,5 @@
 <area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_psd_reader_1_1_psd_reader.html" title="ImageResizer.Plugins.PsdReader.PsdReader" alt="" coords="836,287,1495,334"/>
 <area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_wic_builder_1_1_wic_builder_plugin.html" title="ImageResizer.Plugins.WicBuilder.WicBuilderPlugin" alt="" coords="795,358,1535,405"/>
 <area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html" title="Note: This decoder produces Bitmaps that require special disposal instructions. While ImageBuilder ha..." alt="" coords="775,429,1555,475"/>
+<area shape="rect" id="node17" href="$class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_builder_plugin.html" title="ImageResizer.Plugins.WpfBuilder.WpfBuilderPlugin" alt="" coords="791,499,1539,546"/>
 </map>

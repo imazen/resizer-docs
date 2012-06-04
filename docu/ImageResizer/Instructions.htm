@@ -1,0 +1,687 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+	<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+    <title>Instructions - Image Resizer Documentation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link type="text/css" rel="stylesheet" href="../main.css"/>
+    <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.scrollTo-min.js"></script>
+    <script type="text/javascript" src="../js/navigation.js"></script>
+    <script type="text/javascript" src="../js/example.js"></script>
+  </head>
+  <body>
+  	<header><h1>Image Resizer : API Documentation</h1>
+	</header>
+<nav id="namespaces">
+	<h2 class="fixed">Namespaces</h2>
+	<div class="scroll">
+		<ul>
+			<li>
+          <a href="../ImageResizer/index.htm" class="current">ImageResizer</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Caching/index.htm">ImageResizer.Caching</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Collections/index.htm">ImageResizer.Collections</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration/index.htm">ImageResizer.Configuration</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Issues/index.htm">ImageResizer.Configuration.Issues</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Plugins/index.htm">ImageResizer.Configuration.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.ExtensionMethods/index.htm">ImageResizer.ExtensionMethods</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Plugins.Basic/index.htm">ImageResizer.Plugins.Basic</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Resizing/index.htm">ImageResizer.Resizing</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.Util/index.htm">ImageResizer.Util</a>
+      </li>
+		</ul>
+	</div>
+</nav><nav id="types">
+  <h2 class="fixed">Types in ImageResizer</h2>
+	<div class="scroll">
+		<ul>
+				<li>
+            <a href="../ImageResizer/AnchorLocation.htm">AnchorLocation</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/BoxEdges.htm">BoxEdges</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/CropMode.htm">CropMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/CropUnits.htm">CropUnits</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/FitMode.htm">FitMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/FlipMode.htm">FlipMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/GrayscaleMode.htm">GrayscaleMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageBuilder.htm">ImageBuilder</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageCorruptedException.htm">ImageCorruptedException</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageJob.htm">ImageJob</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageMissingException.htm">ImageMissingException</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ImageProcessingException.htm">ImageProcessingException</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/Instructions.htm" class="current">Instructions</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/InterceptModule.htm">InterceptModule</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/JpegSubsamplingMode.htm">JpegSubsamplingMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/OutputFormat.htm">OutputFormat</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ProcessWhen.htm">ProcessWhen</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ResizerSection.htm">ResizerSection</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ScaleMode.htm">ScaleMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/ServerCacheMode.htm">ServerCacheMode</a>
+        </li>
+				<li>
+            <a href="../ImageResizer/StretchMode.htm">StretchMode</a>
+        </li>
+		</ul>
+	</div>
+</nav>
+	<article>
+    <header>
+		<p class="class"><strong>Type</strong> Instructions</p>
+	</header>
+	<section>
+		<header>
+		<p><strong>Namespace</strong> ImageResizer</p>
+		<p><strong>Parent</strong> <span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span></p>
+		</header>
+    <div class="sub-header">
+			<div id="summary">A name/value collection of image processsing instructions. The successor to ResizeSettings.
+Just because a key doesn't have a property wrapper doesn't mean you can't use it. i["key"] = value; isnt' that scary. 
+			</div>
+		
+		
+			<h3 class="section">Methods</h3>
+			<ul>
+				<li><a href="../ImageResizer/Instructions.htm#ToQueryString">ToQueryString</a></li>
+			</ul>
+		
+			<h3 class="section">Properties</h3>
+			<ul>
+				<li><a href="../ImageResizer/Instructions.htm#AllKeys">AllKeys</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Alpha">Alpha</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Anchor">Anchor</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#AutoRotate">AutoRotate</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#BackgroundColor">BackgroundColor</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Blur">Blur</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Border">Border</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#BorderColor">BorderColor</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Brightness">Brightness</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Builder">Builder</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Cache">Cache</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Contrast">Contrast</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Count">Count</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#CropRectange">CropRectange</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#CropXUnits">CropXUnits</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#CropYUnits">CropYUnits</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Decoder">Decoder</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Dither">Dither</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Encoder">Encoder</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#FallbackImage">FallbackImage</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#FinalFlip">FinalFlip</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Format">Format</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Frame">Frame</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Grayscale">Grayscale</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Height">Height</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#IgnoreICC">IgnoreICC</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Invert">Invert</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Item">Item</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#JpegQuality">JpegQuality</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#JpegSubsampling">JpegSubsampling</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Keys">Keys</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Margin">Margin</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Mode">Mode</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#OutputFormat">OutputFormat</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Padding">Padding</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#PaddingColor">PaddingColor</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Page">Page</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#PaletteSize">PaletteSize</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Preset">Preset</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Process">Process</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#RemoveNoise">RemoveNoise</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Rotate">Rotate</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#RoundCorners">RoundCorners</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Saturation">Saturation</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Scale">Scale</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Sepia">Sepia</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Sharpen">Sharpen</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#SourceFlip">SourceFlip</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#SourceRotate">SourceRotate</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#TrimPadding">TrimPadding</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#TrimThreshold">TrimThreshold</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Watermark">Watermark</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Width">Width</a></li>
+				<li><a href="../ImageResizer/Instructions.htm#Zoom">Zoom</a></li>
+			</ul>
+		
+	</div>
+	
+	<h3 class="section">Public instance methods</h3>
+
+	<div id="ToQueryString" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>ToQueryString</strong>()
+		</h4>
+		<div class="content">Returns a URL-safe querystring containing the instruction set 
+
+
+
+
+		</div>
+	</div>
+	
+	
+	<h3 class="section">Public properties</h3>
+
+	<div id="AllKeys" class="method">
+		<h4>
+			<span title="System.String[]">String[]</span> <strong>AllKeys</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Alpha" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>Alpha</strong> get; set;
+		</h4>
+		<div class="content">Value between 0 and 1. Makes the rendered image transparent. Does not affect borders or background colors - those accept 4-byte colors with alpha channels, however.
+Requires the SimpleFilters plugin. Unless the output format is PNG, the image will be blended against white or the background color. 
+
+		</div>
+	</div>
+	<div id="Anchor" class="method">
+		<h4>
+			<span title="System.Nullable<AnchorLocation>">Nullable&lt;AnchorLocation&gt;</span> <strong>Anchor</strong> get; set;
+		</h4>
+		<div class="content">The alignment to use when cropping or padding the image automatically. Defaults to MiddleCenter. 
+
+		</div>
+	</div>
+	<div id="AutoRotate" class="method">
+		<h4>
+			<span title="System.Nullable<bool>">Nullable&lt;bool&gt;</span> <strong>AutoRotate</strong> get; set;
+		</h4>
+		<div class="content">Automatically rotates images based on gravity sensor data embedded in Exif. Requires the AutoRotate plugin 
+
+		</div>
+	</div>
+	<div id="BackgroundColor" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>BackgroundColor</strong> get; set;
+		</h4>
+		<div class="content">The color of margin and padding regions. Defaults to Transparent, or White (when jpeg is the selected output color). 
+
+		</div>
+	</div>
+	<div id="Blur" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>Blur</strong> get; set;
+		</h4>
+		<div class="content">Guassian Blur. Requires the AdvancedFilters plugin. 
+
+		</div>
+	</div>
+	<div id="Border" class="method">
+		<h4>
+			<a href="../ImageResizer/BoxEdges.htm">BoxEdges</a> <strong>Border</strong> get; set;
+		</h4>
+		<div class="content">Friendly get/set accessor for the ["borderWidth"] value. Returns null when unspecified. 
+
+		</div>
+	</div>
+	<div id="BorderColor" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>BorderColor</strong> get; set;
+		</h4>
+		<div class="content">The color to draw the border with, if a border width is specified. 
+
+		</div>
+	</div>
+	<div id="Brightness" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>Brightness</strong> get; set;
+		</h4>
+		<div class="content">-1..1 Adjust the brightness of the image. Requires the SimpleFilters plugin 
+
+		</div>
+	</div>
+	<div id="Builder" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Builder</strong> get; set;
+		</h4>
+		<div class="content">Specify the image processing pipeline to use. Defaults to 'gdi'. If FreeImageBuilder or WicBuilder is installed, you can specify 'freeimage' or 'wic' to use that pipeline instead.
+The WIC pipeline offers a 2-8X performance increase of GDI, at the expense of slightly reduced image quality, the full trust requirement, and support for only basic resize and crop commands.
+FreeImage offers *nix-level image support, and handles many images that gdi and wic can't deal with. It is also restricted to a subset of the full command series. 
+
+		</div>
+	</div>
+	<div id="Cache" class="method">
+		<h4>
+			<span title="System.Nullable<ServerCacheMode>">Nullable&lt;ServerCacheMode&gt;</span> <strong>Cache</strong> get; set;
+		</h4>
+		<div class="content">Allows disk caching to be forced or prevented. 
+
+		</div>
+	</div>
+	<div id="Contrast" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>Contrast</strong> get; set;
+		</h4>
+		<div class="content">-1..1 Adjust the contrast of the image. Requires the SimpleFilters plugin 
+
+		</div>
+	</div>
+	<div id="Count" class="method">
+		<h4>
+			<span title="System.int">int</span> <strong>Count</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="CropRectange" class="method">
+		<h4>
+			<span title="System.Double[]">Double[]</span> <strong>CropRectange</strong> get; set;
+		</h4>
+		<div class="content">An X1,Y1,X2,Y2 array of coordinates. Unless CropXUnits and CropYUnits are specified, these are in the coordinate space of the original image. 
+
+		</div>
+	</div>
+	<div id="CropXUnits" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>CropXUnits</strong> get; set;
+		</h4>
+		<div class="content">Defines the horizontal width of the crop rectangle's coordinate space. For example, setting this to 100 makes the crop X1 and X2 values percentages of the image width. 
+
+		</div>
+	</div>
+	<div id="CropYUnits" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>CropYUnits</strong> get; set;
+		</h4>
+		<div class="content">Defines the vertical height of the crop rectangle's coordinate space. For example, setting this to 100 makes the crop Y1 and Y1 values percentages of the image height. 
+
+		</div>
+	</div>
+	<div id="Decoder" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Decoder</strong> get; set;
+		</h4>
+		<div class="content">Specify a preferred decoder for parsing the original image file. Defaults to 'gdi'. Other values include 'freeimage', 'wic', and 'psdreader'. The preferred decoder gets the first chance at reading the files. If that fails, all other decoders try, in order of declaration in Web.config.
+Requires the matching FreeImageDecoder, WicDecoder, or PsdReader plugin to be installed. 
+
+		</div>
+	</div>
+	<div id="Dither" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Dither</strong> get; set;
+		</h4>
+		<div class="content">Controls dithering when rendering to an 8-bit PNG or GIF image. Requires PrettyGifs or WicEncoder. Accepted values for PrettyGifs: true|false|4pass|30|50|79|[percentage]. Accepted values for WicEncoder: true|false. 
+
+		</div>
+	</div>
+	<div id="Encoder" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Encoder</strong> get; set;
+		</h4>
+		<div class="content">Specify a preferred encoder for compressing the output image file. Defaults to 'gdi'. Other valid values are 'freeimage' and 'wic', which require the FreeImageEncoder and WicEncoder plugins respectively.
+FreeImage offers faster jpeg encoding, while WIC offers faster PNG and GIF encoding. Both, however, require full trust. 
+
+		</div>
+	</div>
+	<div id="FallbackImage" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>FallbackImage</strong> get; set;
+		</h4>
+		<div class="content">The fallback image to redirect to if the original image doesn't exist. Must be the name of a pre-defined 404 image or a filename in the default 404 images directory.
+Requires the Image404 plugin to be installed. 
+
+		</div>
+	</div>
+	<div id="FinalFlip" class="method">
+		<h4>
+			<span title="System.Nullable<FlipMode>">Nullable&lt;FlipMode&gt;</span> <strong>FinalFlip</strong> get; set;
+		</h4>
+		<div class="content">Flip instruction to perform after rendering is complete 
+
+		</div>
+	</div>
+	<div id="Format" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Format</strong> get; set;
+		</h4>
+		<div class="content">Use 'OutputFormat' unless you need a custom value. Determines the format and encoding of the output image. 
+
+		</div>
+	</div>
+	<div id="Frame" class="method">
+		<h4>
+			<span title="System.Nullable<int>">Nullable&lt;int&gt;</span> <strong>Frame</strong> get; set;
+		</h4>
+		<div class="content">The frame of the animated GIF to display. 1-based 
+
+		</div>
+	</div>
+	<div id="Grayscale" class="method">
+		<h4>
+			<span title="System.Nullable<GrayscaleMode>">Nullable&lt;GrayscaleMode&gt;</span> <strong>Grayscale</strong> get; set;
+		</h4>
+		<div class="content">Applies the specified kind of grayscale filter to the image. Requires the SimpleFilters plugin 
+
+		</div>
+	</div>
+	<div id="Height" class="method">
+		<h4>
+			<span title="System.Nullable<int>">Nullable&lt;int&gt;</span> <strong>Height</strong> get; set;
+		</h4>
+		<div class="content">The height in pixels to constrain the image to. See 'Mode' and 'Scale' for constraint logic. 
+
+		</div>
+	</div>
+	<div id="IgnoreICC" class="method">
+		<h4>
+			<span title="System.Nullable<bool>">Nullable&lt;bool&gt;</span> <strong>IgnoreICC</strong> get; set;
+		</h4>
+		<div class="content">If true, the ICC profile will be discared instead of being evaluated server side (which typically causes inconsistent and unexpected effects). 
+
+		</div>
+	</div>
+	<div id="Invert" class="method">
+		<h4>
+			<span title="System.Nullable<bool>">Nullable&lt;bool&gt;</span> <strong>Invert</strong> get; set;
+		</h4>
+		<div class="content">Applies a Negative filter to the image. Requires the SimpleFilters plugin 
+
+		</div>
+	</div>
+	<div id="Item" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Item</strong> get; set;
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="JpegQuality" class="method">
+		<h4>
+			<span title="System.Nullable<int>">Nullable&lt;int&gt;</span> <strong>JpegQuality</strong> get; set;
+		</h4>
+		<div class="content">Determines Jpeg encoding quality. Maps to 'quality' setting. 
+
+		</div>
+	</div>
+	<div id="JpegSubsampling" class="method">
+		<h4>
+			<span title="System.Nullable<JpegSubsamplingMode>">Nullable&lt;JpegSubsamplingMode&gt;</span> <strong>JpegSubsampling</strong> get; set;
+		</h4>
+		<div class="content">Maps to 'subsampling'. Requires encoder=wic|freeimage or builder=wic|freeimage to take effect. Not supported by the GDI pipeline. 
+
+		</div>
+	</div>
+	<div id="Keys" class="method">
+		<h4>
+			<span title="System.Collections.Specialized.KeysCollection">KeysCollection</span> <strong>Keys</strong> get; 
+		</h4>
+		<div class="content">
+
+		</div>
+	</div>
+	<div id="Margin" class="method">
+		<h4>
+			<a href="../ImageResizer/BoxEdges.htm">BoxEdges</a> <strong>Margin</strong> get; set;
+		</h4>
+		<div class="content">["margin"]: Gets/sets the width(s) of the margin outside the image border and effects. 
+
+		</div>
+	</div>
+	<div id="Mode" class="method">
+		<h4>
+			<span title="System.Nullable<FitMode>">Nullable&lt;FitMode&gt;</span> <strong>Mode</strong> get; set;
+		</h4>
+		<div class="content">The fit mode to use when both Width and Height are specified. Defaults to Pad. 
+
+		</div>
+	</div>
+	<div id="OutputFormat" class="method">
+		<h4>
+			<span title="System.Nullable<OutputFormat>">Nullable&lt;OutputFormat&gt;</span> <strong>OutputFormat</strong> get; set;
+		</h4>
+		<div class="content">Selects the image encoding format. Maps to 'format'. Returns null if the format is unspecified or if it isn't defined in the enumeration. 
+
+		</div>
+	</div>
+	<div id="Padding" class="method">
+		<h4>
+			<a href="../ImageResizer/BoxEdges.htm">BoxEdges</a> <strong>Padding</strong> get; set;
+		</h4>
+		<div class="content">["paddingWidth"]: Gets/sets the width(s) of padding inside the image border. 
+
+		</div>
+	</div>
+	<div id="PaddingColor" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>PaddingColor</strong> get; set;
+		</h4>
+		<div class="content">Defaults to 'bgcolor'. Allows a separate color to be used for padding areas vs. margins. 
+
+		</div>
+	</div>
+	<div id="Page" class="method">
+		<h4>
+			<span title="System.Nullable<int>">Nullable&lt;int&gt;</span> <strong>Page</strong> get; set;
+		</h4>
+		<div class="content">The page of the TIFF file to display. 1-based 
+
+		</div>
+	</div>
+	<div id="PaletteSize" class="method">
+		<h4>
+			<span title="System.Nullable<Byte>">Nullable&lt;Byte&gt;</span> <strong>PaletteSize</strong> get; set;
+		</h4>
+		<div class="content">Maps to 'colors'. Sets the palette size for the final png or gif image (not relevant for jpegs).
+Set to 'null' to use the largest palette size available in the format.
+Requires the PrettyGifs or WicEncoder plugin. 
+
+		</div>
+	</div>
+	<div id="Preset" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Preset</strong> get; set;
+		</h4>
+		<div class="content">The name of a pre-defined preset, or a comma-delimited list of presets to apply. These may overwrite other settings. Requires the Presets plugin. 
+
+		</div>
+	</div>
+	<div id="Process" class="method">
+		<h4>
+			<span title="System.Nullable<ProcessWhen>">Nullable&lt;ProcessWhen&gt;</span> <strong>Process</strong> get; set;
+		</h4>
+		<div class="content">Allows processing to be forced or prevented. 
+
+		</div>
+	</div>
+	<div id="RemoveNoise" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>RemoveNoise</strong> get; set;
+		</h4>
+		<div class="content">Safe noise removal. Requires the AdvancedFilters plugin. 
+
+		</div>
+	</div>
+	<div id="Rotate" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>Rotate</strong> get; set;
+		</h4>
+		<div class="content">Maps to 'rotate'. Rotates the image during rendering. Arbitrary angles are supported. 
+
+		</div>
+	</div>
+	<div id="RoundCorners" class="method">
+		<h4>
+			<span title="System.Double[]">Double[]</span> <strong>RoundCorners</strong> get; set;
+		</h4>
+		<div class="content">Gets or sets a 1 or 4-element array defining cornder radii. If the array is 1 element, it applies to all corners. If it is 4 elements, each corner gets an individual radius. Values are percentages of the image width or height, whichever is smaller.
+Requires the SimpleFilters plugin. 
+
+		</div>
+	</div>
+	<div id="Saturation" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>Saturation</strong> get; set;
+		</h4>
+		<div class="content">-1..1 Adjust the saturation of the image. Requires the SimpleFilters plugin 
+
+		</div>
+	</div>
+	<div id="Scale" class="method">
+		<h4>
+			<span title="System.Nullable<ScaleMode>">Nullable&lt;ScaleMode&gt;</span> <strong>Scale</strong> get; set;
+		</h4>
+		<div class="content">Control how upscaling is performed. Defaults to DownscaleOnly. 
+
+		</div>
+	</div>
+	<div id="Sepia" class="method">
+		<h4>
+			<span title="System.Nullable<bool>">Nullable&lt;bool&gt;</span> <strong>Sepia</strong> get; set;
+		</h4>
+		<div class="content">Applies a Sepia filter to the image. Requires the SimpleFilters plugin 
+
+		</div>
+	</div>
+	<div id="Sharpen" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>Sharpen</strong> get; set;
+		</h4>
+		<div class="content">Unsharp Mask. Requires the AdvancedFilters plugin. 
+
+		</div>
+	</div>
+	<div id="SourceFlip" class="method">
+		<h4>
+			<span title="System.Nullable<FlipMode>">Nullable&lt;FlipMode&gt;</span> <strong>SourceFlip</strong> get; set;
+		</h4>
+		<div class="content">Flip instruction to perform immediately after loading source image. Maps to 'sflip' and 'sourceFlip'. 
+
+		</div>
+	</div>
+	<div id="SourceRotate" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>SourceRotate</strong> get; set;
+		</h4>
+		<div class="content">Maps to 'srotate'. Rotates the source image prior to processing. Only 90 degree angles are currently supported. 
+
+		</div>
+	</div>
+	<div id="TrimPadding" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>TrimPadding</strong> get; set;
+		</h4>
+		<div class="content">Set TrimThreshold first. This specifies a percentage of the image size to 'add' to the crop rectangle. Setting to 0.5 or 1 usually produces good results.
+Requires the WhitespaceTrimmer plugin. 
+
+		</div>
+	</div>
+	<div id="TrimThreshold" class="method">
+		<h4>
+			<span title="System.Nullable<Byte>">Nullable&lt;Byte&gt;</span> <strong>TrimThreshold</strong> get; set;
+		</h4>
+		<div class="content">Setting this enables automatic whitespace trimming using an energy function. 50 is safe, even 255 rarely cuts anything off except a shadow. Set TrimPadding to pad the result slightly and improve appearance.
+Requires the WhitespaceTrimmer plugin. 
+
+		</div>
+	</div>
+	<div id="Watermark" class="method">
+		<h4>
+			<span title="System.string">string</span> <strong>Watermark</strong> get; set;
+		</h4>
+		<div class="content">The name of a pre-defined watermark layer or group from Web.config, or a comma-delimited list of names. Requires the Watermark plugin. 
+
+		</div>
+	</div>
+	<div id="Width" class="method">
+		<h4>
+			<span title="System.Nullable<int>">Nullable&lt;int&gt;</span> <strong>Width</strong> get; set;
+		</h4>
+		<div class="content">The width in pixels to constrain the image to. See 'Mode' and 'Scale' for constraint logic. 
+
+		</div>
+	</div>
+	<div id="Zoom" class="method">
+		<h4>
+			<span title="System.Nullable<double>">Nullable&lt;double&gt;</span> <strong>Zoom</strong> get; set;
+		</h4>
+		<div class="content">A multiplier to apply to all sizing settings (still obeys Scale=down, though). Useful when you need to apply a page-wide scaling factor, such as for mobile devices. 
+
+		</div>
+	</div>
+	</section>
+	</article><footer>
+	<span id="version">Built from v3.2.1.497 of ImageResizer.Core (Image Resizer)</span>
+	<span id="docu-link">
+		Generated by <a href="http://docu.jagregory.com">docu</a>
+	</span>
+</footer>
+  </body>
+</html>

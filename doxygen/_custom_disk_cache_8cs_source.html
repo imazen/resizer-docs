@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -86,12 +86,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 <span class="keyword">using</span> System.Collections.Generic;
 <a name="l00004"></a>00004 <span class="keyword">using</span> System.Text;
 <a name="l00005"></a>00005 <span class="keyword">using</span> ImageResizer.Caching;
-<a name="l00006"></a>00006 <span class="keyword">using</span> ImageResizer.Util;
-<a name="l00007"></a>00007 <span class="keyword">using</span> System.IO;
-<a name="l00008"></a>00008 <span class="keyword">using</span> ImageResizer.Configuration.Logging;
-<a name="l00009"></a>00009 <span class="keyword">using</span> System.Diagnostics;
-<a name="l00010"></a>00010 <span class="keyword">using</span> System.Threading;
-<a name="l00011"></a>00011 <span class="keyword">using</span> ImageResizer.Plugins.DiskCache.Async;
+<a name="l00006"></a>00006 <span class="keyword">using</span> System.IO;
+<a name="l00007"></a>00007 <span class="keyword">using</span> ImageResizer.Configuration.Logging;
+<a name="l00008"></a>00008 <span class="keyword">using</span> System.Diagnostics;
+<a name="l00009"></a>00009 <span class="keyword">using</span> System.Threading;
+<a name="l00010"></a>00010 <span class="keyword">using</span> ImageResizer.Plugins.DiskCache.Async;
+<a name="l00011"></a>00011 <span class="keyword">using</span> System.Globalization;
 <a name="l00012"></a>00012 
 <a name="l00013"></a>00013 <span class="keyword">namespace </span>ImageResizer.Plugins.DiskCache {
 <a name="l00014"></a>00014     <span class="keyword">public</span> delegate <span class="keywordtype">void</span> CacheResultHandler(CustomDiskCache sender, CacheResult r);
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00052"></a>00052 
 <a name="l00053"></a>00053         <span class="keyword">protected</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_lock_provider.html" title="Provides locking based on a string key. Locks are local to the LockProvider instance. The class handles disposing of unused locks. Generally used for coordinating writes to files (of which there can be millions). Only keeps key/lock pairs in memory which are in use. Thread-safe.">LockProvider</a> queueLocks = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_lock_provider.html" title="Provides locking based on a string key. Locks are local to the LockProvider instance. The class handles disposing of unused locks. Generally used for coordinating writes to files (of which there can be millions). Only keeps key/lock pairs in memory which are in use. Thread-safe.">LockProvider</a>();<span class="comment"></span>
 <a name="l00054"></a>00054 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00055"></a>00055 <span class="comment">        /// Provides string-based locking for image resizing (not writing, just processing). Prevents duplication of efforts in async mode, where &#39;Locks&#39; is not being used.</span>
+<a name="l00055"></a>00055 <span class="comment">        /// Provides string-based locking for image resizing (not writing, just processing). Prevents duplication of efforts in asynchronous mode, where &#39;Locks&#39; is not being used.</span>
 <a name="l00056"></a>00056 <span class="comment">        /// &lt;/summary&gt;</span>
 <a name="l00057"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a43828a7d93f9850dd2497a48013cbcd6">00057</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_lock_provider.html" title="Provides locking based on a string key. Locks are local to the LockProvider instance. The class handles disposing of unused locks. Generally used for coordinating writes to files (of which there can be millions). Only keeps key/lock pairs in memory which are in use. Thread-safe.">LockProvider</a> QueueLocks {
 <a name="l00058"></a>00058             <span class="keyword">get</span> { <span class="keywordflow">return</span> queueLocks; }
@@ -178,7 +178,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00095"></a>00095 <span class="comment">        /// &lt;summary&gt;</span>
 <a name="l00096"></a>00096 <span class="comment">        /// May return either a physical file name or a MemoryStream with the data. </span>
 <a name="l00097"></a>00097 <span class="comment">        /// Faster than GetCachedFile, as writes are (usually) asynchronous. If the write queue is full, the write is forced to be synchronous again.</span>
-<a name="l00098"></a>00098 <span class="comment">        /// Identical to GetCachedFile() when async=false</span>
+<a name="l00098"></a>00098 <span class="comment">        /// Identical to GetCachedFile() when asynchronous=false</span>
 <a name="l00099"></a>00099 <span class="comment">        /// &lt;/summary&gt;</span>
 <a name="l00100"></a>00100 <span class="comment">        /// &lt;param name=&quot;keyBasis&quot;&gt;&lt;/param&gt;</span>
 <a name="l00101"></a>00101 <span class="comment">        /// &lt;param name=&quot;extension&quot;&gt;&lt;/param&gt;</span>
@@ -186,7 +186,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00103"></a>00103 <span class="comment">        /// &lt;param name=&quot;sourceModifiedUtc&quot;&gt;&lt;/param&gt;</span>
 <a name="l00104"></a>00104 <span class="comment">        /// &lt;param name=&quot;timeoutMs&quot;&gt;&lt;/param&gt;</span>
 <a name="l00105"></a>00105 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00106"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a0392ef12cc0ebd1e3ef01e53775cf62e">00106</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html">CacheResult</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a0392ef12cc0ebd1e3ef01e53775cf62e" title="May return either a physical file name or a MemoryStream with the data. Faster than GetCachedFile...">GetCachedFile</a>(<span class="keywordtype">string</span> keyBasis, <span class="keywordtype">string</span> extension, ResizeImageDelegate writeCallback, DateTime sourceModifiedUtc, <span class="keywordtype">int</span> timeoutMs, <span class="keywordtype">bool</span> async) {
+<a name="l00106"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a43cbe092ec6180f6f30fff0c7dd4d270">00106</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html">CacheResult</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#a43cbe092ec6180f6f30fff0c7dd4d270" title="May return either a physical file name or a MemoryStream with the data. Faster than GetCachedFile...">GetCachedFile</a>(<span class="keywordtype">string</span> keyBasis, <span class="keywordtype">string</span> extension, ResizeImageDelegate writeCallback, DateTime sourceModifiedUtc, <span class="keywordtype">int</span> timeoutMs, <span class="keywordtype">bool</span> asynchronous) {
 <a name="l00107"></a>00107             Stopwatch sw = null;
 <a name="l00108"></a>00108             <span class="keywordflow">if</span> (lp.Logger != null) { sw = <span class="keyword">new</span> Stopwatch(); sw.Start(); }
 <a name="l00109"></a>00109 
@@ -196,10 +196,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00113"></a>00113 
 <a name="l00114"></a>00114             <span class="comment">//Hash the modified date if needed.</span>
 <a name="l00115"></a>00115             <span class="keywordflow">if</span> (hashModifiedDate &amp;&amp; hasModifiedDate)
-<a name="l00116"></a>00116                 keyBasis += <span class="stringliteral">&quot;|&quot;</span> + sourceModifiedUtc.Ticks.ToString();
+<a name="l00116"></a>00116                 keyBasis += <span class="stringliteral">&quot;|&quot;</span> + sourceModifiedUtc.Ticks.ToString(NumberFormatInfo.InvariantInfo);
 <a name="l00117"></a>00117 
 <a name="l00118"></a>00118             <span class="comment">//Relative to the cache directory. Not relative to the app or domain root</span>
-<a name="l00119"></a>00119             <span class="keywordtype">string</span> relativePath = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_util_1_1_url_hasher.html">UrlHasher</a>().<a class="code" href="class_image_resizer_1_1_util_1_1_url_hasher.html#a8e8e85712a708fbb8d92fb3ca1b85991" title="Builds a key for the cached version, using the hashcode of the normalized URL. if subfolders &gt; 1...">hash</a>(keyBasis, subfolders, <span class="stringliteral">&quot;/&quot;</span>) + <span class="charliteral">&#39;.&#39;</span> + extension;
+<a name="l00119"></a>00119             <span class="keywordtype">string</span> relativePath = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_url_hasher.html">UrlHasher</a>().<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_url_hasher.html#adc687dc9cee3f675ce65cfd2be49657e" title="Builds a key for the cached version, using the hashcode of the normalized URL. if subfolders &gt; 1...">hash</a>(keyBasis, subfolders, <span class="stringliteral">&quot;/&quot;</span>) + <span class="charliteral">&#39;.&#39;</span> + extension;
 <a name="l00120"></a>00120 
 <a name="l00121"></a>00121             <span class="comment">//Physical path</span>
 <a name="l00122"></a>00122             <span class="keywordtype">string</span> physicalPath = PhysicalCachePath.TrimEnd(<span class="charliteral">&#39;\\&#39;</span>, <span class="charliteral">&#39;/&#39;</span>) + System.IO.Path.DirectorySeparatorChar +
@@ -211,7 +211,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00128"></a>00128             <span class="keywordtype">bool</span> asyncFailed = <span class="keyword">false</span>;
 <a name="l00129"></a>00129 
 <a name="l00130"></a>00130              <span class="comment">//On the first check, verify the file exists using System.IO directly (the last &#39;true&#39; parameter).</span>
-<a name="l00131"></a>00131             <span class="keywordflow">if</span> (!async) {
+<a name="l00131"></a>00131             <span class="keywordflow">if</span> (!asynchronous) {
 <a name="l00132"></a>00132                 <span class="comment">//On the first check, verify the file exists using System.IO directly (the last &#39;true&#39; parameter)</span>
 <a name="l00133"></a>00133                 <span class="comment">//May throw an IOException if the file cannot be opened, and is locked by an external processes for longer than timeoutMs. </span>
 <a name="l00134"></a>00134                 <span class="comment">//This method may take longer than timeoutMs under absolute worst conditions. </span>
@@ -219,8 +219,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00136"></a>00136                     <span class="comment">//On failure</span>
 <a name="l00137"></a>00137                     result.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html#acd995c6ea0a45350729d72bb88af1f31" title="The result of the cache check.">Result</a> = <a class="code" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html#afb29b25106a646c2ee694841e4b57fa8">CacheQueryResult</a>.Failed;
 <a name="l00138"></a>00138                 }
-<a name="l00139"></a>00139             }<span class="keywordflow">else</span> <span class="keywordflow">if</span> (((!hasModifiedDate || hashModifiedDate) &amp;&amp; !Index.existsCertain(relativePath, physicalPath)) || !Index.modifiedDateMatchesCertainExists(sourceModifiedUtc, relativePath, physicalPath)) {
-<a name="l00140"></a>00140 
+<a name="l00139"></a>00139             }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ((!hasModifiedDate || hashModifiedDate) ? !Index.existsCertain(relativePath, physicalPath) : !Index.modifiedDateMatchesCertainExists(sourceModifiedUtc, relativePath, physicalPath)) {
+<a name="l00140"></a>00140                 
 <a name="l00141"></a>00141                 <span class="comment">//Looks like a miss. Let&#39;s enter a lock for the creation of the file. This is a different locking system than for writing to the file - far less contention, as it doesn&#39;t include the </span>
 <a name="l00142"></a>00142                 <span class="comment">//This prevents two identical requests from duplicating efforts. Different requests don&#39;t lock.</span>
 <a name="l00143"></a>00143 
@@ -237,7 +237,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00154"></a>00154 
 <a name="l00155"></a>00155                         <span class="comment">//On the second check, use cached data for speed. The cached data should be updated if another thread updated a file (but not if another process did).</span>
 <a name="l00156"></a>00156                         <span class="keywordflow">if</span> (t == null &amp;&amp;
-<a name="l00157"></a>00157                             (((!hasModifiedDate || hashModifiedDate) &amp;&amp; !Index.exists(relativePath, physicalPath)) || !Index.modifiedDateMatches(sourceModifiedUtc, relativePath, physicalPath))) {
+<a name="l00157"></a>00157                             ((!hasModifiedDate || hashModifiedDate) ? !Index.exists(relativePath, physicalPath) : !Index.modifiedDateMatches(sourceModifiedUtc, relativePath, physicalPath))) {
 <a name="l00158"></a>00158 
 <a name="l00159"></a>00159                                 result.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html#acd995c6ea0a45350729d72bb88af1f31" title="The result of the cache check.">Result</a> = <a class="code" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html#afb29b25106a646c2ee694841e4b57fa8">CacheQueryResult</a>.Miss;
 <a name="l00160"></a>00160                             <span class="comment">//Still a miss, we even rechecked the filesystem. Write to memory.</span>
@@ -298,7 +298,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00215"></a>00215             }
 <a name="l00216"></a>00216             <span class="keywordflow">if</span> (lp.Logger != null) {
 <a name="l00217"></a>00217                 sw.Stop();
-<a name="l00218"></a>00218                 lp.Logger.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_logger.html#a5125ea275ed8c2dda55c6f8e9f082b97" title="Writes the diagnostic message at the Trace level.">Trace</a>(<span class="stringliteral">&quot;{0}ms: {3}{1} for {2}, Key: {4}&quot;</span>, sw.ElapsedMilliseconds.ToString().PadLeft(4), result.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html#acd995c6ea0a45350729d72bb88af1f31" title="The result of the cache check.">Result</a>.ToString(), result.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html#ab6b009d31bcd4f00308a4f82c16f57ae" title="The path relative to the cache.">RelativePath</a>, async ? (asyncFailed ? <span class="stringliteral">&quot;Fallback to sync  &quot;</span> : <span class="stringliteral">&quot;Async &quot;</span>) : <span class="stringliteral">&quot;&quot;</span>, keyBasis);
+<a name="l00218"></a>00218                 lp.Logger.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_logger.html#a5125ea275ed8c2dda55c6f8e9f082b97" title="Writes the diagnostic message at the Trace level.">Trace</a>(<span class="stringliteral">&quot;{0}ms: {3}{1} for {2}, Key: {4}&quot;</span>, sw.ElapsedMilliseconds.ToString(NumberFormatInfo.InvariantInfo).PadLeft(4), result.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html#acd995c6ea0a45350729d72bb88af1f31" title="The result of the cache check.">Result</a>.ToString(), result.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html#ab6b009d31bcd4f00308a4f82c16f57ae" title="The path relative to the cache.">RelativePath</a>, asynchronous ? (asyncFailed ? <span class="stringliteral">&quot;Fallback to sync  &quot;</span> : <span class="stringliteral">&quot;Async &quot;</span>) : <span class="stringliteral">&quot;&quot;</span>, keyBasis);
 <a name="l00219"></a>00219             }
 <a name="l00220"></a>00220             <span class="comment">//Fire event</span>
 <a name="l00221"></a>00221             <span class="keywordflow">if</span> (CacheResultReturned != null) CacheResultReturned(<span class="keyword">this</span>, result);
@@ -324,7 +324,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00241"></a>00241 
 <a name="l00242"></a>00242             <span class="keywordtype">bool</span> miss = <span class="keyword">true</span>;
 <a name="l00243"></a>00243             <span class="keywordflow">if</span> (recheckFS) {
-<a name="l00244"></a>00244                 miss = (((!hasModifiedDate || hashModifiedDate) &amp;&amp; !Index.existsCertain(relativePath, physicalPath)) || !Index.modifiedDateMatchesCertainExists(sourceModifiedUtc, relativePath, physicalPath));
+<a name="l00244"></a>00244                 miss = (!hasModifiedDate || hashModifiedDate) ? !Index.existsCertain(relativePath, physicalPath) : !Index.modifiedDateMatchesCertainExists(sourceModifiedUtc, relativePath, physicalPath);
 <a name="l00245"></a>00245                 <span class="keywordflow">if</span> (!miss) <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00246"></a>00246             }
 <a name="l00247"></a>00247                
@@ -334,7 +334,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00251"></a>00251                 delegate() {
 <a name="l00252"></a>00252 
 <a name="l00253"></a>00253                     <span class="comment">//On the second check, use cached data for speed. The cached data should be updated if another thread updated a file (but not if another process did).</span>
-<a name="l00254"></a>00254                     <span class="keywordflow">if</span> (((!hasModifiedDate || hashModifiedDate) &amp;&amp; !Index.exists(relativePath, physicalPath)) || !Index.modifiedDateMatches(sourceModifiedUtc, relativePath, physicalPath)) {
+<a name="l00254"></a>00254                     <span class="keywordflow">if</span> ((!hasModifiedDate || hashModifiedDate) ? !Index.exists(relativePath, physicalPath) : !Index.modifiedDateMatches(sourceModifiedUtc, relativePath, physicalPath)) {
 <a name="l00255"></a>00255 
 <a name="l00256"></a>00256                         <span class="comment">//Create subdirectory if needed.</span>
 <a name="l00257"></a>00257                         <span class="keywordflow">if</span> (!Directory.Exists(Path.GetDirectoryName(physicalPath))) {
@@ -349,61 +349,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00266"></a>00266                         <span class="comment">// I.e, hashmodified=true is the only supported setting for multi-process environments.</span>
 <a name="l00267"></a>00267                         <span class="comment">//TODO: Catch UnathorizedAccessException and log issue about file permissions.</span>
 <a name="l00268"></a>00268                         <span class="comment">//... If we can wait for a read handle for a specified timeout.</span>
-<a name="l00269"></a>00269                         <span class="keywordflow">try</span> {
-<a name="l00270"></a>00270                             System.IO.FileStream fs = <span class="keyword">new</span> FileStream(physicalPath, FileMode.Create, FileAccess.Write, FileShare.None);
-<a name="l00271"></a>00271 
-<a name="l00272"></a>00272                             <span class="keyword">using</span> (fs) {
-<a name="l00273"></a>00273                                 <span class="comment">//Run callback to write the cached data</span>
-<a name="l00274"></a>00274                                 writeCallback(fs); <span class="comment">//Can throw any number of exceptions.</span>
-<a name="l00275"></a>00275                             }
-<a name="l00276"></a>00276 
-<a name="l00277"></a>00277                             DateTime createdUtc = DateTime.UtcNow;
-<a name="l00278"></a>00278                             <span class="comment">//Update the write time to match - this is how we know whether they are in sync.</span>
-<a name="l00279"></a>00279                             <span class="keywordflow">if</span> (hasModifiedDate) System.IO.File.SetLastWriteTimeUtc(physicalPath, sourceModifiedUtc);
-<a name="l00280"></a>00280                             <span class="comment">//Set the created date, so we know the last time we updated the cache.s</span>
-<a name="l00281"></a>00281                             System.IO.File.SetCreationTimeUtc(physicalPath, createdUtc);
-<a name="l00282"></a>00282                             <span class="comment">//Update index</span>
-<a name="l00283"></a>00283                             <span class="comment">//TODO: what should sourceModifiedUtc be when there is no modified date?</span>
-<a name="l00284"></a>00284                             Index.setCachedFileInfo(relativePath, <span class="keyword">new</span> CachedFileInfo(sourceModifiedUtc, createdUtc, createdUtc));
-<a name="l00285"></a>00285                             <span class="comment">//This was a cache miss</span>
-<a name="l00286"></a>00286                             <span class="keywordflow">if</span> (result != null) result.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html#acd995c6ea0a45350729d72bb88af1f31" title="The result of the cache check.">Result</a> = CacheQueryResult.Miss;
-<a name="l00287"></a>00287                         } <span class="keywordflow">catch</span> (IOException ex) {
-<a name="l00288"></a>00288 
-<a name="l00289"></a>00289                             <span class="keywordflow">if</span> ((!hasModifiedDate || hashModifiedDate) &amp;&amp; IsFileLocked(ex)) {
-<a name="l00290"></a>00290                                 <span class="comment">//Somehow in between verifying the file didn&#39;t exist and trying to create it, the file was created and locked by someone else.</span>
-<a name="l00291"></a>00291                                 <span class="comment">//When hashModifiedDate==true, we don&#39;t care what the file contains, we just want it to exist. If the file is available for </span>
-<a name="l00292"></a>00292                                 <span class="comment">//reading within timeoutMs, simply do nothing and let the file be returned as a hit.</span>
-<a name="l00293"></a>00293                                 Stopwatch waitForFile = <span class="keyword">new</span> Stopwatch();
-<a name="l00294"></a>00294                                 <span class="keywordtype">bool</span> opened = <span class="keyword">false</span>;
-<a name="l00295"></a>00295                                 <span class="keywordflow">while</span> (!opened &amp;&amp; waitForFile.ElapsedMilliseconds &lt; timeoutMs) {
-<a name="l00296"></a>00296                                     waitForFile.Start();
-<a name="l00297"></a>00297                                     <span class="keywordflow">try</span> {
-<a name="l00298"></a>00298                                         <span class="keyword">using</span> (FileStream temp = <span class="keyword">new</span> FileStream(physicalPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-<a name="l00299"></a>00299                                             opened = <span class="keyword">true</span>;
-<a name="l00300"></a>00300                                     } <span class="keywordflow">catch</span> (IOException iex) {
-<a name="l00301"></a>00301                                         <span class="keywordflow">if</span> (IsFileLocked(iex))
-<a name="l00302"></a>00302                                             Thread.Sleep((<span class="keywordtype">int</span>)Math.Min(30, Math.Round((<span class="keywordtype">float</span>)timeoutMs / 3.0)));
-<a name="l00303"></a>00303                                         <span class="keywordflow">else</span> <span class="keywordflow">throw</span> iex;
-<a name="l00304"></a>00304                                     }
-<a name="l00305"></a>00305                                     waitForFile.Stop();
-<a name="l00306"></a>00306                                 }
-<a name="l00307"></a>00307                                 <span class="keywordflow">if</span> (!opened) <span class="keywordflow">throw</span>; <span class="comment">//By not throwing an exception, it is considered a hit by the rest of the code.</span>
-<a name="l00308"></a>00308 
-<a name="l00309"></a>00309                             } <span class="keywordflow">else</span> <span class="keywordflow">throw</span>;
-<a name="l00310"></a>00310                         }
-<a name="l00311"></a>00311 
-<a name="l00312"></a>00312                     }
-<a name="l00313"></a>00313                 });
-<a name="l00314"></a>00314         }
-<a name="l00315"></a>00315 
-<a name="l00316"></a>00316         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> IsFileLocked(IOException exception) {
-<a name="l00317"></a>00317             <span class="keywordtype">int</span> errorCode = System.Runtime.InteropServices.Marshal.GetHRForException(exception) &amp; ((1 &lt;&lt; 16) - 1);
-<a name="l00318"></a>00318             <span class="keywordflow">return</span> errorCode == 32 || errorCode == 33;
-<a name="l00319"></a>00319         }
-<a name="l00320"></a>00320 
-<a name="l00321"></a>00321 
-<a name="l00322"></a>00322     }
-<a name="l00323"></a>00323 }
+<a name="l00269"></a>00269                         
+<a name="l00270"></a>00270                         <span class="keywordflow">try</span> {
+<a name="l00271"></a>00271                             
+<a name="l00272"></a>00272                             System.IO.FileStream fs = <span class="keyword">new</span> FileStream(physicalPath, FileMode.Create, FileAccess.Write, FileShare.None);
+<a name="l00273"></a>00273                             <span class="keywordtype">bool</span> finished = <span class="keyword">false</span>;
+<a name="l00274"></a>00274                             <span class="keywordflow">try</span> {
+<a name="l00275"></a>00275                                 <span class="keyword">using</span> (fs) {
+<a name="l00276"></a>00276                                     <span class="comment">//Run callback to write the cached data</span>
+<a name="l00277"></a>00277                                     writeCallback(fs); <span class="comment">//Can throw any number of exceptions.</span>
+<a name="l00278"></a>00278                                     finished = <span class="keyword">true</span>;
+<a name="l00279"></a>00279                                 }
+<a name="l00280"></a>00280                             } <span class="keywordflow">finally</span> {
+<a name="l00281"></a>00281                                 <span class="comment">//Don&#39;t leave half-written files around.</span>
+<a name="l00282"></a>00282                                 <span class="keywordflow">if</span> (!finished) <span class="keywordflow">try</span> { <span class="keywordflow">if</span> (File.Exists(physicalPath)) File.Delete(physicalPath);} <span class="keywordflow">catch</span> { }
+<a name="l00283"></a>00283                             }
+<a name="l00284"></a>00284 
+<a name="l00285"></a>00285                             DateTime createdUtc = DateTime.UtcNow;
+<a name="l00286"></a>00286                             <span class="comment">//Update the write time to match - this is how we know whether they are in sync.</span>
+<a name="l00287"></a>00287                             <span class="keywordflow">if</span> (hasModifiedDate) System.IO.File.SetLastWriteTimeUtc(physicalPath, sourceModifiedUtc);
+<a name="l00288"></a>00288                             <span class="comment">//Set the created date, so we know the last time we updated the cache.s</span>
+<a name="l00289"></a>00289                             System.IO.File.SetCreationTimeUtc(physicalPath, createdUtc);
+<a name="l00290"></a>00290                             <span class="comment">//Update index</span>
+<a name="l00291"></a>00291                             <span class="comment">//TODO: what should sourceModifiedUtc be when there is no modified date?</span>
+<a name="l00292"></a>00292                             Index.setCachedFileInfo(relativePath, <span class="keyword">new</span> CachedFileInfo(sourceModifiedUtc, createdUtc, createdUtc));
+<a name="l00293"></a>00293                             <span class="comment">//This was a cache miss</span>
+<a name="l00294"></a>00294                             <span class="keywordflow">if</span> (result != null) result.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html#acd995c6ea0a45350729d72bb88af1f31" title="The result of the cache check.">Result</a> = <a class="code" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html#afb29b25106a646c2ee694841e4b57fa8">CacheQueryResult</a>.Miss;
+<a name="l00295"></a>00295                         } <span class="keywordflow">catch</span> (IOException ex) {
+<a name="l00296"></a>00296 
+<a name="l00297"></a>00297                             <span class="keywordflow">if</span> ((!hasModifiedDate || hashModifiedDate) &amp;&amp; IsFileLocked(ex)) {
+<a name="l00298"></a>00298                                 <span class="comment">//Somehow in between verifying the file didn&#39;t exist and trying to create it, the file was created and locked by someone else.</span>
+<a name="l00299"></a>00299                                 <span class="comment">//When hashModifiedDate==true, we don&#39;t care what the file contains, we just want it to exist. If the file is available for </span>
+<a name="l00300"></a>00300                                 <span class="comment">//reading within timeoutMs, simply do nothing and let the file be returned as a hit.</span>
+<a name="l00301"></a>00301                                 Stopwatch waitForFile = <span class="keyword">new</span> Stopwatch();
+<a name="l00302"></a>00302                                 <span class="keywordtype">bool</span> opened = <span class="keyword">false</span>;
+<a name="l00303"></a>00303                                 <span class="keywordflow">while</span> (!opened &amp;&amp; waitForFile.ElapsedMilliseconds &lt; timeoutMs) {
+<a name="l00304"></a>00304                                     waitForFile.Start();
+<a name="l00305"></a>00305                                     <span class="keywordflow">try</span> {
+<a name="l00306"></a>00306                                         <span class="keyword">using</span> (FileStream temp = <span class="keyword">new</span> FileStream(physicalPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+<a name="l00307"></a>00307                                             opened = <span class="keyword">true</span>;
+<a name="l00308"></a>00308                                     } <span class="keywordflow">catch</span> (IOException iex) {
+<a name="l00309"></a>00309                                         <span class="keywordflow">if</span> (IsFileLocked(iex))
+<a name="l00310"></a>00310                                             Thread.Sleep((<span class="keywordtype">int</span>)Math.Min(30, Math.Round((<span class="keywordtype">float</span>)timeoutMs / 3.0)));
+<a name="l00311"></a>00311                                         <span class="keywordflow">else</span> <span class="keywordflow">throw</span> iex;
+<a name="l00312"></a>00312                                     }
+<a name="l00313"></a>00313                                     waitForFile.Stop();
+<a name="l00314"></a>00314                                 }
+<a name="l00315"></a>00315                                 <span class="keywordflow">if</span> (!opened) <span class="keywordflow">throw</span>; <span class="comment">//By not throwing an exception, it is considered a hit by the rest of the code.</span>
+<a name="l00316"></a>00316 
+<a name="l00317"></a>00317                             } <span class="keywordflow">else</span> <span class="keywordflow">throw</span>;
+<a name="l00318"></a>00318                         }
+<a name="l00319"></a>00319 
+<a name="l00320"></a>00320                     }
+<a name="l00321"></a>00321                 });
+<a name="l00322"></a>00322         }
+<a name="l00323"></a>00323 
+<a name="l00324"></a>00324         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> IsFileLocked(IOException exception) {
+<a name="l00325"></a>00325             <span class="keywordtype">int</span> errorCode = System.Runtime.InteropServices.Marshal.GetHRForException(exception) &amp; ((1 &lt;&lt; 16) - 1);
+<a name="l00326"></a>00326             <span class="keywordflow">return</span> errorCode == 32 || errorCode == 33;
+<a name="l00327"></a>00327         }
+<a name="l00328"></a>00328 
+<a name="l00329"></a>00329 
+<a name="l00330"></a>00330     }
+<a name="l00331"></a>00331 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

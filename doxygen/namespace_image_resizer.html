@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -93,12 +93,17 @@ Namespaces</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer_1_1_collections.html">Collections</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer_1_1_configuration.html">Configuration</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer_1_1_encoding.html">Encoding</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer_1_1_extension_methods.html">ExtensionMethods</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer_1_1_mvc.html">Mvc</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer_1_1_plugins.html">Plugins</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer_1_1_resizing.html">Resizing</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">package &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer_1_1_util.html">Util</a></td></tr>
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_box_edges.html">BoxEdges</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the widths of edges of a box.  <a href="class_image_resizer_1_1_box_edges.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resizer_section.html">ResizerSection</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles reading the &lt;resizer&gt; section from Web.Config.  <a href="class_image_resizer_1_1_resizer_section.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_image_builder.html">ImageBuilder</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides methods for generating resized images, and for reading and writing them to disk. Use <a class="el" href="class_image_resizer_1_1_image_builder.html#afcfb7f40a65d121670118ccebfe1ca4b" title="Returns a shared instance of ImageBuilder or a subclass, equivalent to Config.Current.CurrentImageBuilder.">ImageBuilder.Current</a> to get the current instance (as configured in the application configuration), or use ImageBuilder.Current.Create() to control which extensions are used.  <a href="class_image_resizer_1_1_image_builder.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_image_job.html">ImageJob</a></td></tr>
@@ -108,14 +113,19 @@ Classes</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A source file was corrupted.  <a href="class_image_resizer_1_1_image_corrupted_exception.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_image_missing_exception.html">ImageMissingException</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">One or more source files was missing.  <a href="class_image_resizer_1_1_image_missing_exception.html#details">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_instructions.html">Instructions</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A name/value collection of image processsing instructions. The successor to <a class="el" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a>. Just because a key doesn't have a property wrapper doesn't mean you can't use it. i["key"] = value; isnt' that scary.  <a href="class_image_resizer_1_1_instructions.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_intercept_module.html">InterceptModule</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Monitors incoming image requests to determine if resizing (or other processing) is being requested.  <a href="class_image_resizer_1_1_intercept_module.html#details">More...</a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resizer_section.html">ResizerSection</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles reading the &lt;resizer&gt; section from Web.Config.  <a href="class_image_resizer_1_1_resizer_section.html#details">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html">ResizeSettings</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the settings which will be used to process the image. Extends NameValueCollection to provide friendly property names for commonly used settings.  <a href="class_image_resizer_1_1_resize_settings.html#details">More...</a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the settings which will be used to process the image. Extends NameValueCollection to provide friendly property names for commonly used settings. Replaced by the <a class="el" href="class_image_resizer_1_1_instructions.html" title="A name/value collection of image processsing instructions. The successor to ResizeSettings. Just because a key doesn&#39;t have a property wrapper doesn&#39;t mean you can&#39;t use it. i[&quot;key&quot;] = value; isnt&#39; that scary.">Instructions</a> class. Will be removed in V4.0.  <a href="class_image_resizer_1_1_resize_settings.html#details">More...</a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#ad8a20ccdc3ff113284bb7760d959aca3">OutputFormat</a> { <a class="el" href="namespace_image_resizer.html#ad8a20ccdc3ff113284bb7760d959aca3">Jpeg</a> =  8, 
+<a class="el" href="namespace_image_resizer.html#ad8a20ccdc3ff113284bb7760d959aca3">Png</a> =  16, 
+<a class="el" href="namespace_image_resizer.html#ad8a20ccdc3ff113284bb7760d959aca3">Gif</a> =  32
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Output image formats.  <a href="namespace_image_resizer.html#ad8a20ccdc3ff113284bb7760d959aca3">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c">ServerCacheMode</a> { <a class="el" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c">No</a>, 
 <a class="el" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c">Always</a>, 
 <a class="el" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c">Default</a>
@@ -125,7 +135,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a">Always</a>, 
 <a class="el" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a">Default</a>
  }</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">When to process and re-encode the image.  <a href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a">More...</a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">When to process and re-encode the file.  <a href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#aca52f6f1e90c78a5e5e79c6d709a571c">ScaleMode</a> { <a class="el" href="namespace_image_resizer.html#aca52f6f1e90c78a5e5e79c6d709a571c">DownscaleOnly</a>, 
 <a class="el" href="namespace_image_resizer.html#aca52f6f1e90c78a5e5e79c6d709a571c">UpscaleOnly</a>, 
 <a class="el" href="namespace_image_resizer.html#aca52f6f1e90c78a5e5e79c6d709a571c">Both</a>, 
@@ -135,7 +145,7 @@ Enumerations</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#ac2f2172bdae0792555449bdc8547b8bc">StretchMode</a> { <a class="el" href="namespace_image_resizer.html#ac2f2172bdae0792555449bdc8547b8bc">Proportionally</a>, 
 <a class="el" href="namespace_image_resizer.html#ac2f2172bdae0792555449bdc8547b8bc">Fill</a>
  }</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[Depreciated (Use FitMode.Stretch)] Previously used to force an image to be 'stretched' to match a different aspect ratio.  <a href="namespace_image_resizer.html#ac2f2172bdae0792555449bdc8547b8bc">More...</a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[Deprecated (Use FitMode.Stretch)] Previously used to force an image to be 'stretched' to match a different aspect ratio.  <a href="namespace_image_resizer.html#ac2f2172bdae0792555449bdc8547b8bc">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#affd730f8b2250fecace497124be5a37d">FitMode</a> { <br/>
 &#160;&#160;<a class="el" href="namespace_image_resizer.html#affd730f8b2250fecace497124be5a37d">None</a>, 
 <a class="el" href="namespace_image_resizer.html#affd730f8b2250fecace497124be5a37d">Max</a>, 
@@ -146,7 +156,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="namespace_image_resizer.html#affd730f8b2250fecace497124be5a37d">Stretch</a>
 <br/>
  }</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">How do deal with aspect ratio differences between the requested size and the original image's size.  <a href="namespace_image_resizer.html#affd730f8b2250fecace497124be5a37d">More...</a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">How to resolve aspect ratio differences between the requested size and the original image's size.  <a href="namespace_image_resizer.html#affd730f8b2250fecace497124be5a37d">More...</a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#a288a233240980da59e426df4651ec850">CropMode</a> { <a class="el" href="namespace_image_resizer.html#a288a233240980da59e426df4651ec850">None</a>, 
 <a class="el" href="namespace_image_resizer.html#a288a233240980da59e426df4651ec850">Auto</a>, 
 <a class="el" href="namespace_image_resizer.html#a288a233240980da59e426df4651ec850">Custom</a>
@@ -154,8 +164,145 @@ Enumerations</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#a61ab7fe7c809fcf6568d33b8524b8c6e">CropUnits</a> { <a class="el" href="namespace_image_resizer.html#a61ab7fe7c809fcf6568d33b8524b8c6e">SourcePixels</a>, 
 <a class="el" href="namespace_image_resizer.html#a61ab7fe7c809fcf6568d33b8524b8c6e">Custom</a>
  }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362">FlipMode</a> { <a class="el" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362">None</a> =  0, 
+<a class="el" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362">X</a> =  4, 
+<a class="el" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362">Y</a> =  6, 
+<a class="el" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362">XY</a> =  2
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Horizontal and vertical flipping. Convertible to System.Drawing.RotateFlipType by casting.  <a href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">AnchorLocation</a> { <br/>
+&#160;&#160;<a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">TopLeft</a> =  1, 
+<a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">TopCenter</a> =  2, 
+<a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">TopRight</a> =  4, 
+<a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">MiddleLeft</a> =  16, 
+<br/>
+&#160;&#160;<a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">MiddleCenter</a> =  32, 
+<a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">MiddleRight</a> =  64, 
+<a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">BottomLeft</a> =  256, 
+<a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">BottomCenter</a> =  512, 
+<br/>
+&#160;&#160;<a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">BottomRight</a> =  1024
+<br/>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Anchor location. Convertible to System.Drawing.ContentAlignment by casting.  <a href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#adffe2a56e4ff9b1ea25b933fc7517a9c">GrayscaleMode</a> { <br/>
+&#160;&#160;<b>None</b> =  0, 
+<a class="el" href="namespace_image_resizer.html#adffe2a56e4ff9b1ea25b933fc7517a9c">Y</a> =  1, 
+<b>NTSC</b> =  1, 
+<b>RY</b> =  2, 
+<br/>
+&#160;&#160;<b>BT709</b> =  3, 
+<a class="el" href="namespace_image_resizer.html#adffe2a56e4ff9b1ea25b933fc7517a9c">Flat</a> =  4
+<br/>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Modes of converting the image to Grayscale. GrayscaleMode.Y usually produces the best resuts.  <a href="namespace_image_resizer.html#adffe2a56e4ff9b1ea25b933fc7517a9c">More...</a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632">JpegSubsamplingMode</a> { <br/>
+&#160;&#160;<a class="el" href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632">Default</a> =  0, 
+<a class="el" href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632">Y4Cb1Cr1</a> =  4, 
+<a class="el" href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632">Y4Cb2Cr0</a> =  8, 
+<a class="el" href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632">Y4Cb2Cr2</a> =  16, 
+<br/>
+&#160;&#160;<a class="el" href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632">HighestQuality</a> = 32, 
+<a class="el" href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632">Y4Cb4Cr4</a> =  32
+<br/>
+ }</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The Jpeg subsampling mode to use. Requires FreeImageEncoder, FreeImageBuilder, WicEncoder, or WicBuilder.  <a href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632">More...</a><br/></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="af0d2f9c40f1fa14a1adba6e0fcb2af38"></a><!-- doxytag: member="ImageResizer::AnchorLocation" ref="af0d2f9c40f1fa14a1adba6e0fcb2af38" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_image_resizer.html#af0d2f9c40f1fa14a1adba6e0fcb2af38">ImageResizer::AnchorLocation</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Anchor location. Convertible to System.Drawing.ContentAlignment by casting. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="af0d2f9c40f1fa14a1adba6e0fcb2af38"></a><!-- doxytag: member="TopLeft" ref="af0d2f9c40f1fa14a1adba6e0fcb2af38" args="" -->TopLeft</em>&nbsp;</td><td>
+<p>Content is vertically aligned at the top, and horizontally aligned on the left. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="af0d2f9c40f1fa14a1adba6e0fcb2af38"></a><!-- doxytag: member="TopCenter" ref="af0d2f9c40f1fa14a1adba6e0fcb2af38" args="" -->TopCenter</em>&nbsp;</td><td>
+<p>Content is vertically aligned at the top, and horizontally aligned at the center. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="af0d2f9c40f1fa14a1adba6e0fcb2af38"></a><!-- doxytag: member="TopRight" ref="af0d2f9c40f1fa14a1adba6e0fcb2af38" args="" -->TopRight</em>&nbsp;</td><td>
+<p>Content is vertically aligned at the top, and horizontally aligned on the right. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="af0d2f9c40f1fa14a1adba6e0fcb2af38"></a><!-- doxytag: member="MiddleLeft" ref="af0d2f9c40f1fa14a1adba6e0fcb2af38" args="" -->MiddleLeft</em>&nbsp;</td><td>
+<p>Content is vertically aligned in the middle, and horizontally aligned onthe left. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="af0d2f9c40f1fa14a1adba6e0fcb2af38"></a><!-- doxytag: member="MiddleCenter" ref="af0d2f9c40f1fa14a1adba6e0fcb2af38" args="" -->MiddleCenter</em>&nbsp;</td><td>
+<p>Content is vertically aligned in the middle, and horizontally aligned at the center. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="af0d2f9c40f1fa14a1adba6e0fcb2af38"></a><!-- doxytag: member="MiddleRight" ref="af0d2f9c40f1fa14a1adba6e0fcb2af38" args="" -->MiddleRight</em>&nbsp;</td><td>
+<p>Content is vertically aligned in the middle, and horizontally aligned on the right. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="af0d2f9c40f1fa14a1adba6e0fcb2af38"></a><!-- doxytag: member="BottomLeft" ref="af0d2f9c40f1fa14a1adba6e0fcb2af38" args="" -->BottomLeft</em>&nbsp;</td><td>
+<p>Content is vertically aligned at the bottom, and horizontally aligned on the left. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="af0d2f9c40f1fa14a1adba6e0fcb2af38"></a><!-- doxytag: member="BottomCenter" ref="af0d2f9c40f1fa14a1adba6e0fcb2af38" args="" -->BottomCenter</em>&nbsp;</td><td>
+<p>Content is vertically aligned at the bottom, and horizontally aligned at the center. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="af0d2f9c40f1fa14a1adba6e0fcb2af38"></a><!-- doxytag: member="BottomRight" ref="af0d2f9c40f1fa14a1adba6e0fcb2af38" args="" -->BottomRight</em>&nbsp;</td><td>
+<p>Content is vertically aligned at the bottom, and horizontally aligned on the right. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00204">204</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                               {<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Content is vertically aligned at the top, and horizontally aligned on the left.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        TopLeft = 1,
+<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Content is vertically aligned at the top, and horizontally aligned at the center.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        TopCenter = 2,
+<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Content is vertically aligned at the top, and horizontally aligned on the right.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        TopRight = 4,
+        <span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Content is vertically aligned in the middle, and horizontally aligned onthe left.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        MiddleLeft = 16,
+        <span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Content is vertically aligned in the middle, and horizontally aligned at the center.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        MiddleCenter = 32,
+<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Content is vertically aligned in the middle, and horizontally aligned on  the right.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        MiddleRight = 64,
+<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Content is vertically aligned at the bottom, and horizontally aligned on the left.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        BottomLeft = 256,
+        <span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Content is vertically aligned at the bottom, and horizontally aligned at  the center.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        BottomCenter = 512,
+<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Content is vertically aligned at the bottom, and horizontally aligned on the right.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        BottomRight = 1024,
+    }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a288a233240980da59e426df4651ec850"></a><!-- doxytag: member="ImageResizer::CropMode" ref="a288a233240980da59e426df4651ec850" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +318,7 @@ Enumerations</h2></td></tr>
 <p>Default. No cropping - uses letterboxing if strecth=proportionally and both width and height are specified. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a288a233240980da59e426df4651ec850"></a><!-- doxytag: member="Auto" ref="a288a233240980da59e426df4651ec850" args="" -->Auto</em>&nbsp;</td><td>
-<p>[Depreciated] Use Mode=Crop. Minimally crops to preserve aspect ratio if stretch=proportionally. </p>
+<p>[Deprecated] Use Mode=Crop. Minimally crops to preserve aspect ratio if stretch=proportionally. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a288a233240980da59e426df4651ec850"></a><!-- doxytag: member="Custom" ref="a288a233240980da59e426df4651ec850" args="" -->Custom</em>&nbsp;</td><td>
 <p>Crops using the custom crop rectangle. Letterboxes if stretch=proportionally and both widht and height are specified. </p>
@@ -180,16 +327,17 @@ Enumerations</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00114">114</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00145">145</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                         {<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
 <span class="comment">        /// Default. No cropping - uses letterboxing if strecth=proportionally and both width and height are specified.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
 <span class="comment"></span>        None,<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
-<span class="comment">        /// [Depreciated] Use Mode=Crop. Minimally crops to preserve aspect ratio if stretch=proportionally.</span>
+<span class="comment">        /// [Deprecated] Use Mode=Crop. Minimally crops to preserve aspect ratio if stretch=proportionally.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
-<span class="comment"></span>        Auto,<span class="comment"></span>
+<span class="comment"></span>        [Obsolete(<span class="stringliteral">&quot;Use Mode=Crop instead.&quot;</span>)]
+        Auto,<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
 <span class="comment">        /// Crops using the custom crop rectangle. Letterboxes if stretch=proportionally and both widht and height are specified.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
@@ -219,7 +367,7 @@ Enumerations</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00129">129</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00162">162</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                          {<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
 <span class="comment">        /// Indicates the crop units are pixels on the original image.</span>
@@ -246,7 +394,7 @@ Enumerations</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>How do deal with aspect ratio differences between the requested size and the original image's size. </p>
+<p>How to resolve aspect ratio differences between the requested size and the original image's size. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="affd730f8b2250fecace497124be5a37d"></a><!-- doxytag: member="None" ref="affd730f8b2250fecace497124be5a37d" args="" -->None</em>&nbsp;</td><td>
 <p>Fit mode will be determined by other settings, such as &amp;carve=true, &amp;stretch=fill, and &amp;crop=auto. If none are specified and width/height are specified , &amp;mode=pad will be used. If maxwidth/maxheight are used, &amp;mode=max will be used. </p>
@@ -270,7 +418,7 @@ Enumerations</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00085">85</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00114">114</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                        {<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
 <span class="comment">        /// Fit mode will be determined by other settings, such as &amp;amp;carve=true, &amp;amp;stretch=fill, and &amp;amp;crop=auto. If none are specified and width/height are specified , &amp;amp;mode=pad will be used. If maxwidth/maxheight are used, &amp;amp;mode=max will be used.</span>
@@ -280,13 +428,13 @@ Enumerations</h2></td></tr>
 <span class="comment">        /// &lt;summary&gt;</span>
 <span class="comment">        /// Width and height are considered maximum values. The resulting image may be smaller to maintain its aspect ratio. The image may also be smaller if the source image is smaller</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
-<span class="comment"></span>        Max,
-       <span class="comment"></span>
-<span class="comment">        /// Width and height are considered exact values - padding is used if there is an aspect ratio difference. Use &amp;anchor to override the MiddleCenter default.</span>
+<span class="comment"></span>        Max,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Width and height are considered exact values - padding is used if there is an aspect ratio difference. Use &amp;amp;anchor to override the MiddleCenter default.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
 <span class="comment"></span>        Pad,<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
-<span class="comment">        /// Width and height are considered exact values - cropping is used if there is an aspect ratio difference. Use &amp;anchor to override the MiddleCenter default.</span>
+<span class="comment">        /// Width and height are considered exact values - cropping is used if there is an aspect ratio difference. Use &amp;amp;anchor to override the MiddleCenter default.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
 <span class="comment"></span>        Crop,<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
@@ -303,6 +451,225 @@ Enumerations</h2></td></tr>
 </pre></div>
 </div>
 </div>
+<a class="anchor" id="ae28e0dd90e308cbc414def9313e66362"></a><!-- doxytag: member="ImageResizer::FlipMode" ref="ae28e0dd90e308cbc414def9313e66362" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_image_resizer.html#ae28e0dd90e308cbc414def9313e66362">ImageResizer::FlipMode</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Horizontal and vertical flipping. Convertible to System.Drawing.RotateFlipType by casting. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ae28e0dd90e308cbc414def9313e66362"></a><!-- doxytag: member="None" ref="ae28e0dd90e308cbc414def9313e66362" args="" -->None</em>&nbsp;</td><td>
+<p>No flipping. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae28e0dd90e308cbc414def9313e66362"></a><!-- doxytag: member="X" ref="ae28e0dd90e308cbc414def9313e66362" args="" -->X</em>&nbsp;</td><td>
+<p>Flip horizontally. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae28e0dd90e308cbc414def9313e66362"></a><!-- doxytag: member="Y" ref="ae28e0dd90e308cbc414def9313e66362" args="" -->Y</em>&nbsp;</td><td>
+<p>Flip vertically (identical to 180 degree rotation) </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ae28e0dd90e308cbc414def9313e66362"></a><!-- doxytag: member="XY" ref="ae28e0dd90e308cbc414def9313e66362" args="" -->XY</em>&nbsp;</td><td>
+<p>Flip horizontally and vertically. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00177">177</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                        {<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// No flipping</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        None = 0,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Flip horizontally</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;h&quot;</span>)]
+        X = 4,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Flip vertically (identical to 180 degree rotation)</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;v&quot;</span>)]
+        Y = 6,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Flip horizontally and vertically</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;both&quot;</span>)]
+        XY = 2
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="adffe2a56e4ff9b1ea25b933fc7517a9c"></a><!-- doxytag: member="ImageResizer::GrayscaleMode" ref="adffe2a56e4ff9b1ea25b933fc7517a9c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_image_resizer.html#adffe2a56e4ff9b1ea25b933fc7517a9c">ImageResizer::GrayscaleMode</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Modes of converting the image to Grayscale. GrayscaleMode.Y usually produces the best resuts. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="adffe2a56e4ff9b1ea25b933fc7517a9c"></a><!-- doxytag: member="Y" ref="adffe2a56e4ff9b1ea25b933fc7517a9c" args="" -->Y</em>&nbsp;</td><td>
+<p>The reccomended value. Y and NTSC are identical. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="adffe2a56e4ff9b1ea25b933fc7517a9c"></a><!-- doxytag: member="Flat" ref="adffe2a56e4ff9b1ea25b933fc7517a9c" args="" -->Flat</em>&nbsp;</td><td>
+<p>Red, green, and blue are averaged to get the grayscale image. Usually produces poor results compared to other algorithms. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00254">254</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                              {
+        [EnumString(<span class="stringliteral">&quot;false&quot;</span>)]
+        None = 0,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// The reccomended value. Y and NTSC are identical.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;true&quot;</span>)]
+        Y = 1,
+        
+        NTSC = 1,
+        RY = 2,
+        BT709= 3,
+<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Red, green, and blue are averaged to get the grayscale image. Usually produces poor results compared to other algorithms.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        Flat = 4
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a5392ed6374eb68201b1b0f1591712632"></a><!-- doxytag: member="ImageResizer::JpegSubsamplingMode" ref="a5392ed6374eb68201b1b0f1591712632" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632">ImageResizer::JpegSubsamplingMode</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The Jpeg subsampling mode to use. Requires FreeImageEncoder, FreeImageBuilder, WicEncoder, or WicBuilder. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a5392ed6374eb68201b1b0f1591712632"></a><!-- doxytag: member="Default" ref="a5392ed6374eb68201b1b0f1591712632" args="" -->Default</em>&nbsp;</td><td>
+<p>The encoder's default subsampling method will be used. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5392ed6374eb68201b1b0f1591712632"></a><!-- doxytag: member="Y4Cb1Cr1" ref="a5392ed6374eb68201b1b0f1591712632" args="" -->Y4Cb1Cr1</em>&nbsp;</td><td>
+<p>411 Subsampling - Only supported by FreeImageBuilder and FreeImageEncoder. Poor quality. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5392ed6374eb68201b1b0f1591712632"></a><!-- doxytag: member="Y4Cb2Cr0" ref="a5392ed6374eb68201b1b0f1591712632" args="" -->Y4Cb2Cr0</em>&nbsp;</td><td>
+<p>420 Subsampling - Commonly used in H262 and H264. Low quality compared to 422 and 444. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5392ed6374eb68201b1b0f1591712632"></a><!-- doxytag: member="Y4Cb2Cr2" ref="a5392ed6374eb68201b1b0f1591712632" args="" -->Y4Cb2Cr2</em>&nbsp;</td><td>
+<p>422 Subsampling - Great balance of quality and file size, commonly used in high-end video formats. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5392ed6374eb68201b1b0f1591712632"></a><!-- doxytag: member="HighestQuality" ref="a5392ed6374eb68201b1b0f1591712632" args="" -->HighestQuality</em>&nbsp;</td><td>
+<p>444 subsampling - Highest quality, largest file size. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a5392ed6374eb68201b1b0f1591712632"></a><!-- doxytag: member="Y4Cb4Cr4" ref="a5392ed6374eb68201b1b0f1591712632" args="" -->Y4Cb4Cr4</em>&nbsp;</td><td>
+<p>444 subsampling - Highest quality, largest file size. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00275">275</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                    {<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// The encoder&#39;s default subsampling method will be used.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        Default = 0,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// 411 Subsampling - Only supported by FreeImageBuilder and FreeImageEncoder. Poor quality.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;411&quot;</span>,<span class="keyword">true</span>)]
+        Y4Cb1Cr1 = 4,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// 420 Subsampling - Commonly used in H262 and H264. Low quality compared to 422 and 444. </span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;420&quot;</span>,<span class="keyword">true</span>)]
+        Y4Cb2Cr0 = 8,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// 422 Subsampling - Great balance of quality and file size, commonly used in high-end video formats.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;422&quot;</span>,<span class="keyword">true</span>)]
+        Y4Cb2Cr2 = 16,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// 444 subsampling - Highest quality, largest file size.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;444&quot;</span>,<span class="keyword">true</span>)]
+        HighestQuality =32,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// 444 subsampling - Highest quality, largest file size.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;444&quot;</span>,<span class="keyword">true</span>)]
+        Y4Cb4Cr4 = 32
+    }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="ad8a20ccdc3ff113284bb7760d959aca3"></a><!-- doxytag: member="ImageResizer::OutputFormat" ref="ad8a20ccdc3ff113284bb7760d959aca3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_image_resizer.html#ad8a20ccdc3ff113284bb7760d959aca3">ImageResizer::OutputFormat</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Output image formats. </p>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ad8a20ccdc3ff113284bb7760d959aca3"></a><!-- doxytag: member="Jpeg" ref="ad8a20ccdc3ff113284bb7760d959aca3" args="" -->Jpeg</em>&nbsp;</td><td>
+<p>Jpeg - the best format for photographs and thumbnails. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ad8a20ccdc3ff113284bb7760d959aca3"></a><!-- doxytag: member="Png" ref="ad8a20ccdc3ff113284bb7760d959aca3" args="" -->Png</em>&nbsp;</td><td>
+<p>The best format for transparent images and vector graphics. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ad8a20ccdc3ff113284bb7760d959aca3"></a><!-- doxytag: member="Gif" ref="ad8a20ccdc3ff113284bb7760d959aca3" args="" -->Gif</em>&nbsp;</td><td>
+<p>A really poor choice for pretty much everything except animation. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00010">10</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                             {<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Jpeg - the best format for photographs and thumbnails</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;jpg&quot;</span>,<span class="keyword">true</span>)]
+        [EnumString(<span class="stringliteral">&quot;jpe&quot;</span>)]
+        [EnumString(<span class="stringliteral">&quot;jif&quot;</span>)]
+        [EnumString(<span class="stringliteral">&quot;jfif&quot;</span>)]
+        [EnumString(<span class="stringliteral">&quot;jfi&quot;</span>)]
+        [EnumString(<span class="stringliteral">&quot;exif&quot;</span>)]
+        Jpeg = 8,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// The best format for transparent images and vector graphics</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        Png = 16,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// A really poor choice for pretty much everything except animation</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        Gif = 32
+    }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a089c1fb717c880fab9cb6c06a06cf35a"></a><!-- doxytag: member="ImageResizer::ProcessWhen" ref="a089c1fb717c880fab9cb6c06a06cf35a" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -314,7 +681,7 @@ Enumerations</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>When to process and re-encode the image. </p>
+<p>When to process and re-encode the file. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="a089c1fb717c880fab9cb6c06a06cf35a"></a><!-- doxytag: member="No" ref="a089c1fb717c880fab9cb6c06a06cf35a" args="" -->No</em>&nbsp;</td><td>
 <p>Request no processing of the image or file (generally used with cache=always). The file contents will be used as-is. </p>
@@ -329,7 +696,7 @@ Enumerations</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00029">29</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00054">54</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                            {<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
 <span class="comment">        /// Request no processing of the image or file (generally used with cache=always).</span>
@@ -377,16 +744,18 @@ Enumerations</h2></td></tr>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00050">50</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00075">75</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                          {<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
 <span class="comment">        /// The default. Only downsamples images - never enlarges. If an image is smaller than &#39;width&#39; and &#39;height&#39;, the image coordinates are used instead.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
-<span class="comment"></span>        DownscaleOnly,<span class="comment"></span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;down&quot;</span>)]
+        DownscaleOnly,<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
 <span class="comment">        /// Only upscales (zooms) images - never downsamples except to meet web.config restrictions. If an image is larger than &#39;width&#39; and &#39;height&#39;, the image coordinates are used instead.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
-<span class="comment"></span>        UpscaleOnly,<span class="comment"></span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;up&quot;</span>)]
+        UpscaleOnly,<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
 <span class="comment">        /// Upscales and downscales images according to &#39;width&#39; and &#39;height&#39;, within web.config restrictions.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
@@ -394,7 +763,8 @@ Enumerations</h2></td></tr>
 <span class="comment">        /// &lt;summary&gt;</span>
 <span class="comment">        /// When the image is smaller than the requested size, padding is added instead of stretching the image</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
-<span class="comment"></span>        UpscaleCanvas
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;canvas&quot;</span>)]
+        UpscaleCanvas
     }
 </pre></div>
 </div>
@@ -413,30 +783,30 @@ Enumerations</h2></td></tr>
 <p>When to disk cache the image. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="a6b30c95c789b77db2c5aa905345d917c"></a><!-- doxytag: member="No" ref="a6b30c95c789b77db2c5aa905345d917c" args="" -->No</em>&nbsp;</td><td>
-<p>Request no caching of the resulting image. </p>
+<p>Request no disk caching of the resulting image. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a6b30c95c789b77db2c5aa905345d917c"></a><!-- doxytag: member="Always" ref="a6b30c95c789b77db2c5aa905345d917c" args="" -->Always</em>&nbsp;</td><td>
-<p>Request that the resulting image always be cached on the server, even if no modifications are made. </p>
+<p>Request that the resulting image always be disk cached on the server, even if no modifications are made. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a6b30c95c789b77db2c5aa905345d917c"></a><!-- doxytag: member="Default" ref="a6b30c95c789b77db2c5aa905345d917c" args="" -->Default</em>&nbsp;</td><td>
-<p>Default caching behavior. Modified images are cached, unmodified images are not cached. </p>
+<p>Default caching behavior. Modified images are disk cached, unmodified images are not. </p>
 </td></tr>
 </table>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00011">11</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00036">36</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                {<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
-<span class="comment">        /// Request no caching of the resulting image.</span>
+<span class="comment">        /// Request no disk caching of the resulting image.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
 <span class="comment"></span>        No,<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
-<span class="comment">        /// Request that the resulting image always be cached on the server, even if no modifications are made. </span>
+<span class="comment">        /// Request that the resulting image always be disk cached on the server, even if no modifications are made. </span>
 <span class="comment">        /// &lt;/summary&gt;</span>
 <span class="comment"></span>        Always,<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
-<span class="comment">        /// Default caching behavior. Modified images are cached, unmodified images are not cached.</span>
+<span class="comment">        /// Default caching behavior. Modified images are disk cached, unmodified images are not.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
 <span class="comment"></span>        Default
 
@@ -455,26 +825,26 @@ Enumerations</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>[Depreciated (Use FitMode.Stretch)] Previously used to force an image to be 'stretched' to match a different aspect ratio. </p>
+<p>[Deprecated (Use FitMode.Stretch)] Previously used to force an image to be 'stretched' to match a different aspect ratio. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ac2f2172bdae0792555449bdc8547b8bc"></a><!-- doxytag: member="Proportionally" ref="ac2f2172bdae0792555449bdc8547b8bc" args="" -->Proportionally</em>&nbsp;</td><td>
-<p>[Depreciated (Use FitMode)] Maintains aspect ratio. Default. </p>
+<p>[Deprecated (Use FitMode)] Maintains aspect ratio. Default. </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ac2f2172bdae0792555449bdc8547b8bc"></a><!-- doxytag: member="Fill" ref="ac2f2172bdae0792555449bdc8547b8bc" args="" -->Fill</em>&nbsp;</td><td>
-<p>[Depreciated (Use FitMode)] Skews image to fit the new aspect ratio defined by 'width' and 'height' </p>
+<p>[Deprecated (Use FitMode)] Skews image to fit the new aspect ratio defined by 'width' and 'height' </p>
 </td></tr>
 </table>
 </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00072">72</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
+<p>Definition at line <a class="el" href="_enumerations_8cs_source.html#l00101">101</a> of file <a class="el" href="_enumerations_8cs_source.html">Enumerations.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                            {<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
-<span class="comment">        /// [Depreciated (Use FitMode)] Maintains aspect ratio. Default.</span>
+<span class="comment">        /// [Deprecated (Use FitMode)] Maintains aspect ratio. Default.</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
 <span class="comment"></span>        Proportionally,<span class="comment"></span>
 <span class="comment">        /// &lt;summary&gt;</span>
-<span class="comment">        /// [Depreciated (Use FitMode)] Skews image to fit the new aspect ratio defined by &#39;width&#39; and &#39;height&#39;</span>
+<span class="comment">        /// [Deprecated (Use FitMode)] Skews image to fit the new aspect ratio defined by &#39;width&#39; and &#39;height&#39;</span>
 <span class="comment">        /// &lt;/summary&gt;</span>
 <span class="comment"></span>        Fill
     }

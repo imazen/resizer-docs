@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -86,214 +86,224 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 <span class="keyword">using</span> System.Text;
 <a name="l00004"></a>00004 <span class="keyword">using</span> System.IO;
 <a name="l00005"></a>00005 <span class="keyword">using</span> ImageResizer.Util;
-<a name="l00006"></a>00006 
-<a name="l00007"></a>00007 <span class="keyword">namespace </span>ImageResizer {
-<a name="l00008"></a>00008 
-<a name="l00009"></a><a class="code" href="class_image_resizer_1_1_image_job.html">00009</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a> {
-<a name="l00010"></a>00010         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a>() {
-<a name="l00011"></a>00011         }
-<a name="l00012"></a>00012         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a>(<span class="keywordtype">string</span> sourcePath, <span class="keywordtype">string</span> destPath, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings) {
-<a name="l00013"></a>00013             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2" title="The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.">Source</a> = sourcePath;
-<a name="l00014"></a>00014             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5" title="The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired...">Dest</a> = destPath;
-<a name="l00015"></a>00015             this.<a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a> = settings;
-<a name="l00016"></a>00016         }
-<a name="l00017"></a>00017 
-<a name="l00018"></a>00018         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a>(Stream sourceStream, Stream destStream, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings) {
-<a name="l00019"></a>00019             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2" title="The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.">Source</a> = sourceStream;
-<a name="l00020"></a>00020             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5" title="The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired...">Dest</a> = destStream;
-<a name="l00021"></a>00021             this.<a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a> = settings;
-<a name="l00022"></a>00022         }
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a>(<span class="keywordtype">object</span> source, <span class="keywordtype">object</span> dest, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings) {
-<a name="l00025"></a>00025             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2" title="The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.">Source</a> = source;
-<a name="l00026"></a>00026             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5" title="The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired...">Dest</a> = dest;
-<a name="l00027"></a>00027             this.<a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a> = settings;
-<a name="l00028"></a>00028         }
-<a name="l00029"></a>00029 
-<a name="l00030"></a>00030         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a>(<span class="keywordtype">object</span> source, <span class="keywordtype">object</span> dest, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings, <span class="keywordtype">bool</span> disposeSource, <span class="keywordtype">bool</span> addFileExtension) {
-<a name="l00031"></a>00031             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2" title="The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.">Source</a> = source;
-<a name="l00032"></a>00032             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5" title="The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired...">Dest</a> = dest;
-<a name="l00033"></a>00033             this.<a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a> = settings;
-<a name="l00034"></a>00034             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a5dd32c6152d10115383001b9ff37f640" title="If true, and if &#39;source&#39; is a IDisposable instead like Bitmap or Stream instance, it will be disposed...">DisposeSourceObject</a> = disposeSource;
-<a name="l00035"></a>00035             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5" title="If true, the appropriate extension for the encoding format will be added to the destination path...">AddFileExtension</a> = addFileExtension;
-<a name="l00036"></a>00036         }
-<a name="l00037"></a>00037 <span class="comment"></span>
-<a name="l00038"></a>00038 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00039"></a>00039 <span class="comment">        /// Shorthand method for ImageBuilder.Current.Build(this)</span>
-<a name="l00040"></a>00040 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00041"></a>00041 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00042"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a0ff0b08f34b729b1caec04f8f144030e">00042</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a> <a class="code" href="class_image_resizer_1_1_image_job.html#a0ff0b08f34b729b1caec04f8f144030e" title="Shorthand method for ImageBuilder.Current.Build(this)">Build</a>() {
-<a name="l00043"></a>00043             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_image_builder.html" title="Provides methods for generating resized images, and for reading and writing them to disk...">ImageBuilder</a>.<a class="code" href="class_image_resizer_1_1_image_builder.html#afcfb7f40a65d121670118ccebfe1ca4b" title="Returns a shared instance of ImageBuilder or a subclass, equivalent to Config.Current.CurrentImageBuilder.">Current</a>.<a class="code" href="class_image_resizer_1_1_image_builder.html#a12f49b48e9244ee7f6e86fd60fffcc83" title="Resizes and processes the specified source image and returns a bitmap of the result. Note! This method assumes that transparency will be supported in the final output format, and therefore does not apply a matte color. Use &amp;bgcolor to specify a background color if you use this method with a non-transparent format such as Jpeg. If passed a source Stream, Bitmap, or Image instance, it will be disposed after use. Use disposeSource=False to disable that behavior.">Build</a>(<span class="keyword">this</span>);
-<a name="l00044"></a>00044         }
-<a name="l00045"></a>00045         <span class="keyword">private</span> <span class="keywordtype">object</span> _source = null;<span class="comment"></span>
-<a name="l00046"></a>00046 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00047"></a>00047 <span class="comment">        /// The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.</span>
-<a name="l00048"></a>00048 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00049"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2">00049</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2" title="The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.">Source</a> {
-<a name="l00050"></a>00050             <span class="keyword">get</span> { <span class="keywordflow">return</span> _source; }
-<a name="l00051"></a>00051             <span class="keyword">set</span> { _source = value; }
-<a name="l00052"></a>00052         }
-<a name="l00053"></a>00053 
-<a name="l00054"></a>00054         <span class="keyword">private</span> <span class="keywordtype">object</span> _dest = null;<span class="comment"></span>
-<a name="l00055"></a>00055 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00056"></a>00056 <span class="comment">        /// The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired, </span>
-<a name="l00057"></a>00057 <span class="comment">        /// set this to typeof(System.Drawing.Bitmap). The result will be stored in .Result</span>
-<a name="l00058"></a>00058 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00059"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5">00059</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5" title="The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired...">Dest</a> {
-<a name="l00060"></a>00060             <span class="keyword">get</span> { <span class="keywordflow">return</span> _dest; }
-<a name="l00061"></a>00061             <span class="keyword">set</span> { _dest = value; }
-<a name="l00062"></a>00062         }
-<a name="l00063"></a>00063 
-<a name="l00064"></a>00064         <span class="keyword">private</span> <span class="keywordtype">object</span> _result = null;<span class="comment"></span>
-<a name="l00065"></a>00065 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00066"></a>00066 <span class="comment">        /// The result if a Bitmap, BitmapSource, or IWICBitmapSource instance is requested. </span>
-<a name="l00067"></a>00067 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00068"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a81227d737538a12e2e183fbbfab32eaa">00068</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a81227d737538a12e2e183fbbfab32eaa" title="The result if a Bitmap, BitmapSource, or IWICBitmapSource instance is requested.">Result</a> {
-<a name="l00069"></a>00069             <span class="keyword">get</span> { <span class="keywordflow">return</span> _result; }
-<a name="l00070"></a>00070             <span class="keyword">set</span> { _result = value; }
-<a name="l00071"></a>00071         }
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> _settings = null;<span class="comment"></span>
-<a name="l00074"></a>00074 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00075"></a>00075 <span class="comment">        /// The image processing settings</span>
-<a name="l00076"></a>00076 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00077"></a><a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee">00077</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> <a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a> {
-<a name="l00078"></a>00078             <span class="keyword">get</span> { <span class="keywordflow">return</span> _settings; }
-<a name="l00079"></a>00079             <span class="keyword">set</span> { _settings = value; }
-<a name="l00080"></a>00080         }
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082         <span class="keyword">private</span> <span class="keywordtype">bool</span> _disposeSourceObject = <span class="keyword">true</span>;<span class="comment"></span>
-<a name="l00083"></a>00083 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00084"></a>00084 <span class="comment">        /// If true, and if &#39;source&#39; is a IDisposable instead like Bitmap or Stream instance, it will be disposed after it has been used. Defaults to true.</span>
-<a name="l00085"></a>00085 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00086"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a5dd32c6152d10115383001b9ff37f640">00086</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a5dd32c6152d10115383001b9ff37f640" title="If true, and if &#39;source&#39; is a IDisposable instead like Bitmap or Stream instance, it will be disposed...">DisposeSourceObject</a> {
-<a name="l00087"></a>00087             <span class="keyword">get</span> { <span class="keywordflow">return</span> _disposeSourceObject; }
-<a name="l00088"></a>00088             <span class="keyword">set</span> { _disposeSourceObject = value; }
-<a name="l00089"></a>00089         }
-<a name="l00090"></a>00090 
-<a name="l00091"></a>00091         <span class="keyword">private</span> <span class="keywordtype">bool</span> _resetSourceStream = <span class="keyword">false</span>;<span class="comment"></span>
-<a name="l00092"></a>00092 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00093"></a>00093 <span class="comment">        /// If true, and if &#39;source&#39; is seekable, the stream will be reset to its previous position after being read.</span>
-<a name="l00094"></a>00094 <span class="comment">        /// Always true for HttpPostedFile(Base) instances, defaults to false for all others.</span>
-<a name="l00095"></a>00095 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00096"></a><a class="code" href="class_image_resizer_1_1_image_job.html#aa6cb13a20ee55698d62de78f6d749d07">00096</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#aa6cb13a20ee55698d62de78f6d749d07" title="If true, and if &#39;source&#39; is seekable, the stream will be reset to its previous position after being r...">ResetSourceStream</a> {
-<a name="l00097"></a>00097             <span class="keyword">get</span> { <span class="keywordflow">return</span> _resetSourceStream; }
-<a name="l00098"></a>00098             <span class="keyword">set</span> { _resetSourceStream = value; }
-<a name="l00099"></a>00099         }
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101         <span class="keyword">private</span> <span class="keywordtype">bool</span> _disposeDestinationStream = <span class="keyword">false</span>;<span class="comment"></span>
-<a name="l00102"></a>00102 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00103"></a>00103 <span class="comment">        /// If true, and if &#39;dest&#39; is a Stream instance, it will be disposed after the image has been written. Defaults to false.</span>
-<a name="l00104"></a>00104 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00105"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a29f911ea9f9ede401094e90c950fe1ff">00105</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a29f911ea9f9ede401094e90c950fe1ff" title="If true, and if &#39;dest&#39; is a Stream instance, it will be disposed after the image has been written...">DisposeDestinationStream</a> {
-<a name="l00106"></a>00106             <span class="keyword">get</span> { <span class="keywordflow">return</span> _disposeDestinationStream; }
-<a name="l00107"></a>00107             <span class="keyword">set</span> { _disposeDestinationStream = value; }
-<a name="l00108"></a>00108         }
-<a name="l00109"></a>00109 
-<a name="l00110"></a>00110         <span class="keyword">private</span> <span class="keywordtype">string</span> _finalPath = null;<span class="comment"></span>
-<a name="l00111"></a>00111 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00112"></a>00112 <span class="comment">        /// Contains the final physical path to the image (if &#39;dest&#39; was a path - null otherwise)</span>
-<a name="l00113"></a>00113 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00114"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a4ffc5aa55609b62ecbda6b35ba019745">00114</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a4ffc5aa55609b62ecbda6b35ba019745" title="Contains the final physical path to the image (if &#39;dest&#39; was a path - null otherwise)">FinalPath</a> {
-<a name="l00115"></a>00115             <span class="keyword">get</span> { <span class="keywordflow">return</span> _finalPath; }
-<a name="l00116"></a>00116             <span class="keyword">set</span> { _finalPath = value; }
-<a name="l00117"></a>00117         }
-<a name="l00118"></a>00118 
+<a name="l00006"></a>00006 <span class="keyword">using</span> System.Globalization;
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="keyword">namespace </span>ImageResizer {
+<a name="l00009"></a>00009 
+<a name="l00010"></a><a class="code" href="class_image_resizer_1_1_image_job.html">00010</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a> {
+<a name="l00011"></a>00011         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a>() {
+<a name="l00012"></a>00012         }
+<a name="l00013"></a>00013         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a>(<span class="keywordtype">string</span> sourcePath, <span class="keywordtype">string</span> destPath, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings) {
+<a name="l00014"></a>00014             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2" title="The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.">Source</a> = sourcePath;
+<a name="l00015"></a>00015             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5" title="The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired...">Dest</a> = destPath;
+<a name="l00016"></a>00016             this.<a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a> = settings;
+<a name="l00017"></a>00017         }
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a>(Stream sourceStream, Stream destStream, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings) {
+<a name="l00020"></a>00020             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2" title="The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.">Source</a> = sourceStream;
+<a name="l00021"></a>00021             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5" title="The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired...">Dest</a> = destStream;
+<a name="l00022"></a>00022             this.<a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a> = settings;
+<a name="l00023"></a>00023         }
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a>(<span class="keywordtype">object</span> source, <span class="keywordtype">object</span> dest, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings) {
+<a name="l00026"></a>00026             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2" title="The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.">Source</a> = source;
+<a name="l00027"></a>00027             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5" title="The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired...">Dest</a> = dest;
+<a name="l00028"></a>00028             this.<a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a> = settings;
+<a name="l00029"></a>00029         }
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a>(<span class="keywordtype">object</span> source, <span class="keywordtype">object</span> dest, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings, <span class="keywordtype">bool</span> disposeSource, <span class="keywordtype">bool</span> addFileExtension) {
+<a name="l00032"></a>00032             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2" title="The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.">Source</a> = source;
+<a name="l00033"></a>00033             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5" title="The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired...">Dest</a> = dest;
+<a name="l00034"></a>00034             this.<a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a> = settings;
+<a name="l00035"></a>00035             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a5dd32c6152d10115383001b9ff37f640" title="If true, and if &#39;source&#39; is a IDisposable instead like Bitmap or Stream instance, it will be disposed...">DisposeSourceObject</a> = disposeSource;
+<a name="l00036"></a>00036             this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5" title="If true, the appropriate extension for the encoding format will be added to the destination path...">AddFileExtension</a> = addFileExtension;
+<a name="l00037"></a>00037         }
+<a name="l00038"></a>00038 <span class="comment"></span>
+<a name="l00039"></a>00039 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00040"></a>00040 <span class="comment">        /// Shorthand method for ImageBuilder.Current.Build(this)</span>
+<a name="l00041"></a>00041 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00042"></a>00042 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00043"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a0ff0b08f34b729b1caec04f8f144030e">00043</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a> <a class="code" href="class_image_resizer_1_1_image_job.html#a0ff0b08f34b729b1caec04f8f144030e" title="Shorthand method for ImageBuilder.Current.Build(this)">Build</a>() {
+<a name="l00044"></a>00044             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_image_builder.html" title="Provides methods for generating resized images, and for reading and writing them to disk...">ImageBuilder</a>.<a class="code" href="class_image_resizer_1_1_image_builder.html#afcfb7f40a65d121670118ccebfe1ca4b" title="Returns a shared instance of ImageBuilder or a subclass, equivalent to Config.Current.CurrentImageBuilder.">Current</a>.<a class="code" href="class_image_resizer_1_1_image_builder.html#a12f49b48e9244ee7f6e86fd60fffcc83" title="Resizes and processes the specified source image and returns a bitmap of the result. Note! This method assumes that transparency will be supported in the final output format, and therefore does not apply a matte color. Use &amp;bgcolor to specify a background color if you use this method with a non-transparent format such as Jpeg. If passed a source Stream, Bitmap, or Image instance, it will be disposed after use. Use disposeSource=False to disable that behavior.">Build</a>(<span class="keyword">this</span>);
+<a name="l00045"></a>00045         }
+<a name="l00046"></a>00046         <span class="keyword">private</span> <span class="keywordtype">object</span> _source = null;<span class="comment"></span>
+<a name="l00047"></a>00047 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00048"></a>00048 <span class="comment">        /// The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.</span>
+<a name="l00049"></a>00049 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00050"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2">00050</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a0d47d299ecd8a7316ba4a56d28e246b2" title="The source image&#39;s physical path, app-relative virtual path, or a Stream, byte array, Bitmap, VirtualFile, IVirtualFile, HttpPostedFile, or HttpPostedFileBase instance.">Source</a> {
+<a name="l00051"></a>00051             <span class="keyword">get</span> { <span class="keywordflow">return</span> _source; }
+<a name="l00052"></a>00052             <span class="keyword">set</span> { _source = value; }
+<a name="l00053"></a>00053         }
+<a name="l00054"></a>00054 
+<a name="l00055"></a>00055         <span class="keyword">private</span> <span class="keywordtype">object</span> _dest = null;<span class="comment"></span>
+<a name="l00056"></a>00056 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00057"></a>00057 <span class="comment">        /// The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired, </span>
+<a name="l00058"></a>00058 <span class="comment">        /// set this to typeof(System.Drawing.Bitmap). The result will be stored in .Result</span>
+<a name="l00059"></a>00059 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00060"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5">00060</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a04c90612666b1834d038ae9a4bac67b5" title="The destination Stream, physical path, or app-relative virtual path. If a Bitmap instance is desired...">Dest</a> {
+<a name="l00061"></a>00061             <span class="keyword">get</span> { <span class="keywordflow">return</span> _dest; }
+<a name="l00062"></a>00062             <span class="keyword">set</span> { _dest = value; }
+<a name="l00063"></a>00063         }
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065         <span class="keyword">private</span> <span class="keywordtype">object</span> _result = null;<span class="comment"></span>
+<a name="l00066"></a>00066 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00067"></a>00067 <span class="comment">        /// The result if a Bitmap, BitmapSource, or IWICBitmapSource instance is requested. </span>
+<a name="l00068"></a>00068 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00069"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a81227d737538a12e2e183fbbfab32eaa">00069</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">object</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a81227d737538a12e2e183fbbfab32eaa" title="The result if a Bitmap, BitmapSource, or IWICBitmapSource instance is requested.">Result</a> {
+<a name="l00070"></a>00070             <span class="keyword">get</span> { <span class="keywordflow">return</span> _result; }
+<a name="l00071"></a>00071             <span class="keyword">set</span> { _result = value; }
+<a name="l00072"></a>00072         }
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> _settings = null;<span class="comment"></span>
+<a name="l00075"></a>00075 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00076"></a>00076 <span class="comment">        /// The image processing settings</span>
+<a name="l00077"></a>00077 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00078"></a><a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee">00078</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> <a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a> {
+<a name="l00079"></a>00079             <span class="keyword">get</span> { <span class="keywordflow">return</span> _settings; }
+<a name="l00080"></a>00080             <span class="keyword">set</span> { _settings = value; }
+<a name="l00081"></a>00081         }
+<a name="l00082"></a>00082 
+<a name="l00083"></a>00083         <span class="keyword">private</span> <span class="keywordtype">bool</span> _disposeSourceObject = <span class="keyword">true</span>;<span class="comment"></span>
+<a name="l00084"></a>00084 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00085"></a>00085 <span class="comment">        /// If true, and if &#39;source&#39; is a IDisposable instead like Bitmap or Stream instance, it will be disposed after it has been used. Defaults to true.</span>
+<a name="l00086"></a>00086 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00087"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a5dd32c6152d10115383001b9ff37f640">00087</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a5dd32c6152d10115383001b9ff37f640" title="If true, and if &#39;source&#39; is a IDisposable instead like Bitmap or Stream instance, it will be disposed...">DisposeSourceObject</a> {
+<a name="l00088"></a>00088             <span class="keyword">get</span> { <span class="keywordflow">return</span> _disposeSourceObject; }
+<a name="l00089"></a>00089             <span class="keyword">set</span> { _disposeSourceObject = value; }
+<a name="l00090"></a>00090         }
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092         <span class="keyword">private</span> <span class="keywordtype">bool</span> _resetSourceStream = <span class="keyword">false</span>;<span class="comment"></span>
+<a name="l00093"></a>00093 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00094"></a>00094 <span class="comment">        /// If true, and if &#39;source&#39; is seekable, the stream will be reset to its previous position after being read.</span>
+<a name="l00095"></a>00095 <span class="comment">        /// Always true for HttpPostedFile(Base) instances, defaults to false for all others.</span>
+<a name="l00096"></a>00096 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00097"></a><a class="code" href="class_image_resizer_1_1_image_job.html#aa6cb13a20ee55698d62de78f6d749d07">00097</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#aa6cb13a20ee55698d62de78f6d749d07" title="If true, and if &#39;source&#39; is seekable, the stream will be reset to its previous position after being r...">ResetSourceStream</a> {
+<a name="l00098"></a>00098             <span class="keyword">get</span> { <span class="keywordflow">return</span> _resetSourceStream; }
+<a name="l00099"></a>00099             <span class="keyword">set</span> { _resetSourceStream = value; }
+<a name="l00100"></a>00100         }
+<a name="l00101"></a>00101 
+<a name="l00102"></a>00102         <span class="keyword">private</span> <span class="keywordtype">bool</span> _disposeDestinationStream = <span class="keyword">false</span>;<span class="comment"></span>
+<a name="l00103"></a>00103 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00104"></a>00104 <span class="comment">        /// If true, and if &#39;dest&#39; is a Stream instance, it will be disposed after the image has been written. Defaults to false.</span>
+<a name="l00105"></a>00105 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00106"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a29f911ea9f9ede401094e90c950fe1ff">00106</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a29f911ea9f9ede401094e90c950fe1ff" title="If true, and if &#39;dest&#39; is a Stream instance, it will be disposed after the image has been written...">DisposeDestinationStream</a> {
+<a name="l00107"></a>00107             <span class="keyword">get</span> { <span class="keywordflow">return</span> _disposeDestinationStream; }
+<a name="l00108"></a>00108             <span class="keyword">set</span> { _disposeDestinationStream = value; }
+<a name="l00109"></a>00109         }
+<a name="l00110"></a>00110 
+<a name="l00111"></a>00111         <span class="keyword">private</span> <span class="keywordtype">string</span> _finalPath = null;<span class="comment"></span>
+<a name="l00112"></a>00112 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00113"></a>00113 <span class="comment">        /// Contains the final physical path to the image (if &#39;dest&#39; was a path - null otherwise)</span>
+<a name="l00114"></a>00114 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00115"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a4ffc5aa55609b62ecbda6b35ba019745">00115</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a4ffc5aa55609b62ecbda6b35ba019745" title="Contains the final physical path to the image (if &#39;dest&#39; was a path - null otherwise)">FinalPath</a> {
+<a name="l00116"></a>00116             <span class="keyword">get</span> { <span class="keywordflow">return</span> _finalPath; }
+<a name="l00117"></a>00117             <span class="keyword">set</span> { _finalPath = value; }
+<a name="l00118"></a>00118         }
 <a name="l00119"></a>00119 
-<a name="l00120"></a>00120         <span class="keyword">private</span> <span class="keywordtype">string</span> _sourcePathData = null;<span class="comment"></span>
-<a name="l00121"></a>00121 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00122"></a>00122 <span class="comment">        /// If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetction code, so decoding can be optimized.</span>
-<a name="l00123"></a>00123 <span class="comment">        /// May be a physical or virtual path, or just a file name.</span>
-<a name="l00124"></a>00124 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00125"></a><a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773">00125</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a> {
-<a name="l00126"></a>00126             <span class="keyword">get</span> { <span class="keywordflow">return</span> _sourcePathData; }
-<a name="l00127"></a>00127             <span class="keyword">set</span> { _sourcePathData = value; }
-<a name="l00128"></a>00128         }
-<a name="l00129"></a>00129 
-<a name="l00130"></a>00130         <span class="keyword">private</span> <span class="keywordtype">bool</span> _addFileExtension = <span class="keyword">false</span>;<span class="comment"></span>
-<a name="l00131"></a>00131 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00132"></a>00132 <span class="comment">        /// If true, the appropriate extension for the encoding format will be added to the destination path, and the result will be stored in FinalPath in physical path form.</span>
-<a name="l00133"></a>00133 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00134"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5">00134</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5" title="If true, the appropriate extension for the encoding format will be added to the destination path...">AddFileExtension</a> {
-<a name="l00135"></a>00135             <span class="keyword">get</span> { <span class="keywordflow">return</span> _addFileExtension; }
-<a name="l00136"></a>00136             <span class="keyword">set</span> { _addFileExtension = value; }
-<a name="l00137"></a>00137         }
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139         <span class="keyword">private</span> <span class="keywordtype">bool</span> _allowDestinationPathVariables = <span class="keyword">true</span>;<span class="comment"></span>
-<a name="l00140"></a>00140 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00141"></a>00141 <span class="comment">        /// If true (the default), destination paths can include variables that are expanded during the image build process. </span>
-<a name="l00142"></a>00142 <span class="comment">        /// Ex. Dest = &quot;~/folder/&amp;lt&gt;guid&gt;.&amp;lt;ext&gt;&quot; will expand to &quot;C:\WWW\App\folder\1ddadaadaddaa75da75ad34ad33da3a.jpg&quot;. </span>
-<a name="l00143"></a>00143 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00144"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a2261abf085c33a0bc38cbde02f33c729">00144</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a2261abf085c33a0bc38cbde02f33c729" title="If true (the default), destination paths can include variables that are expanded during the image bui...">AllowDestinationPathVariables</a> {
-<a name="l00145"></a>00145             <span class="keyword">get</span> { <span class="keywordflow">return</span> _allowDestinationPathVariables; }
-<a name="l00146"></a>00146             <span class="keyword">set</span> { _allowDestinationPathVariables = value; }
-<a name="l00147"></a>00147         }
-<a name="l00148"></a>00148 
-<a name="l00149"></a>00149         <span class="keyword">private</span> <span class="keywordtype">bool</span> _createParentDirectory = <span class="keyword">false</span>;<span class="comment"></span>
-<a name="l00150"></a>00150 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00151"></a>00151 <span class="comment">        /// Defaults to false. When true, the parent directory of the destination filename will be created if it doesn&#39;t already exist.</span>
-<a name="l00152"></a>00152 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00153"></a><a class="code" href="class_image_resizer_1_1_image_job.html#aa364f02160b72d8fb1b0df47d65e59b5">00153</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#aa364f02160b72d8fb1b0df47d65e59b5" title="Defaults to false. When true, the parent directory of the destination filename will be created if it ...">CreateParentDirectory</a> {
-<a name="l00154"></a>00154             <span class="keyword">get</span> { <span class="keywordflow">return</span> _createParentDirectory; }
-<a name="l00155"></a>00155             <span class="keyword">set</span> { _createParentDirectory = value; }
-<a name="l00156"></a>00156         }<span class="comment"></span>
-<a name="l00157"></a>00157 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00158"></a>00158 <span class="comment">        /// Internal use only.</span>
-<a name="l00159"></a>00159 <span class="comment">        /// Resolves the specified (potenetially templated) path into a physical path. </span>
-<a name="l00160"></a>00160 <span class="comment">        /// Applies the AddFileExtension setting using the &#39;ext&#39; variable.</span>
-<a name="l00161"></a>00161 <span class="comment">        /// Supplies the guid, settings.*, filename, path, and originalExt variables. </span>
-<a name="l00162"></a>00162 <span class="comment">        /// The resolver method should supply &#39;ext&#39;, &#39;width&#39;, and &#39;height&#39; (all of which refer to the final image).</span>
-<a name="l00163"></a>00163 <span class="comment">        /// If AllowDestinationPathVariables=False, only AddFileExtenson will be processed.</span>
-<a name="l00164"></a>00164 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00165"></a>00165 <span class="comment">        /// &lt;param name=&quot;path&quot;&gt;&lt;/param&gt;</span>
-<a name="l00166"></a>00166 <span class="comment">        /// &lt;param name=&quot;resolver&quot;&gt;&lt;/param&gt;</span>
-<a name="l00167"></a>00167 <span class="comment">        /// &lt;param name=&quot;originalWidth&quot;&gt;Leave 0 if unavailable&lt;/param&gt;</span>
-<a name="l00168"></a>00168 <span class="comment">        /// &lt;param name=&quot;originalHeight&quot;&gt;Leave 0 if unavailable&lt;/param&gt;</span>
-<a name="l00169"></a>00169 <span class="comment">        /// &lt;param name=&quot;builder&quot;&gt;Leave null if unavailable&lt;/param&gt;</span>
-<a name="l00170"></a>00170 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00171"></a><a class="code" href="class_image_resizer_1_1_image_job.html#aec8643aded517e1abd0f5a4521bc2c8c">00171</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_image_resizer_1_1_image_job.html#aec8643aded517e1abd0f5a4521bc2c8c" title="Internal use only. Resolves the specified (potenetially templated) path into a physical path...">ResolveTemplatedPath</a>(<span class="keywordtype">string</span> path, ImageResizer.Util.PathUtils.VariableResolverCallback resolver) {
-<a name="l00172"></a>00172             <span class="keywordflow">if</span> (!<a class="code" href="class_image_resizer_1_1_image_job.html#a2261abf085c33a0bc38cbde02f33c729" title="If true (the default), destination paths can include variables that are expanded during the image bui...">AllowDestinationPathVariables</a>) {
-<a name="l00173"></a>00173                 <span class="comment">//Only add the extension if requested when variables are turned off.</span>
-<a name="l00174"></a>00174                 <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acb4e92f50556202cd20d914384a1965d" title="Returns the physcial mapped path for the specified virtual path if it starts with ~...">MapPathIfAppRelative</a>(path + (<a class="code" href="class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5" title="If true, the appropriate extension for the encoding format will be added to the destination path...">AddFileExtension</a> ? (<span class="stringliteral">&quot;.&quot;</span> + resolver(<span class="stringliteral">&quot;ext&quot;</span>)) : <span class="stringliteral">&quot;&quot;</span>));
-<a name="l00175"></a>00175             }
-<a name="l00176"></a>00176             <span class="keywordflow">if</span> (this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5" title="If true, the appropriate extension for the encoding format will be added to the destination path...">AddFileExtension</a>) path = path + <span class="stringliteral">&quot;.&lt;ext&gt;&quot;</span>;
-<a name="l00177"></a>00177             path = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a9be7ad795b3c8b14fea7e566806f597b" title="Replaces variables in paths with their values. Ex. ~/uploads/thumbs/&lt;guid&gt;.&lt;ext&gt;. Standard variables are ...">ResolveVariablesInPath</a>(path, delegate(<span class="keywordtype">string</span> p) {
-<a name="l00178"></a>00178                 <span class="comment">//Let the &#39;resolver&#39; passed to this method take precedence - we provide default values.</span>
-<a name="l00179"></a>00179                 <span class="keywordtype">string</span> result = resolver(p);
-<a name="l00180"></a>00180                 <span class="keywordflow">if</span> (result != null) <span class="keywordflow">return</span> result;
-<a name="l00181"></a>00181                 <span class="comment">//GUID in lowercase hexadecimal with no hyphens</span>
-<a name="l00182"></a>00182                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;guid&quot;</span>.Equals(p, StringComparison.OrdinalIgnoreCase)) 
-<a name="l00183"></a>00183                     <span class="keywordflow">return</span> Guid.NewGuid().ToString(<span class="stringliteral">&quot;N&quot;</span>); 
-<a name="l00184"></a>00184                 <span class="comment">//Access to the settings collection</span>
-<a name="l00185"></a>00185                 <span class="keywordtype">string</span> settingsPrefix = <span class="stringliteral">&quot;settings.&quot;</span>;
-<a name="l00186"></a>00186                 <span class="keywordflow">if</span> (p.StartsWith(settingsPrefix, StringComparison.OrdinalIgnoreCase)) {
-<a name="l00187"></a>00187                     <span class="keywordtype">string</span> subName = p.Substring(settingsPrefix.Length);
-<a name="l00188"></a>00188                     <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a>[subName];
-<a name="l00189"></a>00189                 }
-<a name="l00190"></a>00190                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;filename&quot;</span>.Equals(p,StringComparison.OrdinalIgnoreCase)){
-<a name="l00191"></a>00191                     <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a> == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;You cannot use the &lt;filename&gt; variable in a job that does not have a source filename, such as with a Stream or Bitmap instance&quot;</span>);
-<a name="l00192"></a>00192                     <span class="keywordflow">return</span> Path.GetFileNameWithoutExtension(<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a>);
-<a name="l00193"></a>00193                 }
-<a name="l00194"></a>00194 
-<a name="l00195"></a>00195                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;path&quot;</span>.Equals(p, StringComparison.OrdinalIgnoreCase)) {
-<a name="l00196"></a>00196                     <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a> == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;You cannot use the &lt;path&gt; variable in a job that does not have a source filename, such as with a Stream or Bitmap instance&quot;</span>);
-<a name="l00197"></a>00197                     <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a0bf1e4b4833b6ca62efc0ff7c72c93c9" title="Removes the extension from the filename or URL, leaving the querystring intact, where the extension i...">RemoveExtension</a>(<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a>); <span class="comment">//Just remove the last segment</span>
-<a name="l00198"></a>00198                 }
-<a name="l00199"></a>00199                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;originalext&quot;</span>.Equals(p, StringComparison.OrdinalIgnoreCase)) {
-<a name="l00200"></a>00200                     <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a> == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;You cannot use the &lt;originalext&gt; variable in a job that does not have a source filename, such as with a Stream or Bitmap instance&quot;</span>);
-<a name="l00201"></a>00201                     <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a56cb53d101d364eb3b434a89af918335" title="Ignores the querystring. Grabs the last segment of the filename extension. Returns an empty string if...">GetExtension</a>(<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a>); <span class="comment">//Just remove the last segment</span>
-<a name="l00202"></a>00202                 }
-<a name="l00203"></a>00203                 
-<a name="l00204"></a>00204 
-<a name="l00205"></a>00205                 <span class="keywordflow">return</span> null;
-<a name="l00206"></a>00206             });
-<a name="l00207"></a>00207             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acb4e92f50556202cd20d914384a1965d" title="Returns the physcial mapped path for the specified virtual path if it starts with ~...">MapPathIfAppRelative</a>(path);
-<a name="l00208"></a>00208         }
-<a name="l00209"></a>00209 
-<a name="l00210"></a>00210 
-<a name="l00211"></a>00211     }
-<a name="l00212"></a>00212 
-<a name="l00213"></a>00213 }
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121         <span class="keyword">private</span> <span class="keywordtype">string</span> _sourcePathData = null;<span class="comment"></span>
+<a name="l00122"></a>00122 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00123"></a>00123 <span class="comment">        /// If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetction code, so decoding can be optimized.</span>
+<a name="l00124"></a>00124 <span class="comment">        /// May be a physical or virtual path, or just a file name.</span>
+<a name="l00125"></a>00125 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00126"></a><a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773">00126</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a> {
+<a name="l00127"></a>00127             <span class="keyword">get</span> { <span class="keywordflow">return</span> _sourcePathData; }
+<a name="l00128"></a>00128             <span class="keyword">set</span> { _sourcePathData = value; }
+<a name="l00129"></a>00129         }
+<a name="l00130"></a>00130 
+<a name="l00131"></a>00131         <span class="keyword">private</span> <span class="keywordtype">bool</span> _addFileExtension = <span class="keyword">false</span>;<span class="comment"></span>
+<a name="l00132"></a>00132 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00133"></a>00133 <span class="comment">        /// If true, the appropriate extension for the encoding format will be added to the destination path, and the result will be stored in FinalPath in physical path form.</span>
+<a name="l00134"></a>00134 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00135"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5">00135</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5" title="If true, the appropriate extension for the encoding format will be added to the destination path...">AddFileExtension</a> {
+<a name="l00136"></a>00136             <span class="keyword">get</span> { <span class="keywordflow">return</span> _addFileExtension; }
+<a name="l00137"></a>00137             <span class="keyword">set</span> { _addFileExtension = value; }
+<a name="l00138"></a>00138         }
+<a name="l00139"></a>00139 
+<a name="l00140"></a>00140         <span class="keyword">private</span> <span class="keywordtype">bool</span> _allowDestinationPathVariables = <span class="keyword">true</span>;<span class="comment"></span>
+<a name="l00141"></a>00141 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00142"></a>00142 <span class="comment">        /// If true (the default), destination paths can include variables that are expanded during the image build process. </span>
+<a name="l00143"></a>00143 <span class="comment">        /// Ex. Dest = &quot;~/folder/&amp;lt;guid&gt;.&amp;lt;ext&gt;&quot; will expand to &quot;C:\WWW\App\folder\1ddadaadaddaa75da75ad34ad33da3a.jpg&quot;. </span>
+<a name="l00144"></a>00144 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00145"></a><a class="code" href="class_image_resizer_1_1_image_job.html#a2261abf085c33a0bc38cbde02f33c729">00145</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#a2261abf085c33a0bc38cbde02f33c729" title="If true (the default), destination paths can include variables that are expanded during the image bui...">AllowDestinationPathVariables</a> {
+<a name="l00146"></a>00146             <span class="keyword">get</span> { <span class="keywordflow">return</span> _allowDestinationPathVariables; }
+<a name="l00147"></a>00147             <span class="keyword">set</span> { _allowDestinationPathVariables = value; }
+<a name="l00148"></a>00148         }
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150         <span class="keyword">private</span> <span class="keywordtype">bool</span> _createParentDirectory = <span class="keyword">false</span>;<span class="comment"></span>
+<a name="l00151"></a>00151 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00152"></a>00152 <span class="comment">        /// Defaults to false. When true, the parent directory of the destination filename will be created if it doesn&#39;t already exist.</span>
+<a name="l00153"></a>00153 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00154"></a><a class="code" href="class_image_resizer_1_1_image_job.html#aa364f02160b72d8fb1b0df47d65e59b5">00154</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_image_job.html#aa364f02160b72d8fb1b0df47d65e59b5" title="Defaults to false. When true, the parent directory of the destination filename will be created if it ...">CreateParentDirectory</a> {
+<a name="l00155"></a>00155             <span class="keyword">get</span> { <span class="keywordflow">return</span> _createParentDirectory; }
+<a name="l00156"></a>00156             <span class="keyword">set</span> { _createParentDirectory = value; }
+<a name="l00157"></a>00157         }<span class="comment"></span>
+<a name="l00158"></a>00158 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00159"></a>00159 <span class="comment">        /// Sets CreateParentDirectory to true. Provided for easy chaining so you can do one-liners.</span>
+<a name="l00160"></a>00160 <span class="comment">        /// new ImageJob(source,dest,settings).CreateDir().Build()</span>
+<a name="l00161"></a>00161 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00162"></a>00162 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00163"></a><a class="code" href="class_image_resizer_1_1_image_job.html#afd39e543924267399a77550e0b0c2c22">00163</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_image_job.html">ImageJob</a> <a class="code" href="class_image_resizer_1_1_image_job.html#afd39e543924267399a77550e0b0c2c22" title="Sets CreateParentDirectory to true. Provided for easy chaining so you can do one-liners. new ImageJob(source,dest,settings).CreateDir().Build()">CreateDir</a>() {
+<a name="l00164"></a>00164             <a class="code" href="class_image_resizer_1_1_image_job.html#aa364f02160b72d8fb1b0df47d65e59b5" title="Defaults to false. When true, the parent directory of the destination filename will be created if it ...">CreateParentDirectory</a> = <span class="keyword">true</span>;
+<a name="l00165"></a>00165             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00166"></a>00166         }<span class="comment"></span>
+<a name="l00167"></a>00167 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00168"></a>00168 <span class="comment">        /// Internal use only.</span>
+<a name="l00169"></a>00169 <span class="comment">        /// Resolves the specified (potenetially templated) path into a physical path. </span>
+<a name="l00170"></a>00170 <span class="comment">        /// Applies the AddFileExtension setting using the &#39;ext&#39; variable.</span>
+<a name="l00171"></a>00171 <span class="comment">        /// Supplies the guid, settings.*, filename, path, and originalExt variables. </span>
+<a name="l00172"></a>00172 <span class="comment">        /// The resolver method should supply &#39;ext&#39;, &#39;width&#39;, and &#39;height&#39; (all of which refer to the final image).</span>
+<a name="l00173"></a>00173 <span class="comment">        /// If AllowDestinationPathVariables=False, only AddFileExtenson will be processed.</span>
+<a name="l00174"></a>00174 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00175"></a>00175 <span class="comment">        /// &lt;param name=&quot;path&quot;&gt;&lt;/param&gt;</span>
+<a name="l00176"></a>00176 <span class="comment">        /// &lt;param name=&quot;resolver&quot;&gt;&lt;/param&gt;</span>
+<a name="l00177"></a>00177 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00178"></a><a class="code" href="class_image_resizer_1_1_image_job.html#aec8643aded517e1abd0f5a4521bc2c8c">00178</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_image_resizer_1_1_image_job.html#aec8643aded517e1abd0f5a4521bc2c8c" title="Internal use only. Resolves the specified (potenetially templated) path into a physical path...">ResolveTemplatedPath</a>(<span class="keywordtype">string</span> path, ImageResizer.Util.PathUtils.VariableResolverCallback resolver) {
+<a name="l00179"></a>00179             <span class="keywordflow">if</span> (!<a class="code" href="class_image_resizer_1_1_image_job.html#a2261abf085c33a0bc38cbde02f33c729" title="If true (the default), destination paths can include variables that are expanded during the image bui...">AllowDestinationPathVariables</a>) {
+<a name="l00180"></a>00180                 <span class="comment">//Only add the extension if requested when variables are turned off.</span>
+<a name="l00181"></a>00181                 <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acb4e92f50556202cd20d914384a1965d" title="Returns the physcial mapped path for the specified virtual path if it starts with ~...">MapPathIfAppRelative</a>(path + (<a class="code" href="class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5" title="If true, the appropriate extension for the encoding format will be added to the destination path...">AddFileExtension</a> ? (<span class="stringliteral">&quot;.&quot;</span> + resolver(<span class="stringliteral">&quot;ext&quot;</span>)) : <span class="stringliteral">&quot;&quot;</span>));
+<a name="l00182"></a>00182             }
+<a name="l00183"></a>00183             <span class="keywordflow">if</span> (this.<a class="code" href="class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5" title="If true, the appropriate extension for the encoding format will be added to the destination path...">AddFileExtension</a>) path = path + <span class="stringliteral">&quot;.&lt;ext&gt;&quot;</span>;
+<a name="l00184"></a>00184             path = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a9be7ad795b3c8b14fea7e566806f597b" title="Replaces variables in paths with their values. Ex. ~/uploads/thumbs/&lt;guid&gt;.&lt;ext&gt;. Standard variables are ...">ResolveVariablesInPath</a>(path, delegate(<span class="keywordtype">string</span> p) {
+<a name="l00185"></a>00185                 <span class="comment">//Let the &#39;resolver&#39; passed to this method take precedence - we provide default values.</span>
+<a name="l00186"></a>00186                 <span class="keywordtype">string</span> result = resolver(p);
+<a name="l00187"></a>00187                 <span class="keywordflow">if</span> (result != null) <span class="keywordflow">return</span> result;
+<a name="l00188"></a>00188                 <span class="comment">//GUID in lowercase hexadecimal with no hyphens</span>
+<a name="l00189"></a>00189                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;guid&quot;</span>.Equals(p, StringComparison.OrdinalIgnoreCase))
+<a name="l00190"></a>00190                     <span class="keywordflow">return</span> Guid.NewGuid().ToString(<span class="stringliteral">&quot;N&quot;</span>, NumberFormatInfo.InvariantInfo); 
+<a name="l00191"></a>00191                 <span class="comment">//Access to the settings collection</span>
+<a name="l00192"></a>00192                 <span class="keywordtype">string</span> settingsPrefix = <span class="stringliteral">&quot;settings.&quot;</span>;
+<a name="l00193"></a>00193                 <span class="keywordflow">if</span> (p.StartsWith(settingsPrefix, StringComparison.OrdinalIgnoreCase)) {
+<a name="l00194"></a>00194                     <span class="keywordtype">string</span> subName = p.Substring(settingsPrefix.Length);
+<a name="l00195"></a>00195                     <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_image_job.html#ab835a4dde8a2962bbe48182641316cee" title="The image processing settings.">Settings</a>[subName];
+<a name="l00196"></a>00196                 }
+<a name="l00197"></a>00197                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;filename&quot;</span>.Equals(p,StringComparison.OrdinalIgnoreCase)){
+<a name="l00198"></a>00198                     <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a> == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;You cannot use the &lt;filename&gt; variable in a job that does not have a source filename, such as with a Stream or Bitmap instance&quot;</span>);
+<a name="l00199"></a>00199                     <span class="keywordflow">return</span> Path.GetFileNameWithoutExtension(<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a>);
+<a name="l00200"></a>00200                 }
+<a name="l00201"></a>00201                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;dir&quot;</span>.Equals(p, StringComparison.OrdinalIgnoreCase)) {
+<a name="l00202"></a>00202                     <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a> == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;You cannot use the &lt;dir&gt; variable in a job that does not have a source filename, such as with a Stream or Bitmap instance&quot;</span>);
+<a name="l00203"></a>00203                     <span class="keywordflow">return</span> Path.GetDirectoryName(<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a>); <span class="comment">//Just remove the last segment</span>
+<a name="l00204"></a>00204                 }
+<a name="l00205"></a>00205                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;path&quot;</span>.Equals(p, StringComparison.OrdinalIgnoreCase)) {
+<a name="l00206"></a>00206                     <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a> == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;You cannot use the &lt;path&gt; variable in a job that does not have a source filename, such as with a Stream or Bitmap instance&quot;</span>);
+<a name="l00207"></a>00207                     <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a0bf1e4b4833b6ca62efc0ff7c72c93c9" title="Removes the extension from the filename or URL, leaving the querystring intact, where the extension i...">RemoveExtension</a>(<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a>); <span class="comment">//Just remove the last segment</span>
+<a name="l00208"></a>00208                 }
+<a name="l00209"></a>00209                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;originalext&quot;</span>.Equals(p, StringComparison.OrdinalIgnoreCase)) {
+<a name="l00210"></a>00210                     <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a> == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;You cannot use the &lt;originalext&gt; variable in a job that does not have a source filename, such as with a Stream or Bitmap instance&quot;</span>);
+<a name="l00211"></a>00211                     <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a56cb53d101d364eb3b434a89af918335" title="Grabs the last segment of the filename extension. Returns an empty string if there is no extension...">GetExtension</a>(<a class="code" href="class_image_resizer_1_1_image_job.html#abcb3343acc3389bbefeae232b2a26773" title="If &#39;source&#39; contains any path-related data, it is copied into this member for use by format detetctio...">SourcePathData</a>); <span class="comment">//Just remove the last segment</span>
+<a name="l00212"></a>00212                 }
+<a name="l00213"></a>00213                 
+<a name="l00214"></a>00214 
+<a name="l00215"></a>00215                 <span class="keywordflow">return</span> null;
+<a name="l00216"></a>00216             });
+<a name="l00217"></a>00217             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acb4e92f50556202cd20d914384a1965d" title="Returns the physcial mapped path for the specified virtual path if it starts with ~...">MapPathIfAppRelative</a>(path);
+<a name="l00218"></a>00218         }
+<a name="l00219"></a>00219 
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221     }
+<a name="l00222"></a>00222 
+<a name="l00223"></a>00223 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

@@ -15,11 +15,13 @@ digraph G
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
   Node6 [label="ImageResizer.Plugins.Basic.VirtualFolder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html",tooltip="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration."];
   Node1 -> Node7 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
-  Node7 [label="ImageResizer.Plugins.PsdComposer.PsdComposerPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html"];
+  Node7 [label="ImageResizer.Plugins.MongoReader.MongoReaderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin.html"];
   Node1 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
-  Node8 [label="ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html"];
+  Node8 [label="ImageResizer.Plugins.PsdComposer.PsdComposerPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html"];
   Node1 -> Node9 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
-  Node9 [label="ImageResizer.Plugins.S3Reader.S3VirtualPathProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html",tooltip="Allows clients to request objects located on another amazon S3 server through this server..."];
+  Node9 [label="ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html"];
   Node1 -> Node10 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
-  Node10 [label="ImageResizer.Plugins.SqlReader.SqlReaderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html",tooltip="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..."];
+  Node10 [label="ImageResizer.Plugins.S3Reader.S3VirtualPathProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html",tooltip="Allows clients to request objects located on another amazon S3 server through this server..."];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node11 [label="ImageResizer.Plugins.SqlReader.SqlReaderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html",tooltip="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..."];
 }

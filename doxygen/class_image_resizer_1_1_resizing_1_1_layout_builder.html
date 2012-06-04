@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -251,7 +251,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_layout_builder_8cs_source.html#l00105">105</a> of file <a class="el" href="_layout_builder_8cs_source.html">LayoutBuilder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                 {
-            <span class="keywordflow">return</span> AddRing(name, <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a062fe5752402710804fe0368016df808" title="Expands all sides on the specified polygon by the specified offset. Assumes the polygon is concave...">InflatePoly</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#a25cec5c2a949a13ac66102e713d07db4" title="Returns the last ring that was added. Only returns PointSets where flags = Ring.">LastRing</a>.points, padding.GetEdgeOffsets()));
+            <span class="keywordflow">return</span> AddRing(name, <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a062fe5752402710804fe0368016df808" title="Expands all sides on the specified polygon by the specified offset. Assumes the polygon is concave...">InflatePoly</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#a25cec5c2a949a13ac66102e713d07db4" title="Returns the last ring that was added. Only returns PointSets where flags = Ring.">LastRing</a>.points, padding.GetEdgeOffsets()));
         }
 </pre></div>
 </div>
@@ -275,14 +275,14 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_layout_builder_8cs_source.html#l00127">127</a> of file <a class="el" href="_layout_builder_8cs_source.html">LayoutBuilder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00652">ImageResizer.ImageBuilder.EndLayout()</a>, and <a class="el" href="_size_limiting_8cs_source.html#l00039">ImageResizer.Plugins.Basic.SizeLimiting.PostLayoutImage()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00671">ImageResizer.ImageBuilder.EndLayout()</a>, and <a class="el" href="_size_limiting_8cs_source.html#l00039">ImageResizer.Plugins.Basic.SizeLimiting.PostLayoutImage()</a>.</p>
 <div class="fragment"><pre class="fragment">                                           {
             List&lt;PointF&gt; points = <span class="keyword">new</span> List&lt;PointF&gt;(<a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#a408c4154eda996939cc2db9aaefc85f7" title="An ordered, named collection of polygons. pointsToTranslate, imageOuterEdge, imageAreaOuterEdge.">ring</a>.Count * 5);
 
             <span class="keywordflow">foreach</span> (PointSet val <span class="keywordflow">in</span> ringList) {
                 <span class="keywordflow">if</span> (val.flags == <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ring) points.AddRange(val.points);
             }
-            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(points.ToArray());
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(points.ToArray());
         }
 </pre></div>
 </div>
@@ -313,14 +313,14 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_layout_builder_8cs_source.html#l00152">152</a> of file <a class="el" href="_layout_builder_8cs_source.html">LayoutBuilder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00643">ImageResizer.ImageBuilder.LayoutNormalize()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00662">ImageResizer.ImageBuilder.LayoutNormalize()</a>.</p>
 <div class="fragment"><pre class="fragment">                                             {
             PointF offset = <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#aa648f003522418c8c8a6677a62c1df4e" title="Gets a bounding box that encloses all rings that don&#39;t have ExcludeFromBoundingBox set...">GetBoundingBox</a>().Location;
             offset.X *= -1;
             offset.Y *= -1;
 
             <span class="keywordflow">foreach</span> (PointSet ps <span class="keywordflow">in</span> ringList)
-                <span class="keywordflow">if</span> (ps.flags != <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ignored) ps.points = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a89ce0723e0e08b995245e70f85cff44f" title="Returns a modified version of the array, with each element being offset by the specified amount...">MovePoly</a>(ps.points, offset);
+                <span class="keywordflow">if</span> (ps.flags != <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ignored) ps.points = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a89ce0723e0e08b995245e70f85cff44f" title="Returns a modified version of the array, with each element being offset by the specified amount...">MovePoly</a>(ps.points, offset);
         }
 </pre></div>
 </div>
@@ -362,10 +362,10 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_layout_builder_8cs_source.html#l00141">141</a> of file <a class="el" href="_layout_builder_8cs_source.html">LayoutBuilder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00636">ImageResizer.ImageBuilder.LayoutRotate()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00655">ImageResizer.ImageBuilder.LayoutRotate()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                          {
             <span class="keywordflow">foreach</span> (PointSet ps <span class="keywordflow">in</span> ringList)
-                <span class="keywordflow">if</span> (ps.flags != <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ignored) ps.points = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#ac54dad57faaa778d20e08f721ef5784a" title="Rotates the specified polygon (or set of points) around the origin.">RotatePoly</a>(ps.points, degrees, origin);
+                <span class="keywordflow">if</span> (ps.flags != <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ignored) ps.points = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#ac54dad57faaa778d20e08f721ef5784a" title="Rotates the specified polygon (or set of points) around the origin.">RotatePoly</a>(ps.points, degrees, origin);
         }
 </pre></div>
 </div>
@@ -409,7 +409,7 @@ Properties</h2></td></tr>
 <p>Referenced by <a class="el" href="_size_limiting_8cs_source.html#l00039">ImageResizer.Plugins.Basic.SizeLimiting.PostLayoutImage()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                        {
             <span class="keywordflow">foreach</span> (PointSet ps <span class="keywordflow">in</span> ringList)
-                <span class="keywordflow">if</span> (ps.flags != <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ignored) ps.points = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.ScalePoints(ps.points, factor,factor, origin);
+                <span class="keywordflow">if</span> (ps.flags != <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ignored) ps.points = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.ScalePoints(ps.points, factor,factor, origin);
         }
 </pre></div>
 </div>
@@ -450,7 +450,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_layout_builder_8cs_source.html#l00182">182</a> of file <a class="el" href="_layout_builder_8cs_source.html">LayoutBuilder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                          {
 
             PointF fromOrigin = <span class="keyword">new</span> PointF(from.X + (from.Width /2), from.Y + (from.Height /2));
@@ -462,10 +462,10 @@ Properties</h2></td></tr>
 
             <span class="comment">//Offset points</span>
             <span class="keywordflow">foreach</span> (PointSet ps <span class="keywordflow">in</span> ringList)
-                <span class="keywordflow">if</span> (ps.flags != <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ignored) ps.points = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a89ce0723e0e08b995245e70f85cff44f" title="Returns a modified version of the array, with each element being offset by the specified amount...">MovePoly</a>(ps.points,offset );
+                <span class="keywordflow">if</span> (ps.flags != <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ignored) ps.points = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a89ce0723e0e08b995245e70f85cff44f" title="Returns a modified version of the array, with each element being offset by the specified amount...">MovePoly</a>(ps.points,offset );
             <span class="comment">//Scale points</span>
             <span class="keywordflow">foreach</span> (PointSet ps <span class="keywordflow">in</span> ringList)
-                <span class="keywordflow">if</span> (ps.flags != <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ignored) ps.points = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.ScalePoints(ps.points, xd,yd, toOrigin );
+                <span class="keywordflow">if</span> (ps.flags != <a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#ac9fa4ba31d6af352a07998c72683c386">PointFlags</a>.Ignored) ps.points = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.ScalePoints(ps.points, xd,yd, toOrigin );
         }
 </pre></div>
 </div>
@@ -504,7 +504,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_layout_builder_8cs_source.html#l00078">78</a> of file <a class="el" href="_layout_builder_8cs_source.html">LayoutBuilder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_drop_shadow_8cs_source.html#l00030">ImageResizer.Plugins.Basic.DropShadow.LayoutEffects()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00692">ImageResizer.ImageBuilder.RenderBackground()</a>.</p>
+<p>Referenced by <a class="el" href="_drop_shadow_8cs_source.html#l00032">ImageResizer.Plugins.Basic.DropShadow.LayoutEffects()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00711">ImageResizer.ImageBuilder.RenderBackground()</a>.</p>
 
 </div>
 </div>

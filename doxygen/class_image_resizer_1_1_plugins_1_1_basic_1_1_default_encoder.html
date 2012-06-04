@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -118,7 +118,7 @@ Inheritance diagram for ImageResizer.Plugins.Basic.DefaultEncoder:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder__inherit__graph.png" border="0" usemap="#_image_resizer_8_plugins_8_basic_8_default_encoder_inherit__map" alt="Inheritance graph"/></div>
 <map name="_image_resizer_8_plugins_8_basic_8_default_encoder_inherit__map" id="_image_resizer_8_plugins_8_basic_8_default_encoder_inherit__map">
-<area shape="rect" id="node9" href="class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html" title="ImageResizer.Plugins.WicEncoder.WicEncoderPlugin" alt="" coords="5,198,784,245"/><area shape="rect" id="node2" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec..." alt="" coords="81,6,228,53"/><area shape="rect" id="node4" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="253,6,536,53"/><area shape="rect" id="node6" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="561,6,679,53"/></map>
+<area shape="rect" id="node9" href="class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html" title="ImageResizer.Plugins.WicEncoder.WicEncoderPlugin" alt="" coords="1027,39,1805,86"/><area shape="rect" id="node11" href="class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_encoder_plugin.html" title="ImageResizer.Plugins.WpfBuilder.WpfEncoderPlugin" alt="" coords="1033,110,1799,157"/><area shape="rect" id="node2" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec..." alt="" coords="73,5,221,51"/><area shape="rect" id="node4" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="5,75,288,122"/><area shape="rect" id="node6" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="87,146,206,193"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for ImageResizer.Plugins.Basic.DefaultEncoder:</div>
@@ -191,7 +191,7 @@ Properties</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Provides basic encoding functionality for Jpeg, png, and gif output. Allows adjustable Jpeg compression, but doesn't implement indexed PNG files or quantized GIF files. </p>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00017">17</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00018">18</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a67f233f3924322f3fd0c6c26c68ac27d"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::DefaultEncoder::CreateIfSuitable" ref="a67f233f3924322f3fd0c6c26c68ac27d" args="(ResizeSettings settings, object original)" -->
 <div class="memitem">
@@ -230,9 +230,9 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#ad63c950ef185945b7e1d9bab7a094354">ImageResizer.Encoding.IEncoder</a>.</p>
 
-<p>Reimplemented in <a class="el" href="class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html#a1f3770cad37cc193c2108e92a9c85f26">ImageResizer.Plugins.WicEncoder.WicEncoderPlugin</a>.</p>
+<p>Reimplemented in <a class="el" href="class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html#a1f3770cad37cc193c2108e92a9c85f26">ImageResizer.Plugins.WicEncoder.WicEncoderPlugin</a>, and <a class="el" href="class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_encoder_plugin.html#ad222594d1a45a2905bdbd31f0cfb5501">ImageResizer.Plugins.WpfBuilder.WpfEncoderPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00050">50</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00051">51</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                           {
             ImageFormat requestedFormat = <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a6112f4c23eeeda6ce64653aa01f072c2" title="Tries to parse an ImageFormat from the settings.Format value. If an unrecogized format is specified...">GetRequestedFormat</a>(settings.Format, ImageFormat.Jpeg);
             <span class="keywordflow">if</span> (requestedFormat == null || !<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a2d902a027342c566ff12e3b9336f9e81" title="Returns true if the this encoder supports the specified image format.">IsValidOutputFormat</a>(requestedFormat)) <span class="keywordflow">return</span> null; <span class="comment">//An unsupported format was explicitly specified.</span>
@@ -265,9 +265,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00260">260</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00261">261</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_request_action_8cs_source.html#l00140">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_image_request_action_8cs_source.html#l00144">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordflow">if</span> (format == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentNullException();
 
@@ -314,7 +314,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00183">183</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00184">184</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             lock (_syncExts) {
                 <span class="keywordflow">foreach</span> (KeyValuePair&lt;string, ImageFormat&gt; p <span class="keywordflow">in</span> imageExtensions) {
@@ -350,7 +350,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00286">286</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00287">287</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                       {
             ImageCodecInfo[] info = ImageCodecInfo.GetImageEncoders();
             <span class="keywordflow">foreach</span> (ImageCodecInfo ici <span class="keywordflow">in</span> info)
@@ -384,9 +384,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00230">230</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00231">231</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_request_action_8cs_source.html#l00140">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, <a class="el" href="_default_encoder_8cs_source.html#l00131">ImageResizer.Plugins.Basic.DefaultEncoder.GetRequestedFormat()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_image_request_action_8cs_source.html#l00144">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, <a class="el" href="_default_encoder_8cs_source.html#l00132">ImageResizer.Plugins.Basic.DefaultEncoder.GetRequestedFormat()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(ext)) <span class="keywordflow">return</span> null;
             lock (_syncExts) {
@@ -422,9 +422,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00172">172</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00173">173</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_default_encoder_8cs_source.html#l00148">ImageResizer.Plugins.Basic.DefaultEncoder.GetOriginalFormat()</a>.</p>
+<p>Referenced by <a class="el" href="_default_encoder_8cs_source.html#l00149">ImageResizer.Plugins.Basic.DefaultEncoder.GetOriginalFormat()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a0a8c27e25a65aba24098a7f70dc09f2e" title="Returns an ImageFormat instance from the specfied file extension. Extensions lie sometimes, just a guess. returns null if not recognized.">GetImageFormatFromExtension</a>(System.IO.Path.GetExtension(path));
         }
@@ -455,7 +455,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00148">148</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00149">149</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                     {
             <span class="keywordflow">if</span> (original == null) <span class="keywordflow">return</span> null;
             <span class="comment">//Try to parse the original file extension first.</span>
@@ -512,9 +512,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00131">131</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00132">132</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_wic_encoder_8cs_source.html#l00075">ImageResizer.Plugins.WicEncoder.WicEncoderPlugin.CreateIfSuitable()</a>, and <a class="el" href="_free_image_encoder_8cs_source.html#l00080">ImageResizer.Plugins.FreeImageEncoder.FreeImageEncoderPlugin.CreateIfSuitable()</a>.</p>
+<p>Referenced by <a class="el" href="_wic_encoder_8cs_source.html#l00075">ImageResizer.Plugins.WicEncoder.WicEncoderPlugin.CreateIfSuitable()</a>, and <a class="el" href="_free_image_encoder_8cs_source.html#l00081">ImageResizer.Plugins.FreeImageEncoder.FreeImageEncoderPlugin.CreateIfSuitable()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                              {
             ImageFormat f = null;
             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(format)) {
@@ -547,7 +547,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html#aaa1c43be9b92caf1f1caa81dc9e9f4bf">ImageResizer.Plugins.IQuerystringPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00384">384</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00385">385</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                         {
             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;quality&quot;</span>, <span class="stringliteral">&quot;format&quot;</span>, <span class="stringliteral">&quot;thumbnail&quot;</span> };
         }
@@ -578,7 +578,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00072">72</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00073">73</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                       {
             <span class="keywordflow">return</span> (ImageFormat.Gif.Equals(f) || ImageFormat.Png.Equals(f) || ImageFormat.Jpeg.Equals(f));
         }
@@ -626,7 +626,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00302">302</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00303">303</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                         {
 <span class="preprocessor">            #region Encoder paramater notes</span>
 <span class="preprocessor"></span>            <span class="comment">//image/jpeg</span>
@@ -702,9 +702,9 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00347">347</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00348">348</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_pretty_gifs_8cs_source.html#l00126">ImageResizer.Plugins.PrettyGifs.PrettyGifs.Write()</a>.</p>
+<p>Referenced by <a class="el" href="_pretty_gifs_8cs_source.html#l00128">ImageResizer.Plugins.PrettyGifs.PrettyGifs.Write()</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordflow">if</span> (!target.CanSeek) {
                 <span class="comment">//Write to an intermediate, seekable memory stream (PNG compression requires it)</span>
@@ -755,7 +755,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00091">91</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00092">92</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                           {
             <span class="keywordflow">if</span> (ImageFormat.Jpeg.Equals(<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a05e01400cc770d28d70261b0935d9b13" title="If you set this to anything other than Gif, Png, or Jpeg, it will throw an exception. Defaults to Jpeg.">OutputFormat</a>)) <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a00f0d540dc7b93015a9ef435a37a3e30" title="Saves the specified image to the specified stream using jpeg compression of the specified quality...">SaveJpeg</a>(image, s, this.<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#aa82bfe2e02917c4c259cb812bcf4e47d" title="0..100 value. The Jpeg compression quality. 90 is the best setting. Not relevant in Png or Gif compre...">Quality</a>);
             <span class="keywordflow">else</span> <span class="keywordflow">if</span> (ImageFormat.Png.Equals(<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a05e01400cc770d28d70261b0935d9b13" title="If you set this to anything other than Gif, Png, or Jpeg, it will throw an exception. Defaults to Jpeg.">OutputFormat</a>)) <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a0f22c5561167bc2644cb0557c456d2b2">SavePng</a>(image, s);
@@ -780,7 +780,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#ad7da126e6577cc319df398bf04949859">ImageResizer.Encoding.IEncoder</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00115">115</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00116">116</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 
 </div>
 </div>
@@ -799,7 +799,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#a7cbe10dac3c2bad04d088ae6f20e4180">ImageResizer.Encoding.IEncoder</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00109">109</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00110">110</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 
 </div>
 </div>
@@ -816,7 +816,7 @@ Properties</h2></td></tr>
 
 <p>If you set this to anything other than Gif, Png, or Jpeg, it will throw an exception. Defaults to Jpeg. </p>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00060">60</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00061">61</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 
 </div>
 </div>
@@ -833,7 +833,7 @@ Properties</h2></td></tr>
 
 <p>0..100 value. The Jpeg compression quality. 90 is the best setting. Not relevant in Png or Gif compression </p>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00081">81</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00082">82</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 
 </div>
 </div>
@@ -852,7 +852,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#adb440f5f1d5b9a4ba55df65163cc8c40">ImageResizer.Encoding.IEncoder</a>.</p>
 
-<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00100">100</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_default_encoder_8cs_source.html#l00101">101</a> of file <a class="el" href="_default_encoder_8cs_source.html">DefaultEncoder.cs</a>.</p>
 
 </div>
 </div>

@@ -1,8 +1,0 @@
-digraph G
-{
-  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
-  node [fontname="Helvetica",fontsize="24",shape=record];
-  Node1 [label="ImageResizer.Configuration.Logging.ILoggerProvider",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
-  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
-  Node2 [label="ImageResizer.Plugins.DiskCache.DiskCache",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html",tooltip="Provides methods for creating, maintaining, and securing the disk cache."];
-}

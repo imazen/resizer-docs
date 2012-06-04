@@ -3,5 +3,5 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.Watermark.DistanceUnit",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html"];
+  Node1 [label="ImageResizer.Plugins.PsdComposer.MemCachedFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_mem_cached_file.html",tooltip="Caches a file in memory using the asp.net Cache object, while exposing methods for adding subkeys tha..."];
 }

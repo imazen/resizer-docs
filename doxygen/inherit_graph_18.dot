@@ -3,5 +3,5 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.AnimatedGifs.GifClass",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_animated_gifs_1_1_gif_class.html",tooltip="Dissects a GIF image into its component parts."];
+  Node1 [label="ImageResizer.ExtensionMethods.StreamExtensions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_extension_methods_1_1_stream_extensions.html",tooltip="Provides extension methods for copying streams."];
 }

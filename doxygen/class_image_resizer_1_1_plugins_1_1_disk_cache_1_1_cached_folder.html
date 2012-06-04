@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -173,8 +173,7 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the 'files' dictionary to match the files that exist on disk. Uses the accessedUtc values from the previous dictionary if they are newer.  <a href="#a726f342acc9d517e02692c9c76f49177"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a16fdff725eca40669b0f6fd0b49b80b8">roughCompare</a> (DateTime d1, DateTime d2)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if both dates are equal to the nearest 200th of a second.  <a href="#a16fdff725eca40669b0f6fd0b49b80b8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2b74e16b18e9f3ec0637bf07af181b4f"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CachedFolder::checkRelativePath" ref="a2b74e16b18e9f3ec0637bf07af181b4f" args="(string relativePath)" -->
-string&#160;</td><td class="memItemRight" valign="bottom"><b>checkRelativePath</b> (string relativePath)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a2b74e16b18e9f3ec0637bf07af181b4f">checkRelativePath</a> (string relativePath)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa7e4fb90d353ebd097e4724896c491ed"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CachedFolder::_sync" ref="aa7e4fb90d353ebd097e4724896c491ed" args="" -->
@@ -228,7 +227,7 @@ Events</h2></td></tr>
 
 <p>Referenced by <a class="el" href="_cached_folder_8cs_source.html#l00114">ImageResizer.Plugins.DiskCache.CachedFolder.bumpDateIfExists()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                          {
-            relativePath = checkRelativePath(relativePath);
+            relativePath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a2b74e16b18e9f3ec0637bf07af181b4f">checkRelativePath</a>(relativePath);
             lock (_sync) {
                 <span class="keywordtype">int</span> slash = relativePath.IndexOf(<span class="charliteral">&#39;/&#39;</span>);
                 <span class="keywordflow">if</span> (slash &lt; 0) {
@@ -247,6 +246,39 @@ Events</h2></td></tr>
                     <span class="keywordflow">return</span> f.bumpDateIfExists(relativePath.Substring(slash + 1));
                 }
             }
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a2b74e16b18e9f3ec0637bf07af181b4f"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CachedFolder::checkRelativePath" ref="a2b74e16b18e9f3ec0637bf07af181b4f" args="(string relativePath)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a2b74e16b18e9f3ec0637bf07af181b4f">ImageResizer.Plugins.DiskCache.CachedFolder.checkRelativePath</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>relativePath</em></td><td>)</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">relativePath</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_cached_folder_8cs_source.html#l00399">399</a> of file <a class="el" href="_cached_folder_8cs_source.html">CachedFolder.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                {
+            <span class="keywordflow">if</span> (relativePath == null) <span class="keywordflow">return</span> relativePath;
+            <span class="keywordflow">if</span> (relativePath.StartsWith(<span class="stringliteral">&quot;/&quot;</span>) || relativePath.EndsWith(<span class="stringliteral">&quot;/&quot;</span>)) {
+                Debug.WriteLine(<span class="stringliteral">&quot;Invalid relativePath value - should never have leading slash!&quot;</span>);
+            }
+            <span class="keywordflow">return</span> relativePath;
         }
 </pre></div>
 </div>
@@ -279,7 +311,7 @@ Events</h2></td></tr>
 
 <p>Referenced by <a class="el" href="_cached_folder_8cs_source.html#l00059">ImageResizer.Plugins.DiskCache.CachedFolder.getCachedFileInfo()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                             {
-            relativePath = checkRelativePath(relativePath);
+            relativePath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a2b74e16b18e9f3ec0637bf07af181b4f">checkRelativePath</a>(relativePath);
             lock (_sync) {
                 <span class="keywordtype">int</span> slash = relativePath.IndexOf(<span class="charliteral">&#39;/&#39;</span>);
                 <span class="keywordflow">if</span> (slash &lt; 0) {
@@ -336,7 +368,7 @@ Events</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_cached_folder_8cs_source.html#l00142">142</a> of file <a class="el" href="_cached_folder_8cs_source.html">CachedFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                            {
-            relativePath = checkRelativePath(relativePath);
+            relativePath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a2b74e16b18e9f3ec0637bf07af181b4f">checkRelativePath</a>(relativePath);
             lock (_sync) {
                 CachedFileInfo f = <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#ae6c1ec0345552f98cdd1dd5058f92e11" title="Returns null if (a) the file doesn&#39;t exist, or (b) the file isn&#39;t populated. Calling code should alwa...">getCachedFileInfo</a>(relativePath);
                 <span class="comment">//On cache miss or no file</span>
@@ -389,7 +421,7 @@ Events</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_cached_folder_8cs_source.html#l00163">163</a> of file <a class="el" href="_cached_folder_8cs_source.html">CachedFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                         {
-            relativePath = checkRelativePath(relativePath);
+            relativePath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a2b74e16b18e9f3ec0637bf07af181b4f">checkRelativePath</a>(relativePath);
             <span class="keywordtype">bool</span> fireEvent = <span class="keyword">false</span>;
             CachedFileInfo f = null;
             lock (_sync) {
@@ -681,7 +713,7 @@ Events</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_cached_folder_8cs_source.html#l00335">335</a> of file <a class="el" href="_cached_folder_8cs_source.html">CachedFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                               {
-            relativePath = checkRelativePath(relativePath);
+            relativePath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a2b74e16b18e9f3ec0637bf07af181b4f">checkRelativePath</a>(relativePath);
             <span class="keywordtype">string</span>[] physicalFiles = null;
             <span class="keywordflow">try</span> {
                 physicalFiles = System.IO.Directory.GetFiles(physicalPath);
@@ -748,7 +780,7 @@ Events</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_cached_folder_8cs_source.html#l00308">308</a> of file <a class="el" href="_cached_folder_8cs_source.html">CachedFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                    {
-            relativePath = checkRelativePath(relativePath);
+            relativePath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a2b74e16b18e9f3ec0637bf07af181b4f">checkRelativePath</a>(relativePath);
             <span class="keywordtype">string</span>[] dirs = null;
             <span class="keywordflow">try</span> {
                  dirs = System.IO.Directory.GetDirectories(physicalPath);
@@ -800,8 +832,8 @@ Events</h2></td></tr>
 <p>Returns true if both dates are equal to the nearest 200th of a second. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">modifiedOn</td><td></td></tr>
-    <tr><td class="paramname">dateTime</td><td></td></tr>
+    <tr><td class="paramname">d1</td><td></td></tr>
+    <tr><td class="paramname">d2</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -850,7 +882,7 @@ Events</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_cached_folder_8cs_source.html#l00084">84</a> of file <a class="el" href="_cached_folder_8cs_source.html">CachedFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                        {
-            relativePath = checkRelativePath(relativePath);
+            relativePath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html#a2b74e16b18e9f3ec0637bf07af181b4f">checkRelativePath</a>(relativePath);
             lock (_sync) {
                 <span class="keywordtype">int</span> slash = relativePath.IndexOf(<span class="charliteral">&#39;/&#39;</span>);
                 <span class="keywordflow">if</span> (slash &lt; 0) {

@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -192,32 +192,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00109"></a>00109                     q[<span class="stringliteral">&quot;borderWidth&quot;</span>] = q[<span class="stringliteral">&quot;border&quot;</span>];
 <a name="l00110"></a>00110                     q.Remove(<span class="stringliteral">&quot;border&quot;</span>);
 <a name="l00111"></a>00111                 }
-<a name="l00112"></a>00112             } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (c.Pipeline.IsAcceptedImageType(c.Pipeline.PreRewritePath) || c.Pipeline.SkipFileTypeCheck){
-<a name="l00113"></a>00113                 <span class="comment">//BetterImageProcessor and DynamicImageProcessor uses a Handler registered to all Jpeg images. Just the image URL plus ?w= and/or ?h=</span>
-<a name="l00114"></a>00114                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(context.Request.QueryString[<span class="stringliteral">&quot;w&quot;</span>]) || !<span class="keywordtype">string</span>.IsNullOrEmpty(context.Request.QueryString[<span class="stringliteral">&quot;h&quot;</span>])) {
-<a name="l00115"></a>00115                     c.Pipeline.ModifiedQueryString[<span class="stringliteral">&quot;width&quot;</span>] = c.Pipeline.ModifiedQueryString[<span class="stringliteral">&quot;w&quot;</span>];
-<a name="l00116"></a>00116                     c.Pipeline.ModifiedQueryString[<span class="stringliteral">&quot;height&quot;</span>] = c.Pipeline.ModifiedQueryString[<span class="stringliteral">&quot;h&quot;</span>];
-<a name="l00117"></a>00117                     c.Pipeline.ModifiedQueryString.Remove(<span class="stringliteral">&quot;w&quot;</span>);
-<a name="l00118"></a>00118                     c.Pipeline.ModifiedQueryString.Remove(<span class="stringliteral">&quot;h&quot;</span>);
-<a name="l00119"></a>00119                     <span class="comment">//Note - the module will not lose aspect ratio even though BIP does. Although implemented for other syntaxes, </span>
-<a name="l00120"></a>00120                     <span class="comment">// this syntax (w/h) may eventually be adopted by the image resizer, so we don&#39;t want issues down the road.</span>
-<a name="l00121"></a>00121                 }
-<a name="l00122"></a>00122                 
-<a name="l00123"></a>00123 
-<a name="l00124"></a>00124             }
-<a name="l00125"></a>00125         }
-<a name="l00126"></a>00126 
-<a name="l00127"></a>00127        
-<a name="l00128"></a>00128         
-<a name="l00129"></a>00129 
-<a name="l00130"></a>00130         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
-<a name="l00131"></a>00131             c.Plugins.remove_plugin(<span class="keyword">this</span>);
-<a name="l00132"></a>00132             c.Pipeline.PostAuthorizeRequestStart -= Pipeline_PostAuthorizeRequestStart;
-<a name="l00133"></a>00133             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00134"></a>00134         }
-<a name="l00135"></a>00135 
-<a name="l00136"></a>00136     }
-<a name="l00137"></a>00137 }
+<a name="l00112"></a>00112             } 
+<a name="l00113"></a>00113             <span class="comment">//Feb. 20 - removed this, as the w/h syntax has already been adopted by the image resizer, and this code was breaking URLs when both w and height or h and width were used togehter.</span>
+<a name="l00114"></a>00114             <span class="comment">//else if (c.Pipeline.IsAcceptedImageType(c.Pipeline.PreRewritePath) || c.Pipeline.SkipFileTypeCheck){</span>
+<a name="l00115"></a>00115             <span class="comment">//    //BetterImageProcessor and DynamicImageProcessor uses a Handler registered to all Jpeg images. Just the image URL plus ?w= and/or ?h=</span>
+<a name="l00116"></a>00116             <span class="comment">//    if (!string.IsNullOrEmpty(context.Request.QueryString[&quot;w&quot;]) || !string.IsNullOrEmpty(context.Request.QueryString[&quot;h&quot;])) {</span>
+<a name="l00117"></a>00117             <span class="comment">//        c.Pipeline.ModifiedQueryString[&quot;width&quot;] = c.Pipeline.ModifiedQueryString[&quot;w&quot;];</span>
+<a name="l00118"></a>00118             <span class="comment">//        c.Pipeline.ModifiedQueryString[&quot;height&quot;] = c.Pipeline.ModifiedQueryString[&quot;h&quot;];</span>
+<a name="l00119"></a>00119             <span class="comment">//        c.Pipeline.ModifiedQueryString.Remove(&quot;w&quot;);</span>
+<a name="l00120"></a>00120             <span class="comment">//        c.Pipeline.ModifiedQueryString.Remove(&quot;h&quot;);</span>
+<a name="l00121"></a>00121             <span class="comment">//        //Note - the module will not lose aspect ratio even though BIP does. Although implemented for other syntaxes, </span>
+<a name="l00122"></a>00122             <span class="comment">//        // this syntax (w/h) may eventually be adopted by the image resizer, so we don&#39;t want issues down the road.</span>
+<a name="l00123"></a>00123             <span class="comment">//    }</span>
+<a name="l00124"></a>00124                 
+<a name="l00125"></a>00125 
+<a name="l00126"></a>00126             <span class="comment">//}</span>
+<a name="l00127"></a>00127         }
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129        
+<a name="l00130"></a>00130         
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
+<a name="l00133"></a>00133             c.Plugins.remove_plugin(<span class="keyword">this</span>);
+<a name="l00134"></a>00134             c.Pipeline.PostAuthorizeRequestStart -= Pipeline_PostAuthorizeRequestStart;
+<a name="l00135"></a>00135             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00136"></a>00136         }
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138     }
+<a name="l00139"></a>00139 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

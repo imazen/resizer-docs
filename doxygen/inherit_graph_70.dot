@@ -3,5 +3,9 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.SqlReader.SqlReaderSettings",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_settings.html",tooltip="Holds settings used to create a SqlReader."];
+  Node1 [label="ImageResizer.Plugins.PsdComposer.IPsdRenderer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_psd_composer_1_1_i_psd_renderer.html"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="ImageResizer.Plugins.PsdComposer.GraphicsMillRenderer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_graphics_mill_renderer.html",tooltip="An Aurigma.GraphicsMill-based renderer. GraphicsMill was far too limited to do what we needed..."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="ImageResizer.Plugins.PsdComposer.PsdPluginRenderer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_plugin_renderer.html"];
 }

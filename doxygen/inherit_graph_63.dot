@@ -3,5 +3,5 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.PsdComposer.PsdCommandBuilder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_command_builder.html",tooltip="Layer names are case-insensitive. Asterisks can be used as wildcards to specify suffixes, prefixs, and search terms."];
+  Node1 [label="ImageResizer.Plugins.PdfRenderer.Ghostscript.NameValueCollectionExtensions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_name_value_collection_extensions.html"];
 }

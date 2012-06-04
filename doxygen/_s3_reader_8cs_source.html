@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -91,117 +91,180 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 <span class="keyword">using</span> LitS3;
 <a name="l00009"></a>00009 <span class="keyword">using</span> ImageResizer.Configuration.Issues;
 <a name="l00010"></a>00010 <span class="keyword">using</span> System.Security;
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012 <span class="keyword">namespace </span>ImageResizer.Plugins.S3Reader {
-<a name="l00013"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html">00013</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html">S3Reader</a> : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> {
+<a name="l00011"></a>00011 <span class="keyword">using</span> ImageResizer.Util;
+<a name="l00012"></a>00012 <span class="keyword">using</span> System.Web;
+<a name="l00013"></a>00013 <span class="keyword">using</span> ImageResizer.ExtensionMethods;
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015         <span class="keywordtype">string</span> buckets, vpath;
-<a name="l00016"></a>00016         <span class="keywordtype">bool</span> includeModifiedDate = <span class="keyword">false</span>;
-<a name="l00017"></a>00017         <span class="keywordtype">bool</span> asVpp = <span class="keyword">false</span>;
-<a name="l00018"></a>00018         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html">S3Reader</a>(NameValueCollection args ) {
-<a name="l00019"></a>00019             s3config = <span class="keyword">new</span> S3Service();
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021             buckets = args[<span class="stringliteral">&quot;buckets&quot;</span>];
-<a name="l00022"></a>00022             vpath = args[<span class="stringliteral">&quot;prefix&quot;</span>];
+<a name="l00015"></a>00015 <span class="keyword">namespace </span>ImageResizer.Plugins.S3Reader {
+<a name="l00016"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html">00016</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html">S3Reader</a> : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once...">IMultiInstancePlugin</a> {
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018         <span class="keywordtype">string</span> buckets, vpath;
+<a name="l00019"></a>00019         <span class="keywordtype">bool</span> includeModifiedDate = <span class="keyword">false</span>;
+<a name="l00020"></a>00020         <span class="keywordtype">bool</span> asVpp = <span class="keyword">false</span>;
+<a name="l00021"></a>00021         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html">S3Reader</a>(NameValueCollection args ) {
+<a name="l00022"></a>00022             s3config = <span class="keyword">new</span> S3Service();
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024             asVpp = Util.Utils.getBool(args, <span class="stringliteral">&quot;vpp&quot;</span>, <span class="keyword">true</span>);
-<a name="l00025"></a>00025             s3config.UseSsl = Util.Utils.getBool(args, <span class="stringliteral">&quot;useSsl&quot;</span>, <span class="keyword">false</span>);
-<a name="l00026"></a>00026             s3config.UseSubdomains = Util.Utils.getBool(args, <span class="stringliteral">&quot;useSubdomains&quot;</span>, s3config.UseSubdomains);
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028 
-<a name="l00029"></a>00029             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(args[<span class="stringliteral">&quot;accessKeyId&quot;</span>])) s3config.AccessKeyID = args[<span class="stringliteral">&quot;accessKeyId&quot;</span>];
-<a name="l00030"></a>00030             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(args[<span class="stringliteral">&quot;secretAccessKey&quot;</span>])) s3config.SecretAccessKey = args[<span class="stringliteral">&quot;secretAccessKey&quot;</span>];
+<a name="l00024"></a>00024             buckets = args[<span class="stringliteral">&quot;buckets&quot;</span>];
+<a name="l00025"></a>00025             vpath = args[<span class="stringliteral">&quot;prefix&quot;</span>];
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027             asVpp = args.Get&lt;<span class="keywordtype">bool</span>&gt;( <span class="stringliteral">&quot;vpp&quot;</span>, <span class="keyword">true</span>);
+<a name="l00028"></a>00028             s3config.UseSsl = args.Get&lt;<span class="keywordtype">bool</span>&gt;( <span class="stringliteral">&quot;useSsl&quot;</span>, <span class="keyword">false</span>);
+<a name="l00029"></a>00029             s3config.UseSubdomains = args.Get&lt;<span class="keywordtype">bool</span>&gt;( <span class="stringliteral">&quot;useSubdomains&quot;</span>, s3config.UseSubdomains);
+<a name="l00030"></a>00030 
 <a name="l00031"></a>00031 
-<a name="l00032"></a>00032             
-<a name="l00033"></a>00033 
+<a name="l00032"></a>00032             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(args[<span class="stringliteral">&quot;accessKeyId&quot;</span>])) s3config.AccessKeyID = args[<span class="stringliteral">&quot;accessKeyId&quot;</span>];
+<a name="l00033"></a>00033             if (!<span class="keywordtype">string</span>.IsNullOrEmpty(args[<span class="stringliteral">&quot;secretAccessKey&quot;</span>])) s3config.SecretAccessKey = args[<span class="stringliteral">&quot;secretAccessKey&quot;</span>];
 <a name="l00034"></a>00034 
-<a name="l00035"></a>00035             includeModifiedDate = Util.Utils.getBool(args, <span class="stringliteral">&quot;includeModifiedDate&quot;</span>, includeModifiedDate);
+<a name="l00035"></a>00035             
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037             includeModifiedDate = Util.Utils.getBool(args, <span class="stringliteral">&quot;checkForModifiedFiles&quot;</span>, includeModifiedDate);
-<a name="l00038"></a>00038             
-<a name="l00039"></a>00039         }
-<a name="l00040"></a>00040         <span class="keyword">private</span> S3Service s3config = null;
-<a name="l00041"></a>00041 <span class="comment"></span>
-<a name="l00042"></a>00042 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00043"></a>00043 <span class="comment">        /// Configure S3 authentication and encryption details</span>
-<a name="l00044"></a>00044 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00045"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#a5868222801c0e683d01b5a9f75a6e8e9">00045</a> <span class="comment"></span>        <span class="keyword">public</span> S3Service S3config {
-<a name="l00046"></a>00046             <span class="keyword">get</span> { <span class="keywordflow">return</span> s3config; }
-<a name="l00047"></a>00047             <span class="keyword">set</span> { s3config = value; }
-<a name="l00048"></a>00048         }
-<a name="l00049"></a>00049         <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html" title="Allows clients to request objects located on another amazon S3 server through this server...">S3VirtualPathProvider</a> vpp = null;
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
-<a name="l00052"></a>00052 
-<a name="l00053"></a>00053             <span class="keywordflow">if</span> (vpp != null) <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException(<span class="stringliteral">&quot;This plugin can only be installed once, and cannot be uninstalled and reinstalled.&quot;</span>);
-<a name="l00054"></a>00054 
-<a name="l00055"></a>00055             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(vpath)) vpath = <span class="stringliteral">&quot;~/s3/&quot;</span>;
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038             includeModifiedDate = args.Get&lt;<span class="keywordtype">bool</span>&gt;( <span class="stringliteral">&quot;includeModifiedDate&quot;</span>, includeModifiedDate);
+<a name="l00039"></a>00039 
+<a name="l00040"></a>00040             includeModifiedDate = args.Get&lt;<span class="keywordtype">bool</span>&gt;( <span class="stringliteral">&quot;checkForModifiedFiles&quot;</span>, includeModifiedDate);
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042             RequireImageExtension = args.Get&lt;<span class="keywordtype">bool</span>&gt;( <span class="stringliteral">&quot;requireImageExtension&quot;</span>, RequireImageExtension);
+<a name="l00043"></a>00043             UntrustedData = args.Get&lt;<span class="keywordtype">bool</span>&gt;( <span class="stringliteral">&quot;untrustedData&quot;</span>, UntrustedData);
+<a name="l00044"></a>00044             CacheUnmodifiedFiles = args.Get&lt;<span class="keywordtype">bool</span>&gt;( <span class="stringliteral">&quot;cacheUnmodifiedFiles&quot;</span>, CacheUnmodifiedFiles);
+<a name="l00045"></a>00045             
+<a name="l00046"></a>00046         }
+<a name="l00047"></a>00047         <span class="keyword">private</span> S3Service s3config = null;
+<a name="l00048"></a>00048 <span class="comment"></span>
+<a name="l00049"></a>00049 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00050"></a>00050 <span class="comment">        /// Configure S3 authentication and encryption details</span>
+<a name="l00051"></a>00051 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00052"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#a5868222801c0e683d01b5a9f75a6e8e9">00052</a> <span class="comment"></span>        <span class="keyword">public</span> S3Service S3config {
+<a name="l00053"></a>00053             <span class="keyword">get</span> { <span class="keywordflow">return</span> s3config; }
+<a name="l00054"></a>00054             <span class="keyword">set</span> { s3config = value; }
+<a name="l00055"></a>00055         }
 <a name="l00056"></a>00056 
-<a name="l00057"></a>00057             <span class="keywordtype">string</span>[] bucketArray = null;
-<a name="l00058"></a>00058             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(buckets)) bucketArray = buckets.Split(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;,&#39;</span> }, StringSplitOptions.RemoveEmptyEntries);
-<a name="l00059"></a>00059             <span class="keywordflow">else</span> c.configurationSectionIssues.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;S3Reader&quot;</span>, <span class="stringliteral">&quot;S3Reader cannot function without a list of permitted bucket names.&quot;</span>,
-<a name="l00060"></a>00060                 <span class="stringliteral">&quot;Please specify a comma-delimited list of buckets in the &lt;add name=&#39;S3Reader&#39; buckets=&#39;bucketa,bucketb&#39; /&gt; element.&quot;</span>,
-<a name="l00061"></a>00061                  <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
-<a name="l00062"></a>00062 
-<a name="l00063"></a>00063             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bucketArray.Length; i++)
-<a name="l00064"></a>00064                 bucketArray[i] = bucketArray[i].Trim();
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066 
-<a name="l00067"></a>00067             vpp = <span class="keyword">new</span> S3VirtualPathProvider(delegate(S3VirtualPathProvider s, S3PathEventArgs ev) {
-<a name="l00068"></a>00068                 <span class="keywordflow">if</span> (bucketArray == null) ev.ThrowException();
-<a name="l00069"></a>00069                 ev.AssertBucketMatches(bucketArray);
-<a name="l00070"></a>00070             }, !includeModifiedDate);
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072             
-<a name="l00073"></a>00073             vpp.Service = s3config;
-<a name="l00074"></a>00074 
-<a name="l00075"></a>00075             vpp.VirtualFilesystemPrefix = vpath;
-<a name="l00076"></a>00076            <span class="comment">// vpp.MetadataAbsoluteExpiration</span>
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078             <span class="keywordflow">if</span> (asVpp) {
-<a name="l00079"></a>00079                 <span class="keywordflow">try</span> {
-<a name="l00080"></a>00080                     <span class="comment">//Registers the virtual path provider.</span>
-<a name="l00081"></a>00081                     HostingEnvironment.RegisterVirtualPathProvider(vpp);
-<a name="l00082"></a>00082                 } <span class="keywordflow">catch</span> (SecurityException sx) {
-<a name="l00083"></a>00083                     asVpp = <span class="keyword">false</span>;
-<a name="l00084"></a>00084                     c.configurationSectionIssues.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;S3Reader&quot;</span>, <span class="stringliteral">&quot;S3Reader could not be installed as a VirtualPathProvider due to missing AspNetHostingPermission.&quot;</span>
-<a name="l00085"></a>00085                     ,<span class="stringliteral">&quot;It was installed as an IVirtualImageProvider instead, which means that only image URLs will be accessible, and only if they contain a querystring.\n&quot;</span> +
-<a name="l00086"></a>00086                     <span class="stringliteral">&quot;Set vpp=false to tell S3Reader to register as an IVirtualImageProvider instead. &lt;add name=&#39;S3Reader&#39; vpp=false /&gt;&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
-<a name="l00087"></a>00087                 }
-<a name="l00088"></a>00088             }
-<a name="l00089"></a>00089             <span class="keywordflow">if</span> (!asVpp) {
-<a name="l00090"></a>00090                 c.Plugins.VirtualProviderPlugins.Add(vpp);
-<a name="l00091"></a>00091             }
-<a name="l00092"></a>00092 
-<a name="l00093"></a>00093             <span class="comment">//Register a url default. All incoming urls that point to this reader will automatically have &#39;cache=auto&#39; unless another cache value has been specified.</span>
-<a name="l00094"></a>00094             c.Pipeline.RewriteDefaults += <span class="keyword">new</span> Configuration.UrlRewritingEventHandler(Pipeline_RewriteDefaults);
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058         <span class="keyword">private</span> <span class="keywordtype">bool</span> _requireImageExtension = <span class="keyword">true</span>;<span class="comment"></span>
+<a name="l00059"></a>00059 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00060"></a>00060 <span class="comment">        /// (default true) When false, all URLs inside the PathPrefix folder will be assumed to be images, and will be handled by this plugin.</span>
+<a name="l00061"></a>00061 <span class="comment">        /// You should still use image extensions, otherwise we don&#39;t know what content type to send with the response, and browsers will choke. </span>
+<a name="l00062"></a>00062 <span class="comment">        /// It&#39;s  also the cleanest way to tell the image resizer what kind of file type you&#39;d like back when you request resizing.</span>
+<a name="l00063"></a>00063 <span class="comment">        /// This setting is designed to support non-image file serving from the DB.</span>
+<a name="l00064"></a>00064 <span class="comment">        /// It will also cause conflicts if PathPrefix overlaps with a folder name used for something else.</span>
+<a name="l00065"></a>00065 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00066"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#ae3cbfefc58fb5204adc901d6adfdd5c7">00066</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> RequireImageExtension {
+<a name="l00067"></a>00067             <span class="keyword">get</span> { <span class="keywordflow">return</span> _requireImageExtension; }
+<a name="l00068"></a>00068             <span class="keyword">set</span> { _requireImageExtension = value; }
+<a name="l00069"></a>00069         }
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071         <span class="keyword">private</span> <span class="keywordtype">bool</span> _untrustedData = <span class="keyword">false</span>;<span class="comment"></span>
+<a name="l00072"></a>00072 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00073"></a>00073 <span class="comment">        /// (default: false) When true, all requests will be re-encoded before being served to the client. Invalid or malicious images will fail with an error if they cannot be read as images.</span>
+<a name="l00074"></a>00074 <span class="comment">        /// This should prevent malicious files from being served to the client.</span>
+<a name="l00075"></a>00075 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00076"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#a6025bd7ab1327b8eb6c664bf092f4865">00076</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> UntrustedData {
+<a name="l00077"></a>00077             <span class="keyword">get</span> { <span class="keywordflow">return</span> _untrustedData; }
+<a name="l00078"></a>00078             <span class="keyword">set</span> { _untrustedData = value; }
+<a name="l00079"></a>00079         }
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081         <span class="keyword">private</span> <span class="keywordtype">bool</span> _cacheUnmodifiedFiles = <span class="keyword">true</span>;<span class="comment"></span>
+<a name="l00082"></a>00082 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00083"></a>00083 <span class="comment">        /// (default true). When true, files and unmodified images (i.e, no querystring) will be cached to disk (if they are requested that way) instead of only caching requests for resized images.</span>
+<a name="l00084"></a>00084 <span class="comment">        /// DiskCache plugin must be installed for this to have any effect.</span>
+<a name="l00085"></a>00085 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00086"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#ae6f9607cf76141cb55f6473228d41510">00086</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> CacheUnmodifiedFiles {
+<a name="l00087"></a>00087             <span class="keyword">get</span> { <span class="keywordflow">return</span> _cacheUnmodifiedFiles; }
+<a name="l00088"></a>00088             <span class="keyword">set</span> { _cacheUnmodifiedFiles = value; }
+<a name="l00089"></a>00089         }
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091 
+<a name="l00092"></a>00092         <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html" title="Allows clients to request objects located on another amazon S3 server through this server...">S3VirtualPathProvider</a> vpp = null;
+<a name="l00093"></a>00093 
+<a name="l00094"></a>00094         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
 <a name="l00095"></a>00095 
-<a name="l00096"></a>00096             c.Plugins.add_plugin(<span class="keyword">this</span>);
-<a name="l00097"></a>00097             
-<a name="l00098"></a>00098             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00096"></a>00096             <span class="keywordflow">if</span> (vpp != null) <span class="keywordflow">throw</span> <span class="keyword">new</span> InvalidOperationException(<span class="stringliteral">&quot;This plugin can only be installed once, and cannot be uninstalled and reinstalled.&quot;</span>);
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(vpath)) vpath = <span class="stringliteral">&quot;~/s3/&quot;</span>;
 <a name="l00099"></a>00099 
-<a name="l00100"></a>00100         }
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102         <span class="keywordtype">void</span> Pipeline_RewriteDefaults(System.Web.IHttpModule sender, System.Web.HttpContext context, Configuration.IUrlEventArgs e) {
-<a name="l00103"></a>00103             <span class="comment">//Always request caching for this VPP. Will not override existing values.</span>
-<a name="l00104"></a>00104             <span class="keywordflow">if</span> (vpp.IsPathVirtual(e.VirtualPath)) e.QueryString[<span class="stringliteral">&quot;cache&quot;</span>] = <a class="code" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c" title="When to disk cache the image.">ServerCacheMode</a>.Always.ToString();
-<a name="l00105"></a>00105         }
-<a name="l00106"></a>00106 <span class="comment"></span>
-<a name="l00107"></a>00107 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00108"></a>00108 <span class="comment">        /// This plugin can only be removed if it was installed as an IVirtualImageProvider (vpp=&quot;false&quot;)</span>
-<a name="l00109"></a>00109 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00110"></a>00110 <span class="comment">        /// &lt;param name=&quot;c&quot;&gt;&lt;/param&gt;</span>
-<a name="l00111"></a>00111 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00112"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#a16cd4769ac4eaf71fddb78f4cd1924aa">00112</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#a16cd4769ac4eaf71fddb78f4cd1924aa" title="This plugin can only be removed if it was installed as an IVirtualImageProvider (vpp=&quot;false&quot;)">Uninstall</a>(Configuration.Config c) {
-<a name="l00113"></a>00113             <span class="keywordflow">if</span> (!asVpp) {
-<a name="l00114"></a>00114                 c.Plugins.VirtualProviderPlugins.Remove(vpp);
-<a name="l00115"></a>00115                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00116"></a>00116             }<span class="keywordflow">else</span>
-<a name="l00117"></a>00117             <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00118"></a>00118         }
-<a name="l00119"></a>00119 
-<a name="l00120"></a>00120     }
-<a name="l00121"></a>00121 }
+<a name="l00100"></a>00100             <span class="keywordtype">string</span>[] bucketArray = null;
+<a name="l00101"></a>00101             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(buckets)) bucketArray = buckets.Split(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;,&#39;</span> }, StringSplitOptions.RemoveEmptyEntries);
+<a name="l00102"></a>00102             <span class="keywordflow">else</span> c.configurationSectionIssues.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;S3Reader&quot;</span>, <span class="stringliteral">&quot;S3Reader cannot function without a list of permitted bucket names.&quot;</span>,
+<a name="l00103"></a>00103                 <span class="stringliteral">&quot;Please specify a comma-delimited list of buckets in the &lt;add name=&#39;S3Reader&#39; buckets=&#39;bucketa,bucketb&#39; /&gt; element.&quot;</span>,
+<a name="l00104"></a>00104                  <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106             <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; bucketArray.Length; i++)
+<a name="l00107"></a>00107                 bucketArray[i] = bucketArray[i].Trim();
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110             vpp = <span class="keyword">new</span> S3VirtualPathProvider(delegate(S3VirtualPathProvider s, S3PathEventArgs ev) {
+<a name="l00111"></a>00111                 <span class="keywordflow">if</span> (bucketArray == null) ev.ThrowException();
+<a name="l00112"></a>00112                 ev.AssertBucketMatches(bucketArray);
+<a name="l00113"></a>00113             }, !includeModifiedDate);
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115             
+<a name="l00116"></a>00116             vpp.Service = s3config;
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118             vpp.VirtualFilesystemPrefix = vpath;
+<a name="l00119"></a>00119            <span class="comment">// vpp.MetadataAbsoluteExpiration</span>
+<a name="l00120"></a>00120 
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122             c.Pipeline.PostAuthorizeRequestStart += delegate(IHttpModule sender2, HttpContext context) {
+<a name="l00123"></a>00123                 <span class="comment">//Only work with database images</span>
+<a name="l00124"></a>00124                 <span class="comment">//This allows us to resize database images without putting &quot;.jpg&quot; after the ID in the path.</span>
+<a name="l00125"></a>00125                 <span class="keywordflow">if</span> (!RequireImageExtension &amp;&amp; vpp.IsPathVirtual(c.Pipeline.PreRewritePath))
+<a name="l00126"></a>00126                     c.Pipeline.SkipFileTypeCheck = <span class="keyword">true</span>; <span class="comment">//Skip the file extension check. FakeExtensions will still be stripped.</span>
+<a name="l00127"></a>00127             };
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130             c.Pipeline.RewriteDefaults += delegate(IHttpModule sender, HttpContext context, Configuration.IUrlEventArgs e) {
+<a name="l00131"></a>00131                 <span class="comment">//Only work with database images</span>
+<a name="l00132"></a>00132                 <span class="comment">//Non-images will be served as-is</span>
+<a name="l00133"></a>00133                 <span class="comment">//Cache all file types, whether they are processed or not.</span>
+<a name="l00134"></a>00134                 <span class="keywordflow">if</span> (CacheUnmodifiedFiles &amp;&amp; vpp.IsPathVirtual(e.VirtualPath))
+<a name="l00135"></a>00135                     e.QueryString[<span class="stringliteral">&quot;cache&quot;</span>] = <a class="code" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c" title="When to disk cache the image.">ServerCacheMode</a>.Always.ToString();
+<a name="l00136"></a>00136 
+<a name="l00137"></a>00137 
+<a name="l00138"></a>00138             };
+<a name="l00139"></a>00139             c.Pipeline.PostRewrite += delegate(IHttpModule sender, HttpContext context, Configuration.IUrlEventArgs e) {
+<a name="l00140"></a>00140                 <span class="comment">//Only work with database images</span>
+<a name="l00141"></a>00141                 <span class="comment">//If the data is untrusted, always re-encode each file.</span>
+<a name="l00142"></a>00142                 <span class="keywordflow">if</span> (UntrustedData &amp;&amp; vpp.IsPathVirtual(e.VirtualPath))
+<a name="l00143"></a>00143                     e.QueryString[<span class="stringliteral">&quot;process&quot;</span>] = ImageResizer.ProcessWhen.Always.ToString();
+<a name="l00144"></a>00144 
+<a name="l00145"></a>00145             };
+<a name="l00146"></a>00146             
+<a name="l00147"></a>00147             <span class="keywordflow">if</span> (asVpp) {
+<a name="l00148"></a>00148                 <span class="keywordflow">try</span> {
+<a name="l00149"></a>00149                     <span class="comment">//Registers the virtual path provider.</span>
+<a name="l00150"></a>00150                     HostingEnvironment.RegisterVirtualPathProvider(vpp);
+<a name="l00151"></a>00151                 } <span class="keywordflow">catch</span> (SecurityException) {
+<a name="l00152"></a>00152                     asVpp = <span class="keyword">false</span>;
+<a name="l00153"></a>00153                     c.configurationSectionIssues.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;S3Reader&quot;</span>, <span class="stringliteral">&quot;S3Reader could not be installed as a VirtualPathProvider due to missing AspNetHostingPermission.&quot;</span>
+<a name="l00154"></a>00154                     ,<span class="stringliteral">&quot;It was installed as an IVirtualImageProvider instead, which means that only image URLs will be accessible, and only if they contain a querystring.\n&quot;</span> +
+<a name="l00155"></a>00155                     <span class="stringliteral">&quot;Set vpp=false to tell S3Reader to register as an IVirtualImageProvider instead. &lt;add name=&#39;S3Reader&#39; vpp=false /&gt;&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
+<a name="l00156"></a>00156                 }
+<a name="l00157"></a>00157             }
+<a name="l00158"></a>00158             <span class="keywordflow">if</span> (!asVpp) {
+<a name="l00159"></a>00159                 c.Plugins.VirtualProviderPlugins.Add(vpp);
+<a name="l00160"></a>00160             }
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162             <span class="comment">//</span>
+<a name="l00163"></a>00163             c.Plugins.add_plugin(<span class="keyword">this</span>);
+<a name="l00164"></a>00164             
+<a name="l00165"></a>00165             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167         }
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169 <span class="comment"></span>
+<a name="l00170"></a>00170 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00171"></a>00171 <span class="comment">        /// This plugin can only be removed if it was installed as an IVirtualImageProvider (vpp=&quot;false&quot;)</span>
+<a name="l00172"></a>00172 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00173"></a>00173 <span class="comment">        /// &lt;param name=&quot;c&quot;&gt;&lt;/param&gt;</span>
+<a name="l00174"></a>00174 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00175"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#a16cd4769ac4eaf71fddb78f4cd1924aa">00175</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html#a16cd4769ac4eaf71fddb78f4cd1924aa" title="This plugin can only be removed if it was installed as an IVirtualImageProvider (vpp=&quot;false&quot;)">Uninstall</a>(Configuration.Config c) {
+<a name="l00176"></a>00176             <span class="keywordflow">if</span> (!asVpp) {
+<a name="l00177"></a>00177                 c.Plugins.VirtualProviderPlugins.Remove(vpp);
+<a name="l00178"></a>00178                 <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00179"></a>00179             }<span class="keywordflow">else</span>
+<a name="l00180"></a>00180             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00181"></a>00181         }
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183     }
+<a name="l00184"></a>00184 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

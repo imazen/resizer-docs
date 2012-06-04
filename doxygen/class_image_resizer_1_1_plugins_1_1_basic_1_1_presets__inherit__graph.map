@@ -2,5 +2,5 @@
 <area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="5,6,123,53"/>
 <area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="148,6,431,53"/>
 <area shape="rect" id="node6" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html" title="IIssueProvider" alt="" coords="455,6,677,53"/>
-<area shape="rect" id="node8" href="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="ISettingsModifier" alt="" coords="703,6,961,53"/>
+<area shape="rect" id="node8" href="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to..." alt="" coords="703,6,961,53"/>
 </map>

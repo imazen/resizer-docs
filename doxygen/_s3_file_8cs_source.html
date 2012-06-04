@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00014"></a>00014 
 <a name="l00015"></a><a class="code" href="namespace_image_resizer_1_1_plugins_1_1_s3_reader.html">00015</a> <span class="keyword">namespace </span>ImageResizer.Plugins.<a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html">S3Reader</a> {
 <a name="l00016"></a>00016 
-<a name="l00017"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html">00017</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html">S3File</a> : VirtualFile, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file. Implementing this allows usage of your VirtualProvider without registering it with AS...">IVirtualFile</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html" title="Always implement this if possible. Allows caching systems to detect changes to source files and inval...">IVirtualFileWithModifiedDate</a> {
+<a name="l00017"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html">00017</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html">S3File</a> : VirtualFile, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html" title="Always implement this if possible. Allows caching systems to detect changes to source files and inval...">IVirtualFileWithModifiedDate</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t...">IVirtualFileSourceCacheKey</a> {
 <a name="l00018"></a>00018         <span class="keyword">private</span> <span class="keywordtype">string</span> bucket;
 <a name="l00019"></a>00019         <span class="keyword">private</span> <span class="keywordtype">string</span> key;
 <a name="l00020"></a>00020         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html" title="Allows clients to request objects located on another amazon S3 server through this server...">S3VirtualPathProvider</a> provider;
@@ -208,9 +208,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00125"></a>00125             }
 <a name="l00126"></a>00126         }
 <a name="l00127"></a>00127 
-<a name="l00128"></a>00128     }
-<a name="l00129"></a>00129 }
-<a name="l00130"></a>00130 
+<a name="l00128"></a>00128 
+<a name="l00129"></a>00129         <span class="keyword">public</span> <span class="keywordtype">string</span> GetCacheKey(<span class="keywordtype">bool</span> includeModifiedDate) {
+<a name="l00130"></a>00130             <span class="keywordflow">return</span> VirtualPath + (includeModifiedDate ? (<span class="stringliteral">&quot;_&quot;</span> + ModifiedDateUTC.Ticks.ToString()) : <span class="stringliteral">&quot;&quot;</span>);
+<a name="l00131"></a>00131         }
+<a name="l00132"></a>00132     }
+<a name="l00133"></a>00133 }
+<a name="l00134"></a>00134 
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

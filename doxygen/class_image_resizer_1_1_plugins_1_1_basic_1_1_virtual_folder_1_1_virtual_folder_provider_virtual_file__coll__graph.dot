@@ -6,6 +6,8 @@ digraph G
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
   Node2 [label="IVirtualFileWithModifiedDate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html",tooltip="Always implement this if possible. Allows caching systems to detect changes to source files and inval..."];
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
-  Node3 [label="IVirtualFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html",tooltip="A virtual file. Implementing this allows usage of your VirtualProvider without registering it with AS..."];
+  Node3 [label="IVirtualFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html",tooltip="A virtual file to support IVirtualImageProvider."];
   Node3 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="IVirtualFileSourceCacheKey",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html",tooltip="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..."];
 }

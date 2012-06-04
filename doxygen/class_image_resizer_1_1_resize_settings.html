@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -109,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="ImageResizer::ResizeSettings" -->
-<p>Represents the settings which will be used to process the image. Extends NameValueCollection to provide friendly property names for commonly used settings.  
+<p>Represents the settings which will be used to process the image. Extends NameValueCollection to provide friendly property names for commonly used settings. Replaced by the <a class="el" href="class_image_resizer_1_1_instructions.html" title="A name/value collection of image processsing instructions. The successor to ResizeSettings. Just because a key doesn&#39;t have a property wrapper doesn&#39;t mean you can&#39;t use it. i[&quot;key&quot;] = value; isnt&#39; that scary.">Instructions</a> class. Will be removed in V4.0.  
  <a href="class_image_resizer_1_1_resize_settings.html#details">More...</a></p>
 
 <p><a href="class_image_resizer_1_1_resize_settings-members.html">List of all members.</a></p>
@@ -134,6 +134,8 @@ RectangleF&#160;</td><td class="memItemRight" valign="bottom"><b>getCustomCropSo
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string containing all the settings in the class, in querystring form. Use <a class="el" href="class_image_resizer_1_1_resize_settings.html#a3640f24437c4407a87cd6dee1635cae5" title="Returns a querystring with all the settings in this class. Querystring keys and values are URL encode...">ToStringEncoded()</a> to get a URL-safe querystring. This method does not encode commas, spaces, etc.  <a href="#ae919f5cb01b299c62910acee4476dfcf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#a3640f24437c4407a87cd6dee1635cae5">ToStringEncoded</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a querystring with all the settings in this class. Querystring keys and values are URL encoded properly.  <a href="#a3640f24437c4407a87cd6dee1635cae5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#af832044a461bb26a094427db7aa9916d">Normalize</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This method will 'normalize' command aliases to the primary key name and resolve duplicates. w-&gt;width, h-&gt;height, sourceFlip-&gt;sFlip, thumbnail-&gt;format.  <a href="#af832044a461bb26a094427db7aa9916d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23f9c4a449629c5e9fd5edbe8718e841"></a><!-- doxytag: member="ImageResizer::ResizeSettings::get" ref="a23f9c4a449629c5e9fd5edbe8718e841" args="(string name, int defaultValue)" -->
@@ -147,9 +149,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>set</b> (string name,
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#a80001d573cec108c39e5376f6d854993">Width</a><code> [get, set]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">["width"]: Sets the desired width of the image. (minus padding, borders, margins, effects, and rotation). The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches 'width' and 'height'. If both width and height are specified, the image will be 'letterboxed' to match the desired aspect ratio. Use maxwidth/maxheight, crop=auto, or stretch=fill to avoid this behavior.  <a href="#a80001d573cec108c39e5376f6d854993"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">["width"]: Sets the desired width of the image. (minus padding, borders, margins, effects, and rotation). The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches 'width' and 'height'. If both width and height are specified, the image will be 'letterboxed' to match the desired aspect ratio. Change the Mode property to adjust this behavior.  <a href="#a80001d573cec108c39e5376f6d854993"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#a7145aef3affc3244969cad8841359e3f">Height</a><code> [get, set]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">["height"]: Sets the desired height of the image. (minus padding, borders, margins, effects, and rotation) The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches 'width' and 'height'. If both width and height are specified, the image will be 'letterboxed' to match the desired aspect ratio. Use maxwidth/maxheight, crop=auto, or stretch=fill to avoid this behavior.  <a href="#a7145aef3affc3244969cad8841359e3f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">["height"]: Sets the desired height of the image. (minus padding, borders, margins, effects, and rotation) The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches 'width' and 'height'. If both width and height are specified, the image will be 'letterboxed' to match the desired aspect ratio. Change the Mode property to adjust this behavior.  <a href="#a7145aef3affc3244969cad8841359e3f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#a80fd5f97f3264009aa2c2648bb1379d7">MaxWidth</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">["maxwidth"]: Sets the maximum desired width of the image. (minus padding, borders, margins, effects, and rotation). The image may be smaller than this value to maintain aspect ratio when both maxwidth and maxheight are specified.  <a href="#a80fd5f97f3264009aa2c2648bb1379d7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#ac666f0cc3f8bc60bac7a5d82246c7e85">Quality</a><code> [get, set]</code></td></tr>
@@ -167,9 +169,9 @@ Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">RotateFlipType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#a27da93206fc9ebe2834a02d3e5ab62f6">SourceFlip</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">["sFlip"] Allows you to flip the source image vertically, horizontally, or both. Rotation is not supported.  <a href="#a27da93206fc9ebe2834a02d3e5ab62f6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_image_resizer.html#aca52f6f1e90c78a5e5e79c6d709a571c">ScaleMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#ae7fc16e795fb8ebf6423f3df628dc404">Scale</a><code> [get, set]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">["scale"] Whether to downscale, upscale, upscale the canvas, or both upscale or downscale the image as needed. Defaults to DownscaleOnly when maxwidth/maxheight is used, and Both when width/height are used.  <a href="#ae7fc16e795fb8ebf6423f3df628dc404"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">["scale"] Whether to downscale, upscale, upscale the canvas, or both upscale or downscale the image as needed. Defaults to DownscaleOnly. See the DefaultSettings plugin to adjust the default.  <a href="#ae7fc16e795fb8ebf6423f3df628dc404"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_image_resizer.html#ac2f2172bdae0792555449bdc8547b8bc">StretchMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#a2f8c18ab03453a0c9f74a087f206a443">Stretch</a><code> [get, set]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[Depreciated] (Replaced by mode=stretch) Whether to preserve aspect ratio or stretch to fill the bounds.  <a href="#a2f8c18ab03453a0c9f74a087f206a443"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">[Deprecated] (Replaced by mode=stretch) Whether to preserve aspect ratio or stretch to fill the bounds.  <a href="#a2f8c18ab03453a0c9f74a087f206a443"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c">ServerCacheMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#a4522fd631e051dc79ea2615168db0d71">Cache</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">["cache"]: Server caching mode suggestion for the result  <a href="#a4522fd631e051dc79ea2615168db0d71"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a">ProcessWhen</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#ad3807eb3cc2f2f4caf557c44c310cb22">Process</a><code> [get, set]</code></td></tr>
@@ -196,15 +198,15 @@ Properties</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Friendly get/set accessor for the ["borderWidth"] value. Returns BoxPadding.Empty when unspecified.  <a href="#ae5ee543eced4b1d204325b4c598b9002"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#a0eb55968c046e198a3e7928d845316f0">Format</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Like this["format"]. Gets or sets the output file format to use. "png", "jpg", and "gif" are valid values. Returns null if unspecified. When format is not specified, the original format of the image is used (unless it is not a web safe format - jpeg is the fallback in that scenario).  <a href="#a0eb55968c046e198a3e7928d845316f0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae217a2cbadf63630f436cad2f2f711a0"></a><!-- doxytag: member="ImageResizer::ResizeSettings::CropXUnits" ref="ae217a2cbadf63630f436cad2f2f711a0" args="" -->
-double&#160;</td><td class="memItemRight" valign="bottom"><b>CropXUnits</b><code> [get, set]</code></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a069fc190501c2e1348c94dcc19c8ea2c"></a><!-- doxytag: member="ImageResizer::ResizeSettings::CropYUnits" ref="a069fc190501c2e1348c94dcc19c8ea2c" args="" -->
-double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code> [get, set]</code></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#ae217a2cbadf63630f436cad2f2f711a0">CropXUnits</a><code> [get, set]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The width which the X and X2 crop values should be applied. For example, a value of '100' makes X and X2 percentages of the original image width. This can be set to any non-negative value. Very useful for performing cropping when the original image size is unknown. 0 indicates that the crop values are relative to the original size of the image.  <a href="#ae217a2cbadf63630f436cad2f2f711a0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resize_settings.html#a069fc190501c2e1348c94dcc19c8ea2c">CropYUnits</a><code> [get, set]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The width which the Y and Y2 crop values should be applied. For example, a value of '100' makes Y and Y2 percentages of the original image height. This can be set to any non-negative value. Very useful for performing cropping when the original image size is unknown. 0 indicates that the crop values are relative to the original size of the image.  <a href="#a069fc190501c2e1348c94dcc19c8ea2c"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Represents the settings which will be used to process the image. Extends NameValueCollection to provide friendly property names for commonly used settings. </p>
+<div class="textblock"><p>Represents the settings which will be used to process the image. Extends NameValueCollection to provide friendly property names for commonly used settings. Replaced by the <a class="el" href="class_image_resizer_1_1_instructions.html" title="A name/value collection of image processsing instructions. The successor to ResizeSettings. Just because a key doesn&#39;t have a property wrapper doesn&#39;t mean you can&#39;t use it. i[&quot;key&quot;] = value; isnt&#39; that scary.">Instructions</a> class. Will be removed in V4.0. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00016">16</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00019">19</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a365c3ea368d00b6c9bc3eeb108e87821"></a><!-- doxytag: member="ImageResizer::ResizeSettings::ResizeSettings" ref="a365c3ea368d00b6c9bc3eeb108e87821" args="()" -->
 <div class="memitem">
@@ -222,7 +224,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>Creates an empty settings collection. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00021">21</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00024">24</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 <div class="fragment"><pre class="fragment">: base() { }
 </pre></div>
 </div>
@@ -250,7 +252,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00026">26</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00029">29</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 <div class="fragment"><pre class="fragment">: base(col) { }
 </pre></div>
 </div>
@@ -278,8 +280,8 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00031">31</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
-<div class="fragment"><pre class="fragment">: base(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a75ce76cbe824eb05eb74c8ea09883ed1" title="Like ParseQueryString, but permits the leading &#39;?&#39; to be omitted, and semicolons can be substituted f...">ParseQueryStringFriendlyAllowSemicolons</a>(queryString)) { }
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00034">34</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<div class="fragment"><pre class="fragment">: base(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a75ce76cbe824eb05eb74c8ea09883ed1" title="Like ParseQueryString, but permits the leading &#39;?&#39; to be omitted, and semicolons can be substituted f...">ParseQueryStringFriendlyAllowSemicolons</a>(queryString)) { }
 </pre></div>
 </div>
 </div>
@@ -331,10 +333,10 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00040">40</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00043">43</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                       {
-            this.<a class="code" href="class_image_resizer_1_1_resize_settings.html#a80001d573cec108c39e5376f6d854993" title="[&quot;width&quot;]: Sets the desired width of the image. (minus padding, borders, margins, effects, and rotation). The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches &#39;width&#39; and &#39;height&#39;. If both width and height are specified, the image will be &#39;letterboxed&#39; to match the desired aspect ratio. Use maxwidth/maxheight, crop=auto, or stretch=fill to avoid this behavior.">Width</a> = width;
-            this.<a class="code" href="class_image_resizer_1_1_resize_settings.html#a7145aef3affc3244969cad8841359e3f" title="[&quot;height&quot;]: Sets the desired height of the image. (minus padding, borders, margins, effects, and rotation) The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches &#39;width&#39; and &#39;height&#39;. If both width and height are specified, the image will be &#39;letterboxed&#39; to match the desired aspect ratio. Use maxwidth/maxheight, crop=auto, or stretch=fill to avoid this behavior.">Height</a> = height;
+            this.<a class="code" href="class_image_resizer_1_1_resize_settings.html#a80001d573cec108c39e5376f6d854993" title="[&quot;width&quot;]: Sets the desired width of the image. (minus padding, borders, margins, effects, and rotation). The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches &#39;width&#39; and &#39;height&#39;. If both width and height are specified, the image will be &#39;letterboxed&#39; to match the desired aspect ratio. Change the Mode property to adjust this behavior.">Width</a> = width;
+            this.<a class="code" href="class_image_resizer_1_1_resize_settings.html#a7145aef3affc3244969cad8841359e3f" title="[&quot;height&quot;]: Sets the desired height of the image. (minus padding, borders, margins, effects, and rotation) The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches &#39;width&#39; and &#39;height&#39;. If both width and height are specified, the image will be &#39;letterboxed&#39; to match the desired aspect ratio. Change the Mode property to adjust this behavior.">Height</a> = height;
             this.<a class="code" href="class_image_resizer_1_1_resize_settings.html#ae85b8620285cccbd4f5dcd86f862b0db" title="[&quot;mode&quot;]: Sets the fit mode for the image. max, min, pad, crop, carve, stretch">Mode</a> = mode;
             <span class="keywordflow">if</span> (imageFormat != null) this.<a class="code" href="class_image_resizer_1_1_resize_settings.html#a0eb55968c046e198a3e7928d845316f0" title="Like this[&quot;format&quot;]. Gets or sets the output file format to use. &quot;png&quot;, &quot;jpg&quot;, and &quot;gif&quot; are valid va...">Format</a> = imageFormat;
         }
@@ -342,6 +344,32 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="af832044a461bb26a094427db7aa9916d"></a><!-- doxytag: member="ImageResizer::ResizeSettings::Normalize" ref="af832044a461bb26a094427db7aa9916d" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_image_resizer_1_1_resize_settings.html#af832044a461bb26a094427db7aa9916d">ImageResizer.ResizeSettings.Normalize</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>This method will 'normalize' command aliases to the primary key name and resolve duplicates. w-&gt;width, h-&gt;height, sourceFlip-&gt;sFlip, thumbnail-&gt;format. </p>
+
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00396">396</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                {
+            this.<a class="code" href="class_image_resizer_1_1_resize_settings.html#af832044a461bb26a094427db7aa9916d" title="This method will &#39;normalize&#39; command aliases to the primary key name and resolve duplicates. w-&gt;width, h-&gt;height, sourceFlip-&gt;sFlip, thumbnail-&gt;format.">Normalize</a>(<span class="stringliteral">&quot;width&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>)
+                .Normalize(<span class="stringliteral">&quot;height&quot;</span>, <span class="stringliteral">&quot;h&quot;</span>)
+                .Normalize(<span class="stringliteral">&quot;sFlip&quot;</span>, <span class="stringliteral">&quot;sourceFlip&quot;</span>)
+                .Normalize(<span class="stringliteral">&quot;format&quot;</span>, <span class="stringliteral">&quot;thumbnail&quot;</span>);
+        }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a6fbf09424feccb7bc4dc6e20b9fb8b89"></a><!-- doxytag: member="ImageResizer::ResizeSettings::SetDefaultImageFormat" ref="a6fbf09424feccb7bc4dc6e20b9fb8b89" args="(string format)" -->
 <div class="memitem">
 <div class="memproto">
@@ -365,7 +393,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00397">397</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00372">372</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                         {
             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(<span class="keyword">this</span>[<span class="stringliteral">&quot;thumbnail&quot;</span>]) &amp;&amp; <span class="keywordtype">string</span>.IsNullOrEmpty(<span class="keyword">this</span>[<span class="stringliteral">&quot;format&quot;</span>])) <span class="keyword">this</span>[<span class="stringliteral">&quot;format&quot;</span>] = format;
         }
@@ -389,11 +417,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 <p>Returns a string containing all the settings in the class, in querystring form. Use <a class="el" href="class_image_resizer_1_1_resize_settings.html#a3640f24437c4407a87cd6dee1635cae5" title="Returns a querystring with all the settings in this class. Querystring keys and values are URL encode...">ToStringEncoded()</a> to get a URL-safe querystring. This method does not encode commas, spaces, etc. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00406">406</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00381">381</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_layer_8cs_source.html#l00060">ImageResizer.Plugins.Watermark.ImageLayer.GetMemCachedBitmap()</a>.</p>
+<p>Referenced by <a class="el" href="_image_layer_8cs_source.html#l00061">ImageResizer.Plugins.Watermark.ImageLayer.GetMemCachedBitmap()</a>.</p>
 <div class="fragment"><pre class="fragment">                                          {
-            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(<span class="keyword">this</span>,<span class="keyword">false</span>);
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(<span class="keyword">this</span>,<span class="keyword">false</span>);
         }
 </pre></div>
 </div>
@@ -415,9 +443,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 <p>Returns a querystring with all the settings in this class. Querystring keys and values are URL encoded properly. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00413">413</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00388">388</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                         {
-            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(<span class="keyword">this</span>);
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(<span class="keyword">this</span>);
         }
 </pre></div>
 </div>
@@ -446,12 +474,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00122">122</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00130">130</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_simple_filters_8cs_source.html#l00027">ImageResizer.Plugins.SimpleFilters.SimpleFilters.PostCreateImageAttributes()</a>.</p>
+<p>Referenced by <a class="el" href="_simple_filters_8cs_source.html#l00089">ImageResizer.Plugins.SimpleFilters.SimpleFilters.PostCreateImageAttributes()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                          {
-            <span class="keywordflow">foreach</span> (String s <span class="keywordflow">in</span> keys) <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(<span class="keyword">this</span>[s])) <span class="keywordflow">return</span> <span class="keyword">true</span>;
-            <span class="keywordflow">return</span> <span class="keyword">false</span>;
+            <span class="keywordflow">return</span> this.IsOneSpecified(keys);
         }
 </pre></div>
 </div>
@@ -470,9 +497,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>How to anchor the image when cropping or adding whitespace to meet sizing requirements. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00137">137</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00144">144</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
 
 </div>
 </div>
@@ -489,9 +516,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["bgcolor"]: Named and hex values are supported. (rgb and rgba, both 3, 6, and 8 digits). </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00262">262</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00276">276</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_free_image_builder_8cs_source.html#l00123">ImageResizer.Plugins.FreeImageBuilder.FreeImageBuilderPlugin.buildFiBitmap()</a>, <a class="el" href="_wic_builder_8cs_source.html#l00109">ImageResizer.Plugins.WicBuilder.WicBuilderPlugin.BuildJobWic()</a>, <a class="el" href="_image_builder_8cs_source.html#l00692">ImageResizer.ImageBuilder.RenderBackground()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00723">ImageResizer.ImageBuilder.RenderPadding()</a>.</p>
+<p>Referenced by <a class="el" href="_free_image_builder_8cs_source.html#l00123">ImageResizer.Plugins.FreeImageBuilder.FreeImageBuilderPlugin.buildFiBitmap()</a>, <a class="el" href="_wic_builder_8cs_source.html#l00098">ImageResizer.Plugins.WicBuilder.WicBuilderPlugin.BuildJobWic()</a>, <a class="el" href="_image_builder_8cs_source.html#l00711">ImageResizer.ImageBuilder.RenderBackground()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00744">ImageResizer.ImageBuilder.RenderPadding()</a>.</p>
 
 </div>
 </div>
@@ -508,9 +535,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>Friendly get/set accessor for the ["borderWidth"] value. Returns BoxPadding.Empty when unspecified. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00306">306</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00320">320</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00616">ImageResizer.ImageBuilder.LayoutBorder()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00759">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00635">ImageResizer.ImageBuilder.LayoutBorder()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00789">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
 
 </div>
 </div>
@@ -527,9 +554,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>Gets/sets ["borderColor"]. Named and hex values are supported. (rgb and rgba, both 3, 6, and 8 digits). </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00299">299</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00313">313</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00759">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00789">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
 
 </div>
 </div>
@@ -546,9 +573,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["cache"]: Server caching mode suggestion for the result </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00179">179</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00194">194</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_request_action_8cs_source.html#l00140">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_image_request_action_8cs_source.html#l00144">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
 
 </div>
 </div>
@@ -565,7 +592,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["crop"]=(x1,y1,[x2],[y2]). Sets x2 and y2, the bottom-right corner of the crop rectangle. If 1 or greater, the coordinate is relative to the top-left corner of the image. If 0 or less, the value is relative to the bottom-right corner. This allows for easy trimming: crop=(10,10,-10,-10). Set ["cropxunits"] and ["cropyunits"] to the width/height of the rectangle your coordinates are relative to, if different from the original image size. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00250">250</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00264">264</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
 </div>
 </div>
@@ -582,9 +609,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["crop"]=none|auto Defaults to None - letterboxing is used if both width and height are supplied, and stretch = proportionally. Set CropTopLeft and CropBottomRight when you need to specify a custom crop rectangle. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00205">205</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
-
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00220">220</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
 </div>
 </div>
@@ -601,7 +626,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["crop"]=([x1],[y1],x2,y2). Sets x1 and y21, the top-right corner of the crop rectangle. If 0 or greater, the coordinate is relative to the top-left corner of the image. If less than 0, the value is relative to the bottom-right corner. This allows for easy trimming: crop=(10,10,-10,-10). Set ["cropxunits"] and ["cropyunits"] to the width/height of the rectangle your coordinates are relative to, if different from the original image size. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00236">236</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00250">250</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
 </div>
 </div>
@@ -618,7 +643,41 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>4 values specify x1,y1,x2,y2 values for the crop rectangle. Negative values are relative to the bottom right - on a 100x100 picture, (10,10,90,90) is equivalent to (10,10,-10,-10). And (0,0,0,0) is equivalent to (0,0,100,100). </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00213">213</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00234">234</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae217a2cbadf63630f436cad2f2f711a0"></a><!-- doxytag: member="ImageResizer::ResizeSettings::CropXUnits" ref="ae217a2cbadf63630f436cad2f2f711a0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_image_resizer_1_1_resize_settings.html#ae217a2cbadf63630f436cad2f2f711a0">ImageResizer.ResizeSettings.CropXUnits</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The width which the X and X2 crop values should be applied. For example, a value of '100' makes X and X2 percentages of the original image width. This can be set to any non-negative value. Very useful for performing cropping when the original image size is unknown. 0 indicates that the crop values are relative to the original size of the image. </p>
+
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00352">352</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a069fc190501c2e1348c94dcc19c8ea2c"></a><!-- doxytag: member="ImageResizer::ResizeSettings::CropYUnits" ref="a069fc190501c2e1348c94dcc19c8ea2c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="class_image_resizer_1_1_resize_settings.html#a069fc190501c2e1348c94dcc19c8ea2c">ImageResizer.ResizeSettings.CropYUnits</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The width which the Y and Y2 crop values should be applied. For example, a value of '100' makes Y and Y2 percentages of the original image height. This can be set to any non-negative value. Very useful for performing cropping when the original image size is unknown. 0 indicates that the crop values are relative to the original size of the image. </p>
+
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00358">358</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
 </div>
 </div>
@@ -635,9 +694,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>Allows you to flip the entire resulting image vertically, horizontally, or both. Rotation is not supported. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00146">146</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00153">153</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00808">ImageResizer.ImageBuilder.ProcessFinalBitmap()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00838">ImageResizer.ImageBuilder.ProcessFinalBitmap()</a>.</p>
 
 </div>
 </div>
@@ -655,9 +714,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 <p>Like this["format"]. Gets or sets the output file format to use. "png", "jpg", and "gif" are valid values. Returns null if unspecified. When format is not specified, the original format of the image is used (unless it is not a web safe format - jpeg is the fallback in that scenario). </p>
 <p>Also checks the 'thumbnail' value for V2 compatibility. When set, 'thumnail' is removed and only 'format' is used. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00322">322</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00336">336</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_default_encoder_8cs_source.html#l00050">ImageResizer.Plugins.Basic.DefaultEncoder.CreateIfSuitable()</a>, <a class="el" href="_wic_encoder_8cs_source.html#l00075">ImageResizer.Plugins.WicEncoder.WicEncoderPlugin.CreateIfSuitable()</a>, <a class="el" href="_free_image_encoder_8cs_source.html#l00080">ImageResizer.Plugins.FreeImageEncoder.FreeImageEncoderPlugin.CreateIfSuitable()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00040">ImageResizer.ResizeSettings.ResizeSettings()</a>.</p>
+<p>Referenced by <a class="el" href="_default_encoder_8cs_source.html#l00051">ImageResizer.Plugins.Basic.DefaultEncoder.CreateIfSuitable()</a>, <a class="el" href="_wic_encoder_8cs_source.html#l00075">ImageResizer.Plugins.WicEncoder.WicEncoderPlugin.CreateIfSuitable()</a>, <a class="el" href="_free_image_encoder_8cs_source.html#l00081">ImageResizer.Plugins.FreeImageEncoder.FreeImageEncoderPlugin.CreateIfSuitable()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00043">ImageResizer.ResizeSettings.ResizeSettings()</a>.</p>
 
 </div>
 </div>
@@ -672,11 +731,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 </div>
 <div class="memdoc">
 
-<p>["height"]: Sets the desired height of the image. (minus padding, borders, margins, effects, and rotation) The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches 'width' and 'height'. If both width and height are specified, the image will be 'letterboxed' to match the desired aspect ratio. Use maxwidth/maxheight, crop=auto, or stretch=fill to avoid this behavior. </p>
+<p>["height"]: Sets the desired height of the image. (minus padding, borders, margins, effects, and rotation) The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches 'width' and 'height'. If both width and height are specified, the image will be 'letterboxed' to match the desired aspect ratio. Change the Mode property to adjust this behavior. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00074">74</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00077">77</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00040">ImageResizer.ResizeSettings.ResizeSettings()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00043">ImageResizer.ResizeSettings.ResizeSettings()</a>.</p>
 
 </div>
 </div>
@@ -693,9 +752,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["margin"]: Gets/sets the width(s) of the margin outside the image border and effects. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00288">288</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00302">302</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00606">ImageResizer.ImageBuilder.LayoutMargin()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00625">ImageResizer.ImageBuilder.LayoutMargin()</a>.</p>
 
 </div>
 </div>
@@ -712,9 +771,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["maxheight"]: Sets the maximum desired height of the image. (minus padding, borders, margins, effects, and rotation). The image may be smaller than this value to maintain aspect ratio when both maxwidth and maxheight are specified. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00106">106</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00109">109</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
 
 </div>
 </div>
@@ -731,9 +790,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["maxwidth"]: Sets the maximum desired width of the image. (minus padding, borders, margins, effects, and rotation). The image may be smaller than this value to maintain aspect ratio when both maxwidth and maxheight are specified. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00084">84</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00087">87</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
 
 </div>
 </div>
@@ -750,9 +809,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["mode"]: Sets the fit mode for the image. max, min, pad, crop, carve, stretch </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00113">113</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00116">116</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>, <a class="el" href="_default_settings_8cs_source.html#l00053">ImageResizer.Plugins.Basic.DefaultSettings.Modify()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00040">ImageResizer.ResizeSettings.ResizeSettings()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>, <a class="el" href="_default_settings_8cs_source.html#l00053">ImageResizer.Plugins.Basic.DefaultSettings.Modify()</a>, <a class="el" href="_seam_carving_plugin_8cs_source.html#l00092">ImageResizer.Plugins.SeamCarving.SeamCarvingPlugin.PreRenderImage()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00043">ImageResizer.ResizeSettings.ResizeSettings()</a>.</p>
 
 </div>
 </div>
@@ -769,9 +828,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["paddingWidth"]: Gets/sets the width(s) of padding inside the image border. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00277">277</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00291">291</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00596">ImageResizer.ImageBuilder.LayoutPadding()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00615">ImageResizer.ImageBuilder.LayoutPadding()</a>.</p>
 
 </div>
 </div>
@@ -788,9 +847,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>Gets/sets ["paddingColor"]. Named and hex values are supported. (rgb and rgba, both 3, 6, and 8 digits). </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00270">270</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00284">284</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00723">ImageResizer.ImageBuilder.RenderPadding()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00744">ImageResizer.ImageBuilder.RenderPadding()</a>.</p>
 
 </div>
 </div>
@@ -807,9 +866,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["process"]: Server processing suggestion for the result. Allows you to 'disable' processing of the image (so you can use disk caching with non-image files). Allows you to 'force' processing of the image, for images without a querystring. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00191">191</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00206">206</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_request_action_8cs_source.html#l00140">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_image_request_action_8cs_source.html#l00144">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
 
 </div>
 </div>
@@ -826,7 +885,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["quality"]: The jpeg encoding quality to use. (10..100). 90 is the default and best value, you should leave it. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00092">92</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00095">95</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
 </div>
 </div>
@@ -843,9 +902,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["rotate"] The degress to rotate the image clockwise. -360 to 360. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00129">129</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00136">136</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00636">ImageResizer.ImageBuilder.LayoutRotate()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00655">ImageResizer.ImageBuilder.LayoutRotate()</a>.</p>
 
 </div>
 </div>
@@ -860,11 +919,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 </div>
 <div class="memdoc">
 
-<p>["scale"] Whether to downscale, upscale, upscale the canvas, or both upscale or downscale the image as needed. Defaults to DownscaleOnly when maxwidth/maxheight is used, and Both when width/height are used. </p>
+<p>["scale"] Whether to downscale, upscale, upscale the canvas, or both upscale or downscale the image as needed. Defaults to DownscaleOnly. See the DefaultSettings plugin to adjust the default. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00163">163</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00174">174</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>, and <a class="el" href="_default_settings_8cs_source.html#l00053">ImageResizer.Plugins.Basic.DefaultSettings.Modify()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>, and <a class="el" href="_default_settings_8cs_source.html#l00053">ImageResizer.Plugins.Basic.DefaultSettings.Modify()</a>.</p>
 
 </div>
 </div>
@@ -881,9 +940,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 
 <p>["sFlip"] Allows you to flip the source image vertically, horizontally, or both. Rotation is not supported. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00153">153</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00162">162</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00551">ImageResizer.ImageBuilder.PrepareSourceBitmap()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00570">ImageResizer.ImageBuilder.PrepareSourceBitmap()</a>.</p>
 
 </div>
 </div>
@@ -898,11 +957,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 </div>
 <div class="memdoc">
 
-<p>[Depreciated] (Replaced by mode=stretch) Whether to preserve aspect ratio or stretch to fill the bounds. </p>
+<p>[Deprecated] (Replaced by mode=stretch) Whether to preserve aspect ratio or stretch to fill the bounds. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00171">171</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
-
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00184">184</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
 </div>
 </div>
@@ -917,11 +974,11 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>CropYUnits</b><code
 </div>
 <div class="memdoc">
 
-<p>["width"]: Sets the desired width of the image. (minus padding, borders, margins, effects, and rotation). The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches 'width' and 'height'. If both width and height are specified, the image will be 'letterboxed' to match the desired aspect ratio. Use maxwidth/maxheight, crop=auto, or stretch=fill to avoid this behavior. </p>
+<p>["width"]: Sets the desired width of the image. (minus padding, borders, margins, effects, and rotation). The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches 'width' and 'height'. If both width and height are specified, the image will be 'letterboxed' to match the desired aspect ratio. Change the Mode property to adjust this behavior. </p>
 
-<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00061">61</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
+<p>Definition at line <a class="el" href="_resize_settings_8cs_source.html#l00064">64</a> of file <a class="el" href="_resize_settings_8cs_source.html">ResizeSettings.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00865">ImageResizer.ImageBuilder.LayoutImage()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00040">ImageResizer.ResizeSettings.ResizeSettings()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00895">ImageResizer.ImageBuilder.LayoutImage()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00043">ImageResizer.ResizeSettings.ResizeSettings()</a>.</p>
 
 </div>
 </div>

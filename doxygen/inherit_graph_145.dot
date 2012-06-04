@@ -3,5 +3,5 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="SevenZipReduced.DataErrorException",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_seven_zip_reduced_1_1_data_error_exception.html",tooltip="The exception that is thrown when an error in input stream occurs during decoding."];
+  Node1 [label="ImageResizer.ResizeSettings",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_resize_settings.html",tooltip="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..."];
 }

@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -110,6 +110,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="ImageResizer::Util::PathUtils" -->
+<p>A set of utility methods for manipulating virtual paths.  
+ <a href="class_image_resizer_1_1_util_1_1_path_utils.html#details">More...</a></p>
+
 <p><a href="class_image_resizer_1_1_util_1_1_path_utils-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
@@ -119,42 +122,53 @@ Public Member Functions</h2></td></tr>
 <tr><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a6e47130783374c72a73f97760843bb07">SetExtension</a> (string path, string newExtension)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the file extension of the specified path to the specified value, returning the result. If an extension has multiple parts, it will replace all of them. Leading dots will be stripped from 'newExtension' and re-addd as required.  <a href="#a6e47130783374c72a73f97760843bb07"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Should be called SetFullExtension. Sets the file extension of the specified path to the specified value, returning the result. If an extension has multiple parts, it will replace all of them. Leading dots will be stripped from 'newExtension' and re-addd as required. The querystring and fragment is maintained as-is. Semicolon syntax not supported.  <a href="#a6e47130783374c72a73f97760843bb07"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#aa95b20ca2e860fd2b869be26bf8ad816">RemoveFullExtension</a> (string path)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all extension segments from the filename or URL, leaving the querystring intact. I.e, image.jpg.bmp.tiff?hi would be image?hi.  <a href="#aa95b20ca2e860fd2b869be26bf8ad816"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all extension segments from the filename or URL, leaving the querystring intact. I.e, image.jpg.bmp.tiff?hi would be image?hi The querystring and fragment is maintained as-is. Semicolon syntax not supported.  <a href="#aa95b20ca2e860fd2b869be26bf8ad816"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a0bf1e4b4833b6ca62efc0ff7c72c93c9">RemoveExtension</a> (string path)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the extension from the filename or URL, leaving the querystring intact, where the extension is only the last extension segment. I.e, image.jpg.bmp.tiff?hi would be image.jpg.bmp?hi after this call.  <a href="#a0bf1e4b4833b6ca62efc0ff7c72c93c9"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the extension from the filename or URL, leaving the querystring intact, where the extension is only the last extension segment. I.e, image.jpg.bmp.tiff?hi would be image.jpg.bmp?hi after this call. The querystring and fragment is maintained as-is. Semicolon syntax not supported.  <a href="#a0bf1e4b4833b6ca62efc0ff7c72c93c9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a3ba9afa48f4fa28456bcb247921a075a">AddExtension</a> (string path, string newExtension)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the specified extension to path, returning the result. Multiple calls will result in "path.ext.ext.ext.ext". maintains the querystring as-is.  <a href="#a3ba9afa48f4fa28456bcb247921a075a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the specified extension to path, returning the result. Multiple calls will result in "path.ext.ext.ext.ext". The querystring and fragment is maintained as-is. Semicolon syntax not supported.  <a href="#a3ba9afa48f4fa28456bcb247921a075a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a3b381221fbb1e4bd0d5d299c7f0dc550">GetFullExtension</a> (string path)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will return the full extension, like ".jpg.ashx", not just the last bit. Ignores the querystring part. Excludes extensions containing spaces or slashes.  <a href="#a3b381221fbb1e4bd0d5d299c7f0dc550"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Will return the full extension, like ".jpg.ashx", not just the last bit. Excludes extensions containing spaces or slashes. The querystring and fragment is ignored. Semicolon syntax not supported.  <a href="#a3b381221fbb1e4bd0d5d299c7f0dc550"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a56cb53d101d364eb3b434a89af918335">GetExtension</a> (string path)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Ignores the querystring. Grabs the last segment of the filename extension. Returns an empty string if there is no extension, or if the extension contains a space. Includes the leading '.'.  <a href="#a56cb53d101d364eb3b434a89af918335"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Grabs the last segment of the filename extension. Returns an empty string if there is no extension, or if the extension contains a space. Includes the leading '.' The querystring and fragment is ignored. Semicolon syntax not supported.  <a href="#a56cb53d101d364eb3b434a89af918335"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#adafb4cd7d85a3567782842873c1a5176">ResolveAppRelative</a> (string virtualPath)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolves app-relative paths to virtual paths. Does nothing with virtual or relative paths.  <a href="#adafb4cd7d85a3567782842873c1a5176"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a1a7e4faaa93c5b4d1f3652ccfc4dae82">ResolveAppRelativeAssumeAppRelative</a> (string virtualPath)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Turns relative paths into domain-relative paths. Turns app-relative paths into domain relative paths.  <a href="#a1a7e4faaa93c5b4d1f3652ccfc4dae82"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a213e5ba499d364b9f2e2bce592a09af7">AddQueryString</a> (string virtualPath, string querystring)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the path and querystring. If the path already contains a querystring, they are 'append joined' with the correct character.  <a href="#a213e5ba499d364b9f2e2bce592a09af7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Joins the path and querystring. If the path already contains a querystring, they are 'append joined' with the correct character. Fragment is maintained as-is. Does not support the semicolon syntax.  <a href="#a213e5ba499d364b9f2e2bce592a09af7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#aac9a36962f98bb9a948ee41411323ebf">RemoveQueryString</a> (string path)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned. Does not support the semicolon syntax. Fragment is maintained as-is.  <a href="#aac9a36962f98bb9a948ee41411323ebf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#ae552f710cc6327b8508ab4111f75d8c9">MergeOverwriteQueryString</a> (string path, NameValueCollection newQuerystring)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrites exisisting querystring values in 'path' with the values in 'newQuerystring'. Doesn't support ; querystrings.  <a href="#ae552f710cc6327b8508ab4111f75d8c9"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrites exisisting querystring values in 'path' with the values in 'newQuerystring'. Does not support the semicolon syntax.  <a href="#ae552f710cc6327b8508ab4111f75d8c9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a08767ea3c8bee6716bb5484ae78df1da">MergeQueryString</a> (string path, NameValueCollection newQuerystring)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the querystring values in 'newQuerystring' to the querystring in Path, but does not overwrite values. Doesn't support ; querystrings.  <a href="#a08767ea3c8bee6716bb5484ae78df1da"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the querystring values in 'newQuerystring' to the querystring in Path, but does not overwrite values. Does not support the semicolon syntax.  <a href="#a08767ea3c8bee6716bb5484ae78df1da"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755">BuildQueryString</a> (NameValueCollection QueryString)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string querystring in the form "?key=value&amp;amp;key=value". Keys and values are UrlEncoded as they should be.  <a href="#ac50e452cbcb5cea21318669c89632755"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#ae7550f4618ccb5395462c3fb72ea83ab">BuildQueryString</a> (NameValueCollection QueryString, bool urlEncode)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string querystring in the form "?key=value&amp;amp;key=value". Keys and values are UrlEncoded if urlEncode=true.  <a href="#ae7550f4618ccb5395462c3fb72ea83ab"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#aac9a36962f98bb9a948ee41411323ebf">RemoveQueryString</a> (string path)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned.  <a href="#aac9a36962f98bb9a948ee41411323ebf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac7cc17744e07ec56cc745e776146fa89">BuildSemicolonQueryString</a> (NameValueCollection QueryString, bool urlEncode)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a string querystring in the form ";key=value;key=value". Keys and values are UrlEncoded if urlEncode=true.  <a href="#ac7cc17744e07ec56cc745e776146fa89"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a024e41bc8934e30d80aad8a5fbd9e37a">BuildQueryString</a> (NameValueCollection QueryString, bool urlEncode, bool skipNullValues=true, char firstSeparator= '?', char laterSeparators= '&amp;', char equals= '=')</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Build a customized querystring from a NameValueCollection.  <a href="#a024e41bc8934e30d80aad8a5fbd9e37a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a4f54b6e4e17f239fc70eaafd766fc101">ParseQueryStringFriendly</a> (string path)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Like ParseQueryString, but permits the leading '?' to be omitted.  <a href="#a4f54b6e4e17f239fc70eaafd766fc101"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Like ParseQueryString, but permits the leading '?' to be omitted. Does not support the semicolon syntax.  <a href="#a4f54b6e4e17f239fc70eaafd766fc101"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a75ce76cbe824eb05eb74c8ea09883ed1">ParseQueryStringFriendlyAllowSemicolons</a> (string path)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Like ParseQueryString, but permits the leading '?' to be omitted, and semicolons can be substituted for '&amp;'.  <a href="#a75ce76cbe824eb05eb74c8ea09883ed1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d">ParseQueryString</a> (string path)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the querystring from the given path into a NameValueCollection. accepts "file?key=value" and "?key=value&amp;amp;key2=value2" formats. (no path is required) UrlDecodes keys and values.  <a href="#a32087fab410ab49c140bb773f48bb86d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#abed888109176efb4786154e277353764">ParseQueryString</a> (string path, bool allowSemicolons)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the querystring from the given path into a NameValueCollection. accepts "file?key=value" and "?key=value&amp;amp;key2=value2" formats. (no path is required) UrlDecodes keys and values. Does not enforce correct syntax, I.E. '?key=value?key2=value2' is allowed. However, '&amp;key=value?key2=value' will only get key2 parsed. When allowSemicolons is true, semicolon paths like ';key=value;key2=value2' are allowed, as are hybrid paths: ';key=value?key2=value2&amp;key3=value3'.  <a href="#abed888109176efb4786154e277353764"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a7637c1c183e25f5a5d3ec3dd75a759a1">ParseQueryString</a> (string path, bool allowSemicolons, out string beforeQuery, out string fragment)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the querystring from the given path into a NameValueCollection. accepts "file?key=value" and "?key=value&amp;amp;key2=value2" formats. (no path is required) UrlDecodes keys and values. Does not enforce correct syntax, I.E. '?key=value?key2=value2' is allowed. However, '&amp;key=value?key2=value' will only get key2 parsed. When allowSemicolons is true, semicolon paths like ';key=value;key2=value2' are allowed, as are hybrid paths: ';key=value?key2=value2&amp;key3=value3'.  <a href="#a7637c1c183e25f5a5d3ec3dd75a759a1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a479b53b9fcc98b25bd8f25a36f15c084">ParseQueryOnly</a> (string query, bool allowSemicolons=true, bool urlDecode=true)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a querystring into a name/value collection. The given string cannot include path or fragment information - it must be *just* the querystring.  <a href="#a479b53b9fcc98b25bd8f25a36f15c084"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#acc45f67bc1e770b2971878b809d3a98e">ToBase64U</a> (byte[] data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ instead of /)  <a href="#acc45f67bc1e770b2971878b809d3a98e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#aefb5e8343a4b516f0b74814f6970ca74">FromBase64UToButes</a> (string data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a URL-safe version of base64 to a byte array. (no = padding, with - instead of + and _ instead of /)  <a href="#aefb5e8343a4b516f0b74814f6970ca74"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a6943e50a715d4daf25cb6aa6e07d1a0a">FromBase64UToBytes</a> (string data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a URL-safe version of base64 to a byte array. (no = padding, with - instead of + and _ instead of /)  <a href="#a6943e50a715d4daf25cb6aa6e07d1a0a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#abf274218eee80708f27069549777bc38">ToBase64U</a> (string data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts aribtrary strings to a URL-safe version of base64 (no = padding, with - instead of + and _ instead of /)  <a href="#abf274218eee80708f27069549777bc38"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a5ffc6a49feee3133b31fdd4adeaef151">FromBase64UToString</a> (string data)</td></tr>
@@ -167,6 +181,10 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to guess the virtual path from physical path. Will be thrwarted if the path is mapped as a virtual folder inside the application. If the path is a non-physical path, it will be returned as is. Returns null if the physical path isn't a subfolder of the application's physical path.  <a href="#a2a48f8c7b7dcb8481d09468986076a0b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a9be7ad795b3c8b14fea7e566806f597b">ResolveVariablesInPath</a> (string pathWithVars, <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a0ffdf593f69e69f70a16c35d5124b4c2">VariableResolverCallback</a> resolver)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces variables in paths with their values. Ex. ~/uploads/thumbs/&lt;guid&gt;.&lt;ext&gt;. Standard variables are &lt;ext&gt; (the default extension for the final file type), &lt;guid&gt;, a randomly generated GUID, &lt;filename&gt;, the original filename without it's extension, &lt;path&gt;, the original path and filename without extension, &lt;settings.width&gt;, (any specified settings value except preset), &lt;width&gt; (final width), and &lt;height&gt; (final height).  <a href="#a9be7ad795b3c8b14fea7e566806f597b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a9359690ca11f8e0a4e21860db00dc8cd">RemoveNonMatchingChars</a> (string text, string chars)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allows a string to be filtered using the specified whitelisting expression (regex style).  <a href="#a9359690ca11f8e0a4e21860db00dc8cd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a61591f3c488e5945a25528336f0a4b2d">FilterQueryString</a> (<a class="el" href="class_image_resizer_1_1_resize_settings.html">ResizeSettings</a> query, params string[] keepKeys)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new collection containing only the specified keys from the old one.  <a href="#a61591f3c488e5945a25528336f0a4b2d"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a210e3c7584b66cf195a0b81ff74e3b2c">AppVirtualPath</a><code> [get]</code></td></tr>
@@ -175,8 +193,9 @@ Properties</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If not running in ASP.NET, returns the folder containing the DLL.  <a href="#a3a5c9196381928db82048058cb62dc19"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00010">10</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<div class="textblock"><p>A set of utility methods for manipulating virtual paths. </p>
+
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00017">17</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a3ba9afa48f4fa28456bcb247921a075a"></a><!-- doxytag: member="ImageResizer::Util::PathUtils::AddExtension" ref="a3ba9afa48f4fa28456bcb247921a075a" args="(string path, string newExtension)" -->
 <div class="memitem">
@@ -203,7 +222,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Adds the specified extension to path, returning the result. Multiple calls will result in "path.ext.ext.ext.ext". maintains the querystring as-is. </p>
+<p>Adds the specified extension to path, returning the result. Multiple calls will result in "path.ext.ext.ext.ext". The querystring and fragment is maintained as-is. Semicolon syntax not supported. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -213,9 +232,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00090">90</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00104">104</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                            {
-            <span class="keywordtype">int</span> query = path.IndexOf(<span class="charliteral">&#39;?&#39;</span>);
+            <span class="keywordtype">int</span> query = path.IndexOfAny(QueryOrFragment);
             <span class="keywordflow">if</span> (query &lt; 0) query = path.Length;
             <span class="keywordflow">return</span> path.Substring(0, query) + <span class="stringliteral">&quot;.&quot;</span> + newExtension.TrimStart(<span class="charliteral">&#39;.&#39;</span>) + path.Substring(query);
         }
@@ -247,7 +266,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Joins the path and querystring. If the path already contains a querystring, they are 'append joined' with the correct character. </p>
+<p>Joins the path and querystring. If the path already contains a querystring, they are 'append joined' with the correct character. Fragment is maintained as-is. Does not support the semicolon syntax. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">virtualPath</td><td></td></tr>
@@ -257,12 +276,21 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00161">161</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00178">178</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                    {
+            <span class="comment">//Separate the fragment if it&#39;s present, and restore it later</span>
+            <span class="keywordtype">int</span> fragment = virtualPath.IndexOf(<span class="charliteral">&#39;#&#39;</span>);
+            <span class="keywordtype">string</span> suffix = <span class="stringliteral">&quot;&quot;</span>;
+            <span class="keywordflow">if</span> (fragment &lt; 0) fragment = virtualPath.Length;
+            <span class="keywordflow">else</span> {
+                suffix = virtualPath.Substring(fragment);
+                virtualPath = virtualPath.Substring(0, fragment);
+            }
+
             <span class="keywordflow">if</span> (virtualPath.IndexOf(<span class="charliteral">&#39;?&#39;</span>) &gt; -1) virtualPath = virtualPath.TrimEnd(<span class="charliteral">&#39;&amp;&#39;</span>) + <span class="charliteral">&#39;&amp;&#39;</span>;
             <span class="keywordflow">else</span> virtualPath += <span class="charliteral">&#39;?&#39;</span>;
 
-            <span class="keywordflow">return</span> virtualPath + querystring.TrimStart(<span class="charliteral">&#39;&amp;&#39;</span>, <span class="charliteral">&#39;?&#39;</span>);
+            <span class="keywordflow">return</span> virtualPath + querystring.TrimStart(<span class="charliteral">&#39;&amp;&#39;</span>, <span class="charliteral">&#39;?&#39;</span>) + suffix;
         }
 </pre></div>
 </div>
@@ -291,9 +319,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00203">203</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00249">249</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00118">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.CreateSignedUrl()</a>, <a class="el" href="_image_request_action_8cs_source.html#l00140">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>, <a class="el" href="_resize_settings_8cs_source.html#l00406">ImageResizer.ResizeSettings.ToString()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00413">ImageResizer.ResizeSettings.ToStringEncoded()</a>.</p>
+<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00137">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.CreateSignedUrl()</a>, <a class="el" href="_image_request_action_8cs_source.html#l00144">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>, <a class="el" href="_instructions_8cs_source.html#l00057">ImageResizer.Instructions.ToQueryString()</a>, <a class="el" href="_resize_settings_8cs_source.html#l00381">ImageResizer.ResizeSettings.ToString()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00388">ImageResizer.ResizeSettings.ToStringEncoded()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                               {
             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(QueryString, <span class="keyword">true</span>);
         }
@@ -335,33 +363,190 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00213">213</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00259">259</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                               {
-            StringBuilder path = <span class="keyword">new</span> StringBuilder();
-            <span class="keywordflow">if</span> (QueryString.Count &gt; 0) {
-                path.Append(<span class="charliteral">&#39;?&#39;</span>);
-                <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> key <span class="keywordflow">in</span> QueryString.Keys) {
-                    <span class="keywordflow">if</span> (key == null) <span class="keywordflow">continue</span>; <span class="comment">//Skip null keys</span>
-                    <span class="keywordtype">string</span> value = QueryString[key];
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(QueryString, urlEncode, <span class="keyword">true</span>, <span class="charliteral">&#39;?&#39;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="charliteral">&#39;=&#39;</span>);
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a024e41bc8934e30d80aad8a5fbd9e37a"></a><!-- doxytag: member="ImageResizer::Util::PathUtils::BuildQueryString" ref="a024e41bc8934e30d80aad8a5fbd9e37a" args="(NameValueCollection QueryString, bool urlEncode, bool skipNullValues=true, char firstSeparator= '?', char laterSeparators= '&amp;', char equals= '=')" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755">ImageResizer.Util.PathUtils.BuildQueryString</a> </td>
+          <td>(</td>
+          <td class="paramtype">NameValueCollection&#160;</td>
+          <td class="paramname"><em>QueryString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>urlEncode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>skipNullValues</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>firstSeparator</em> = <code>'?'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>laterSeparators</em> = <code>'&amp;'</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>equals</em> = <code>'='</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-                    path.Append(urlEncode ? HttpUtility.UrlEncode(key) : key);
-                    path.Append(<span class="charliteral">&#39;=&#39;</span>);
-                    path.Append(urlEncode ? HttpUtility.UrlEncode(value) : value);
-                    path.Append(<span class="charliteral">&#39;&amp;&#39;</span>);
-                }
-                <span class="keywordflow">if</span> (path[path.Length - 1] == <span class="charliteral">&#39;&amp;&#39;</span>) path.Remove(path.Length - 1, 1);
+<p>Build a customized querystring from a NameValueCollection. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QueryString</td><td></td></tr>
+    <tr><td class="paramname">urlEncode</td><td>True to URL encode all values</td></tr>
+    <tr><td class="paramname">skipNullValues</td><td>If true, null-valued keys will be skipped</td></tr>
+    <tr><td class="paramname">firstSeparator</td><td>Usually ? or ; </td></tr>
+    <tr><td class="paramname">laterSeparators</td><td>Usually &amp; or ;</td></tr>
+    <tr><td class="paramname">equals</td><td>Always =</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00284">284</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                                                                                                                                     {
+            <span class="keywordflow">if</span> (QueryString.Count &lt; 1) <span class="keywordflow">return</span> <span class="stringliteral">&quot;&quot;</span>; <span class="comment">//No keys? return empty string.</span>
+
+            StringBuilder path = <span class="keyword">new</span> StringBuilder();
+            path.Append(firstSeparator);
+            <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> key <span class="keywordflow">in</span> QueryString.Keys) {
+                <span class="keywordflow">if</span> (key == null) <span class="keywordflow">continue</span>; <span class="comment">//Skip null keys</span>
+                <span class="keywordtype">string</span> value = QueryString[key];
+                <span class="keywordflow">if</span> (skipNullValues &amp;&amp; value == null) <span class="keywordflow">continue</span>; <span class="comment">//Optionally skip null values</span>
+                path.Append(urlEncode ? HttpUtility.UrlEncode(key) : key);
+                path.Append(equals);
+                path.Append(urlEncode ? HttpUtility.UrlEncode(value) : value);
+                path.Append(laterSeparators);
             }
+            <span class="keywordflow">if</span> (path[path.Length - 1] == laterSeparators) path.Remove(path.Length - 1, 1);
+
             <span class="keywordflow">return</span> path.ToString();
         }
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="aefb5e8343a4b516f0b74814f6970ca74"></a><!-- doxytag: member="ImageResizer::Util::PathUtils::FromBase64UToButes" ref="aefb5e8343a4b516f0b74814f6970ca74" args="(string data)" -->
+<a class="anchor" id="ac7cc17744e07ec56cc745e776146fa89"></a><!-- doxytag: member="ImageResizer::Util::PathUtils::BuildSemicolonQueryString" ref="ac7cc17744e07ec56cc745e776146fa89" args="(NameValueCollection QueryString, bool urlEncode)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">static byte [] <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#aefb5e8343a4b516f0b74814f6970ca74">ImageResizer.Util.PathUtils.FromBase64UToButes</a> </td>
+          <td class="memname">static string <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac7cc17744e07ec56cc745e776146fa89">ImageResizer.Util.PathUtils.BuildSemicolonQueryString</a> </td>
+          <td>(</td>
+          <td class="paramtype">NameValueCollection&#160;</td>
+          <td class="paramname"><em>QueryString</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>urlEncode</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns a string querystring in the form ";key=value;key=value". Keys and values are UrlEncoded if urlEncode=true. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">QueryString</td><td></td></tr>
+    <tr><td class="paramname">urlEncode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00271">271</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_instructions_8cs_source.html#l00049">ImageResizer.Instructions.ToString()</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                                        {
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(QueryString, urlEncode, <span class="keyword">true</span>, <span class="charliteral">&#39;;&#39;</span>, <span class="charliteral">&#39;;&#39;</span>, <span class="charliteral">&#39;=&#39;</span>);
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a61591f3c488e5945a25528336f0a4b2d"></a><!-- doxytag: member="ImageResizer::Util::PathUtils::FilterQueryString" ref="a61591f3c488e5945a25528336f0a4b2d" args="(ResizeSettings query, params string[] keepKeys)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static NameValueCollection <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a61591f3c488e5945a25528336f0a4b2d">ImageResizer.Util.PathUtils.FilterQueryString</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_image_resizer_1_1_resize_settings.html">ResizeSettings</a>&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params string[]&#160;</td>
+          <td class="paramname"><em>keepKeys</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns a new collection containing only the specified keys from the old one. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td></td></tr>
+    <tr><td class="paramname">keepKeys</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00583">583</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                                            {
+            <span class="keywordflow">return</span> query.Keep(keepKeys);
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a6943e50a715d4daf25cb6aa6e07d1a0a"></a><!-- doxytag: member="ImageResizer::Util::PathUtils::FromBase64UToBytes" ref="a6943e50a715d4daf25cb6aa6e07d1a0a" args="(string data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static byte [] <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a6943e50a715d4daf25cb6aa6e07d1a0a">ImageResizer.Util.PathUtils.FromBase64UToBytes</a> </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
@@ -380,7 +565,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00313">313</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00445">445</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_seam_carving_plugin_8cs_source.html#l00045">ImageResizer.Plugins.SeamCarving.SeamCarvingPlugin.LayoutImage()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                             {
             data = data.PadRight(data.Length + ((4 - data.Length % 4) % 4), <span class="charliteral">&#39;=&#39;</span>); <span class="comment">//if there is 1 leftover octet, add ==, if 2, add =. 3 octects = 4 chars. </span>
             <span class="keywordflow">return</span> Convert.FromBase64String(data.Replace(<span class="charliteral">&#39;-&#39;</span>, <span class="charliteral">&#39;+&#39;</span>).Replace(<span class="charliteral">&#39;_&#39;</span>, <span class="charliteral">&#39;/&#39;</span>));
@@ -412,11 +599,11 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00330">330</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00462">462</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00158">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.ParseRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00177">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.ParseRequest()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                              {
-            <span class="keywordflow">return</span> UTF8Encoding.UTF8.GetString(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#aefb5e8343a4b516f0b74814f6970ca74" title="Converts a URL-safe version of base64 to a byte array. (no = padding, with - instead of + and _ inste...">FromBase64UToButes</a>(data));
+            <span class="keywordflow">return</span> UTF8Encoding.UTF8.GetString(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a6943e50a715d4daf25cb6aa6e07d1a0a" title="Converts a URL-safe version of base64 to a byte array. (no = padding, with - instead of + and _ inste...">FromBase64UToBytes</a>(data));
         }
 </pre></div>
 </div>
@@ -456,9 +643,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00351">351</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00483">483</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                      {
-            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#adafb4cd7d85a3567782842873c1a5176">ResolveAppRelative</a>(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a2a48f8c7b7dcb8481d09468986076a0b" title="Attempts to guess the virtual path from physical path. Will be thrwarted if the path is mapped as a v...">GuessVirtualPath</a>(path)) + <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(query); 
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#adafb4cd7d85a3567782842873c1a5176" title="Resolves app-relative paths to virtual paths. Does nothing with virtual or relative paths...">ResolveAppRelative</a>(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a2a48f8c7b7dcb8481d09468986076a0b" title="Attempts to guess the virtual path from physical path. Will be thrwarted if the path is mapped as a v...">GuessVirtualPath</a>(path)) + <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(query); 
         }
 </pre></div>
 </div>
@@ -478,7 +665,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Ignores the querystring. Grabs the last segment of the filename extension. Returns an empty string if there is no extension, or if the extension contains a space. Includes the leading '.'. </p>
+<p>Grabs the last segment of the filename extension. Returns an empty string if there is no extension, or if the extension contains a space. Includes the leading '.' The querystring and fragment is ignored. Semicolon syntax not supported. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -487,14 +674,14 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00118">118</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00134">134</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_job_8cs_source.html#l00171">ImageResizer.ImageJob.ResolveTemplatedPath()</a>.</p>
+<p>Referenced by <a class="el" href="_image_job_8cs_source.html#l00178">ImageResizer.ImageJob.ResolveTemplatedPath()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                       {
-            <span class="keywordtype">int</span> query = path.IndexOf(<span class="charliteral">&#39;?&#39;</span>);
+            <span class="keywordtype">int</span> query = path.IndexOfAny(QueryOrFragment);
             <span class="keywordflow">if</span> (query &lt; 0) query = path.Length;
             <span class="comment">//Finds the first character that could possibly be part of the extension (before the query)</span>
-            <span class="keywordtype">int</span> firstPossibleExtensionChar = path.LastIndexOfAny(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> }, query - 1) + 1;
+            <span class="keywordtype">int</span> firstPossibleExtensionChar = path.LastIndexOfAny(SpaceOrSlash, query - 1) + 1;
             <span class="keywordtype">int</span> extensionStarts = path.LastIndexOf(<span class="charliteral">&#39;.&#39;</span>, query -1, query - firstPossibleExtensionChar );
             <span class="keywordflow">if</span> (extensionStarts &lt; 0) extensionStarts = query;
 
@@ -519,7 +706,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Will return the full extension, like ".jpg.ashx", not just the last bit. Ignores the querystring part. Excludes extensions containing spaces or slashes. </p>
+<p>Will return the full extension, like ".jpg.ashx", not just the last bit. Excludes extensions containing spaces or slashes. The querystring and fragment is ignored. Semicolon syntax not supported. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -528,14 +715,14 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00101">101</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00116">116</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_request_action_8cs_source.html#l00140">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_image_request_action_8cs_source.html#l00144">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                           {
-            <span class="keywordtype">int</span> query = path.IndexOf(<span class="charliteral">&#39;?&#39;</span>);
+            <span class="keywordtype">int</span> query = path.IndexOfAny(QueryOrFragment);
             <span class="keywordflow">if</span> (query &lt; 0) query = path.Length;
             <span class="comment">//Finds the first character that could possibly be part of the extension (before the query)</span>
-            <span class="keywordtype">int</span> firstPossibleExtensionChar = path.LastIndexOfAny(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> }, query -1) + 1;
+            <span class="keywordtype">int</span> firstPossibleExtensionChar = path.LastIndexOfAny(SpaceOrSlash, query - 1) + 1;
             <span class="keywordtype">int</span> extensionStarts = path.IndexOf(<span class="charliteral">&#39;.&#39;</span>, firstPossibleExtensionChar, query - firstPossibleExtensionChar);
             <span class="keywordflow">if</span> (extensionStarts &lt; 0) extensionStarts = query;
 
@@ -569,7 +756,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00362">362</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00494">494</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                           {
             <span class="comment">//If there&#39;s no windows slashes, it&#39;s probably virtual.</span>
             <span class="keywordflow">if</span> (path.IndexOf(<span class="charliteral">&#39;\\&#39;</span>) &lt; 0)
@@ -615,9 +802,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00338">338</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00470">470</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_job_8cs_source.html#l00171">ImageResizer.ImageJob.ResolveTemplatedPath()</a>.</p>
+<p>Referenced by <a class="el" href="_image_job_8cs_source.html#l00178">ImageResizer.ImageJob.ResolveTemplatedPath()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                               {
             <span class="keywordflow">return</span> (path.StartsWith(<span class="stringliteral">&quot;~&quot;</span>, StringComparison.OrdinalIgnoreCase)) ? HostingEnvironment.MapPath(path) : path;
         }
@@ -649,7 +836,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Overwrites exisisting querystring values in 'path' with the values in 'newQuerystring'. Doesn't support ; querystrings. </p>
+<p>Overwrites exisisting querystring values in 'path' with the values in 'newQuerystring'. Does not support the semicolon syntax. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -659,14 +846,14 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00174">174</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00220">220</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                        {
             NameValueCollection oldQuery = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d" title="Parses the querystring from the given path into a NameValueCollection. accepts &quot;file?key=value&quot; and &quot;?key=value&amp;amp;key2=value2&quot; formats. (no path is required) UrlDecodes keys and values.">ParseQueryString</a>(path);
             <span class="comment">//Overwrite old with new</span>
             <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> key <span class="keywordflow">in</span> newQuerystring.Keys)
                 <span class="keywordflow">if</span> (key != null) oldQuery[key] = newQuerystring[key];
 
-            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a213e5ba499d364b9f2e2bce592a09af7" title="Joins the path and querystring. If the path already contains a querystring, they are &#39;append joined&#39; ...">AddQueryString</a>(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#aac9a36962f98bb9a948ee41411323ebf" title="Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned.">RemoveQueryString</a>(path), <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(oldQuery));
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a213e5ba499d364b9f2e2bce592a09af7" title="Joins the path and querystring. If the path already contains a querystring, they are &#39;append joined&#39; ...">AddQueryString</a>(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#aac9a36962f98bb9a948ee41411323ebf" title="Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned. Does not support the semicolon syntax. Fragment is maintained as-is.">RemoveQueryString</a>(path), <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(oldQuery));
         }
 </pre></div>
 </div>
@@ -696,7 +883,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Adds the querystring values in 'newQuerystring' to the querystring in Path, but does not overwrite values. Doesn't support ; querystrings. </p>
+<p>Adds the querystring values in 'newQuerystring' to the querystring in Path, but does not overwrite values. Does not support the semicolon syntax. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -706,14 +893,83 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00188">188</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00234">234</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                               {
             NameValueCollection oldQuery = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d" title="Parses the querystring from the given path into a NameValueCollection. accepts &quot;file?key=value&quot; and &quot;?key=value&amp;amp;key2=value2&quot; formats. (no path is required) UrlDecodes keys and values.">ParseQueryString</a>(path);
             <span class="comment">//Overwrite new with old</span>
             <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> key <span class="keywordflow">in</span> oldQuery.Keys)
-                newQuerystring[key] = oldQuery[key];
+                <span class="keywordflow">if</span> (key != null) newQuerystring[key] = oldQuery[key];
 
-            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a213e5ba499d364b9f2e2bce592a09af7" title="Joins the path and querystring. If the path already contains a querystring, they are &#39;append joined&#39; ...">AddQueryString</a>(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#aac9a36962f98bb9a948ee41411323ebf" title="Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned.">RemoveQueryString</a>(path), <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(newQuerystring));
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a213e5ba499d364b9f2e2bce592a09af7" title="Joins the path and querystring. If the path already contains a querystring, they are &#39;append joined&#39; ...">AddQueryString</a>(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#aac9a36962f98bb9a948ee41411323ebf" title="Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned. Does not support the semicolon syntax. Fragment is maintained as-is.">RemoveQueryString</a>(path), <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(newQuerystring));
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a479b53b9fcc98b25bd8f25a36f15c084"></a><!-- doxytag: member="ImageResizer::Util::PathUtils::ParseQueryOnly" ref="a479b53b9fcc98b25bd8f25a36f15c084" args="(string query, bool allowSemicolons=true, bool urlDecode=true)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static NameValueCollection <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a479b53b9fcc98b25bd8f25a36f15c084">ImageResizer.Util.PathUtils.ParseQueryOnly</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allowSemicolons</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>urlDecode</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Parses a querystring into a name/value collection. The given string cannot include path or fragment information - it must be *just* the querystring. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td></td></tr>
+    <tr><td class="paramname">allowSemicolons</td><td></td></tr>
+    <tr><td class="paramname">urlDecode</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00408">408</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                                                           {
+            <span class="keywordtype">string</span>[] pairs = query.Split(allowSemicolons ? <span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;?&#39;</span>, <span class="charliteral">&#39;&amp;&#39;</span>, <span class="charliteral">&#39;;&#39;</span> } : <span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;?&#39;</span>, <span class="charliteral">&#39;&amp;&#39;</span> }, StringSplitOptions.RemoveEmptyEntries);
+            NameValueCollection c = <span class="keyword">new</span> NameValueCollection();
+            <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> s <span class="keywordflow">in</span> pairs) {
+                <span class="keywordtype">string</span>[] namevalue = s.Split(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;=&#39;</span> }, StringSplitOptions.RemoveEmptyEntries);
+                <span class="keywordflow">if</span> (namevalue.Length &gt; 2) {
+                    <span class="comment">//Handle &amp;key=value=value and &amp;key===value=value -&gt; key : &quot;value=value&quot;</span>
+                    <span class="keywordtype">string</span> value = s.Substring(s.IndexOf(<span class="charliteral">&#39;=&#39;</span>)).TrimStart(<span class="charliteral">&#39;=&#39;</span>);
+                    c[urlDecode ? HttpUtility.UrlDecode(namevalue[0]) : namevalue[0]] =
+                        urlDecode ? HttpUtility.UrlDecode(value) : value;
+                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (namevalue.Length == 2) {
+                    <span class="comment">//Handle key=value (normal)</span>
+                    c[urlDecode ? HttpUtility.UrlDecode(namevalue[0]) : namevalue[0]] =
+                        urlDecode ? HttpUtility.UrlDecode(namevalue[1]) : namevalue[1];
+                } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (namevalue.Length == 1){
+                    <span class="comment">//Hanlde &amp;key=&amp;key2= or &amp;key&amp;key2 -&gt; key: &quot;&quot;, key2: &quot;&quot;</span>
+                    <span class="comment">//Setting a null value would be confusing, as that is how we determine</span>
+                    <span class="comment">//whether a certain paramater exists</span>
+                    c[urlDecode ? HttpUtility.UrlDecode(namevalue[0]) : namevalue[0]] = <span class="stringliteral">&quot;&quot;</span>;
+                }
+            }
+            <span class="keywordflow">return</span> c;
         }
 </pre></div>
 </div>
@@ -742,32 +998,131 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00272">272</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00344">344</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                        {
-            NameValueCollection c = <span class="keyword">new</span> NameValueCollection();
-            <span class="keywordtype">int</span> firstdelimiter = path.IndexOf(<span class="charliteral">&#39;?&#39;</span>);
-            <span class="keywordflow">if</span> (firstdelimiter &lt; 0) <span class="keywordflow">return</span> c;<span class="comment">//Nothing to parse.</span>
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d" title="Parses the querystring from the given path into a NameValueCollection. accepts &quot;file?key=value&quot; and &quot;?key=value&amp;amp;key2=value2&quot; formats. (no path is required) UrlDecodes keys and values.">ParseQueryString</a>(path, <span class="keyword">false</span>);
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="abed888109176efb4786154e277353764"></a><!-- doxytag: member="ImageResizer::Util::PathUtils::ParseQueryString" ref="abed888109176efb4786154e277353764" args="(string path, bool allowSemicolons)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static NameValueCollection <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d">ImageResizer.Util.PathUtils.ParseQueryString</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allowSemicolons</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
 
-            <span class="keywordtype">string</span> querystring = <span class="stringliteral">&quot;&quot;</span>;
-            <span class="keywordflow">if</span> (firstdelimiter &lt; path.Length) querystring = path.Substring(firstdelimiter, path.Length - firstdelimiter);
-            <span class="keywordflow">if</span> (querystring.Length &gt; 0) {
-                <span class="keywordtype">string</span>[] pairs = querystring.Split(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;?&#39;</span>, <span class="charliteral">&#39;&amp;&#39;</span> }, StringSplitOptions.RemoveEmptyEntries);
-                <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> s <span class="keywordflow">in</span> pairs) {
-                    <span class="keywordtype">string</span>[] namevalue = s.Split(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;=&#39;</span> }, StringSplitOptions.RemoveEmptyEntries);
-                    <span class="keywordflow">if</span> (namevalue.Length == 2) {
-                        c[HttpUtility.UrlDecode(namevalue[0])] =
-                            HttpUtility.UrlDecode(namevalue[1]);
-                    } <span class="keywordflow">else</span> {
-                        <span class="comment">//No value, so we set a blank value</span>
-                        <span class="comment">//Setting a null value would be confusing, as that is how we determine</span>
-                        <span class="comment">//whether a certain paramater exists</span>
-                        c[HttpUtility.UrlDecode(namevalue[0])] = <span class="stringliteral">&quot;&quot;</span>;
+<p>Parses the querystring from the given path into a NameValueCollection. accepts "file?key=value" and "?key=value&amp;amp;key2=value2" formats. (no path is required) UrlDecodes keys and values. Does not enforce correct syntax, I.E. '?key=value?key2=value2' is allowed. However, '&amp;key=value?key2=value' will only get key2 parsed. When allowSemicolons is true, semicolon paths like ';key=value;key2=value2' are allowed, as are hybrid paths: ';key=value?key2=value2&amp;key3=value3'. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">allowSemicolons</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-                    }
-                }
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00357">357</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                              {
+            <span class="keywordtype">string</span> s, f;
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d" title="Parses the querystring from the given path into a NameValueCollection. accepts &quot;file?key=value&quot; and &quot;?key=value&amp;amp;key2=value2&quot; formats. (no path is required) UrlDecodes keys and values.">ParseQueryString</a>(path, allowSemicolons, out s,out f);
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a7637c1c183e25f5a5d3ec3dd75a759a1"></a><!-- doxytag: member="ImageResizer::Util::PathUtils::ParseQueryString" ref="a7637c1c183e25f5a5d3ec3dd75a759a1" args="(string path, bool allowSemicolons, out string beforeQuery, out string fragment)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static NameValueCollection <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d">ImageResizer.Util.PathUtils.ParseQueryString</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allowSemicolons</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>beforeQuery</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>fragment</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Parses the querystring from the given path into a NameValueCollection. accepts "file?key=value" and "?key=value&amp;amp;key2=value2" formats. (no path is required) UrlDecodes keys and values. Does not enforce correct syntax, I.E. '?key=value?key2=value2' is allowed. However, '&amp;key=value?key2=value' will only get key2 parsed. When allowSemicolons is true, semicolon paths like ';key=value;key2=value2' are allowed, as are hybrid paths: ';key=value?key2=value2&amp;key3=value3'. </p>
+<p>Does NOT parse fragments correctly.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+    <tr><td class="paramname">allowSemicolons</td><td></td></tr>
+    <tr><td class="paramname">beforeQuery</td><td>Returns the portion of the 'path' before the querystring. May include the scheme, server, port, path and path info, depending upon what 'path' contained.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00374">374</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                                                                           {
+            <span class="comment">//Separate the fragment if it&#39;s present, and restore it later</span>
+            <span class="keywordtype">int</span> frag = path.IndexOf(<span class="charliteral">&#39;#&#39;</span>);
+            <span class="keywordflow">if</span> (frag &lt; 0) fragment = <span class="stringliteral">&quot;&quot;</span>;
+            <span class="keywordflow">else</span> {
+                fragment = path.Substring(frag);
+                path = path.Substring(0, frag);
             }
-            <span class="keywordflow">return</span> c;
 
+
+            <span class="keywordtype">int</span> firstdelimiter = path.IndexOf(<span class="charliteral">&#39;?&#39;</span>);
+            <span class="keywordflow">if</span> (allowSemicolons) {
+                <span class="comment">//Use the index if whichever is first, and preset</span>
+                <span class="keywordtype">int</span> firstsemicolon = path.IndexOf(<span class="charliteral">&#39;;&#39;</span>);
+                <span class="keywordflow">if</span> (firstdelimiter &lt; 0 || (firstsemicolon &gt;= 0 &amp;&amp; firstsemicolon &lt; firstdelimiter)) firstdelimiter = firstsemicolon;
+            }
+            <span class="keywordflow">if</span> (firstdelimiter &lt; 0 || firstdelimiter &gt;= path.Length) {
+                <span class="comment">//No query string detected</span>
+                beforeQuery = path;
+                <span class="keywordflow">return</span> <span class="keyword">new</span> NameValueCollection();
+            } <span class="keywordflow">else</span> {
+                beforeQuery = path.Substring(0, firstdelimiter);
+            }
+
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a479b53b9fcc98b25bd8f25a36f15c084" title="Parses a querystring into a name/value collection. The given string cannot include path or fragment i...">ParseQueryOnly</a>(path.Substring(firstdelimiter, path.Length - firstdelimiter),allowSemicolons);
         }
 </pre></div>
 </div>
@@ -787,7 +1142,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Like ParseQueryString, but permits the leading '?' to be omitted. </p>
+<p>Like ParseQueryString, but permits the leading '?' to be omitted. Does not support the semicolon syntax. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -796,10 +1151,10 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00250">250</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00312">312</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                {
-            <span class="keywordflow">if</span> (path.IndexOf(<span class="charliteral">&#39;?&#39;</span>) &lt; 0) path = <span class="charliteral">&#39;?&#39;</span> + path;
-            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d" title="Parses the querystring from the given path into a NameValueCollection. accepts &quot;file?key=value&quot; and &quot;?key=value&amp;amp;key2=value2&quot; formats. (no path is required) UrlDecodes keys and values.">ParseQueryString</a>(path);
+            <span class="keywordflow">if</span> (path.IndexOf(<span class="charliteral">&#39;?&#39;</span>) &lt; 0 &amp;&amp; path.IndexOf(<span class="charliteral">&#39;=&#39;</span>) &gt;= 0) path = <span class="charliteral">&#39;?&#39;</span> + path;
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d" title="Parses the querystring from the given path into a NameValueCollection. accepts &quot;file?key=value&quot; and &quot;?key=value&amp;amp;key2=value2&quot; formats. (no path is required) UrlDecodes keys and values.">ParseQueryString</a>(path,<span class="keyword">false</span>);
         }
 </pre></div>
 </div>
@@ -828,10 +1183,20 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00260">260</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00322">322</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                               {
-            <span class="keywordflow">if</span> (path.IndexOf(<span class="charliteral">&#39;?&#39;</span>) &lt; 0 &amp;&amp; path.IndexOf(<span class="charliteral">&#39;;&#39;</span>) != 0) path = <span class="charliteral">&#39;?&#39;</span> + path;
-            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d" title="Parses the querystring from the given path into a NameValueCollection. accepts &quot;file?key=value&quot; and &quot;?key=value&amp;amp;key2=value2&quot; formats. (no path is required) UrlDecodes keys and values.">ParseQueryString</a>(path.Replace(<span class="charliteral">&#39;;&#39;</span>,<span class="charliteral">&#39;?&#39;</span>));
+            <span class="comment">//Delete the fragment before we start</span>
+            <span class="keywordtype">int</span> fragment = path.IndexOf(<span class="charliteral">&#39;#&#39;</span>);
+            <span class="keywordflow">if</span> (fragment &gt; -1) path = path.Substring(0, fragment);
+
+            <span class="keywordtype">int</span> eq = path.IndexOf(<span class="charliteral">&#39;=&#39;</span>);
+            <span class="keywordtype">int</span> quest = path.IndexOf(<span class="charliteral">&#39;?&#39;</span>);
+            <span class="keywordtype">int</span> semi = path.IndexOf(<span class="charliteral">&#39;;&#39;</span>);
+            <span class="keywordflow">if</span> (eq &gt;= 0 &amp;&amp; <span class="comment">//We have equals, which indicates a query</span>
+                quest &lt; 0 &amp;&amp; <span class="comment">//But no question mark!</span>
+                (eq &lt; semi || semi &lt; 0)) <span class="comment">//An no semicolon, or else a semicolon *after* the first equals.</span>
+                path = <span class="charliteral">&#39;?&#39;</span> + path;
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a32087fab410ab49c140bb773f48bb86d" title="Parses the querystring from the given path into a NameValueCollection. accepts &quot;file?key=value&quot; and &quot;?key=value&amp;amp;key2=value2&quot; formats. (no path is required) UrlDecodes keys and values.">ParseQueryString</a>(path,<span class="keyword">true</span>);
         }
 </pre></div>
 </div>
@@ -851,7 +1216,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Removes the extension from the filename or URL, leaving the querystring intact, where the extension is only the last extension segment. I.e, image.jpg.bmp.tiff?hi would be image.jpg.bmp?hi after this call. </p>
+<p>Removes the extension from the filename or URL, leaving the querystring intact, where the extension is only the last extension segment. I.e, image.jpg.bmp.tiff?hi would be image.jpg.bmp?hi after this call. The querystring and fragment is maintained as-is. Semicolon syntax not supported. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -860,14 +1225,14 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00071">71</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00085">85</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_job_8cs_source.html#l00171">ImageResizer.ImageJob.ResolveTemplatedPath()</a>.</p>
+<p>Referenced by <a class="el" href="_image_job_8cs_source.html#l00178">ImageResizer.ImageJob.ResolveTemplatedPath()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                          {
-            <span class="keywordtype">int</span> query = path.IndexOf(<span class="charliteral">&#39;?&#39;</span>);
+            <span class="keywordtype">int</span> query = path.IndexOfAny(QueryOrFragment);
             <span class="keywordflow">if</span> (query &lt; 0) query = path.Length;
             <span class="comment">//Finds the first character that could possibly be part of the extension (before the query)</span>
-            <span class="keywordtype">int</span> firstPossibleExtensionChar = path.LastIndexOfAny(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> }, query - 1) + 1;
+            <span class="keywordtype">int</span> firstPossibleExtensionChar = path.LastIndexOfAny(SpaceOrSlash, query - 1) + 1;
             <span class="keywordtype">int</span> extensionStarts = path.LastIndexOf(<span class="charliteral">&#39;.&#39;</span>, query - 1, query - firstPossibleExtensionChar);
             <span class="keywordflow">if</span> (extensionStarts &lt; 0) extensionStarts = query;
 
@@ -892,7 +1257,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Removes all extension segments from the filename or URL, leaving the querystring intact. I.e, image.jpg.bmp.tiff?hi would be image?hi. </p>
+<p>Removes all extension segments from the filename or URL, leaving the querystring intact. I.e, image.jpg.bmp.tiff?hi would be image?hi The querystring and fragment is maintained as-is. Semicolon syntax not supported. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -901,17 +1266,68 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00053">53</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00066">66</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_mongo_reader_plugin_8cs_source.html#l00086">ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile.Open()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                              {
-            <span class="keywordtype">int</span> query = path.IndexOf(<span class="charliteral">&#39;?&#39;</span>);
+            <span class="keywordtype">int</span> query = path.IndexOfAny(QueryOrFragment);
             <span class="keywordflow">if</span> (query &lt; 0) query = path.Length;
             <span class="comment">//Finds the first character that could possibly be part of the extension (before the query)</span>
-            <span class="keywordtype">int</span> firstPossibleExtensionChar = path.LastIndexOfAny(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> }, query - 1) + 1;
+            <span class="keywordtype">int</span> firstPossibleExtensionChar = path.LastIndexOfAny(SpaceOrSlash, query - 1) + 1;
             <span class="keywordtype">int</span> extensionStarts = path.IndexOf(<span class="charliteral">&#39;.&#39;</span>, firstPossibleExtensionChar, query - firstPossibleExtensionChar);
             <span class="keywordflow">if</span> (extensionStarts &lt; 0) extensionStarts = query;
 
             <span class="keywordflow">return</span> path.Substring(0, extensionStarts) + path.Substring(query);
 
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a9359690ca11f8e0a4e21860db00dc8cd"></a><!-- doxytag: member="ImageResizer::Util::PathUtils::RemoveNonMatchingChars" ref="a9359690ca11f8e0a4e21860db00dc8cd" args="(string text, string chars)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string <a class="el" href="class_image_resizer_1_1_util_1_1_path_utils.html#a9359690ca11f8e0a4e21860db00dc8cd">ImageResizer.Util.PathUtils.RemoveNonMatchingChars</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>chars</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Allows a string to be filtered using the specified whitelisting expression (regex style). </p>
+<p>I.e, "hi YOU 3", "a-z3" will produce "hi3".</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td></td></tr>
+    <tr><td class="paramname">chars</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00560">560</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                               {
+            StringBuilder sb = <span class="keyword">new</span> StringBuilder();
+            Regex r = <span class="keyword">new</span> Regex(<span class="stringliteral">&quot;[&quot;</span> + Regex.Escape(chars) + <span class="stringliteral">&quot;]&quot;</span>, RegexOptions.Compiled);
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; text.Length; i++) {
+                <span class="keywordtype">string</span> chr = text.Substring(i,1);
+                <span class="keywordflow">if</span> (r.IsMatch(chr)) sb.Append(chr);
+            }
+            <span class="keywordflow">return</span> sb.ToString();
         }
 </pre></div>
 </div>
@@ -931,7 +1347,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned. </p>
+<p>Removes the query string from the specifed path. If the path is only a querystring, an empty string is returned. Does not support the semicolon syntax. Fragment is maintained as-is. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -940,10 +1356,19 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00238">238</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00199">199</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                            {
+            <span class="comment">//Separate the fragment if it&#39;s present, and restore it later</span>
+            <span class="keywordtype">int</span> fragment = path.IndexOf(<span class="charliteral">&#39;#&#39;</span>);
+            <span class="keywordtype">string</span> suffix = <span class="stringliteral">&quot;&quot;</span>;
+            <span class="keywordflow">if</span> (fragment &lt; 0) fragment = path.Length;
+            <span class="keywordflow">else</span> {
+                suffix = path.Substring(fragment);
+                path = path.Substring(0, fragment);
+            }
+
             <span class="keywordtype">int</span> delimiter = path.IndexOf(<span class="charliteral">&#39;?&#39;</span>);
-            <span class="keywordflow">return</span> delimiter &gt; -1 ? path.Substring(0, delimiter) : path;
+            <span class="keywordflow">return</span> delimiter &gt; -1 ? path.Substring(0, delimiter) + suffix : path;
         }
 </pre></div>
 </div>
@@ -962,6 +1387,8 @@ Properties</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Resolves app-relative paths to virtual paths. Does nothing with virtual or relative paths. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">virtualPath</td><td></td></tr>
@@ -970,9 +1397,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00134">134</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00150">150</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00217">ImageResizer.ImageBuilder.GetStreamFromSource()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00222">ImageResizer.ImageBuilder.GetStreamFromSource()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                    {
             <span class="comment">//resolve tilde</span>
             <span class="keywordflow">if</span> (virtualPath.StartsWith(<span class="stringliteral">&quot;~&quot;</span>, StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">return</span> HostingEnvironment.ApplicationVirtualPath.TrimEnd(<span class="charliteral">&#39;/&#39;</span>) + <span class="charliteral">&#39;/&#39;</span> + virtualPath.TrimStart(<span class="charliteral">&#39;~&#39;</span>, <span class="charliteral">&#39;/&#39;</span>);
@@ -1005,9 +1432,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00146">146</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00162">162</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00061">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>, <a class="el" href="_image_request_action_8cs_source.html#l00072">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualPathResult()</a>, and <a class="el" href="_path_utils_8cs_source.html#l00362">ImageResizer.Util.PathUtils.GuessVirtualPath()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00062">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>, <a class="el" href="_image_request_action_8cs_source.html#l00073">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualPathResult()</a>, and <a class="el" href="_path_utils_8cs_source.html#l00494">ImageResizer.Util.PathUtils.GuessVirtualPath()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                     {
 
             <span class="keywordflow">if</span> (virtualPath.StartsWith(<span class="stringliteral">&quot;~&quot;</span>)) <span class="keywordflow">return</span> HostingEnvironment.ApplicationVirtualPath.TrimEnd(<span class="charliteral">&#39;/&#39;</span>) + <span class="stringliteral">&quot;/&quot;</span> + virtualPath.TrimStart(<span class="charliteral">&#39;~&#39;</span>, <span class="charliteral">&#39;/&#39;</span>);
@@ -1046,15 +1473,15 @@ Properties</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">pathWithVars</td><td></td></tr>
-    <tr><td class="paramname">variables</td><td></td></tr>
+    <tr><td class="paramname">resolver</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00391">391</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00524">524</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_job_8cs_source.html#l00171">ImageResizer.ImageJob.ResolveTemplatedPath()</a>.</p>
+<p>Referenced by <a class="el" href="_image_job_8cs_source.html#l00178">ImageResizer.ImageJob.ResolveTemplatedPath()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                            {
             <span class="keywordtype">string</span> p = pathWithVars;
             <span class="keywordflow">while</span> (p.IndexOf(<span class="charliteral">&#39;&lt;&#39;</span>) &gt; -1) {
@@ -1063,9 +1490,19 @@ Properties</h2></td></tr>
                 <span class="keywordtype">int</span> bugcheck = p.IndexOf(<span class="charliteral">&#39;&lt;&#39;</span>,start + 1);
                 <span class="keywordflow">if</span> (stop &lt; 0 || (bugcheck &gt; -1 &amp;&amp; bugcheck &lt; stop) || stop == start + 1) 
                     <span class="keywordflow">throw</span> <span class="keyword">new</span> ImageProcessingException(<span class="stringliteral">&quot;Destination paths can only contain &lt; and &gt; in matched pairs to designate variables. Path \&quot;&quot;</span> + pathWithVars + <span class="stringliteral">&quot;\&quot; has invalid syntax&quot;</span>);
-                <span class="keywordtype">string</span> varName = p.Substring(start + 1,stop - start -1).ToLowerInvariant();
-
+                <span class="keywordtype">string</span> varName = p.Substring(start + 1,stop - start -1);
+                <span class="keywordtype">string</span> filter = null;
+                <span class="comment">//Split off the filter if present.</span>
+                <span class="keywordtype">int</span> filterIx = varName.IndexOf(<span class="charliteral">&#39;:&#39;</span>);
+                <span class="keywordflow">if</span> (filterIx &gt; 0) {
+                    filter = varName.Substring(filterIx + 1);
+                    varName = varName.Substring(0, filterIx);
+                }
+                varName = varName.ToLowerInvariant();
                 <span class="keywordtype">string</span> result = resolver(varName);
+                <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(filter)) {
+                    result = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a9359690ca11f8e0a4e21860db00dc8cd" title="Allows a string to be filtered using the specified whitelisting expression (regex style)...">RemoveNonMatchingChars</a>(result, filter);
+                }
                 <span class="keywordflow">if</span> (result == null)
                     <span class="keywordflow">throw</span> <span class="keyword">new</span> ImageProcessingException(<span class="stringliteral">&quot;Invalid variable name \&quot;&quot;</span> + varName + <span class="stringliteral">&quot;\&quot; in templated path \&quot;&quot;</span> + pathWithVars + <span class="stringliteral">&quot;\&quot;. The variable name may be mispelled, or the variable may not be available with the pipeline you are using.&quot;</span>);
                 p = p.Substring(0,start) + result + p.Substring(stop + 1);
@@ -1101,7 +1538,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets the file extension of the specified path to the specified value, returning the result. If an extension has multiple parts, it will replace all of them. Leading dots will be stripped from 'newExtension' and re-addd as required. </p>
+<p>Should be called SetFullExtension. Sets the file extension of the specified path to the specified value, returning the result. If an extension has multiple parts, it will replace all of them. Leading dots will be stripped from 'newExtension' and re-addd as required. The querystring and fragment is maintained as-is. Semicolon syntax not supported. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">path</td><td></td></tr>
@@ -1111,16 +1548,16 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00036">36</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00048">48</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                            {
-            <span class="keywordtype">int</span> query = path.IndexOf(<span class="charliteral">&#39;?&#39;</span>);
+            <span class="keywordtype">int</span> query = path.IndexOfAny(QueryOrFragment);
             <span class="keywordflow">if</span> (query &lt; 0) query = path.Length;
             <span class="comment">//Finds the first character that could possibly be part of the extension (before the query)</span>
-            <span class="keywordtype">int</span> firstPossibleExtensionChar = path.LastIndexOfAny(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39; &#39;</span>, <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> }, query - 1) + 1;
+            <span class="keywordtype">int</span> firstPossibleExtensionChar = path.LastIndexOfAny(SpaceOrSlash, query - 1) + 1;
             <span class="keywordtype">int</span> extensionStarts = path.IndexOf(<span class="charliteral">&#39;.&#39;</span>, firstPossibleExtensionChar, query - firstPossibleExtensionChar);
             <span class="keywordflow">if</span> (extensionStarts &lt; 0) extensionStarts = query;
 
-            <span class="keywordflow">return</span> path.Substring(0, extensionStarts) + <span class="stringliteral">&quot;.&quot;</span> + newExtension.TrimStart(<span class="charliteral">&#39;.&#39;</span>) + path.Substring(query);
+            <span class="keywordflow">return</span> path.Substring(0, extensionStarts) + (!<span class="keywordtype">string</span>.IsNullOrEmpty(newExtension) ? <span class="stringliteral">&quot;.&quot;</span> + newExtension.TrimStart(<span class="charliteral">&#39;.&#39;</span>) : <span class="stringliteral">&quot;&quot;</span>) + path.Substring(query);
 
         }
 </pre></div>
@@ -1150,9 +1587,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00305">305</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00437">437</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00118">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.CreateSignedUrl()</a>.</p>
+<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00137">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.CreateSignedUrl()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                    {
             <span class="keywordflow">return</span> Convert.ToBase64String(data).Replace(<span class="stringliteral">&quot;=&quot;</span>, String.Empty).Replace(<span class="charliteral">&#39;+&#39;</span>, <span class="charliteral">&#39;-&#39;</span>).Replace(<span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;_&#39;</span>);
         }
@@ -1183,7 +1620,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00322">322</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00454">454</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                    {
             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acc45f67bc1e770b2971878b809d3a98e" title="Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ ins...">ToBase64U</a>(UTF8Encoding.UTF8.GetBytes(data));
         }
@@ -1230,7 +1667,7 @@ Properties</h2></td></tr>
 
 <p>If not running in ASP.NET, returns the folder containing the DLL. </p>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00023">23</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00030">30</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
 </div>
 </div>
@@ -1247,7 +1684,7 @@ Properties</h2></td></tr>
 
 <p>Returns HostingEnvironment.ApplicationVirtualPath or "/", if asp.net is not running. </p>
 
-<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00015">15</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00022">22</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
 </div>
 </div>

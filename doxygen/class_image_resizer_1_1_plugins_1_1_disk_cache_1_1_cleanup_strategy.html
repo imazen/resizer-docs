@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -131,20 +131,20 @@ Collaboration diagram for ImageResizer.Plugins.DiskCache.CleanupStrategy:</div>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab8af516aee65bc992c1e004f218a9779"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::CleanupStrategy" ref="ab8af516aee65bc992c1e004f218a9779" args="(Node n)" -->
 &#160;</td><td class="memItemRight" valign="bottom"><b>CleanupStrategy</b> (<a class="el" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html">Node</a> n)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a95c6e6c237e403debac6150500a4be29"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::LoadFrom" ref="a95c6e6c237e403debac6150500a4be29" args="(Node n)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadFrom</b> (<a class="el" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html">Node</a> n)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html#a95c6e6c237e403debac6150500a4be29">LoadFrom</a> (<a class="el" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html">Node</a> n)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads settings from the specified node. Attribute names and property names must match.  <a href="#a95c6e6c237e403debac6150500a4be29"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1308ff791b2d10b08c4303bc0b2793f2"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::MeetsCleanupCriteria" ref="a1308ff791b2d10b08c4303bc0b2793f2" args="(CachedFileInfo i)" -->
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>MeetsCleanupCriteria</b> (<a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_file_info.html">CachedFileInfo</a> i)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a271676e9533e5159a7b4499805614a78"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::MeetsOverMaxCriteria" ref="a271676e9533e5159a7b4499805614a78" args="(CachedFileInfo i)" -->
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>MeetsOverMaxCriteria</b> (<a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_file_info.html">CachedFileInfo</a> i)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aba18a323f41773cd6dc785c7d7d3da88"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::ShouldRemove" ref="aba18a323f41773cd6dc785c7d7d3da88" args="(string relativePath, CachedFileInfo info, bool isOverMax)" -->
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>ShouldRemove</b> (string relativePath, <a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_file_info.html">CachedFileInfo</a> info, bool isOverMax)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">override IEnumerable&lt; <a class="el" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue.html">IIssue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html#a57fa7ad1013a029c4fd0df56b60ca471">GetIssues</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a copy of the list of reported issues.  <a href="#a57fa7ad1013a029c4fd0df56b60ca471"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1d8520c0ea8bbd93d4407b6274fa182"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::LoadTimeSpan" ref="ac1d8520c0ea8bbd93d4407b6274fa182" args="(NameValueCollection data, string key)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadTimeSpan</b> (NameValueCollection data, string key)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade81a62c6447e14dad95e74b82478ec2"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::LoadInt" ref="ade81a62c6447e14dad95e74b82478ec2" args="(NameValueCollection data, string key)" -->
-void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadInt</b> (NameValueCollection data, string key)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae54b594dc496498f09ad2c8bb3ad9e7d"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::LoadProperty" ref="ae54b594dc496498f09ad2c8bb3ad9e7d" args="(NameValueCollection data, string key)" -->
+void&#160;</td><td class="memItemRight" valign="bottom"><b>LoadProperty</b> (NameValueCollection data, string key)</td></tr>
 <tr><td colspan="2"><h2><a name="properties"></a>
 Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html#a4c3f8d645623c7fc574ed750cd66a0be">StartupDelay</a><code> [get, set]</code></td></tr>
@@ -170,8 +170,82 @@ TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><b>ProhibitRemovalIf
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00011">11</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
-</div><hr/><h2>Property Documentation</h2>
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00012">12</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a57fa7ad1013a029c4fd0df56b60ca471"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::GetIssues" ref="a57fa7ad1013a029c4fd0df56b60ca471" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override IEnumerable&lt;<a class="el" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue.html">IIssue</a>&gt; <a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html#a57fa7ad1013a029c4fd0df56b60ca471">ImageResizer.Plugins.DiskCache.CleanupStrategy.GetIssues</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns a copy of the list of reported issues. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html#ab9f594eb58538973713786a0b76fdc52">ImageResizer.Configuration.Issues.IssueSink</a>.</p>
+
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00197">197</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                        {
+            List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;(base.GetIssues());
+            Type t = this.GetType();
+            StringBuilder sb = <span class="keyword">new</span> StringBuilder();
+            <span class="keywordflow">foreach</span>(<span class="keywordtype">string</span> s <span class="keywordflow">in</span> defaults.Keys){
+                PropertyInfo pi = t.GetProperty(s);
+                <span class="keywordtype">object</span> v = pi.GetValue(<span class="keyword">this</span>,null);
+                <span class="keywordflow">if</span> (!v.Equals(defaults[s]))
+                    sb.AppendLine(s + <span class="stringliteral">&quot; has been changed to &quot;</span> + v.ToString() + <span class="stringliteral">&quot; instead of the suggested value, &quot;</span> + defaults[s].ToString());
+            }
+            <span class="keywordflow">if</span> (sb.Length &gt; 0)
+                issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>( <span class="stringliteral">&quot;The cleanup strategy settings have been changed. This is not advised, and may have ill effects. &quot;</span> +
+                <span class="stringliteral">&quot;\nThe default settings for the cleanup strategy were carefully chosen, and should not be changed except at the suggestion of the author.\n&quot;</span> + sb.ToString(), <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
+
+            <span class="keywordflow">return</span> issues;
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a95c6e6c237e403debac6150500a4be29"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::LoadFrom" ref="a95c6e6c237e403debac6150500a4be29" args="(Node n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html#a95c6e6c237e403debac6150500a4be29">ImageResizer.Plugins.DiskCache.CleanupStrategy.LoadFrom</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html">Node</a>&#160;</td>
+          <td class="paramname"><em>n</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Loads settings from the specified node. Attribute names and property names must match. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00028">28</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+
+<p>Referenced by <a class="el" href="_disk_cache_8cs_source.html#l00175">ImageResizer.Plugins.DiskCache.DiskCache.LoadSettings()</a>.</p>
+<div class="fragment"><pre class="fragment">                                    {
+            <span class="keywordflow">if</span> (n == null) <span class="keywordflow">return</span>;
+            <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> s <span class="keywordflow">in</span> properties)
+                LoadProperty(n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>, s);
+        }
+</pre></div>
+</div>
+</div>
+<hr/><h2>Property Documentation</h2>
 <a class="anchor" id="a9e1559718f9cd46757831f7d34ec0467"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupStrategy::AvoidRemovalIfUsedWithin" ref="a9e1559718f9cd46757831f7d34ec0467" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -185,7 +259,7 @@ TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><b>ProhibitRemovalIf
 
 <p>Please note "LastUsed" values are (initially) only accurate to about a hour, due to delayed write. If a file has been used after the app started running, the the last used date is accurate. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00124">124</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00147">147</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
 
 </div>
 </div>
@@ -202,7 +276,7 @@ TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><b>ProhibitRemovalIf
 
 <p>The maximum amount of time to wait between work segements. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00086">86</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00109">109</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
 
 </div>
 </div>
@@ -219,7 +293,7 @@ TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><b>ProhibitRemovalIf
 
 <p>The maximum number of cached files per folder. (defaults to 1000) Only reached if it can be achieved without violating the ProhibitRemoval... limits. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00113">113</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00136">136</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
 
 </div>
 </div>
@@ -236,7 +310,7 @@ TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><b>ProhibitRemovalIf
 
 <p>The minimum amount of time to wait after the most recent BeLazy to begin working again. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00077">77</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00101">101</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
 
 </div>
 </div>
@@ -253,7 +327,7 @@ TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><b>ProhibitRemovalIf
 
 <p>The optimal length for a work segment. Not always achieved. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00095">95</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00118">118</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
 
 </div>
 </div>
@@ -270,7 +344,7 @@ TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><b>ProhibitRemovalIf
 
 <p>Please note "LastUsed" values are (initially) only accurate to about a hour, due to delayed write. If a file has been used after the app started running, the the last used date is accurate. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00141">141</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00164">164</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
 
 </div>
 </div>
@@ -287,7 +361,7 @@ TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><b>ProhibitRemovalIf
 
 <p>How long to wait before beginning the initial cache indexing and cleanup. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00067">67</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00092">92</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
 
 </div>
 </div>
@@ -304,7 +378,7 @@ TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><b>ProhibitRemovalIf
 
 <p>The ideal number of cached files per folder. (defaults to 400) Only reached if it can be achieved without volating the AvoidRemoval... limits. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00105">105</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_strategy_8cs_source.html#l00128">128</a> of file <a class="el" href="_cleanup_strategy_8cs_source.html">CleanupStrategy.cs</a>.</p>
 
 </div>
 </div>

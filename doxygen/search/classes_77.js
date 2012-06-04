@@ -14,5 +14,9 @@ var searchData=
   ['wicrawcapabilitiesinfo',['WICRawCapabilitiesInfo',['../struct_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_w_i_c_raw_capabilities_info.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes']]],
   ['wicrawtonecurve',['WICRawToneCurve',['../struct_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_w_i_c_raw_tone_curve.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes']]],
   ['wicrawtonecurvepoint',['WICRawToneCurvePoint',['../struct_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_w_i_c_raw_tone_curve_point.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes']]],
-  ['wicrect',['WICRect',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_w_i_c_rect.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes']]]
+  ['wicrect',['WICRect',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_w_i_c_rect.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes']]],
+  ['wpfbuilderextensions',['WpfBuilderExtensions',['../class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_builder_extensions.html',1,'ImageResizer::Plugins::WpfBuilder']]],
+  ['wpfbuilderplugin',['WpfBuilderPlugin',['../class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_builder_plugin.html',1,'ImageResizer::Plugins::WpfBuilder']]],
+  ['wpfencoderplugin',['WpfEncoderPlugin',['../class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_encoder_plugin.html',1,'ImageResizer::Plugins::WpfBuilder']]],
+  ['wpfimagesettings',['WpfImageSettings',['../class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_image_settings.html',1,'ImageResizer::Plugins::WpfBuilder']]]
 ];

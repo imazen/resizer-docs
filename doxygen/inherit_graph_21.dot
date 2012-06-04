@@ -3,5 +3,5 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.Basic.DiagnosticPageHandler",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_basic_1_1_diagnostic_page_handler.html"];
+  Node1 [label="ImageResizer.Instructions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_instructions.html",tooltip="A name/value collection of image processsing instructions. The successor to ResizeSettings. Just because a key doesn&#39;t have a property wrapper doesn&#39;t mean you can&#39;t use it. i[&quot;key&quot;] = value; isnt&#39; that scary."];
 }

@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -230,7 +230,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00147"></a>00147 
 <a name="l00148"></a>00148 
 <a name="l00149"></a>00149                     <span class="comment">//If it&#39;s a forward-slash, and we&#39;re in asp.net,  verify the file exists</span>
-<a name="l00150"></a>00150                     <span class="keywordflow">if</span> (slash == <span class="charliteral">&#39;/&#39;</span> &amp;&amp; HttpContext.Current != null &amp;&amp; !c.Pipeline.FileExists(watermark, layer.ImageQuery)) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+<a name="l00150"></a>00150                     <span class="keywordflow">if</span> (slash == <span class="charliteral">&#39;/&#39;</span> &amp;&amp; HttpContext.Current != null &amp;&amp; !c.Pipeline.FileExists(layer.Path, layer.ImageQuery)) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
 <a name="l00151"></a>00151                     layer.RenderTo(s);
 <a name="l00152"></a>00152 
 <a name="l00153"></a>00153 
@@ -246,7 +246,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00163"></a>00163             <span class="keywordflow">return</span> RenderLayersForLevel(s, <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a>.LayerPlacement.Background);
 <a name="l00164"></a>00164         }
 <a name="l00165"></a>00165 
-<a name="l00166"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#ab722389770fa8971c6312616a5f127b3">00166</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#ab722389770fa8971c6312616a5f127b3" title="Process.5(Render).14: Watermarks can be rendered here. All image processing should be done...">RenderOverlays</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
+<a name="l00166"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#ab722389770fa8971c6312616a5f127b3">00166</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#ab722389770fa8971c6312616a5f127b3" title="Process.5(Render).15: Watermarks can be rendered here. All image processing should be done...">RenderOverlays</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
 <a name="l00167"></a>00167             <span class="keywordflow">return</span> RenderLayersForLevel(s, <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a>.LayerPlacement.Overlay);
 <a name="l00168"></a>00168         }
 <a name="l00169"></a>00169 

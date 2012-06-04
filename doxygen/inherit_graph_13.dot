@@ -3,5 +3,5 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="ImageResizer.Configuration.Xml.Selector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_xml_1_1_selector.html",tooltip="Encapsulates a node/attribute selection query, such as &quot;node.node.attribute&quot;."];
+  Node1 [label="ImageResizer.Configuration.Xml.Node",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html",tooltip="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe."];
 }

@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -269,7 +269,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string name]</
 
 <p>Definition at line <a class="el" href="_node_8cs_source.html#l00086">86</a> of file <a class="el" href="_node_8cs_source.html">Node.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                              {
-            <span class="keywordflow">if</span> (children == null || children.Count == 0) <span class="keywordflow">return</span> null;
+            <span class="comment">//if (children == null || children.Count == 0) return null;</span>
             List&lt;Node&gt; results = null;
             <span class="keywordflow">foreach</span>(Node n <span class="keywordflow">in</span> children){
                 <span class="keywordflow">if</span> (n.Name.Equals(elementName, StringComparison.OrdinalIgnoreCase)) {
@@ -301,7 +301,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string name]</
 
 <p>Definition at line <a class="el" href="_node_8cs_source.html#l00231">231</a> of file <a class="el" href="_node_8cs_source.html">Node.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_node_8cs_source.html#l00231">ImageResizer.Configuration.Xml.Node.deepCopy()</a>, and <a class="el" href="_resizer_section_8cs_source.html#l00050">ImageResizer.ResizerSection.getCopyOfNode()</a>.</p>
+<p>Referenced by <a class="el" href="_node_8cs_source.html#l00231">ImageResizer.Configuration.Xml.Node.deepCopy()</a>, and <a class="el" href="_image_resizer_8_resizer_section_8cs_source.html#l00050">ImageResizer.ResizerSection.getCopyOfNode()</a>.</p>
 <div class="fragment"><pre class="fragment">                               {
             Node n = <span class="keyword">new</span> Node(this.name);
             <span class="comment">//copy attrs</span>
@@ -543,7 +543,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string name]</
 
 <p>Definition at line <a class="el" href="_node_8cs_source.html#l00049">49</a> of file <a class="el" href="_node_8cs_source.html">Node.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_plugin_config_8cs_source.html#l00070">ImageResizer.Configuration.PluginConfig.loadPluginsInternal()</a>, and <a class="el" href="_node_8cs_source.html#l00147">ImageResizer.Configuration.Xml.Node.setAttr()</a>.</p>
+<p>Referenced by <a class="el" href="_cleanup_strategy_8cs_source.html#l00028">ImageResizer.Plugins.DiskCache.CleanupStrategy.LoadFrom()</a>, <a class="el" href="_plugin_config_8cs_source.html#l00074">ImageResizer.Configuration.PluginConfig.loadPluginsInternal()</a>, and <a class="el" href="_node_8cs_source.html#l00147">ImageResizer.Configuration.Xml.Node.setAttr()</a>.</p>
 
 </div>
 </div>
@@ -562,7 +562,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string name]</
 
 <p>Definition at line <a class="el" href="_node_8cs_source.html#l00077">77</a> of file <a class="el" href="_node_8cs_source.html">Node.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_plugin_config_8cs_source.html#l00070">ImageResizer.Configuration.PluginConfig.loadPluginsInternal()</a>, and <a class="el" href="_resizer_section_8cs_source.html#l00086">ImageResizer.ResizerSection.OnDeserializeUnrecognizedElement()</a>.</p>
+<p>Referenced by <a class="el" href="_plugin_config_8cs_source.html#l00074">ImageResizer.Configuration.PluginConfig.loadPluginsInternal()</a>, and <a class="el" href="_image_resizer_8_resizer_section_8cs_source.html#l00086">ImageResizer.ResizerSection.OnDeserializeUnrecognizedElement()</a>.</p>
 
 </div>
 </div>
@@ -598,7 +598,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>this[string name]</
 
 <p>Definition at line <a class="el" href="_node_8cs_source.html#l00068">68</a> of file <a class="el" href="_node_8cs_source.html">Node.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_node_8cs_source.html#l00086">ImageResizer.Configuration.Xml.Node.childrenByName()</a>, and <a class="el" href="_plugin_config_8cs_source.html#l00070">ImageResizer.Configuration.PluginConfig.loadPluginsInternal()</a>.</p>
+<p>Referenced by <a class="el" href="_node_8cs_source.html#l00086">ImageResizer.Configuration.Xml.Node.childrenByName()</a>, and <a class="el" href="_plugin_config_8cs_source.html#l00074">ImageResizer.Configuration.PluginConfig.loadPluginsInternal()</a>.</p>
 
 </div>
 </div>

@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -458,7 +458,7 @@ Properties</h2></td></tr>
             <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#ae9bd5dae4cd2ec5cfd13153386941e9b" title="How many milliseconds to wait for a cached item to be available. Values below 0 are set to 0...">CacheAccessTimeout</a> = c.get(<span class="stringliteral">&quot;diskcache.cacheAccessTimeout&quot;</span>, <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#ae9bd5dae4cd2ec5cfd13153386941e9b" title="How many milliseconds to wait for a cached item to be available. Values below 0 are set to 0...">CacheAccessTimeout</a>);
             <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#ad36ae61ace9fdb78f7daf1c5a672c6c4" title="If more than this amount of memory (in bytes) is currently allocated by queued writes, the request will be processed synchronously instead of asynchronously.">AsyncBufferSize</a> = c.get(<span class="stringliteral">&quot;diskcache.asyncBufferSize&quot;</span>, <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#ad36ae61ace9fdb78f7daf1c5a672c6c4" title="If more than this amount of memory (in bytes) is currently allocated by queued writes, the request will be processed synchronously instead of asynchronously.">AsyncBufferSize</a>);
             <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#a041942b5394c38fd989fa268d69348a7" title="If true, writes to the disk cache will be performed outside the request thread, allowing responses to...">AsyncWrites</a> = c.get(<span class="stringliteral">&quot;diskcache.asyncWrites&quot;</span>, <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#a041942b5394c38fd989fa268d69348a7" title="If true, writes to the disk cache will be performed outside the request thread, allowing responses to...">AsyncWrites</a>);
-            <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#a14e1a1afff8c1d086f91eb7f1d7b4060" title="Only relevant when AutoClean=true. Settings about how background cache cleanup are performed...">CleanupStrategy</a>.LoadFrom(c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a88b0d3c3b0457e5f8f0cacb35cb7d267" title="Returns a deep copy of the specified node.">getNode</a>(<span class="stringliteral">&quot;cleanupStrategy&quot;</span>));
+            <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html#a14e1a1afff8c1d086f91eb7f1d7b4060" title="Only relevant when AutoClean=true. Settings about how background cache cleanup are performed...">CleanupStrategy</a>.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html#a95c6e6c237e403debac6150500a4be29" title="Loads settings from the specified node. Attribute names and property names must match.">LoadFrom</a>(c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a88b0d3c3b0457e5f8f0cacb35cb7d267" title="Returns a deep copy of the specified node.">getNode</a>(<span class="stringliteral">&quot;cleanupStrategy&quot;</span>));
         }
 </pre></div>
 </div>

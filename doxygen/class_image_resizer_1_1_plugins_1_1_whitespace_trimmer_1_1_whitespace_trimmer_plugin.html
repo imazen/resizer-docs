@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -148,7 +148,7 @@ Protected Member Functions</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html#l00012">12</a> of file <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html">WhitespaceTrimmerPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html#l00014">14</a> of file <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html">WhitespaceTrimmerPlugin.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a0f4fd28b3a72ff3f5ea7b5400270f3a3"></a><!-- doxytag: member="ImageResizer::Plugins::WhitespaceTrimmer::WhitespaceTrimmerPlugin::GetSupportedQuerystringKeys" ref="a0f4fd28b3a72ff3f5ea7b5400270f3a3" args="()" -->
 <div class="memitem">
@@ -169,7 +169,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html#aaa1c43be9b92caf1f1caa81dc9e9f4bf">ImageResizer.Plugins.IQuerystringPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html#l00073">73</a> of file <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html">WhitespaceTrimmerPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html#l00068">68</a> of file <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html">WhitespaceTrimmerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                 {
             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;trim.percentpadding&quot;</span>, <span class="stringliteral">&quot;trim.threshold&quot;</span> };
         }
@@ -201,30 +201,23 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#a6eb1f023fce8205261fc10b2b4a58941">ImageResizer.Resizing.AbstractImageProcessor</a>.</p>
 
-<p>Definition at line <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html#l00019">19</a> of file <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html">WhitespaceTrimmerPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html#l00021">21</a> of file <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html">WhitespaceTrimmerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                     {
             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a> == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
 
-            <span class="keywordtype">string</span> str = null;
-            str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;trim.percentpadding&quot;</span>]; <span class="comment">//percentpadding. Percentage is 0-100, multiplied by the average of the width and height.</span>
-            <span class="keywordtype">double</span> percentpadding = 0;
-            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">double</span>.TryParse(str, out percentpadding))
-                percentpadding /= 100;
-
-
-            <span class="keywordtype">int</span> threshold = 0;
-            str = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;trim.threshold&quot;</span>]; <span class="comment">//threshold</span>
-            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(str) &amp;&amp; <span class="keywordtype">int</span>.TryParse(str, out threshold)) {
+            <span class="comment">//percentpadding. Percentage is 0-100, multiplied by the average of the width and height.</span>
+            <span class="keywordtype">double</span> percentpadding = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.Get&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;trim.percentpadding&quot;</span>, 0) / 100;
+            
+            <span class="keywordtype">int</span>? threshold = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.Get&lt;<span class="keywordtype">int</span>&gt;(<span class="stringliteral">&quot;trim.threshold&quot;</span>);
+            <span class="keywordflow">if</span> (threshold != null) {
                 <span class="keywordflow">if</span> (threshold &lt; 0) threshold = 0; <span class="keywordflow">if</span> (threshold &gt; 255) threshold = 255;
-
-                
                 
                 Rectangle box = <span class="keyword">new</span> BoundingBoxFinder().FindBoxSobel(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>, <span class="keyword">new</span> Rectangle(0, 0, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Width, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Height), (byte)threshold);
                 <span class="comment">//Add padding</span>
                 <span class="keywordtype">int</span> paddingPixels = (int)Math.Ceiling(percentpadding * (box.Width + box.Height) / 2);
                 box.X = Math.Max(0, box.X - paddingPixels);
                 box.Y= Math.Max(0, box.Y - paddingPixels);
-                box.<a class="code" href="class_image_resizer_1_1_resize_settings.html#a80001d573cec108c39e5376f6d854993" title="[&quot;width&quot;]: Sets the desired width of the image. (minus padding, borders, margins, effects, and rotation). The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches &#39;width&#39; and &#39;height&#39;. If both width and height are specified, the image will be &#39;letterboxed&#39; to match the desired aspect ratio. Use maxwidth/maxheight, crop=auto, or stretch=fill to avoid this behavior.">Width</a> = Math.Min(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Width, box.Width + paddingPixels * 2);
+                box.<a class="code" href="class_image_resizer_1_1_resize_settings.html#a80001d573cec108c39e5376f6d854993" title="[&quot;width&quot;]: Sets the desired width of the image. (minus padding, borders, margins, effects, and rotation). The only instance the resulting image will be smaller is if the original source image is smaller. Set Scale=Both to upscale these images and ensure the output always matches &#39;width&#39; and &#39;height&#39;. If both width and height are specified, the image will be &#39;letterboxed&#39; to match the desired aspect ratio. Change the Mode property to adjust this behavior.">Width</a> = Math.Min(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Width, box.Width + paddingPixels * 2);
                 box.Height = Math.Min(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Height, box.Height + paddingPixels * 2);
 
                 <span class="comment">//Adjust s.originalSize so the layout occurs properly.</span>
@@ -262,7 +255,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#a544a3bf1d48ed6c5e7d8bec650cd0f9d">ImageResizer.Resizing.AbstractImageProcessor</a>.</p>
 
-<p>Definition at line <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html#l00052">52</a> of file <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html">WhitespaceTrimmerPlugin.cs</a>.</p>
+<p>Definition at line <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html#l00047">47</a> of file <a class="el" href="_whitespace_trimmer_plugin_8cs_source.html">WhitespaceTrimmerPlugin.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                         {
             <span class="comment">//Now we offset copyRect so it works properly.</span>
             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a995d9c7d9b9c8faf2f8cc1cbf15d8174" title="Allows extensions to store data along with the image state.">Data</a>.ContainsKey(RectDataKey)){

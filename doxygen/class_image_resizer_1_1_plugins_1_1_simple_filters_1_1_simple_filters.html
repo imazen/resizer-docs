@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -136,12 +136,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>Uninstall</b> (<a cla
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If the plugin reads any values from the querystring, the names of the keys should be specified here. This information is required so that the HttpModule knows when to handle an image request.  <a href="#a7d94d8453a2c84cbda1940e1227fa271"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">override <a class="el" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86">RequestedAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_simple_filters_1_1_simple_filters.html#a26ad52c520a5cdc0c0e37c8aff89bb0e">PreRenderImage</a> (<a class="el" href="class_image_resizer_1_1_resizing_1_1_image_state.html">ImageState</a> s)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Supporting rounded corners.  <a href="#a26ad52c520a5cdc0c0e37c8aff89bb0e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">override <a class="el" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86">RequestedAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_simple_filters_1_1_simple_filters.html#a73224aa361628c935df88ac8573f753e">PostCreateImageAttributes</a> (<a class="el" href="class_image_resizer_1_1_resizing_1_1_image_state.html">ImageState</a> s)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Process.5(Render).8: The ImageAttributes instance exists and can be modified or replaced.  <a href="#a73224aa361628c935df88ac8573f753e"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_simple_filters_8cs_source.html#l00011">11</a> of file <a class="el" href="_simple_filters_8cs_source.html">SimpleFilters.cs</a>.</p>
+<p>Definition at line <a class="el" href="_simple_filters_8cs_source.html#l00014">14</a> of file <a class="el" href="_simple_filters_8cs_source.html">SimpleFilters.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a7d94d8453a2c84cbda1940e1227fa271"></a><!-- doxytag: member="ImageResizer::Plugins::SimpleFilters::SimpleFilters::GetSupportedQuerystringKeys" ref="a7d94d8453a2c84cbda1940e1227fa271" args="()" -->
 <div class="memitem">
@@ -162,9 +164,9 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html#aaa1c43be9b92caf1f1caa81dc9e9f4bf">ImageResizer.Plugins.IQuerystringPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_filters_8cs_source.html#l00022">22</a> of file <a class="el" href="_simple_filters_8cs_source.html">SimpleFilters.cs</a>.</p>
+<p>Definition at line <a class="el" href="_simple_filters_8cs_source.html#l00025">25</a> of file <a class="el" href="_simple_filters_8cs_source.html">SimpleFilters.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                 {
-            <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;filter&quot;</span>, <span class="stringliteral">&quot;s.grayscale&quot;</span>, <span class="stringliteral">&quot;s.sepia&quot;</span>, <span class="stringliteral">&quot;s.alpha&quot;</span>, <span class="stringliteral">&quot;s.brightness&quot;</span>, <span class="stringliteral">&quot;s.contrast&quot;</span>, <span class="stringliteral">&quot;s.saturation&quot;</span>, <span class="stringliteral">&quot;s.invert&quot;</span> };
+            <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;filter&quot;</span>, <span class="stringliteral">&quot;s.grayscale&quot;</span>, <span class="stringliteral">&quot;s.sepia&quot;</span>, <span class="stringliteral">&quot;s.alpha&quot;</span>, <span class="stringliteral">&quot;s.brightness&quot;</span>, <span class="stringliteral">&quot;s.contrast&quot;</span>, <span class="stringliteral">&quot;s.saturation&quot;</span>, <span class="stringliteral">&quot;s.invert&quot;</span>,<span class="stringliteral">&quot;s.roundcorners&quot;</span> };
         }
 </pre></div>
 </div>
@@ -194,7 +196,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#a447432f0d098f18909fa336bb8321801">ImageResizer.Resizing.AbstractImageProcessor</a>.</p>
 
-<p>Definition at line <a class="el" href="_simple_filters_8cs_source.html#l00027">27</a> of file <a class="el" href="_simple_filters_8cs_source.html">SimpleFilters.cs</a>.</p>
+<p>Definition at line <a class="el" href="_simple_filters_8cs_source.html#l00089">89</a> of file <a class="el" href="_simple_filters_8cs_source.html">SimpleFilters.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                   {
             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a0575a388f0e3235d967cb62f4904fe09" title="Allows color correction/modification during the image copy.">copyAttibutes</a> == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
 
@@ -210,7 +212,7 @@ Protected Member Functions</h2></td></tr>
                 <span class="keywordflow">if</span> (valuesStart &gt; -1) {
                     valStr = filter.Substring(valuesStart);
                     filter = filter.Substring(0, valuesStart);
-                    values = Util.Utils.parseList(valStr, 0);
+                    values = <a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html" title="Provides invariant parsing &amp; serialization of primitive types, like Enums, integers, floats, and booleans.">ParseUtils</a>.ParseList&lt;<span class="keywordtype">double</span>&gt;(valStr, 0,0,1);
                 }
 
                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;grayscale&quot;</span>.Equals(filter, StringComparison.OrdinalIgnoreCase)) filters.Add(GrayscaleFlat());
@@ -236,10 +238,10 @@ Protected Member Functions</h2></td></tr>
             <span class="keywordtype">string</span> saturation = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;s.saturation&quot;</span>];
 
             <span class="keywordtype">double</span> temp = 0;
-            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(alpha) &amp;&amp; <span class="keywordtype">double</span>.TryParse(alpha, out temp)) filters.Add(Alpha((<span class="keywordtype">float</span>)temp));
-            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(brightness) &amp;&amp; <span class="keywordtype">double</span>.TryParse(brightness, out temp)) filters.Add(Brightness((<span class="keywordtype">float</span>)temp));
-            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(contrast) &amp;&amp; <span class="keywordtype">double</span>.TryParse(contrast, out temp)) filters.Add(Contrast((<span class="keywordtype">float</span>)temp));
-            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(saturation) &amp;&amp; <span class="keywordtype">double</span>.TryParse(saturation, out temp)) filters.Add(Saturation((<span class="keywordtype">float</span>)temp));
+            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(alpha) &amp;&amp; <span class="keywordtype">double</span>.TryParse(alpha, <a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html" title="Provides invariant parsing &amp; serialization of primitive types, like Enums, integers, floats, and booleans.">ParseUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html#a42453d70c2d660deaffbf5554be90f03" title="Defines a parsing style that permits leading/trailing whitespace, a leading negitve/postiive sign...">FloatingPointStyle</a>, NumberFormatInfo.InvariantInfo, out temp)) filters.Add(Alpha((<span class="keywordtype">float</span>)temp));
+            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(brightness) &amp;&amp; <span class="keywordtype">double</span>.TryParse(brightness, <a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html" title="Provides invariant parsing &amp; serialization of primitive types, like Enums, integers, floats, and booleans.">ParseUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html#a42453d70c2d660deaffbf5554be90f03" title="Defines a parsing style that permits leading/trailing whitespace, a leading negitve/postiive sign...">FloatingPointStyle</a>, NumberFormatInfo.InvariantInfo, out temp)) filters.Add(Brightness((<span class="keywordtype">float</span>)temp));
+            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(contrast) &amp;&amp; <span class="keywordtype">double</span>.TryParse(contrast, <a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html" title="Provides invariant parsing &amp; serialization of primitive types, like Enums, integers, floats, and booleans.">ParseUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html#a42453d70c2d660deaffbf5554be90f03" title="Defines a parsing style that permits leading/trailing whitespace, a leading negitve/postiive sign...">FloatingPointStyle</a>, NumberFormatInfo.InvariantInfo, out temp)) filters.Add(Contrast((<span class="keywordtype">float</span>)temp));
+            <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(saturation) &amp;&amp; <span class="keywordtype">double</span>.TryParse(saturation, <a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html" title="Provides invariant parsing &amp; serialization of primitive types, like Enums, integers, floats, and booleans.">ParseUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html#a42453d70c2d660deaffbf5554be90f03" title="Defines a parsing style that permits leading/trailing whitespace, a leading negitve/postiive sign...">FloatingPointStyle</a>, NumberFormatInfo.InvariantInfo, out temp)) filters.Add(Saturation((<span class="keywordtype">float</span>)temp));
 
 
             <span class="keywordflow">if</span> (filters.Count == 0) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
@@ -256,6 +258,90 @@ Protected Member Functions</h2></td></tr>
             }
 
 
+            <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a26ad52c520a5cdc0c0e37c8aff89bb0e"></a><!-- doxytag: member="ImageResizer::Plugins::SimpleFilters::SimpleFilters::PreRenderImage" ref="a26ad52c520a5cdc0c0e37c8aff89bb0e" args="(ImageState s)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">override <a class="el" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86">RequestedAction</a> <a class="el" href="class_image_resizer_1_1_plugins_1_1_simple_filters_1_1_simple_filters.html#a26ad52c520a5cdc0c0e37c8aff89bb0e">ImageResizer.Plugins.SimpleFilters.SimpleFilters.PreRenderImage</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_image_resizer_1_1_resizing_1_1_image_state.html">ImageState</a>&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td><code> [inline, protected, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Supporting rounded corners. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Reimplemented from <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#ab3063eca19c572b51160ab0826cb6d08">ImageResizer.Resizing.AbstractImageProcessor</a>.</p>
+
+<p>Definition at line <a class="el" href="_simple_filters_8cs_source.html#l00034">34</a> of file <a class="el" href="_simple_filters_8cs_source.html">SimpleFilters.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                        {
+            <span class="keywordtype">double</span>[] vals = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.GetList&lt;<span class="keywordtype">double</span>&gt;(<span class="stringliteral">&quot;s.roundcorners&quot;</span>,0,1,4);
+            <span class="keywordflow">if</span> (vals == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+
+            <span class="keywordflow">if</span> (vals.Length == 1)  vals = <span class="keyword">new</span> <span class="keywordtype">double</span>[]{vals[0],vals[0],vals[0],vals[0]};
+            
+            <span class="keywordtype">bool</span> hasValue = <span class="keyword">false</span>;
+            <span class="keywordflow">foreach</span> (<span class="keywordtype">double</span> d <span class="keywordflow">in</span> vals) <span class="keywordflow">if</span> (d &gt; 0) hasValue = <span class="keyword">true</span>;
+            <span class="keywordflow">if</span> (!hasValue) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+            
+            Bitmap cropped = null;
+            <span class="keywordflow">try</span>{
+                <span class="comment">//Make sure cropping is applied, and use existing prerendered bitmap if present.</span>
+                <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> != null) cropped = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>;
+                <span class="keywordflow">else</span> <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.X != 0 || s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Y != 0 || s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Width != s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a72e11433b4c36caccab68577e864202c" title="The original size of the source bitmap. Use this instead of accessing the bitmap directly for this in...">originalSize</a>.Width || s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Height != s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a72e11433b4c36caccab68577e864202c" title="The original size of the source bitmap. Use this instead of accessing the bitmap directly for this in...">originalSize</a>.Height){
+                    cropped = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Clone(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>, PixelFormat.Format32bppArgb);
+                }<span class="keywordflow">else</span>{
+                    cropped = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>;
+                }
+                s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> = <span class="keyword">new</span> Bitmap(cropped.Width,cropped.Height, PixelFormat.Format32bppArgb);
+
+                <span class="keywordtype">int</span>[] radius = <span class="keyword">new</span> <span class="keywordtype">int</span>[4];
+                <span class="comment">//Radius percentages are 0-100, a percentage of the smaller of the width and height.</span>
+                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vals.Length; i++) radius[i] = (<span class="keywordtype">int</span>)Math.Round(Math.Max(0,Math.Min(99.999,vals[i])) * ((<span class="keywordtype">double</span>)Math.Min(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>.Width,s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>.Height) / 100));
+
+
+                s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>.MakeTransparent();
+                <span class="keyword">using</span> (Graphics g = Graphics.FromImage(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>)) {
+                    g.SmoothingMode = SmoothingMode.AntiAlias;
+                    g.CompositingMode = CompositingMode.SourceOver;
+                    g.CompositingQuality = CompositingQuality.HighQuality;
+                    g.PixelOffsetMode = PixelOffsetMode.HighQuality;
+                    <span class="keyword">using</span> (TextureBrush tb = <span class="keyword">new</span> TextureBrush(cropped))
+                    <span class="keyword">using</span> (GraphicsPath gp = <span class="keyword">new</span> GraphicsPath(FillMode.Winding)) {
+                        Rectangle bounds = <span class="keyword">new</span> Rectangle(0, 0, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>.Width, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>.Height);
+                        <span class="keywordtype">int</span>[] angles = <span class="keyword">new</span> <span class="keywordtype">int</span>[]{180,270,0,90};
+                        <span class="keywordtype">int</span>[] xs = <span class="keyword">new</span> <span class="keywordtype">int</span>[]{bounds.X,bounds.Right - radius[1], bounds.Right - radius[2], bounds.X};
+                        <span class="keywordtype">int</span>[] ys = <span class="keyword">new</span> <span class="keywordtype">int</span>[]{bounds.Y,bounds.Y,bounds.Bottom - radius[2], bounds.Bottom - radius[3]};
+                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i =0; i &lt; 4; i++){
+                            <span class="keywordflow">if</span> (radius[i] &gt; 0){
+                                gp.AddArc(xs[i],ys[i],radius[i],radius[i],angles[i],90);
+                            }<span class="keywordflow">else</span>{
+                                gp.AddLine(xs[i],ys[i],xs[i],ys[i]);
+                            }
+                        }
+                        g.FillPath(tb, gp);
+
+                    }
+                }
+            }<span class="keywordflow">finally</span>{
+                <span class="keywordflow">if</span> (cropped != null &amp; cropped != s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>) cropped.Dispose();
+            }
             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
         }
 </pre></div>

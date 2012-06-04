@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -154,7 +154,7 @@ Properties</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>This action result is NOT a replacement for the <a class="el" href="class_image_resizer_1_1_intercept_module.html" title="Monitors incoming image requests to determine if resizing (or other processing) is being requested...">InterceptModule</a> and MvcRoutingShim. It cannot hope to achieve the same performance, compatibility, or flexibility. It does not support all the plugins, nor all the Pipeline events. It does not support the CloudFront, Image404, or ImageHandlerSyntax plugins. RemoteReader, SqlReader, S3Reader, , Image404, ClientCache, It doesn't even work yet. </p>
 
-<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00027">27</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
+<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00028">28</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a89878ee2f86eb865caf2e1ecc15773e1"></a><!-- doxytag: member="ImageResizer::Mvc::ImageRequestAction::ExecuteVirtualFileResult" ref="a89878ee2f86eb865caf2e1ecc15773e1" args="(HttpContext context, string virtualPath, NameValueCollection queryString, IVirtualFile vf)" -->
 <div class="memitem">
@@ -204,7 +204,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00140">140</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
+<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00144">144</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                                                        {
             Stopwatch s = <span class="keyword">new</span> Stopwatch();
             s.Start();
@@ -213,10 +213,10 @@ Properties</h2></td></tr>
             ResizeSettings settings = <span class="keyword">new</span> ResizeSettings(queryString);
 
             <span class="keywordtype">bool</span> isCaching = settings.Cache == <a class="code" href="namespace_image_resizer.html#a6b30c95c789b77db2c5aa905345d917c" title="When to disk cache the image.">ServerCacheMode</a>.Always;
-            <span class="keywordtype">bool</span> isProcessing = settings.Process == <a class="code" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a" title="When to process and re-encode the image.">ProcessWhen</a>.Always;
+            <span class="keywordtype">bool</span> isProcessing = settings.Process == <a class="code" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a" title="When to process and re-encode the file.">ProcessWhen</a>.Always;
 
             <span class="comment">//By default, we process it if is both (a) a recognized image extension, and (b) has a resizing directive (not just &#39;cache&#39;).</span>
-            <span class="keywordflow">if</span> (settings.Process == <a class="code" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a" title="When to process and re-encode the image.">ProcessWhen</a>.Default){
+            <span class="keywordflow">if</span> (settings.Process == <a class="code" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a" title="When to process and re-encode the file.">ProcessWhen</a>.Default){
                 <span class="comment">//Check for resize directive by removing (&#39;non-resizing&#39; items from the current querystring) </span>
                 NameValueCollection copy = <span class="keyword">new</span> NameValueCollection(queryString);
                 copy.Remove(<span class="stringliteral">&quot;cache&quot;</span>); copy.Remove(<span class="stringliteral">&quot;process&quot;</span>); copy.Remove(<span class="stringliteral">&quot;useresizingpipeline&quot;</span>); copy.Remove(<span class="stringliteral">&quot;404&quot;</span>);
@@ -255,7 +255,7 @@ Properties</h2></td></tr>
             <span class="comment">//Determine the file extenson for the caching system to use if we aren&#39;t processing the image</span>
             <span class="comment">//Use the exsiting one if is an image extension. If not, use &quot;unknown&quot;. </span>
             <span class="comment">// We don&#39;t want to suggest writing .exe or .aspx files to the cache! </span>
-            <span class="keywordtype">string</span> fallbackExtension = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a3b381221fbb1e4bd0d5d299c7f0dc550" title="Will return the full extension, like &quot;.jpg.ashx&quot;, not just the last bit. Ignores the querystring part...">GetFullExtension</a>(virtualPath).TrimStart(<span class="charliteral">&#39;.&#39;</span>); 
+            <span class="keywordtype">string</span> fallbackExtension = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a3b381221fbb1e4bd0d5d299c7f0dc550" title="Will return the full extension, like &quot;.jpg.ashx&quot;, not just the last bit. Excludes extensions containi...">GetFullExtension</a>(virtualPath).TrimStart(<span class="charliteral">&#39;.&#39;</span>); 
             <span class="keywordflow">if</span> (!conf.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#ac7ef1f4af9d8eb435963582217d2ce15" title="True if the specified extension is one that the pipeline can handle.">IsAcceptedImageType</a>(virtualPath)) fallbackExtension = <span class="stringliteral">&quot;unknown&quot;</span>;
 
             <span class="comment">//Determine the mime-type if we aren&#39;t processing the image.</span>
@@ -268,7 +268,7 @@ Properties</h2></td></tr>
 
             <span class="comment">//Build CacheEventArgs</span>
             <a class="code" href="class_image_resizer_1_1_caching_1_1_response_args.html" title="IResponseArgs implementation.">ResponseArgs</a> e = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_caching_1_1_response_args.html" title="IResponseArgs implementation.">ResponseArgs</a>();
-            e.<a class="code" href="class_image_resizer_1_1_caching_1_1_response_args.html#a9a37ba30bcff0b537af5ac405c5b5a3e" title="A value derived from the request. Can be used as a cache key.">RequestKey</a> = virtualPath + <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(queryString);
+            e.<a class="code" href="class_image_resizer_1_1_caching_1_1_response_args.html#a9a37ba30bcff0b537af5ac405c5b5a3e" title="A value derived from the request. Can be used as a cache key.">RequestKey</a> = virtualPath + <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(queryString);
             e.<a class="code" href="class_image_resizer_1_1_caching_1_1_response_args.html#a0708450cd35b10e284c1a45b0ca3abc1" title="The rewritten querystring. Can be useful for caching systems that accept querystring arguments...">RewrittenQuerystring</a> = settings;
             e.<a class="code" href="class_image_resizer_1_1_caching_1_1_response_args.html#a486726072eda5c0872cd117e6913c0a4" title="The content-type of the data, among other things. Set ResponseHeaders.ApplyDuringPreSendRequestHeader...">ResponseHeaders</a>.<a class="code" href="interface_image_resizer_1_1_caching_1_1_i_response_headers.html#a0e2048699acfd1ec7b5d4657116e38de" title="The mime-type of the output data. Defaults to null.">ContentType</a> = isProcessing ? guessedEncoder.<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#a7cbe10dac3c2bad04d088ae6f20e4180" title="Returns the appropriate mime-time for the output format as currently configured.">MimeType</a> : fallbackContentType; 
             e.<a class="code" href="class_image_resizer_1_1_caching_1_1_response_args.html#a14024965db082abfd3d917db64d4fc8d" title="A file extension appropriate for the resulting data. May be different than the extension on the origi...">SuggestedExtension</a> = isProcessing ? guessedEncoder.<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#ad7da126e6577cc319df398bf04949859" title="Returns a file extension appropriate for the output format as currently configured, without a leading dot.">Extension</a> : fallbackExtension;
@@ -291,7 +291,7 @@ Properties</h2></td></tr>
                         <span class="comment">//Just duplicate the data</span>
                         <span class="keyword">using</span> (Stream source = (vf != null) ? vf.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html#ab7b7a83101de09de66b663910b3febcc" title="Returns an opened stream to the file contents.">Open</a>(): 
                                         File.Open(HostingEnvironment.MapPath(virtualPath), FileMode.Open, FileAccess.Read, FileShare.Read)) {
-                            <a class="code" href="class_image_resizer_1_1_util_1_1_utils.html">Utils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_utils.html#a2630903f140fe0dafaa2d160851deeee" title="Copies all remaining data from &#39;source&#39; to &#39;dest&#39;.">copyStream</a>(source, stream);
+                                            source.CopyToStream(stream);
                         }
                     } <span class="keywordflow">else</span> {
                         <span class="comment">//Process the image</span>
@@ -373,7 +373,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00072">72</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
+<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00073">73</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                                          {
 
             var app = (HttpApplication) context.HttpContext.GetService(typeof(HttpApplication));
@@ -385,7 +385,7 @@ Properties</h2></td></tr>
             conf.FireRewritingEvents(null, app.Context,ue);
 
             <span class="comment">//Pull data back out of event object, resolving app-relative paths</span>
-            virtualPath = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a1a7e4faaa93c5b4d1f3652ccfc4dae82" title="Turns relative paths into domain-relative paths. Turns app-relative paths into domain relative paths...">ResolveAppRelativeAssumeAppRelative</a>(ue.<a class="code" href="class_image_resizer_1_1_configuration_1_1_url_event_args.html#a45acfa52b457e3208a4c1442c12266fa" title="Domain-relative path which also includes the path info portion. I.e, &#39;/app/folder/file.aspx/path/info&#39; could be a valid value. Relative to the domain root, not the site or app root.">VirtualPath</a>);
+            virtualPath = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a1a7e4faaa93c5b4d1f3652ccfc4dae82" title="Turns relative paths into domain-relative paths. Turns app-relative paths into domain relative paths...">ResolveAppRelativeAssumeAppRelative</a>(ue.<a class="code" href="class_image_resizer_1_1_configuration_1_1_url_event_args.html#a45acfa52b457e3208a4c1442c12266fa" title="Domain-relative path which also includes the path info portion. I.e, &#39;/app/folder/file.aspx/path/info&#39; could be a valid value. Relative to the domain root, not the site or app root.">VirtualPath</a>);
             q = ue.QueryString;
 
             <span class="comment">//Store the modified querystring in request for use by VirtualPathProviders</span>
@@ -400,7 +400,10 @@ Properties</h2></td></tr>
                 <span class="comment">//Do we have permission to call UrlAuthorizationModule.CheckUrlAccessForPrincipal?</span>
                 <span class="keywordtype">bool</span> canCheckUrl = System.Security.SecurityManager.IsGranted(<span class="keyword">new</span> System.Security.Permissions.SecurityPermission(System.Security.Permissions.PermissionState.Unrestricted));
                 <span class="comment">//Run the rewritten path past the auth system again, using the result as the default &quot;AllowAccess&quot; value</span>
-                <span class="keywordflow">if</span> (canCheckUrl) isAllowed = UrlAuthorizationModule.CheckUrlAccessForPrincipal(virtualPath, user, <span class="stringliteral">&quot;GET&quot;</span>);
+                <span class="keywordflow">if</span> (canCheckUrl) <span class="keywordflow">try</span> {
+                            isAllowed = UrlAuthorizationModule.CheckUrlAccessForPrincipal(virtualPath, user, <span class="stringliteral">&quot;GET&quot;</span>);
+                        } <span class="keywordflow">catch</span> (NotImplementedException) { } <span class="comment">//For MONO support</span>
+
             }
                  
             <span class="comment">//Allow user code to deny access, but not modify the url or querystring.</span>
@@ -415,7 +418,7 @@ Properties</h2></td></tr>
             <span class="keywordtype">bool</span> existsPhysically = (conf.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a1f2edcda0c44b3a6432c2a108498f860" title="The behavior to use when accessing the file system.">VppUsage</a> != VppUsageOption.Always) &amp;&amp; System.IO.File.Exists(HostingEnvironment.MapPath(virtualPath));
 
             <span class="comment">//If not present physically (and VppUsage!=never), try to get the virtual file. Null indicates a missing file</span>
-            <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file. Implementing this allows usage of your VirtualProvider without registering it with AS...">IVirtualFile</a> vf = (conf.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a1f2edcda0c44b3a6432c2a108498f860" title="The behavior to use when accessing the file system.">VppUsage</a> != VppUsageOption.Never &amp;&amp; !existsPhysically) ? conf.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#aedeef5271e05c47b2b1953ee9d5f7d5c">GetFile</a>(virtualPath, q) : null;
+            <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a> vf = (conf.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a1f2edcda0c44b3a6432c2a108498f860" title="The behavior to use when accessing the file system.">VppUsage</a> != VppUsageOption.Never &amp;&amp; !existsPhysically) ? conf.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a0c58a51a8bc68f0c131b67c700582a80">GetFile</a>(virtualPath, q) : null;
 
             <span class="comment">//Only process files that exist</span>
             <span class="keywordflow">if</span> (existsPhysically || vf != null) {
@@ -447,7 +450,7 @@ Properties</h2></td></tr>
 
 <p>If true, and if the app has Full Trust, the UrlAuthorizationModule will be run against the final virtual path before execution. Defaults to true. Pipeline.AuthorizeImage will be fired regardless. </p>
 
-<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00041">41</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
+<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00042">42</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
 
 </div>
 </div>
@@ -464,7 +467,7 @@ Properties</h2></td></tr>
 
 <p>The resizing/processing commands to apply. </p>
 
-<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00051">51</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
+<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00052">52</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
 
 </div>
 </div>
@@ -481,7 +484,7 @@ Properties</h2></td></tr>
 
 <p>The source object (Bitmap, path, stream, IVirtualFile, etc..) for the image to process and/or cache and/or serve. </p>
 
-<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00046">46</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
+<p>Definition at line <a class="el" href="_image_request_action_8cs_source.html#l00047">47</a> of file <a class="el" href="_image_request_action_8cs_source.html">ImageRequestAction.cs</a>.</p>
 
 </div>
 </div>

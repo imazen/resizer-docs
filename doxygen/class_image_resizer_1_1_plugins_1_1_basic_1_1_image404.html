@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -146,7 +146,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>resolve404Path</b> 
 <div class="textblock"><p>Redirects image 404 errors to a querystring-specified server-local location, while maintaining querystring values so layout isn't disrupted. </p>
 <p>For example, missingimage.jpg?404=image.jpg&amp;width=200 with the default setting &lt;image404 baseDir="~/" /&gt; will redirect to ~/image.jpg?width=200. You may also configure 'variables', which is the reccomended approach. Ex. &lt;image404 propertyImageDefault="~/images/nophoto.png" /&gt; and use them like so: missingimage.jpg?404=propertImageDefault?width=200 -&gt; ~/images/nophoto.png?width=200. Querystring values in the variable value take precedence. For example, Ex. &lt;image404 propertyImageDefault="~/images/nophoto.png?format=png" /&gt; and missingimage.jpg?format=jpg&amp;404=propertImageDefault?width=200 -&gt; ~/images/nophoto.png?format=png&amp;width=200. </p>
 
-<p>Definition at line <a class="el" href="_image404_8cs_source.html#l00019">19</a> of file <a class="el" href="_image404_8cs_source.html">Image404.cs</a>.</p>
+<p>Definition at line <a class="el" href="_image404_8cs_source.html#l00021">21</a> of file <a class="el" href="_image404_8cs_source.html">Image404.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a68bc24776d6634add4c6c79f3181b718"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::Image404::GetSupportedQuerystringKeys" ref="a68bc24776d6634add4c6c79f3181b718" args="()" -->
 <div class="memitem">
@@ -167,7 +167,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>resolve404Path</b> 
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html#aaa1c43be9b92caf1f1caa81dc9e9f4bf">ImageResizer.Plugins.IQuerystringPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_image404_8cs_source.html#l00070">70</a> of file <a class="el" href="_image404_8cs_source.html">Image404.cs</a>.</p>
+<p>Definition at line <a class="el" href="_image404_8cs_source.html#l00082">82</a> of file <a class="el" href="_image404_8cs_source.html">Image404.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                 {
             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;404&quot;</span> };
         }

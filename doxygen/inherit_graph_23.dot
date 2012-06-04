@@ -3,5 +3,5 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.BatchZipper.BatchResizeItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_batch_resize_item.html",tooltip="Represents a file to resize/re-encode, the resize/encoding settings."];
+  Node1 [label="ImageResizer.Mvc.ImageRequestAction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_mvc_1_1_image_request_action.html",tooltip="This action result is NOT a replacement for the InterceptModule and MvcRoutingShim. It cannot hope to achieve the same performance, compatibility, or flexibility. It does not support all the plugins, nor all the Pipeline events. It does not support the CloudFront, Image404, or ImageHandlerSyntax plugins. RemoteReader, SqlReader, S3Reader, , Image404, ClientCache, It doesn&#39;t even work yet."];
 }

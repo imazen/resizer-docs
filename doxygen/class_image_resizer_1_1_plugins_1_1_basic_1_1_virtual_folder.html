@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -155,7 +155,7 @@ Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#aa42b7d6fda2cea008cec82fae9627a9c">FileExists</a> (string virtualPath, NameValueCollection queryString)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the file exists in this virtual folder, and would not be masking an existing file. Returns false if NoIOPermission is true.  <a href="#aa42b7d6fda2cea008cec82fae9627a9c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html">IVirtualFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a8d84bd2a87ff405820e55918947153c3">GetFile</a> (string virtualPath, NameValueCollection queryString)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unless the path is not within the virtual folder, or IO permissions are missing, will return an <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file. Implementing this allows usage of your VirtualProvider without registering it with AS...">IVirtualFile</a> instance for the path. The file may or may not exist.  <a href="#a8d84bd2a87ff405820e55918947153c3"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unless the path is not within the virtual folder, or IO permissions are missing, will return an <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a> instance for the path. The file may or may not exist.  <a href="#a8d84bd2a87ff405820e55918947153c3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">override bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a0b8f145683df85bb4b0032a21ebc52b5">FileExists</a> (string virtualPath)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">For internal use only by the .NET VPP system.  <a href="#a0b8f145683df85bb4b0032a21ebc52b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">override VirtualFile&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a1f1a914f95f86f6938c04911df01abdf">GetFile</a> (string virtualPath)</td></tr>
@@ -192,7 +192,7 @@ Properties</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Functions exactly like an IIS virtual folder, but doesn't require IIS configuration. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00019">19</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00021">21</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="aa42b7d6fda2cea008cec82fae9627a9c"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::FileExists" ref="aa42b7d6fda2cea008cec82fae9627a9c" args="(string virtualPath, NameValueCollection queryString)" -->
 <div class="memitem">
@@ -231,7 +231,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html#adc1f2caa76c242e3c0bb8ed2d824f9c3">ImageResizer.Plugins.IVirtualImageProvider</a>.</p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00208">208</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00210">210</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                    {
             <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ab8bd68930f844ef5350cb7424d453715" title="True if the plugin has detected it doesn&#39;t have sufficient IOPermission to operate.">NoIOPermission</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">//Because File.Exists is always false when IOPermission is missing, anyhow.</span>
             <span class="keywordflow">if</span> (!<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ae5dae2cdf6772f6f585f13ff0464a67f" title="Returns true if the specified path is inside this virtual folder.">IsVirtualPath</a>(virtualPath)) <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">//It&#39;s not even in our area.</span>
@@ -269,7 +269,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00236">236</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00238">238</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                            {
             <span class="keywordflow">if</span> (isOnlyVirtualPath(virtualPath))
                 <span class="keywordflow">return</span> File.Exists(<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a93714723aad0fcc7834e3249ef326282" title="Converts a virtual path in this folder to a physical path. Returns null if the virtual path is outsid...">VirtualToPhysical</a>(virtualPath));
@@ -321,7 +321,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00260">260</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00262">262</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                             {
 
               <span class="keywordflow">if</span> (!isOnlyVirtualPath(virtualPath)) <span class="keywordflow">return</span> Previous.GetCacheDependency(virtualPath, virtualPathDependencies, utcStart);
@@ -362,7 +362,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00194">194</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00196">196</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                               {
             <span class="keywordtype">string</span> physicalPath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a93714723aad0fcc7834e3249ef326282" title="Converts a virtual path in this folder to a physical path. Returns null if the virtual path is outsid...">VirtualToPhysical</a>(virtualPath);
             <span class="keywordflow">if</span> (System.IO.File.Exists(physicalPath))
@@ -397,7 +397,7 @@ Properties</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Unless the path is not within the virtual folder, or IO permissions are missing, will return an <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file. Implementing this allows usage of your VirtualProvider without registering it with AS...">IVirtualFile</a> instance for the path. The file may or may not exist. </p>
+<p>Unless the path is not within the virtual folder, or IO permissions are missing, will return an <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a> instance for the path. The file may or may not exist. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">virtualPath</td><td></td></tr>
@@ -409,7 +409,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html#aa3bb3191e4ed5cbf957c961d607d611b">ImageResizer.Plugins.IVirtualImageProvider</a>.</p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00225">225</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00227">227</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                         {
             <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ab8bd68930f844ef5350cb7424d453715" title="True if the plugin has detected it doesn&#39;t have sufficient IOPermission to operate.">NoIOPermission</a>) <span class="keywordflow">return</span> null;
             <span class="keywordflow">if</span> (!<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ae5dae2cdf6772f6f585f13ff0464a67f" title="Returns true if the specified path is inside this virtual folder.">IsVirtualPath</a>(virtualPath)) <span class="keywordflow">return</span> null; <span class="comment">//It&#39;s not even in our area.</span>
@@ -442,7 +442,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00247">247</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00249">249</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                {
             <span class="keywordflow">if</span> (isOnlyVirtualPath(virtualPath))
                 <span class="keywordflow">return</span> <span class="keyword">new</span> VirtualFolderProviderVirtualFile(virtualPath, <span class="keyword">this</span>);
@@ -472,7 +472,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134">ImageResizer.Plugins.IPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00084">84</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00086">86</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                         {
             <span class="keywordflow">if</span> (!<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ab8bd68930f844ef5350cb7424d453715" title="True if the plugin has detected it doesn&#39;t have sufficient IOPermission to operate.">NoIOPermission</a> &amp;&amp; <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a86a0f4d2cd650294499895a18d407c05" title="If true, the plugin will attempt to register itself as an application-wide VirtualPathProvider instea...">RegisterAsVpp</a>) {
                 <span class="keywordflow">try</span> {
@@ -512,7 +512,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00172">172</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00174">174</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                      {
             virtualPath = normalizeVirtualPath(virtualPath);
             <span class="keywordflow">return</span> virtualPath.StartsWith(this.<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ab0c6a53316642080d5500c7a656f16e7" title="The virtual path served by the VirtualFolder.">VirtualPath</a>, StringComparison.OrdinalIgnoreCase);
@@ -546,7 +546,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f">ImageResizer.Plugins.IPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00096">96</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00098">98</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                        {
             c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a0aae69c8ce761b0b5869fd63e2bcb863" title="For use only by plugins during .Uninstall. Removes the specified plugin from AllPlugins, QuerystringPlugins, CachingSystems, ImageEncoders, and ImageBuiderExtensions, based on which interfaces the instance implements. Plugins may register event handlers and modify settings - thus you should use the plugin&#39;s method to uninstall them vs. using this method.">remove_plugin</a>(<span class="keyword">this</span>);
             <span class="keywordflow">return</span> !registeredVpp;<span class="comment">//Cannot truly remove a VPP</span>
@@ -578,7 +578,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00160">160</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00162">162</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                            {
             virtualPath = normalizeVirtualPath(virtualPath);
             <span class="keywordflow">if</span> (virtualPath.StartsWith(<span class="keyword">this</span>.VirtualPath, StringComparison.OrdinalIgnoreCase)) {
@@ -603,7 +603,7 @@ Properties</h2></td></tr>
 
 <p>True if the provider attempted to register itself as a VirtualPathProvider and failed due to limited security clearance. False if it did not attempt (say, due to missing IOPermission) , or if it succeeded. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00047">47</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00049">49</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 
 </div>
 </div>
@@ -620,7 +620,7 @@ Properties</h2></td></tr>
 
 <p>True if the plugin has detected it doesn't have sufficient IOPermission to operate. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00105">105</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00107">107</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 
 </div>
 </div>
@@ -637,7 +637,7 @@ Properties</h2></td></tr>
 
 <p>The physical path. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00073">73</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00075">75</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 
 </div>
 </div>
@@ -654,7 +654,7 @@ Properties</h2></td></tr>
 
 <p>If true, the plugin will attempt to register itself as an application-wide VirtualPathProvider instead of a image resizer-specific <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a>. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00055">55</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00057">57</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 
 </div>
 </div>
@@ -671,7 +671,7 @@ Properties</h2></td></tr>
 
 <p>The virtual path served by the <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html" title="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration.">VirtualFolder</a>. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00064">64</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00066">66</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 
 </div>
 </div>

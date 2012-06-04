@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -164,7 +164,7 @@ Properties</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00010">10</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00011">11</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a1c1acc9e033711622f630b8c898c668a"></a><!-- doxytag: member="ImageResizer::Plugins::Watermark::Layer::CalculateLayerCoordinates" ref="a1c1acc9e033711622f630b8c898c668a" args="(ImageState s, CalculateLayerContentSize actualSizeCalculator, bool forceInsideCanvas)" -->
 <div class="memitem">
@@ -206,16 +206,16 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00166">166</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00167">167</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                                                          {
             <span class="comment">//Find container </span>
             RectangleF cont;
             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.ContainsRing(<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a3641f221cbe0286ac14f0d140d965777" title="Specifies the container that the position values (top,left,right,bottom,width,heght) are relative to...">RelativeTo</a>))
-                cont = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a3641f221cbe0286ac14f0d140d965777" title="Specifies the container that the position values (top,left,right,bottom,width,heght) are relative to...">RelativeTo</a>]);
+                cont = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a3641f221cbe0286ac14f0d140d965777" title="Specifies the container that the position values (top,left,right,bottom,width,heght) are relative to...">RelativeTo</a>]);
             <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="stringliteral">&quot;canvas&quot;</span>.Equals(<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a3641f221cbe0286ac14f0d140d965777" title="Specifies the container that the position values (top,left,right,bottom,width,heght) are relative to...">RelativeTo</a>, StringComparison.OrdinalIgnoreCase)) 
                 cont = <span class="keyword">new</span> RectangleF(<span class="keyword">new</span> PointF(), s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#af7685bdf458df8b87e3de9f18629c919" title="The size of the target bitmap image. Set after all sizing operations have completed.">destSize</a>);
             <span class="keywordflow">else</span> 
-                cont = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]);
+                cont = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]);
             
             <span class="comment">//Calculate layer coords</span>
             RectangleF rect = <span class="keyword">new</span> RectangleF();
@@ -321,7 +321,7 @@ Properties</h2></td></tr>
 
 <p>The alignment to use when (a) all 3 horizontal or vertical values are specified, and they need to be resolved, (b) when only width/height are specified, (c) when no positioning values are specified, or (d) when the content doesn't precisely fill they layer bounds. </p>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00128">128</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00129">129</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 
 </div>
 </div>
@@ -338,7 +338,7 @@ Properties</h2></td></tr>
 
 <p>The offset relative to the bottom of the container. Percentages are relative to the container height. Defines the bottom-most boundary for the layer. If null, Top will be used to calcuate the value based on the height. If Top is not specified, defaults to 0. Positive values are inside the container, negative values outside it. </p>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00079">79</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00080">80</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 
 </div>
 </div>
@@ -355,7 +355,7 @@ Properties</h2></td></tr>
 
 <p>The z-order at which to draw the layer. Curret options are Overlay (over everything) and Background (over the background color). </p>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00152">152</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00153">153</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 
 </div>
 </div>
@@ -372,7 +372,7 @@ Properties</h2></td></tr>
 
 <p>(defaults false). When true, the image or text will attempt to fill 1 of the layer's bounds, even if upscaling is required. When Width is not specified, and both left and right are not specififed, this causes the image to fill the container width (if possible). When Height is not specified, and both top and bottom are not specififed, this causes the image to fill the container height (if possible). This causes &amp;scale=both to be used on images unless another setting is specified in imageQuery. </p>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00141">141</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00142">142</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 
 </div>
 </div>
@@ -389,7 +389,7 @@ Properties</h2></td></tr>
 
 <p>The height of the layer. If used with both Top and Bottom, the smaller result wins. I.e, with a 100px container, height=50, top=30, top=30, the resulting height will be 40. If null, Top and Bottom will be used to calcuate the value. If both Top and Bottom are not specified, the natural height of the layer's contents will be used. Percentages are relative to the container height. </p>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00100">100</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00101">101</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 
 </div>
 </div>
@@ -406,7 +406,7 @@ Properties</h2></td></tr>
 
 <p>The offset from the left of the container. Percentages are relative to the container width. Defines the leftmost boundary for the layer. If null, Right will be used to calcuate the value based on the width. If Right is not specified, defaults to 0. Positive values are inside the container, negative values outside it. </p>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00057">57</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00058">58</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 
 </div>
 </div>
@@ -423,7 +423,7 @@ Properties</h2></td></tr>
 
 <p>Specifies the container that the position values (top,left,right,bottom,width,heght) are relative to. The default is 'image' (the innermost square, which contains the original photo). Additional valid values include 'imageArea' (includes whitespace added to preserve aspect ratio), 'padding', 'border', 'margin', and 'canvas'. </p>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00111">111</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00112">112</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 
 </div>
 </div>
@@ -440,7 +440,7 @@ Properties</h2></td></tr>
 
 <p>The offset relative to the right side of the container. Percentages are relative to the container width. Defines the rightmost boundary for the layer. If null, Top will be used to calcuate the value based on the height. If Top is not specified, defaults to 0. Positive values are inside the container, negative values outside it. </p>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00069">69</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00070">70</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 
 </div>
 </div>
@@ -457,7 +457,7 @@ Properties</h2></td></tr>
 
 <p>The offset from the top of the container. Percentages are relative to the container height. Defines the upper boundary for the layer. If null, Bottom will be used to calcuate the value based on the height. If Bottom is not specified, defaults to 0. Positive values are inside the container, negative values outside it. </p>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00046">46</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00047">47</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 
 </div>
 </div>
@@ -474,7 +474,7 @@ Properties</h2></td></tr>
 
 <p>The width of the layer. If used with both Left and Right, the smaller result wins. I.e, with a 100px container, width=50, left=30, right=30, the resulting width will be 40. If null, Left and Right will be used to calcuate the value. If both Left and Right are not specified, the natural width of the layer's contents will be used. Percentages are relative to the container width. </p>
 
-<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00089">89</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
+<p>Definition at line <a class="el" href="_layer_8cs_source.html#l00090">90</a> of file <a class="el" href="_layer_8cs_source.html">Layer.cs</a>.</p>
 
 </div>
 </div>

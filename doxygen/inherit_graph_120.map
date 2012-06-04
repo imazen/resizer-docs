@@ -1,3 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_resizing_1_1_layout_builder.html" title="ImageResizer.Resizing.LayoutBuilder" alt="" coords="6,5,551,51"/>
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_query_reader.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataQueryReader" alt="" coords="5,5,1184,51"/>
+<area shape="rect" id="node3" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_query_writer.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataQueryWriter" alt="" coords="1233,5,2397,51"/>
 </map>

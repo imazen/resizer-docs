@@ -1,3 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_diagnostic_page_handler.html" title="ImageResizer.Plugins.Basic.DiagnosticPageHandler" alt="" coords="5,5,757,51"/>
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_instructions.html" title="A name/value collection of image processsing instructions. The successor to ResizeSettings. Just because a key doesn&#39;t have a property wrapper doesn&#39;t mean you can&#39;t use it. i[&quot;key&quot;] = value; isnt&#39; that scary." alt="" coords="6,5,394,51"/>
 </map>

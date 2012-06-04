@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_logger.html" title="ImageResizer.Configuration.Logging.ILogger" alt="" coords="5,5,653,51"/>
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_logging_1_1_logger_proxy.html" title="ImageResizer.Plugins.Logging.LoggerProxy" alt="" coords="701,5,1333,51"/>
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html" title="ImageResizer.Configuration.IUrlEventArgs" alt="" coords="6,5,623,51"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_configuration_1_1_url_event_args.html" title="ImageResizer.Configuration.UrlEventArgs" alt="" coords="672,5,1280,51"/>
 </map>

@@ -1,6 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html" title="ImageResizer.Plugins.WicEncoder.WicEncoderPlugin" alt="" coords="5,198,784,245"/>
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec..." alt="" coords="81,6,228,53"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="253,6,536,53"/>
-<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="561,6,679,53"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html" title="ImageResizer.Plugins.WicEncoder.WicEncoderPlugin" alt="" coords="1027,39,1805,86"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_encoder_plugin.html" title="ImageResizer.Plugins.WpfBuilder.WpfEncoderPlugin" alt="" coords="1033,110,1799,157"/>
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec..." alt="" coords="73,5,221,51"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="5,75,288,122"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="87,146,206,193"/>
 </map>

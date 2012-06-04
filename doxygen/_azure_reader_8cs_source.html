@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 
 <a name="l00011"></a>00011 <span class="keyword">namespace </span>ImageResizer.Plugins.AzureReader {
 <a name="l00012"></a>00012 
-<a name="l00013"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_reader.html">00013</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_reader.html">AzureReader</a> : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html">IIssueProvider</a> {
+<a name="l00013"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_reader.html">00013</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_reader.html">AzureReader</a> : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html">IIssueProvider</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once...">IMultiInstancePlugin</a> {
 <a name="l00014"></a>00014 
 <a name="l00015"></a>00015         <a class="code" href="class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_virtual_path_provider.html">AzureVirtualPathProvider</a> vpp = null;
 <a name="l00016"></a>00016         <span class="keywordtype">string</span> blobStorageConnection;

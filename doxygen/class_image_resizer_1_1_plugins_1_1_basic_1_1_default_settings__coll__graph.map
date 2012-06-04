@@ -1,4 +1,4 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="158,6,276,53"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="ISettingsModifier" alt="" coords="301,6,560,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to..." alt="" coords="301,6,560,53"/>
 </map>

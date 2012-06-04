@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -141,8 +141,8 @@ Static Public Member Functions</h2></td></tr>
 static FREE_IMAGE_FILTER&#160;</td><td class="memItemRight" valign="bottom"><b>ParseResizeAlgorithm</b> (string sf, FREE_IMAGE_FILTER defaultValue, out bool valid)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">override <a class="el" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86">RequestedAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html#acb93206f312e8370f2d39ada323e0180">RenderImage</a> (<a class="el" href="class_image_resizer_1_1_resizing_1_1_image_state.html">ImageState</a> s)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Process.5(Render).9: The image is copied to the destination parallelogram specified by ring 'image'.  <a href="#acb93206f312e8370f2d39ada323e0180"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">override <a class="el" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86">RequestedAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html#a2587b8af02a96aab5ea55f897fe71b78">PreRenderImage</a> (<a class="el" href="class_image_resizer_1_1_resizing_1_1_image_state.html">ImageState</a> s)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Process.5(Render).9: <a class="el" href="namespace_image_resizer_1_1_plugins.html">Plugins</a> have a chance to pre-process the source image before it gets rendered, and save it to s.preRenderBitmap.  <a href="#a2587b8af02a96aab5ea55f897fe71b78"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -174,12 +174,12 @@ Protected Member Functions</h2></td></tr>
 </pre></div>
 </div>
 </div>
-<a class="anchor" id="acb93206f312e8370f2d39ada323e0180"></a><!-- doxytag: member="ImageResizer::Plugins::FreeImageScaling::FreeImageScalingPlugin::RenderImage" ref="acb93206f312e8370f2d39ada323e0180" args="(ImageState s)" -->
+<a class="anchor" id="a2587b8af02a96aab5ea55f897fe71b78"></a><!-- doxytag: member="ImageResizer::Plugins::FreeImageScaling::FreeImageScalingPlugin::PreRenderImage" ref="a2587b8af02a96aab5ea55f897fe71b78" args="(ImageState s)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">override <a class="el" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86">RequestedAction</a> <a class="el" href="class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html#acb93206f312e8370f2d39ada323e0180">ImageResizer.Plugins.FreeImageScaling.FreeImageScalingPlugin.RenderImage</a> </td>
+          <td class="memname">override <a class="el" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86">RequestedAction</a> <a class="el" href="class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html#a2587b8af02a96aab5ea55f897fe71b78">ImageResizer.Plugins.FreeImageScaling.FreeImageScalingPlugin.PreRenderImage</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="class_image_resizer_1_1_resizing_1_1_image_state.html">ImageState</a>&#160;</td>
           <td class="paramname"><em>s</em></td><td>)</td>
@@ -189,7 +189,7 @@ Protected Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Process.5(Render).9: The image is copied to the destination parallelogram specified by ring 'image'. </p>
+<p>Process.5(Render).9: <a class="el" href="namespace_image_resizer_1_1_plugins.html">Plugins</a> have a chance to pre-process the source image before it gets rendered, and save it to s.preRenderBitmap. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">s</td><td></td></tr>
@@ -197,10 +197,10 @@ Protected Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#a075eb13a5247807de9a49228cef6568e">ImageResizer.Resizing.AbstractImageProcessor</a>.</p>
+<p>Reimplemented from <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#ab3063eca19c572b51160ab0826cb6d08">ImageResizer.Resizing.AbstractImageProcessor</a>.</p>
 
 <p>Definition at line <a class="el" href="_free_image_resizer_8cs_source.html#l00043">43</a> of file <a class="el" href="_free_image_resizer_8cs_source.html">FreeImageResizer.cs</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                     {
+<div class="fragment"><pre class="fragment">                                                                        {
             <span class="comment">//Skip this when we are doing simulations</span>
             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a14723e4f7de63667e37fcbdb6a00055b" title="A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic.">destGraphics</a> == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
 
@@ -215,29 +215,37 @@ Protected Member Functions</h2></td></tr>
 
 
             <span class="comment">//The minimum dimensions of the temporary bitmap.</span>
-            SizeF targetSize = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a02b9e3951484c2e1592c6eb8131d8405" title="Determines the width and height of the paralellogram.">getParallelogramSize</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]);
+            SizeF targetSize = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a02b9e3951484c2e1592c6eb8131d8405" title="Determines the width and height of the paralellogram.">getParallelogramSize</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]);
             targetSize = <span class="keyword">new</span> SizeF((<span class="keywordtype">float</span>)Math.Ceiling(targetSize.Width), (float)Math.Ceiling(targetSize.Height));
 
 
             <span class="comment">//The size of the temporary bitmap. </span>
             <span class="comment">//We want it larger than the size we&#39;ll use on the final copy, so we never upscale it</span>
             <span class="comment">//- but we also want it as small as possible so processing is fast.</span>
-            SizeF tempSize = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a63ca79f538e9c19e38f14ad57de06958" title="Scales &#39;outer&#39; to be equal or larger than &#39;innerBounds&#39; while maintaining aspect ratio. Upscales and downscales.">ScaleOutside</a>(targetSize, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Size);
+            SizeF tempSize = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a63ca79f538e9c19e38f14ad57de06958" title="Scales &#39;outer&#39; to be equal or larger than &#39;innerBounds&#39; while maintaining aspect ratio. Upscales and downscales.">ScaleOutside</a>(targetSize, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Size);
             <span class="keywordtype">int</span> tempWidth = (int)Math.Ceiling(tempSize.Width);
             <span class="keywordtype">int</span> tempHeight = (int)Math.Ceiling(tempSize.Height);
             FIBITMAP src = FIBITMAP.Zero;
             FIBITMAP midway = FIBITMAP.Zero;
             <span class="keywordflow">try</span> {
-                <span class="comment">//Convert, scale, then convert back.</span>
-                src = FreeImage.CreateFromBitmap(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>);
+                <span class="comment">//Crop if needed, Convert, scale, then convert back.</span>
+                <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> != null || (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Width == s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a72e11433b4c36caccab68577e864202c" title="The original size of the source bitmap. Use this instead of accessing the bitmap directly for this in...">originalSize</a>.Width &amp;&amp; s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Height == s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a72e11433b4c36caccab68577e864202c" title="The original size of the source bitmap. Use this instead of accessing the bitmap directly for this in...">originalSize</a>.Height &amp;&amp; s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.X == 0 &amp;&amp; s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Y == 0)){
+                    src = FreeImage.CreateFromBitmap(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> != null ? s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> : s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>);
+                }<span class="keywordflow">else</span>{
+
+                    <span class="keyword">using</span> (Bitmap c = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Clone(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>, System.Drawing.Imaging.PixelFormat.Format32bppArgb)) {
+                        src = FreeImage.CreateFromBitmap(c);
+                    }
+                }
                 midway = FreeImage.Rescale(src, tempWidth, tempHeight, filter);
                 FreeImage.UnloadEx(ref src);
-                <span class="keyword">using</span> (Bitmap resized = FreeImage.GetBitmap(midway)) {
-                    FreeImage.UnloadEx(ref midway);
-                    resized.MakeTransparent();
-                    s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a0575a388f0e3235d967cb62f4904fe09" title="Allows color correction/modification during the image copy.">copyAttibutes</a>.SetWrapMode(WrapMode.TileFlipXY);
-                    s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a14723e4f7de63667e37fcbdb6a00055b" title="A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic.">destGraphics</a>.DrawImage(resized, <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a28d60a0db031946a534a4efbc85e2728" title="Moves element 4 to spot 3 and truncates to 3 elements. For compatiblity with Graphics.DrawImage.">getParallelogram</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]), <span class="keyword">new</span> RectangleF(0, 0, resized.Width, resized.Height), GraphicsUnit.Pixel, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a0575a388f0e3235d967cb62f4904fe09" title="Allows color correction/modification during the image copy.">copyAttibutes</a>);
-                }
+                <span class="comment">//Clear the old pre-rendered image if needed</span>
+                <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> != null) s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>.Dispose();
+                <span class="comment">//Reassign the pre-rendered image</span>
+                s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> = FreeImage.GetBitmap(midway);
+                FreeImage.UnloadEx(ref midway);
+                s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>.MakeTransparent();
+
             } <span class="keywordflow">finally</span> {
                 <span class="keywordflow">if</span> (!src.IsNull) FreeImage.UnloadEx(ref src);
                 <span class="keywordflow">if</span> (!midway.IsNull) FreeImage.UnloadEx(ref midway);

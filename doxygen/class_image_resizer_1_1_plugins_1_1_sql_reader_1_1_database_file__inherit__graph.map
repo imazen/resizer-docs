@@ -1,4 +1,4 @@
 <map id="G" name="G">
 <area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html" title="Always implement this if possible. Allows caching systems to detect changes to source files and inval..." alt="" coords="174,102,929,149"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file. Implementing this allows usage of your VirtualProvider without registering it with AS..." alt="" coords="258,6,429,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="258,6,429,53"/>
 </map>

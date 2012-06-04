@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -144,7 +144,7 @@ Protected Attributes</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_folder_resize_syntax_8cs_source.html#l00008">8</a> of file <a class="el" href="_folder_resize_syntax_8cs_source.html">FolderResizeSyntax.cs</a>.</p>
+<p>Definition at line <a class="el" href="_folder_resize_syntax_8cs_source.html#l00009">9</a> of file <a class="el" href="_folder_resize_syntax_8cs_source.html">FolderResizeSyntax.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a657ca2ab78322cec76dc47c322397625"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::FolderResizeSyntax::parseResizeFolderSyntax" ref="a657ca2ab78322cec76dc47c322397625" args="(string path, NameValueCollection q)" -->
 <div class="memitem">
@@ -181,21 +181,21 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_folder_resize_syntax_8cs_source.html#l00047">47</a> of file <a class="el" href="_folder_resize_syntax_8cs_source.html">FolderResizeSyntax.cs</a>.</p>
+<p>Definition at line <a class="el" href="_folder_resize_syntax_8cs_source.html#l00048">48</a> of file <a class="el" href="_folder_resize_syntax_8cs_source.html">FolderResizeSyntax.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                     {
             Match m = <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html#a33f427224208c1350785c158b2821b6a" title="Matches /resize(x,y,f)/ syntax Fixed Bug - will replace both slashes.. make first a lookbehind...">resizeFolder</a>.Match(path);
             <span class="keywordflow">if</span> (m.Success) {
                 <span class="comment">//Parse capture groups</span>
-                <span class="keywordtype">int</span> maxwidth = -1; <span class="keywordflow">if</span> (!<span class="keywordtype">int</span>.TryParse(m.Groups[<span class="stringliteral">&quot;maxwidth&quot;</span>].Value, out maxwidth)) maxwidth = -1;
-                <span class="keywordtype">int</span> maxheight = -1; <span class="keywordflow">if</span> (!<span class="keywordtype">int</span>.TryParse(m.Groups[<span class="stringliteral">&quot;maxheight&quot;</span>].Value, out maxheight)) maxheight = -1;
+                <span class="keywordtype">int</span> maxwidth = -1; <span class="keywordflow">if</span> (!<span class="keywordtype">int</span>.TryParse(m.Groups[<span class="stringliteral">&quot;maxwidth&quot;</span>].Value, NumberStyles.Integer, NumberFormatInfo.InvariantInfo, out maxwidth)) maxwidth = -1;
+                <span class="keywordtype">int</span> maxheight = -1; <span class="keywordflow">if</span> (!<span class="keywordtype">int</span>.TryParse(m.Groups[<span class="stringliteral">&quot;maxheight&quot;</span>].Value, NumberStyles.Integer, NumberFormatInfo.InvariantInfo, out maxheight)) maxheight = -1;
                 <span class="keywordtype">string</span> format = (m.Groups[<span class="stringliteral">&quot;format&quot;</span>].Captures.Count &gt; 0) ? format = m.Groups[<span class="stringliteral">&quot;format&quot;</span>].Captures[0].Value : null;
 
                 <span class="comment">//Remove first resize folder from URL</span>
                 path = <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_folder_resize_syntax.html#a33f427224208c1350785c158b2821b6a" title="Matches /resize(x,y,f)/ syntax Fixed Bug - will replace both slashes.. make first a lookbehind...">resizeFolder</a>.Replace(path, <span class="stringliteral">&quot;&quot;</span>, 1);
 
                 <span class="comment">//Add values to querystring</span>
-                <span class="keywordflow">if</span> (maxwidth &gt; 0) q[<span class="stringliteral">&quot;maxwidth&quot;</span>] = maxwidth.ToString();
-                <span class="keywordflow">if</span> (maxheight &gt; 0) q[<span class="stringliteral">&quot;maxheight&quot;</span>] = maxheight.ToString();
+                <span class="keywordflow">if</span> (maxwidth &gt; 0) q[<span class="stringliteral">&quot;maxwidth&quot;</span>] = maxwidth.ToString(NumberFormatInfo.InvariantInfo);
+                <span class="keywordflow">if</span> (maxheight &gt; 0) q[<span class="stringliteral">&quot;maxheight&quot;</span>] = maxheight.ToString(NumberFormatInfo.InvariantInfo);
                 <span class="keywordflow">if</span> (format != null) q[<span class="stringliteral">&quot;format&quot;</span>] = format;
 
                 <span class="comment">//Call recursive - this handles multiple /resize(w,h)/resize(w,h)/ occurrences</span>
@@ -223,7 +223,7 @@ Protected Attributes</h2></td></tr>
 </pre></div>
 <p>Matches /resize(x,y,f)/ syntax Fixed Bug - will replace both slashes.. make first a lookbehind. </p>
 
-<p>Definition at line <a class="el" href="_folder_resize_syntax_8cs_source.html#l00036">36</a> of file <a class="el" href="_folder_resize_syntax_8cs_source.html">FolderResizeSyntax.cs</a>.</p>
+<p>Definition at line <a class="el" href="_folder_resize_syntax_8cs_source.html#l00037">37</a> of file <a class="el" href="_folder_resize_syntax_8cs_source.html">FolderResizeSyntax.cs</a>.</p>
 
 </div>
 </div>

@@ -3,7 +3,10 @@ var searchData=
   ['name',['Name',['../class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd',1,'ImageResizer::Configuration::Xml::Node.Name()'],['../class_image_resizer_1_1_util_1_1yrl.html#a7866fdff09053dd291fba3d8190f7d97',1,'ImageResizer::Util::yrl.Name()']]],
   ['namedwatermarks',['NamedWatermarks',['../class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a552a42a9be3f3b29195f4404f636b53f',1,'ImageResizer::Plugins::Watermark::WatermarkPlugin']]],
   ['namevaluecollectionextensions',['NameValueCollectionExtensions',['../class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_name_value_collection_extensions.html',1,'ImageResizer::Plugins::PdfRenderer::Ghostscript']]],
+  ['namevaluecollectionextensions',['NameValueCollectionExtensions',['../class_image_resizer_1_1_extension_methods_1_1_name_value_collection_extensions.html',1,'ImageResizer::ExtensionMethods']]],
   ['namewithoutextension',['NameWithoutExtension',['../class_image_resizer_1_1_util_1_1yrl.html#a2f8fefa2ffada416a2e3f48888686f0d',1,'ImageResizer::Util::yrl']]],
+  ['nativedependenciesattribute',['NativeDependenciesAttribute',['../class_image_resizer_1_1_util_1_1_native_dependencies_attribute.html',1,'ImageResizer::Util']]],
+  ['nativedependencymanager',['NativeDependencyManager',['../class_image_resizer_1_1_configuration_1_1_plugins_1_1_native_dependency_manager.html',1,'ImageResizer::Configuration::Plugins']]],
   ['nativemethods',['NativeMethods',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_native_methods.html',1,'ImageResizer::Plugins::Wic::InteropServices']]],
   ['nativeversion',['NativeVersion',['../class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_engine.html#a5e51c60136df41620c9ebc2ac4f486c1',1,'ImageResizer::Plugins::PdfRenderer::Ghostscript::GhostscriptEngine']]],
   ['navigateurl',['NavigateURL',['../class_image_resizer_1_1_util_1_1yrl.html#ab6daa3251cbbfa78843a005af4ed4d2f',1,'ImageResizer::Util::yrl']]],
@@ -17,7 +20,8 @@ var searchData=
   ['nodisplay',['NoDisplay',['../class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_argument.html#ad01d28e2f054ff236ab2e54bf0c40978',1,'ImageResizer::Plugins::PdfRenderer::Ghostscript::GhostscriptArgument']]],
   ['noiopermission',['NoIOPermission',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ab8bd68930f844ef5350cb7424d453715',1,'ImageResizer::Plugins::Basic::VirtualFolder']]],
   ['nopause',['NoPause',['../class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_argument.html#af838dec1933dfcdd297f88ec9751d84c',1,'ImageResizer::Plugins::PdfRenderer::Ghostscript::GhostscriptArgument']]],
-  ['normalize',['Normalize',['../class_image_resizer_1_1_resizing_1_1_layout_builder.html#a051b209e5c0d4a59998c266d79a1daa2',1,'ImageResizer::Resizing::LayoutBuilder']]],
+  ['normalize',['Normalize',['../class_image_resizer_1_1_extension_methods_1_1_name_value_collection_extensions.html#a2c670f2c09ee56f354f54bc0f17d2cfc',1,'ImageResizer::ExtensionMethods::NameValueCollectionExtensions.Normalize()'],['../class_image_resizer_1_1_resize_settings.html#af832044a461bb26a094427db7aa9916d',1,'ImageResizer::ResizeSettings.Normalize()'],['../class_image_resizer_1_1_resizing_1_1_layout_builder.html#a051b209e5c0d4a59998c266d79a1daa2',1,'ImageResizer::Resizing::LayoutBuilder.Normalize()']]],
   ['normalizepathforuseinzipfile',['NormalizePathForUseInZipFile',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_batch_resize_settings.html#a233de84c35589264633d27ddde16a448',1,'ImageResizer::Plugins::BatchZipper::BatchResizeSettings']]],
-  ['normalizepoly',['NormalizePoly',['../class_image_resizer_1_1_util_1_1_polygon_math.html#a1df0960d03c39a5714cdb0d56fc78bdf',1,'ImageResizer::Util::PolygonMath']]]
+  ['normalizepoly',['NormalizePoly',['../class_image_resizer_1_1_util_1_1_polygon_math.html#a1df0960d03c39a5714cdb0d56fc78bdf',1,'ImageResizer::Util::PolygonMath']]],
+  ['normalizeto90intervals',['NormalizeTo90Intervals',['../class_image_resizer_1_1_util_1_1_polygon_math.html#a9ebf3d2f01749ccafc6babc589cecd4d',1,'ImageResizer::Util::PolygonMath']]]
 ];

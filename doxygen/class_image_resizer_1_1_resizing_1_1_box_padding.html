@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -103,6 +103,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#properties">Properties</a>  </div>
   <div class="headertitle">
@@ -135,6 +136,12 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="class_image_resizer_1_1_resizing_1_1_box_padding.html">BoxPadding</a>&#160;</td><td class="memItemRight" valign="bottom"><b>SetBottom</b> (double bottom)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">float[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#ad47d7f08f34350dd2ed1e3da1e65fa1d">GetEdgeOffsets</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets edge offsets as a clockwise array, starting with Top.  <a href="#ad47d7f08f34350dd2ed1e3da1e65fa1d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6dfef17d6418bc5434b5357fe9d63a88"></a><!-- doxytag: member="ImageResizer::Resizing::BoxPadding::ToString" ref="a6dfef17d6418bc5434b5357fe9d63a88" args="()" -->
+override string&#160;</td><td class="memItemRight" valign="bottom"><b>ToString</b> ()</td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1543e0cf7d5966b12bf6a1df2fb6d295"></a><!-- doxytag: member="ImageResizer::Resizing::BoxPadding::Parse" ref="a1543e0cf7d5966b12bf6a1df2fb6d295" args="(string text, BoxPadding fallbackValue)" -->
+static <a class="el" href="class_image_resizer_1_1_resizing_1_1_box_padding.html">BoxPadding</a>&#160;</td><td class="memItemRight" valign="bottom"><b>Parse</b> (string text, <a class="el" href="class_image_resizer_1_1_resizing_1_1_box_padding.html">BoxPadding</a> fallbackValue)</td></tr>
 <tr><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac0c9994ea5a2d731db586f8ebf649cc7"></a><!-- doxytag: member="ImageResizer::Resizing::BoxPadding::top" ref="ac0c9994ea5a2d731db586f8ebf649cc7" args="" -->
@@ -161,7 +168,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>all</b><code> [get,
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Represents the widths of edges of a box. </p>
 
-<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00010">10</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
+<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00012">12</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a18d31755b15521fbfa4871b66ecdf51c"></a><!-- doxytag: member="ImageResizer::Resizing::BoxPadding::BoxPadding" ref="a18d31755b15521fbfa4871b66ecdf51c" args="(double all)" -->
 <div class="memitem">
@@ -186,7 +193,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>all</b><code> [get,
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00016">16</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
+<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00028">28</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                      {
             this.all = all;
         }
@@ -241,7 +248,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>all</b><code> [get,
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00026">26</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
+<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00038">38</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                {
             this.top = top; this.left = left; this.bottom = bottom; this.right = right;
         }
@@ -271,7 +278,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>all</b><code> [get,
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00033">33</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
+<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00045">45</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                               {
             this.top = original.top;
             this.bottom = original.bottom;
@@ -299,7 +306,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>all</b><code> [get,
 <p>Gets edge offsets as a clockwise array, starting with Top. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00099">99</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
+<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00111">111</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_layout_builder_8cs_source.html#l00105">ImageResizer.Resizing.LayoutBuilder.AddRing()</a>.</p>
 <div class="fragment"><pre class="fragment">                                        {
@@ -332,7 +339,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>all</b><code> [get,
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00052">52</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
+<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00064">64</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                             {
             <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a18d31755b15521fbfa4871b66ecdf51c" title="Create a box with all edges the same width.">BoxPadding</a> b = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a18d31755b15521fbfa4871b66ecdf51c" title="Create a box with all edges the same width.">BoxPadding</a>(<span class="keyword">this</span>); b.all = all;
             <span class="keywordflow">return</span> b;
@@ -354,9 +361,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>all</b><code> [get,
 
 <p>Returns double.NaN unless all edges are the same width, in which case that width is returned. </p>
 
-<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00076">76</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
+<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00088">88</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_free_image_builder_8cs_source.html#l00123">ImageResizer.Plugins.FreeImageBuilder.FreeImageBuilderPlugin.buildFiBitmap()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00759">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
+<p>Referenced by <a class="el" href="_free_image_builder_8cs_source.html#l00123">ImageResizer.Plugins.FreeImageBuilder.FreeImageBuilderPlugin.buildFiBitmap()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00789">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
 
 </div>
 </div>
@@ -373,9 +380,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>all</b><code> [get,
 
 <p>Returns an instance with a width of 0. </p>
 
-<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00090">90</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
+<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00102">102</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_utils_8cs_source.html#l00296">ImageResizer.Util.Utils.parsePadding()</a>.</p>
+<p>Referenced by <a class="el" href="_utils_8cs_source.html#l00218">ImageResizer.Util.Utils.parsePadding()</a>.</p>
 
 </div>
 </div>
@@ -392,9 +399,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>all</b><code> [get,
 
 <p>Returns true if th. </p>
 
-<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00094">94</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
+<p>Definition at line <a class="el" href="_box_padding_8cs_source.html#l00106">106</a> of file <a class="el" href="_box_padding_8cs_source.html">BoxPadding.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00616">ImageResizer.ImageBuilder.LayoutBorder()</a>, <a class="el" href="_image_builder_8cs_source.html#l00606">ImageResizer.ImageBuilder.LayoutMargin()</a>, <a class="el" href="_image_builder_8cs_source.html#l00596">ImageResizer.ImageBuilder.LayoutPadding()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00759">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
+<p>Referenced by <a class="el" href="_image_builder_8cs_source.html#l00635">ImageResizer.ImageBuilder.LayoutBorder()</a>, <a class="el" href="_image_builder_8cs_source.html#l00625">ImageResizer.ImageBuilder.LayoutMargin()</a>, <a class="el" href="_image_builder_8cs_source.html#l00615">ImageResizer.ImageBuilder.LayoutPadding()</a>, and <a class="el" href="_image_builder_8cs_source.html#l00789">ImageResizer.ImageBuilder.RenderBorder()</a>.</p>
 
 </div>
 </div>

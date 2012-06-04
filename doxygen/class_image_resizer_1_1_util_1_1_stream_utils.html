@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -116,10 +116,8 @@ Static Public Member Functions</h2></td></tr>
 static MemoryStream&#160;</td><td class="memItemRight" valign="bottom"><b>CopyStream</b> (Stream s)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_stream_utils.html#aecb23377df07fa6f9269ad51df1ee2fb">CopyTo</a> (Stream src, Stream dest)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a read stream to a write stream.  <a href="#aecb23377df07fa6f9269ad51df1ee2fb"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a072d9fe09d858c7269b2aa537dbe743e"></a><!-- doxytag: member="ImageResizer::Util::StreamUtils::CopyTo" ref="a072d9fe09d858c7269b2aa537dbe743e" args="(MemoryStream src, Stream dest)" -->
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyTo</b> (MemoryStream src, Stream dest)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adc5ac182c0db3196faa793e5b12b4e28"></a><!-- doxytag: member="ImageResizer::Util::StreamUtils::CopyTo" ref="adc5ac182c0db3196faa793e5b12b4e28" args="(Stream src, MemoryStream dest)" -->
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyTo</b> (Stream src, MemoryStream dest)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static byte[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_util_1_1_stream_utils.html#a20b04733b699d3a677ec5243b357e275">CopyToBytes</a> (Stream src)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the remaining portion of the specified stream to a byte array of exact size.  <a href="#a20b04733b699d3a677ec5243b357e275"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -159,17 +157,42 @@ static void&#160;</td><td class="memItemRight" valign="bottom"><b>CopyTo</b> (St
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_stream_utils_8cs_source.html#l00024">24</a> of file <a class="el" href="_stream_utils_8cs_source.html">StreamUtils.cs</a>.</p>
+<p>Definition at line <a class="el" href="_stream_utils_8cs_source.html#l00019">19</a> of file <a class="el" href="_stream_utils_8cs_source.html">StreamUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_pdf_renderer_8cs_source.html#l00147">ImageResizer.Plugins.PdfRenderer.PdfRendererPlugin.DecodeStream()</a>, and <a class="el" href="_batch_resize_worker_8cs_source.html#l00153">ImageResizer.Plugins.BatchZipper.BatchResizeWorker.WriteItemCallback()</a>.</p>
+<p>Referenced by <a class="el" href="_batch_resize_worker_8cs_source.html#l00153">ImageResizer.Plugins.BatchZipper.BatchResizeWorker.WriteItemCallback()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                           {
-            <span class="keywordtype">int</span> size = (src.CanSeek) ? Math.Min((<span class="keywordtype">int</span>)(src.Length - src.Position), 0x2000) : 0x2000;
-            byte[] buffer = <span class="keyword">new</span> byte[size];
-            <span class="keywordtype">int</span> n;
-            <span class="keywordflow">do</span> {
-                n = src.Read(buffer, 0, buffer.Length);
-                dest.Write(buffer, 0, n);
-            } <span class="keywordflow">while</span> (n != 0);
+            src.CopyToStream(dest);
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a20b04733b699d3a677ec5243b357e275"></a><!-- doxytag: member="ImageResizer::Util::StreamUtils::CopyToBytes" ref="a20b04733b699d3a677ec5243b357e275" args="(Stream src)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static byte [] <a class="el" href="class_image_resizer_1_1_util_1_1_stream_utils.html#a20b04733b699d3a677ec5243b357e275">ImageResizer.Util.StreamUtils.CopyToBytes</a> </td>
+          <td>(</td>
+          <td class="paramtype">Stream&#160;</td>
+          <td class="paramname"><em>src</em></td><td>)</td>
+          <td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Copies the remaining portion of the specified stream to a byte array of exact size. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">src</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_stream_utils_8cs_source.html#l00028">28</a> of file <a class="el" href="_stream_utils_8cs_source.html">StreamUtils.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                     {
+            <span class="keywordflow">return</span> src.CopyToBytes();
         }
 </pre></div>
 </div>

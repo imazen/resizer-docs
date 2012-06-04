@@ -3,5 +3,5 @@ digraph G
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
   rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.DiskCache.WebConfigWriter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_web_config_writer.html",tooltip="Handles writing a Web.Config to disk that uses Url Authorization to prevent visitors from accessing t..."];
+  Node1 [label="ImageResizer.Plugins.DiskCache.CacheResult",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html"];
 }

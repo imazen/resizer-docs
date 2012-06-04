@@ -1,8 +1,0 @@
-digraph G
-{
-  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
-  node [fontname="Helvetica",fontsize="24",shape=record];
-  Node1 [label="ImageResizer.Plugins.Wic.InteropServices.ComTypes.UnmanagedPropVariant",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
-  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" vectorValue" ,fontname="Helvetica"];
-  Node2 [label="ImageResizer.Plugins.Wic.InteropServices.ComTypes.UnmanagedPropVariant.CAX",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_unmanaged_prop_variant_1_1_c_a_x.html"];
-}

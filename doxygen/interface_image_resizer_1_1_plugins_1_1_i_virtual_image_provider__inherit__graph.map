@@ -3,9 +3,10 @@
 <area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_virtual_path_provider.html" title="ImageResizer.Plugins.AzureReader.AzureVirtualPathProvider" alt="" coords="693,75,1576,122"/>
 <area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient.html" title="Allows gradients to be dynamically generated like so:" alt="" coords="863,146,1407,193"/>
 <area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html" title="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration." alt="" coords="833,217,1436,263"/>
-<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html" title="ImageResizer.Plugins.PsdComposer.PsdComposerPlugin" alt="" coords="719,287,1551,334"/>
-<area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html" title="ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin" alt="" coords="705,358,1564,405"/>
-<area shape="rect" id="node17" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html" title="Allows clients to request objects located on another amazon S3 server through this server..." alt="" coords="736,429,1533,475"/>
-<area shape="rect" id="node19" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html" title="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..." alt="" coords="771,499,1499,546"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin.html" title="ImageResizer.Plugins.MongoReader.MongoReaderPlugin" alt="" coords="719,287,1550,334"/>
+<area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html" title="ImageResizer.Plugins.PsdComposer.PsdComposerPlugin" alt="" coords="719,358,1551,405"/>
+<area shape="rect" id="node17" href="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html" title="ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin" alt="" coords="705,429,1564,475"/>
+<area shape="rect" id="node19" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html" title="Allows clients to request objects located on another amazon S3 server through this server..." alt="" coords="736,499,1533,546"/>
+<area shape="rect" id="node21" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html" title="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..." alt="" coords="771,570,1499,617"/>
 <area shape="rect" id="node5" href="$class_image_resizer_1_1_configuration_1_1_pipeline_config.html" title="ImageResizer.Configuration.PipelineConfig" alt="" coords="1625,5,2250,51"/>
 </map>

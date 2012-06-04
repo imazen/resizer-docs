@@ -1,3 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall..." alt="" coords="6,5,519,51"/>
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_block_reader.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataBlockReader" alt="" coords="5,5,1176,51"/>
+<area shape="rect" id="node3" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_block_writer.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataBlockWriter" alt="" coords="1224,5,2379,51"/>
 </map>

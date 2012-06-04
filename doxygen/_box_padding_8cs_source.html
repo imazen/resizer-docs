@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -85,105 +85,125 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00002"></a>00002 <span class="keyword">using</span> System;
 <a name="l00003"></a>00003 <span class="keyword">using</span> System.Collections.Generic;
 <a name="l00004"></a>00004 <span class="keyword">using</span> System.Text;
-<a name="l00005"></a>00005 
-<a name="l00006"></a>00006 <span class="keyword">namespace </span>ImageResizer.Resizing {<span class="comment"></span>
-<a name="l00007"></a>00007 <span class="comment">    /// &lt;summary&gt;</span>
-<a name="l00008"></a>00008 <span class="comment">    /// Represents the widths of edges of a box.</span>
-<a name="l00009"></a>00009 <span class="comment">    /// &lt;/summary&gt;</span>
-<a name="l00010"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html">00010</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> {
-<a name="l00011"></a>00011         <span class="comment"></span>
-<a name="l00012"></a>00012 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00013"></a>00013 <span class="comment">        /// Create a box with all edges the same width.</span>
-<a name="l00014"></a>00014 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00015"></a>00015 <span class="comment">        /// &lt;param name=&quot;all&quot;&gt;&lt;/param&gt;</span>
-<a name="l00016"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a18d31755b15521fbfa4871b66ecdf51c">00016</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a18d31755b15521fbfa4871b66ecdf51c" title="Create a box with all edges the same width.">BoxPadding</a>(<span class="keywordtype">double</span> all) {
-<a name="l00017"></a>00017             this.all = all;
-<a name="l00018"></a>00018         }<span class="comment"></span>
-<a name="l00019"></a>00019 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00020"></a>00020 <span class="comment">        /// Create a box, specifying individual widths for each size</span>
-<a name="l00021"></a>00021 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00022"></a>00022 <span class="comment">        /// &lt;param name=&quot;left&quot;&gt;&lt;/param&gt;</span>
-<a name="l00023"></a>00023 <span class="comment">        /// &lt;param name=&quot;top&quot;&gt;&lt;/param&gt;</span>
-<a name="l00024"></a>00024 <span class="comment">        /// &lt;param name=&quot;right&quot;&gt;&lt;/param&gt;</span>
-<a name="l00025"></a>00025 <span class="comment">        /// &lt;param name=&quot;bottom&quot;&gt;&lt;/param&gt;</span>
-<a name="l00026"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a5af2e7c2ac20dad5d6eddc9132eca398">00026</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a5af2e7c2ac20dad5d6eddc9132eca398" title="Create a box, specifying individual widths for each size.">BoxPadding</a>(<span class="keywordtype">double</span> left, <span class="keywordtype">double</span> top, <span class="keywordtype">double</span> right, <span class="keywordtype">double</span> bottom) {
-<a name="l00027"></a>00027             this.top = top; this.left = left; this.bottom = bottom; this.right = right;
-<a name="l00028"></a>00028         }<span class="comment"></span>
-<a name="l00029"></a>00029 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00030"></a>00030 <span class="comment">        /// Copies the specified BoxPadding instance</span>
-<a name="l00031"></a>00031 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00032"></a>00032 <span class="comment">        /// &lt;param name=&quot;original&quot;&gt;&lt;/param&gt;</span>
-<a name="l00033"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#aec82669ce2a9e226fb8825bfc0918f10">00033</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#aec82669ce2a9e226fb8825bfc0918f10" title="Copies the specified BoxPadding instance.">BoxPadding</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> original) {
-<a name="l00034"></a>00034             this.top = original.top;
-<a name="l00035"></a>00035             this.bottom = original.bottom;
-<a name="l00036"></a>00036             this.right = original.right;
-<a name="l00037"></a>00037             this.left = original.left;
-<a name="l00038"></a>00038         }
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040         <span class="keyword">protected</span> <span class="keywordtype">double</span> top = 0, left = 0, bottom =0, right = 0;
-<a name="l00041"></a>00041 
-<a name="l00042"></a>00042         <span class="keyword">public</span> <span class="keywordtype">double</span> Top { <span class="keyword">get</span> { <span class="keywordflow">return</span> top; } }
-<a name="l00043"></a>00043         <span class="keyword">public</span> <span class="keywordtype">double</span> Left { <span class="keyword">get</span> { <span class="keywordflow">return</span> left; } }
-<a name="l00044"></a>00044         <span class="keyword">public</span> <span class="keywordtype">double</span> Right { <span class="keyword">get</span> { <span class="keywordflow">return</span> right; } }
-<a name="l00045"></a>00045         <span class="keyword">public</span> <span class="keywordtype">double</span> Bottom { <span class="keyword">get</span> { <span class="keywordflow">return</span> bottom; } }
-<a name="l00046"></a>00046 <span class="comment"></span>
-<a name="l00047"></a>00047 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00048"></a>00048 <span class="comment">        /// Sets the width of all edges, returning a new instance</span>
-<a name="l00049"></a>00049 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00050"></a>00050 <span class="comment">        /// &lt;param name=&quot;all&quot;&gt;&lt;/param&gt;</span>
-<a name="l00051"></a>00051 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00052"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a19f57445b1f9cba1b2b55fcd94c5e407">00052</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a19f57445b1f9cba1b2b55fcd94c5e407" title="Sets the width of all edges, returning a new instance.">SetAll</a>(<span class="keywordtype">double</span> all) {
-<a name="l00053"></a>00053             <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> b = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a>(<span class="keyword">this</span>); b.all = all;
-<a name="l00054"></a>00054             <span class="keywordflow">return</span> b;
-<a name="l00055"></a>00055         }
-<a name="l00056"></a>00056         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> SetTop(<span class="keywordtype">double</span> top) {
-<a name="l00057"></a>00057             <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> b = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a>(<span class="keyword">this</span>); b.top = top;
-<a name="l00058"></a>00058             <span class="keywordflow">return</span> b;
-<a name="l00059"></a>00059         }
-<a name="l00060"></a>00060         <span class="keyword">public</span> BoxPadding SetLeft(<span class="keywordtype">double</span> left) {
-<a name="l00061"></a>00061             BoxPadding b = <span class="keyword">new</span> BoxPadding(<span class="keyword">this</span>); b.left = left;
-<a name="l00062"></a>00062             <span class="keywordflow">return</span> b;
-<a name="l00063"></a>00063         }
-<a name="l00064"></a>00064         <span class="keyword">public</span> BoxPadding SetRight(<span class="keywordtype">double</span> right) {
-<a name="l00065"></a>00065             BoxPadding b = <span class="keyword">new</span> BoxPadding(<span class="keyword">this</span>); b.right = right;
+<a name="l00005"></a>00005 <span class="keyword">using</span> System.Globalization;
+<a name="l00006"></a>00006 <span class="keyword">using</span> ImageResizer.Util;
+<a name="l00007"></a>00007 
+<a name="l00008"></a>00008 <span class="keyword">namespace </span>ImageResizer.Resizing {<span class="comment"></span>
+<a name="l00009"></a>00009 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00010"></a>00010 <span class="comment">    /// Represents the widths of edges of a box.</span>
+<a name="l00011"></a>00011 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00012"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html">00012</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> {
+<a name="l00013"></a>00013 
+<a name="l00014"></a>00014         <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> Parse(<span class="keywordtype">string</span> text, <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> fallbackValue) {
+<a name="l00015"></a>00015             <span class="keywordtype">double</span>[] coords = <a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html" title="Provides invariant parsing &amp; serialization of primitive types, like Enums, integers, floats, and booleans.">ParseUtils</a>.ParseList&lt;<span class="keywordtype">double</span>&gt;(text, 0, 1, 4);
+<a name="l00016"></a>00016             <span class="keywordflow">if</span> (coords == null) <span class="keywordflow">return</span> fallbackValue; <span class="comment">//Failed to parse, or was empty</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018             <span class="keywordflow">if</span> (coords.Length == 1) <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a>(coords[0]);
+<a name="l00019"></a>00019             <span class="keywordflow">if</span> (coords.Length == 4) <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a>(coords[0], coords[1], coords[2], coords[3]);
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021             <span class="keywordflow">return</span> fallbackValue; 
+<a name="l00022"></a>00022         }
+<a name="l00023"></a>00023         <span class="comment"></span>
+<a name="l00024"></a>00024 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00025"></a>00025 <span class="comment">        /// Create a box with all edges the same width.</span>
+<a name="l00026"></a>00026 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00027"></a>00027 <span class="comment">        /// &lt;param name=&quot;all&quot;&gt;&lt;/param&gt;</span>
+<a name="l00028"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a18d31755b15521fbfa4871b66ecdf51c">00028</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a18d31755b15521fbfa4871b66ecdf51c" title="Create a box with all edges the same width.">BoxPadding</a>(<span class="keywordtype">double</span> all) {
+<a name="l00029"></a>00029             this.all = all;
+<a name="l00030"></a>00030         }<span class="comment"></span>
+<a name="l00031"></a>00031 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00032"></a>00032 <span class="comment">        /// Create a box, specifying individual widths for each size</span>
+<a name="l00033"></a>00033 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00034"></a>00034 <span class="comment">        /// &lt;param name=&quot;left&quot;&gt;&lt;/param&gt;</span>
+<a name="l00035"></a>00035 <span class="comment">        /// &lt;param name=&quot;top&quot;&gt;&lt;/param&gt;</span>
+<a name="l00036"></a>00036 <span class="comment">        /// &lt;param name=&quot;right&quot;&gt;&lt;/param&gt;</span>
+<a name="l00037"></a>00037 <span class="comment">        /// &lt;param name=&quot;bottom&quot;&gt;&lt;/param&gt;</span>
+<a name="l00038"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a5af2e7c2ac20dad5d6eddc9132eca398">00038</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a5af2e7c2ac20dad5d6eddc9132eca398" title="Create a box, specifying individual widths for each size.">BoxPadding</a>(<span class="keywordtype">double</span> left, <span class="keywordtype">double</span> top, <span class="keywordtype">double</span> right, <span class="keywordtype">double</span> bottom) {
+<a name="l00039"></a>00039             this.top = top; this.left = left; this.bottom = bottom; this.right = right;
+<a name="l00040"></a>00040         }<span class="comment"></span>
+<a name="l00041"></a>00041 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00042"></a>00042 <span class="comment">        /// Copies the specified BoxPadding instance</span>
+<a name="l00043"></a>00043 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00044"></a>00044 <span class="comment">        /// &lt;param name=&quot;original&quot;&gt;&lt;/param&gt;</span>
+<a name="l00045"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#aec82669ce2a9e226fb8825bfc0918f10">00045</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#aec82669ce2a9e226fb8825bfc0918f10" title="Copies the specified BoxPadding instance.">BoxPadding</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> original) {
+<a name="l00046"></a>00046             this.top = original.top;
+<a name="l00047"></a>00047             this.bottom = original.bottom;
+<a name="l00048"></a>00048             this.right = original.right;
+<a name="l00049"></a>00049             this.left = original.left;
+<a name="l00050"></a>00050         }
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052         <span class="keyword">protected</span> <span class="keywordtype">double</span> top = 0, left = 0, bottom =0, right = 0;
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054         <span class="keyword">public</span> <span class="keywordtype">double</span> Top { <span class="keyword">get</span> { <span class="keywordflow">return</span> top; } }
+<a name="l00055"></a>00055         <span class="keyword">public</span> <span class="keywordtype">double</span> Left { <span class="keyword">get</span> { <span class="keywordflow">return</span> left; } }
+<a name="l00056"></a>00056         <span class="keyword">public</span> <span class="keywordtype">double</span> Right { <span class="keyword">get</span> { <span class="keywordflow">return</span> right; } }
+<a name="l00057"></a>00057         <span class="keyword">public</span> <span class="keywordtype">double</span> Bottom { <span class="keyword">get</span> { <span class="keywordflow">return</span> bottom; } }
+<a name="l00058"></a>00058 <span class="comment"></span>
+<a name="l00059"></a>00059 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00060"></a>00060 <span class="comment">        /// Sets the width of all edges, returning a new instance</span>
+<a name="l00061"></a>00061 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00062"></a>00062 <span class="comment">        /// &lt;param name=&quot;all&quot;&gt;&lt;/param&gt;</span>
+<a name="l00063"></a>00063 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00064"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a19f57445b1f9cba1b2b55fcd94c5e407">00064</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a19f57445b1f9cba1b2b55fcd94c5e407" title="Sets the width of all edges, returning a new instance.">SetAll</a>(<span class="keywordtype">double</span> all) {
+<a name="l00065"></a>00065             <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> b = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a>(<span class="keyword">this</span>); b.all = all;
 <a name="l00066"></a>00066             <span class="keywordflow">return</span> b;
 <a name="l00067"></a>00067         }
-<a name="l00068"></a>00068         <span class="keyword">public</span> BoxPadding SetBottom(<span class="keywordtype">double</span> bottom) {
-<a name="l00069"></a>00069             BoxPadding b = <span class="keyword">new</span> BoxPadding(<span class="keyword">this</span>); b.bottom = bottom;
+<a name="l00068"></a>00068         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> SetTop(<span class="keywordtype">double</span> top) {
+<a name="l00069"></a>00069             <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> b = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a>(<span class="keyword">this</span>); b.top = top;
 <a name="l00070"></a>00070             <span class="keywordflow">return</span> b;
 <a name="l00071"></a>00071         }
-<a name="l00072"></a>00072 <span class="comment"></span>
-<a name="l00073"></a>00073 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00074"></a>00074 <span class="comment">        /// Returns double.NaN unless all edges are the same width, in which case that width is returned</span>
-<a name="l00075"></a>00075 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00076"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a5a549837cdd68bdbd6fa61c9d11f9e52">00076</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">double</span> All { <span class="keyword">get</span> { <span class="keywordflow">return</span> this.all; } }
-<a name="l00077"></a>00077 
-<a name="l00078"></a>00078         <span class="keyword">protected</span> <span class="keywordtype">double</span> all {
-<a name="l00079"></a>00079             <span class="keyword">get</span> {
-<a name="l00080"></a>00080                 <span class="keywordflow">if</span> (top == left &amp;&amp; left == bottom &amp;&amp; bottom == right) <span class="keywordflow">return</span> top;
-<a name="l00081"></a>00081                 <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keywordtype">double</span>.NaN;
-<a name="l00082"></a>00082             }
-<a name="l00083"></a>00083             <span class="keyword">set</span> {
-<a name="l00084"></a>00084                 top = left = bottom = right = value;
-<a name="l00085"></a>00085             }
-<a name="l00086"></a>00086         }<span class="comment"></span>
-<a name="l00087"></a>00087 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00088"></a>00088 <span class="comment">        /// Returns an instance with a width of 0</span>
-<a name="l00089"></a>00089 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00090"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a64b892955b3ab945a3585fb5283bf979">00090</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> Empty { <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a>(0); } }<span class="comment"></span>
-<a name="l00091"></a>00091 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00092"></a>00092 <span class="comment">        /// Returns true if th</span>
-<a name="l00093"></a>00093 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00094"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a4b1353db785a5d82397ed82641f05e0d">00094</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsEmpty { <span class="keyword">get</span> { <span class="keywordflow">return</span> all == 0; } }<span class="comment"></span>
-<a name="l00095"></a>00095 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00096"></a>00096 <span class="comment">        /// Gets edge offsets as a clockwise array, starting with Top.</span>
-<a name="l00097"></a>00097 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00098"></a>00098 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00099"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#ad47d7f08f34350dd2ed1e3da1e65fa1d">00099</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span>[] <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#ad47d7f08f34350dd2ed1e3da1e65fa1d" title="Gets edge offsets as a clockwise array, starting with Top.">GetEdgeOffsets</a>() {
-<a name="l00100"></a>00100             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">float</span>[4] { (float)top, (<span class="keywordtype">float</span>)right, (float)bottom, (<span class="keywordtype">float</span>)left };
-<a name="l00101"></a>00101         }
-<a name="l00102"></a>00102     }
-<a name="l00103"></a>00103 }
+<a name="l00072"></a>00072         <span class="keyword">public</span> BoxPadding SetLeft(<span class="keywordtype">double</span> left) {
+<a name="l00073"></a>00073             BoxPadding b = <span class="keyword">new</span> BoxPadding(<span class="keyword">this</span>); b.left = left;
+<a name="l00074"></a>00074             <span class="keywordflow">return</span> b;
+<a name="l00075"></a>00075         }
+<a name="l00076"></a>00076         <span class="keyword">public</span> BoxPadding SetRight(<span class="keywordtype">double</span> right) {
+<a name="l00077"></a>00077             BoxPadding b = <span class="keyword">new</span> BoxPadding(<span class="keyword">this</span>); b.right = right;
+<a name="l00078"></a>00078             <span class="keywordflow">return</span> b;
+<a name="l00079"></a>00079         }
+<a name="l00080"></a>00080         <span class="keyword">public</span> BoxPadding SetBottom(<span class="keywordtype">double</span> bottom) {
+<a name="l00081"></a>00081             BoxPadding b = <span class="keyword">new</span> BoxPadding(<span class="keyword">this</span>); b.bottom = bottom;
+<a name="l00082"></a>00082             <span class="keywordflow">return</span> b;
+<a name="l00083"></a>00083         }
+<a name="l00084"></a>00084 <span class="comment"></span>
+<a name="l00085"></a>00085 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00086"></a>00086 <span class="comment">        /// Returns double.NaN unless all edges are the same width, in which case that width is returned</span>
+<a name="l00087"></a>00087 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00088"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a5a549837cdd68bdbd6fa61c9d11f9e52">00088</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">double</span> All { <span class="keyword">get</span> { <span class="keywordflow">return</span> this.all; } }
+<a name="l00089"></a>00089 
+<a name="l00090"></a>00090         <span class="keyword">protected</span> <span class="keywordtype">double</span> all {
+<a name="l00091"></a>00091             <span class="keyword">get</span> {
+<a name="l00092"></a>00092                 <span class="keywordflow">if</span> (top == left &amp;&amp; left == bottom &amp;&amp; bottom == right) <span class="keywordflow">return</span> top;
+<a name="l00093"></a>00093                 <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keywordtype">double</span>.NaN;
+<a name="l00094"></a>00094             }
+<a name="l00095"></a>00095             <span class="keyword">set</span> {
+<a name="l00096"></a>00096                 top = left = bottom = right = value;
+<a name="l00097"></a>00097             }
+<a name="l00098"></a>00098         }<span class="comment"></span>
+<a name="l00099"></a>00099 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00100"></a>00100 <span class="comment">        /// Returns an instance with a width of 0</span>
+<a name="l00101"></a>00101 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00102"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a64b892955b3ab945a3585fb5283bf979">00102</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> Empty { <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a>(0); } }<span class="comment"></span>
+<a name="l00103"></a>00103 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00104"></a>00104 <span class="comment">        /// Returns true if th</span>
+<a name="l00105"></a>00105 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00106"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a4b1353db785a5d82397ed82641f05e0d">00106</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> IsEmpty { <span class="keyword">get</span> { <span class="keywordflow">return</span> all == 0; } }<span class="comment"></span>
+<a name="l00107"></a>00107 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00108"></a>00108 <span class="comment">        /// Gets edge offsets as a clockwise array, starting with Top.</span>
+<a name="l00109"></a>00109 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00110"></a>00110 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00111"></a><a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#ad47d7f08f34350dd2ed1e3da1e65fa1d">00111</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">float</span>[] <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#ad47d7f08f34350dd2ed1e3da1e65fa1d" title="Gets edge offsets as a clockwise array, starting with Top.">GetEdgeOffsets</a>() {
+<a name="l00112"></a>00112             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">float</span>[4] { (float)top, (<span class="keywordtype">float</span>)right, (float)bottom, (<span class="keywordtype">float</span>)left };
+<a name="l00113"></a>00113         }
+<a name="l00114"></a>00114 
+<a name="l00115"></a>00115         <span class="keyword">public</span> <span class="keyword">override</span> <span class="keywordtype">string</span> ToString() {
+<a name="l00116"></a>00116             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(All)) <span class="keywordflow">return</span> All.ToString(NumberFormatInfo.InvariantInfo); <span class="comment">//Easy</span>
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118             <span class="keywordflow">return</span> <span class="stringliteral">&quot;(&quot;</span> + Left.ToString(NumberFormatInfo.InvariantInfo) + <span class="stringliteral">&quot;,&quot;</span> + Top.ToString(NumberFormatInfo.InvariantInfo) + <span class="stringliteral">&quot;,&quot;</span> +
+<a name="l00119"></a>00119                 Right.ToString(NumberFormatInfo.InvariantInfo) + <span class="stringliteral">&quot;,&quot;</span> + Bottom.ToString(NumberFormatInfo.InvariantInfo) + <span class="stringliteral">&quot;)&quot;</span>;
+<a name="l00120"></a>00120         }
+<a name="l00121"></a>00121         
+<a name="l00122"></a>00122     }
+<a name="l00123"></a>00123 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

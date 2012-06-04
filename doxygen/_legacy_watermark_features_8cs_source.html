@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -152,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00069"></a>00069 
 <a name="l00070"></a>00070 
 <a name="l00071"></a>00071 
-<a name="l00072"></a>00072             RectangleF imageBox = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]);
+<a name="l00072"></a>00072             RectangleF imageBox = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]);
 <a name="l00073"></a>00073             <span class="comment">//Floor and cieling values to prevent fractional placement.</span>
 <a name="l00074"></a>00074             imageBox.Width = (float)Math.Floor(imageBox.Width);
 <a name="l00075"></a>00075             imageBox.Height = (float)Math.Floor(imageBox.Height);
@@ -217,7 +217,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00134"></a>00134                 }
 <a name="l00135"></a>00135 
 <a name="l00136"></a>00136                 <span class="comment">//Keep aspect ratio, shrinking further if needed.</span>
-<a name="l00137"></a>00137                 <span class="keywordflow">if</span> (keepAspectRatio) watermarkSize = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#aaccb0b4261dc176f5ad25b4bb09fd55f" title="Scales &#39;inner&#39; to fit inside &#39;bounding&#39; while maintaining aspect ratio. Only downscales.">DownScaleInside</a>(wb.Size, watermarkSize);
+<a name="l00137"></a>00137                 <span class="keywordflow">if</span> (keepAspectRatio) watermarkSize = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#aaccb0b4261dc176f5ad25b4bb09fd55f" title="Scales &#39;inner&#39; to fit inside &#39;bounding&#39; while maintaining aspect ratio. Only downscales.">DownScaleInside</a>(wb.Size, watermarkSize);
 <a name="l00138"></a>00138 
 <a name="l00139"></a>00139 
 <a name="l00140"></a>00140                 <span class="comment">//Floor all values to avoid rounding errors and blurry lines.</span>
@@ -231,11 +231,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00148"></a>00148                     watermarkSize.Height + topLeftPadding.Height + bottomRightPadding.Height);
 <a name="l00149"></a>00149 
 <a name="l00150"></a>00150                 <span class="comment">//Don&#39;t draw the watermark if it is too small.</span>
-<a name="l00151"></a>00151                 <span class="keywordflow">if</span> (!<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a98c83ada594ba88b34d97d26176f8ada" title="Returns true if &#39;inner&#39; fits inside or equals &#39;outer&#39;.">FitsInside</a>(watermarkBoundingBox, imageBox.Size)) {
+<a name="l00151"></a>00151                 <span class="keywordflow">if</span> (!<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a98c83ada594ba88b34d97d26176f8ada" title="Returns true if &#39;inner&#39; fits inside or equals &#39;outer&#39;.">FitsInside</a>(watermarkBoundingBox, imageBox.Size)) {
 <a name="l00152"></a>00152                     <span class="keywordflow">if</span> (hideIfTooSmall) <span class="keywordflow">return</span> <span class="keyword">true</span>;
 <a name="l00153"></a>00153                     <span class="keywordflow">else</span> {
 <a name="l00154"></a>00154                         SizeF oldSize = watermarkBoundingBox;
-<a name="l00155"></a>00155                         watermarkBoundingBox = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#aaccb0b4261dc176f5ad25b4bb09fd55f" title="Scales &#39;inner&#39; to fit inside &#39;bounding&#39; while maintaining aspect ratio. Only downscales.">DownScaleInside</a>(watermarkBoundingBox, imageBox.Size);
+<a name="l00155"></a>00155                         watermarkBoundingBox = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#aaccb0b4261dc176f5ad25b4bb09fd55f" title="Scales &#39;inner&#39; to fit inside &#39;bounding&#39; while maintaining aspect ratio. Only downscales.">DownScaleInside</a>(watermarkBoundingBox, imageBox.Size);
 <a name="l00156"></a>00156                         watermarkSize.Width -= (oldSize.Width - watermarkBoundingBox.Width);
 <a name="l00157"></a>00157                         watermarkSize.Height -= (oldSize.Height - watermarkBoundingBox.Height);
 <a name="l00158"></a>00158                     }

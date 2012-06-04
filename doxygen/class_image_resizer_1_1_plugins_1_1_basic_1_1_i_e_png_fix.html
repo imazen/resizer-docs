@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -154,7 +154,7 @@ Properties</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Causes IE6 and earlier to use GIF versions of PNG files. By default, only fixes requests with ?iefix=true in the querystring. When catchall is enabled, it will filter all png images, unless iefix=false on those requests. Not compatible with CDNs or proxy servers, as they do not allow varying by user agent reliably. </p>
 
-<p>Definition at line <a class="el" href="_i_e_png_fix_8cs_source.html#l00018">18</a> of file <a class="el" href="_i_e_png_fix_8cs_source.html">IEPngFix.cs</a>.</p>
+<p>Definition at line <a class="el" href="_i_e_png_fix_8cs_source.html#l00019">19</a> of file <a class="el" href="_i_e_png_fix_8cs_source.html">IEPngFix.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="aeddd0811e4a68136aa2b1cd493d8551e"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::IEPngFix::GetSupportedQuerystringKeys" ref="aeddd0811e4a68136aa2b1cd493d8551e" args="()" -->
 <div class="memitem">
@@ -175,7 +175,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html#aaa1c43be9b92caf1f1caa81dc9e9f4bf">ImageResizer.Plugins.IQuerystringPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_i_e_png_fix_8cs_source.html#l00123">123</a> of file <a class="el" href="_i_e_png_fix_8cs_source.html">IEPngFix.cs</a>.</p>
+<p>Definition at line <a class="el" href="_i_e_png_fix_8cs_source.html#l00124">124</a> of file <a class="el" href="_i_e_png_fix_8cs_source.html">IEPngFix.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                 {
             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;iefix&quot;</span> };
         }
@@ -200,13 +200,13 @@ Properties</h2></td></tr>
 <p>Returns true if the user agent string specifies MSIE versions 1 through 6 for Windows. Cached in context.Items after first call. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">request</td><td></td></tr>
+    <tr><td class="paramname">context</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_i_e_png_fix_8cs_source.html#l00112">112</a> of file <a class="el" href="_i_e_png_fix_8cs_source.html">IEPngFix.cs</a>.</p>
+<p>Definition at line <a class="el" href="_i_e_png_fix_8cs_source.html#l00113">113</a> of file <a class="el" href="_i_e_png_fix_8cs_source.html">IEPngFix.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                            {
 
             <span class="keywordflow">if</span> (context == null || context.Request == null || <span class="keywordtype">string</span>.IsNullOrEmpty(context.Request.UserAgent)) <span class="keywordflow">return</span> <span class="keyword">false</span>;
@@ -234,7 +234,7 @@ Properties</h2></td></tr>
 
 <p>If true, 'iefix=true' will be the default for all PNG images, instead of 'iefix=false'. </p>
 
-<p>Definition at line <a class="el" href="_i_e_png_fix_8cs_source.html#l00031">31</a> of file <a class="el" href="_i_e_png_fix_8cs_source.html">IEPngFix.cs</a>.</p>
+<p>Definition at line <a class="el" href="_i_e_png_fix_8cs_source.html#l00032">32</a> of file <a class="el" href="_i_e_png_fix_8cs_source.html">IEPngFix.cs</a>.</p>
 
 </div>
 </div>
@@ -251,7 +251,7 @@ Properties</h2></td></tr>
 
 <p>If true, the requests from IE will be HTTP redirected to new URLs. If false, the GIF will be silently served instead of the PNG, without any redirection. A CDN or caching proxy will mess things up regardless, but using redirection ensures that the CDN/proxy never caches the GIF version instead of the PNG. </p>
 
-<p>Definition at line <a class="el" href="_i_e_png_fix_8cs_source.html#l00042">42</a> of file <a class="el" href="_i_e_png_fix_8cs_source.html">IEPngFix.cs</a>.</p>
+<p>Definition at line <a class="el" href="_i_e_png_fix_8cs_source.html#l00043">43</a> of file <a class="el" href="_i_e_png_fix_8cs_source.html">IEPngFix.cs</a>.</p>
 
 </div>
 </div>

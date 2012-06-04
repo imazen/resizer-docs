@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -88,274 +88,275 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00005"></a>00005 <span class="keyword">using</span> ImageResizer.Resizing;
 <a name="l00006"></a>00006 <span class="keyword">using</span> System.Drawing;
 <a name="l00007"></a>00007 <span class="keyword">using</span> ImageResizer.Util;
-<a name="l00008"></a>00008 
-<a name="l00009"></a>00009 <span class="keyword">namespace </span>ImageResizer.Plugins.Watermark {
-<a name="l00010"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">00010</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a> {
-<a name="l00011"></a>00011 
-<a name="l00012"></a>00012         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a>() {
-<a name="l00013"></a>00013         }
-<a name="l00014"></a>00014 
-<a name="l00015"></a>00015         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a>(NameValueCollection settings) {
-<a name="l00016"></a>00016             Top = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;top&quot;</span>]);
-<a name="l00017"></a>00017             Left = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;left&quot;</span>]);
-<a name="l00018"></a>00018             Bottom = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;bottom&quot;</span>]);
-<a name="l00019"></a>00019             Right = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;right&quot;</span>]);
-<a name="l00020"></a>00020             Width = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;width&quot;</span>]);
-<a name="l00021"></a>00021             Height = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;height&quot;</span>]);
-<a name="l00022"></a>00022             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(settings[<span class="stringliteral">&quot;relativeTo&quot;</span>])) RelativeTo = settings[<span class="stringliteral">&quot;relativeTo&quot;</span>];
-<a name="l00023"></a>00023             DrawAs = <a class="code" href="class_image_resizer_1_1_util_1_1_utils.html">Utils</a>.parseEnum&lt;LayerPlacement&gt;(settings[<span class="stringliteral">&quot;drawAs&quot;</span>], DrawAs);
-<a name="l00024"></a>00024             Align = <a class="code" href="class_image_resizer_1_1_util_1_1_utils.html">Utils</a>.parseEnum&lt;ContentAlignment&gt;(settings[<span class="stringliteral">&quot;align&quot;</span>], Align);
-<a name="l00025"></a>00025             Fill = <a class="code" href="class_image_resizer_1_1_util_1_1_utils.html">Utils</a>.getBool(settings, <span class="stringliteral">&quot;fill&quot;</span>, <span class="keyword">false</span>);
-<a name="l00026"></a>00026         }
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028         <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> CopyTo(<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a> other) {
-<a name="l00029"></a>00029             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a506ec5633b8ec9cbc0327433ce17da13" title="The offset from the top of the container. Percentages are relative to the container height...">Top</a> = this.Top;
-<a name="l00030"></a>00030             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a32a2a68f77bf8fbe72255b19287f105f" title="The offset from the left of the container. Percentages are relative to the container width...">Left</a> = this.Left;
-<a name="l00031"></a>00031             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a18612531fc79889578a1076c4c25b366" title="The offset relative to the bottom of the container. Percentages are relative to the container height...">Bottom</a> = Bottom;
-<a name="l00032"></a>00032             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#adc04a91aabc67ebe51bcc45b384ec1c7" title="The offset relative to the right side of the container. Percentages are relative to the container wid...">Right</a> = Right;
-<a name="l00033"></a>00033             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a6f5a252d314b585e81540e8d4f7bda80" title="The width of the layer. If used with both Left and Right, the smaller result wins. I.e, with a 100px container, width=50, left=30, right=30, the resulting width will be 40. If null, Left and Right will be used to calcuate the value. If both Left and Right are not specified, the natural width of the layer&#39;s contents will be used. Percentages are relative to the container width.">Width</a> = Width;
-<a name="l00034"></a>00034             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a7e893987d1fbda81e95f253174f5b73f" title="The height of the layer. If used with both Top and Bottom, the smaller result wins. I.e, with a 100px container, height=50, top=30, top=30, the resulting height will be 40. If null, Top and Bottom will be used to calcuate the value. If both Top and Bottom are not specified, the natural height of the layer&#39;s contents will be used. Percentages are relative to the container height.">Height</a> = Height;
-<a name="l00035"></a>00035             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a3641f221cbe0286ac14f0d140d965777" title="Specifies the container that the position values (top,left,right,bottom,width,heght) are relative to...">RelativeTo</a> = RelativeTo;
-<a name="l00036"></a>00036             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a636c7867ee48e105e3d8bf5fb26427b0" title="The z-order at which to draw the layer. Curret options are Overlay (over everything) and Background (...">DrawAs</a> = DrawAs;
-<a name="l00037"></a>00037             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#aa3dac6214bab1e78459fc7da2c3feae6" title="The alignment to use when (a) all 3 horizontal or vertical values are specified, and they need to be ...">Align</a> = Align;
-<a name="l00038"></a>00038         }
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _top = null;<span class="comment"></span>
-<a name="l00041"></a>00041 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00042"></a>00042 <span class="comment">        /// The offset from the top of the container. Percentages are relative to the container height. Defines the upper boundary for the layer. </span>
-<a name="l00043"></a>00043 <span class="comment">        /// If null, Bottom will be used to calcuate the value based on the height. If Bottom is not specified, defaults to 0.</span>
-<a name="l00044"></a>00044 <span class="comment">        /// Positive values are inside the container, negative values outside it.</span>
-<a name="l00045"></a>00045 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00046"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a506ec5633b8ec9cbc0327433ce17da13">00046</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Top {
-<a name="l00047"></a>00047             <span class="keyword">get</span> { <span class="keywordflow">return</span> _top; }
-<a name="l00048"></a>00048             <span class="keyword">set</span> { _top = value; }
-<a name="l00049"></a>00049         }
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _left = null;<span class="comment"></span>
-<a name="l00052"></a>00052 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00053"></a>00053 <span class="comment">        /// The offset from the left of the container. Percentages are relative to the container width. Defines the leftmost boundary for the layer. </span>
-<a name="l00054"></a>00054 <span class="comment">        /// If null, Right will be used to calcuate the value based on the width. If Right is not specified, defaults to 0.</span>
-<a name="l00055"></a>00055 <span class="comment">        /// Positive values are inside the container, negative values outside it.</span>
-<a name="l00056"></a>00056 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00057"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a32a2a68f77bf8fbe72255b19287f105f">00057</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Left {
-<a name="l00058"></a>00058             <span class="keyword">get</span> { <span class="keywordflow">return</span> _left; }
-<a name="l00059"></a>00059             <span class="keyword">set</span> { _left = value; }
-<a name="l00060"></a>00060         }
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _right = null;
-<a name="l00063"></a>00063 <span class="comment"></span>
-<a name="l00064"></a>00064 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00065"></a>00065 <span class="comment">        /// The offset relative to the right side of the container. Percentages are relative to the container width. Defines the rightmost boundary for the layer.</span>
-<a name="l00066"></a>00066 <span class="comment">        /// If null, Top will be used to calcuate the value based on the height. If Top is not specified, defaults to 0.</span>
-<a name="l00067"></a>00067 <span class="comment">        /// Positive values are inside the container, negative values outside it.</span>
-<a name="l00068"></a>00068 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00069"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#adc04a91aabc67ebe51bcc45b384ec1c7">00069</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Right {
-<a name="l00070"></a>00070             <span class="keyword">get</span> { <span class="keywordflow">return</span> _right; }
-<a name="l00071"></a>00071             <span class="keyword">set</span> { _right = value; }
-<a name="l00072"></a>00072         }
-<a name="l00073"></a>00073         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _bottom = null;<span class="comment"></span>
-<a name="l00074"></a>00074 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00075"></a>00075 <span class="comment">        /// The offset relative to the bottom of the container. Percentages are relative to the container height. Defines the bottom-most boundary for the layer.</span>
-<a name="l00076"></a>00076 <span class="comment">        /// If null, Top will be used to calcuate the value based on the height. If Top is not specified, defaults to 0.</span>
-<a name="l00077"></a>00077 <span class="comment">        /// Positive values are inside the container, negative values outside it.</span>
-<a name="l00078"></a>00078 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00079"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a18612531fc79889578a1076c4c25b366">00079</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Bottom {
-<a name="l00080"></a>00080             <span class="keyword">get</span> { <span class="keywordflow">return</span> _bottom; }
-<a name="l00081"></a>00081             <span class="keyword">set</span> { _bottom = value; }
-<a name="l00082"></a>00082         }
-<a name="l00083"></a>00083         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _width = null;<span class="comment"></span>
-<a name="l00084"></a>00084 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00085"></a>00085 <span class="comment">        /// The width of the layer. If used with both Left and Right, the smaller result wins. I.e, with a 100px container, width=50, left=30, right=30, the resulting width will be 40.</span>
-<a name="l00086"></a>00086 <span class="comment">        /// If null, Left and Right will be used to calcuate the value. If both Left and Right are not specified, the natural width of the layer&#39;s contents will be used.</span>
-<a name="l00087"></a>00087 <span class="comment">        /// Percentages are relative to the container width. </span>
-<a name="l00088"></a>00088 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00089"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a6f5a252d314b585e81540e8d4f7bda80">00089</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Width {
-<a name="l00090"></a>00090             <span class="keyword">get</span> { <span class="keywordflow">return</span> _width; }
-<a name="l00091"></a>00091             <span class="keyword">set</span> { _width = value; }
-<a name="l00092"></a>00092         }
-<a name="l00093"></a>00093         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _height = null;
-<a name="l00094"></a>00094 <span class="comment"></span>
-<a name="l00095"></a>00095 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00096"></a>00096 <span class="comment">        /// The height of the layer. If used with both Top and Bottom, the smaller result wins. I.e, with a 100px container, height=50, top=30, top=30, the resulting height will be 40.</span>
-<a name="l00097"></a>00097 <span class="comment">        /// If null, Top and Bottom will be used to calcuate the value. If both Top and Bottom are not specified, the natural height of the layer&#39;s contents will be used.</span>
-<a name="l00098"></a>00098 <span class="comment">        /// Percentages are relative to the container height. </span>
-<a name="l00099"></a>00099 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00100"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a7e893987d1fbda81e95f253174f5b73f">00100</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Height {
-<a name="l00101"></a>00101             <span class="keyword">get</span> { <span class="keywordflow">return</span> _height; }
-<a name="l00102"></a>00102             <span class="keyword">set</span> { _height = value; }
-<a name="l00103"></a>00103         }
-<a name="l00104"></a>00104 
-<a name="l00105"></a>00105         <span class="keyword">private</span> <span class="keywordtype">string</span> _relativeTo = <span class="stringliteral">&quot;image&quot;</span>;
-<a name="l00106"></a>00106 <span class="comment"></span>
-<a name="l00107"></a>00107 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00108"></a>00108 <span class="comment">        /// Specifies the container that the position values (top,left,right,bottom,width,heght) are relative to. </span>
-<a name="l00109"></a>00109 <span class="comment">        /// The default is &#39;image&#39; (the innermost square, which contains the original photo). Additional valid values include &#39;imageArea&#39; (includes whitespace added to preserve aspect ratio), &#39;padding&#39;, &#39;border&#39;, &#39;margin&#39;, and &#39;canvas&#39;. </span>
-<a name="l00110"></a>00110 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00111"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a3641f221cbe0286ac14f0d140d965777">00111</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> RelativeTo {
-<a name="l00112"></a>00112             <span class="keyword">get</span> { <span class="keywordflow">return</span> _relativeTo; }
-<a name="l00113"></a>00113             <span class="keyword">set</span> { _relativeTo = value; }
-<a name="l00114"></a>00114         }
-<a name="l00115"></a>00115         <span class="comment">//top, left, bottom, right = px or percentages (relative to container)</span>
-<a name="l00116"></a>00116         <span class="comment">//relativeTo = image|imageArea|padding|border|margin|canvas</span>
-<a name="l00117"></a>00117         <span class="comment">//drawAs overlay|background</span>
-<a name="l00118"></a>00118 
-<a name="l00119"></a>00119         <span class="keyword">private</span> ContentAlignment _align = ContentAlignment.MiddleCenter;
-<a name="l00120"></a>00120 <span class="comment"></span>
-<a name="l00121"></a>00121 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00122"></a>00122 <span class="comment">        /// The alignment to use when </span>
-<a name="l00123"></a>00123 <span class="comment">        /// (a) all 3 horizontal or vertical values are specified, and they need to be resolved,</span>
-<a name="l00124"></a>00124 <span class="comment">        /// (b) when only width/height are specified, </span>
-<a name="l00125"></a>00125 <span class="comment">        /// (c) when no positioning values are specified, or </span>
-<a name="l00126"></a>00126 <span class="comment">        /// (d) when the content doesn&#39;t precisely fill they layer bounds.</span>
-<a name="l00127"></a>00127 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00128"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#aa3dac6214bab1e78459fc7da2c3feae6">00128</a> <span class="comment"></span>        <span class="keyword">public</span> ContentAlignment Align {
-<a name="l00129"></a>00129             <span class="keyword">get</span> { <span class="keywordflow">return</span> _align; }
-<a name="l00130"></a>00130             <span class="keyword">set</span> { _align = value; }
-<a name="l00131"></a>00131         }
-<a name="l00132"></a>00132 
+<a name="l00008"></a>00008 <span class="keyword">using</span> ImageResizer.ExtensionMethods;
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 <span class="keyword">namespace </span>ImageResizer.Plugins.Watermark {
+<a name="l00011"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">00011</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a> {
+<a name="l00012"></a>00012 
+<a name="l00013"></a>00013         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a>() {
+<a name="l00014"></a>00014         }
+<a name="l00015"></a>00015 
+<a name="l00016"></a>00016         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a>(NameValueCollection settings) {
+<a name="l00017"></a>00017             Top = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;top&quot;</span>]);
+<a name="l00018"></a>00018             Left = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;left&quot;</span>]);
+<a name="l00019"></a>00019             Bottom = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;bottom&quot;</span>]);
+<a name="l00020"></a>00020             Right = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;right&quot;</span>]);
+<a name="l00021"></a>00021             Width = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;width&quot;</span>]);
+<a name="l00022"></a>00022             Height = <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.TryParse(settings[<span class="stringliteral">&quot;height&quot;</span>]);
+<a name="l00023"></a>00023             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(settings[<span class="stringliteral">&quot;relativeTo&quot;</span>])) RelativeTo = settings[<span class="stringliteral">&quot;relativeTo&quot;</span>];
+<a name="l00024"></a>00024             DrawAs = settings.Get&lt;LayerPlacement&gt;(<span class="stringliteral">&quot;drawAs&quot;</span>, DrawAs);
+<a name="l00025"></a>00025             Align = settings.Get&lt;ContentAlignment&gt;(<span class="stringliteral">&quot;align&quot;</span>, Align);
+<a name="l00026"></a>00026             Fill = settings.Get&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;fill&quot;</span>, <span class="keyword">false</span>);
+<a name="l00027"></a>00027         }
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029         <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> CopyTo(<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a> other) {
+<a name="l00030"></a>00030             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a506ec5633b8ec9cbc0327433ce17da13" title="The offset from the top of the container. Percentages are relative to the container height...">Top</a> = this.Top;
+<a name="l00031"></a>00031             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a32a2a68f77bf8fbe72255b19287f105f" title="The offset from the left of the container. Percentages are relative to the container width...">Left</a> = this.Left;
+<a name="l00032"></a>00032             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a18612531fc79889578a1076c4c25b366" title="The offset relative to the bottom of the container. Percentages are relative to the container height...">Bottom</a> = Bottom;
+<a name="l00033"></a>00033             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#adc04a91aabc67ebe51bcc45b384ec1c7" title="The offset relative to the right side of the container. Percentages are relative to the container wid...">Right</a> = Right;
+<a name="l00034"></a>00034             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a6f5a252d314b585e81540e8d4f7bda80" title="The width of the layer. If used with both Left and Right, the smaller result wins. I.e, with a 100px container, width=50, left=30, right=30, the resulting width will be 40. If null, Left and Right will be used to calcuate the value. If both Left and Right are not specified, the natural width of the layer&#39;s contents will be used. Percentages are relative to the container width.">Width</a> = Width;
+<a name="l00035"></a>00035             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a7e893987d1fbda81e95f253174f5b73f" title="The height of the layer. If used with both Top and Bottom, the smaller result wins. I.e, with a 100px container, height=50, top=30, top=30, the resulting height will be 40. If null, Top and Bottom will be used to calcuate the value. If both Top and Bottom are not specified, the natural height of the layer&#39;s contents will be used. Percentages are relative to the container height.">Height</a> = Height;
+<a name="l00036"></a>00036             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a3641f221cbe0286ac14f0d140d965777" title="Specifies the container that the position values (top,left,right,bottom,width,heght) are relative to...">RelativeTo</a> = RelativeTo;
+<a name="l00037"></a>00037             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a636c7867ee48e105e3d8bf5fb26427b0" title="The z-order at which to draw the layer. Curret options are Overlay (over everything) and Background (...">DrawAs</a> = DrawAs;
+<a name="l00038"></a>00038             other.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#aa3dac6214bab1e78459fc7da2c3feae6" title="The alignment to use when (a) all 3 horizontal or vertical values are specified, and they need to be ...">Align</a> = Align;
+<a name="l00039"></a>00039         }
+<a name="l00040"></a>00040 
+<a name="l00041"></a>00041         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _top = null;<span class="comment"></span>
+<a name="l00042"></a>00042 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00043"></a>00043 <span class="comment">        /// The offset from the top of the container. Percentages are relative to the container height. Defines the upper boundary for the layer. </span>
+<a name="l00044"></a>00044 <span class="comment">        /// If null, Bottom will be used to calcuate the value based on the height. If Bottom is not specified, defaults to 0.</span>
+<a name="l00045"></a>00045 <span class="comment">        /// Positive values are inside the container, negative values outside it.</span>
+<a name="l00046"></a>00046 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00047"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a506ec5633b8ec9cbc0327433ce17da13">00047</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Top {
+<a name="l00048"></a>00048             <span class="keyword">get</span> { <span class="keywordflow">return</span> _top; }
+<a name="l00049"></a>00049             <span class="keyword">set</span> { _top = value; }
+<a name="l00050"></a>00050         }
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _left = null;<span class="comment"></span>
+<a name="l00053"></a>00053 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00054"></a>00054 <span class="comment">        /// The offset from the left of the container. Percentages are relative to the container width. Defines the leftmost boundary for the layer. </span>
+<a name="l00055"></a>00055 <span class="comment">        /// If null, Right will be used to calcuate the value based on the width. If Right is not specified, defaults to 0.</span>
+<a name="l00056"></a>00056 <span class="comment">        /// Positive values are inside the container, negative values outside it.</span>
+<a name="l00057"></a>00057 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00058"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a32a2a68f77bf8fbe72255b19287f105f">00058</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Left {
+<a name="l00059"></a>00059             <span class="keyword">get</span> { <span class="keywordflow">return</span> _left; }
+<a name="l00060"></a>00060             <span class="keyword">set</span> { _left = value; }
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _right = null;
+<a name="l00064"></a>00064 <span class="comment"></span>
+<a name="l00065"></a>00065 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00066"></a>00066 <span class="comment">        /// The offset relative to the right side of the container. Percentages are relative to the container width. Defines the rightmost boundary for the layer.</span>
+<a name="l00067"></a>00067 <span class="comment">        /// If null, Top will be used to calcuate the value based on the height. If Top is not specified, defaults to 0.</span>
+<a name="l00068"></a>00068 <span class="comment">        /// Positive values are inside the container, negative values outside it.</span>
+<a name="l00069"></a>00069 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00070"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#adc04a91aabc67ebe51bcc45b384ec1c7">00070</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Right {
+<a name="l00071"></a>00071             <span class="keyword">get</span> { <span class="keywordflow">return</span> _right; }
+<a name="l00072"></a>00072             <span class="keyword">set</span> { _right = value; }
+<a name="l00073"></a>00073         }
+<a name="l00074"></a>00074         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _bottom = null;<span class="comment"></span>
+<a name="l00075"></a>00075 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00076"></a>00076 <span class="comment">        /// The offset relative to the bottom of the container. Percentages are relative to the container height. Defines the bottom-most boundary for the layer.</span>
+<a name="l00077"></a>00077 <span class="comment">        /// If null, Top will be used to calcuate the value based on the height. If Top is not specified, defaults to 0.</span>
+<a name="l00078"></a>00078 <span class="comment">        /// Positive values are inside the container, negative values outside it.</span>
+<a name="l00079"></a>00079 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00080"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a18612531fc79889578a1076c4c25b366">00080</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Bottom {
+<a name="l00081"></a>00081             <span class="keyword">get</span> { <span class="keywordflow">return</span> _bottom; }
+<a name="l00082"></a>00082             <span class="keyword">set</span> { _bottom = value; }
+<a name="l00083"></a>00083         }
+<a name="l00084"></a>00084         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _width = null;<span class="comment"></span>
+<a name="l00085"></a>00085 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00086"></a>00086 <span class="comment">        /// The width of the layer. If used with both Left and Right, the smaller result wins. I.e, with a 100px container, width=50, left=30, right=30, the resulting width will be 40.</span>
+<a name="l00087"></a>00087 <span class="comment">        /// If null, Left and Right will be used to calcuate the value. If both Left and Right are not specified, the natural width of the layer&#39;s contents will be used.</span>
+<a name="l00088"></a>00088 <span class="comment">        /// Percentages are relative to the container width. </span>
+<a name="l00089"></a>00089 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00090"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a6f5a252d314b585e81540e8d4f7bda80">00090</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Width {
+<a name="l00091"></a>00091             <span class="keyword">get</span> { <span class="keywordflow">return</span> _width; }
+<a name="l00092"></a>00092             <span class="keyword">set</span> { _width = value; }
+<a name="l00093"></a>00093         }
+<a name="l00094"></a>00094         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> _height = null;
+<a name="l00095"></a>00095 <span class="comment"></span>
+<a name="l00096"></a>00096 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00097"></a>00097 <span class="comment">        /// The height of the layer. If used with both Top and Bottom, the smaller result wins. I.e, with a 100px container, height=50, top=30, top=30, the resulting height will be 40.</span>
+<a name="l00098"></a>00098 <span class="comment">        /// If null, Top and Bottom will be used to calcuate the value. If both Top and Bottom are not specified, the natural height of the layer&#39;s contents will be used.</span>
+<a name="l00099"></a>00099 <span class="comment">        /// Percentages are relative to the container height. </span>
+<a name="l00100"></a>00100 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00101"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a7e893987d1fbda81e95f253174f5b73f">00101</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> Height {
+<a name="l00102"></a>00102             <span class="keyword">get</span> { <span class="keywordflow">return</span> _height; }
+<a name="l00103"></a>00103             <span class="keyword">set</span> { _height = value; }
+<a name="l00104"></a>00104         }
+<a name="l00105"></a>00105 
+<a name="l00106"></a>00106         <span class="keyword">private</span> <span class="keywordtype">string</span> _relativeTo = <span class="stringliteral">&quot;image&quot;</span>;
+<a name="l00107"></a>00107 <span class="comment"></span>
+<a name="l00108"></a>00108 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00109"></a>00109 <span class="comment">        /// Specifies the container that the position values (top,left,right,bottom,width,heght) are relative to. </span>
+<a name="l00110"></a>00110 <span class="comment">        /// The default is &#39;image&#39; (the innermost square, which contains the original photo). Additional valid values include &#39;imageArea&#39; (includes whitespace added to preserve aspect ratio), &#39;padding&#39;, &#39;border&#39;, &#39;margin&#39;, and &#39;canvas&#39;. </span>
+<a name="l00111"></a>00111 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00112"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a3641f221cbe0286ac14f0d140d965777">00112</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> RelativeTo {
+<a name="l00113"></a>00113             <span class="keyword">get</span> { <span class="keywordflow">return</span> _relativeTo; }
+<a name="l00114"></a>00114             <span class="keyword">set</span> { _relativeTo = value; }
+<a name="l00115"></a>00115         }
+<a name="l00116"></a>00116         <span class="comment">//top, left, bottom, right = px or percentages (relative to container)</span>
+<a name="l00117"></a>00117         <span class="comment">//relativeTo = image|imageArea|padding|border|margin|canvas</span>
+<a name="l00118"></a>00118         <span class="comment">//drawAs overlay|background</span>
+<a name="l00119"></a>00119 
+<a name="l00120"></a>00120         <span class="keyword">private</span> ContentAlignment _align = ContentAlignment.MiddleCenter;
+<a name="l00121"></a>00121 <span class="comment"></span>
+<a name="l00122"></a>00122 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00123"></a>00123 <span class="comment">        /// The alignment to use when </span>
+<a name="l00124"></a>00124 <span class="comment">        /// (a) all 3 horizontal or vertical values are specified, and they need to be resolved,</span>
+<a name="l00125"></a>00125 <span class="comment">        /// (b) when only width/height are specified, </span>
+<a name="l00126"></a>00126 <span class="comment">        /// (c) when no positioning values are specified, or </span>
+<a name="l00127"></a>00127 <span class="comment">        /// (d) when the content doesn&#39;t precisely fill they layer bounds.</span>
+<a name="l00128"></a>00128 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00129"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#aa3dac6214bab1e78459fc7da2c3feae6">00129</a> <span class="comment"></span>        <span class="keyword">public</span> ContentAlignment Align {
+<a name="l00130"></a>00130             <span class="keyword">get</span> { <span class="keywordflow">return</span> _align; }
+<a name="l00131"></a>00131             <span class="keyword">set</span> { _align = value; }
+<a name="l00132"></a>00132         }
 <a name="l00133"></a>00133 
-<a name="l00134"></a>00134         <span class="keyword">private</span> <span class="keywordtype">bool</span> _fill = <span class="keyword">false</span>;<span class="comment"></span>
-<a name="l00135"></a>00135 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00136"></a>00136 <span class="comment">        /// (defaults false). When true, the image or text will attempt to fill 1 of the layer&#39;s bounds, even if upscaling is required. </span>
-<a name="l00137"></a>00137 <span class="comment">        /// When Width is not specified, and both left and right are not specififed, this causes the image to fill the container width (if possible).</span>
-<a name="l00138"></a>00138 <span class="comment">        /// When Height is not specified, and both top and bottom are not specififed, this causes the image to fill the container height (if possible).</span>
-<a name="l00139"></a>00139 <span class="comment">        /// This causes &amp;scale=both to be used on images unless another setting is specified in imageQuery.</span>
-<a name="l00140"></a>00140 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00141"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a526201a0d71c9653d95aeb47a25eac57">00141</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> Fill {
-<a name="l00142"></a>00142             <span class="keyword">get</span> { <span class="keywordflow">return</span> _fill; }
-<a name="l00143"></a>00143             <span class="keyword">set</span> { _fill = value; }
-<a name="l00144"></a>00144         }
-<a name="l00145"></a>00145 
-<a name="l00146"></a>00146         <span class="keyword">public</span> <span class="keyword">enum</span> LayerPlacement { Overlay, Background }
-<a name="l00147"></a>00147 
-<a name="l00148"></a>00148         <span class="keyword">private</span> LayerPlacement _drawAs = LayerPlacement.Overlay;<span class="comment"></span>
-<a name="l00149"></a>00149 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00150"></a>00150 <span class="comment">        /// The z-order at which to draw the layer. Curret options are Overlay (over everything) and Background (over the background color).</span>
-<a name="l00151"></a>00151 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00152"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a636c7867ee48e105e3d8bf5fb26427b0">00152</a> <span class="comment"></span>        <span class="keyword">public</span> LayerPlacement DrawAs {
-<a name="l00153"></a>00153             <span class="keyword">get</span> { <span class="keywordflow">return</span> _drawAs; }
-<a name="l00154"></a>00154             <span class="keyword">set</span> { _drawAs = value; }
-<a name="l00155"></a>00155         }
-<a name="l00156"></a>00156 
+<a name="l00134"></a>00134 
+<a name="l00135"></a>00135         <span class="keyword">private</span> <span class="keywordtype">bool</span> _fill = <span class="keyword">false</span>;<span class="comment"></span>
+<a name="l00136"></a>00136 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00137"></a>00137 <span class="comment">        /// (defaults false). When true, the image or text will attempt to fill 1 of the layer&#39;s bounds, even if upscaling is required. </span>
+<a name="l00138"></a>00138 <span class="comment">        /// When Width is not specified, and both left and right are not specififed, this causes the image to fill the container width (if possible).</span>
+<a name="l00139"></a>00139 <span class="comment">        /// When Height is not specified, and both top and bottom are not specififed, this causes the image to fill the container height (if possible).</span>
+<a name="l00140"></a>00140 <span class="comment">        /// This causes &amp;scale=both to be used on images unless another setting is specified in imageQuery.</span>
+<a name="l00141"></a>00141 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00142"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a526201a0d71c9653d95aeb47a25eac57">00142</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> Fill {
+<a name="l00143"></a>00143             <span class="keyword">get</span> { <span class="keywordflow">return</span> _fill; }
+<a name="l00144"></a>00144             <span class="keyword">set</span> { _fill = value; }
+<a name="l00145"></a>00145         }
+<a name="l00146"></a>00146 
+<a name="l00147"></a>00147         <span class="keyword">public</span> <span class="keyword">enum</span> LayerPlacement { Overlay, Background }
+<a name="l00148"></a>00148 
+<a name="l00149"></a>00149         <span class="keyword">private</span> LayerPlacement _drawAs = LayerPlacement.Overlay;<span class="comment"></span>
+<a name="l00150"></a>00150 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00151"></a>00151 <span class="comment">        /// The z-order at which to draw the layer. Curret options are Overlay (over everything) and Background (over the background color).</span>
+<a name="l00152"></a>00152 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00153"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a636c7867ee48e105e3d8bf5fb26427b0">00153</a> <span class="comment"></span>        <span class="keyword">public</span> LayerPlacement DrawAs {
+<a name="l00154"></a>00154             <span class="keyword">get</span> { <span class="keywordflow">return</span> _drawAs; }
+<a name="l00155"></a>00155             <span class="keyword">set</span> { _drawAs = value; }
+<a name="l00156"></a>00156         }
 <a name="l00157"></a>00157 
-<a name="l00158"></a>00158         <span class="keyword">public</span> delegate Size CalculateLayerContentSize(<span class="keywordtype">double</span> maxwidth, <span class="keywordtype">double</span> maxheight);<span class="comment"></span>
-<a name="l00159"></a>00159 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00160"></a>00160 <span class="comment">        /// Returns a rectangle with canvas-relative coordinates. A callback is required to calculate the actual size of the content based on the specified bounds. </span>
-<a name="l00161"></a>00161 <span class="comment">        /// The callback may be passed double.NaN for one or more paramters to indicate that they are not specified.</span>
-<a name="l00162"></a>00162 <span class="comment">        /// </span>
-<a name="l00163"></a>00163 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00164"></a>00164 <span class="comment">        /// &lt;param name=&quot;s&quot;&gt;&lt;/param&gt;</span>
-<a name="l00165"></a>00165 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00166"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a1c1acc9e033711622f630b8c898c668a">00166</a> <span class="comment"></span>        <span class="keyword">public</span> RectangleF <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a1c1acc9e033711622f630b8c898c668a" title="Returns a rectangle with canvas-relative coordinates. A callback is required to calculate the actual ...">CalculateLayerCoordinates</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s, CalculateLayerContentSize actualSizeCalculator, <span class="keywordtype">bool</span> forceInsideCanvas) {
-<a name="l00167"></a>00167             <span class="comment">//Find container </span>
-<a name="l00168"></a>00168             RectangleF cont;
-<a name="l00169"></a>00169             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.ContainsRing(RelativeTo))
-<a name="l00170"></a>00170                 cont = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[RelativeTo]);
-<a name="l00171"></a>00171             <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="stringliteral">&quot;canvas&quot;</span>.Equals(RelativeTo, StringComparison.OrdinalIgnoreCase)) 
-<a name="l00172"></a>00172                 cont = <span class="keyword">new</span> RectangleF(<span class="keyword">new</span> PointF(), s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#af7685bdf458df8b87e3de9f18629c919" title="The size of the target bitmap image. Set after all sizing operations have completed.">destSize</a>);
-<a name="l00173"></a>00173             <span class="keywordflow">else</span> 
-<a name="l00174"></a>00174                 cont = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]);
-<a name="l00175"></a>00175             
-<a name="l00176"></a>00176             <span class="comment">//Calculate layer coords</span>
-<a name="l00177"></a>00177             RectangleF rect = <span class="keyword">new</span> RectangleF();
-<a name="l00178"></a>00178 
-<a name="l00179"></a>00179             <span class="comment">//Resolve all values to the same coordinate plane, null values will be transformed to NaN</span>
-<a name="l00180"></a>00180             <span class="keywordtype">double</span> left = Resolve(Left, cont.X, cont.Width, <span class="keyword">false</span>);
-<a name="l00181"></a>00181             <span class="keywordtype">double</span> top = Resolve(Top, cont.Y, cont.Height, <span class="keyword">false</span>);
-<a name="l00182"></a>00182             <span class="keywordtype">double</span> right = Resolve(Right, cont.Right, cont.Width, <span class="keyword">true</span>);
-<a name="l00183"></a>00183             <span class="keywordtype">double</span> bottom = Resolve(Bottom, cont.Bottom, cont.Height, <span class="keyword">true</span>);
-<a name="l00184"></a>00184             <span class="keywordtype">double</span> width = Resolve(Width, 0, cont.Width, <span class="keyword">false</span>);
-<a name="l00185"></a>00185             <span class="keywordtype">double</span> height = Resolve(Height, 0, cont.Height, <span class="keyword">false</span>);
-<a name="l00186"></a>00186 
-<a name="l00187"></a>00187             <span class="comment">//Force all values to be within the canvas area.</span>
-<a name="l00188"></a>00188             <span class="keywordflow">if</span> (forceInsideCanvas) {
-<a name="l00189"></a>00189                 SizeF canvas = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#af7685bdf458df8b87e3de9f18629c919" title="The size of the target bitmap image. Set after all sizing operations have completed.">destSize</a>;
-<a name="l00190"></a>00190                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(left)) left = Math.Min(Math.Max(0, left), canvas.Width);
-<a name="l00191"></a>00191                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(right)) right = Math.Min(Math.Max(0, right), canvas.Width);
-<a name="l00192"></a>00192                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(width)) width = Math.Min(Math.Max(0, width), canvas.Width);
-<a name="l00193"></a>00193                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(bottom)) bottom = Math.Min(Math.Max(0, bottom), canvas.Height);
-<a name="l00194"></a>00194                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(top)) top = Math.Min(Math.Max(0, top), canvas.Height);
-<a name="l00195"></a>00195                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(height)) height = Math.Min(Math.Max(0, height), canvas.Height);
-<a name="l00196"></a>00196             }
-<a name="l00197"></a>00197 
-<a name="l00198"></a>00198             <span class="comment">//If right and left (or top and bottom) are inverted, avg them and set them equal.</span>
-<a name="l00199"></a>00199             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(left) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(right) &amp;&amp; right &lt; left) left = right = ((left + right) / 2);
-<a name="l00200"></a>00200             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(top) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(bottom) &amp;&amp; bottom &lt; top) bottom = top = ((bottom + top) / 2);
-<a name="l00201"></a>00201 
+<a name="l00158"></a>00158 
+<a name="l00159"></a>00159         <span class="keyword">public</span> delegate Size CalculateLayerContentSize(<span class="keywordtype">double</span> maxwidth, <span class="keywordtype">double</span> maxheight);<span class="comment"></span>
+<a name="l00160"></a>00160 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00161"></a>00161 <span class="comment">        /// Returns a rectangle with canvas-relative coordinates. A callback is required to calculate the actual size of the content based on the specified bounds. </span>
+<a name="l00162"></a>00162 <span class="comment">        /// The callback may be passed double.NaN for one or more paramters to indicate that they are not specified.</span>
+<a name="l00163"></a>00163 <span class="comment">        /// </span>
+<a name="l00164"></a>00164 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00165"></a>00165 <span class="comment">        /// &lt;param name=&quot;s&quot;&gt;&lt;/param&gt;</span>
+<a name="l00166"></a>00166 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00167"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a1c1acc9e033711622f630b8c898c668a">00167</a> <span class="comment"></span>        <span class="keyword">public</span> RectangleF <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#a1c1acc9e033711622f630b8c898c668a" title="Returns a rectangle with canvas-relative coordinates. A callback is required to calculate the actual ...">CalculateLayerCoordinates</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s, CalculateLayerContentSize actualSizeCalculator, <span class="keywordtype">bool</span> forceInsideCanvas) {
+<a name="l00168"></a>00168             <span class="comment">//Find container </span>
+<a name="l00169"></a>00169             RectangleF cont;
+<a name="l00170"></a>00170             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.ContainsRing(RelativeTo))
+<a name="l00171"></a>00171                 cont = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[RelativeTo]);
+<a name="l00172"></a>00172             <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="stringliteral">&quot;canvas&quot;</span>.Equals(RelativeTo, StringComparison.OrdinalIgnoreCase)) 
+<a name="l00173"></a>00173                 cont = <span class="keyword">new</span> RectangleF(<span class="keyword">new</span> PointF(), s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#af7685bdf458df8b87e3de9f18629c919" title="The size of the target bitmap image. Set after all sizing operations have completed.">destSize</a>);
+<a name="l00174"></a>00174             <span class="keywordflow">else</span> 
+<a name="l00175"></a>00175                 cont = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]);
+<a name="l00176"></a>00176             
+<a name="l00177"></a>00177             <span class="comment">//Calculate layer coords</span>
+<a name="l00178"></a>00178             RectangleF rect = <span class="keyword">new</span> RectangleF();
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180             <span class="comment">//Resolve all values to the same coordinate plane, null values will be transformed to NaN</span>
+<a name="l00181"></a>00181             <span class="keywordtype">double</span> left = Resolve(Left, cont.X, cont.Width, <span class="keyword">false</span>);
+<a name="l00182"></a>00182             <span class="keywordtype">double</span> top = Resolve(Top, cont.Y, cont.Height, <span class="keyword">false</span>);
+<a name="l00183"></a>00183             <span class="keywordtype">double</span> right = Resolve(Right, cont.Right, cont.Width, <span class="keyword">true</span>);
+<a name="l00184"></a>00184             <span class="keywordtype">double</span> bottom = Resolve(Bottom, cont.Bottom, cont.Height, <span class="keyword">true</span>);
+<a name="l00185"></a>00185             <span class="keywordtype">double</span> width = Resolve(Width, 0, cont.Width, <span class="keyword">false</span>);
+<a name="l00186"></a>00186             <span class="keywordtype">double</span> height = Resolve(Height, 0, cont.Height, <span class="keyword">false</span>);
+<a name="l00187"></a>00187 
+<a name="l00188"></a>00188             <span class="comment">//Force all values to be within the canvas area.</span>
+<a name="l00189"></a>00189             <span class="keywordflow">if</span> (forceInsideCanvas) {
+<a name="l00190"></a>00190                 SizeF canvas = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#af7685bdf458df8b87e3de9f18629c919" title="The size of the target bitmap image. Set after all sizing operations have completed.">destSize</a>;
+<a name="l00191"></a>00191                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(left)) left = Math.Min(Math.Max(0, left), canvas.Width);
+<a name="l00192"></a>00192                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(right)) right = Math.Min(Math.Max(0, right), canvas.Width);
+<a name="l00193"></a>00193                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(width)) width = Math.Min(Math.Max(0, width), canvas.Width);
+<a name="l00194"></a>00194                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(bottom)) bottom = Math.Min(Math.Max(0, bottom), canvas.Height);
+<a name="l00195"></a>00195                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(top)) top = Math.Min(Math.Max(0, top), canvas.Height);
+<a name="l00196"></a>00196                 <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(height)) height = Math.Min(Math.Max(0, height), canvas.Height);
+<a name="l00197"></a>00197             }
+<a name="l00198"></a>00198 
+<a name="l00199"></a>00199             <span class="comment">//If right and left (or top and bottom) are inverted, avg them and set them equal.</span>
+<a name="l00200"></a>00200             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(left) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(right) &amp;&amp; right &lt; left) left = right = ((left + right) / 2);
+<a name="l00201"></a>00201             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(top) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(bottom) &amp;&amp; bottom &lt; top) bottom = top = ((bottom + top) / 2);
 <a name="l00202"></a>00202 
-<a name="l00203"></a>00203             <span class="comment">//Fill in width/height if enough stuff is specified</span>
-<a name="l00204"></a>00204             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(left) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(right) &amp;&amp; <span class="keywordtype">double</span>.IsNaN(width))  width = Math.Max(right - left,0);
-<a name="l00205"></a>00205             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(top) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(bottom) &amp;&amp; <span class="keywordtype">double</span>.IsNaN(height)) height = Math.Max(bottom - top,0);
-<a name="l00206"></a>00206 
-<a name="l00207"></a>00207   
-<a name="l00208"></a>00208             <span class="comment">//Execute the callback to get the actual size. Update the width and height values if the actual size is smaller. </span>
-<a name="l00209"></a>00209             SizeF normalSize = actualSizeCalculator((<span class="keywordtype">double</span>.IsNaN(width) &amp;&amp; Fill) ? cont.Width : width, (<span class="keywordtype">double</span>.IsNaN(height) &amp;&amp; Fill) ? cont.Height : height);
-<a name="l00210"></a>00210             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(width) || width &gt; normalSize.Width) width = normalSize.Width;
-<a name="l00211"></a>00211             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(height) || height &gt; normalSize.Height) height = normalSize.Height;
-<a name="l00212"></a>00212 
+<a name="l00203"></a>00203 
+<a name="l00204"></a>00204             <span class="comment">//Fill in width/height if enough stuff is specified</span>
+<a name="l00205"></a>00205             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(left) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(right) &amp;&amp; <span class="keywordtype">double</span>.IsNaN(width))  width = Math.Max(right - left,0);
+<a name="l00206"></a>00206             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(top) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(bottom) &amp;&amp; <span class="keywordtype">double</span>.IsNaN(height)) height = Math.Max(bottom - top,0);
+<a name="l00207"></a>00207 
+<a name="l00208"></a>00208   
+<a name="l00209"></a>00209             <span class="comment">//Execute the callback to get the actual size. Update the width and height values if the actual size is smaller. </span>
+<a name="l00210"></a>00210             SizeF normalSize = actualSizeCalculator((<span class="keywordtype">double</span>.IsNaN(width) &amp;&amp; Fill) ? cont.Width : width, (<span class="keywordtype">double</span>.IsNaN(height) &amp;&amp; Fill) ? cont.Height : height);
+<a name="l00211"></a>00211             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(width) || width &gt; normalSize.Width) width = normalSize.Width;
+<a name="l00212"></a>00212             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(height) || height &gt; normalSize.Height) height = normalSize.Height;
 <a name="l00213"></a>00213 
 <a name="l00214"></a>00214 
-<a name="l00215"></a>00215             <span class="comment">//If only width and height are specified, set the other values to match the container, and let alignment sort it out.</span>
-<a name="l00216"></a>00216             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(left) &amp;&amp; <span class="keywordtype">double</span>.IsNaN(right)) { left = cont.X; right = cont.Right; }<span class="comment">//Handle situations where neither left nor right is specified, pretend left=0</span>
-<a name="l00217"></a>00217             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(top) &amp;&amp; <span class="keywordtype">double</span>.IsNaN(bottom)) { top = cont.X; bottom = cont.Bottom; } <span class="comment">//Handle situations where neither top nor bottom is specified, pretend top=0</span>
-<a name="l00218"></a>00218 
+<a name="l00215"></a>00215 
+<a name="l00216"></a>00216             <span class="comment">//If only width and height are specified, set the other values to match the container, and let alignment sort it out.</span>
+<a name="l00217"></a>00217             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(left) &amp;&amp; <span class="keywordtype">double</span>.IsNaN(right)) { left = cont.X; right = cont.Right; }<span class="comment">//Handle situations where neither left nor right is specified, pretend left=0</span>
+<a name="l00218"></a>00218             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(top) &amp;&amp; <span class="keywordtype">double</span>.IsNaN(bottom)) { top = cont.X; bottom = cont.Bottom; } <span class="comment">//Handle situations where neither top nor bottom is specified, pretend top=0</span>
 <a name="l00219"></a>00219 
-<a name="l00220"></a>00220             <span class="comment">//When all 3 values are specified in either direction, we must use the alignment setting to determine which direction to snap to.</span>
-<a name="l00221"></a>00221             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(left) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(right) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(width)) {
-<a name="l00222"></a>00222                 <span class="keywordflow">if</span> (width &gt; right - left) width = right - left; <span class="comment">//Use the smaller value in this case, no need to align.</span>
-<a name="l00223"></a>00223                 <span class="keywordflow">else</span> {
-<a name="l00224"></a>00224                     <span class="keywordflow">if</span> (Align == ContentAlignment.BottomLeft || Align == ContentAlignment.MiddleLeft || Align == ContentAlignment.TopLeft)
-<a name="l00225"></a>00225                         right = left + width;
-<a name="l00226"></a>00226                     <span class="keywordflow">if</span> (Align == ContentAlignment.BottomCenter || Align == ContentAlignment.MiddleCenter || Align == ContentAlignment.TopCenter){
-<a name="l00227"></a>00227                         left += (right-left-width) /2;
-<a name="l00228"></a>00228                         right = left + width;
-<a name="l00229"></a>00229                     }
-<a name="l00230"></a>00230                     <span class="keywordflow">if</span> (Align == ContentAlignment.BottomRight || Align == ContentAlignment.MiddleRight || Align == ContentAlignment.TopRight)
-<a name="l00231"></a>00231                         left = right - width;
-<a name="l00232"></a>00232                 }
-<a name="l00233"></a>00233             }
-<a name="l00234"></a>00234 
-<a name="l00235"></a>00235             <span class="comment">//When all 3 values are specified in either direction, we must use the alignment setting to determine which direction to snap to.</span>
-<a name="l00236"></a>00236             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(top) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(bottom) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(height)) {
-<a name="l00237"></a>00237                 <span class="keywordflow">if</span> (height &gt; bottom - top) height = bottom - top; <span class="comment">//Use the smaller value in this case, no need to align.</span>
-<a name="l00238"></a>00238                 <span class="keywordflow">else</span> {
-<a name="l00239"></a>00239                     <span class="keywordflow">if</span> (Align == ContentAlignment.TopLeft || Align == ContentAlignment.TopCenter || Align == ContentAlignment.TopRight)
-<a name="l00240"></a>00240                         bottom = top + height;
-<a name="l00241"></a>00241                     <span class="keywordflow">if</span> (Align == ContentAlignment.MiddleLeft || Align == ContentAlignment.MiddleCenter || Align == ContentAlignment.MiddleRight) {
-<a name="l00242"></a>00242                         top += (bottom - top - height) / 2;
-<a name="l00243"></a>00243                         bottom = top + height;
-<a name="l00244"></a>00244                     }
-<a name="l00245"></a>00245                     <span class="keywordflow">if</span> (Align == ContentAlignment.BottomLeft || Align == ContentAlignment.BottomCenter || Align == ContentAlignment.BottomRight)
-<a name="l00246"></a>00246                         top = bottom - height;
-<a name="l00247"></a>00247                 }
-<a name="l00248"></a>00248             }
-<a name="l00249"></a>00249 
+<a name="l00220"></a>00220 
+<a name="l00221"></a>00221             <span class="comment">//When all 3 values are specified in either direction, we must use the alignment setting to determine which direction to snap to.</span>
+<a name="l00222"></a>00222             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(left) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(right) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(width)) {
+<a name="l00223"></a>00223                 <span class="keywordflow">if</span> (width &gt; right - left) width = right - left; <span class="comment">//Use the smaller value in this case, no need to align.</span>
+<a name="l00224"></a>00224                 <span class="keywordflow">else</span> {
+<a name="l00225"></a>00225                     <span class="keywordflow">if</span> (Align == ContentAlignment.BottomLeft || Align == ContentAlignment.MiddleLeft || Align == ContentAlignment.TopLeft)
+<a name="l00226"></a>00226                         right = left + width;
+<a name="l00227"></a>00227                     <span class="keywordflow">if</span> (Align == ContentAlignment.BottomCenter || Align == ContentAlignment.MiddleCenter || Align == ContentAlignment.TopCenter){
+<a name="l00228"></a>00228                         left += (right-left-width) /2;
+<a name="l00229"></a>00229                         right = left + width;
+<a name="l00230"></a>00230                     }
+<a name="l00231"></a>00231                     <span class="keywordflow">if</span> (Align == ContentAlignment.BottomRight || Align == ContentAlignment.MiddleRight || Align == ContentAlignment.TopRight)
+<a name="l00232"></a>00232                         left = right - width;
+<a name="l00233"></a>00233                 }
+<a name="l00234"></a>00234             }
+<a name="l00235"></a>00235 
+<a name="l00236"></a>00236             <span class="comment">//When all 3 values are specified in either direction, we must use the alignment setting to determine which direction to snap to.</span>
+<a name="l00237"></a>00237             <span class="keywordflow">if</span> (!<span class="keywordtype">double</span>.IsNaN(top) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(bottom) &amp;&amp; !<span class="keywordtype">double</span>.IsNaN(height)) {
+<a name="l00238"></a>00238                 <span class="keywordflow">if</span> (height &gt; bottom - top) height = bottom - top; <span class="comment">//Use the smaller value in this case, no need to align.</span>
+<a name="l00239"></a>00239                 <span class="keywordflow">else</span> {
+<a name="l00240"></a>00240                     <span class="keywordflow">if</span> (Align == ContentAlignment.TopLeft || Align == ContentAlignment.TopCenter || Align == ContentAlignment.TopRight)
+<a name="l00241"></a>00241                         bottom = top + height;
+<a name="l00242"></a>00242                     <span class="keywordflow">if</span> (Align == ContentAlignment.MiddleLeft || Align == ContentAlignment.MiddleCenter || Align == ContentAlignment.MiddleRight) {
+<a name="l00243"></a>00243                         top += (bottom - top - height) / 2;
+<a name="l00244"></a>00244                         bottom = top + height;
+<a name="l00245"></a>00245                     }
+<a name="l00246"></a>00246                     <span class="keywordflow">if</span> (Align == ContentAlignment.BottomLeft || Align == ContentAlignment.BottomCenter || Align == ContentAlignment.BottomRight)
+<a name="l00247"></a>00247                         top = bottom - height;
+<a name="l00248"></a>00248                 }
+<a name="l00249"></a>00249             }
 <a name="l00250"></a>00250 
-<a name="l00251"></a>00251             <span class="comment">//Calculate values for top and left based off bottom and right</span>
-<a name="l00252"></a>00252             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(left)) left = right - width;
-<a name="l00253"></a>00253             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(top)) top = bottom - height;
-<a name="l00254"></a>00254 
-<a name="l00255"></a>00255             <span class="comment">//Calculate values for bottom and right based off top and left</span>
-<a name="l00256"></a>00256             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(right)) right = left + width;
-<a name="l00257"></a>00257             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(bottom)) bottom = top + height;
-<a name="l00258"></a>00258 
+<a name="l00251"></a>00251 
+<a name="l00252"></a>00252             <span class="comment">//Calculate values for top and left based off bottom and right</span>
+<a name="l00253"></a>00253             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(left)) left = right - width;
+<a name="l00254"></a>00254             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(top)) top = bottom - height;
+<a name="l00255"></a>00255 
+<a name="l00256"></a>00256             <span class="comment">//Calculate values for bottom and right based off top and left</span>
+<a name="l00257"></a>00257             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(right)) right = left + width;
+<a name="l00258"></a>00258             <span class="keywordflow">if</span> (<span class="keywordtype">double</span>.IsNaN(bottom)) bottom = top + height;
 <a name="l00259"></a>00259 
-<a name="l00260"></a>00260             <span class="keywordflow">return</span> <span class="keyword">new</span> RectangleF((<span class="keywordtype">float</span>)left, (<span class="keywordtype">float</span>)top, (<span class="keywordtype">float</span>)width, (<span class="keywordtype">float</span>)height);
-<a name="l00261"></a>00261 
-<a name="l00262"></a>00262         }
-<a name="l00263"></a>00263 
-<a name="l00264"></a>00264         <span class="keyword">public</span> <span class="keywordtype">double</span> Resolve(<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> value, <span class="keywordtype">double</span> relativeToValue, <span class="keywordtype">double</span> percentRelativeTo, <span class="keywordtype">bool</span> invert) {
-<a name="l00265"></a>00265             <span class="keywordflow">if</span> (value == null) <span class="keywordflow">return</span> <span class="keywordtype">double</span>.NaN;
-<a name="l00266"></a>00266             <span class="keywordtype">double</span> val = value.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html#a70403465c9f1b8860320cbb4d10ee54e" title="A number of pixels, or a percentage value between 0 and 100.">Value</a>;
-<a name="l00267"></a>00267             <span class="keywordflow">if</span> (value.Type == <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.Units.Percentage) val *= percentRelativeTo / 100;
-<a name="l00268"></a>00268             <span class="keywordflow">if</span> (invert) val = relativeToValue - val;
-<a name="l00269"></a>00269             <span class="keywordflow">else</span> val = relativeToValue + val;
-<a name="l00270"></a>00270             <span class="keywordflow">return</span> val;
-<a name="l00271"></a>00271         }
-<a name="l00272"></a>00272 
-<a name="l00273"></a>00273         <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> RenderTo(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) { }
-<a name="l00274"></a>00274     }
-<a name="l00275"></a>00275 }
+<a name="l00260"></a>00260 
+<a name="l00261"></a>00261             <span class="keywordflow">return</span> <span class="keyword">new</span> RectangleF((<span class="keywordtype">float</span>)left, (<span class="keywordtype">float</span>)top, (<span class="keywordtype">float</span>)width, (<span class="keywordtype">float</span>)height);
+<a name="l00262"></a>00262 
+<a name="l00263"></a>00263         }
+<a name="l00264"></a>00264 
+<a name="l00265"></a>00265         <span class="keyword">public</span> <span class="keywordtype">double</span> Resolve(<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a> value, <span class="keywordtype">double</span> relativeToValue, <span class="keywordtype">double</span> percentRelativeTo, <span class="keywordtype">bool</span> invert) {
+<a name="l00266"></a>00266             <span class="keywordflow">if</span> (value == null) <span class="keywordflow">return</span> <span class="keywordtype">double</span>.NaN;
+<a name="l00267"></a>00267             <span class="keywordtype">double</span> val = value.<a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html#a70403465c9f1b8860320cbb4d10ee54e" title="A number of pixels, or a percentage value between 0 and 100.">Value</a>;
+<a name="l00268"></a>00268             <span class="keywordflow">if</span> (value.Type == <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html">DistanceUnit</a>.Units.Percentage) val *= percentRelativeTo / 100;
+<a name="l00269"></a>00269             <span class="keywordflow">if</span> (invert) val = relativeToValue - val;
+<a name="l00270"></a>00270             <span class="keywordflow">else</span> val = relativeToValue + val;
+<a name="l00271"></a>00271             <span class="keywordflow">return</span> val;
+<a name="l00272"></a>00272         }
+<a name="l00273"></a>00273 
+<a name="l00274"></a>00274         <span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keywordtype">void</span> RenderTo(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) { }
+<a name="l00275"></a>00275     }
+<a name="l00276"></a>00276 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

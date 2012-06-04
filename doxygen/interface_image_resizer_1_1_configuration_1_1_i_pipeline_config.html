@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -137,9 +137,9 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an <a class="el" href="class_image_resizer_1_1_image_builder.html" title="Provides methods for generating resized images, and for reading and writing them to disk...">ImageBuilder</a> instance to use for image processing.  <a href="#ac486ccc78554683bb7dd409a2f787bb3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_image_resizer_1_1_caching_1_1_i_cache_provider.html">ICacheProvider</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a875fc6f5b30023392b7de162b776769c">GetCacheProvider</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a ICacheProvider instance that provides caching system selection and creation.  <a href="#a875fc6f5b30023392b7de162b776769c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html">IVirtualFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#aedeef5271e05c47b2b1953ee9d5f7d5c">GetFile</a> (string virtualPath, NameValueCollection queryString)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a09d7db433f81e2274d07d7bf75158be8">FileExists</a> (string virtualPath, NameValueCollection queryString)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if (a) A registered IVirtualImageProvider says it exists, or (b) if the VirtualPathProvider chain says it exists.  <a href="#a09d7db433f81e2274d07d7bf75158be8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">new <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html">IVirtualFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a0c58a51a8bc68f0c131b67c700582a80">GetFile</a> (string virtualPath, NameValueCollection queryString)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">new bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#af29d01f9928d72fb9bd0aaf8fa787758">FileExists</a> (string virtualPath, NameValueCollection queryString)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if (a) A registered IVirtualImageProvider says it exists, or (b) if the VirtualPathProvider chain says it exists.  <a href="#af29d01f9928d72fb9bd0aaf8fa787758"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06318b91c85e926a8ef9e3a877d0e49c"></a><!-- doxytag: member="ImageResizer::Configuration::IPipelineConfig::FirePostAuthorizeRequest" ref="a06318b91c85e926a8ef9e3a877d0e49c" args="(IHttpModule sender, System.Web.HttpContext httpContext)" -->
 void&#160;</td><td class="memItemRight" valign="bottom"><b>FirePostAuthorizeRequest</b> (IHttpModule sender, System.Web.HttpContext httpContext)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4240f70a874d8d9ba3cdcf04cbc4132d"></a><!-- doxytag: member="ImageResizer::Configuration::IPipelineConfig::FireRewritingEvents" ref="a4240f70a874d8d9ba3cdcf04cbc4132d" args="(IHttpModule sender, System.Web.HttpContext context, IUrlEventArgs ue)" -->
@@ -177,12 +177,12 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 <div class="textblock">
 <p>Definition at line <a class="el" href="_i_pipeline_config_8cs_source.html#l00025">25</a> of file <a class="el" href="_i_pipeline_config_8cs_source.html">IPipelineConfig.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="a09d7db433f81e2274d07d7bf75158be8"></a><!-- doxytag: member="ImageResizer::Configuration::IPipelineConfig::FileExists" ref="a09d7db433f81e2274d07d7bf75158be8" args="(string virtualPath, NameValueCollection queryString)" -->
+<a class="anchor" id="af29d01f9928d72fb9bd0aaf8fa787758"></a><!-- doxytag: member="ImageResizer::Configuration::IPipelineConfig::FileExists" ref="af29d01f9928d72fb9bd0aaf8fa787758" args="(string virtualPath, NameValueCollection queryString)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a09d7db433f81e2274d07d7bf75158be8">ImageResizer.Configuration.IPipelineConfig.FileExists</a> </td>
+          <td class="memname">new bool <a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#af29d01f9928d72fb9bd0aaf8fa787758">ImageResizer.Configuration.IPipelineConfig.FileExists</a> </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>virtualPath</em>, </td>
@@ -239,12 +239,12 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 
 </div>
 </div>
-<a class="anchor" id="aedeef5271e05c47b2b1953ee9d5f7d5c"></a><!-- doxytag: member="ImageResizer::Configuration::IPipelineConfig::GetFile" ref="aedeef5271e05c47b2b1953ee9d5f7d5c" args="(string virtualPath, NameValueCollection queryString)" -->
+<a class="anchor" id="a0c58a51a8bc68f0c131b67c700582a80"></a><!-- doxytag: member="ImageResizer::Configuration::IPipelineConfig::GetFile" ref="a0c58a51a8bc68f0c131b67c700582a80" args="(string virtualPath, NameValueCollection queryString)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html">IVirtualFile</a> <a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#aedeef5271e05c47b2b1953ee9d5f7d5c">ImageResizer.Configuration.IPipelineConfig.GetFile</a> </td>
+          <td class="memname">new <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html">IVirtualFile</a> <a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a0c58a51a8bc68f0c131b67c700582a80">ImageResizer.Configuration.IPipelineConfig.GetFile</a> </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>virtualPath</em>, </td>
@@ -277,7 +277,7 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 
 <p>Implemented in <a class="el" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#a23d81b98db36e450511ba6481ce02459">ImageResizer.Configuration.PipelineConfig</a>.</p>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00061">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00062">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>.</p>
 
 </div>
 </div>
@@ -300,7 +300,7 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 
 <p>Implemented in <a class="el" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#afb5c9480dc0b7ca793c53601c6f12468">ImageResizer.Configuration.PipelineConfig</a>.</p>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
 
 </div>
 </div>
@@ -328,7 +328,7 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00061">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00062">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
 
 </div>
 </div>
@@ -358,7 +358,7 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 
 <p>Implemented in <a class="el" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#a4296081aec59d9bfb3675869358fc94b">ImageResizer.Configuration.PipelineConfig</a>.</p>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00061">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00062">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>, and <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
 
 </div>
 </div>
@@ -388,7 +388,7 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 
 <p>Implemented in <a class="el" href="class_image_resizer_1_1_configuration_1_1_pipeline_config.html#a197ee79d2a3ed339c11565dd093af605">ImageResizer.Configuration.PipelineConfig</a>.</p>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00061">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00062">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>.</p>
 
 </div>
 </div>
@@ -467,7 +467,7 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 
 <p>Definition at line <a class="el" href="_i_pipeline_config_8cs_source.html#l00082">82</a> of file <a class="el" href="_i_pipeline_config_8cs_source.html">IPipelineConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00061">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00062">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>.</p>
 
 </div>
 </div>
@@ -488,7 +488,7 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 
 <p>Definition at line <a class="el" href="_i_pipeline_config_8cs_source.html#l00048">48</a> of file <a class="el" href="_i_pipeline_config_8cs_source.html">IPipelineConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
 
 </div>
 </div>
@@ -509,7 +509,7 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 
 <p>Definition at line <a class="el" href="_i_pipeline_config_8cs_source.html#l00070">70</a> of file <a class="el" href="_i_pipeline_config_8cs_source.html">IPipelineConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00061">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00062">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>.</p>
 
 </div>
 </div>
@@ -530,7 +530,7 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 
 <p>Definition at line <a class="el" href="_i_pipeline_config_8cs_source.html#l00053">53</a> of file <a class="el" href="_i_pipeline_config_8cs_source.html">IPipelineConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00168">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>.</p>
 
 </div>
 </div>
@@ -551,7 +551,7 @@ NameValueCollection&#160;</td><td class="memItemRight" valign="bottom"><b>Modifi
 
 <p>Definition at line <a class="el" href="_i_pipeline_config_8cs_source.html#l00062">62</a> of file <a class="el" href="_i_pipeline_config_8cs_source.html">IPipelineConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00061">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_intercept_module_8cs_source.html#l00062">ImageResizer.InterceptModule.CheckRequest_PostAuthorizeRequest()</a>.</p>
 
 </div>
 </div>

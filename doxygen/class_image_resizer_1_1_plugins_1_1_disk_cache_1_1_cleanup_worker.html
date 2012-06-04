@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -181,7 +181,7 @@ Properties</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00013">13</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00014">14</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ab1adbc239dd0b9abbe0c29f6bfef78f7"></a><!-- doxytag: member="ImageResizer::Plugins::DiskCache::CleanupWorker::CleanupWorker" ref="ab1adbc239dd0b9abbe0c29f6bfef78f7" args="(ILoggerProvider lp, CleanupStrategy cs, CleanupQueue queue, CustomDiskCache cache)" -->
 <div class="memitem">
@@ -230,7 +230,7 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00028">28</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00029">29</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                               :base(<span class="stringliteral">&quot;DiskCache-CleanupWorker&quot;</span>) {
             this.cs = cs;
             this.queue = queue;
@@ -260,7 +260,7 @@ Properties</h2></td></tr>
 
 <p>Tells the worker to avoid work for a little bit. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00057">57</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00058">58</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                             {
             lock(_timesLock) <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html#a66cead95d00e211df0d7f4f37d54bf1e" title="The last time a cache query came through.">lastBusy</a> = DateTime.UtcNow.Ticks;
             
@@ -292,7 +292,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00208">208</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00209">209</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                  {
             <span class="keywordflow">if</span> (queue.IsEmpty) <span class="keywordflow">return</span> <span class="keyword">false</span>;
 
@@ -333,7 +333,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html#ab9f594eb58538973713786a0b76fdc52">ImageResizer.Configuration.Issues.IssueSink</a>.</p>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00189">189</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00190">190</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                        {
             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;(base.GetIssues());
             issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;An external process indicates it is managing cleanup of the disk cache. &quot;</span> + 
@@ -366,7 +366,7 @@ Properties</h2></td></tr>
 
 <p>Thread runs this method. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00078">78</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00079">79</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                              {
             <span class="keywordflow">try</span> {
                 <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html#a2bdbed796dbff2c51bc4af1a17251947" title="Processes work items from the queue, using at most 50%.">mainInner</a>();
@@ -395,10 +395,10 @@ Properties</h2></td></tr>
 
 <p>Processes work items from the queue, using at most 50%. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00090">90</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00091">91</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                  {
             <span class="comment">//TODO: Verify that GetHashCode() is the same between .net 2 and 4. </span>
-            <span class="keywordtype">string</span> mutexKey = <span class="stringliteral">&quot;ir.cachedir:&quot;</span> + cache.PhysicalCachePath.ToLowerInvariant().GetHashCode().ToString(<span class="stringliteral">&quot;x&quot;</span>);
+            <span class="keywordtype">string</span> mutexKey = <span class="stringliteral">&quot;ir.cachedir:&quot;</span> + cache.PhysicalCachePath.ToLowerInvariant().GetHashCode().ToString(<span class="stringliteral">&quot;x&quot;</span>, NumberFormatInfo.InvariantInfo);
 
             <span class="comment">//Sleep for the duration requested before trying anything. </span>
             _quitWait.WaitOne(cs.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html#a4c3f8d645623c7fc574ed750cd66a0be" title="How long to wait before beginning the initial cache indexing and cleanup.">StartupDelay</a>);
@@ -513,7 +513,7 @@ Properties</h2></td></tr>
 
 <p>Tells the worker to check the queue for more work. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00040">40</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00041">41</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                  {
             _queueWait.Set();
         }
@@ -534,7 +534,7 @@ Properties</h2></td></tr>
 
 <p>The last time a cache query came through. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00053">53</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00054">54</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 
 </div>
 </div>
@@ -551,7 +551,7 @@ Properties</h2></td></tr>
 
 <p>The last time a cache folder exceeded both the optimum and maximum limits for file count. If recent, indicates a misconfiguration; the subfolders="" count needs to be increased. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00048">48</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00049">49</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 
 </div>
 </div>
@@ -568,7 +568,7 @@ Properties</h2></td></tr>
 
 <p>The last time we did work (or attempted to do work, failing if the queue was empty) </p>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00064">64</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00065">65</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 
 </div>
 </div>
@@ -585,7 +585,7 @@ Properties</h2></td></tr>
 
 <p>When true, indicates that another process is managing cleanup operations - this thread is idle, waiting for the other process to end before it can pick up work. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00073">73</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00074">74</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 
 </div>
 </div>
@@ -603,7 +603,7 @@ Properties</h2></td></tr>
 
 <p>When true, indicates that another process is managing cleanup operations - this thread is idle, waiting for the other process to end before it can pick up work. </p>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00069">69</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00070">70</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 
 </div>
 </div>

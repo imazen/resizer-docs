@@ -1,3 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_argument.html" title="Ghostscript argument names." alt="" coords="5,5,1000,51"/>
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_lock_provider.html" title="Provides locking based on a string key. Locks are local to the LockProvider instance. The class handles disposing of unused locks. Generally used for coordinating writes to files (of which there can be millions). Only keeps key/lock pairs in memory which are in use. Thread&#45;safe." alt="" coords="5,5,688,51"/>
 </map>

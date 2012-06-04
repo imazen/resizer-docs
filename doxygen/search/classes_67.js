@@ -9,5 +9,6 @@ var searchData=
   ['gifcreator',['GifCreator',['../class_image_resizer_1_1_plugins_1_1_animated_gifs_1_1_gif_creator.html',1,'ImageResizer::Plugins::AnimatedGifs']]],
   ['gradient',['Gradient',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient.html',1,'ImageResizer::Plugins::Basic']]],
   ['gradientvirtualfile',['GradientVirtualFile',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient_1_1_gradient_virtual_file.html',1,'ImageResizer::Plugins::Basic::Gradient']]],
-  ['graphicsmillrenderer',['GraphicsMillRenderer',['../class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_graphics_mill_renderer.html',1,'ImageResizer::Plugins::PsdComposer']]]
+  ['graphicsmillrenderer',['GraphicsMillRenderer',['../class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_graphics_mill_renderer.html',1,'ImageResizer::Plugins::PsdComposer']]],
+  ['gridsearch',['GridSearch',['../class_image_resizer_1_1_plugins_1_1_red_eye_1_1_grid_search.html',1,'ImageResizer::Plugins::RedEye']]]
 ];

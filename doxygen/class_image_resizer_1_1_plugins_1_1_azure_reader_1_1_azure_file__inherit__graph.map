@@ -1,3 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file. Implementing this allows usage of your VirtualProvider without registering it with AS..." alt="" coords="250,6,421,53"/>
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="250,6,421,53"/>
 </map>

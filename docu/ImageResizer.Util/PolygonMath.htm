@@ -38,10 +38,16 @@
           <a href="../ImageResizer.Configuration.Logging/index.htm">ImageResizer.Configuration.Logging</a>
       </li>
 			<li>
+          <a href="../ImageResizer.Configuration.Plugins/index.htm">ImageResizer.Configuration.Plugins</a>
+      </li>
+			<li>
           <a href="../ImageResizer.Configuration.Xml/index.htm">ImageResizer.Configuration.Xml</a>
       </li>
 			<li>
           <a href="../ImageResizer.Encoding/index.htm">ImageResizer.Encoding</a>
+      </li>
+			<li>
+          <a href="../ImageResizer.ExtensionMethods/index.htm">ImageResizer.ExtensionMethods</a>
       </li>
 			<li>
           <a href="../ImageResizer.Plugins/index.htm">ImageResizer.Plugins</a>
@@ -74,6 +80,12 @@
             <a href="../ImageResizer.Util/ForEachFunction.htm">ForEachFunction</a>
         </li>
 				<li>
+            <a href="../ImageResizer.Util/NativeDependenciesAttribute.htm">NativeDependenciesAttribute</a>
+        </li>
+				<li>
+            <a href="../ImageResizer.Util/ParseUtils.htm">ParseUtils</a>
+        </li>
+				<li>
             <a href="../ImageResizer.Util/PathUtils.htm">PathUtils</a>
         </li>
 				<li>
@@ -103,6 +115,8 @@
 		<p><strong>Namespace</strong> ImageResizer.Util</p>
 		</header>
     <div class="sub-header">
+			<div id="summary">Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved in future releases; be prepared. 
+			</div>
 		
 		
 			<h3 class="section">Methods</h3>
@@ -114,6 +128,9 @@
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#CenterInside">CenterInside</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#CenterInside">CenterInside</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#ChangeMagnitude">ChangeMagnitude</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#CombineFlipAndRotate">CombineFlipAndRotate</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#CombineFlipAndRotate">CombineFlipAndRotate</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#Dist">Dist</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#DownScaleInside">DownScaleInside</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#FitsInside">FitsInside</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#ForEach">ForEach</a></li>
@@ -121,8 +138,10 @@
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetBoundingBox">GetBoundingBox</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetCorners">GetCorners</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetCorners">GetCorners</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetCroppingRectangle">GetCroppingRectangle</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#getParallelogram">getParallelogram</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#getParallelogramSize">getParallelogramSize</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetShortestPair">GetShortestPair</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetSides">GetSides</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetSubArray">GetSubArray</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#InflatePoly">InflatePoly</a></li>
@@ -130,6 +149,7 @@
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#IsUnrotated">IsUnrotated</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#MovePoly">MovePoly</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#NormalizePoly">NormalizePoly</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#NormalizeTo90Intervals">NormalizeTo90Intervals</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#RotatePoly">RotatePoly</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#RotatePoly">RotatePoly</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#RotateVector">RotateVector</a></li>
@@ -229,6 +249,39 @@ are of the same length.
 
 		</div>
 	</div>
+	<div id="CombineFlipAndRotate" class="method">
+		<h4>
+			<span title="System.Drawing.RotateFlipType">RotateFlipType</span> <strong>CombineFlipAndRotate</strong>(<span title="System.Drawing.RotateFlipType">RotateFlipType</span> flip, <span title="System.double">double</span> angle)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="CombineFlipAndRotate" class="method">
+		<h4>
+			<span title="System.Drawing.RotateFlipType">RotateFlipType</span> <strong>CombineFlipAndRotate</strong>(<a href="../ImageResizer/FlipMode.htm">FlipMode</a> flip, <span title="System.double">double</span> angle)
+		</h4>
+		<div class="content">Combines the given flipping info and rotation angle into a RotateFlipType value. Rotation angle will snap to nearest 90-degree multiple 
+
+
+
+
+		</div>
+	</div>
+	<div id="Dist" class="method">
+		<h4>
+			<span title="System.double">double</span> <strong>Dist</strong>(<span title="System.Drawing.PointF">PointF</span> a, <span title="System.Drawing.PointF">PointF</span> b)
+		</h4>
+		<div class="content">Returns the distance between two points 
+
+
+
+
+		</div>
+	</div>
 	<div id="DownScaleInside" class="method">
 		<h4>
 			<span title="System.Drawing.SizeF">SizeF</span> <strong>DownScaleInside</strong>(<span title="System.Drawing.SizeF">SizeF</span> inner, <span title="System.Drawing.SizeF">SizeF</span> bounding)
@@ -286,6 +339,21 @@ are of the same length.
 	</div>
 	<div id="GetCorners" class="method">
 		<h4>
+			<span title="System.Drawing.PointF[,]">PointF[,]</span> <strong>GetCorners</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.Single[]">Single[]</span> widths)
+		</h4>
+		<div class="content">Returns an array of parallelograms. These parallelgrams are the 'corners' outside each vertex in 'poly'.
+The adjacent edges are perpendicular to 'poly'. Point 1 of each parallelogram will match the respective point in 'poly'
+Points are clockwise.
+Each float in widths[] corresponds to the point in poly[]. This is the distance to go perpendicularly from
+the line beween poly[i] and poly[i +1]. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetCorners" class="method">
+		<h4>
 			<span title="System.Drawing.PointF[,]">PointF[,]</span> <strong>GetCorners</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.float">float</span> width)
 		</h4>
 		<div class="content">Returns an array of parallelograms. These parallelgrams are the 'corners' outside each vertex in 'poly'.
@@ -298,17 +366,39 @@ TODO - some rounding issues going on, not exact numbers here
 
 		</div>
 	</div>
-	<div id="GetCorners" class="method">
+	<div id="GetCroppingRectangle" class="method">
 		<h4>
-			<span title="System.Drawing.PointF[,]">PointF[,]</span> <strong>GetCorners</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.Single[]">Single[]</span> widths)
+			<span title="System.Drawing.RectangleF">RectangleF</span> <strong>GetCroppingRectangle</strong>(<span title="System.Double[]">Double[]</span> cropValues, <span title="System.double">double</span> xunits, <span title="System.double">double</span> yunits, <span title="System.Drawing.SizeF">SizeF</span> imageSize)
 		</h4>
-		<div class="content">Returns an array of parallelograms. These parallelgrams are the 'corners' outside each vertex in 'poly'.
-The adjacent edges are perpendicular to 'poly'. Point 1 of each parallelogram will match the respective point in 'poly'
-Points are clockwise.
-Each float in widths[] corresponds to the point in poly[]. This is the distance to go perpendicularly from
-the line beween poly[i] and poly[i +1]. 
+		<div class="content">Used for converting custom crop rectangle coordinates into a valid cropping rectangle. Positive values are relative to 0,0, negative values relative to width, height.
+X2 and Y2 values of 0 become width and height respectively. 
 
 
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.Double[]">Double[]</span></code> cropValues
+						</dt>
+						<dd>An array of 4 elements defining x1, y1, x2, and y2 of the cropping rectangle 
+						</dd>
+						<dt>
+							<code><span title="System.double">double</span></code> xunits
+						</dt>
+						<dd>The width x1 and x2 are relative to 
+						</dd>
+						<dt>
+							<code><span title="System.double">double</span></code> yunits
+						</dt>
+						<dd>The height y1 and y2 are relative to 
+						</dd>
+						<dt>
+							<code><span title="System.Drawing.SizeF">SizeF</span></code> imageSize
+						</dt>
+						<dd>The size of the uncropped image 
+						</dd>
+				</dl>
+			</div>
 
 
 		</div>
@@ -330,6 +420,17 @@ For compatiblity with Graphics.DrawImage
 			<span title="System.Drawing.SizeF">SizeF</span> <strong>getParallelogramSize</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> p)
 		</h4>
 		<div class="content">Determines the width and height of the paralellogram. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetShortestPair" class="method">
+		<h4>
+			<span title="System.double">double</span> <strong>GetShortestPair</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly)
+		</h4>
+		<div class="content">Returns the length of the shortest line segment in the given polygon. 
 
 
 
@@ -429,6 +530,17 @@ Returns a new polygon.
 
 		</div>
 	</div>
+	<div id="NormalizeTo90Intervals" class="method">
+		<h4>
+			<span title="System.double">double</span> <strong>NormalizeTo90Intervals</strong>(<span title="System.double">double</span> d)
+		</h4>
+		<div class="content">Normalizes the given angle to a positive multiple of 90 degrees between 0 and 270. 
+
+
+
+
+		</div>
+	</div>
 	<div id="RotatePoly" class="method">
 		<h4>
 			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>RotatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.double">double</span> degrees, <span title="System.Drawing.PointF">PointF</span> origin)
@@ -475,17 +587,6 @@ Returns a new polygon.
 	</div>
 	<div id="RoundPoints" class="method">
 		<h4>
-			<span title="System.Drawing.Size">Size</span> <strong>RoundPoints</strong>(<span title="System.Drawing.SizeF">SizeF</span> sizeF)
-		</h4>
-		<div class="content">
-
-
-
-
-		</div>
-	</div>
-	<div id="RoundPoints" class="method">
-		<h4>
 			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>RoundPoints</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> a)
 		</h4>
 		<div class="content">Rounds the elements of the specified array [not used] 
@@ -498,6 +599,17 @@ Returns a new polygon.
 	<div id="RoundPoints" class="method">
 		<h4>
 			<span title="System.Drawing.PointF[,]">PointF[,]</span> <strong>RoundPoints</strong>(<span title="System.Drawing.PointF[,]">PointF[,]</span> a)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="RoundPoints" class="method">
+		<h4>
+			<span title="System.Drawing.Size">Size</span> <strong>RoundPoints</strong>(<span title="System.Drawing.SizeF">SizeF</span> sizeF)
 		</h4>
 		<div class="content">
 
@@ -576,7 +688,7 @@ Point 0 is top-left.
 	
 	</section>
 	</article><footer>
-	<span id="version">Built from v3.1.3.24951 of ImageResizer.Core (Image Resizer)</span>
+	<span id="version">Built from v3.2.1.497 of ImageResizer.Core (Image Resizer)</span>
 	<span id="docu-link">
 		Generated by <a href="http://docu.jagregory.com">docu</a>
 	</span>

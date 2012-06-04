@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -89,86 +89,86 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00006"></a>00006 <span class="keyword">using</span> AForge.Imaging;
 <a name="l00007"></a>00007 <span class="keyword">using</span> ImageResizer.Util;
 <a name="l00008"></a>00008 <span class="keyword">using</span> AForge.Imaging.Filters;
-<a name="l00009"></a>00009 
-<a name="l00010"></a><a class="code" href="namespace_image_resizer_1_1_plugins_1_1_whitespace_trimmer.html">00010</a> <span class="keyword">namespace </span>ImageResizer.Plugins.WhitespaceTrimmer {
-<a name="l00011"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html">00011</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html">BoundingBoxFinder</a> {
-<a name="l00012"></a>00012 <span class="comment"></span>
-<a name="l00013"></a>00013 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00014"></a>00014 <span class="comment">        /// Returns a rectangle inside &#39;lookInside&#39; that bounds any energy greater than &#39;threshold&#39;. </span>
-<a name="l00015"></a>00015 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00016"></a>00016 <span class="comment">        /// &lt;param name=&quot;image&quot;&gt;&lt;/param&gt;</span>
-<a name="l00017"></a>00017 <span class="comment">        /// &lt;param name=&quot;lookInside&quot;&gt;A rectangle of &#39;image&#39; to look inside. &lt;/param&gt;</span>
-<a name="l00018"></a>00018 <span class="comment">        /// &lt;param name=&quot;threshold&quot;&gt;1-255, the energy threshold to detect activity. 80-150 is a good range.&lt;/param&gt;</span>
-<a name="l00019"></a>00019 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00020"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a50a5b55fa51dfcd4b20ea4f5b4f8061c">00020</a> <span class="comment"></span>        <span class="keyword">public</span> Rectangle <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a50a5b55fa51dfcd4b20ea4f5b4f8061c" title="Returns a rectangle inside &#39;lookInside&#39; that bounds any energy greater than &#39;threshold&#39;.">FindBoxSobel</a>(Bitmap image, Rectangle lookInside, byte threshold) {
-<a name="l00021"></a>00021 
+<a name="l00009"></a>00009 <span class="keyword">using</span> System.Diagnostics;
+<a name="l00010"></a>00010 
+<a name="l00011"></a><a class="code" href="namespace_image_resizer_1_1_plugins_1_1_whitespace_trimmer.html">00011</a> <span class="keyword">namespace </span>ImageResizer.Plugins.WhitespaceTrimmer {
+<a name="l00012"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html">00012</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html">BoundingBoxFinder</a> {
+<a name="l00013"></a>00013 <span class="comment"></span>
+<a name="l00014"></a>00014 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00015"></a>00015 <span class="comment">        /// Returns a rectangle inside &#39;lookInside&#39; that bounds any energy greater than &#39;threshold&#39;. </span>
+<a name="l00016"></a>00016 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00017"></a>00017 <span class="comment">        /// &lt;param name=&quot;image&quot;&gt;&lt;/param&gt;</span>
+<a name="l00018"></a>00018 <span class="comment">        /// &lt;param name=&quot;lookInside&quot;&gt;A rectangle of &#39;image&#39; to look inside. &lt;/param&gt;</span>
+<a name="l00019"></a>00019 <span class="comment">        /// &lt;param name=&quot;threshold&quot;&gt;1-255, the energy threshold to detect activity. 80-150 is a good range.&lt;/param&gt;</span>
+<a name="l00020"></a>00020 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00021"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a611e8dffa65c85edeb11ea0d39698325">00021</a> <span class="comment"></span>        <span class="keyword">public</span> Rectangle <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a611e8dffa65c85edeb11ea0d39698325" title="Returns a rectangle inside &#39;lookInside&#39; that bounds any energy greater than &#39;threshold&#39;.">FindBoxSobel</a>(Bitmap originalImage, Rectangle lookInside, byte threshold) {
 <a name="l00022"></a>00022 
-<a name="l00023"></a>00023             <span class="keywordtype">bool</span> disposeImage = <span class="keyword">false</span>;
+<a name="l00023"></a>00023             Bitmap image = originalImage;
 <a name="l00024"></a>00024             <span class="keywordflow">try</span> {
-<a name="l00025"></a>00025                 <span class="keywordflow">if</span> (image.PixelFormat != PixelFormat.Format24bppRgb &amp;&amp; 
-<a name="l00026"></a>00026                     image.PixelFormat != PixelFormat.Format32bppArgb &amp;&amp; 
-<a name="l00027"></a>00027                     image.PixelFormat != PixelFormat.Format32bppRgb) {
-<a name="l00028"></a>00028                         image = AForge.Imaging.Image.Clone(image, PixelFormat.Format24bppRgb);
-<a name="l00029"></a>00029                         disposeImage = <span class="keyword">true</span>;
+<a name="l00025"></a>00025                 <span class="comment">//Convert if needed (makes an extra copy)</span>
+<a name="l00026"></a>00026                 <span class="keywordflow">if</span> (image.PixelFormat != PixelFormat.Format24bppRgb &amp;&amp;
+<a name="l00027"></a>00027                     image.PixelFormat != PixelFormat.Format32bppArgb &amp;&amp;
+<a name="l00028"></a>00028                     image.PixelFormat != PixelFormat.Format32bppRgb) {
+<a name="l00029"></a>00029                     image = AForge.Imaging.Image.Clone(image, PixelFormat.Format24bppRgb);
 <a name="l00030"></a>00030                 }
-<a name="l00031"></a>00031                 
-<a name="l00032"></a>00032                 <span class="comment">//We do this mess of try/finally so we never have more than 1 copy in memory at a time.</span>
-<a name="l00033"></a>00033                 UnmanagedImage croppedCopy = null;
-<a name="l00034"></a>00034                 UnmanagedImage grayscaleCopy = null;
-<a name="l00035"></a>00035                 
-<a name="l00036"></a>00036                 Rectangle imageSize = <span class="keyword">new</span> Rectangle(0, 0, image.Width, image.Height);
-<a name="l00037"></a>00037                 <span class="keywordflow">try</span> {
-<a name="l00038"></a>00038                     <span class="keywordflow">try</span> {
-<a name="l00039"></a>00039                         <span class="comment">// lock source bitmap data</span>
-<a name="l00040"></a>00040                         BitmapData data = image.LockBits(imageSize, ImageLockMode.ReadWrite, image.PixelFormat);
-<a name="l00041"></a>00041                         <span class="keywordflow">try</span> {
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032                 <span class="comment">//Crop if needed (makes an extra copy unless we converted too, then only 1 extra copy)</span>
+<a name="l00033"></a>00033                 <span class="keywordflow">if</span> (!lookInside.Equals(<span class="keyword">new</span> Rectangle(0, 0, image.Width, image.Height))) {
+<a name="l00034"></a>00034                     Bitmap oldImage = image;
+<a name="l00035"></a>00035                     <span class="keywordflow">try</span> {
+<a name="l00036"></a>00036                         image = <span class="keyword">new</span> Crop(lookInside).Apply(image);
+<a name="l00037"></a>00037                     } <span class="keywordflow">finally</span> {
+<a name="l00038"></a>00038                         <span class="keywordflow">if</span> (oldImage != originalImage) oldImage.Dispose(); <span class="comment">//Dispose the cloned </span>
+<a name="l00039"></a>00039                     }
+<a name="l00040"></a>00040                 }
+<a name="l00041"></a>00041 
 <a name="l00042"></a>00042 
-<a name="l00043"></a>00043                             <span class="comment">//Crop original image if needed.</span>
-<a name="l00044"></a>00044                             <span class="keywordflow">if</span> (lookInside.Equals(imageSize))
-<a name="l00045"></a>00045                                 grayscaleCopy = Grayscale.CommonAlgorithms.Y.Apply(<span class="keyword">new</span> UnmanagedImage(data));
-<a name="l00046"></a>00046                             <span class="keywordflow">else</span>
-<a name="l00047"></a>00047                                 croppedCopy = <span class="keyword">new</span> Crop(<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a61b50db80ba6c732565d07ef6163c0a0" title="Rounds a floating-point rectangle to an integer rectangle using System.Round.">ToRectangle</a>(lookInside)).Apply(<span class="keyword">new</span> UnmanagedImage(data));
-<a name="l00048"></a>00048                         } <span class="keywordflow">finally</span> {
-<a name="l00049"></a>00049                             image.UnlockBits(data);
-<a name="l00050"></a>00050                         }
-<a name="l00051"></a>00051                         <span class="comment">//Convert to 8bpp grayscale</span>
-<a name="l00052"></a>00052                         <span class="keywordflow">if</span> (grayscaleCopy == null) grayscaleCopy = Grayscale.CommonAlgorithms.Y.Apply(croppedCopy);
-<a name="l00053"></a>00053                     } <span class="keywordflow">finally</span> {
-<a name="l00054"></a>00054                         <span class="keywordflow">if</span> (croppedCopy != null) croppedCopy.Dispose(); ;
-<a name="l00055"></a>00055                     }
-<a name="l00056"></a>00056                     <span class="comment">//Apply sobel operator to grayscale image</span>
-<a name="l00057"></a>00057                     <span class="keyword">new</span> SobelEdgeDetector().ApplyInPlace(grayscaleCopy);
-<a name="l00058"></a>00058                     <span class="comment">//Threshold into black and white.</span>
-<a name="l00059"></a>00059                     <span class="keyword">new</span> Threshold(threshold).ApplyInPlace(grayscaleCopy);
-<a name="l00060"></a>00060                     <span class="comment">//Trim only exact black pixels</span>
-<a name="l00061"></a>00061                     Rectangle result = FindBoxExact(grayscaleCopy, Color.Black);
-<a name="l00062"></a>00062                     <span class="keywordflow">return</span> <span class="keyword">new</span> Rectangle(lookInside.X + result.X, lookInside.Y + result.Y, result.Width, result.Height);
-<a name="l00063"></a>00063                 } <span class="keywordflow">finally</span> {
-<a name="l00064"></a>00064                     <span class="keywordflow">if</span> (grayscaleCopy != null) grayscaleCopy.Dispose();
-<a name="l00065"></a>00065                 }
-<a name="l00066"></a>00066             } <span class="keywordflow">finally</span> {
-<a name="l00067"></a>00067                 <span class="keywordflow">if</span> (disposeImage) image.Dispose();
-<a name="l00068"></a>00068             }
-<a name="l00069"></a>00069 
-<a name="l00070"></a>00070         }<span class="comment"></span>
-<a name="l00071"></a>00071 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00072"></a>00072 <span class="comment">        /// Returns a bounding box that only excludes the specified color.</span>
-<a name="l00073"></a>00073 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00074"></a>00074 <span class="comment">        /// &lt;param name=&quot;sourceData&quot;&gt;&lt;/param&gt;</span>
-<a name="l00075"></a>00075 <span class="comment">        /// &lt;param name=&quot;colorToRemove&quot;&gt;&lt;/param&gt;</span>
-<a name="l00076"></a>00076 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00077"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a9046af3598e4b54cab4fb88641fcc60f">00077</a> <span class="comment"></span>        <span class="keyword">public</span> Rectangle <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a9046af3598e4b54cab4fb88641fcc60f" title="Returns a bounding box that only excludes the specified color.">FindBoxExact</a>(UnmanagedImage sourceData, Color colorToRemove) {
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079             <span class="comment">// get source image size</span>
-<a name="l00080"></a>00080             <span class="keywordtype">int</span> width = sourceData.Width;
-<a name="l00081"></a>00081             <span class="keywordtype">int</span> height = sourceData.Height;
-<a name="l00082"></a>00082             <span class="keywordtype">int</span> offset = sourceData.Stride -
-<a name="l00083"></a>00083                 ((sourceData.PixelFormat == PixelFormat.Format8bppIndexed) ? width : width * 3);
-<a name="l00084"></a>00084 
-<a name="l00085"></a>00085             <span class="comment">// color to remove</span>
-<a name="l00086"></a>00086             byte r = colorToRemove.R;
-<a name="l00087"></a>00087             byte g = colorToRemove.G;
-<a name="l00088"></a>00088             byte b = colorToRemove.B;
+<a name="l00043"></a>00043                 <span class="comment">//Makes 1 more copy at 1/3rd the size, in grayscale</span>
+<a name="l00044"></a>00044                 Rectangle result = FindBoxSobel(image, threshold);
+<a name="l00045"></a>00045                 <span class="keywordflow">return</span> <span class="keyword">new</span> Rectangle(lookInside.X + result.X, lookInside.Y + result.Y, result.Width, result.Height);
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048             } <span class="keywordflow">finally</span> {
+<a name="l00049"></a>00049                 <span class="keywordflow">if</span> (image != originalImage) image.Dispose();
+<a name="l00050"></a>00050             }
+<a name="l00051"></a>00051 
+<a name="l00052"></a>00052         }<span class="comment"></span>
+<a name="l00053"></a>00053 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00054"></a>00054 <span class="comment">        /// Requires 24 bit or 32 bit (A) RGB image. </span>
+<a name="l00055"></a>00055 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00056"></a>00056 <span class="comment">        /// &lt;param name=&quot;rgb&quot;&gt;&lt;/param&gt;</span>
+<a name="l00057"></a>00057 <span class="comment">        /// &lt;param name=&quot;threshold&quot;&gt;&lt;/param&gt;</span>
+<a name="l00058"></a>00058 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00059"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a871d3b4f93837dbfc16cbcbc571dc06e">00059</a> <span class="comment"></span>        <span class="keyword">public</span> Rectangle <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#a871d3b4f93837dbfc16cbcbc571dc06e" title="Requires 24 bit or 32 bit (A) RGB image.">FindBoxSobel</a>(Bitmap rgb, byte threshold) {
+<a name="l00060"></a>00060             <span class="keyword">using</span> (Bitmap gray = Grayscale.CommonAlgorithms.Y.Apply(rgb)) {
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062                 <span class="comment">//Apply sobel operator to grayscale image</span>
+<a name="l00063"></a>00063                 <span class="keyword">new</span> SobelEdgeDetector().ApplyInPlace(gray);
+<a name="l00064"></a>00064                 <span class="comment">//Threshold into black and white.</span>
+<a name="l00065"></a>00065                 <span class="keyword">new</span> Threshold(threshold).ApplyInPlace(gray);
+<a name="l00066"></a>00066                 <span class="comment">//Trim only exact black pixels</span>
+<a name="l00067"></a>00067                 <span class="comment">// lock source bitmap data</span>
+<a name="l00068"></a>00068                 BitmapData data = gray.LockBits(<span class="keyword">new</span> Rectangle(0, 0, gray.Width, gray.Height), ImageLockMode.ReadOnly, gray.PixelFormat);
+<a name="l00069"></a>00069                 <span class="keywordflow">try</span> {
+<a name="l00070"></a>00070                     <span class="keywordflow">return</span> FindBoxExactGrayscale(data, 0);
+<a name="l00071"></a>00071                 } <span class="keywordflow">finally</span> {
+<a name="l00072"></a>00072                     gray.UnlockBits(data);
+<a name="l00073"></a>00073                 }
+<a name="l00074"></a>00074             }
+<a name="l00075"></a>00075         }<span class="comment"></span>
+<a name="l00076"></a>00076 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00077"></a>00077 <span class="comment">        /// Returns a bounding box that only excludes the specified color. </span>
+<a name="l00078"></a>00078 <span class="comment">        /// Only works on 8-bit images.</span>
+<a name="l00079"></a>00079 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00080"></a>00080 <span class="comment">        /// &lt;param name=&quot;sourceData&quot;&gt;&lt;/param&gt;</span>
+<a name="l00081"></a>00081 <span class="comment">        /// &lt;param name=&quot;colorToRemove&quot;&gt;The palette index to remove.&lt;/param&gt;</span>
+<a name="l00082"></a>00082 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00083"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#aa674b4eff1b6e8eef439e94028b6050e">00083</a> <span class="comment"></span>        <span class="keyword">public</span> Rectangle <a class="code" href="class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_bounding_box_finder.html#aa674b4eff1b6e8eef439e94028b6050e" title="Returns a bounding box that only excludes the specified color. Only works on 8-bit images...">FindBoxExactGrayscale</a>(BitmapData sourceData, byte indexToRemove) {
+<a name="l00084"></a>00084             <span class="keywordflow">if</span> (sourceData.PixelFormat != PixelFormat.Format8bppIndexed) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentOutOfRangeException(<span class="stringliteral">&quot;FindBoxExact only operates on 8-bit grayscale images&quot;</span>);
+<a name="l00085"></a>00085             <span class="comment">// get source image size</span>
+<a name="l00086"></a>00086             <span class="keywordtype">int</span> width = sourceData.Width;
+<a name="l00087"></a>00087             <span class="keywordtype">int</span> height = sourceData.Height;
+<a name="l00088"></a>00088             <span class="keywordtype">int</span> offset = sourceData.Stride - width;
 <a name="l00089"></a>00089 
 <a name="l00090"></a>00090             <span class="keywordtype">int</span> minX = width;
 <a name="l00091"></a>00091             <span class="keywordtype">int</span> minY = height;
@@ -177,57 +177,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00094"></a>00094 
 <a name="l00095"></a>00095             <span class="comment">// find rectangle which contains something except color to remove</span>
 <a name="l00096"></a>00096             unsafe {
-<a name="l00097"></a>00097                 byte* src = (byte*)sourceData.ImageData.ToPointer();
+<a name="l00097"></a>00097                 byte* src = (byte*)sourceData.Scan0;
 <a name="l00098"></a>00098 
-<a name="l00099"></a>00099                 <span class="keywordflow">if</span> (sourceData.PixelFormat == PixelFormat.Format8bppIndexed) {
-<a name="l00100"></a>00100                     <span class="comment">// grayscale</span>
-<a name="l00101"></a>00101                     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; height; y++) {
-<a name="l00102"></a>00102                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; x++, src++) {
-<a name="l00103"></a>00103                             <span class="keywordflow">if</span> (*src != g) {
-<a name="l00104"></a>00104                                 <span class="keywordflow">if</span> (x &lt; minX)
-<a name="l00105"></a>00105                                     minX = x;
-<a name="l00106"></a>00106                                 <span class="keywordflow">if</span> (x &gt; maxX)
-<a name="l00107"></a>00107                                     maxX = x;
-<a name="l00108"></a>00108                                 <span class="keywordflow">if</span> (y &lt; minY)
-<a name="l00109"></a>00109                                     minY = y;
-<a name="l00110"></a>00110                                 <span class="keywordflow">if</span> (y &gt; maxY)
-<a name="l00111"></a>00111                                     maxY = y;
-<a name="l00112"></a>00112                             }
-<a name="l00113"></a>00113                         }
-<a name="l00114"></a>00114                         src += offset;
-<a name="l00115"></a>00115                     }
-<a name="l00116"></a>00116                 } <span class="keywordflow">else</span> {
-<a name="l00117"></a>00117                     <span class="comment">// RGB</span>
-<a name="l00118"></a>00118                     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; height; y++) {
-<a name="l00119"></a>00119                         <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; x++, src += 3) {
-<a name="l00120"></a>00120                             <span class="keywordflow">if</span> (
-<a name="l00121"></a>00121                                 (src[RGB.R] != r) ||
-<a name="l00122"></a>00122                                 (src[RGB.G] != g) ||
-<a name="l00123"></a>00123                                 (src[RGB.B] != b)) {
-<a name="l00124"></a>00124                                 <span class="keywordflow">if</span> (x &lt; minX)
-<a name="l00125"></a>00125                                     minX = x;
-<a name="l00126"></a>00126                                 <span class="keywordflow">if</span> (x &gt; maxX)
-<a name="l00127"></a>00127                                     maxX = x;
-<a name="l00128"></a>00128                                 <span class="keywordflow">if</span> (y &lt; minY)
-<a name="l00129"></a>00129                                     minY = y;
-<a name="l00130"></a>00130                                 <span class="keywordflow">if</span> (y &gt; maxY)
-<a name="l00131"></a>00131                                     maxY = y;
-<a name="l00132"></a>00132                             }
-<a name="l00133"></a>00133                         }
-<a name="l00134"></a>00134                         src += offset;
-<a name="l00135"></a>00135                     }
-<a name="l00136"></a>00136                 }
-<a name="l00137"></a>00137             }
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139             <span class="comment">// check</span>
-<a name="l00140"></a>00140             <span class="keywordflow">if</span> ((minX == width) &amp;&amp; (minY == height) &amp;&amp; (maxX == 0) &amp;&amp; (maxY == 0)) {
-<a name="l00141"></a>00141                 minX = minY = 0;
-<a name="l00142"></a>00142             }
-<a name="l00143"></a>00143 
-<a name="l00144"></a>00144             <span class="keywordflow">return</span> <span class="keyword">new</span> Rectangle(minX,minY,maxX - minX + 1, maxY - minY + 1);
-<a name="l00145"></a>00145         }
-<a name="l00146"></a>00146     }
-<a name="l00147"></a>00147 }
+<a name="l00099"></a>00099                 for (<span class="keywordtype">int</span> y = 0; y &lt; height; y++) {
+<a name="l00100"></a>00100                     <span class="keywordflow">if</span> (y &gt; 0) src += offset; <span class="comment">//Don&#39;t adjust for offset until after first row</span>
+<a name="l00101"></a>00101                     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; x++) {
+<a name="l00102"></a>00102                         <span class="keywordflow">if</span> (x &gt; 0 || y &gt; 0) src++; <span class="comment">//Don&#39;t increment until after the first pixel.</span>
+<a name="l00103"></a>00103                         <span class="keywordflow">if</span> (*src != indexToRemove) {
+<a name="l00104"></a>00104                             <span class="keywordflow">if</span> (x &lt; minX)
+<a name="l00105"></a>00105                                 minX = x;
+<a name="l00106"></a>00106                             <span class="keywordflow">if</span> (x &gt; maxX)
+<a name="l00107"></a>00107                                 maxX = x;
+<a name="l00108"></a>00108                             <span class="keywordflow">if</span> (y &lt; minY)
+<a name="l00109"></a>00109                                 minY = y;
+<a name="l00110"></a>00110                             <span class="keywordflow">if</span> (y &gt; maxY)
+<a name="l00111"></a>00111                                 maxY = y;
+<a name="l00112"></a>00112                         }
+<a name="l00113"></a>00113                     }
+<a name="l00114"></a>00114                 }
+<a name="l00115"></a>00115             }
+<a name="l00116"></a>00116 
+<a name="l00117"></a>00117             <span class="comment">// check</span>
+<a name="l00118"></a>00118             <span class="keywordflow">if</span> ((minX == width) &amp;&amp; (minY == height) &amp;&amp; (maxX == 0) &amp;&amp; (maxY == 0)) {
+<a name="l00119"></a>00119                 minX = minY = 0;
+<a name="l00120"></a>00120             }
+<a name="l00121"></a>00121 
+<a name="l00122"></a>00122             <span class="keywordflow">return</span> <span class="keyword">new</span> Rectangle(minX,minY,maxX - minX + 1, maxY - minY + 1);
+<a name="l00123"></a>00123         }
+<a name="l00124"></a>00124     }
+<a name="l00125"></a>00125 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

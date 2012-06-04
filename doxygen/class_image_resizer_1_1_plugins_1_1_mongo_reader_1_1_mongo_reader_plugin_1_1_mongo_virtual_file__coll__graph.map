@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="138,6,309,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..." alt="" coords="335,6,751,53"/>
+<area shape="rect" id="node6" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="775,6,1208,53"/>
+</map>

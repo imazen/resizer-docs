@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$interface_image_resizer_1_1_configuration_1_1_i_url_authorization_event_args.html" title="ImageResizer.Configuration.IUrlAuthorizationEventArgs" alt="" coords="6,5,807,51"/>
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_configuration_1_1_url_authorization_event_args.html" title="ImageResizer.Configuration.UrlAuthorizationEventArgs" alt="" coords="856,5,1648,51"/>
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue.html" title="ImageResizer.Configuration.Issues.IIssue" alt="" coords="5,5,613,51"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html" title="ImageResizer.Configuration.Issues.Issue" alt="" coords="662,5,1261,51"/>
 </map>

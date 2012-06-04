@@ -2,6 +2,7 @@ digraph G
 {
   edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
   node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
   Node1 [label="ImageResizer.Plugins.Basic.DefaultEncoder",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
   Node2 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
   Node2 [label="IEncoder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_encoding_1_1_i_encoder.html",tooltip="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec..."];
@@ -11,4 +12,6 @@ digraph G
   Node4 [label="IPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html",tooltip="All plugins must implement this. Enables web.config addition and removal."];
   Node1 -> Node5 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
   Node5 [label="ImageResizer.Plugins.WicEncoder.WicEncoderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node6 [label="ImageResizer.Plugins.WpfBuilder.WpfEncoderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_encoder_plugin.html"];
 }

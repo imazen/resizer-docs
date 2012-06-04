@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -104,6 +104,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">ImageResizer.Plugins.Basic.DropShadow Class Reference</div>  </div>
@@ -137,6 +138,10 @@ Public Member Functions</h2></td></tr>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>Uninstall</b> (<a class="el" href="class_image_resizer_1_1_configuration_1_1_config.html">Configuration.Config</a> c)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">IEnumerable&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_drop_shadow.html#a6ddebbe45df92ac40fc94cb8578f7f18">GetSupportedQuerystringKeys</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If the plugin reads any values from the querystring, the names of the keys should be specified here. This information is required so that the HttpModule knows when to handle an image request.  <a href="#a6ddebbe45df92ac40fc94cb8578f7f18"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_drop_shadow.html#ab796ace79b9d8e9bd495eaab4305d028">DrawOuterGradient</a> (Graphics g, PointF[] poly, Color inner, Color outer, float width)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a gradient around the specified polygon. Fades from 'inner' to 'outer' over a distance of 'width' pixels.  <a href="#ab796ace79b9d8e9bd495eaab4305d028"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">override <a class="el" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86">RequestedAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_drop_shadow.html#ab9fa7ab3ccfda8ab7c1985cad25f551e">LayoutEffects</a> (<a class="el" href="class_image_resizer_1_1_resizing_1_1_image_state.html">ImageState</a> s)</td></tr>
@@ -147,8 +152,90 @@ Protected Member Functions</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Adds drop shadow capabilities (shadowColor, shadowOffset, and shadowWidth commands) </p>
 
-<p>Definition at line <a class="el" href="_drop_shadow_8cs_source.html#l00013">13</a> of file <a class="el" href="_drop_shadow_8cs_source.html">DropShadow.cs</a>.</p>
+<p>Definition at line <a class="el" href="_drop_shadow_8cs_source.html#l00015">15</a> of file <a class="el" href="_drop_shadow_8cs_source.html">DropShadow.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ab796ace79b9d8e9bd495eaab4305d028"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::DropShadow::DrawOuterGradient" ref="ab796ace79b9d8e9bd495eaab4305d028" args="(Graphics g, PointF[] poly, Color inner, Color outer, float width)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_drop_shadow.html#ab796ace79b9d8e9bd495eaab4305d028">ImageResizer.Plugins.Basic.DropShadow.DrawOuterGradient</a> </td>
+          <td>(</td>
+          <td class="paramtype">Graphics&#160;</td>
+          <td class="paramname"><em>g</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PointF[]&#160;</td>
+          <td class="paramname"><em>poly</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>inner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Color&#160;</td>
+          <td class="paramname"><em>outer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [inline, static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Draws a gradient around the specified polygon. Fades from 'inner' to 'outer' over a distance of 'width' pixels. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">g</td><td></td></tr>
+    <tr><td class="paramname">poly</td><td></td></tr>
+    <tr><td class="paramname">inner</td><td></td></tr>
+    <tr><td class="paramname">outer</td><td></td></tr>
+    <tr><td class="paramname">width</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_drop_shadow_8cs_source.html#l00088">88</a> of file <a class="el" href="_drop_shadow_8cs_source.html">DropShadow.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                                               {
+
+            PointF[,] corners = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a9533ccbfea8b33beaea2fb9dd3f38004" title="Returns an array of parallelograms. These parallelgrams are the &#39;corners&#39; outside each vertex in &#39;pol...">GetCorners</a>(poly, width);
+            PointF[,] sides = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#aa48b557a348396e67330676ac38f369c" title="Returns an array of parallelograms. These parallelgrams are the &#39;sides&#39; bounding the polygon...">GetSides</a>(poly, width);
+            <span class="comment">//Overlapping these causes darker areas... Dont use InflatePoly</span>
+
+            <span class="comment">//Paint corners</span>
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= corners.GetUpperBound(0); i++) {
+                PointF[] pts = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#acaed52aad96ad8a928214131b4ae0764" title="Grabs a single-dimension array from a 2 dimensional array, using the specified primary index...">GetSubArray</a>(corners, i);
+                <span class="keyword">using</span> (Brush b = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a49bdd248873f97ae365d23f2f751de3a" title="Approximates a radial brush using a high-rez PathGradientBrush.">GenerateRadialBrush</a>(inner, outer, pts[0], width + 1)) {
+                    g.FillPolygon(b, pts);
+                }
+            }
+            <span class="comment">//Paint sides</span>
+            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= sides.GetUpperBound(0); i++) {
+                PointF[] pts = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#acaed52aad96ad8a928214131b4ae0764" title="Grabs a single-dimension array from a 2 dimensional array, using the specified primary index...">GetSubArray</a>(sides, i);
+                <span class="keyword">using</span> (LinearGradientBrush b = <span class="keyword">new</span> LinearGradientBrush(pts[3], pts[0], inner, outer)) {
+                    b.SetSigmaBellShape(1);
+                    b.WrapMode = WrapMode.TileFlipXY;
+                    g.FillPolygon(b, pts);
+                }
+            }
+        }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a6ddebbe45df92ac40fc94cb8578f7f18"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::DropShadow::GetSupportedQuerystringKeys" ref="a6ddebbe45df92ac40fc94cb8578f7f18" args="()" -->
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +255,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html#aaa1c43be9b92caf1f1caa81dc9e9f4bf">ImageResizer.Plugins.IQuerystringPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_drop_shadow_8cs_source.html#l00025">25</a> of file <a class="el" href="_drop_shadow_8cs_source.html">DropShadow.cs</a>.</p>
+<p>Definition at line <a class="el" href="_drop_shadow_8cs_source.html#l00027">27</a> of file <a class="el" href="_drop_shadow_8cs_source.html">DropShadow.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                 {
             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;shadowColor&quot;</span>, <span class="stringliteral">&quot;shadowOffset&quot;</span>, <span class="stringliteral">&quot;shadowWidth&quot;</span> };
         }
@@ -200,22 +287,19 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#a4adb0a25b8e3e72b0dcd3ddb17d0f1aa">ImageResizer.Resizing.AbstractImageProcessor</a>.</p>
 
-<p>Definition at line <a class="el" href="_drop_shadow_8cs_source.html#l00030">30</a> of file <a class="el" href="_drop_shadow_8cs_source.html">DropShadow.cs</a>.</p>
+<p>Definition at line <a class="el" href="_drop_shadow_8cs_source.html#l00032">32</a> of file <a class="el" href="_drop_shadow_8cs_source.html">DropShadow.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                       {
-            <span class="keywordflow">if</span> (base.LayoutEffects(s) == <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.Cancel) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.Cancel; <span class="comment">//Call extensions</span>
+            <span class="keywordtype">float</span> shadowWidth = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.Get&lt;<span class="keywordtype">float</span>&gt;(<span class="stringliteral">&quot;shadowWidth&quot;</span>, 0);
+            <span class="keywordflow">if</span> (shadowWidth != 0) {
 
-            <span class="comment">//Clone last ring, then offset it.</span>
-            if (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;shadowWidth&quot;</span>] != null) {
-                <span class="keywordtype">float</span> shadowWidth = <a class="code" href="class_image_resizer_1_1_util_1_1_utils.html">Utils</a>.getFloat(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>, <span class="stringliteral">&quot;shadowWidth&quot;</span>, 0);
+                var offset = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.GetList&lt;<span class="keywordtype">float</span>&gt;(<span class="stringliteral">&quot;shadowOffset&quot;</span>, 0, 2);
+                PointF shadowOffset =  offset == null ? <span class="keyword">new</span> PointF(0,0) : new PointF(offset[0], offset[1]);
 
+                <span class="comment">//Clone last ring, then offset it - provides the inner bounds of the shadow later</span>
+                s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.AddInvisiblePolygon(<span class="stringliteral">&quot;shadowInner&quot;</span>, <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a89ce0723e0e08b995245e70f85cff44f" title="Returns a modified version of the array, with each element being offset by the specified amount...">MovePoly</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.<a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#a25cec5c2a949a13ac66102e713d07db4" title="Returns the last ring that was added. Only returns PointSets where flags = Ring.">LastRing</a>.points, shadowOffset));
 
-                PointF shadowOffset = <a class="code" href="class_image_resizer_1_1_util_1_1_utils.html">Utils</a>.parsePointF(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;shadowOffset&quot;</span>], <span class="keyword">new</span> PointF(0, 0));
-
-                <span class="comment">//For drawing purposes later</span>
-                s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.AddInvisiblePolygon(<span class="stringliteral">&quot;shadowInner&quot;</span>, <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a89ce0723e0e08b995245e70f85cff44f" title="Returns a modified version of the array, with each element being offset by the specified amount...">MovePoly</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.<a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#a25cec5c2a949a13ac66102e713d07db4" title="Returns the last ring that was added. Only returns PointSets where flags = Ring.">LastRing</a>.points, shadowOffset));
-
-                <span class="comment">//For layout purposes</span>
-                s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.AddRing(<span class="stringliteral">&quot;shadow&quot;</span>, <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a062fe5752402710804fe0368016df808" title="Expands all sides on the specified polygon by the specified offset. Assumes the polygon is concave...">InflatePoly</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.<a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#a25cec5c2a949a13ac66102e713d07db4" title="Returns the last ring that was added. Only returns PointSets where flags = Ring.">LastRing</a>.points, <span class="keyword">new</span> <span class="keywordtype">float</span>[]{
+                <span class="comment">//Determine the outer bound of the shadow</span>
+                s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.AddRing(<span class="stringliteral">&quot;shadow&quot;</span>, <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a062fe5752402710804fe0368016df808" title="Expands all sides on the specified polygon by the specified offset. Assumes the polygon is concave...">InflatePoly</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>.<a class="code" href="class_image_resizer_1_1_resizing_1_1_layout_builder.html#a25cec5c2a949a13ac66102e713d07db4" title="Returns the last ring that was added. Only returns PointSets where flags = Ring.">LastRing</a>.points, <span class="keyword">new</span> <span class="keywordtype">float</span>[]{
                     Math.Max(0, shadowWidth - shadowOffset.Y),
                     Math.Max(0, shadowWidth + shadowOffset.X),
                     Math.Max(0, shadowWidth + shadowOffset.Y),
@@ -252,7 +336,7 @@ Protected Member Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html#a139c0e7dfa9b54d15c569d6121c3c4a9">ImageResizer.Resizing.AbstractImageProcessor</a>.</p>
 
-<p>Definition at line <a class="el" href="_drop_shadow_8cs_source.html#l00054">54</a> of file <a class="el" href="_drop_shadow_8cs_source.html">DropShadow.cs</a>.</p>
+<p>Definition at line <a class="el" href="_drop_shadow_8cs_source.html#l00053">53</a> of file <a class="el" href="_drop_shadow_8cs_source.html">DropShadow.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                       {
             <span class="keywordflow">if</span> (base.RenderEffects(s) == <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.Cancel) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.Cancel; <span class="comment">//Call extensions</span>
 
@@ -260,8 +344,8 @@ Protected Member Functions</h2></td></tr>
             if (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a14723e4f7de63667e37fcbdb6a00055b" title="A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic.">destGraphics</a> == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
 
             <span class="comment">//parse shadow</span>
-            Color shadowColor = <a class="code" href="class_image_resizer_1_1_util_1_1_utils.html">Utils</a>.parseColor(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;shadowColor&quot;</span>], Color.Transparent);
-            <span class="keywordtype">int</span> shadowWidth = <a class="code" href="class_image_resizer_1_1_util_1_1_utils.html">Utils</a>.getInt(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>, <span class="stringliteral">&quot;shadowWidth&quot;</span>, -1);
+            Color shadowColor = <a class="code" href="class_image_resizer_1_1_util_1_1_parse_utils.html" title="Provides invariant parsing &amp; serialization of primitive types, like Enums, integers, floats, and booleans.">ParseUtils</a>.ParseColor(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;shadowColor&quot;</span>], Color.Transparent);
+            <span class="keywordtype">int</span> shadowWidth = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>.Get&lt;<span class="keywordtype">int</span>&gt;( <span class="stringliteral">&quot;shadowWidth&quot;</span>, -1);
 
             <span class="comment">//Skip on transparent or 0-width shadow</span>
             <span class="keywordflow">if</span> (shadowColor == Color.Transparent || shadowWidth &lt;= 0) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
@@ -269,10 +353,10 @@ Protected Member Functions</h2></td></tr>
             <span class="keyword">using</span> (Brush b = <span class="keyword">new</span> SolidBrush(shadowColor)) {
                 <span class="comment">//Offsets may show inside the shadow - so we have to fix that</span>
                 s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a14723e4f7de63667e37fcbdb6a00055b" title="A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic.">destGraphics</a>.FillPolygon(b,
-                    <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a062fe5752402710804fe0368016df808" title="Expands all sides on the specified polygon by the specified offset. Assumes the polygon is concave...">InflatePoly</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;shadowInner&quot;</span>], 1)); <span class="comment">//Inflate 1 for FillPolgyon rounding errors.</span>
+                    <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a062fe5752402710804fe0368016df808" title="Expands all sides on the specified polygon by the specified offset. Assumes the polygon is concave...">InflatePoly</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;shadowInner&quot;</span>], 1)); <span class="comment">//Inflate 1 for FillPolgyon rounding errors.</span>
             }
             <span class="comment">//Then we can draw the outer gradient</span>
-            <a class="code" href="class_image_resizer_1_1_util_1_1_utils.html">Utils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_utils.html#afa0b403a0ac0a85caeb48d14546af8e8" title="Draws a gradient around the specified polygon. Fades from &#39;inner&#39; to &#39;outer&#39; over a distance of &#39;widt...">DrawOuterGradient</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a14723e4f7de63667e37fcbdb6a00055b" title="A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic.">destGraphics</a>, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;shadowInner&quot;</span>],
+            <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_drop_shadow.html#ab796ace79b9d8e9bd495eaab4305d028" title="Draws a gradient around the specified polygon. Fades from &#39;inner&#39; to &#39;outer&#39; over a distance of &#39;widt...">DrawOuterGradient</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a14723e4f7de63667e37fcbdb6a00055b" title="A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic.">destGraphics</a>, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;shadowInner&quot;</span>],
                              shadowColor, Color.Transparent, shadowWidth);
 
             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;

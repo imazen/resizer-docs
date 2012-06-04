@@ -1,4 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_block_reader.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataBlockReader" alt="" coords="5,5,1176,51"/>
-<area shape="rect" id="node3" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_block_writer.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataBlockWriter" alt="" coords="1224,5,2379,51"/>
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_security_1_1_simple_secure_encryption.html" title="Provides correct 256&#45;bit AES encryption and decryption for small data sets." alt="" coords="5,5,811,51"/>
 </map>

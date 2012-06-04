@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -93,113 +93,104 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00010"></a>00010 <span class="keyword">using</span> ImageResizer.Plugins.Wic.InteropServices.ComTypes;
 <a name="l00011"></a>00011 <span class="keyword">using</span> ImageResizer.Plugins.Wic;
 <a name="l00012"></a>00012 <span class="keyword">using</span> System.Runtime.InteropServices;
-<a name="l00013"></a>00013 
-<a name="l00014"></a><a class="code" href="namespace_image_resizer_1_1_plugins_1_1_wic_decoder.html">00014</a> <span class="keyword">namespace </span>ImageResizer.Plugins.WicDecoder {<span class="comment"></span>
-<a name="l00015"></a>00015 <span class="comment">    /// &lt;summary&gt;</span>
-<a name="l00016"></a>00016 <span class="comment">    /// Note: This decoder produces Bitmaps that require special disposal instructions.</span>
-<a name="l00017"></a>00017 <span class="comment">    /// While ImageBuilder handles this, your code may not. It&#39;s best not to directly call LoadImage with &amp;decoder=wic. </span>
-<a name="l00018"></a>00018 <span class="comment">    /// This decoder returns Bitmap instances with .Tag set to a GCHandle instance. You must call ((GCHandle)b.Tag).Free() after disposing the Bitmap.</span>
-<a name="l00019"></a>00019 <span class="comment">    /// &lt;/summary&gt;</span>
-<a name="l00020"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html">00020</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html" title="Note: This decoder produces Bitmaps that require special disposal instructions. While ImageBuilder ha...">WicDecoderPlugin</a> : <a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions.">IFileExtensionPlugin</a>, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html">IIssueProvider</a> {
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html" title="Note: This decoder produces Bitmaps that require special disposal instructions. While ImageBuilder ha...">WicDecoderPlugin</a>() {
-<a name="l00023"></a>00023         }
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
-<a name="l00026"></a>00026             c.Plugins.add_plugin(<span class="keyword">this</span>);
-<a name="l00027"></a>00027             <span class="keywordflow">return</span> <span class="keyword">this</span>;
-<a name="l00028"></a>00028         }
-<a name="l00029"></a>00029         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
-<a name="l00030"></a>00030             c.Plugins.remove_plugin(<span class="keyword">this</span>);
-<a name="l00031"></a>00031             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00032"></a>00032         }
-<a name="l00033"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html#a7ad94bb5fff301ca386158d09e89a74d">00033</a>         <span class="keyword">public</span> IEnumerable&lt;string&gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html#a7ad94bb5fff301ca386158d09e89a74d" title="If the plugin adds support for new file extensions (such as &quot;psd&quot;), they should be returned by this m...">GetSupportedFileExtensions</a>() {
-<a name="l00034"></a>00034             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { }; <span class="comment">//Same as default</span>
-<a name="l00035"></a>00035         }
-<a name="l00036"></a>00036 
-<a name="l00037"></a>00037         <span class="keyword">public</span> <span class="keyword">override</span> System.Drawing.Bitmap DecodeStream(System.IO.Stream s, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings, <span class="keywordtype">string</span> optionalPath) {
-<a name="l00038"></a>00038             <span class="keywordflow">if</span> (!<span class="stringliteral">&quot;wic&quot;</span>.Equals(settings[<span class="stringliteral">&quot;decoder&quot;</span>], StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">return</span> null;
-<a name="l00039"></a>00039 
-<a name="l00040"></a>00040             <span class="keywordflow">return</span> Decode(s, settings);
-<a name="l00041"></a>00041         }
-<a name="l00042"></a>00042 
-<a name="l00043"></a>00043         <span class="keyword">public</span> <span class="keyword">override</span> System.Drawing.Bitmap DecodeStreamFailed(System.IO.Stream s, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings, <span class="keywordtype">string</span> optionalPath) {
-<a name="l00044"></a>00044             <span class="keywordflow">try</span> {
-<a name="l00045"></a>00045                 <span class="keywordflow">return</span> Decode(s, settings);
-<a name="l00046"></a>00046             } <span class="keywordflow">catch</span> {
-<a name="l00047"></a>00047                 <span class="keywordflow">return</span> null;
-<a name="l00048"></a>00048             }
-<a name="l00049"></a>00049         }
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051         <span class="keyword">public</span> Bitmap Decode(Stream s, ResizeSettings settings) {
+<a name="l00013"></a>00013 <span class="keyword">using</span> System.Globalization;
+<a name="l00014"></a>00014 <span class="keyword">using</span> ImageResizer.ExtensionMethods;
+<a name="l00015"></a>00015 
+<a name="l00016"></a><a class="code" href="namespace_image_resizer_1_1_plugins_1_1_wic_decoder.html">00016</a> <span class="keyword">namespace </span>ImageResizer.Plugins.WicDecoder {<span class="comment"></span>
+<a name="l00017"></a>00017 <span class="comment">    /// &lt;summary&gt;</span>
+<a name="l00018"></a>00018 <span class="comment">    /// Note: This decoder produces Bitmaps that require special disposal instructions.</span>
+<a name="l00019"></a>00019 <span class="comment">    /// While ImageBuilder handles this, your code may not. It&#39;s best not to directly call LoadImage with &amp;decoder=wic. </span>
+<a name="l00020"></a>00020 <span class="comment">    /// This decoder returns Bitmap instances with .Tag set to a GCHandle instance. You must call ((GCHandle)b.Tag).Free() after disposing the Bitmap.</span>
+<a name="l00021"></a>00021 <span class="comment">    /// &lt;/summary&gt;</span>
+<a name="l00022"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html">00022</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html" title="Note: This decoder produces Bitmaps that require special disposal instructions. While ImageBuilder ha...">WicDecoderPlugin</a> : <a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions.">IFileExtensionPlugin</a>, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html">IIssueProvider</a> {
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html" title="Note: This decoder produces Bitmaps that require special disposal instructions. While ImageBuilder ha...">WicDecoderPlugin</a>() {
+<a name="l00025"></a>00025         }
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
+<a name="l00028"></a>00028             c.Plugins.add_plugin(<span class="keyword">this</span>);
+<a name="l00029"></a>00029             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00030"></a>00030         }
+<a name="l00031"></a>00031         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
+<a name="l00032"></a>00032             c.Plugins.remove_plugin(<span class="keyword">this</span>);
+<a name="l00033"></a>00033             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00034"></a>00034         }
+<a name="l00035"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html#a7ad94bb5fff301ca386158d09e89a74d">00035</a>         <span class="keyword">public</span> IEnumerable&lt;string&gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_decoder_1_1_wic_decoder_plugin.html#a7ad94bb5fff301ca386158d09e89a74d" title="If the plugin adds support for new file extensions (such as &quot;psd&quot;), they should be returned by this m...">GetSupportedFileExtensions</a>() {
+<a name="l00036"></a>00036             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { }; <span class="comment">//Same as default</span>
+<a name="l00037"></a>00037         }
+<a name="l00038"></a>00038 
+<a name="l00039"></a>00039         <span class="keyword">public</span> <span class="keyword">override</span> System.Drawing.Bitmap DecodeStream(System.IO.Stream s, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings, <span class="keywordtype">string</span> optionalPath) {
+<a name="l00040"></a>00040             <span class="keywordflow">if</span> (!<span class="stringliteral">&quot;wic&quot;</span>.Equals(settings[<span class="stringliteral">&quot;decoder&quot;</span>], StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">return</span> null;
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042             <span class="keywordflow">return</span> Decode(s, settings);
+<a name="l00043"></a>00043         }
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045         <span class="keyword">public</span> <span class="keyword">override</span> System.Drawing.Bitmap DecodeStreamFailed(System.IO.Stream s, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings, <span class="keywordtype">string</span> optionalPath) {
+<a name="l00046"></a>00046             <span class="keywordflow">try</span> {
+<a name="l00047"></a>00047                 <span class="keywordflow">return</span> Decode(s, settings);
+<a name="l00048"></a>00048             } <span class="keywordflow">catch</span> {
+<a name="l00049"></a>00049                 <span class="keywordflow">return</span> null;
+<a name="l00050"></a>00050             }
+<a name="l00051"></a>00051         }
 <a name="l00052"></a>00052 
-<a name="l00053"></a>00053             <span class="comment">//Make it a memory stream</span>
-<a name="l00054"></a>00054             <span class="keywordflow">if</span> (!(s is MemoryStream)) {
-<a name="l00055"></a>00055                 s = <a class="code" href="class_image_resizer_1_1_util_1_1_stream_utils.html">StreamUtils</a>.CopyStream((Stream)s);
-<a name="l00056"></a>00056             }
+<a name="l00053"></a>00053         <span class="keyword">public</span> Bitmap Decode(Stream s, ResizeSettings settings) {
+<a name="l00054"></a>00054             <span class="comment">//Get the underlying byte array</span>
+<a name="l00055"></a>00055             <span class="keywordtype">long</span> lData = 0;
+<a name="l00056"></a>00056             byte[] data = s.CopyOrReturnBuffer(out lData,<span class="keyword">false</span>, 0x1000);
 <a name="l00057"></a>00057 
-<a name="l00058"></a>00058             <span class="comment">//Get the underlying byte array</span>
-<a name="l00059"></a>00059             byte[] data = null;
-<a name="l00060"></a>00060             <span class="keywordtype">long</span> lData = 0;
-<a name="l00061"></a>00061             <span class="keywordflow">try</span> {
-<a name="l00062"></a>00062                 data = ((MemoryStream)s).GetBuffer();
-<a name="l00063"></a>00063                 lData = s.Length;
-<a name="l00064"></a>00064             } <span class="keywordflow">catch</span> (UnauthorizedAccessException) {
-<a name="l00065"></a>00065                 data = ((MemoryStream)s).ToArray();
-<a name="l00066"></a>00066                 lData = data.Length;
-<a name="l00067"></a>00067             }
-<a name="l00068"></a>00068 
+<a name="l00058"></a>00058 
+<a name="l00059"></a>00059             var factory = (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_component_factory.html">IWICComponentFactory</a>)<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_w_i_c_imaging_factory.html">WICImagingFactory</a>();
+<a name="l00060"></a>00060 
+<a name="l00061"></a>00061             <span class="comment">//Decode the image with WIC</span>
+<a name="l00062"></a>00062             <a class="code" href="interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_source.html">IWICBitmapSource</a> frame;
+<a name="l00063"></a>00063             var streamWrapper = factory.CreateStream();
+<a name="l00064"></a>00064             streamWrapper.InitializeFromMemory(data, (uint)lData);
+<a name="l00065"></a>00065             var decoder = factory.CreateDecoderFromStream(streamWrapper, null,
+<a name="l00066"></a>00066                                                           WICDecodeOptions.WICDecodeMetadataCacheOnLoad);
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068             <span class="keywordflow">try</span> {
 <a name="l00069"></a>00069 
-<a name="l00070"></a>00070             var factory = (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_component_factory.html">IWICComponentFactory</a>)<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_w_i_c_imaging_factory.html">WICImagingFactory</a>();
-<a name="l00071"></a>00071 
-<a name="l00072"></a>00072             <span class="comment">//Decode the image with WIC</span>
-<a name="l00073"></a>00073             <a class="code" href="interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_source.html">IWICBitmapSource</a> frame;
-<a name="l00074"></a>00074             var streamWrapper = factory.CreateStream();
-<a name="l00075"></a>00075             streamWrapper.InitializeFromMemory(data, (uint)lData);
-<a name="l00076"></a>00076             var decoder = factory.CreateDecoderFromStream(streamWrapper, null,
-<a name="l00077"></a>00077                                                           WICDecodeOptions.WICDecodeMetadataCacheOnLoad);
+<a name="l00070"></a>00070                 <span class="comment">//Figure out which frame to work with</span>
+<a name="l00071"></a>00071                 <span class="keywordtype">int</span> frameIndex = 0;
+<a name="l00072"></a>00072                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(settings[<span class="stringliteral">&quot;page&quot;</span>]) &amp;&amp; !<span class="keywordtype">int</span>.TryParse(settings[<span class="stringliteral">&quot;page&quot;</span>], NumberStyles.Number, NumberFormatInfo.InvariantInfo, out frameIndex))
+<a name="l00073"></a>00073                     <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(settings[<span class="stringliteral">&quot;frame&quot;</span>]) &amp;&amp; !<span class="keywordtype">int</span>.TryParse(settings[<span class="stringliteral">&quot;frame&quot;</span>], NumberStyles.Number, NumberFormatInfo.InvariantInfo, out frameIndex))
+<a name="l00074"></a>00074                         frameIndex = 0;
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076                 <span class="comment">//So users can use 1-based numbers</span>
+<a name="l00077"></a>00077                 frameIndex--;
 <a name="l00078"></a>00078 
-<a name="l00079"></a>00079             <span class="keywordflow">try</span> {
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081                 <span class="comment">//Figure out which frame to work with</span>
-<a name="l00082"></a>00082                 <span class="keywordtype">int</span> frameIndex = 0;
-<a name="l00083"></a>00083                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(settings[<span class="stringliteral">&quot;page&quot;</span>]) &amp;&amp; !<span class="keywordtype">int</span>.TryParse(settings[<span class="stringliteral">&quot;page&quot;</span>], out frameIndex))
-<a name="l00084"></a>00084                     <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(settings[<span class="stringliteral">&quot;frame&quot;</span>]) &amp;&amp; !<span class="keywordtype">int</span>.TryParse(settings[<span class="stringliteral">&quot;frame&quot;</span>], out frameIndex))
-<a name="l00085"></a>00085                         frameIndex = 0;
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087                 <span class="comment">//So users can use 1-based numbers</span>
-<a name="l00088"></a>00088                 frameIndex--;
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090                 <span class="keywordflow">if</span> (frameIndex &gt; 0) {
-<a name="l00091"></a>00091                     <span class="keywordtype">int</span> frameCount = (int)decoder.GetFrameCount(); <span class="comment">//Don&#39;t let the user go past the end.</span>
-<a name="l00092"></a>00092                     <span class="keywordflow">if</span> (frameIndex &gt;= frameCount) frameIndex = frameCount - 1;
-<a name="l00093"></a>00093                 }
-<a name="l00094"></a>00094                 frameIndex = Math.Max(0, frameIndex);
-<a name="l00095"></a>00095 
-<a name="l00096"></a>00096                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(settings[<span class="stringliteral">&quot;usepreview&quot;</span>]))
-<a name="l00097"></a>00097                     frame = decoder.GetPreview();
-<a name="l00098"></a>00098                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(settings[<span class="stringliteral">&quot;usethumb&quot;</span>]))
-<a name="l00099"></a>00099                     frame = decoder.GetThumbnail();
-<a name="l00100"></a>00100                 <span class="keywordflow">else</span> 
-<a name="l00101"></a>00101                     frame = decoder.GetFrame((uint)frameIndex);
-<a name="l00102"></a>00102                 <span class="keywordflow">try</span> {
-<a name="l00103"></a>00103                     <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_1_1_conversion_utils.html">ConversionUtils</a>.FromWic(frame);
-<a name="l00104"></a>00104                 } <span class="keywordflow">finally</span> {
-<a name="l00105"></a>00105                     Marshal.ReleaseComObject(frame);
-<a name="l00106"></a>00106                 }
-<a name="l00107"></a>00107             } <span class="keywordflow">finally</span> {
-<a name="l00108"></a>00108                 Marshal.ReleaseComObject(decoder);
-<a name="l00109"></a>00109                 Marshal.ReleaseComObject(factory);
-<a name="l00110"></a>00110             }
-<a name="l00111"></a>00111         }
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113         <span class="keyword">public</span> IEnumerable&lt;IIssue&gt; GetIssues() {
-<a name="l00114"></a>00114             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;();
-<a name="l00115"></a>00115             <span class="keywordflow">if</span> (Environment.OSVersion.Version.Major &lt; 6) issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;WIC should only be used Windows 7, Server 2008, or higher.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Critical));
-<a name="l00116"></a>00116             <span class="keywordflow">return</span> issues;
-<a name="l00117"></a>00117         }
-<a name="l00118"></a>00118     }
-<a name="l00119"></a>00119 }
+<a name="l00079"></a>00079                 <span class="keywordflow">if</span> (frameIndex &gt; 0) {
+<a name="l00080"></a>00080                     <span class="keywordtype">int</span> frameCount = (int)decoder.GetFrameCount(); <span class="comment">//Don&#39;t let the user go past the end.</span>
+<a name="l00081"></a>00081                     <span class="keywordflow">if</span> (frameIndex &gt;= frameCount) frameIndex = frameCount - 1;
+<a name="l00082"></a>00082                 }
+<a name="l00083"></a>00083                 frameIndex = Math.Max(0, frameIndex);
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085                 <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(settings[<span class="stringliteral">&quot;usepreview&quot;</span>]))
+<a name="l00086"></a>00086                     frame = decoder.GetPreview();
+<a name="l00087"></a>00087                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<span class="stringliteral">&quot;true&quot;</span>.Equals(settings[<span class="stringliteral">&quot;usethumb&quot;</span>]))
+<a name="l00088"></a>00088                     frame = decoder.GetThumbnail();
+<a name="l00089"></a>00089                 <span class="keywordflow">else</span> 
+<a name="l00090"></a>00090                     frame = decoder.GetFrame((uint)frameIndex);
+<a name="l00091"></a>00091                 <span class="keywordflow">try</span> {
+<a name="l00092"></a>00092                     Bitmap b = <a class="code" href="class_image_resizer_1_1_plugins_1_1_wic_1_1_conversion_utils.html">ConversionUtils</a>.FromWic(frame);
+<a name="l00093"></a>00093                     GC.KeepAlive(data);
+<a name="l00094"></a>00094                     <span class="keywordflow">return</span> b;
+<a name="l00095"></a>00095                 } <span class="keywordflow">finally</span> {
+<a name="l00096"></a>00096                     Marshal.ReleaseComObject(frame);
+<a name="l00097"></a>00097                 }
+<a name="l00098"></a>00098             } <span class="keywordflow">finally</span> {
+<a name="l00099"></a>00099                 Marshal.ReleaseComObject(decoder);
+<a name="l00100"></a>00100                 Marshal.ReleaseComObject(factory);
+<a name="l00101"></a>00101             }
+<a name="l00102"></a>00102         }
+<a name="l00103"></a>00103 
+<a name="l00104"></a>00104         <span class="keyword">public</span> IEnumerable&lt;IIssue&gt; GetIssues() {
+<a name="l00105"></a>00105             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;();
+<a name="l00106"></a>00106             <span class="keywordflow">if</span> (Environment.OSVersion.Version.Major &lt; 6) issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;WIC should only be used Windows 7, Server 2008, or higher.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Critical));
+<a name="l00107"></a>00107             <span class="keywordflow">return</span> issues;
+<a name="l00108"></a>00108         }
+<a name="l00109"></a>00109     }
+<a name="l00110"></a>00110 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

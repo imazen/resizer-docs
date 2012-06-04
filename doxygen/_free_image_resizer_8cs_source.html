@@ -30,7 +30,7 @@
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.1.3</span>
+   &#160;<span id="projectnumber">3.2.1</span>
    </div>
    
   </td>
@@ -123,7 +123,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00040"></a>00040             <span class="keywordflow">return</span> filter;
 <a name="l00041"></a>00041         }
 <a name="l00042"></a>00042 
-<a name="l00043"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html#acb93206f312e8370f2d39ada323e0180">00043</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html#acb93206f312e8370f2d39ada323e0180" title="Process.5(Render).9: The image is copied to the destination parallelogram specified by ring &#39;image&#39;...">RenderImage</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
+<a name="l00043"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html#a2587b8af02a96aab5ea55f897fe71b78">00043</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html#a2587b8af02a96aab5ea55f897fe71b78" title="Process.5(Render).9: Plugins have a chance to pre-process the source image before it gets rendered...">PreRenderImage</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
 <a name="l00044"></a>00044             <span class="comment">//Skip this when we are doing simulations</span>
 <a name="l00045"></a>00045             <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a14723e4f7de63667e37fcbdb6a00055b" title="A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic.">destGraphics</a> == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
 <a name="l00046"></a>00046 
@@ -138,39 +138,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00055"></a>00055 
 <a name="l00056"></a>00056 
 <a name="l00057"></a>00057             <span class="comment">//The minimum dimensions of the temporary bitmap.</span>
-<a name="l00058"></a>00058             SizeF targetSize = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a02b9e3951484c2e1592c6eb8131d8405" title="Determines the width and height of the paralellogram.">getParallelogramSize</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]);
+<a name="l00058"></a>00058             SizeF targetSize = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a02b9e3951484c2e1592c6eb8131d8405" title="Determines the width and height of the paralellogram.">getParallelogramSize</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]);
 <a name="l00059"></a>00059             targetSize = <span class="keyword">new</span> SizeF((<span class="keywordtype">float</span>)Math.Ceiling(targetSize.Width), (float)Math.Ceiling(targetSize.Height));
 <a name="l00060"></a>00060 
 <a name="l00061"></a>00061 
 <a name="l00062"></a>00062             <span class="comment">//The size of the temporary bitmap. </span>
 <a name="l00063"></a>00063             <span class="comment">//We want it larger than the size we&#39;ll use on the final copy, so we never upscale it</span>
 <a name="l00064"></a>00064             <span class="comment">//- but we also want it as small as possible so processing is fast.</span>
-<a name="l00065"></a>00065             SizeF tempSize = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a63ca79f538e9c19e38f14ad57de06958" title="Scales &#39;outer&#39; to be equal or larger than &#39;innerBounds&#39; while maintaining aspect ratio. Upscales and downscales.">ScaleOutside</a>(targetSize, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Size);
+<a name="l00065"></a>00065             SizeF tempSize = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a63ca79f538e9c19e38f14ad57de06958" title="Scales &#39;outer&#39; to be equal or larger than &#39;innerBounds&#39; while maintaining aspect ratio. Upscales and downscales.">ScaleOutside</a>(targetSize, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Size);
 <a name="l00066"></a>00066             <span class="keywordtype">int</span> tempWidth = (int)Math.Ceiling(tempSize.Width);
 <a name="l00067"></a>00067             <span class="keywordtype">int</span> tempHeight = (int)Math.Ceiling(tempSize.Height);
 <a name="l00068"></a>00068             FIBITMAP src = FIBITMAP.Zero;
 <a name="l00069"></a>00069             FIBITMAP midway = FIBITMAP.Zero;
 <a name="l00070"></a>00070             <span class="keywordflow">try</span> {
-<a name="l00071"></a>00071                 <span class="comment">//Convert, scale, then convert back.</span>
-<a name="l00072"></a>00072                 src = FreeImage.CreateFromBitmap(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>);
-<a name="l00073"></a>00073                 midway = FreeImage.Rescale(src, tempWidth, tempHeight, filter);
-<a name="l00074"></a>00074                 FreeImage.UnloadEx(ref src);
-<a name="l00075"></a>00075                 <span class="keyword">using</span> (Bitmap resized = FreeImage.GetBitmap(midway)) {
-<a name="l00076"></a>00076                     FreeImage.UnloadEx(ref midway);
-<a name="l00077"></a>00077                     resized.MakeTransparent();
-<a name="l00078"></a>00078                     s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a0575a388f0e3235d967cb62f4904fe09" title="Allows color correction/modification during the image copy.">copyAttibutes</a>.SetWrapMode(WrapMode.TileFlipXY);
-<a name="l00079"></a>00079                     s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a14723e4f7de63667e37fcbdb6a00055b" title="A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic.">destGraphics</a>.DrawImage(resized, <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a28d60a0db031946a534a4efbc85e2728" title="Moves element 4 to spot 3 and truncates to 3 elements. For compatiblity with Graphics.DrawImage.">getParallelogram</a>(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a845b5dc0d563cd83e8591ceccdbfe31e" title="The layout object. Used for calculated and flowing the layout of the various rings around the image (...">layout</a>[<span class="stringliteral">&quot;image&quot;</span>]), <span class="keyword">new</span> RectangleF(0, 0, resized.Width, resized.Height), GraphicsUnit.Pixel, s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a0575a388f0e3235d967cb62f4904fe09" title="Allows color correction/modification during the image copy.">copyAttibutes</a>);
-<a name="l00080"></a>00080                 }
-<a name="l00081"></a>00081             } <span class="keywordflow">finally</span> {
-<a name="l00082"></a>00082                 <span class="keywordflow">if</span> (!src.IsNull) FreeImage.UnloadEx(ref src);
-<a name="l00083"></a>00083                 <span class="keywordflow">if</span> (!midway.IsNull) FreeImage.UnloadEx(ref midway);
-<a name="l00084"></a>00084             }
-<a name="l00085"></a>00085             
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.Cancel;
-<a name="l00088"></a>00088         }
-<a name="l00089"></a>00089     }
-<a name="l00090"></a>00090 }
+<a name="l00071"></a>00071                 <span class="comment">//Crop if needed, Convert, scale, then convert back.</span>
+<a name="l00072"></a>00072                 <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> != null || (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Width == s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a72e11433b4c36caccab68577e864202c" title="The original size of the source bitmap. Use this instead of accessing the bitmap directly for this in...">originalSize</a>.Width &amp;&amp; s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Height == s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a72e11433b4c36caccab68577e864202c" title="The original size of the source bitmap. Use this instead of accessing the bitmap directly for this in...">originalSize</a>.Height &amp;&amp; s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.X == 0 &amp;&amp; s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>.Y == 0)){
+<a name="l00073"></a>00073                     src = FreeImage.CreateFromBitmap(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> != null ? s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> : s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>);
+<a name="l00074"></a>00074                 }<span class="keywordflow">else</span>{
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076                     <span class="keyword">using</span> (Bitmap c = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a8aa9f1c77100b8bb71c5ffa1bdff62d0" title="The source bitmap. If null, skip drawing commands, but continue layout logic.">sourceBitmap</a>.Clone(s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a22528462bb2ca64173878ef4441bad28" title="The rectangular portion of the source image to copy.">copyRect</a>, System.Drawing.Imaging.PixelFormat.Format32bppArgb)) {
+<a name="l00077"></a>00077                         src = FreeImage.CreateFromBitmap(c);
+<a name="l00078"></a>00078                     }
+<a name="l00079"></a>00079                 }
+<a name="l00080"></a>00080                 midway = FreeImage.Rescale(src, tempWidth, tempHeight, filter);
+<a name="l00081"></a>00081                 FreeImage.UnloadEx(ref src);
+<a name="l00082"></a>00082                 <span class="comment">//Clear the old pre-rendered image if needed</span>
+<a name="l00083"></a>00083                 <span class="keywordflow">if</span> (s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> != null) s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>.Dispose();
+<a name="l00084"></a>00084                 <span class="comment">//Reassign the pre-rendered image</span>
+<a name="l00085"></a>00085                 s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a> = FreeImage.GetBitmap(midway);
+<a name="l00086"></a>00086                 FreeImage.UnloadEx(ref midway);
+<a name="l00087"></a>00087                 s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#acd58bc890cee2f8d314ae94c2508d0b5" title="An optional intermediate bitmap, created by plugins who need to process the source bitmap it gets ren...">preRenderBitmap</a>.MakeTransparent();
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089             } <span class="keywordflow">finally</span> {
+<a name="l00090"></a>00090                 <span class="keywordflow">if</span> (!src.IsNull) FreeImage.UnloadEx(ref src);
+<a name="l00091"></a>00091                 <span class="keywordflow">if</span> (!midway.IsNull) FreeImage.UnloadEx(ref midway);
+<a name="l00092"></a>00092             }
+<a name="l00093"></a>00093             
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.Cancel;
+<a name="l00096"></a>00096         }
+<a name="l00097"></a>00097     }
+<a name="l00098"></a>00098 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
