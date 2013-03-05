@@ -4,7 +4,7 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-    <title>IVirtualFileSourceCacheKey - Image Resizer Documentation</title>
+    <title>IRedactDiagnostics - Image Resizer Documentation</title>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <link type="text/css" rel="stylesheet" href="../main.css"/>
     <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
@@ -89,7 +89,7 @@
             <a href="../ImageResizer.Plugins/IQuerystringPlugin.htm">IQuerystringPlugin</a>
         </li>
 				<li>
-            <a href="../ImageResizer.Plugins/IRedactDiagnostics.htm">IRedactDiagnostics</a>
+            <a href="../ImageResizer.Plugins/IRedactDiagnostics.htm" class="current">IRedactDiagnostics</a>
         </li>
 				<li>
             <a href="../ImageResizer.Plugins/ISettingsModifier.htm">ISettingsModifier</a>
@@ -104,7 +104,7 @@
             <a href="../ImageResizer.Plugins/IVirtualFileCache.htm">IVirtualFileCache</a>
         </li>
 				<li>
-            <a href="../ImageResizer.Plugins/IVirtualFileSourceCacheKey.htm" class="current">IVirtualFileSourceCacheKey</a>
+            <a href="../ImageResizer.Plugins/IVirtualFileSourceCacheKey.htm">IVirtualFileSourceCacheKey</a>
         </li>
 				<li>
             <a href="../ImageResizer.Plugins/IVirtualFileWithModifiedDate.htm">IVirtualFileWithModifiedDate</a>
@@ -120,21 +120,20 @@
 </nav>
 	<article>
     <header>
-		<p class="class"><strong>Type</strong> IVirtualFileSourceCacheKey</p>
+		<p class="class"><strong>Type</strong> IRedactDiagnostics</p>
 	</header>
 	<section>
 		<header>
 		<p><strong>Namespace</strong> ImageResizer.Plugins</p>
 		</header>
     <div class="sub-header">
-			<div id="summary">This interface has nothing to do with output caching. This allows VirtualFile instances to override the default cache key (.VirtualPath) for source caching of VirtualFile instances.
-See IVirtualFileCache 
+			<div id="summary">Permits plugins to redact data from the diagnostics page, like passwords 
 			</div>
 		
 		
 			<h3 class="section">Methods</h3>
 			<ul>
-				<li><a href="../ImageResizer.Plugins/IVirtualFileSourceCacheKey.htm#GetCacheKey">GetCacheKey</a></li>
+				<li><a href="../ImageResizer.Plugins/IRedactDiagnostics.htm#RedactFrom">RedactFrom</a></li>
 			</ul>
 		
 		
@@ -142,9 +141,9 @@ See IVirtualFileCache
 	
 	<h3 class="section">Public instance methods</h3>
 
-	<div id="GetCacheKey" class="method">
+	<div id="RedactFrom" class="method">
 		<h4>
-			<span title="System.string">string</span> <strong>GetCacheKey</strong>(<span title="System.bool">bool</span> includeModifiedDate)
+			<a href="../ImageResizer.Configuration.Xml/Node.htm">Node</a> <strong>RedactFrom</strong>(<a href="../ImageResizer.Configuration.Xml/Node.htm">Node</a> resizer)
 		</h4>
 		<div class="content">
 

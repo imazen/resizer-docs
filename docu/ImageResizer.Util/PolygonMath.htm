@@ -128,13 +128,16 @@
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#CenterInside">CenterInside</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#CenterInside">CenterInside</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#ChangeMagnitude">ChangeMagnitude</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ClipRectangle">ClipRectangle</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#CombineFlipAndRotate">CombineFlipAndRotate</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#CombineFlipAndRotate">CombineFlipAndRotate</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#Dist">Dist</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#DownScaleInside">DownScaleInside</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ExpandTo">ExpandTo</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#FitsInside">FitsInside</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#ForEach">ForEach</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#GenerateRadialBrush">GenerateRadialBrush</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetBoundingBox">GetBoundingBox</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetBoundingBox">GetBoundingBox</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetCorners">GetCorners</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#GetCorners">GetCorners</a></li>
@@ -161,6 +164,7 @@
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#ScaleOutside">ScaleOutside</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#ScalePoint">ScalePoint</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#ScalePoints">ScalePoints</a></li>
+				<li><a href="../ImageResizer.Util/PolygonMath.htm#ScaleRect">ScaleRect</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#ToPoly">ToPoly</a></li>
 				<li><a href="../ImageResizer.Util/PolygonMath.htm#ToRectangle">ToRectangle</a></li>
 			</ul>
@@ -249,6 +253,17 @@ are of the same length.
 
 		</div>
 	</div>
+	<div id="ClipRectangle" class="method">
+		<h4>
+			<span title="System.Drawing.RectangleF">RectangleF</span> <strong>ClipRectangle</strong>(<span title="System.Drawing.RectangleF">RectangleF</span> box, <span title="System.Drawing.RectangleF">RectangleF</span> bounds)
+		</h4>
+		<div class="content">Returns 'box' clipped to be within 'bounds' 
+
+
+
+
+		</div>
+	</div>
 	<div id="CombineFlipAndRotate" class="method">
 		<h4>
 			<span title="System.Drawing.RotateFlipType">RotateFlipType</span> <strong>CombineFlipAndRotate</strong>(<span title="System.Drawing.RotateFlipType">RotateFlipType</span> flip, <span title="System.double">double</span> angle)
@@ -293,6 +308,17 @@ are of the same length.
 
 		</div>
 	</div>
+	<div id="ExpandTo" class="method">
+		<h4>
+			<span title="System.Drawing.RectangleF">RectangleF</span> <strong>ExpandTo</strong>(<span title="System.Drawing.RectangleF">RectangleF</span> box, <span title="System.Drawing.SizeF">SizeF</span> copySize)
+		</h4>
+		<div class="content">Expands the given rectangle to be the given size while keeping it centered. 
+
+
+
+
+		</div>
+	</div>
 	<div id="FitsInside" class="method">
 		<h4>
 			<span title="System.bool">bool</span> <strong>FitsInside</strong>(<span title="System.Drawing.SizeF">SizeF</span> inner, <span title="System.Drawing.SizeF">SizeF</span> outer)
@@ -331,6 +357,17 @@ are of the same length.
 			<span title="System.Drawing.RectangleF">RectangleF</span> <strong>GetBoundingBox</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> points)
 		</h4>
 		<div class="content">Returns a bounding box for the specified set of points. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetBoundingBox" class="method">
+		<h4>
+			<span title="System.Drawing.RectangleF">RectangleF</span> <strong>GetBoundingBox</strong>(<span title="System.Double[]">Double[]</span> flattenedPoints)
+		</h4>
+		<div class="content">Returns a bounding box for the specified set of points. Odd points are Y values, even points are X values 
 
 
 
@@ -462,18 +499,6 @@ Points are clockwise. Point 1 is the top-left outer point, point 2 the top-right
 	</div>
 	<div id="InflatePoly" class="method">
 		<h4>
-			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>InflatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.float">float</span> offset)
-		</h4>
-		<div class="content">Expands all sides on the specified polygon by the specified offset. Assumes the polygon is concave.
-Returns a new polygon 
-
-
-
-
-		</div>
-	</div>
-	<div id="InflatePoly" class="method">
-		<h4>
 			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>InflatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.Single[]">Single[]</span> offsets)
 		</h4>
 		<div class="content">Expands all sides on the specified polygon by the specified offsets. Assumes the polygon is concave.
@@ -493,6 +518,18 @@ Returns a new polygon.
 						</dd>
 				</dl>
 			</div>
+
+
+		</div>
+	</div>
+	<div id="InflatePoly" class="method">
+		<h4>
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>InflatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.float">float</span> offset)
+		</h4>
+		<div class="content">Expands all sides on the specified polygon by the specified offset. Assumes the polygon is concave.
+Returns a new polygon 
+
+
 
 
 		</div>
@@ -543,7 +580,7 @@ Returns a new polygon.
 	</div>
 	<div id="RotatePoly" class="method">
 		<h4>
-			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>RotatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.double">double</span> degrees, <span title="System.Drawing.PointF">PointF</span> origin)
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>RotatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.double">double</span> degrees)
 		</h4>
 		<div class="content">Rotates the specified polygon (or set of points) around the origin. 
 
@@ -554,7 +591,7 @@ Returns a new polygon.
 	</div>
 	<div id="RotatePoly" class="method">
 		<h4>
-			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>RotatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.double">double</span> degrees)
+			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>RotatePoly</strong>(<span title="System.Drawing.PointF[]">PointF[]</span> poly, <span title="System.double">double</span> degrees, <span title="System.Drawing.PointF">PointF</span> origin)
 		</h4>
 		<div class="content">Rotates the specified polygon (or set of points) around the origin. 
 
@@ -662,6 +699,17 @@ Returns a new polygon.
 
 		</div>
 	</div>
+	<div id="ScaleRect" class="method">
+		<h4>
+			<span title="System.Drawing.RectangleF">RectangleF</span> <strong>ScaleRect</strong>(<span title="System.Drawing.RectangleF">RectangleF</span> rect, <span title="System.double">double</span> ExpandX, <span title="System.double">double</span> ExpandY)
+		</h4>
+		<div class="content">Expands the given rectangle using the specified scale multipliers, leaving it centered 
+
+
+
+
+		</div>
+	</div>
 	<div id="ToPoly" class="method">
 		<h4>
 			<span title="System.Drawing.PointF[]">PointF[]</span> <strong>ToPoly</strong>(<span title="System.Drawing.RectangleF">RectangleF</span> rect)
@@ -688,7 +736,7 @@ Point 0 is top-left.
 	
 	</section>
 	</article><footer>
-	<span id="version">Built from v3.2.1.497 of ImageResizer.Core (Image Resizer)</span>
+	<span id="version">Built from v3.3.3.123 of ImageResizer.Core (Image Resizer)</span>
 	<span id="docu-link">
 		Generated by <a href="http://docu.jagregory.com">docu</a>
 	</span>

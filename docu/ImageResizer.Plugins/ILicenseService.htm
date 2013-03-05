@@ -4,7 +4,7 @@
 	<!--[if lt IE 9]>
 	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-    <title>IVirtualFileSourceCacheKey - Image Resizer Documentation</title>
+    <title>ILicenseService - Image Resizer Documentation</title>
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
     <link type="text/css" rel="stylesheet" href="../main.css"/>
     <script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
@@ -74,7 +74,7 @@
             <a href="../ImageResizer.Plugins/IFileExtensionPlugin.htm">IFileExtensionPlugin</a>
         </li>
 				<li>
-            <a href="../ImageResizer.Plugins/ILicenseService.htm">ILicenseService</a>
+            <a href="../ImageResizer.Plugins/ILicenseService.htm" class="current">ILicenseService</a>
         </li>
 				<li>
             <a href="../ImageResizer.Plugins/ILicenseStore.htm">ILicenseStore</a>
@@ -104,7 +104,7 @@
             <a href="../ImageResizer.Plugins/IVirtualFileCache.htm">IVirtualFileCache</a>
         </li>
 				<li>
-            <a href="../ImageResizer.Plugins/IVirtualFileSourceCacheKey.htm" class="current">IVirtualFileSourceCacheKey</a>
+            <a href="../ImageResizer.Plugins/IVirtualFileSourceCacheKey.htm">IVirtualFileSourceCacheKey</a>
         </li>
 				<li>
             <a href="../ImageResizer.Plugins/IVirtualFileWithModifiedDate.htm">IVirtualFileWithModifiedDate</a>
@@ -120,21 +120,24 @@
 </nav>
 	<article>
     <header>
-		<p class="class"><strong>Type</strong> IVirtualFileSourceCacheKey</p>
+		<p class="class"><strong>Type</strong> ILicenseService</p>
 	</header>
 	<section>
 		<header>
 		<p><strong>Namespace</strong> ImageResizer.Plugins</p>
+		<p><strong>Interfaces</strong> <a href="../ImageResizer.Plugins/IPlugin.htm">IPlugin</a></p>
 		</header>
     <div class="sub-header">
-			<div id="summary">This interface has nothing to do with output caching. This allows VirtualFile instances to override the default cache key (.VirtualPath) for source caching of VirtualFile instances.
-See IVirtualFileCache 
+			<div id="summary">Provides license verification and enforcement services. Do not access directly; use your local embedded static method to verify instance integrity. 
 			</div>
 		
 		
 			<h3 class="section">Methods</h3>
 			<ul>
-				<li><a href="../ImageResizer.Plugins/IVirtualFileSourceCacheKey.htm#GetCacheKey">GetCacheKey</a></li>
+				<li><a href="../ImageResizer.Plugins/ILicenseService.htm#GetLicensingOverview">GetLicensingOverview</a></li>
+				<li><a href="../ImageResizer.Plugins/ILicenseService.htm#NotifyUse">NotifyUse</a></li>
+				<li><a href="../ImageResizer.Plugins/ILicenseService.htm#SetFriendlyName">SetFriendlyName</a></li>
+				<li><a href="../ImageResizer.Plugins/ILicenseService.htm#VerifyAuthenticity">VerifyAuthenticity</a></li>
 			</ul>
 		
 		
@@ -142,11 +145,54 @@ See IVirtualFileCache
 	
 	<h3 class="section">Public instance methods</h3>
 
-	<div id="GetCacheKey" class="method">
+	<div id="GetLicensingOverview" class="method">
 		<h4>
-			<span title="System.string">string</span> <strong>GetCacheKey</strong>(<span title="System.bool">bool</span> includeModifiedDate)
+			<span title="System.string">string</span> <strong>GetLicensingOverview</strong>(<span title="System.bool">bool</span> forceVerification)
 		</h4>
-		<div class="content">
+		<div class="content">Returns a plaintext report on licensing status 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.bool">bool</span></code> forceVerification
+						</dt>
+						<dd>If true, pending verifications will be completed before the method returns 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="NotifyUse" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>NotifyUse</strong>(<span title="System.string">string</span> domain, <span title="System.Guid">Guid</span> feature)
+		</h4>
+		<div class="content">Notify the license service that the given feature is being used for the given domain. 
+
+
+
+
+		</div>
+	</div>
+	<div id="SetFriendlyName" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>SetFriendlyName</strong>(<span title="System.Guid">Guid</span> id, <span title="System.string">string</span> featureDisplayName)
+		</h4>
+		<div class="content">Configure the display name for the given feature id 
+
+
+
+
+		</div>
+	</div>
+	<div id="VerifyAuthenticity" class="method">
+		<h4>
+			<span title="System.long">long</span> <strong>VerifyAuthenticity</strong>(<span title="System.Guid">Guid</span> feature)
+		</h4>
+		<div class="content">Returns a changing shared secret to make interface hijacking difficult. 
 
 
 
