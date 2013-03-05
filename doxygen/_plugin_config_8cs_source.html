@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -125,552 +125,565 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a>00042             allPlugins = <span class="keyword">new</span> SafeList&lt;IPlugin&gt;();
 <a name="l00043"></a>00043             virtualProviderPlugins = <span class="keyword">new</span> SafeList&lt;IVirtualImageProvider&gt;();
 <a name="l00044"></a>00044             settingsModifierPlugins = <span class="keyword">new</span> SafeList&lt;ISettingsModifier&gt;();
-<a name="l00045"></a>00045         }
-<a name="l00046"></a>00046 
-<a name="l00047"></a>00047                 [CLSCompliant(<span class="keyword">false</span>)]
-<a name="l00048"></a>00048         <span class="keyword">protected</span> <span class="keyword">volatile</span> <span class="keywordtype">bool</span> _pluginsLoaded = <span class="keyword">false</span>;
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="keyword">protected</span> <span class="keywordtype">object</span> _loadPluginsSync = <span class="keyword">new</span> object();<span class="comment"></span>
-<a name="l00051"></a>00051 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00052"></a>00052 <span class="comment">        /// Processes the &amp;lt;plugins&amp;gt; section if they are not already loaded. Thread safe.</span>
-<a name="l00053"></a>00053 <span class="comment">        /// Only executes once.</span>
-<a name="l00054"></a>00054 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00055"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1d93ca55e5f8377b40abadc863268bf9">00055</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1d93ca55e5f8377b40abadc863268bf9" title="Processes the &lt;plugins&gt; section if they are not already loaded. Thread safe. Only executes once...">LoadPlugins</a>() {
-<a name="l00056"></a>00056             lock (_loadPluginsSync) {
-<a name="l00057"></a>00057                 <span class="keywordflow">if</span> (_pluginsLoaded) <span class="keywordflow">return</span>;
-<a name="l00058"></a>00058                 loadPluginsInternal();
-<a name="l00059"></a>00059                 _pluginsLoaded = <span class="keyword">true</span>;
-<a name="l00060"></a>00060             }
-<a name="l00061"></a>00061         }<span class="comment"></span>
-<a name="l00062"></a>00062 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00063"></a>00063 <span class="comment">        /// Returns true if the &amp;lt;plugins&amp;gt; section has been processed</span>
-<a name="l00064"></a>00064 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00065"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a7d209b043c9336ad088a652f1db15a2a">00065</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> PluginsLoaded {
-<a name="l00066"></a>00066             <span class="keyword">get</span> {
-<a name="l00067"></a>00067                 lock (_loadPluginsSync) <span class="keywordflow">return</span> _pluginsLoaded;
-<a name="l00068"></a>00068             }
-<a name="l00069"></a>00069         }
-<a name="l00070"></a>00070 <span class="comment"></span>
-<a name="l00071"></a>00071 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00072"></a>00072 <span class="comment">        /// Not thread safe. Performs actual work.</span>
-<a name="l00073"></a>00073 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00074"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab8076e8e03bab02732df5ce3b97bc02f">00074</a> <span class="comment"></span>        <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab8076e8e03bab02732df5ce3b97bc02f" title="Not thread safe. Performs actual work.">loadPluginsInternal</a>() {
-<a name="l00075"></a>00075             <a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> plugins = c.getNode(<span class="stringliteral">&quot;plugins&quot;</span>); 
-<a name="l00076"></a>00076             <span class="keywordflow">if</span> (plugins == null) <span class="keywordflow">return</span>;
-<a name="l00077"></a>00077             <span class="keywordflow">foreach</span> (<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> n <span class="keywordflow">in</span> plugins.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ab4b05d6bd3d05d834c02125bacde089c" title="Child nodes.">Children</a>) {
-<a name="l00078"></a>00078                 <span class="keywordflow">if</span> (n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;add&quot;</span>, StringComparison.OrdinalIgnoreCase)) {
-<a name="l00079"></a>00079                     add_plugin_by_name(n[<span class="stringliteral">&quot;name&quot;</span>],(n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>.Count &gt; 1) ? n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a> : null);
-<a name="l00080"></a>00080 
-<a name="l00081"></a>00081                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;remove&quot;</span>, StringComparison.OrdinalIgnoreCase))
-<a name="l00082"></a>00082                     remove_plugins_by_name(n[<span class="stringliteral">&quot;name&quot;</span>]);
-<a name="l00083"></a>00083                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;clear&quot;</span>, StringComparison.OrdinalIgnoreCase))
-<a name="l00084"></a>00084                     clear_plugins_by_type(n[<span class="stringliteral">&quot;type&quot;</span>]);
-<a name="l00085"></a>00085                 <span class="keywordflow">else</span> {
-<a name="l00086"></a>00086                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugins&quot;</span>, <span class="stringliteral">&quot;Unexpected element &lt;&quot;</span> + n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a> + <span class="stringliteral">&quot;&gt; in &lt;plugins&gt;&lt;/plugins&gt;.&quot;</span>,
-<a name="l00087"></a>00087                                                 <span class="stringliteral">&quot;Element XML: &quot;</span> + n.ToXmlElement().OuterXml, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
-<a name="l00088"></a>00088                 }
-<a name="l00089"></a>00089             }
-<a name="l00090"></a>00090         }<span class="comment"></span>
-<a name="l00091"></a>00091 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00092"></a>00092 <span class="comment">        /// Returns the subset of installed plugins which implement the specified type or interface</span>
-<a name="l00093"></a>00093 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00094"></a>00094 <span class="comment">        /// &lt;param name=&quot;type&quot;&gt;&lt;/param&gt;</span>
-<a name="l00095"></a>00095 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00096"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a65680754ad868197bab29fe6a380e875">00096</a> <span class="comment"></span>        <span class="keyword">public</span> IList&lt;IPlugin&gt; <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a65680754ad868197bab29fe6a380e875" title="Returns the subset of installed plugins which implement the specified type or interface.">GetPlugins</a>(Type type) {
-<a name="l00097"></a>00097             List&lt;IPlugin&gt; results = <span class="keyword">new</span> List&lt;IPlugin&gt;();
-<a name="l00098"></a>00098             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> AllPlugins)
-<a name="l00099"></a>00099                 <span class="keywordflow">if</span> (type.IsAssignableFrom(p.GetType())) <span class="comment">//Like instance of. Can be a subclass</span>
-<a name="l00100"></a>00100                     results.Add(p); 
-<a name="l00101"></a>00101             <span class="keywordflow">return</span> results;
-<a name="l00102"></a>00102         }<span class="comment"></span>
-<a name="l00103"></a>00103 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00104"></a>00104 <span class="comment">        /// Returns all registered instances of the specified plugins</span>
-<a name="l00105"></a>00105 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00106"></a>00106 <span class="comment">        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
-<a name="l00107"></a>00107 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00108"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#aee5422e9dcb7ce9efddb88e6819be4f2">00108</a> <span class="comment"></span>        <span class="keyword">public</span> IList&lt;T&gt; GetAll&lt;T&gt;() {
-<a name="l00109"></a>00109             List&lt;T&gt; results = <span class="keyword">new</span> List&lt;T&gt;();
-<a name="l00110"></a>00110             Type t = typeof(T);
-<a name="l00111"></a>00111             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> AllPlugins)
-<a name="l00112"></a>00112                 <span class="keywordflow">if</span> (t.IsAssignableFrom(p.GetType())) <span class="comment">//Like instance of. Can be a subclass</span>
-<a name="l00113"></a>00113                     results.Add((T)p);
-<a name="l00114"></a>00114             <span class="keywordflow">return</span> results;
-<a name="l00115"></a>00115         }
-<a name="l00116"></a>00116 <span class="comment"></span>
-<a name="l00117"></a>00117 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00118"></a>00118 <span class="comment">        /// Returns true if at least one plugin of the specified type is registered.</span>
-<a name="l00119"></a>00119 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00120"></a>00120 <span class="comment">        /// &lt;param name=&quot;type&quot;&gt;&lt;/param&gt;</span>
-<a name="l00121"></a>00121 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00122"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2a6ae3b69f516e4eb985364e12e7ef05">00122</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2a6ae3b69f516e4eb985364e12e7ef05" title="Returns true if at least one plugin of the specified type is registered.">HasPlugin</a>(Type type) {
-<a name="l00123"></a>00123             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> AllPlugins)
-<a name="l00124"></a>00124                 <span class="keywordflow">if</span> (type.IsAssignableFrom(p.GetType())) <span class="comment">//Like instance of. Can be a subclass</span>
-<a name="l00125"></a>00125                     <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00126"></a>00126             <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00127"></a>00127         }
-<a name="l00128"></a>00128 <span class="comment"></span>
-<a name="l00129"></a>00129 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00130"></a>00130 <span class="comment">        /// Returns true if 1 or more instances of the type are registered.</span>
-<a name="l00131"></a>00131 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00132"></a>00132 <span class="comment">        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
-<a name="l00133"></a>00133 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00134"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2ece1300f05d79ec150a52d31e2fbc11">00134</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> Has&lt;T&gt;() {
-<a name="l00135"></a>00135             <span class="keywordflow">return</span> Comparer&lt;T&gt;.Default.Compare(Get&lt;T&gt;(), <span class="keywordflow">default</span>(T)) != 0;
-<a name="l00136"></a>00136         }
-<a name="l00137"></a>00137 
-<a name="l00138"></a>00138 <span class="comment"></span>
-<a name="l00139"></a>00139 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00140"></a>00140 <span class="comment">        /// Returns the first registerd instance of the specified plugin. For IMultiInstancePlugins, use GetAll()</span>
-<a name="l00141"></a>00141 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00142"></a>00142 <span class="comment">        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
-<a name="l00143"></a>00143 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00144"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab473dcee16e081791fe61d052840661c">00144</a> <span class="comment"></span>        <span class="keyword">public</span> T Get&lt;T&gt;()  {
-<a name="l00145"></a>00145             Type t = typeof(T);
-<a name="l00146"></a>00146             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> AllPlugins)
-<a name="l00147"></a>00147                 <span class="keywordflow">if</span> (t.IsAssignableFrom(p.GetType())) <span class="comment">//Like instance of. Can be a subclass</span>
-<a name="l00148"></a>00148                     <span class="keywordflow">return</span> (T)p;
-<a name="l00149"></a>00149             <span class="keywordflow">return</span> <span class="keywordflow">default</span>(T);
-<a name="l00150"></a>00150         }
-<a name="l00151"></a>00151 <span class="comment"></span>
-<a name="l00152"></a>00152 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00153"></a>00153 <span class="comment">        /// Returns the first registered instance of the specified plugin, or creates a new instance if the plugin isn&#39;t installed. </span>
-<a name="l00154"></a>00154 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00155"></a>00155 <span class="comment">        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
-<a name="l00156"></a>00156 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00157"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a0adcb29e9a366b7e99eded02db35d1fe">00157</a> <span class="comment"></span>        <span class="keyword">public</span> T GetOrInstall&lt;T&gt;() where T : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <span class="keyword">new</span>() {
-<a name="l00158"></a>00158             T instance = Get&lt;T&gt;();
-<a name="l00159"></a>00159             <span class="keywordflow">if</span> (instance != null) <span class="keywordflow">return</span> instance;
-<a name="l00160"></a>00160 
-<a name="l00161"></a>00161             <span class="keyword">new</span> T().<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134" title="Installs the plugin in the specified Config instance. The plugin must handle all the work of loading ...">Install</a>(this.c);
-<a name="l00162"></a>00162 
-<a name="l00163"></a>00163             <span class="keywordflow">return</span> Get&lt;T&gt;();
-<a name="l00164"></a>00164         }
-<a name="l00165"></a>00165 <span class="comment"></span>
-<a name="l00166"></a>00166 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00167"></a>00167 <span class="comment">        /// Returns the first registered instance of the specified plugin, or installs the given instance instead, then re-tries the query</span>
-<a name="l00168"></a>00168 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00169"></a>00169 <span class="comment">        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
-<a name="l00170"></a>00170 <span class="comment">        /// &lt;param name=&quot;newInstance&quot;&gt;&lt;/param&gt;</span>
-<a name="l00171"></a>00171 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00172"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a63183b4e4eeaf2e56ef03f959244700b">00172</a> <span class="comment"></span>        <span class="keyword">public</span> T GetOrInstall&lt;T&gt;(T newInstance) where T : IPlugin {
-<a name="l00173"></a>00173             T instance = Get&lt;T&gt;();
-<a name="l00174"></a>00174             <span class="keywordflow">if</span> (instance != null) <span class="keywordflow">return</span> instance;
-<a name="l00175"></a>00175 
-<a name="l00176"></a>00176             <span class="comment">//Our instance may not get installed if there is a duplicate already</span>
-<a name="l00177"></a>00177             newInstance.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134" title="Installs the plugin in the specified Config instance. The plugin must handle all the work of loading ...">Install</a>(this.c);
-<a name="l00178"></a>00178 
-<a name="l00179"></a>00179             <span class="keywordflow">return</span> Get&lt;T&gt;();
-<a name="l00180"></a>00180         }
-<a name="l00181"></a>00181 
-<a name="l00182"></a>00182 <span class="comment"></span>
-<a name="l00183"></a>00183 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00184"></a>00184 <span class="comment">        /// Installs the specified plugin, returning the plugin instance. </span>
-<a name="l00185"></a>00185 <span class="comment">        /// Convenience method, same as plugin.Install(Config.Current).</span>
-<a name="l00186"></a>00186 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00187"></a>00187 <span class="comment">        /// &lt;param name=&quot;plugin&quot;&gt;&lt;/param&gt;</span>
-<a name="l00188"></a>00188 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00189"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1eabf8e8382b95e6bfd4c700e624b8b6">00189</a> <span class="comment"></span>        <span class="keyword">public</span> IPlugin <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1eabf8e8382b95e6bfd4c700e624b8b6" title="Installs the specified plugin, returning the plugin instance. Convenience method, same as plugin...">Install</a>(IPlugin plugin) {
-<a name="l00190"></a>00190             <span class="keywordflow">return</span> plugin.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134" title="Installs the plugin in the specified Config instance. The plugin must handle all the work of loading ...">Install</a>(this.c);
-<a name="l00191"></a>00191         }
-<a name="l00192"></a>00192 <span class="comment"></span>
-<a name="l00193"></a>00193 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00194"></a>00194 <span class="comment">        /// Attempts uninstallation of the specified plugin, returning true if successful.</span>
-<a name="l00195"></a>00195 <span class="comment">        /// Convenience method, same as plugin.Uninstall(Config.Current).</span>
-<a name="l00196"></a>00196 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00197"></a>00197 <span class="comment">        /// &lt;param name=&quot;plugin&quot;&gt;&lt;/param&gt;</span>
-<a name="l00198"></a>00198 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00199"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1f30fa1348081b042b660b2a6fd18ace">00199</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1f30fa1348081b042b660b2a6fd18ace" title="Attempts uninstallation of the specified plugin, returning true if successful. Convenience method...">Uninstall</a>(IPlugin plugin) {
-<a name="l00200"></a>00200             <span class="keywordflow">return</span> plugin.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f" title="Uninstalls the plugin. Should reverse all changes made during Install.">Uninstall</a>(this.c);
-<a name="l00201"></a>00201         }
-<a name="l00202"></a>00202 
-<a name="l00203"></a>00203         <span class="keyword">protected</span> SafeList&lt;BuilderExtension&gt; imageBuilderExtensions = null;<span class="comment"></span>
-<a name="l00204"></a>00204 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00205"></a>00205 <span class="comment">        /// Currently registered set of ImageBuilderExtensions. </span>
-<a name="l00206"></a>00206 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00207"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a6555e94f68458b99912b041482cdd318">00207</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;BuilderExtension&gt; ImageBuilderExtensions { <span class="keyword">get</span> { <span class="keywordflow">return</span> imageBuilderExtensions; } }
-<a name="l00208"></a>00208 
-<a name="l00209"></a>00209         <span class="keyword">protected</span> SafeList&lt;IEncoder&gt; imageEncoders = null;<span class="comment"></span>
-<a name="l00210"></a>00210 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00211"></a>00211 <span class="comment">        /// Currently registered IEncoders. </span>
-<a name="l00212"></a>00212 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00213"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#aa31cc94b310381ae022cac5b3d05af3d">00213</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;IEncoder&gt; ImageEncoders { <span class="keyword">get</span> { <span class="keywordflow">return</span> imageEncoders; } }
-<a name="l00214"></a>00214 
-<a name="l00215"></a>00215         <span class="keyword">protected</span> SafeList&lt;ICache&gt; cachingSystems = null;<span class="comment"></span>
-<a name="l00216"></a>00216 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00217"></a>00217 <span class="comment">        /// Currently registered ICache instances</span>
-<a name="l00218"></a>00218 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00219"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a7b17fd669713a797dbfc83eb78b26f4a">00219</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;ICache&gt; CachingSystems { <span class="keyword">get</span> { <span class="keywordflow">return</span> cachingSystems; } }
-<a name="l00220"></a>00220 
-<a name="l00221"></a>00221         <span class="keyword">protected</span> SafeList&lt;IQuerystringPlugin&gt; querystringPlugins = null;<span class="comment"></span>
-<a name="l00222"></a>00222 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00223"></a>00223 <span class="comment">        /// Plugins which accept querystring arguments are registered here.</span>
-<a name="l00224"></a>00224 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00225"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ae571e06c5e5e95bfe4891d4f6db05aab">00225</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;IQuerystringPlugin&gt; QuerystringPlugins { <span class="keyword">get</span> { <span class="keywordflow">return</span> querystringPlugins; } }
-<a name="l00226"></a>00226 
-<a name="l00227"></a>00227 
-<a name="l00228"></a>00228         <span class="keyword">protected</span> SafeList&lt;IFileExtensionPlugin&gt; fileExtensionPlugins = null;<span class="comment"></span>
-<a name="l00229"></a>00229 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00230"></a>00230 <span class="comment">        /// Plugins which accept new file extensions (in the url) are registered here.</span>
-<a name="l00231"></a>00231 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00232"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#afd4acc644c1be2e2ac6ec9f928964d63">00232</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;IFileExtensionPlugin&gt; FileExtensionPlugins { <span class="keyword">get</span> { <span class="keywordflow">return</span> fileExtensionPlugins; } }
-<a name="l00233"></a>00233 
-<a name="l00234"></a>00234 
-<a name="l00235"></a>00235         <span class="keyword">protected</span> SafeList&lt;IVirtualImageProvider&gt; virtualProviderPlugins = null;<span class="comment"></span>
-<a name="l00236"></a>00236 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00237"></a>00237 <span class="comment">        /// Plugins which provide virtual files are registered here.</span>
-<a name="l00238"></a>00238 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00239"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a517fd7bc29acf4eb910573fbe34997f7">00239</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;IVirtualImageProvider&gt; VirtualProviderPlugins { <span class="keyword">get</span> { <span class="keywordflow">return</span> virtualProviderPlugins; } }
-<a name="l00240"></a>00240 
-<a name="l00241"></a>00241         <span class="keyword">protected</span> SafeList&lt;ISettingsModifier&gt; settingsModifierPlugins = null;<span class="comment"></span>
-<a name="l00242"></a>00242 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00243"></a>00243 <span class="comment">        /// Plugins which modify image processing settings.</span>
-<a name="l00244"></a>00244 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00245"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a84cb6f5d6e18e51b2c572244888fa0d9">00245</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;ISettingsModifier&gt; SettingsModifierPlugins { <span class="keyword">get</span> { <span class="keywordflow">return</span> settingsModifierPlugins; } }
-<a name="l00246"></a>00246 
-<a name="l00247"></a>00247 
-<a name="l00248"></a>00248         <span class="keyword">protected</span> SafeList&lt;IPlugin&gt; allPlugins = null;<span class="comment"></span>
-<a name="l00249"></a>00249 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00250"></a>00250 <span class="comment">        /// All plugins should be registered here. Used for diagnostic purposes.</span>
-<a name="l00251"></a>00251 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00252"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab9e6deb9f5ec91b7d9aff1304dae8470">00252</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;IPlugin&gt; AllPlugins { <span class="keyword">get</span> { <span class="keywordflow">return</span> allPlugins; } }
-<a name="l00253"></a>00253 
-<a name="l00254"></a>00254 
-<a name="l00255"></a>00255         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html" title="A provider (or selector) of IEncoder instances.">IEncoderProvider</a> EncoderProvider { <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">this</span>; } }
+<a name="l00045"></a>00045             configProviders = <span class="keyword">new</span> SafeList&lt;ICurrentConfigProvider&gt;();
+<a name="l00046"></a>00046         }
+<a name="l00047"></a>00047 
+<a name="l00048"></a>00048                 [CLSCompliant(<span class="keyword">false</span>)]
+<a name="l00049"></a>00049         <span class="keyword">protected</span> <span class="keyword">volatile</span> <span class="keywordtype">bool</span> _pluginsLoaded = <span class="keyword">false</span>;
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051         <span class="keyword">protected</span> <span class="keywordtype">object</span> _loadPluginsSync = <span class="keyword">new</span> object();<span class="comment"></span>
+<a name="l00052"></a>00052 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00053"></a>00053 <span class="comment">        /// Processes the &amp;lt;plugins&amp;gt; section if they are not already loaded. Thread safe.</span>
+<a name="l00054"></a>00054 <span class="comment">        /// Only executes once.</span>
+<a name="l00055"></a>00055 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00056"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1d93ca55e5f8377b40abadc863268bf9">00056</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1d93ca55e5f8377b40abadc863268bf9" title="Processes the &lt;plugins&gt; section if they are not already loaded. Thread safe. Only executes once...">LoadPlugins</a>() {
+<a name="l00057"></a>00057             lock (_loadPluginsSync) {
+<a name="l00058"></a>00058                 <span class="keywordflow">if</span> (_pluginsLoaded) <span class="keywordflow">return</span>;
+<a name="l00059"></a>00059                 loadPluginsInternal();
+<a name="l00060"></a>00060                 _pluginsLoaded = <span class="keyword">true</span>;
+<a name="l00061"></a>00061             }
+<a name="l00062"></a>00062         }<span class="comment"></span>
+<a name="l00063"></a>00063 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00064"></a>00064 <span class="comment">        /// Returns true if the &amp;lt;plugins&amp;gt; section has been processed</span>
+<a name="l00065"></a>00065 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00066"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a7d209b043c9336ad088a652f1db15a2a">00066</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> PluginsLoaded {
+<a name="l00067"></a>00067             <span class="keyword">get</span> {
+<a name="l00068"></a>00068                 lock (_loadPluginsSync) <span class="keywordflow">return</span> _pluginsLoaded;
+<a name="l00069"></a>00069             }
+<a name="l00070"></a>00070         }
+<a name="l00071"></a>00071 <span class="comment"></span>
+<a name="l00072"></a>00072 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00073"></a>00073 <span class="comment">        /// Not thread safe. Performs actual work.</span>
+<a name="l00074"></a>00074 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00075"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab8076e8e03bab02732df5ce3b97bc02f">00075</a> <span class="comment"></span>        <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab8076e8e03bab02732df5ce3b97bc02f" title="Not thread safe. Performs actual work.">loadPluginsInternal</a>() {
+<a name="l00076"></a>00076             <a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> plugins = c.getNode(<span class="stringliteral">&quot;plugins&quot;</span>); 
+<a name="l00077"></a>00077             <span class="keywordflow">if</span> (plugins == null) <span class="keywordflow">return</span>;
+<a name="l00078"></a>00078             <span class="keywordflow">foreach</span> (<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> n <span class="keywordflow">in</span> plugins.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ab4b05d6bd3d05d834c02125bacde089c" title="Child nodes.">Children</a>) {
+<a name="l00079"></a>00079                 <span class="keywordflow">if</span> (n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;add&quot;</span>, StringComparison.OrdinalIgnoreCase)) {
+<a name="l00080"></a>00080                     add_plugin_by_name(n[<span class="stringliteral">&quot;name&quot;</span>],(n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>.Count &gt; 1) ? n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a> : null);
+<a name="l00081"></a>00081 
+<a name="l00082"></a>00082                 } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;remove&quot;</span>, StringComparison.OrdinalIgnoreCase))
+<a name="l00083"></a>00083                     remove_plugins_by_name(n[<span class="stringliteral">&quot;name&quot;</span>]);
+<a name="l00084"></a>00084                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> (n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;clear&quot;</span>, StringComparison.OrdinalIgnoreCase))
+<a name="l00085"></a>00085                     clear_plugins_by_type(n[<span class="stringliteral">&quot;type&quot;</span>]);
+<a name="l00086"></a>00086                 <span class="keywordflow">else</span> {
+<a name="l00087"></a>00087                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugins&quot;</span>, <span class="stringliteral">&quot;Unexpected element &lt;&quot;</span> + n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a> + <span class="stringliteral">&quot;&gt; in &lt;plugins&gt;&lt;/plugins&gt;.&quot;</span>,
+<a name="l00088"></a>00088                                                 <span class="stringliteral">&quot;Element XML: &quot;</span> + n.ToXmlElement().OuterXml, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
+<a name="l00089"></a>00089                 }
+<a name="l00090"></a>00090             }
+<a name="l00091"></a>00091         }<span class="comment"></span>
+<a name="l00092"></a>00092 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00093"></a>00093 <span class="comment">        /// Returns the subset of installed plugins which implement the specified type or interface</span>
+<a name="l00094"></a>00094 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00095"></a>00095 <span class="comment">        /// &lt;param name=&quot;type&quot;&gt;&lt;/param&gt;</span>
+<a name="l00096"></a>00096 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00097"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a65680754ad868197bab29fe6a380e875">00097</a> <span class="comment"></span>        <span class="keyword">public</span> IList&lt;IPlugin&gt; <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a65680754ad868197bab29fe6a380e875" title="Returns the subset of installed plugins which implement the specified type or interface.">GetPlugins</a>(Type type) {
+<a name="l00098"></a>00098             List&lt;IPlugin&gt; results = <span class="keyword">new</span> List&lt;IPlugin&gt;();
+<a name="l00099"></a>00099             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> AllPlugins)
+<a name="l00100"></a>00100                 <span class="keywordflow">if</span> (type.IsAssignableFrom(p.GetType())) <span class="comment">//Like instance of. Can be a subclass</span>
+<a name="l00101"></a>00101                     results.Add(p); 
+<a name="l00102"></a>00102             <span class="keywordflow">return</span> results;
+<a name="l00103"></a>00103         }<span class="comment"></span>
+<a name="l00104"></a>00104 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00105"></a>00105 <span class="comment">        /// Returns all registered instances of the specified plugins</span>
+<a name="l00106"></a>00106 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00107"></a>00107 <span class="comment">        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
+<a name="l00108"></a>00108 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00109"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#aee5422e9dcb7ce9efddb88e6819be4f2">00109</a> <span class="comment"></span>        <span class="keyword">public</span> IList&lt;T&gt; GetAll&lt;T&gt;() {
+<a name="l00110"></a>00110             List&lt;T&gt; results = <span class="keyword">new</span> List&lt;T&gt;();
+<a name="l00111"></a>00111             Type t = typeof(T);
+<a name="l00112"></a>00112             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> AllPlugins)
+<a name="l00113"></a>00113                 <span class="keywordflow">if</span> (t.IsAssignableFrom(p.GetType())) <span class="comment">//Like instance of. Can be a subclass</span>
+<a name="l00114"></a>00114                     results.Add((T)p);
+<a name="l00115"></a>00115             <span class="keywordflow">return</span> results;
+<a name="l00116"></a>00116         }
+<a name="l00117"></a>00117 <span class="comment"></span>
+<a name="l00118"></a>00118 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00119"></a>00119 <span class="comment">        /// Returns true if at least one plugin of the specified type is registered.</span>
+<a name="l00120"></a>00120 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00121"></a>00121 <span class="comment">        /// &lt;param name=&quot;type&quot;&gt;&lt;/param&gt;</span>
+<a name="l00122"></a>00122 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00123"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2a6ae3b69f516e4eb985364e12e7ef05">00123</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2a6ae3b69f516e4eb985364e12e7ef05" title="Returns true if at least one plugin of the specified type is registered.">HasPlugin</a>(Type type) {
+<a name="l00124"></a>00124             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> AllPlugins)
+<a name="l00125"></a>00125                 <span class="keywordflow">if</span> (type.IsAssignableFrom(p.GetType())) <span class="comment">//Like instance of. Can be a subclass</span>
+<a name="l00126"></a>00126                     <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00127"></a>00127             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00128"></a>00128         }
+<a name="l00129"></a>00129 <span class="comment"></span>
+<a name="l00130"></a>00130 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00131"></a>00131 <span class="comment">        /// Returns true if 1 or more instances of the type are registered.</span>
+<a name="l00132"></a>00132 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00133"></a>00133 <span class="comment">        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
+<a name="l00134"></a>00134 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00135"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2ece1300f05d79ec150a52d31e2fbc11">00135</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> Has&lt;T&gt;() {
+<a name="l00136"></a>00136             <span class="keywordflow">return</span> Comparer&lt;T&gt;.Default.Compare(Get&lt;T&gt;(), <span class="keywordflow">default</span>(T)) != 0;
+<a name="l00137"></a>00137         }
+<a name="l00138"></a>00138 
+<a name="l00139"></a>00139 <span class="comment"></span>
+<a name="l00140"></a>00140 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00141"></a>00141 <span class="comment">        /// Returns the first registerd instance of the specified plugin. For IMultiInstancePlugins, use GetAll()</span>
+<a name="l00142"></a>00142 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00143"></a>00143 <span class="comment">        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
+<a name="l00144"></a>00144 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00145"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab473dcee16e081791fe61d052840661c">00145</a> <span class="comment"></span>        <span class="keyword">public</span> T Get&lt;T&gt;()  {
+<a name="l00146"></a>00146             Type t = typeof(T);
+<a name="l00147"></a>00147             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> AllPlugins)
+<a name="l00148"></a>00148                 <span class="keywordflow">if</span> (t.IsAssignableFrom(p.GetType())) <span class="comment">//Like instance of. Can be a subclass</span>
+<a name="l00149"></a>00149                     <span class="keywordflow">return</span> (T)p;
+<a name="l00150"></a>00150             <span class="keywordflow">return</span> <span class="keywordflow">default</span>(T);
+<a name="l00151"></a>00151         }
+<a name="l00152"></a>00152 <span class="comment"></span>
+<a name="l00153"></a>00153 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00154"></a>00154 <span class="comment">        /// Returns the first registered instance of the specified plugin, or creates a new instance if the plugin isn&#39;t installed. </span>
+<a name="l00155"></a>00155 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00156"></a>00156 <span class="comment">        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
+<a name="l00157"></a>00157 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00158"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a0adcb29e9a366b7e99eded02db35d1fe">00158</a> <span class="comment"></span>        <span class="keyword">public</span> T GetOrInstall&lt;T&gt;() where T : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <span class="keyword">new</span>() {
+<a name="l00159"></a>00159             T instance = Get&lt;T&gt;();
+<a name="l00160"></a>00160             <span class="keywordflow">if</span> (instance != null) <span class="keywordflow">return</span> instance;
+<a name="l00161"></a>00161 
+<a name="l00162"></a>00162             <span class="keyword">new</span> T().<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134" title="Installs the plugin in the specified Config instance. The plugin must handle all the work of loading ...">Install</a>(this.c);
+<a name="l00163"></a>00163 
+<a name="l00164"></a>00164             <span class="keywordflow">return</span> Get&lt;T&gt;();
+<a name="l00165"></a>00165         }
+<a name="l00166"></a>00166 <span class="comment"></span>
+<a name="l00167"></a>00167 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00168"></a>00168 <span class="comment">        /// Returns the first registered instance of the specified plugin, or installs the given instance instead, then re-tries the query</span>
+<a name="l00169"></a>00169 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00170"></a>00170 <span class="comment">        /// &lt;typeparam name=&quot;T&quot;&gt;&lt;/typeparam&gt;</span>
+<a name="l00171"></a>00171 <span class="comment">        /// &lt;param name=&quot;newInstance&quot;&gt;&lt;/param&gt;</span>
+<a name="l00172"></a>00172 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00173"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a63183b4e4eeaf2e56ef03f959244700b">00173</a> <span class="comment"></span>        <span class="keyword">public</span> T GetOrInstall&lt;T&gt;(T newInstance) where T : IPlugin {
+<a name="l00174"></a>00174             T instance = Get&lt;T&gt;();
+<a name="l00175"></a>00175             <span class="keywordflow">if</span> (instance != null) <span class="keywordflow">return</span> instance;
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177             <span class="comment">//Our instance may not get installed if there is a duplicate already</span>
+<a name="l00178"></a>00178             newInstance.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134" title="Installs the plugin in the specified Config instance. The plugin must handle all the work of loading ...">Install</a>(this.c);
+<a name="l00179"></a>00179 
+<a name="l00180"></a>00180             <span class="keywordflow">return</span> Get&lt;T&gt;();
+<a name="l00181"></a>00181         }
+<a name="l00182"></a>00182 
+<a name="l00183"></a>00183 <span class="comment"></span>
+<a name="l00184"></a>00184 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00185"></a>00185 <span class="comment">        /// Installs the specified plugin, returning the plugin instance. </span>
+<a name="l00186"></a>00186 <span class="comment">        /// Convenience method, same as plugin.Install(Config.Current).</span>
+<a name="l00187"></a>00187 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00188"></a>00188 <span class="comment">        /// &lt;param name=&quot;plugin&quot;&gt;&lt;/param&gt;</span>
+<a name="l00189"></a>00189 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00190"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1eabf8e8382b95e6bfd4c700e624b8b6">00190</a> <span class="comment"></span>        <span class="keyword">public</span> IPlugin <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1eabf8e8382b95e6bfd4c700e624b8b6" title="Installs the specified plugin, returning the plugin instance. Convenience method, same as plugin...">Install</a>(IPlugin plugin) {
+<a name="l00191"></a>00191             <span class="keywordflow">return</span> plugin.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134" title="Installs the plugin in the specified Config instance. The plugin must handle all the work of loading ...">Install</a>(this.c);
+<a name="l00192"></a>00192         }
+<a name="l00193"></a>00193 <span class="comment"></span>
+<a name="l00194"></a>00194 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00195"></a>00195 <span class="comment">        /// Attempts uninstallation of the specified plugin, returning true if successful.</span>
+<a name="l00196"></a>00196 <span class="comment">        /// Convenience method, same as plugin.Uninstall(Config.Current).</span>
+<a name="l00197"></a>00197 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00198"></a>00198 <span class="comment">        /// &lt;param name=&quot;plugin&quot;&gt;&lt;/param&gt;</span>
+<a name="l00199"></a>00199 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00200"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1f30fa1348081b042b660b2a6fd18ace">00200</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">bool</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a1f30fa1348081b042b660b2a6fd18ace" title="Attempts uninstallation of the specified plugin, returning true if successful. Convenience method...">Uninstall</a>(IPlugin plugin) {
+<a name="l00201"></a>00201             <span class="keywordflow">return</span> plugin.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f" title="Uninstalls the plugin. Should reverse all changes made during Install.">Uninstall</a>(this.c);
+<a name="l00202"></a>00202         }
+<a name="l00203"></a>00203 
+<a name="l00204"></a>00204 
+<a name="l00205"></a>00205         <span class="keyword">protected</span> SafeList&lt;ICurrentConfigProvider&gt; configProviders = null;<span class="comment"></span>
+<a name="l00206"></a>00206 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00207"></a>00207 <span class="comment">        /// Currently registered ICurrentConfigProviders. </span>
+<a name="l00208"></a>00208 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00209"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a5da572b7b973899c831ba496bfab4d14">00209</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;ICurrentConfigProvider&gt; ConfigProviders { <span class="keyword">get</span> { <span class="keywordflow">return</span> configProviders; } }
+<a name="l00210"></a>00210 
+<a name="l00211"></a>00211 
+<a name="l00212"></a>00212         <span class="keyword">protected</span> SafeList&lt;BuilderExtension&gt; imageBuilderExtensions = null;<span class="comment"></span>
+<a name="l00213"></a>00213 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00214"></a>00214 <span class="comment">        /// Currently registered set of ImageBuilderExtensions. </span>
+<a name="l00215"></a>00215 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00216"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a6555e94f68458b99912b041482cdd318">00216</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;BuilderExtension&gt; ImageBuilderExtensions { <span class="keyword">get</span> { <span class="keywordflow">return</span> imageBuilderExtensions; } }
+<a name="l00217"></a>00217 
+<a name="l00218"></a>00218         <span class="keyword">protected</span> SafeList&lt;IEncoder&gt; imageEncoders = null;<span class="comment"></span>
+<a name="l00219"></a>00219 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00220"></a>00220 <span class="comment">        /// Currently registered IEncoders. </span>
+<a name="l00221"></a>00221 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00222"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#aa31cc94b310381ae022cac5b3d05af3d">00222</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;IEncoder&gt; ImageEncoders { <span class="keyword">get</span> { <span class="keywordflow">return</span> imageEncoders; } }
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224         <span class="keyword">protected</span> SafeList&lt;ICache&gt; cachingSystems = null;<span class="comment"></span>
+<a name="l00225"></a>00225 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00226"></a>00226 <span class="comment">        /// Currently registered ICache instances</span>
+<a name="l00227"></a>00227 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00228"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a7b17fd669713a797dbfc83eb78b26f4a">00228</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;ICache&gt; CachingSystems { <span class="keyword">get</span> { <span class="keywordflow">return</span> cachingSystems; } }
+<a name="l00229"></a>00229 
+<a name="l00230"></a>00230         <span class="keyword">protected</span> SafeList&lt;IQuerystringPlugin&gt; querystringPlugins = null;<span class="comment"></span>
+<a name="l00231"></a>00231 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00232"></a>00232 <span class="comment">        /// Plugins which accept querystring arguments are registered here.</span>
+<a name="l00233"></a>00233 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00234"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ae571e06c5e5e95bfe4891d4f6db05aab">00234</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;IQuerystringPlugin&gt; QuerystringPlugins { <span class="keyword">get</span> { <span class="keywordflow">return</span> querystringPlugins; } }
+<a name="l00235"></a>00235 
+<a name="l00236"></a>00236 
+<a name="l00237"></a>00237         <span class="keyword">protected</span> SafeList&lt;IFileExtensionPlugin&gt; fileExtensionPlugins = null;<span class="comment"></span>
+<a name="l00238"></a>00238 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00239"></a>00239 <span class="comment">        /// Plugins which accept new file extensions (in the url) are registered here.</span>
+<a name="l00240"></a>00240 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00241"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#afd4acc644c1be2e2ac6ec9f928964d63">00241</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;IFileExtensionPlugin&gt; FileExtensionPlugins { <span class="keyword">get</span> { <span class="keywordflow">return</span> fileExtensionPlugins; } }
+<a name="l00242"></a>00242 
+<a name="l00243"></a>00243 
+<a name="l00244"></a>00244         <span class="keyword">protected</span> SafeList&lt;IVirtualImageProvider&gt; virtualProviderPlugins = null;<span class="comment"></span>
+<a name="l00245"></a>00245 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00246"></a>00246 <span class="comment">        /// Plugins which provide virtual files are registered here.</span>
+<a name="l00247"></a>00247 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00248"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a517fd7bc29acf4eb910573fbe34997f7">00248</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;IVirtualImageProvider&gt; VirtualProviderPlugins { <span class="keyword">get</span> { <span class="keywordflow">return</span> virtualProviderPlugins; } }
+<a name="l00249"></a>00249 
+<a name="l00250"></a>00250         <span class="keyword">protected</span> SafeList&lt;ISettingsModifier&gt; settingsModifierPlugins = null;<span class="comment"></span>
+<a name="l00251"></a>00251 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00252"></a>00252 <span class="comment">        /// Plugins which modify image processing settings.</span>
+<a name="l00253"></a>00253 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00254"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a84cb6f5d6e18e51b2c572244888fa0d9">00254</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;ISettingsModifier&gt; SettingsModifierPlugins { <span class="keyword">get</span> { <span class="keywordflow">return</span> settingsModifierPlugins; } }
+<a name="l00255"></a>00255 
 <a name="l00256"></a>00256 
-<a name="l00257"></a>00257         <span class="keyword">protected</span> <a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a> _logManager = null;<span class="comment"></span>
+<a name="l00257"></a>00257         <span class="keyword">protected</span> SafeList&lt;IPlugin&gt; allPlugins = null;<span class="comment"></span>
 <a name="l00258"></a>00258 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00259"></a>00259 <span class="comment">        /// Returns the most recently registered Logging plugin, or null.</span>
+<a name="l00259"></a>00259 <span class="comment">        /// All plugins should be registered here. Used for diagnostic purposes.</span>
 <a name="l00260"></a>00260 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00261"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a9f23aa7ba7f123b82a9bc17fcbac3a06">00261</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a> LogManager { <span class="keyword">get</span> { <span class="keywordflow">return</span> _logManager; } <span class="keyword">set</span> { _logManager = value; <span class="keywordflow">if</span> (LoggingAvailable != null &amp;&amp; value != null) LoggingAvailable(value); } }
+<a name="l00261"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab9e6deb9f5ec91b7d9aff1304dae8470">00261</a> <span class="comment"></span>        <span class="keyword">public</span> SafeList&lt;IPlugin&gt; AllPlugins { <span class="keyword">get</span> { <span class="keywordflow">return</span> allPlugins; } }
 <a name="l00262"></a>00262 
 <a name="l00263"></a>00263 
-<a name="l00264"></a>00264         <span class="keyword">public</span> delegate <span class="keywordtype">void</span> LoggingAvaialbleEvent(<a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a> logger);
-<a name="l00265"></a>00265         <span class="keyword">public</span> LoggingAvaialbleEvent LoggingAvailable;
-<a name="l00266"></a>00266 <span class="comment"></span>
+<a name="l00264"></a>00264         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html" title="A provider (or selector) of IEncoder instances.">IEncoderProvider</a> EncoderProvider { <span class="keyword">get</span> { <span class="keywordflow">return</span> <span class="keyword">this</span>; } }
+<a name="l00265"></a>00265 
+<a name="l00266"></a>00266         <span class="keyword">protected</span> <a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a> _logManager = null;<span class="comment"></span>
 <a name="l00267"></a>00267 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00268"></a>00268 <span class="comment">        /// Returns an instance of the first encoder that claims to be able to handle the specified settings.</span>
-<a name="l00269"></a>00269 <span class="comment">        /// Returns null if no encoders are available.</span>
-<a name="l00270"></a>00270 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00271"></a>00271 <span class="comment">        /// &lt;param name=&quot;settings&quot;&gt;Request settings, like format, quality, colors, dither, etc.&lt;/param&gt;</span>
-<a name="l00272"></a>00272 <span class="comment">        /// &lt;param name=&quot;original&quot;&gt;May be a Drawing.Image instance, a path, or null. To provide both, set Image.tag to the path. Helps the encoder detect the original format if the format was not specified.</span>
-<a name="l00273"></a>00273 <span class="comment">        /// May also be used for palette generation hinting by some encoders.&lt;/param&gt;</span>
-<a name="l00274"></a>00274 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00275"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2e4ab3b7cd725d4048be67bc21725eb4">00275</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2e4ab3b7cd725d4048be67bc21725eb4" title="Returns an instance of the first encoder that claims to be able to handle the specified settings...">GetEncoder</a>(<a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings, <span class="keywordtype">object</span> original) {
-<a name="l00276"></a>00276             
-<a name="l00277"></a>00277             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a> e <span class="keywordflow">in</span> this.ImageEncoders) {
-<a name="l00278"></a>00278                 <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a> result = e.<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#ad63c950ef185945b7e1d9bab7a094354" title="If the encoder can handle the requirements specified by &#39;settings&#39; and &#39;source&#39;, it should return an ...">CreateIfSuitable</a>(settings, original);
-<a name="l00279"></a>00279                 <span class="keywordflow">if</span> (result != null) <span class="keywordflow">return</span> result;
-<a name="l00280"></a>00280             }
-<a name="l00281"></a>00281             <span class="keywordflow">return</span> null;
-<a name="l00282"></a>00282         }
-<a name="l00283"></a>00283 
-<a name="l00284"></a>00284 
-<a name="l00285"></a>00285 
-<a name="l00286"></a>00286 
-<a name="l00287"></a>00287         <span class="keyword">protected</span> <span class="keywordtype">void</span> remove_plugins_by_name(<span class="keywordtype">string</span> name) {
-<a name="l00288"></a>00288             Type t = FindPluginType(name);
-<a name="l00289"></a>00289             <span class="keywordflow">if</span> (t == null) <span class="keywordflow">return</span>; <span class="comment">//Failed to acquire type</span>
-<a name="l00290"></a>00290             <span class="keywordflow">foreach</span> (IPlugin p <span class="keywordflow">in</span> GetPlugins(t))
-<a name="l00291"></a>00291                 <span class="keywordflow">if</span> (!p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f" title="Uninstalls the plugin. Should reverse all changes made during Install.">Uninstall</a>(c)) AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugin &quot;</span> + t.FullName + <span class="stringliteral">&quot; reported a failed uninstall attempt triggered by a &lt;remove name=\&quot;&quot;</span> + name + <span class="stringliteral">&quot;\&quot; /&gt;.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
-<a name="l00292"></a>00292         }
+<a name="l00268"></a>00268 <span class="comment">        /// Returns the most recently registered Logging plugin, or null.</span>
+<a name="l00269"></a>00269 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00270"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a9f23aa7ba7f123b82a9bc17fcbac3a06">00270</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a> LogManager { <span class="keyword">get</span> { <span class="keywordflow">return</span> _logManager; } <span class="keyword">set</span> { _logManager = value; <span class="keywordflow">if</span> (LoggingAvailable != null &amp;&amp; value != null) LoggingAvailable(value); } }
+<a name="l00271"></a>00271 
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273         <span class="keyword">public</span> delegate <span class="keywordtype">void</span> LoggingAvaialbleEvent(<a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a> logger);
+<a name="l00274"></a>00274         <span class="keyword">public</span> LoggingAvaialbleEvent LoggingAvailable;
+<a name="l00275"></a>00275 <span class="comment"></span>
+<a name="l00276"></a>00276 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00277"></a>00277 <span class="comment">        /// Returns an instance of the first encoder that claims to be able to handle the specified settings.</span>
+<a name="l00278"></a>00278 <span class="comment">        /// Returns null if no encoders are available.</span>
+<a name="l00279"></a>00279 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00280"></a>00280 <span class="comment">        /// &lt;param name=&quot;settings&quot;&gt;Request settings, like format, quality, colors, dither, etc.&lt;/param&gt;</span>
+<a name="l00281"></a>00281 <span class="comment">        /// &lt;param name=&quot;original&quot;&gt;May be a Drawing.Image instance, a path, or null. To provide both, set Image.tag to the path. Helps the encoder detect the original format if the format was not specified.</span>
+<a name="l00282"></a>00282 <span class="comment">        /// May also be used for palette generation hinting by some encoders.&lt;/param&gt;</span>
+<a name="l00283"></a>00283 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00284"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2e4ab3b7cd725d4048be67bc21725eb4">00284</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2e4ab3b7cd725d4048be67bc21725eb4" title="Returns an instance of the first encoder that claims to be able to handle the specified settings...">GetEncoder</a>(<a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings, <span class="keywordtype">object</span> original) {
+<a name="l00285"></a>00285             
+<a name="l00286"></a>00286             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a> e <span class="keywordflow">in</span> this.ImageEncoders) {
+<a name="l00287"></a>00287                 <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a> result = e.<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#ad63c950ef185945b7e1d9bab7a094354" title="If the encoder can handle the requirements specified by &#39;settings&#39; and &#39;source&#39;, it should return an ...">CreateIfSuitable</a>(settings, original);
+<a name="l00288"></a>00288                 <span class="keywordflow">if</span> (result != null) <span class="keywordflow">return</span> result;
+<a name="l00289"></a>00289             }
+<a name="l00290"></a>00290             <span class="keywordflow">return</span> null;
+<a name="l00291"></a>00291         }
+<a name="l00292"></a>00292 
 <a name="l00293"></a>00293 
-<a name="l00294"></a>00294         <span class="keyword">protected</span> <span class="keywordtype">void</span> add_plugin_by_name(<span class="keywordtype">string</span> name, NameValueCollection args) {
-<a name="l00295"></a>00295             IPlugin p = CreatePluginByName(name, args);
-<a name="l00296"></a>00296             <span class="keywordflow">if</span> (p == null) <span class="keywordflow">return</span>; <span class="comment">//failed</span>
-<a name="l00297"></a>00297 
-<a name="l00298"></a>00298             <span class="comment">//Don&#39;t allow duplicates</span>
-<a name="l00299"></a>00299             <span class="keywordflow">if</span> (!(p is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once...">IMultiInstancePlugin</a>) &amp;&amp; HasPlugin(p.GetType())) {
-<a name="l00300"></a>00300                 AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;An instance of the specified plugin (&quot;</span> + p.GetType().ToString() + <span class="stringliteral">&quot;) has already been added. Implement IMultiInstancePlugin if the plugin supports multiple instances.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
-<a name="l00301"></a>00301                 <span class="keywordflow">return</span>;
-<a name="l00302"></a>00302             }
-<a name="l00303"></a>00303 
-<a name="l00304"></a>00304             p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134" title="Installs the plugin in the specified Config instance. The plugin must handle all the work of loading ...">Install</a>(c);
-<a name="l00305"></a>00305         }
-<a name="l00306"></a>00306         <span class="keyword">protected</span> <span class="keywordtype">void</span> clear_plugins_by_type(<span class="keywordtype">string</span> type) {
-<a name="l00307"></a>00307             Type t = null;
-<a name="l00308"></a>00308             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;encoders&quot;</span>.Equals(type, StringComparison.OrdinalIgnoreCase)) t = typeof(<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a>);
-<a name="l00309"></a>00309             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;caches&quot;</span>.Equals(type, StringComparison.OrdinalIgnoreCase)) t = typeof(<a class="code" href="interface_image_resizer_1_1_caching_1_1_i_cache.html" title="Provides caching behavior.">ICache</a>);
-<a name="l00310"></a>00310             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;extensions&quot;</span>.Equals(type, StringComparison.OrdinalIgnoreCase)) t = typeof(<a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>);
-<a name="l00311"></a>00311             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;all&quot;</span>.Equals(type, StringComparison.OrdinalIgnoreCase) || type == null) t = typeof(IPlugin);
-<a name="l00312"></a>00312             <span class="keywordflow">if</span> (t == null) this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Unrecognized type value \&quot;&quot;</span> + type + <span class="stringliteral">&quot;\&quot; in &lt;clear type=\&quot;&quot;</span> + type + <span class="stringliteral">&quot;\&quot; /&gt;.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
-<a name="l00313"></a>00313             <span class="keywordflow">else</span> {
-<a name="l00314"></a>00314                 IList&lt;IPlugin&gt; results = GetPlugins(t);
-<a name="l00315"></a>00315                 <span class="keywordflow">foreach</span> (IPlugin p <span class="keywordflow">in</span> results)
-<a name="l00316"></a>00316                     <span class="keywordflow">if</span> (!p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f" title="Uninstalls the plugin. Should reverse all changes made during Install.">Uninstall</a>(c)) AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugin &quot;</span> + p.GetType().FullName + <span class="stringliteral">&quot; reported a failed uninstall attempt triggered by a &lt;clear type=\&quot;&quot;</span> + type + <span class="stringliteral">&quot;\&quot; /&gt;.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
-<a name="l00317"></a>00317             }
-<a name="l00318"></a>00318         }
-<a name="l00319"></a>00319 <span class="comment"></span>
-<a name="l00320"></a>00320 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00321"></a>00321 <span class="comment">        /// This is called to get a sorted list of plugins based on their likelyhood of having the plugin.</span>
-<a name="l00322"></a>00322 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00323"></a>00323 <span class="comment">        /// &lt;param name=&quot;assemblyName&quot;&gt;&lt;/param&gt;</span>
-<a name="l00324"></a>00324 <span class="comment">        /// &lt;param name=&quot;pluginName&quot;&gt;&lt;/param&gt;</span>
-<a name="l00325"></a>00325 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00326"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#abfd691da4173ce55ab972ce0a21cecc7">00326</a> <span class="comment"></span>        <span class="keyword">protected</span> List&lt;string&gt; <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#abfd691da4173ce55ab972ce0a21cecc7" title="This is called to get a sorted list of plugins based on their likelyhood of having the plugin...">GetOptimizedAssemblyList</a>(<span class="keywordtype">string</span> assemblyName, <span class="keywordtype">string</span> pluginName) {
-<a name="l00327"></a>00327             List&lt;string&gt; assemblies = <span class="keyword">new</span> List&lt;string&gt;();
-<a name="l00328"></a>00328             <span class="comment">//1) If an assembly was specified, search it first</span>
-<a name="l00329"></a>00329             <span class="keywordflow">if</span> (assemblyName != null) assemblies.Add(assemblyName);
-<a name="l00330"></a>00330             <span class="comment">//2) Follow by searching the Core, the currently executing assembly</span>
-<a name="l00331"></a>00331             assemblies.Add(<span class="stringliteral">&quot;&quot;</span>); <span class="comment">// Defaults to current assembly</span>
-<a name="l00332"></a>00332 
-<a name="l00333"></a>00333             <span class="comment">//3) Next, add all assemblies that have &quot;ImageResizer&quot; in their name </span>
-<a name="l00334"></a>00334 
-<a name="l00335"></a>00335 
-<a name="l00336"></a>00336             List&lt;string&gt; otherAssemblies = <span class="keyword">new</span> List&lt;string&gt;();
-<a name="l00337"></a>00337             <span class="comment">//Add ImageResizer-related assemblies first</span>
-<a name="l00338"></a>00338             <span class="keywordflow">foreach</span> (Assembly a <span class="keywordflow">in</span> AppDomain.CurrentDomain.GetAssemblies()) {<span class="comment">// AppDomain.CurrentDomain.GetAssemblies()</span>
-<a name="l00339"></a>00339                 <span class="keywordtype">string</span> aname = a.FullName;
-<a name="l00340"></a>00340                 <span class="keywordflow">if</span> (aname.IndexOf(<span class="stringliteral">&quot;ImageResizer&quot;</span>, StringComparison.OrdinalIgnoreCase) &gt; -1) assemblies.Add(<span class="stringliteral">&quot;, &quot;</span> + aname);
-<a name="l00341"></a>00341                 <span class="keywordflow">else</span>
-<a name="l00342"></a>00342                     otherAssemblies.Add(<span class="stringliteral">&quot;, &quot;</span> + aname);
-<a name="l00343"></a>00343             }
-<a name="l00344"></a>00344             <span class="comment">//4) Last, add all remaining assemblies</span>
-<a name="l00345"></a>00345             assemblies.AddRange(otherAssemblies);
-<a name="l00346"></a>00346             <span class="keywordflow">return</span> assemblies;
-<a name="l00347"></a>00347         }
-<a name="l00348"></a>00348 <span class="comment"></span>
-<a name="l00349"></a>00349 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00350"></a>00350 <span class="comment">        /// Searches all loaded assemblies for the specified type, applying rules and prefixes to resolve the namespace and assembly.</span>
-<a name="l00351"></a>00351 <span class="comment">        /// Returns null if it could not find the type, and logs an issue.</span>
-<a name="l00352"></a>00352 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00353"></a>00353 <span class="comment">        /// &lt;param name=&quot;searchName&quot;&gt;&lt;/param&gt;</span>
-<a name="l00354"></a>00354 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00355"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a6157bc4f920bfe02b0190353daef3faa">00355</a> <span class="comment"></span>        <span class="keyword">public</span> Type <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a6157bc4f920bfe02b0190353daef3faa" title="Searches all loaded assemblies for the specified type, applying rules and prefixes to resolve the nam...">FindPluginType</a>(<span class="keywordtype">string</span> searchName) {
-<a name="l00356"></a>00356             Type t = null;
-<a name="l00357"></a>00357 
-<a name="l00358"></a>00358             <span class="keywordtype">int</span> commaAt = searchName.IndexOf(<span class="charliteral">&#39;,&#39;</span>);
-<a name="l00359"></a>00359             <span class="keywordtype">int</span> dotAt = searchName.IndexOf(<span class="charliteral">&#39;.&#39;</span>);
-<a name="l00360"></a>00360 
-<a name="l00361"></a>00361             <span class="comment">//If there is a dot or period, try the exact name first.</span>
-<a name="l00362"></a>00362             <span class="keywordflow">if</span> (dotAt &gt; -1 || commaAt &gt; -1)
-<a name="l00363"></a>00363                 t = Type.GetType(searchName, <span class="keyword">false</span>, <span class="keyword">true</span>);
-<a name="l00364"></a>00364 
-<a name="l00365"></a>00365             <span class="keywordflow">if</span> (t != null) <span class="keywordflow">return</span> t;
-<a name="l00366"></a>00366 
-<a name="l00367"></a>00367             <span class="comment">//Split the name and assembly apart</span>
-<a name="l00368"></a>00368             <span class="keywordtype">string</span> assembly = commaAt &gt; -1 ? searchName.Substring(commaAt) : null;
-<a name="l00369"></a>00369             <span class="keywordtype">string</span> name = commaAt &gt; -1 ? searchName.Substring(0, commaAt) : searchName;
-<a name="l00370"></a>00370 
-<a name="l00371"></a>00371             <span class="comment">//Without the assembly specified, does it still have a name?</span>
-<a name="l00372"></a>00372             <span class="keywordtype">bool</span> hasDot = name.IndexOf(<span class="charliteral">&#39;.&#39;</span>) &gt; -1;
-<a name="l00373"></a>00373 
-<a name="l00374"></a>00374             List&lt;string&gt; alternateNames = <span class="keyword">new</span> List&lt;string&gt;();
-<a name="l00375"></a>00375             <span class="comment">//ImageResizer.Plugins.Basic.DefaultEncoder</span>
-<a name="l00376"></a>00376             <span class="keywordflow">if</span> (hasDot) alternateNames.Add(name);
-<a name="l00377"></a>00377             <span class="comment">//DefaultEncoder, NoCache, etc.</span>
-<a name="l00378"></a>00378             alternateNames.Add(<span class="stringliteral">&quot;ImageResizer.Plugins.Basic.&quot;</span> + name.TrimStart(<span class="charliteral">&#39;.&#39;</span>));
-<a name="l00379"></a>00379             <span class="comment">//Apr4-2012 - Deleted, never used: alternateNames.Add(&quot;ImageResizer.Plugins.Pro.&quot; + name.TrimStart(&#39;.&#39;));</span>
-<a name="l00380"></a>00380             <span class="comment">//AnimatedGifs</span>
-<a name="l00381"></a>00381             <span class="keywordflow">if</span> (!hasDot) alternateNames.Add(<span class="stringliteral">&quot;ImageResizer.Plugins.&quot;</span> + name.Trim(<span class="charliteral">&#39;.&#39;</span>) + <span class="stringliteral">&quot;.&quot;</span> + name.Trim(<span class="charliteral">&#39;.&#39;</span>) + <span class="stringliteral">&quot;Plugin&quot;</span>);
-<a name="l00382"></a>00382             <span class="comment">//AnimatedGifsPlugin</span>
-<a name="l00383"></a>00383             <span class="keywordflow">if</span> (!hasDot &amp;&amp; name.EndsWith(<span class="stringliteral">&quot;Plugin&quot;</span>))
-<a name="l00384"></a>00384                 alternateNames.Add(<span class="stringliteral">&quot;ImageResizer.Plugins.&quot;</span> + name.Substring(0, name.Length - 6).Trim(<span class="charliteral">&#39;.&#39;</span>) + <span class="stringliteral">&quot;.&quot;</span> + name.Trim(<span class="charliteral">&#39;.&#39;</span>));
-<a name="l00385"></a>00385             <span class="comment">//Apr4-2012 - Deleted, never used: //Basic.DefaultEncoder</span>
-<a name="l00386"></a>00386             <span class="comment">//Apr4-2012 - Deleted, never used: alternateNames.Add(&quot;ImageResizer.Plugins.&quot; + name.TrimStart(&#39;.&#39;));</span>
-<a name="l00387"></a>00387             <span class="comment">//For the deprecated convention of naming the plugin namespace and class the same.</span>
-<a name="l00388"></a>00388             <span class="keywordflow">if</span> (!hasDot) alternateNames.Add(<span class="stringliteral">&quot;ImageResizer.Plugins.&quot;</span> + name.Trim(<span class="charliteral">&#39;.&#39;</span>) + <span class="stringliteral">&quot;.&quot;</span> + name.Trim(<span class="charliteral">&#39;.&#39;</span>));
-<a name="l00389"></a>00389             <span class="comment">//Apr4-2012 - Deleted, never used: //Plugins.Basic.DefaultEncoder</span>
-<a name="l00390"></a>00390             <span class="comment">//Apr4-2012 - Deleted, never used: alternateNames.Add(&quot;ImageResizer.&quot; + name.TrimStart(&#39;.&#39;));</span>
-<a name="l00391"></a>00391             <span class="comment">//PluginWithNoNamespace</span>
-<a name="l00392"></a>00392             <span class="keywordflow">if</span> (!hasDot) alternateNames.Add(name);
-<a name="l00393"></a>00393 
-<a name="l00394"></a>00394             <span class="comment">//Get a list of assemblies, sorted by likelyhood of a match</span>
-<a name="l00395"></a>00395             List&lt;string&gt; assemblies = GetOptimizedAssemblyList(assembly,name);
-<a name="l00396"></a>00396             <span class="comment">//Now multiply </span>
-<a name="l00397"></a>00397             List&lt;string&gt; qualifiedNames = <span class="keyword">new</span> List&lt;string&gt;(assemblies.Count * alternateNames.Count);
-<a name="l00398"></a>00398 
-<a name="l00399"></a>00399             <span class="comment">//For each assembly, try each namespace-qualified class name.</span>
-<a name="l00400"></a>00400             <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> assemblyName <span class="keywordflow">in</span> assemblies) {
-<a name="l00401"></a>00401                 <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> className <span class="keywordflow">in</span> alternateNames)
-<a name="l00402"></a>00402                     qualifiedNames.Add(className + assemblyName);
-<a name="l00403"></a>00403             }
+<a name="l00294"></a>00294 
+<a name="l00295"></a>00295 
+<a name="l00296"></a>00296         <span class="keyword">protected</span> <span class="keywordtype">void</span> remove_plugins_by_name(<span class="keywordtype">string</span> name) {
+<a name="l00297"></a>00297             Type t = FindPluginType(name);
+<a name="l00298"></a>00298             <span class="keywordflow">if</span> (t == null) <span class="keywordflow">return</span>; <span class="comment">//Failed to acquire type</span>
+<a name="l00299"></a>00299             <span class="keywordflow">foreach</span> (IPlugin p <span class="keywordflow">in</span> GetPlugins(t))
+<a name="l00300"></a>00300                 <span class="keywordflow">if</span> (!p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f" title="Uninstalls the plugin. Should reverse all changes made during Install.">Uninstall</a>(c)) AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugin &quot;</span> + t.FullName + <span class="stringliteral">&quot; reported a failed uninstall attempt triggered by a &lt;remove name=\&quot;&quot;</span> + name + <span class="stringliteral">&quot;\&quot; /&gt;.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
+<a name="l00301"></a>00301         }
+<a name="l00302"></a>00302 
+<a name="l00303"></a>00303         <span class="keyword">protected</span> <span class="keywordtype">void</span> add_plugin_by_name(<span class="keywordtype">string</span> name, NameValueCollection args) {
+<a name="l00304"></a>00304             IPlugin p = CreatePluginByName(name, args);
+<a name="l00305"></a>00305             <span class="keywordflow">if</span> (p == null) <span class="keywordflow">return</span>; <span class="comment">//failed</span>
+<a name="l00306"></a>00306 
+<a name="l00307"></a>00307             <span class="comment">//Don&#39;t allow duplicates</span>
+<a name="l00308"></a>00308             <span class="keywordflow">if</span> (!(p is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once...">IMultiInstancePlugin</a>) &amp;&amp; HasPlugin(p.GetType())) {
+<a name="l00309"></a>00309                 AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;An instance of the specified plugin (&quot;</span> + p.GetType().ToString() + <span class="stringliteral">&quot;) has already been added. Implement IMultiInstancePlugin if the plugin supports multiple instances.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
+<a name="l00310"></a>00310                 <span class="keywordflow">return</span>;
+<a name="l00311"></a>00311             }
+<a name="l00312"></a>00312 
+<a name="l00313"></a>00313             p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134" title="Installs the plugin in the specified Config instance. The plugin must handle all the work of loading ...">Install</a>(c);
+<a name="l00314"></a>00314         }
+<a name="l00315"></a>00315         <span class="keyword">protected</span> <span class="keywordtype">void</span> clear_plugins_by_type(<span class="keywordtype">string</span> type) {
+<a name="l00316"></a>00316             Type t = null;
+<a name="l00317"></a>00317             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;encoders&quot;</span>.Equals(type, StringComparison.OrdinalIgnoreCase)) t = typeof(<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a>);
+<a name="l00318"></a>00318             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;caches&quot;</span>.Equals(type, StringComparison.OrdinalIgnoreCase)) t = typeof(<a class="code" href="interface_image_resizer_1_1_caching_1_1_i_cache.html" title="Provides caching behavior.">ICache</a>);
+<a name="l00319"></a>00319             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;extensions&quot;</span>.Equals(type, StringComparison.OrdinalIgnoreCase)) t = typeof(<a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>);
+<a name="l00320"></a>00320             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;all&quot;</span>.Equals(type, StringComparison.OrdinalIgnoreCase) || type == null) t = typeof(IPlugin);
+<a name="l00321"></a>00321             <span class="keywordflow">if</span> (t == null) this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Unrecognized type value \&quot;&quot;</span> + type + <span class="stringliteral">&quot;\&quot; in &lt;clear type=\&quot;&quot;</span> + type + <span class="stringliteral">&quot;\&quot; /&gt;.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
+<a name="l00322"></a>00322             <span class="keywordflow">else</span> {
+<a name="l00323"></a>00323                 IList&lt;IPlugin&gt; results = GetPlugins(t);
+<a name="l00324"></a>00324                 <span class="keywordflow">foreach</span> (IPlugin p <span class="keywordflow">in</span> results)
+<a name="l00325"></a>00325                     <span class="keywordflow">if</span> (!p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f" title="Uninstalls the plugin. Should reverse all changes made during Install.">Uninstall</a>(c)) AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugin &quot;</span> + p.GetType().FullName + <span class="stringliteral">&quot; reported a failed uninstall attempt triggered by a &lt;clear type=\&quot;&quot;</span> + type + <span class="stringliteral">&quot;\&quot; /&gt;.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
+<a name="l00326"></a>00326             }
+<a name="l00327"></a>00327         }
+<a name="l00328"></a>00328 <span class="comment"></span>
+<a name="l00329"></a>00329 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00330"></a>00330 <span class="comment">        /// This is called to get a sorted list of plugins based on their likelyhood of having the plugin.</span>
+<a name="l00331"></a>00331 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00332"></a>00332 <span class="comment">        /// &lt;param name=&quot;assemblyName&quot;&gt;&lt;/param&gt;</span>
+<a name="l00333"></a>00333 <span class="comment">        /// &lt;param name=&quot;pluginName&quot;&gt;&lt;/param&gt;</span>
+<a name="l00334"></a>00334 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00335"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#abfd691da4173ce55ab972ce0a21cecc7">00335</a> <span class="comment"></span>        <span class="keyword">protected</span> List&lt;string&gt; <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#abfd691da4173ce55ab972ce0a21cecc7" title="This is called to get a sorted list of plugins based on their likelyhood of having the plugin...">GetOptimizedAssemblyList</a>(<span class="keywordtype">string</span> assemblyName, <span class="keywordtype">string</span> pluginName) {
+<a name="l00336"></a>00336             List&lt;string&gt; assemblies = <span class="keyword">new</span> List&lt;string&gt;();
+<a name="l00337"></a>00337             <span class="comment">//1) If an assembly was specified, search it first</span>
+<a name="l00338"></a>00338             <span class="keywordflow">if</span> (assemblyName != null) assemblies.Add(assemblyName);
+<a name="l00339"></a>00339             <span class="comment">//2) Follow by searching the Core, the currently executing assembly</span>
+<a name="l00340"></a>00340             assemblies.Add(<span class="stringliteral">&quot;&quot;</span>); <span class="comment">// Defaults to current assembly</span>
+<a name="l00341"></a>00341             <span class="comment">//3) Add ImageResizer.Plugins.X if it has no dot.</span>
+<a name="l00342"></a>00342             <span class="keywordflow">if</span> (!pluginName.Contains(<span class="stringliteral">&quot;.&quot;</span>)) assemblies.Add(<span class="stringliteral">&quot;ImageResizer.Plugins.&quot;</span> + pluginName);
+<a name="l00343"></a>00343 
+<a name="l00344"></a>00344             <span class="comment">//4) Next, add all assemblies that have &quot;ImageResizer&quot; in their name </span>
+<a name="l00345"></a>00345 
+<a name="l00346"></a>00346 
+<a name="l00347"></a>00347             List&lt;string&gt; otherAssemblies = <span class="keyword">new</span> List&lt;string&gt;();
+<a name="l00348"></a>00348             <span class="comment">//Add ImageResizer-related assemblies first</span>
+<a name="l00349"></a>00349             <span class="keywordflow">foreach</span> (Assembly a <span class="keywordflow">in</span> AppDomain.CurrentDomain.GetAssemblies()) {<span class="comment">// AppDomain.CurrentDomain.GetAssemblies()</span>
+<a name="l00350"></a>00350                 <span class="keywordtype">string</span> aname = a.FullName;
+<a name="l00351"></a>00351                 <span class="keywordflow">if</span> (aname.IndexOf(<span class="stringliteral">&quot;ImageResizer&quot;</span>, StringComparison.OrdinalIgnoreCase) &gt; -1) assemblies.Add(<span class="stringliteral">&quot;, &quot;</span> + aname);
+<a name="l00352"></a>00352                 <span class="keywordflow">else</span>
+<a name="l00353"></a>00353                     otherAssemblies.Add(<span class="stringliteral">&quot;, &quot;</span> + aname);
+<a name="l00354"></a>00354             }
+<a name="l00355"></a>00355             <span class="comment">//5) Last, add all remaining assemblies</span>
+<a name="l00356"></a>00356             assemblies.AddRange(otherAssemblies);
+<a name="l00357"></a>00357             <span class="keywordflow">return</span> assemblies;
+<a name="l00358"></a>00358         }
+<a name="l00359"></a>00359 <span class="comment"></span>
+<a name="l00360"></a>00360 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00361"></a>00361 <span class="comment">        /// Searches all loaded assemblies for the specified type, applying rules and prefixes to resolve the namespace and assembly.</span>
+<a name="l00362"></a>00362 <span class="comment">        /// Returns null if it could not find the type, and logs an issue.</span>
+<a name="l00363"></a>00363 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00364"></a>00364 <span class="comment">        /// &lt;param name=&quot;searchName&quot;&gt;&lt;/param&gt;</span>
+<a name="l00365"></a>00365 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00366"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a6157bc4f920bfe02b0190353daef3faa">00366</a> <span class="comment"></span>        <span class="keyword">public</span> Type <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a6157bc4f920bfe02b0190353daef3faa" title="Searches all loaded assemblies for the specified type, applying rules and prefixes to resolve the nam...">FindPluginType</a>(<span class="keywordtype">string</span> searchName) {
+<a name="l00367"></a>00367             Type t = null;
+<a name="l00368"></a>00368 
+<a name="l00369"></a>00369             <span class="keywordtype">int</span> commaAt = searchName.IndexOf(<span class="charliteral">&#39;,&#39;</span>);
+<a name="l00370"></a>00370             <span class="keywordtype">int</span> dotAt = searchName.IndexOf(<span class="charliteral">&#39;.&#39;</span>);
+<a name="l00371"></a>00371 
+<a name="l00372"></a>00372             <span class="comment">//If there is a dot or period, try the exact name first.</span>
+<a name="l00373"></a>00373             <span class="keywordflow">if</span> (dotAt &gt; -1 || commaAt &gt; -1)
+<a name="l00374"></a>00374                 t = Type.GetType(searchName, <span class="keyword">false</span>, <span class="keyword">true</span>);
+<a name="l00375"></a>00375 
+<a name="l00376"></a>00376             <span class="keywordflow">if</span> (t != null) <span class="keywordflow">return</span> t;
+<a name="l00377"></a>00377 
+<a name="l00378"></a>00378             <span class="comment">//Split the name and assembly apart</span>
+<a name="l00379"></a>00379             <span class="keywordtype">string</span> assembly = commaAt &gt; -1 ? searchName.Substring(commaAt) : null;
+<a name="l00380"></a>00380             <span class="keywordtype">string</span> name = commaAt &gt; -1 ? searchName.Substring(0, commaAt) : searchName;
+<a name="l00381"></a>00381 
+<a name="l00382"></a>00382             <span class="comment">//Without the assembly specified, does it still have a name?</span>
+<a name="l00383"></a>00383             <span class="keywordtype">bool</span> hasDot = name.IndexOf(<span class="charliteral">&#39;.&#39;</span>) &gt; -1;
+<a name="l00384"></a>00384 
+<a name="l00385"></a>00385             List&lt;string&gt; alternateNames = <span class="keyword">new</span> List&lt;string&gt;();
+<a name="l00386"></a>00386             <span class="comment">//ImageResizer.Plugins.Basic.DefaultEncoder</span>
+<a name="l00387"></a>00387             <span class="keywordflow">if</span> (hasDot) alternateNames.Add(name);
+<a name="l00388"></a>00388             <span class="comment">//DefaultEncoder, NoCache, etc.</span>
+<a name="l00389"></a>00389             alternateNames.Add(<span class="stringliteral">&quot;ImageResizer.Plugins.Basic.&quot;</span> + name.TrimStart(<span class="charliteral">&#39;.&#39;</span>));
+<a name="l00390"></a>00390             <span class="comment">//Apr4-2012 - Deleted, never used: alternateNames.Add(&quot;ImageResizer.Plugins.Pro.&quot; + name.TrimStart(&#39;.&#39;));</span>
+<a name="l00391"></a>00391             <span class="comment">//AnimatedGifs</span>
+<a name="l00392"></a>00392             <span class="keywordflow">if</span> (!hasDot) alternateNames.Add(<span class="stringliteral">&quot;ImageResizer.Plugins.&quot;</span> + name.Trim(<span class="charliteral">&#39;.&#39;</span>) + <span class="stringliteral">&quot;.&quot;</span> + name.Trim(<span class="charliteral">&#39;.&#39;</span>) + <span class="stringliteral">&quot;Plugin&quot;</span>);
+<a name="l00393"></a>00393             <span class="comment">//AnimatedGifsPlugin</span>
+<a name="l00394"></a>00394             <span class="keywordflow">if</span> (!hasDot &amp;&amp; name.EndsWith(<span class="stringliteral">&quot;Plugin&quot;</span>))
+<a name="l00395"></a>00395                 alternateNames.Add(<span class="stringliteral">&quot;ImageResizer.Plugins.&quot;</span> + name.Substring(0, name.Length - 6).Trim(<span class="charliteral">&#39;.&#39;</span>) + <span class="stringliteral">&quot;.&quot;</span> + name.Trim(<span class="charliteral">&#39;.&#39;</span>));
+<a name="l00396"></a>00396             <span class="comment">//Apr4-2012 - Deleted, never used: //Basic.DefaultEncoder</span>
+<a name="l00397"></a>00397             <span class="comment">//Apr4-2012 - Deleted, never used: alternateNames.Add(&quot;ImageResizer.Plugins.&quot; + name.TrimStart(&#39;.&#39;));</span>
+<a name="l00398"></a>00398             <span class="comment">//For the deprecated convention of naming the plugin namespace and class the same.</span>
+<a name="l00399"></a>00399             <span class="keywordflow">if</span> (!hasDot) alternateNames.Add(<span class="stringliteral">&quot;ImageResizer.Plugins.&quot;</span> + name.Trim(<span class="charliteral">&#39;.&#39;</span>) + <span class="stringliteral">&quot;.&quot;</span> + name.Trim(<span class="charliteral">&#39;.&#39;</span>));
+<a name="l00400"></a>00400             <span class="comment">//Apr4-2012 - Deleted, never used: //Plugins.Basic.DefaultEncoder</span>
+<a name="l00401"></a>00401             <span class="comment">//Apr4-2012 - Deleted, never used: alternateNames.Add(&quot;ImageResizer.&quot; + name.TrimStart(&#39;.&#39;));</span>
+<a name="l00402"></a>00402             <span class="comment">//PluginWithNoNamespace</span>
+<a name="l00403"></a>00403             <span class="keywordflow">if</span> (!hasDot) alternateNames.Add(name);
 <a name="l00404"></a>00404 
-<a name="l00405"></a>00405             <span class="keywordflow">try</span> {
-<a name="l00406"></a>00406                 <span class="comment">//Now, try them all.</span>
-<a name="l00407"></a>00407                 <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> s <span class="keywordflow">in</span> qualifiedNames) {
-<a name="l00408"></a>00408                     Debug.WriteLine(<span class="stringliteral">&quot;Trying &quot;</span> + s);
-<a name="l00409"></a>00409                     t = Type.GetType(s, <span class="keyword">false</span>, <span class="keyword">true</span>);
-<a name="l00410"></a>00410                     <span class="keywordflow">if</span> (t != null) {
-<a name="l00411"></a>00411                         Debug.WriteLine(<span class="stringliteral">&quot;Success!&quot;</span>);
-<a name="l00412"></a>00412                         <span class="keywordflow">return</span> t;
-<a name="l00413"></a>00413                     }
-<a name="l00414"></a>00414                 }
-<a name="l00415"></a>00415             } <span class="keywordflow">catch</span> (System.Security.SecurityException sx) {
-<a name="l00416"></a>00416                 this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Failed to load plugin \&quot;&quot;</span> + searchName + <span class="stringliteral">&quot;\&quot; due to ASP.NET trust configuration. &quot;</span>,
-<a name="l00417"></a>00417                                 <span class="stringliteral">&quot;You may need to increase the trust level for this plugin to load properly. Error details: \n&quot;</span> +
-<a name="l00418"></a>00418                                 sx.Message + <span class="stringliteral">&quot;\n&quot;</span> + sx.StackTrace, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
-<a name="l00419"></a>00419                 <span class="keywordflow">return</span> null;
-<a name="l00420"></a>00420             }
-<a name="l00421"></a>00421 
-<a name="l00422"></a>00422             <span class="comment">//Ok, time to log problem.</span>
-<a name="l00423"></a>00423             <span class="keywordflow">if</span> (t == null) {
-<a name="l00424"></a>00424                 StringBuilder attempts = <span class="keyword">new</span> StringBuilder();
-<a name="l00425"></a>00425                 <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> s <span class="keywordflow">in</span> qualifiedNames)
-<a name="l00426"></a>00426                     attempts.Append(<span class="stringliteral">&quot;, \&quot;&quot;</span> + s + <span class="stringliteral">&quot;\&quot;&quot;</span>);
-<a name="l00427"></a>00427                 this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Failed to load plugin by name \&quot;&quot;</span> + searchName + <span class="stringliteral">&quot;\&quot;&quot;</span>,
-<a name="l00428"></a>00428                     <span class="stringliteral">&quot;Verify the plugin DLL is located in /bin, and that the name is spelled correctly. \n&quot;</span> +
-<a name="l00429"></a>00429                     <span class="stringliteral">&quot;Attempted using \&quot;&quot;</span> + searchName + <span class="stringliteral">&quot;\&quot;&quot;</span> + attempts.ToString() + <span class="stringliteral">&quot;.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
-<a name="l00430"></a>00430             }
-<a name="l00431"></a>00431             <span class="keywordflow">return</span> t;
-<a name="l00432"></a>00432         }
-<a name="l00433"></a>00433 
-<a name="l00434"></a>00434 
-<a name="l00435"></a>00435         <span class="keyword">protected</span> IPlugin CreatePluginByName(<span class="keywordtype">string</span> name, NameValueCollection args) {
-<a name="l00436"></a>00436             Type t = FindPluginType(name);
-<a name="l00437"></a>00437 
-<a name="l00438"></a>00438             <span class="keywordflow">if</span> (t == null) <span class="keywordflow">return</span> null;
-<a name="l00439"></a>00439             <span class="keywordflow">return</span> CreatePluginByType(t, args);
-<a name="l00440"></a>00440         }
-<a name="l00441"></a>00441 
-<a name="l00442"></a>00442         <span class="keyword">protected</span> IPlugin CreatePluginByType(Type t, NameValueCollection args) {
-<a name="l00443"></a>00443 
-<a name="l00444"></a>00444             <span class="comment">//TODO - perhaps manually select the constructor ? </span>
-<a name="l00445"></a>00445             <span class="comment">//ConstructorInfo ci = null;</span>
-<a name="l00446"></a>00446             <span class="keywordtype">bool</span> downloadDependencies = <span class="keyword">false</span>;
-<a name="l00447"></a>00447             <span class="keywordflow">if</span> (args != null &amp;&amp; args[<span class="stringliteral">&quot;downloadNativeDependencies&quot;</span>] != null) {
-<a name="l00448"></a>00448                 downloadDependencies = <span class="stringliteral">&quot;true&quot;</span>.Equals(args[<span class="stringliteral">&quot;downloadNativeDependencies&quot;</span>], StringComparison.OrdinalIgnoreCase);
-<a name="l00449"></a>00449                 <span class="keywordflow">if</span> (args.Count == 2) args = null; <span class="comment">//Don&#39;t require plugins to have an argument-supporting constructor just for downloadNativeDependencies</span>
-<a name="l00450"></a>00450                 <span class="comment">//&#39;name&#39; is included in args, remember.</span>
-<a name="l00451"></a>00451                 ndeps.EnsureLoaded(t.Assembly);
-<a name="l00452"></a>00452             }
-<a name="l00453"></a>00453 
+<a name="l00405"></a>00405             <span class="comment">//Get a list of assemblies, sorted by likelyhood of a match</span>
+<a name="l00406"></a>00406             List&lt;string&gt; assemblies = GetOptimizedAssemblyList(assembly,name);
+<a name="l00407"></a>00407             <span class="comment">//Now multiply </span>
+<a name="l00408"></a>00408             List&lt;string&gt; qualifiedNames = <span class="keyword">new</span> List&lt;string&gt;(assemblies.Count * alternateNames.Count);
+<a name="l00409"></a>00409 
+<a name="l00410"></a>00410             <span class="comment">//For each assembly, try each namespace-qualified class name.</span>
+<a name="l00411"></a>00411             <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> assemblyName <span class="keywordflow">in</span> assemblies) {
+<a name="l00412"></a>00412                 <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> className <span class="keywordflow">in</span> alternateNames)
+<a name="l00413"></a>00413                     qualifiedNames.Add(className + assemblyName);
+<a name="l00414"></a>00414             }
+<a name="l00415"></a>00415 
+<a name="l00416"></a>00416             <span class="keywordflow">try</span> {
+<a name="l00417"></a>00417                 <span class="comment">//Now, try them all.</span>
+<a name="l00418"></a>00418                 <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> s <span class="keywordflow">in</span> qualifiedNames) {
+<a name="l00419"></a>00419                     Debug.WriteLine(<span class="stringliteral">&quot;Trying &quot;</span> + s);
+<a name="l00420"></a>00420                     t = Type.GetType(s, <span class="keyword">false</span>, <span class="keyword">true</span>);
+<a name="l00421"></a>00421                     <span class="keywordflow">if</span> (t != null) {
+<a name="l00422"></a>00422                         Debug.WriteLine(<span class="stringliteral">&quot;Success!&quot;</span>);
+<a name="l00423"></a>00423                         <span class="keywordflow">return</span> t;
+<a name="l00424"></a>00424                     }
+<a name="l00425"></a>00425                 }
+<a name="l00426"></a>00426             } <span class="keywordflow">catch</span> (System.Security.SecurityException sx) {
+<a name="l00427"></a>00427                 this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Failed to load plugin \&quot;&quot;</span> + searchName + <span class="stringliteral">&quot;\&quot; due to ASP.NET trust configuration. &quot;</span>,
+<a name="l00428"></a>00428                                 <span class="stringliteral">&quot;You may need to increase the trust level for this plugin to load properly. Error details: \n&quot;</span> +
+<a name="l00429"></a>00429                                 sx.Message + <span class="stringliteral">&quot;\n&quot;</span> + sx.StackTrace, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
+<a name="l00430"></a>00430                 <span class="keywordflow">return</span> null;
+<a name="l00431"></a>00431             }
+<a name="l00432"></a>00432 
+<a name="l00433"></a>00433             <span class="comment">//Ok, time to log problem.</span>
+<a name="l00434"></a>00434             <span class="keywordflow">if</span> (t == null) {
+<a name="l00435"></a>00435                 StringBuilder attempts = <span class="keyword">new</span> StringBuilder();
+<a name="l00436"></a>00436                 <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> s <span class="keywordflow">in</span> qualifiedNames)
+<a name="l00437"></a>00437                     attempts.Append(<span class="stringliteral">&quot;, \&quot;&quot;</span> + s + <span class="stringliteral">&quot;\&quot;&quot;</span>);
+<a name="l00438"></a>00438                 this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Failed to load plugin by name \&quot;&quot;</span> + searchName + <span class="stringliteral">&quot;\&quot;&quot;</span>,
+<a name="l00439"></a>00439                     <span class="stringliteral">&quot;Verify the plugin DLL is located in /bin, and that the name is spelled correctly. \n&quot;</span> +
+<a name="l00440"></a>00440                     <span class="stringliteral">&quot;Attempted using \&quot;&quot;</span> + searchName + <span class="stringliteral">&quot;\&quot;&quot;</span> + attempts.ToString() + <span class="stringliteral">&quot;.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
+<a name="l00441"></a>00441             }
+<a name="l00442"></a>00442             <span class="keywordflow">return</span> t;
+<a name="l00443"></a>00443         }
+<a name="l00444"></a>00444 
+<a name="l00445"></a>00445 
+<a name="l00446"></a>00446         <span class="keyword">protected</span> IPlugin CreatePluginByName(<span class="keywordtype">string</span> name, NameValueCollection args) {
+<a name="l00447"></a>00447             Type t = FindPluginType(name);
+<a name="l00448"></a>00448 
+<a name="l00449"></a>00449             <span class="keywordflow">if</span> (t == null) <span class="keywordflow">return</span> null;
+<a name="l00450"></a>00450             <span class="keywordflow">return</span> CreatePluginByType(t, args);
+<a name="l00451"></a>00451         }
+<a name="l00452"></a>00452 
+<a name="l00453"></a>00453         <span class="keyword">protected</span> IPlugin CreatePluginByType(Type t, NameValueCollection args) {
 <a name="l00454"></a>00454 
-<a name="l00455"></a>00455 
-<a name="l00456"></a>00456             <span class="keywordtype">bool</span> hasConstructor = <span class="keyword">true</span>;
-<a name="l00457"></a>00457             <span class="keywordflow">if</span> (args != null &amp;&amp; t.GetConstructor(<span class="keyword">new</span> Type[] { typeof(NameValueCollection) }) == null) {
-<a name="l00458"></a>00458                 args = null; <span class="comment">//The plugin doesn&#39;t accept arguments</span>
-<a name="l00459"></a>00459                 this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugins&quot;</span>, <span class="stringliteral">&quot;The plugin &quot;</span> + t.ToString() + <span class="stringliteral">&quot; doesn&#39;t support constructor arguments.&quot;</span>,
-<a name="l00460"></a>00460                     <span class="stringliteral">&quot;To support arguments in the &lt;add&gt; element, the plugin must have a public constructor that accepts a NameValueCollection argument.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
-<a name="l00461"></a>00461             } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args == null &amp;&amp; t.GetConstructor(System.Type.EmptyTypes) == null) {
-<a name="l00462"></a>00462                 <span class="keywordtype">bool</span> acceptsArgs = t.GetConstructor(<span class="keyword">new</span> Type[] { typeof(NameValueCollection) }) == null;
-<a name="l00463"></a>00463 
-<a name="l00464"></a>00464                 <span class="keywordflow">if</span> (acceptsArgs)
-<a name="l00465"></a>00465                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugins&quot;</span>, <span class="stringliteral">&quot;The plugin &quot;</span> + t.ToString() + <span class="stringliteral">&quot; requires arguments in the &lt;add&gt; element. Refer to the plugin documentation for details.&quot;</span>,
-<a name="l00466"></a>00466                     null, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
-<a name="l00467"></a>00467                 <span class="keywordflow">else</span> {
-<a name="l00468"></a>00468                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugins&quot;</span>, <span class="stringliteral">&quot;The plugin &quot;</span> + t.ToString() + <span class="stringliteral">&quot; does not have a constuctor   Constructor() or Constructor(NameValueCollection args).&quot;</span>
-<a name="l00469"></a>00469                     , <span class="stringliteral">&quot;To be compatible with the &lt;plugins&gt; section, a plugin must implement IPlugin and define one or more of the above constructors publicly.&quot;</span>,
-<a name="l00470"></a>00470                      <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Critical));
-<a name="l00471"></a>00471                     hasConstructor = <span class="keyword">false</span>;
-<a name="l00472"></a>00472                 }
-<a name="l00473"></a>00473             } 
-<a name="l00474"></a>00474             <span class="keywordflow">if</span> (hasConstructor || Debugger.IsAttached){
-<a name="l00475"></a>00475 
-<a name="l00476"></a>00476                 <span class="keywordtype">object</span> plugin = null;
-<a name="l00477"></a>00477                 <span class="keywordflow">if</span> (args == null)
-<a name="l00478"></a>00478                     plugin = Activator.CreateInstance(t, <span class="keyword">false</span>);
-<a name="l00479"></a>00479                 <span class="keywordflow">else</span>
-<a name="l00480"></a>00480                     plugin = Activator.CreateInstance(t, args);
-<a name="l00481"></a>00481 
-<a name="l00482"></a>00482                 <span class="keywordflow">if</span> (!(plugin is IPlugin))
-<a name="l00483"></a>00483                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugins&quot;</span>, <span class="stringliteral">&quot;Specified plugin doesn&#39;t implement IPlugin as required: &quot;</span> + t.ToString(), null, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
-<a name="l00484"></a>00484                 <span class="keywordflow">return</span> plugin as IPlugin;
-<a name="l00485"></a>00485             }
-<a name="l00486"></a>00486             <span class="keywordflow">return</span> null;
-<a name="l00487"></a>00487         }
-<a name="l00488"></a>00488 
-<a name="l00489"></a>00489 
-<a name="l00490"></a>00490 
-<a name="l00491"></a>00491 <span class="comment"></span>
-<a name="l00492"></a>00492 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00493"></a>00493 <span class="comment">        /// For use only by plugins during .Uninstall.</span>
-<a name="l00494"></a>00494 <span class="comment">        /// Removes the specified plugin from AllPlugins, QuerystringPlugins, CachingSystems, ImageEncoders, and ImageBuiderExtensions, based</span>
-<a name="l00495"></a>00495 <span class="comment">        /// on which interfaces the instance implements.</span>
-<a name="l00496"></a>00496 <span class="comment">        /// Plugins may register event handlers and modify settings - thus you should use the plugin&#39;s method to uninstall them vs. using this method.</span>
-<a name="l00497"></a>00497 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00498"></a>00498 <span class="comment">        /// &lt;param name=&quot;plugin&quot;&gt;&lt;/param&gt;</span>
-<a name="l00499"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a0aae69c8ce761b0b5869fd63e2bcb863">00499</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a0aae69c8ce761b0b5869fd63e2bcb863" title="For use only by plugins during .Uninstall. Removes the specified plugin from AllPlugins, QuerystringPlugins, CachingSystems, ImageEncoders, and ImageBuiderExtensions, based on which interfaces the instance implements. Plugins may register event handlers and modify settings - thus you should use the plugin&#39;s method to uninstall them vs. using this method.">remove_plugin</a>(<span class="keywordtype">object</span> plugin) {
-<a name="l00500"></a>00500             <span class="keywordflow">if</span> (plugin is IPlugin) AllPlugins.Remove(plugin as IPlugin);
-<a name="l00501"></a>00501             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)">IQuerystringPlugin</a>) QuerystringPlugins.Remove(plugin as IQuerystringPlugin);
-<a name="l00502"></a>00502             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions.">IFileExtensionPlugin</a>) FileExtensionPlugins.Remove(plugin as IFileExtensionPlugin);
-<a name="l00503"></a>00503             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_caching_1_1_i_cache.html" title="Provides caching behavior.">ICache</a>) CachingSystems.Remove(plugin as ICache);
-<a name="l00504"></a>00504             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a>) ImageEncoders.Remove(plugin as IEncoder);
-<a name="l00505"></a>00505             <span class="keywordflow">if</span> (plugin is <a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>) ImageBuilderExtensions.Remove(plugin as BuilderExtension);
-<a name="l00506"></a>00506             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a>) VirtualProviderPlugins.Remove(plugin as IVirtualImageProvider);
-<a name="l00507"></a>00507             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to...">ISettingsModifier</a>) SettingsModifierPlugins.Remove(plugin as ISettingsModifier);
-<a name="l00508"></a>00508             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a> &amp;&amp; LogManager == plugin) LogManager = null;
-<a name="l00509"></a>00509         }
-<a name="l00510"></a>00510 <span class="comment"></span>
-<a name="l00511"></a>00511 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00512"></a>00512 <span class="comment">        /// Only for use by plugins during IPlugin.Install. Call Plugin.Install instead of this method, since plugins often must perform other initialization actions.</span>
-<a name="l00513"></a>00513 <span class="comment">        /// Adds the specified plugin to AllPlugins, QuerystringPlugins, CachingSystems, ImageEncoders, and ImageBuiderExtensions, based</span>
-<a name="l00514"></a>00514 <span class="comment">        /// on which interfaces the instance implements. For ICache and IEncoder, the plugin is inserted at the beginning of CachingSystems and ImageEncoders respectively.</span>
-<a name="l00515"></a>00515 <span class="comment">        /// To reiterate, plugins may register event handlers and modify settings - thus you should use the plugin&#39;s method to uninstall them vs. using this method.</span>
-<a name="l00516"></a>00516 <span class="comment">        /// Will not register a plugin that is already installed, unless it implementes IMultiInstancePlugin.</span>
-<a name="l00517"></a>00517 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00518"></a>00518 <span class="comment">        /// &lt;param name=&quot;plugin&quot;&gt;&lt;/param&gt;</span>
-<a name="l00519"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a24a5d36dc59eee7d980a8e9b4d00ead1">00519</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a24a5d36dc59eee7d980a8e9b4d00ead1" title="Only for use by plugins during IPlugin.Install. Call Plugin.Install instead of this method...">add_plugin</a>(IPlugin plugin) {
-<a name="l00520"></a>00520             <span class="keywordflow">if</span> (!(plugin is IMultiInstancePlugin) &amp;&amp; HasPlugin(plugin.GetType())) {
-<a name="l00521"></a>00521                 AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;An instance of the specified plugin (&quot;</span> + plugin.GetType().ToString() + <span class="stringliteral">&quot;) has already been registered.&quot;</span>,
-<a name="l00522"></a>00522                                     <span class="stringliteral">&quot;The plugin should implement IMultiInstancePlugin to support multiple instances.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
-<a name="l00523"></a>00523                 <span class="keywordflow">return</span>;
-<a name="l00524"></a>00524             }
-<a name="l00525"></a>00525             
-<a name="l00526"></a>00526             AllPlugins.Add(plugin);
-<a name="l00527"></a>00527             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)">IQuerystringPlugin</a>) QuerystringPlugins.Add(plugin as IQuerystringPlugin);
-<a name="l00528"></a>00528             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions.">IFileExtensionPlugin</a>) FileExtensionPlugins.Add(plugin as IFileExtensionPlugin);
-<a name="l00529"></a>00529             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_caching_1_1_i_cache.html" title="Provides caching behavior.">ICache</a>) CachingSystems.AddFirst(plugin as ICache);
-<a name="l00530"></a>00530             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a>) ImageEncoders.AddFirst(plugin as IEncoder);
-<a name="l00531"></a>00531             <span class="keywordflow">if</span> (plugin is <a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>) ImageBuilderExtensions.Add(plugin as BuilderExtension);
-<a name="l00532"></a>00532             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a>) VirtualProviderPlugins.Add(plugin as IVirtualImageProvider);
-<a name="l00533"></a>00533             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to...">ISettingsModifier</a>) SettingsModifierPlugins.Add(plugin as ISettingsModifier);
-<a name="l00534"></a>00534             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a>) LogManager = plugin as ILogManager;
-<a name="l00535"></a>00535         }
-<a name="l00536"></a>00536 
-<a name="l00537"></a>00537 
-<a name="l00538"></a>00538 
-<a name="l00539"></a>00539 <span class="comment"></span>
-<a name="l00540"></a>00540 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00541"></a>00541 <span class="comment">        /// Removes all plugins, of every kind. Logs any errors encountered. (Not all plugins support uninstallation)</span>
-<a name="l00542"></a>00542 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00543"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a57ce330ef6dbb0322d337f6c1f075e9e">00543</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a57ce330ef6dbb0322d337f6c1f075e9e" title="Removes all plugins, of every kind. Logs any errors encountered. (Not all plugins support uninstallat...">RemoveAll</a>() {
-<a name="l00544"></a>00544             <span class="comment">//Follow uninstall protocol</span>
-<a name="l00545"></a>00545             <span class="keywordflow">foreach</span> (IPlugin p <span class="keywordflow">in</span> AllPlugins)
-<a name="l00546"></a>00546                 <span class="keywordflow">if</span> (!p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f" title="Uninstalls the plugin. Should reverse all changes made during Install.">Uninstall</a>(c))
-<a name="l00547"></a>00547                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Uninstall of &quot;</span> + p.ToString() + <span class="stringliteral">&quot; reported failure.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
-<a name="l00548"></a>00548 
-<a name="l00549"></a>00549             IList[] collections = <span class="keyword">new</span> IList[]{AllPlugins.GetCollection(),QuerystringPlugins.GetCollection(),FileExtensionPlugins.GetCollection()
-<a name="l00550"></a>00550                                                 ,CachingSystems.GetCollection(),ImageEncoders.GetCollection(),ImageBuilderExtensions.GetCollection()};
-<a name="l00551"></a>00551             <span class="comment">//Then check all collections, logging an issue if they aren&#39;t empty.</span>
-<a name="l00552"></a>00552             <span class="keywordflow">foreach</span>(IList coll <span class="keywordflow">in</span> collections){
-<a name="l00553"></a>00553                 <span class="keywordflow">if</span> (coll.Count &gt; 0){
-<a name="l00554"></a>00554                     <span class="keywordtype">string</span> items = <span class="stringliteral">&quot;&quot;</span>;
-<a name="l00555"></a>00555                     <span class="keywordflow">foreach</span>(<span class="keywordtype">object</span> item <span class="keywordflow">in</span> coll)
-<a name="l00556"></a>00556                         items += item.ToString() + <span class="stringliteral">&quot;, &quot;</span>;
-<a name="l00557"></a>00557 
-<a name="l00558"></a>00558                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Collection &quot;</span> + coll.ToString() + <span class="stringliteral">&quot; was not empty after RemoveAllPlugins() executed!&quot;</span>,
-<a name="l00559"></a>00559                                         <span class="stringliteral">&quot;Remaining items: &quot;</span> + items, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
-<a name="l00560"></a>00560                 }
-<a name="l00561"></a>00561             }
-<a name="l00562"></a>00562         }
-<a name="l00563"></a>00563 
-<a name="l00564"></a>00564 
-<a name="l00565"></a>00565 
-<a name="l00566"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#add9c59824bbfe64688ec0329c6e223bc">00566</a>         <span class="keyword">public</span> <span class="keyword">override</span> IEnumerable&lt;IIssue&gt; <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#add9c59824bbfe64688ec0329c6e223bc" title="Returns a copy of the list of reported issues.">GetIssues</a>() {
-<a name="l00567"></a>00567             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;(base.GetIssues());
-<a name="l00568"></a>00568             <span class="comment">//Verify all plugins are registered as IPlugins also.</span>
-<a name="l00569"></a>00569 
+<a name="l00455"></a>00455             <span class="comment">//TODO - perhaps manually select the constructor ? </span>
+<a name="l00456"></a>00456             <span class="comment">//ConstructorInfo ci = null;</span>
+<a name="l00457"></a>00457             <span class="keywordtype">bool</span> downloadDependencies = <span class="keyword">false</span>;
+<a name="l00458"></a>00458             <span class="keywordflow">if</span> (args != null &amp;&amp; args[<span class="stringliteral">&quot;downloadNativeDependencies&quot;</span>] != null) {
+<a name="l00459"></a>00459                 downloadDependencies = <span class="stringliteral">&quot;true&quot;</span>.Equals(args[<span class="stringliteral">&quot;downloadNativeDependencies&quot;</span>], StringComparison.OrdinalIgnoreCase);
+<a name="l00460"></a>00460                 <span class="keywordflow">if</span> (args.Count == 2) args = null; <span class="comment">//Don&#39;t require plugins to have an argument-supporting constructor just for downloadNativeDependencies</span>
+<a name="l00461"></a>00461                 <span class="comment">//&#39;name&#39; is included in args, remember.</span>
+<a name="l00462"></a>00462                 ndeps.EnsureLoaded(t.Assembly);
+<a name="l00463"></a>00463             }
+<a name="l00464"></a>00464 
+<a name="l00465"></a>00465 
+<a name="l00466"></a>00466 
+<a name="l00467"></a>00467             <span class="keywordtype">bool</span> hasConstructor = <span class="keyword">true</span>;
+<a name="l00468"></a>00468             <span class="keywordflow">if</span> (args != null &amp;&amp; t.GetConstructor(<span class="keyword">new</span> Type[] { typeof(NameValueCollection) }) == null) {
+<a name="l00469"></a>00469                 args = null; <span class="comment">//The plugin doesn&#39;t accept arguments</span>
+<a name="l00470"></a>00470                 this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugins&quot;</span>, <span class="stringliteral">&quot;The plugin &quot;</span> + t.ToString() + <span class="stringliteral">&quot; doesn&#39;t support constructor arguments.&quot;</span>,
+<a name="l00471"></a>00471                     <span class="stringliteral">&quot;To support arguments in the &lt;add&gt; element, the plugin must have a public constructor that accepts a NameValueCollection argument.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
+<a name="l00472"></a>00472             } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (args == null &amp;&amp; t.GetConstructor(System.Type.EmptyTypes) == null) {
+<a name="l00473"></a>00473                 <span class="keywordtype">bool</span> acceptsArgs = t.GetConstructor(<span class="keyword">new</span> Type[] { typeof(NameValueCollection) }) == null;
+<a name="l00474"></a>00474 
+<a name="l00475"></a>00475                 <span class="keywordflow">if</span> (acceptsArgs)
+<a name="l00476"></a>00476                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugins&quot;</span>, <span class="stringliteral">&quot;The plugin &quot;</span> + t.ToString() + <span class="stringliteral">&quot; requires arguments in the &lt;add&gt; element. Refer to the plugin documentation for details.&quot;</span>,
+<a name="l00477"></a>00477                     null, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
+<a name="l00478"></a>00478                 <span class="keywordflow">else</span> {
+<a name="l00479"></a>00479                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugins&quot;</span>, <span class="stringliteral">&quot;The plugin &quot;</span> + t.ToString() + <span class="stringliteral">&quot; does not have a constuctor   Constructor() or Constructor(NameValueCollection args).&quot;</span>
+<a name="l00480"></a>00480                     , <span class="stringliteral">&quot;To be compatible with the &lt;plugins&gt; section, a plugin must implement IPlugin and define one or more of the above constructors publicly.&quot;</span>,
+<a name="l00481"></a>00481                      <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Critical));
+<a name="l00482"></a>00482                     hasConstructor = <span class="keyword">false</span>;
+<a name="l00483"></a>00483                 }
+<a name="l00484"></a>00484             } 
+<a name="l00485"></a>00485             <span class="keywordflow">if</span> (hasConstructor || Debugger.IsAttached){
+<a name="l00486"></a>00486 
+<a name="l00487"></a>00487                 <span class="keywordtype">object</span> plugin = null;
+<a name="l00488"></a>00488                 <span class="keywordflow">if</span> (args == null)
+<a name="l00489"></a>00489                     plugin = Activator.CreateInstance(t, <span class="keyword">false</span>);
+<a name="l00490"></a>00490                 <span class="keywordflow">else</span>
+<a name="l00491"></a>00491                     plugin = Activator.CreateInstance(t, args);
+<a name="l00492"></a>00492 
+<a name="l00493"></a>00493                 <span class="keywordflow">if</span> (!(plugin is IPlugin))
+<a name="l00494"></a>00494                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Plugins&quot;</span>, <span class="stringliteral">&quot;Specified plugin doesn&#39;t implement IPlugin as required: &quot;</span> + t.ToString(), null, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
+<a name="l00495"></a>00495                 <span class="keywordflow">return</span> plugin as IPlugin;
+<a name="l00496"></a>00496             }
+<a name="l00497"></a>00497             <span class="keywordflow">return</span> null;
+<a name="l00498"></a>00498         }
+<a name="l00499"></a>00499 
+<a name="l00500"></a>00500 
+<a name="l00501"></a>00501 
+<a name="l00502"></a>00502 <span class="comment"></span>
+<a name="l00503"></a>00503 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00504"></a>00504 <span class="comment">        /// For use only by plugins during .Uninstall.</span>
+<a name="l00505"></a>00505 <span class="comment">        /// Removes the specified plugin from AllPlugins, QuerystringPlugins, CachingSystems, ImageEncoders, and ImageBuiderExtensions, based</span>
+<a name="l00506"></a>00506 <span class="comment">        /// on which interfaces the instance implements.</span>
+<a name="l00507"></a>00507 <span class="comment">        /// Plugins may register event handlers and modify settings - thus you should use the plugin&#39;s method to uninstall them vs. using this method.</span>
+<a name="l00508"></a>00508 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00509"></a>00509 <span class="comment">        /// &lt;param name=&quot;plugin&quot;&gt;&lt;/param&gt;</span>
+<a name="l00510"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a0aae69c8ce761b0b5869fd63e2bcb863">00510</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a0aae69c8ce761b0b5869fd63e2bcb863" title="For use only by plugins during .Uninstall. Removes the specified plugin from AllPlugins, QuerystringPlugins, CachingSystems, ImageEncoders, and ImageBuiderExtensions, based on which interfaces the instance implements. Plugins may register event handlers and modify settings - thus you should use the plugin&#39;s method to uninstall them vs. using this method.">remove_plugin</a>(<span class="keywordtype">object</span> plugin) {
+<a name="l00511"></a>00511             <span class="keywordflow">if</span> (plugin is IPlugin) AllPlugins.Remove(plugin as IPlugin);
+<a name="l00512"></a>00512             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)">IQuerystringPlugin</a>) QuerystringPlugins.Remove(plugin as IQuerystringPlugin);
+<a name="l00513"></a>00513             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions.">IFileExtensionPlugin</a>) FileExtensionPlugins.Remove(plugin as IFileExtensionPlugin);
+<a name="l00514"></a>00514             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_caching_1_1_i_cache.html" title="Provides caching behavior.">ICache</a>) CachingSystems.Remove(plugin as ICache);
+<a name="l00515"></a>00515             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a>) ImageEncoders.Remove(plugin as IEncoder);
+<a name="l00516"></a>00516             <span class="keywordflow">if</span> (plugin is <a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>) ImageBuilderExtensions.Remove(plugin as BuilderExtension);
+<a name="l00517"></a>00517             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a>) VirtualProviderPlugins.Remove(plugin as IVirtualImageProvider);
+<a name="l00518"></a>00518             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to...">ISettingsModifier</a>) SettingsModifierPlugins.Remove(plugin as ISettingsModifier);
+<a name="l00519"></a>00519             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_current_config_provider.html" title="Allows multi-tenancy support. The &#39;root&#39; config only needs one plugin, which implements this interfac...">ICurrentConfigProvider</a>) ConfigProviders.Remove(plugin as ICurrentConfigProvider);
+<a name="l00520"></a>00520             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a> &amp;&amp; LogManager == plugin) LogManager = null;
+<a name="l00521"></a>00521         }
+<a name="l00522"></a>00522 <span class="comment"></span>
+<a name="l00523"></a>00523 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00524"></a>00524 <span class="comment">        /// Only for use by plugins during IPlugin.Install. Call Plugin.Install instead of this method, since plugins often must perform other initialization actions.</span>
+<a name="l00525"></a>00525 <span class="comment">        /// Adds the specified plugin to AllPlugins, QuerystringPlugins, CachingSystems, ImageEncoders, and ImageBuiderExtensions, based</span>
+<a name="l00526"></a>00526 <span class="comment">        /// on which interfaces the instance implements. For ICache and IEncoder, the plugin is inserted at the beginning of CachingSystems and ImageEncoders respectively.</span>
+<a name="l00527"></a>00527 <span class="comment">        /// To reiterate, plugins may register event handlers and modify settings - thus you should use the plugin&#39;s method to uninstall them vs. using this method.</span>
+<a name="l00528"></a>00528 <span class="comment">        /// Will not register a plugin that is already installed, unless it implementes IMultiInstancePlugin.</span>
+<a name="l00529"></a>00529 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00530"></a>00530 <span class="comment">        /// &lt;param name=&quot;plugin&quot;&gt;&lt;/param&gt;</span>
+<a name="l00531"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a24a5d36dc59eee7d980a8e9b4d00ead1">00531</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a24a5d36dc59eee7d980a8e9b4d00ead1" title="Only for use by plugins during IPlugin.Install. Call Plugin.Install instead of this method...">add_plugin</a>(IPlugin plugin) {
+<a name="l00532"></a>00532             <span class="keywordflow">if</span> (!(plugin is IMultiInstancePlugin) &amp;&amp; HasPlugin(plugin.GetType())) {
+<a name="l00533"></a>00533                 AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;An instance of the specified plugin (&quot;</span> + plugin.GetType().ToString() + <span class="stringliteral">&quot;) has already been registered.&quot;</span>,
+<a name="l00534"></a>00534                                     <span class="stringliteral">&quot;The plugin should implement IMultiInstancePlugin to support multiple instances.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
+<a name="l00535"></a>00535                 <span class="keywordflow">return</span>;
+<a name="l00536"></a>00536             }
+<a name="l00537"></a>00537             
+<a name="l00538"></a>00538             AllPlugins.Add(plugin);
+<a name="l00539"></a>00539             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)">IQuerystringPlugin</a>) QuerystringPlugins.Add(plugin as IQuerystringPlugin);
+<a name="l00540"></a>00540             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions.">IFileExtensionPlugin</a>) FileExtensionPlugins.Add(plugin as IFileExtensionPlugin);
+<a name="l00541"></a>00541             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_caching_1_1_i_cache.html" title="Provides caching behavior.">ICache</a>) CachingSystems.AddFirst(plugin as ICache);
+<a name="l00542"></a>00542             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a>) ImageEncoders.AddFirst(plugin as IEncoder);
+<a name="l00543"></a>00543             <span class="keywordflow">if</span> (plugin is <a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>) ImageBuilderExtensions.Add(plugin as BuilderExtension);
+<a name="l00544"></a>00544             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a>) VirtualProviderPlugins.Add(plugin as IVirtualImageProvider);
+<a name="l00545"></a>00545             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to...">ISettingsModifier</a>) SettingsModifierPlugins.Add(plugin as ISettingsModifier);
+<a name="l00546"></a>00546             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_current_config_provider.html" title="Allows multi-tenancy support. The &#39;root&#39; config only needs one plugin, which implements this interfac...">ICurrentConfigProvider</a>) ConfigProviders.Add(plugin as ICurrentConfigProvider);
+<a name="l00547"></a>00547             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a>) LogManager = plugin as ILogManager;
+<a name="l00548"></a>00548         }
+<a name="l00549"></a>00549 
+<a name="l00550"></a>00550 
+<a name="l00551"></a>00551 
+<a name="l00552"></a>00552 <span class="comment"></span>
+<a name="l00553"></a>00553 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00554"></a>00554 <span class="comment">        /// Removes all plugins, of every kind. Logs any errors encountered. (Not all plugins support uninstallation)</span>
+<a name="l00555"></a>00555 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00556"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a57ce330ef6dbb0322d337f6c1f075e9e">00556</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a57ce330ef6dbb0322d337f6c1f075e9e" title="Removes all plugins, of every kind. Logs any errors encountered. (Not all plugins support uninstallat...">RemoveAll</a>() {
+<a name="l00557"></a>00557             <span class="comment">//Follow uninstall protocol</span>
+<a name="l00558"></a>00558             <span class="keywordflow">foreach</span> (IPlugin p <span class="keywordflow">in</span> AllPlugins)
+<a name="l00559"></a>00559                 <span class="keywordflow">if</span> (!p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f" title="Uninstalls the plugin. Should reverse all changes made during Install.">Uninstall</a>(c))
+<a name="l00560"></a>00560                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Uninstall of &quot;</span> + p.ToString() + <span class="stringliteral">&quot; reported failure.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
+<a name="l00561"></a>00561 
+<a name="l00562"></a>00562             IList[] collections = <span class="keyword">new</span> IList[]{AllPlugins.GetCollection(),QuerystringPlugins.GetCollection(),FileExtensionPlugins.GetCollection()
+<a name="l00563"></a>00563                                                 ,CachingSystems.GetCollection(),ImageEncoders.GetCollection(),ImageBuilderExtensions.GetCollection()};
+<a name="l00564"></a>00564             <span class="comment">//Then check all collections, logging an issue if they aren&#39;t empty.</span>
+<a name="l00565"></a>00565             <span class="keywordflow">foreach</span>(IList coll <span class="keywordflow">in</span> collections){
+<a name="l00566"></a>00566                 <span class="keywordflow">if</span> (coll.Count &gt; 0){
+<a name="l00567"></a>00567                     <span class="keywordtype">string</span> items = <span class="stringliteral">&quot;&quot;</span>;
+<a name="l00568"></a>00568                     <span class="keywordflow">foreach</span>(<span class="keywordtype">object</span> item <span class="keywordflow">in</span> coll)
+<a name="l00569"></a>00569                         items += item.ToString() + <span class="stringliteral">&quot;, &quot;</span>;
 <a name="l00570"></a>00570 
-<a name="l00571"></a>00571             <span class="comment">//Verify there is something other than NoCache registered</span>
-<a name="l00572"></a>00572             <span class="keywordflow">if</span> (c.Plugins.CachingSystems.First is ImageResizer.Plugins.Basic.NoCache)
-<a name="l00573"></a>00573                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;NoCache is only for development usage, and cannot scale to production use.&quot;</span>, <span class="stringliteral">&quot;Add DiskCache or CloudFront for production use&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
-<a name="l00574"></a>00574 
-<a name="l00575"></a>00575             <span class="comment">//Verify NoCache is registered</span>
-<a name="l00576"></a>00576             <span class="keywordflow">if</span> (!c.Plugins.Has&lt;ImageResizer.Plugins.Basic.NoCache&gt;())
-<a name="l00577"></a>00577                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;NoCache should not be removed from the plugins collection.&quot;</span>,
-<a name="l00578"></a>00578                     <span class="stringliteral">&quot;Simply add the new ICache plugin later for it to take precedence. NoCache is still required as a fallback by most caching plugins.&quot;</span>,
-<a name="l00579"></a>00579                      <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
-<a name="l00580"></a>00580 
-<a name="l00581"></a>00581 
-<a name="l00582"></a>00582             <span class="keywordflow">if</span> (c.Plugins.ImageEncoders.First == null)
-<a name="l00583"></a>00583                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;No encoders are registered! Without an image encoder, the pipeline cannot function.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
-<a name="l00584"></a>00584 
-<a name="l00585"></a>00585             issues.AddRange(ndeps.GetIssues());
-<a name="l00586"></a>00586 
-<a name="l00587"></a>00587             <span class="keywordflow">return</span> issues;
-<a name="l00588"></a>00588         }
-<a name="l00589"></a>00589     }
-<a name="l00590"></a>00590 }
+<a name="l00571"></a>00571                     this.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;Collection &quot;</span> + coll.ToString() + <span class="stringliteral">&quot; was not empty after RemoveAllPlugins() executed!&quot;</span>,
+<a name="l00572"></a>00572                                         <span class="stringliteral">&quot;Remaining items: &quot;</span> + items, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
+<a name="l00573"></a>00573                 }
+<a name="l00574"></a>00574             }
+<a name="l00575"></a>00575         }
+<a name="l00576"></a>00576 
+<a name="l00577"></a>00577 
+<a name="l00578"></a>00578 
+<a name="l00579"></a><a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#add9c59824bbfe64688ec0329c6e223bc">00579</a>         <span class="keyword">public</span> <span class="keyword">override</span> IEnumerable&lt;IIssue&gt; <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#add9c59824bbfe64688ec0329c6e223bc" title="Returns a copy of the list of reported issues.">GetIssues</a>() {
+<a name="l00580"></a>00580             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;(base.GetIssues());
+<a name="l00581"></a>00581             <span class="comment">//Verify all plugins are registered as IPlugins also.</span>
+<a name="l00582"></a>00582 
+<a name="l00583"></a>00583 
+<a name="l00584"></a>00584             <span class="comment">//Verify there is something other than NoCache registered</span>
+<a name="l00585"></a>00585             <span class="keywordflow">if</span> (c.Plugins.CachingSystems.First is ImageResizer.Plugins.Basic.NoCache)
+<a name="l00586"></a>00586                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;NoCache is only for development usage, and cannot scale to production use.&quot;</span>, <span class="stringliteral">&quot;Add DiskCache or CloudFront for production use&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
+<a name="l00587"></a>00587 
+<a name="l00588"></a>00588             <span class="comment">//Verify NoCache is registered</span>
+<a name="l00589"></a>00589             <span class="keywordflow">if</span> (!c.Plugins.Has&lt;ImageResizer.Plugins.Basic.NoCache&gt;())
+<a name="l00590"></a>00590                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;NoCache should not be removed from the plugins collection.&quot;</span>,
+<a name="l00591"></a>00591                     <span class="stringliteral">&quot;Simply add the new ICache plugin later for it to take precedence. NoCache is still required as a fallback by most caching plugins.&quot;</span>,
+<a name="l00592"></a>00592                      <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
+<a name="l00593"></a>00593 
+<a name="l00594"></a>00594 
+<a name="l00595"></a>00595             <span class="keywordflow">if</span> (c.Plugins.ImageEncoders.First == null)
+<a name="l00596"></a>00596                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;No encoders are registered! Without an image encoder, the pipeline cannot function.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Error));
+<a name="l00597"></a>00597 
+<a name="l00598"></a>00598             issues.AddRange(ndeps.GetIssues());
+<a name="l00599"></a>00599 
+<a name="l00600"></a>00600             <span class="keywordflow">return</span> issues;
+<a name="l00601"></a>00601         }
+<a name="l00602"></a>00602     }
+<a name="l00603"></a>00603 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

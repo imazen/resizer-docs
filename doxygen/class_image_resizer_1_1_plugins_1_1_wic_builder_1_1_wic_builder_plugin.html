@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -198,7 +198,7 @@ virtual <a class="el" href="namespace_image_resizer_1_1_resizing.html#a22bbb5358
                 <span class="comment">//Save the original stream positione</span>
                 originalPosition = (restoreStreamPosition) ? s.Position : -1;
 
-                data = s.CopyOrReturnBuffer(out lData,<span class="keyword">false</span>, 0x1000);
+                data = <a class="code" href="class_image_resizer_1_1_extension_methods_1_1_stream_extensions.html" title="Provides extension methods for copying streams.">StreamExtensions</a>.<a class="code" href="class_image_resizer_1_1_extension_methods_1_1_stream_extensions.html#a37c8daa2d13e4f2343b80b352a91796a" title="Attempts to return a byte[] array containing the remaining portion of the stream. Unlike CopyToBytes(...">CopyOrReturnBuffer</a>(s, out lData,<span class="keyword">false</span>, 0x1000);
             } <span class="keywordflow">finally</span> {
                 <span class="keywordflow">if</span> (s != null &amp;&amp; restoreStreamPosition &amp;&amp; s.CanSeek) s.Seek(originalPosition, SeekOrigin.Begin);
                 <span class="keywordflow">if</span> (disposeStream) s.Dispose();

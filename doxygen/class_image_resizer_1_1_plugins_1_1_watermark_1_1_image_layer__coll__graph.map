@@ -1,19 +1,20 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html" title="Layer" alt="" coords="2001,5,2101,51"/>
-<area shape="rect" id="node4" href="$class_image_resizer_1_1_configuration_1_1_config.html" title="ImageResizer.Configuration.Config" alt="" coords="1793,186,2308,233"/>
-<area shape="rect" id="node18" href="$class_image_resizer_1_1_configuration_1_1_plugin_config.html" title="Provides thread&#45;safe access to plugin addition, removal, and querying methods." alt="" coords="2793,346,3396,393"/>
-<area shape="rect" id="node6" href="$class_image_resizer_1_1_image_builder.html" title="Provides methods for generating resized images, and for reading and writing them to disk..." alt="" coords="921,170,1330,217"/>
-<area shape="rect" id="node8" href="$class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html" title="Not for external use. Inherit from BuilderExtension instead. Dual&#45;purpose base class for both ImageBu..." alt="" coords="126,25,493,71"/>
-<area shape="rect" id="node10" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="168,95,451,142"/>
-<area shape="rect" id="node12" href="$interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions." alt="" coords="156,166,463,213"/>
-<area shape="rect" id="node14" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html" title="A provider (or selector) of IEncoder instances." alt="" coords="6,237,613,283"/>
-<area shape="rect" id="node16" href="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to..." alt="" coords="23,307,596,354"/>
-<area shape="rect" id="node20" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html" title="IssueSink" alt="" coords="1045,350,1205,397"/>
-<area shape="rect" id="node22" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html" title="IIssueProvider" alt="" coords="198,378,421,425"/>
-<area shape="rect" id="node31" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html" title="Issues::IssueSink" alt="" coords="990,447,1261,494"/>
-<area shape="rect" id="node24" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_receiver.html" title="IIssueReceiver" alt="" coords="194,449,425,495"/>
-<area shape="rect" id="node26" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html" title="A provider (or selector) of IEncoder instances." alt="" coords="1919,377,2183,423"/>
-<area shape="rect" id="node29" href="$class_image_resizer_1_1_configuration_1_1_plugins_1_1_native_dependency_manager.html" title="Provides automatic download of native dependencies (which VS doesn&#39;t see). Gets the correct bitness a..." alt="" coords="1589,447,2512,494"/>
-<area shape="rect" id="node35" href="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html" title="ImageResizer.Configuration.Logging.ILogManager" alt="" coords="1687,518,2414,565"/>
-<area shape="rect" id="node37" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="1834,75,2267,122"/>
+<area shape="rect" id="node2" href="$class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html" title="Layer" alt="" coords="2094,27,2194,74"/>
+<area shape="rect" id="node4" href="$class_image_resizer_1_1_configuration_1_1_config.html" title="ImageResizer.Configuration.Config" alt="" coords="1887,147,2401,194"/>
+<area shape="rect" id="node18" href="$class_image_resizer_1_1_configuration_1_1_plugin_config.html" title="Provides thread&#45;safe access to plugin addition, removal, and querying methods." alt="" coords="2887,366,3489,413"/>
+<area shape="rect" id="node6" href="$class_image_resizer_1_1_image_builder.html" title="Provides methods for generating resized images, and for reading and writing them to disk..." alt="" coords="967,147,1377,194"/>
+<area shape="rect" id="node8" href="$class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html" title="Not for external use. Inherit from BuilderExtension instead. Dual&#45;purpose base class for both ImageBu..." alt="" coords="126,6,493,53"/>
+<area shape="rect" id="node10" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="168,77,451,123"/>
+<area shape="rect" id="node12" href="$interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions." alt="" coords="156,147,463,194"/>
+<area shape="rect" id="node14" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html" title="A provider (or selector) of IEncoder instances." alt="" coords="6,218,613,265"/>
+<area shape="rect" id="node16" href="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to..." alt="" coords="23,289,596,335"/>
+<area shape="rect" id="node20" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html" title="IssueSink" alt="" coords="1092,441,1252,487"/>
+<area shape="rect" id="node22" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html" title="IIssueProvider" alt="" coords="198,362,421,409"/>
+<area shape="rect" id="node31" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html" title="Issues::IssueSink" alt="" coords="1037,341,1307,387"/>
+<area shape="rect" id="node24" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_receiver.html" title="IIssueReceiver" alt="" coords="194,438,425,485"/>
+<area shape="rect" id="node26" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html" title="A provider (or selector) of IEncoder instances." alt="" coords="2012,387,2276,434"/>
+<area shape="rect" id="node29" href="$class_image_resizer_1_1_configuration_1_1_plugins_1_1_native_dependency_manager.html" title="Provides automatic download of native dependencies (which VS doesn&#39;t see). Gets the correct bitness a..." alt="" coords="1683,317,2605,363"/>
+<area shape="rect" id="node35" href="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html" title="ImageResizer.Configuration.Logging.ILogManager" alt="" coords="1781,510,2507,557"/>
+<area shape="rect" id="node37" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="1927,246,2361,293"/>
+<area shape="rect" id="node39" href="$class_image_resizer_1_1_collections_1_1_querystring_base-g.html" title="QuerystringBase\&lt;ResizeSettings\&gt;" alt="" coords="920,246,1424,293"/>
 </map>

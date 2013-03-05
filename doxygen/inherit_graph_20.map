@@ -1,6 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_image_processing_exception.html" title="Represents an non&#45;recoverable exception that occured while processing the image. Possible causes are:..." alt="" coords="5,75,608,122"/>
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_image_corrupted_exception.html" title="A source file was corrupted." alt="" coords="783,5,1369,51"/>
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_image_missing_exception.html" title="One or more source files was missing." alt="" coords="799,75,1353,122"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_size_limits_1_1_size_limit_exception.html" title="ImageResizer.Plugins.Basic.SizeLimits.SizeLimitException" alt="" coords="656,146,1496,193"/>
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_image_job.html" title="ImageResizer.ImageJob" alt="" coords="6,5,367,51"/>
 </map>

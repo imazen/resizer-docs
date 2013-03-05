@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -91,130 +91,131 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 <span class="keyword">using</span> System.Web.Hosting;
 <a name="l00009"></a>00009 <span class="keyword">using</span> System.Web.Caching;
 <a name="l00010"></a>00010 <span class="keyword">using</span> System.Security.Permissions;
-<a name="l00011"></a>00011 <span class="keyword">using</span> LitS3;
-<a name="l00012"></a>00012 <span class="keyword">using</span> ImageResizer.Configuration;
-<a name="l00013"></a>00013 <span class="keyword">using</span> ImageResizer.Resizing;
-<a name="l00014"></a>00014 
-<a name="l00015"></a><a class="code" href="namespace_image_resizer_1_1_plugins_1_1_s3_reader.html">00015</a> <span class="keyword">namespace </span>ImageResizer.Plugins.<a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html">S3Reader</a> {
+<a name="l00011"></a>00011 <span class="keyword">using</span> ImageResizer.Configuration;
+<a name="l00012"></a>00012 <span class="keyword">using</span> ImageResizer.Resizing;
+<a name="l00013"></a>00013 <span class="keyword">using</span> Amazon.S3.Model;
+<a name="l00014"></a>00014 <span class="keyword">using</span> ImageResizer.ExtensionMethods;
+<a name="l00015"></a>00015 <span class="keyword">using</span> Amazon.S3;
 <a name="l00016"></a>00016 
-<a name="l00017"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html">00017</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html">S3File</a> : VirtualFile, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html" title="Always implement this if possible. Allows caching systems to detect changes to source files and inval...">IVirtualFileWithModifiedDate</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t...">IVirtualFileSourceCacheKey</a> {
-<a name="l00018"></a>00018         <span class="keyword">private</span> <span class="keywordtype">string</span> bucket;
-<a name="l00019"></a>00019         <span class="keyword">private</span> <span class="keywordtype">string</span> key;
-<a name="l00020"></a>00020         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html" title="Allows clients to request objects located on another amazon S3 server through this server...">S3VirtualPathProvider</a> provider;
-<a name="l00021"></a>00021 
-<a name="l00022"></a>00022         <span class="keyword">private</span> Nullable&lt;bool&gt; _exists = null;
-<a name="l00023"></a>00023         <span class="keyword">private</span> Nullable&lt;DateTime&gt; _fileModifiedDate = null;
-<a name="l00024"></a>00024 <span class="comment"></span>
-<a name="l00025"></a>00025 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00026"></a>00026 <span class="comment">        /// Updates the exists and modified date</span>
-<a name="l00027"></a>00027 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00028"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html#a6850abd9ba6867304e99108af6c32500">00028</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html#a6850abd9ba6867304e99108af6c32500" title="Updates the exists and modified date.">UpdateMetadata</a>() {
-<a name="l00029"></a>00029             <span class="comment">//Try to pull it out of the .net cache</span>
-<a name="l00030"></a>00030             <span class="keywordtype">string</span> ckey = provider.VirtualFilesystemPrefix + <span class="stringliteral">&quot;/&quot;</span> + bucket + <span class="stringliteral">&quot;/&quot;</span> + key;
-<a name="l00031"></a>00031             Cache c = HttpContext.Current.Cache;
-<a name="l00032"></a>00032             <span class="keywordtype">object</span> o = c.Get(ckey);
-<a name="l00033"></a>00033             <span class="keywordflow">if</span> (o is DateTime) {
-<a name="l00034"></a>00034                 _exists = <span class="keyword">true</span>;
-<a name="l00035"></a>00035                 _fileModifiedDate = (Nullable&lt;DateTime&gt;)o;
-<a name="l00036"></a>00036             } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (o is <span class="keywordtype">bool</span>) {
-<a name="l00037"></a>00037                 _exists = <span class="keyword">false</span>;
-<a name="l00038"></a>00038                 _fileModifiedDate = null;
-<a name="l00039"></a>00039             } <span class="keywordflow">else</span> {
-<a name="l00040"></a>00040                 <span class="comment">//Looks like we have to execute a head request</span>
-<a name="l00041"></a>00041                 var request = <span class="keyword">new</span> GetObjectRequest(provider.Service, bucket, key, <span class="keyword">true</span>);
-<a name="l00042"></a>00042                 <span class="keywordflow">try</span> {
-<a name="l00043"></a>00043                     <span class="keyword">using</span> (GetObjectResponse response = request.GetResponse()) {
-<a name="l00044"></a>00044                         <span class="comment">//Exists.</span>
-<a name="l00045"></a>00045                         _exists = <span class="keyword">true</span>;
-<a name="l00046"></a>00046                         _fileModifiedDate = response.LastModified;
-<a name="l00047"></a>00047                     }
-<a name="l00048"></a>00048                 } <span class="keywordflow">catch</span> (System.Net.WebException exception) {
-<a name="l00049"></a>00049                     var response = exception.Response as System.Net.HttpWebResponse;
-<a name="l00050"></a>00050                     <span class="keywordflow">if</span> (response != null &amp;&amp; response.StatusCode == System.Net.HttpStatusCode.NotFound) {
-<a name="l00051"></a>00051                         <span class="comment">//Doesn&#39;t exist</span>
-<a name="l00052"></a>00052                         _exists = <span class="keyword">false</span>;
-<a name="l00053"></a>00053                         _fileModifiedDate = null;
-<a name="l00054"></a>00054                     } <span class="keywordflow">else</span>
-<a name="l00055"></a>00055                         <span class="keywordflow">throw</span>;
-<a name="l00056"></a>00056                 }
-<a name="l00057"></a>00057                 <span class="comment">//Now, save to the .net cache</span>
-<a name="l00058"></a>00058                 <span class="keywordtype">object</span> obj = (_fileModifiedDate == null) ? (<span class="keywordtype">object</span>)<span class="keyword">false</span> : (object)_fileModifiedDate.Value;
-<a name="l00059"></a>00059                 <span class="comment">//If MetadataAbsoluteExpiration is MaxValue, use DateTime.MaxValue.</span>
-<a name="l00060"></a>00060                 c.Insert(ckey, obj, null, provider.MetadataAbsoluteExpiration == TimeSpan.MaxValue ? DateTime.MaxValue : DateTime.UtcNow.Add(provider.MetadataAbsoluteExpiration), provider.MetadataSlidingExpiration);
-<a name="l00061"></a>00061 
-<a name="l00062"></a>00062             }
-<a name="l00063"></a>00063         }
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065         <span class="keyword">public</span> <span class="keywordtype">bool</span> Exists {
-<a name="l00066"></a>00066             <span class="keyword">get</span> {
-<a name="l00067"></a>00067                 <span class="keywordflow">if</span> (_exists == null &amp;&amp; provider.FastMode) <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">//Assume it exists in fast mode.</span>
-<a name="l00068"></a>00068                 <span class="keywordflow">if</span> (_exists == null) UpdateMetadata();
-<a name="l00069"></a>00069                 <span class="keywordflow">return</span> _exists.Value;
-<a name="l00070"></a>00070             }
-<a name="l00071"></a>00071         }
-<a name="l00072"></a>00072 
-<a name="l00073"></a>00073         <span class="keyword">public</span> S3File(<span class="keywordtype">string</span> virtualPath, S3VirtualPathProvider provider)
-<a name="l00074"></a>00074             : base(virtualPath) {
-<a name="l00075"></a>00075             this.provider = provider;
-<a name="l00076"></a>00076             <span class="comment">//Must be inside virtual filesystem folder</span>
-<a name="l00077"></a>00077             <span class="keywordflow">if</span> (!provider.IsPathVirtual(virtualPath)) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;S3 file path must be located within &quot;</span> + provider.VirtualFilesystemPrefix);
-<a name="l00078"></a>00078 <span class="comment"></span>
-<a name="l00079"></a>00079 <span class="comment">            /////////// Parse path into bucket and key</span>
-<a name="l00080"></a>00080 <span class="comment"></span>
-<a name="l00081"></a>00081             <span class="comment">//Strip prefix</span>
-<a name="l00082"></a>00082             String path = VirtualPath.Substring(provider.VirtualFilesystemPrefix.Length);
-<a name="l00083"></a>00083 
-<a name="l00084"></a>00084             <span class="comment">//strip leading slashes</span>
-<a name="l00085"></a>00085             path = path.TrimStart(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> });
-<a name="l00086"></a>00086 
-<a name="l00087"></a>00087             <span class="comment">//Now execute filter!</span>
-<a name="l00088"></a>00088             path = provider.FilterPath(path);
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090             <span class="comment">//strip leading slashes again</span>
-<a name="l00091"></a>00091             path = path.TrimStart(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> });
-<a name="l00092"></a>00092 
+<a name="l00017"></a><a class="code" href="namespace_image_resizer_1_1_plugins_1_1_s3_reader.html">00017</a> <span class="keyword">namespace </span>ImageResizer.Plugins.<a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html">S3Reader</a> {
+<a name="l00018"></a>00018 
+<a name="l00019"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html">00019</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html">S3File</a> : VirtualFile, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html" title="Always implement this if possible. Allows caching systems to detect changes to source files and inval...">IVirtualFileWithModifiedDate</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t...">IVirtualFileSourceCacheKey</a> {
+<a name="l00020"></a>00020         <span class="keyword">private</span> <span class="keywordtype">string</span> bucket;
+<a name="l00021"></a>00021         <span class="keyword">private</span> <span class="keywordtype">string</span> key;
+<a name="l00022"></a>00022         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html" title="Allows clients to request objects located on another amazon S3 server through this server...">S3VirtualPathProvider</a> provider;
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024         <span class="keyword">private</span> Nullable&lt;bool&gt; _exists = null;
+<a name="l00025"></a>00025         <span class="keyword">private</span> Nullable&lt;DateTime&gt; _fileModifiedDate = null;
+<a name="l00026"></a>00026 <span class="comment"></span>
+<a name="l00027"></a>00027 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00028"></a>00028 <span class="comment">        /// Updates the exists and modified date</span>
+<a name="l00029"></a>00029 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00030"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html#a6850abd9ba6867304e99108af6c32500">00030</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html#a6850abd9ba6867304e99108af6c32500" title="Updates the exists and modified date.">UpdateMetadata</a>() {
+<a name="l00031"></a>00031             <span class="comment">//Try to pull it out of the .net cache</span>
+<a name="l00032"></a>00032             <span class="keywordtype">string</span> ckey = provider.VirtualFilesystemPrefix + <span class="stringliteral">&quot;/&quot;</span> + bucket + <span class="stringliteral">&quot;/&quot;</span> + key;
+<a name="l00033"></a>00033             Cache c = HttpContext.Current.Cache;
+<a name="l00034"></a>00034             <span class="keywordtype">object</span> o = c.Get(ckey);
+<a name="l00035"></a>00035             <span class="keywordflow">if</span> (o is DateTime) {
+<a name="l00036"></a>00036                 _exists = <span class="keyword">true</span>;
+<a name="l00037"></a>00037                 _fileModifiedDate = (Nullable&lt;DateTime&gt;)o;
+<a name="l00038"></a>00038             } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (o is <span class="keywordtype">bool</span>) {
+<a name="l00039"></a>00039                 _exists = <span class="keyword">false</span>;
+<a name="l00040"></a>00040                 _fileModifiedDate = null;
+<a name="l00041"></a>00041             } <span class="keywordflow">else</span> {
+<a name="l00042"></a>00042                 <span class="comment">//Looks like we have to execute a head request</span>
+<a name="l00043"></a>00043                 var request = <span class="keyword">new</span> GetObjectMetadataRequest(){ BucketName = bucket, Key = key};
+<a name="l00044"></a>00044 
+<a name="l00045"></a>00045                 <span class="keywordflow">try</span> {
+<a name="l00046"></a>00046                     <span class="keyword">using</span> (GetObjectMetadataResponse response = provider.S3Client.GetObjectMetadata(request)) {
+<a name="l00047"></a>00047                         <span class="comment">//Exists</span>
+<a name="l00048"></a>00048                         _exists = <span class="keyword">true</span>;
+<a name="l00049"></a>00049                         _fileModifiedDate = response.LastModified;
+<a name="l00050"></a>00050                     }
+<a name="l00051"></a>00051                 } <span class="keywordflow">catch</span> (AmazonS3Exception s3e) {
+<a name="l00052"></a>00052                     <span class="keywordflow">if</span> (s3e.StatusCode == System.Net.HttpStatusCode.NotFound || s3e.StatusCode == System.Net.HttpStatusCode.Forbidden) {
+<a name="l00053"></a>00053                         <span class="comment">//Doesn&#39;t exist</span>
+<a name="l00054"></a>00054                         _exists = <span class="keyword">false</span>;
+<a name="l00055"></a>00055                         _fileModifiedDate = null;
+<a name="l00056"></a>00056                     } <span class="keywordflow">else</span> <span class="keywordflow">throw</span>;
+<a name="l00057"></a>00057                 }
+<a name="l00058"></a>00058                 <span class="comment">//Now, save to the .net cache</span>
+<a name="l00059"></a>00059                 <span class="keywordtype">object</span> obj = (_fileModifiedDate == null) ? (<span class="keywordtype">object</span>)<span class="keyword">false</span> : (object)_fileModifiedDate.Value;
+<a name="l00060"></a>00060                 <span class="comment">//If MetadataAbsoluteExpiration is MaxValue, use DateTime.MaxValue.</span>
+<a name="l00061"></a>00061                 c.Insert(ckey, obj, null, provider.MetadataAbsoluteExpiration == TimeSpan.MaxValue ? DateTime.MaxValue : DateTime.UtcNow.Add(provider.MetadataAbsoluteExpiration), provider.MetadataSlidingExpiration);
+<a name="l00062"></a>00062                 
+<a name="l00063"></a>00063             }
+<a name="l00064"></a>00064         }
+<a name="l00065"></a>00065 
+<a name="l00066"></a>00066         <span class="keyword">public</span> <span class="keywordtype">bool</span> Exists {
+<a name="l00067"></a>00067             <span class="keyword">get</span> {
+<a name="l00068"></a>00068                 <span class="keywordflow">if</span> (_exists == null &amp;&amp; provider.FastMode) <span class="keywordflow">return</span> <span class="keyword">true</span>; <span class="comment">//Assume it exists in fast mode.</span>
+<a name="l00069"></a>00069                 <span class="keywordflow">if</span> (_exists == null) UpdateMetadata();
+<a name="l00070"></a>00070                 <span class="keywordflow">return</span> _exists.Value;
+<a name="l00071"></a>00071             }
+<a name="l00072"></a>00072         }
+<a name="l00073"></a>00073 
+<a name="l00074"></a>00074         <span class="keyword">public</span> S3File(<span class="keywordtype">string</span> virtualPath, S3VirtualPathProvider provider)
+<a name="l00075"></a>00075             : base(virtualPath) {
+<a name="l00076"></a>00076             this.provider = provider;
+<a name="l00077"></a>00077             <span class="comment">//Must be inside virtual filesystem folder</span>
+<a name="l00078"></a>00078             <span class="keywordflow">if</span> (!provider.IsPathVirtual(virtualPath)) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;S3 file path must be located within &quot;</span> + provider.VirtualFilesystemPrefix);
+<a name="l00079"></a>00079 <span class="comment"></span>
+<a name="l00080"></a>00080 <span class="comment">            /////////// Parse path into bucket and key</span>
+<a name="l00081"></a>00081 <span class="comment"></span>
+<a name="l00082"></a>00082             <span class="comment">//Strip prefix</span>
+<a name="l00083"></a>00083             String path = VirtualPath.Substring(provider.VirtualFilesystemPrefix.Length);
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085             <span class="comment">//strip leading slashes</span>
+<a name="l00086"></a>00086             path = path.TrimStart(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> });
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088             <span class="comment">//Now execute filter!</span>
+<a name="l00089"></a>00089             path = provider.FilterPath(path);
+<a name="l00090"></a>00090 
+<a name="l00091"></a>00091             <span class="comment">//strip leading slashes again</span>
+<a name="l00092"></a>00092             path = path.TrimStart(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> });
 <a name="l00093"></a>00093 
-<a name="l00094"></a>00094             <span class="keywordtype">int</span> keyStartsAt = path.IndexOf(<span class="charliteral">&#39;/&#39;</span>);
-<a name="l00095"></a>00095             <span class="keywordflow">if</span> (keyStartsAt &lt; 0) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;S3 file path must specify a bucket&quot;</span> + path);
-<a name="l00096"></a>00096             <span class="comment">//Get bucket</span>
-<a name="l00097"></a>00097             bucket = path.Substring(0, keyStartsAt);
-<a name="l00098"></a>00098             <span class="comment">//Get key</span>
-<a name="l00099"></a>00099             key = path.Substring(keyStartsAt + 1).TrimStart(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> });
-<a name="l00100"></a>00100         }
-<a name="l00101"></a>00101 
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095             <span class="keywordtype">int</span> keyStartsAt = path.IndexOf(<span class="charliteral">&#39;/&#39;</span>);
+<a name="l00096"></a>00096             <span class="keywordflow">if</span> (keyStartsAt &lt; 0) <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;S3 file path must specify a bucket&quot;</span> + path);
+<a name="l00097"></a>00097             <span class="comment">//Get bucket</span>
+<a name="l00098"></a>00098             bucket = path.Substring(0, keyStartsAt);
+<a name="l00099"></a>00099             <span class="comment">//Get key</span>
+<a name="l00100"></a>00100             key = path.Substring(keyStartsAt + 1).TrimStart(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span> });
+<a name="l00101"></a>00101         }
 <a name="l00102"></a>00102 
 <a name="l00103"></a>00103 
-<a name="l00104"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html#a2802750dc487f37c79a8e9e45fca070d">00104</a>         <span class="keyword">public</span> <span class="keyword">override</span> Stream <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html#a2802750dc487f37c79a8e9e45fca070d" title="Returns an opened stream to the file contents.">Open</a>() {
-<a name="l00105"></a>00105             MemoryStream ms = <span class="keyword">new</span> MemoryStream(4096); <span class="comment">//4kb is a good starting point.</span>
-<a name="l00106"></a>00106             <span class="comment">//Synchronously download</span>
+<a name="l00104"></a>00104 
+<a name="l00105"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html#a2802750dc487f37c79a8e9e45fca070d">00105</a>         <span class="keyword">public</span> <span class="keyword">override</span> Stream <a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html#a2802750dc487f37c79a8e9e45fca070d" title="Returns an opened stream to the file contents.">Open</a>() {
+<a name="l00106"></a>00106             <span class="comment">//Synchronously download to memory stream</span>
 <a name="l00107"></a>00107             <span class="keywordflow">try</span> {
-<a name="l00108"></a>00108                 provider.Service.GetObject(bucket, key, ms);
-<a name="l00109"></a>00109             } <span class="keywordflow">catch</span> (S3Exception se) {
-<a name="l00110"></a>00110                <span class="comment">// if (HttpContext.Current != null &amp;&amp; HttpContext.Current.Items[Config.Current.Pipeline.ResponseArgsKey]</span>
-<a name="l00111"></a>00111                 <span class="keywordflow">if</span> (se.ErrorCode == S3ErrorCode.NoSuchKey) <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="stringliteral">&quot;Amazon S3 file not found&quot;</span>, se);
-<a name="l00112"></a>00112                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> (se.ErrorCode == S3ErrorCode.AccessDenied) <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="stringliteral">&quot;Amazon S3 access denied - file may not exist&quot;</span>, se);
-<a name="l00113"></a>00113                 <span class="keywordflow">else</span> <span class="keywordflow">throw</span> se;
-<a name="l00114"></a>00114                     <span class="comment">//LitS3.S3ErrorCode.PermanentRedirect</span>
-<a name="l00115"></a>00115             }
-<a name="l00116"></a>00116             ms.Seek(0, SeekOrigin.Begin); <span class="comment">//Reset to beginning</span>
-<a name="l00117"></a>00117             <span class="keywordflow">return</span> ms;
-<a name="l00118"></a>00118         }
-<a name="l00119"></a>00119 
-<a name="l00120"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html#a07aac222cb3c09ad5e16e1dbbe8d1683">00120</a>         <span class="keyword">public</span> DateTime ModifiedDateUTC {
-<a name="l00121"></a>00121             <span class="keyword">get</span> {
-<a name="l00122"></a>00122                 <span class="keywordflow">if</span> (_fileModifiedDate == null &amp;&amp; provider.FastMode) <span class="keywordflow">return</span> DateTime.MinValue; <span class="comment">//In fast mode, Return flag value that means no info available.</span>
-<a name="l00123"></a>00123                 <span class="keywordflow">if</span> (_fileModifiedDate == null) UpdateMetadata();
-<a name="l00124"></a>00124                 <span class="keywordflow">return</span> _fileModifiedDate.Value;
-<a name="l00125"></a>00125             }
-<a name="l00126"></a>00126         }
-<a name="l00127"></a>00127 
+<a name="l00108"></a>00108                 var req = <span class="keyword">new</span> Amazon.S3.Model.GetObjectRequest() { BucketName = bucket, Key = key };
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110                 <span class="keyword">using</span> (var s = provider.S3Client.GetObject(req)){
+<a name="l00111"></a>00111                     <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_extension_methods_1_1_stream_extensions.html" title="Provides extension methods for copying streams.">StreamExtensions</a>.<a class="code" href="class_image_resizer_1_1_extension_methods_1_1_stream_extensions.html#aa29ae866aafa63fd7f6392449ba30076" title="Copies the remaining data in the current stream to a new MemoryStream instance.">CopyToMemoryStream</a>(s.ResponseStream);
+<a name="l00112"></a>00112                 }
+<a name="l00113"></a>00113             } <span class="keywordflow">catch</span> (AmazonS3Exception se) {
+<a name="l00114"></a>00114                 <span class="keywordflow">if</span> (se.StatusCode == System.Net.HttpStatusCode.NotFound || <span class="stringliteral">&quot;NoSuchKey&quot;</span>.Equals(se.ErrorCode, StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="stringliteral">&quot;Amazon S3 file not found&quot;</span>, se);
+<a name="l00115"></a>00115                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> ( se.StatusCode == System.Net.HttpStatusCode.Forbidden || <span class="stringliteral">&quot;AccessDenied&quot;</span>.Equals(se.ErrorCode, StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="stringliteral">&quot;Amazon S3 access denied - file may not exist&quot;</span>, se);
+<a name="l00116"></a>00116                 <span class="keywordflow">else</span> <span class="keywordflow">throw</span>;
+<a name="l00117"></a>00117             }
+<a name="l00118"></a>00118             <span class="keywordflow">return</span> null;
+<a name="l00119"></a>00119         }
+<a name="l00120"></a>00120 
+<a name="l00121"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html#a07aac222cb3c09ad5e16e1dbbe8d1683">00121</a>         <span class="keyword">public</span> DateTime ModifiedDateUTC {
+<a name="l00122"></a>00122             <span class="keyword">get</span> {
+<a name="l00123"></a>00123                 <span class="keywordflow">if</span> (_fileModifiedDate == null &amp;&amp; provider.FastMode) <span class="keywordflow">return</span> DateTime.MinValue; <span class="comment">//In fast mode, Return flag value that means no info available.</span>
+<a name="l00124"></a>00124                 <span class="keywordflow">if</span> (_fileModifiedDate == null) UpdateMetadata();
+<a name="l00125"></a>00125                 <span class="keywordflow">return</span> _fileModifiedDate.Value;
+<a name="l00126"></a>00126             }
+<a name="l00127"></a>00127         }
 <a name="l00128"></a>00128 
-<a name="l00129"></a>00129         <span class="keyword">public</span> <span class="keywordtype">string</span> GetCacheKey(<span class="keywordtype">bool</span> includeModifiedDate) {
-<a name="l00130"></a>00130             <span class="keywordflow">return</span> VirtualPath + (includeModifiedDate ? (<span class="stringliteral">&quot;_&quot;</span> + ModifiedDateUTC.Ticks.ToString()) : <span class="stringliteral">&quot;&quot;</span>);
-<a name="l00131"></a>00131         }
-<a name="l00132"></a>00132     }
-<a name="l00133"></a>00133 }
-<a name="l00134"></a>00134 
+<a name="l00129"></a>00129 
+<a name="l00130"></a>00130         <span class="keyword">public</span> <span class="keywordtype">string</span> GetCacheKey(<span class="keywordtype">bool</span> includeModifiedDate) {
+<a name="l00131"></a>00131             <span class="keywordflow">return</span> VirtualPath + (includeModifiedDate ? (<span class="stringliteral">&quot;_&quot;</span> + ModifiedDateUTC.Ticks.ToString()) : <span class="stringliteral">&quot;&quot;</span>);
+<a name="l00132"></a>00132         }
+<a name="l00133"></a>00133     }
+<a name="l00134"></a>00134 }
+<a name="l00135"></a>00135 
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

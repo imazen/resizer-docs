@@ -1,0 +1,4 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="253,6,371,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_caching_1_1_i_cache.html" title="Provides caching behavior." alt="" coords="396,6,519,53"/>
+</map>

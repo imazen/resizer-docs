@@ -1,0 +1,5 @@
+<map id="G" name="G">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_license_store.html" title="Provides a place to cache/store licenses. Only responsible for licenses used by plugins attached to t..." alt="" coords="173,102,387,149"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="147,6,265,53"/>
+<area shape="rect" id="node7" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_receiver.html" title="IIssueReceiver" alt="" coords="411,102,641,149"/>
+</map>

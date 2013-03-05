@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_engine.html" title="Provides a managed interface to Ghostscript API." alt="" coords="5,5,960,51"/>
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_faces_1_1_i_feature.html" title="Represents a detected feature, such as a face, eye, or eye pair." alt="" coords="6,41,557,87"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_faces_1_1_face.html" title="ImageResizer.Plugins.Faces.Face" alt="" coords="639,5,1142,51"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_red_eye_1_1_obj_rect.html" title="ImageResizer.Plugins.RedEye.ObjRect" alt="" coords="605,75,1176,122"/>
 </map>

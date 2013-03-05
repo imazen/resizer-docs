@@ -3,6 +3,7 @@ var searchData=
   ['acceptedimageextensions',['AcceptedImageExtensions',['../class_image_resizer_1_1_configuration_1_1_pipeline_config.html#a8f026db1293e7c0fd0b97ed493ee8c15',1,'ImageResizer::Configuration::PipelineConfig']]],
   ['accessedutc',['AccessedUtc',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_file_info.html#a3e7faf66c5b288b68eb63b2e9488e56c',1,'ImageResizer::Plugins::DiskCache::CachedFileInfo']]],
   ['addfileextension',['AddFileExtension',['../class_image_resizer_1_1_image_job.html#a0526afdda5b1dec90932ef237a7bd8a5',1,'ImageResizer::ImageJob']]],
+  ['algorithm',['Algorithm',['../class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_auto_white_balance.html#a44d341580e85dba4079310842bbaffb0',1,'ImageResizer::Plugins::AdvancedFilters::AutoWhiteBalance']]],
   ['align',['Align',['../class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html#aa3dac6214bab1e78459fc7da2c3feae6',1,'ImageResizer::Plugins::Watermark::Layer']]],
   ['all',['All',['../class_image_resizer_1_1_box_edges.html#a5e25c884ec8ec4c937a17b7e1051a094',1,'ImageResizer::BoxEdges.All()'],['../class_image_resizer_1_1_resizing_1_1_box_padding.html#a5a549837cdd68bdbd6fa61c9d11f9e52',1,'ImageResizer::Resizing::BoxPadding.All()']]],
   ['allissues',['AllIssues',['../class_image_resizer_1_1_configuration_1_1_config.html#aaf802e5ba3f0fb8edfb5dbe46ee361da',1,'ImageResizer::Configuration::Config']]],

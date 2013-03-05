@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -99,16 +99,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00016"></a>00016             _contextItemsFlag = contextItemsFlag;
 <a name="l00017"></a>00017         }
 <a name="l00018"></a>00018         <span class="keyword">public</span> <span class="keyword">override</span> RouteData GetRouteData(System.Web.HttpContextBase httpContext) {
-<a name="l00019"></a>00019             <span class="keywordflow">if</span> (httpContext.Items[_contextItemsFlag] != null)
-<a name="l00020"></a>00020                 <span class="keywordflow">return</span> <span class="keyword">new</span> RouteData(<span class="keyword">this</span>, <span class="keyword">new</span> StopRoutingHandler());
-<a name="l00021"></a>00021             <span class="keywordflow">return</span> null;
-<a name="l00022"></a>00022         }
+<a name="l00019"></a>00019             <span class="keywordflow">try</span> {
+<a name="l00020"></a>00020                 <span class="keywordflow">if</span> (httpContext.Items[_contextItemsFlag] != null)
+<a name="l00021"></a>00021                     <span class="keywordflow">return</span> <span class="keyword">new</span> RouteData(<span class="keyword">this</span>, <span class="keyword">new</span> StopRoutingHandler());
+<a name="l00022"></a>00022             } <span class="keywordflow">catch</span> (NotImplementedException) { } <span class="comment">//For compatibility with Kendo UI and unit test/mocks which dont&#39; implement .Items</span>
 <a name="l00023"></a>00023 
-<a name="l00024"></a>00024         <span class="keyword">public</span> <span class="keyword">override</span> VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values) {
-<a name="l00025"></a>00025             <span class="keywordflow">return</span> null;
-<a name="l00026"></a>00026         }
-<a name="l00027"></a>00027     }
-<a name="l00028"></a>00028 }
+<a name="l00024"></a>00024             <span class="keywordflow">return</span> null;
+<a name="l00025"></a>00025         }
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027         <span class="keyword">public</span> <span class="keyword">override</span> VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values) {
+<a name="l00028"></a>00028             <span class="keywordflow">return</span> null;
+<a name="l00029"></a>00029         }
+<a name="l00030"></a>00030     }
+<a name="l00031"></a>00031 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

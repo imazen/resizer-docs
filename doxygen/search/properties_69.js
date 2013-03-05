@@ -10,6 +10,7 @@ var searchData=
   ['imagequery',['ImageQuery',['../class_image_resizer_1_1_plugins_1_1_watermark_1_1_image_layer.html#a31cc5a289521587dbb6f128fc5d9c096',1,'ImageResizer::Plugins::Watermark::ImageLayer']]],
   ['imagesize',['ImageSize',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_size_limits.html#a9e81172dcc3d23d6278fdd0068a0bfd3',1,'ImageResizer::Plugins::Basic::SizeLimits']]],
   ['index',['Index',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef',1,'ImageResizer::Plugins::DiskCache::CustomDiskCache']]],
+  ['interlace',['Interlace',['../class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html#ac0213964004954cf995f771cecfcfce0',1,'ImageResizer::Plugins::WicEncoder::WicEncoderPlugin']]],
   ['invert',['Invert',['../class_image_resizer_1_1_instructions.html#ae359baac07bca58a9d89c21d36370ead',1,'ImageResizer::Instructions']]],
   ['isaspx',['IsAspx',['../class_image_resizer_1_1_util_1_1yrl.html#aa070d588273384b84a9cc49d5eae8cd3',1,'ImageResizer::Util::yrl']]],
   ['iscodefile',['IsCodeFile',['../class_image_resizer_1_1_util_1_1yrl.html#a764c522a46b9b1c84f2c38feb9839a2b',1,'ImageResizer::Util::yrl']]],

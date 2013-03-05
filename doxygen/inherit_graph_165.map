@@ -1,6 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_in_window_stream.html" title="SevenZipReduced.Compression.LZ.IInWindowStream" alt="" coords="6,5,789,51"/>
-<area shape="rect" id="node3" href="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_match_finder.html" title="SevenZipReduced.Compression.LZ.IMatchFinder" alt="" coords="838,5,1554,51"/>
-<area shape="rect" id="node5" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_bin_tree.html" title="SevenZipReduced.Compression.LZ.BinTree" alt="" coords="1603,41,2243,87"/>
-<area shape="rect" id="node6" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_in_window.html" title="SevenZipReduced.Compression.LZ.InWindow" alt="" coords="861,75,1531,122"/>
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_util_1_1_stream_utils.html" title="ImageResizer.Util.StreamUtils" alt="" coords="5,5,448,51"/>
 </map>

@@ -2,6 +2,8 @@ var searchData=
 [
   ['watermarkplugin',['WatermarkPlugin',['../class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html',1,'ImageResizer::Plugins::Watermark']]],
   ['webconfigwriter',['WebConfigWriter',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_web_config_writer.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['webpdecoderplugin',['WebPDecoderPlugin',['../class_image_resizer_1_1_plugins_1_1_web_p_decoder_1_1_web_p_decoder_plugin.html',1,'ImageResizer::Plugins::WebPDecoder']]],
+  ['webpencoderplugin',['WebPEncoderPlugin',['../class_image_resizer_1_1_plugins_1_1_web_p_encoder_1_1_web_p_encoder_plugin.html',1,'ImageResizer::Plugins::WebPEncoder']]],
   ['whitespacetrimmerplugin',['WhitespaceTrimmerPlugin',['../class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html',1,'ImageResizer::Plugins::WhitespaceTrimmer']]],
   ['wicbitmappadder',['WicBitmapPadder',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_wic_bitmap_padder.html',1,'ImageResizer::Plugins::Wic']]],
   ['wicbitmappattern',['WICBitmapPattern',['../struct_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_w_i_c_bitmap_pattern.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes']]],

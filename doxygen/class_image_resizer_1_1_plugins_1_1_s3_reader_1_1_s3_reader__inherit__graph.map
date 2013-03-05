@@ -1,4 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="141,6,259,53"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once..." alt="" coords="284,6,591,53"/>
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="22,6,140,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once..." alt="" coords="165,6,472,53"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_redact_diagnostics.html" title="Permits plugins to redact data from the diagnostics page, like passwords." alt="" coords="496,6,789,53"/>
 </map>

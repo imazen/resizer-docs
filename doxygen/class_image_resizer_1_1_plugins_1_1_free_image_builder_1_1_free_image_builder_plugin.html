@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -138,22 +138,22 @@ IEnumerable&lt; <a class="el" href="interface_image_resizer_1_1_configuration_1_
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">override <a class="el" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86">RequestedAction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_free_image_builder_1_1_free_image_builder_plugin.html#abf7e85887719c92a88a77158dfc9a2a6">BuildJob</a> (<a class="el" href="class_image_resizer_1_1_image_job.html">ImageJob</a> job)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds alternate pipeline based on FreeImage. Invoked by &amp;builder=freeimage. This method doesn't handle job.DisposeSource or job.DesposeDest or settings filtering, that's handled by <a class="el" href="class_image_resizer_1_1_image_builder.html" title="Provides methods for generating resized images, and for reading and writing them to disk...">ImageBuilder</a>. All the bitmap processing is handled by buildFiBitmap, this method handles all the I/O.  <a href="#abf7e85887719c92a88a77158dfc9a2a6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">FIBITMAP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_free_image_builder_1_1_free_image_builder_plugin.html#acb5589dc65949445b78cef690497691b">buildFiBitmap</a> (Stream s, <a class="el" href="class_image_resizer_1_1_image_job.html">ImageJob</a> job, bool supportsTransparency)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds an FIBitmap from the stream and job.Settings.  <a href="#acb5589dc65949445b78cef690497691b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">FIBITMAP&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_free_image_builder_1_1_free_image_builder_plugin.html#a6783dcf9e0a96ffe6d60533b1170db9f">buildFiBitmap</a> (ref FIBITMAP original, <a class="el" href="class_image_resizer_1_1_image_job.html">ImageJob</a> job, bool supportsTransparency, bool mayUnloadOriginal)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds an FIBitmap from the stream and job.Settings.  <a href="#a6783dcf9e0a96ffe6d60533b1170db9f"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_free_image_builder_8cs_source.html#l00019">19</a> of file <a class="el" href="_free_image_builder_8cs_source.html">FreeImageBuilder.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="acb5589dc65949445b78cef690497691b"></a><!-- doxytag: member="ImageResizer::Plugins::FreeImageBuilder::FreeImageBuilderPlugin::buildFiBitmap" ref="acb5589dc65949445b78cef690497691b" args="(Stream s, ImageJob job, bool supportsTransparency)" -->
+<a class="anchor" id="a6783dcf9e0a96ffe6d60533b1170db9f"></a><!-- doxytag: member="ImageResizer::Plugins::FreeImageBuilder::FreeImageBuilderPlugin::buildFiBitmap" ref="a6783dcf9e0a96ffe6d60533b1170db9f" args="(ref FIBITMAP original, ImageJob job, bool supportsTransparency, bool mayUnloadOriginal)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">FIBITMAP <a class="el" href="class_image_resizer_1_1_plugins_1_1_free_image_builder_1_1_free_image_builder_plugin.html#acb5589dc65949445b78cef690497691b">ImageResizer.Plugins.FreeImageBuilder.FreeImageBuilderPlugin.buildFiBitmap</a> </td>
+          <td class="memname">FIBITMAP <a class="el" href="class_image_resizer_1_1_plugins_1_1_free_image_builder_1_1_free_image_builder_plugin.html#a6783dcf9e0a96ffe6d60533b1170db9f">ImageResizer.Plugins.FreeImageBuilder.FreeImageBuilderPlugin.buildFiBitmap</a> </td>
           <td>(</td>
-          <td class="paramtype">Stream&#160;</td>
-          <td class="paramname"><em>s</em>, </td>
+          <td class="paramtype">ref FIBITMAP&#160;</td>
+          <td class="paramname"><em>original</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -165,7 +165,13 @@ Protected Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>supportsTransparency</em>&#160;</td>
+          <td class="paramname"><em>supportsTransparency</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>mayUnloadOriginal</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -186,59 +192,59 @@ Protected Member Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_free_image_builder_8cs_source.html#l00123">123</a> of file <a class="el" href="_free_image_builder_8cs_source.html">FreeImageBuilder.cs</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                                           {
+<p>Definition at line <a class="el" href="_free_image_builder_8cs_source.html#l00129">129</a> of file <a class="el" href="_free_image_builder_8cs_source.html">FreeImageBuilder.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                                                                 {
 
             ResizeSettings settings = job.Settings;
-            FIBITMAP original = FreeImage.LoadFromStream((Stream)s);
             <span class="keywordflow">if</span> (original.IsNull) <span class="keywordflow">return</span> FIBITMAP.Zero;
             FIBITMAP <span class="keyword">final</span> = FIBITMAP.Zero;
-            
-            <span class="keywordflow">try</span>{
-                <span class="comment">//Find the image size</span>
-                Size orig = <span class="keyword">new</span> Size( (<span class="keywordtype">int</span>)FreeImage.GetWidth(original),  (int)FreeImage.GetHeight(original));
 
-                <span class="comment">//Calculate the new size of the image and the canvas.</span>
-                <a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> state = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a>(settings, orig, <span class="keyword">true</span>);
-                c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a9b11da5f1856427a835034d52700c093" title="Returns a shared instance of ImageManager, (or a subclass if it has been upgraded). Instances change whenever ImageBuilderExtensions change.">CurrentImageBuilder</a>.<a class="code" href="class_image_resizer_1_1_image_builder.html#a8e2f4b3bbf8bb38e54249490122ebb71" title="Processes an ImageState instance. Used by Build, GetFinalSize, and TranslatePoint. Can be overriden by a plugin with the OnProcess method.">Process</a>(state);
-                RectangleF imageDest = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(state.layout[<span class="stringliteral">&quot;image&quot;</span>]);
+            <span class="comment">//Find the image size</span>
+            Size orig = <span class="keyword">new</span> Size((<span class="keywordtype">int</span>)FreeImage.GetWidth(original), (int)FreeImage.GetHeight(original));
 
-                <span class="keywordflow">if</span> (imageDest.Width != orig.Width || imageDest.Height != orig.Height) {
-                    <span class="comment">//Rescale</span>
-                    <span class="keywordtype">bool</span> temp;
-                    <span class="keyword">final</span> = FreeImage.Rescale(original, (<span class="keywordtype">int</span>)imageDest.Width, (<span class="keywordtype">int</span>)imageDest.Height, <a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html">FreeImageScalingPlugin</a>.ParseResizeAlgorithm(settings[<span class="stringliteral">&quot;fi.scale&quot;</span>], FREE_IMAGE_FILTER.FILTER_BOX, out temp));
-                    FreeImage.UnloadEx(ref original);
-                    <span class="keywordflow">if</span> (<span class="keyword">final</span>.IsNull) <span class="keywordflow">return</span> FIBITMAP.Zero;
-                } <span class="keywordflow">else</span> {
-                    <span class="keyword">final</span> = original;
-                }
+            <span class="comment">//Calculate the new size of the image and the canvas.</span>
+            <a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> state = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a>(settings, orig, <span class="keyword">true</span>);
+            c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a9b11da5f1856427a835034d52700c093" title="Returns a shared instance of ImageManager, (or a subclass if it has been upgraded). Instances change whenever ImageBuilderExtensions change.">CurrentImageBuilder</a>.<a class="code" href="class_image_resizer_1_1_image_builder.html#a8e2f4b3bbf8bb38e54249490122ebb71" title="Processes an ImageState instance. Used by Build, GetFinalSize, and TranslatePoint. Can be overriden by a plugin with the OnProcess method.">Process</a>(state);
+            RectangleF imageDest = <a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html" title="Defines a collection of utility functions for manipulating polygons. These functions may be (re)moved...">PolygonMath</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_polygon_math.html#a2a0699cc81aa9335505c77939c6ba4bd" title="Returns a bounding box for the specified set of points.">GetBoundingBox</a>(state.layout[<span class="stringliteral">&quot;image&quot;</span>]);
 
-                RGBQUAD bgcolor = <span class="keywordflow">default</span>(RGBQUAD);
-                bgcolor.Color = settings.BackgroundColor;
-                <span class="keywordflow">if</span> (settings.BackgroundColor == Color.Transparent &amp;&amp; !supportsTransparency)
-                    bgcolor.Color = Color.White;
-
-                <span class="comment">//If we need to leave padding, do so.</span>
-                <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> outsideImage = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a>(imageDest.Left, imageDest.Top, state.destSize.Width - imageDest.Right, state.destSize.Height - imageDest.Bottom);
-
-                <span class="keywordflow">if</span> (outsideImage.<a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a5a549837cdd68bdbd6fa61c9d11f9e52" title="Returns double.NaN unless all edges are the same width, in which case that width is returned...">All</a> != 0) {
-                    original = <span class="keyword">final</span>;
-                    <span class="comment">//Extend canvas</span>
-                    <span class="keyword">final</span> = FreeImage.EnlargeCanvas&lt;RGBQUAD&gt;(original,
-                                (int)outsideImage.Left, (<span class="keywordtype">int</span>)outsideImage.Top, (int)outsideImage.Right, (<span class="keywordtype">int</span>)outsideImage.Bottom, 
-                                bgcolor.Color != Color.Transparent ? <span class="keyword">new</span> Nullable&lt;RGBQUAD&gt;(bgcolor) : null,
-                                FREE_IMAGE_COLOR_OPTIONS.FICO_RGBA);
- 
-                    FreeImage.UnloadEx(ref original);
-                    <span class="keywordflow">if</span> (<span class="keyword">final</span>.IsNull) <span class="keywordflow">return</span> FIBITMAP.Zero;
-                }
-
-                <span class="keywordflow">return</span> <span class="keyword">final</span>;
-            
-            }<span class="keywordflow">finally</span>{
-                <span class="comment">//Ensure we unload the source bitmap (unless it&#39;s also the final one)</span>
-                <span class="keywordflow">if</span> (original != <span class="keyword">final</span> &amp;&amp; !original.IsNull) FreeImage.UnloadEx(ref original);
+            <span class="keywordflow">if</span> (imageDest.Width != orig.Width || imageDest.Height != orig.Height) {
+                <span class="comment">//Rescale</span>
+                <span class="keywordtype">bool</span> temp;
+                <span class="keyword">final</span> = FreeImage.Rescale(original, (<span class="keywordtype">int</span>)imageDest.Width, (<span class="keywordtype">int</span>)imageDest.Height, <a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_scaling_1_1_free_image_scaling_plugin.html">FreeImageScalingPlugin</a>.ParseResizeAlgorithm(settings[<span class="stringliteral">&quot;fi.scale&quot;</span>], FREE_IMAGE_FILTER.FILTER_BOX, out temp));
+                <span class="keywordflow">if</span> (mayUnloadOriginal) FreeImage.UnloadEx(ref original);
+                <span class="keywordflow">if</span> (<span class="keyword">final</span>.IsNull) <span class="keywordflow">return</span> FIBITMAP.Zero;
+            } <span class="keywordflow">else</span> {
+                <span class="keyword">final</span> = original;
             }
+
+            RGBQUAD bgcolor = <span class="keywordflow">default</span>(RGBQUAD);
+            bgcolor.Color = settings.BackgroundColor;
+            <span class="keywordflow">if</span> (settings.BackgroundColor == Color.Transparent &amp;&amp; !supportsTransparency)
+                bgcolor.Color = Color.White;
+
+            <span class="comment">//If we need to leave padding, do so.</span>
+            <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a> outsideImage = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html" title="Represents the widths of edges of a box.">BoxPadding</a>(imageDest.Left, imageDest.Top, state.destSize.Width - imageDest.Right, state.destSize.Height - imageDest.Bottom);
+
+            <span class="keywordflow">if</span> (outsideImage.<a class="code" href="class_image_resizer_1_1_resizing_1_1_box_padding.html#a5a549837cdd68bdbd6fa61c9d11f9e52" title="Returns double.NaN unless all edges are the same width, in which case that width is returned...">All</a> != 0) {
+                var old = <span class="keyword">final</span>;
+                <span class="comment">//Extend canvas</span>
+                <span class="keyword">final</span> = FreeImage.EnlargeCanvas&lt;RGBQUAD&gt;(old,
+                            (int)outsideImage.Left, (<span class="keywordtype">int</span>)outsideImage.Top, (int)outsideImage.Right, (<span class="keywordtype">int</span>)outsideImage.Bottom,
+                            bgcolor.Color != Color.Transparent ? <span class="keyword">new</span> Nullable&lt;RGBQUAD&gt;(bgcolor) : null,
+                            FREE_IMAGE_COLOR_OPTIONS.FICO_RGBA);
+                <span class="keywordflow">if</span> (old == original) {
+                    <span class="keywordflow">if</span> (mayUnloadOriginal) {
+                        FreeImage.UnloadEx(ref original);
+                        old = original;
+                    }
+                } <span class="keywordflow">else</span> {
+                    FreeImage.UnloadEx(ref old); <span class="comment">//&#39;old&#39; has the original value of &#39;final&#39;, which we allocated.</span>
+                }
+                <span class="keywordflow">if</span> (<span class="keyword">final</span>.IsNull) <span class="keywordflow">return</span> FIBITMAP.Zero;
+            }
+
+            <span class="keywordflow">return</span> <span class="keyword">final</span>;
+
         }
 </pre></div>
 </div>
@@ -283,59 +289,63 @@ Protected Member Functions</h2></td></tr>
             <span class="keywordtype">bool</span> disposeStream = !(job.Source is Stream);
             <span class="keywordtype">long</span> originalPosition = 0;
             <span class="keywordtype">bool</span> restoreStreamPosition = <span class="keyword">false</span>;
-            <span class="keywordflow">try</span>{
-                <span class="comment">//Get a Stream instance for the job</span>
-                <span class="keywordtype">string</span> path;
-                s = c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a9b11da5f1856427a835034d52700c093" title="Returns a shared instance of ImageManager, (or a subclass if it has been upgraded). Instances change whenever ImageBuilderExtensions change.">CurrentImageBuilder</a>.<a class="code" href="class_image_resizer_1_1_image_builder.html#ab51799a036b1624f4e5d9c2aa2fcfa88" title="For plugin use only. Returns a stream instance from the specified source object and settings object...">GetStreamFromSource</a>(job.Source, job.Settings, ref disposeStream, out path, out restoreStreamPosition);
-                <span class="keywordflow">if</span> (s == null) <span class="keywordflow">return</span>  <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-                <span class="keywordflow">if</span> (job.ResetSourceStream) restoreStreamPosition = <span class="keyword">true</span>;
-                job.SourcePathData = path;
-            
-                <span class="comment">//Save the original stream positione</span>
-                originalPosition = (restoreStreamPosition) ? s.Position : - 1;
 
-                FIBITMAP b = FIBITMAP.Zero;
-                <span class="keywordflow">try</span> {
-                    <span class="comment">//What is our destination format</span>
-                    <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a> managedEncoder = c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2e4ab3b7cd725d4048be67bc21725eb4" title="Returns an instance of the first encoder that claims to be able to handle the specified settings...">GetEncoder</a>(job.Settings, job.SourcePathData); <span class="comment">//Use the existing pipeline to parse the querystring</span>
-                    <span class="comment">//FREE_IMAGE_FORMAT destFormat = FreeImage.GetFIFFromMime(managedEncoder.MimeType); //Use the resulting mime-type to determine the output format.</span>
-                    <span class="comment">//This prevents us from supporting output formats that don&#39;t already have registered encoders. Good, right?</span>
+            <span class="comment">//Get a Stream instance for the job</span>
+            <span class="keywordtype">string</span> path;
+            s = c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a9b11da5f1856427a835034d52700c093" title="Returns a shared instance of ImageManager, (or a subclass if it has been upgraded). Instances change whenever ImageBuilderExtensions change.">CurrentImageBuilder</a>.<a class="code" href="class_image_resizer_1_1_image_builder.html#ab51799a036b1624f4e5d9c2aa2fcfa88" title="For plugin use only. Returns a stream instance from the specified source object and settings object...">GetStreamFromSource</a>(job.Source, job.Settings, ref disposeStream, out path, out restoreStreamPosition);
+            <span class="keywordflow">if</span> (s == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+            <span class="keywordflow">if</span> (job.ResetSourceStream) restoreStreamPosition = <span class="keyword">true</span>;
+            job.SourcePathData = path;
 
-                    <span class="keywordtype">bool</span> supportsTransparency = managedEncoder.<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#adb440f5f1d5b9a4ba55df65163cc8c40" title="True if the output format will support transparency as it is currently configured.">SupportsTransparency</a>;
-                    <span class="comment">//Do all the bitmap stuff in another method</span>
-                    b = <a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_builder_1_1_free_image_builder_plugin.html#acb5589dc65949445b78cef690497691b" title="Builds an FIBitmap from the stream and job.Settings.">buildFiBitmap</a>(s, job, supportsTransparency);
-                    <span class="keywordflow">if</span> (b.IsNull) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+            <span class="comment">//Save the original stream positione</span>
+            originalPosition = (restoreStreamPosition) ? s.Position : -1;
+            <span class="keywordflow">try</span> {
+                <span class="comment">//What is our destination format</span>
+                <a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a> managedEncoder = c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2e4ab3b7cd725d4048be67bc21725eb4" title="Returns an instance of the first encoder that claims to be able to handle the specified settings...">GetEncoder</a>(job.Settings, job.SourcePathData); <span class="comment">//Use the existing pipeline to parse the querystring</span>
+                <span class="comment">//FREE_IMAGE_FORMAT destFormat = FreeImage.GetFIFFromMime(managedEncoder.MimeType); //Use the resulting mime-type to determine the output format.</span>
+                <span class="comment">//This prevents us from supporting output formats that don&#39;t already have registered encoders. Good, right?</span>
 
-                    <span class="comment">// Try to save the bitmap</span>
-                    <span class="keywordflow">if</span> (job.Dest is <span class="keywordtype">string</span> || job.Dest is Stream) {
-                        <a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_encoder_1_1_free_image_encoder_plugin.html">FreeImageEncoderPlugin</a> e = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_encoder_1_1_free_image_encoder_plugin.html">FreeImageEncoderPlugin</a>(job.Settings, path);
-                        <span class="keywordflow">if</span> (job.Dest is <span class="keywordtype">string</span>) {
-                            <span class="comment">//Make physical and resolve variable references all at the same time.</span>
-                            job.FinalPath = job.ResolveTemplatedPath(job.Dest as <span class="keywordtype">string</span>,
-                                delegate(<span class="keywordtype">string</span> var) {
-                                    <span class="keywordflow">if</span> (<span class="stringliteral">&quot;width&quot;</span>.Equals(var, StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">return</span> FreeImage.GetWidth(b).ToString();
-                                    <span class="keywordflow">if</span> (<span class="stringliteral">&quot;height&quot;</span>.Equals(var, StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">return</span> FreeImage.GetHeight(b).ToString();
-                                    <span class="keywordflow">if</span> (<span class="stringliteral">&quot;ext&quot;</span>.Equals(var, StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">return</span> e.<a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_encoder_1_1_free_image_encoder_plugin.html#a256dc3ea2d8507e182428291b44b3461" title="Returns a file extension appropriate for the output format as currently configured, without a leading dot.">Extension</a>;
-                                    <span class="keywordflow">return</span> null;
-                                });
-                            <span class="comment">//If requested, auto-create the parent directory(ies)</span>
-                            <span class="keywordflow">if</span> (job.CreateParentDirectory) {
-                                <span class="keywordtype">string</span> dirName = Path.GetDirectoryName(job.FinalPath);
-                                <span class="keywordflow">if</span> (!Directory.Exists(dirName)) Directory.CreateDirectory(dirName);
+                <span class="keywordtype">bool</span> supportsTransparency = managedEncoder.<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#adb440f5f1d5b9a4ba55df65163cc8c40" title="True if the output format will support transparency as it is currently configured.">SupportsTransparency</a>;
+
+
+                <span class="keywordflow">return</span> (<a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>)FreeImageDecoder.FreeImageDecoderPlugin.DecodeAndCall(s, job.Settings, delegate(ref FIBITMAP original, <span class="keywordtype">bool</span> mayUnloadOriginal) {
+                    FIBITMAP b = FIBITMAP.Zero;
+                    <span class="keywordflow">try</span> {
+                        <span class="comment">//Do all the bitmap stuff in another method</span>
+                        b = <a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_builder_1_1_free_image_builder_plugin.html#a6783dcf9e0a96ffe6d60533b1170db9f" title="Builds an FIBitmap from the stream and job.Settings.">buildFiBitmap</a>(ref original, job, supportsTransparency, mayUnloadOriginal);
+                        <span class="keywordflow">if</span> (b.IsNull) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+
+                        <span class="comment">// Try to save the bitmap</span>
+                        <span class="keywordflow">if</span> (job.Dest is <span class="keywordtype">string</span> || job.Dest is Stream) {
+                            <a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_encoder_1_1_free_image_encoder_plugin.html">FreeImageEncoderPlugin</a> e = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_encoder_1_1_free_image_encoder_plugin.html">FreeImageEncoderPlugin</a>(job.Settings, path);
+                            <span class="keywordflow">if</span> (job.Dest is <span class="keywordtype">string</span>) {
+                                <span class="comment">//Make physical and resolve variable references all at the same time.</span>
+                                job.FinalPath = job.ResolveTemplatedPath(job.Dest as <span class="keywordtype">string</span>,
+                                    delegate(<span class="keywordtype">string</span> var) {
+                                        <span class="keywordflow">if</span> (<span class="stringliteral">&quot;width&quot;</span>.Equals(var, StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">return</span> FreeImage.GetWidth(b).ToString();
+                                        <span class="keywordflow">if</span> (<span class="stringliteral">&quot;height&quot;</span>.Equals(var, StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">return</span> FreeImage.GetHeight(b).ToString();
+                                        <span class="keywordflow">if</span> (<span class="stringliteral">&quot;ext&quot;</span>.Equals(var, StringComparison.OrdinalIgnoreCase)) <span class="keywordflow">return</span> e.<a class="code" href="class_image_resizer_1_1_plugins_1_1_free_image_encoder_1_1_free_image_encoder_plugin.html#a256dc3ea2d8507e182428291b44b3461" title="Returns a file extension appropriate for the output format as currently configured, without a leading dot.">Extension</a>;
+                                        <span class="keywordflow">return</span> null;
+                                    });
+                                <span class="comment">//If requested, auto-create the parent directory(ies)</span>
+                                <span class="keywordflow">if</span> (job.CreateParentDirectory) {
+                                    <span class="keywordtype">string</span> dirName = Path.GetDirectoryName(job.FinalPath);
+                                    <span class="keywordflow">if</span> (!Directory.Exists(dirName)) Directory.CreateDirectory(dirName);
+                                }
+                                <span class="keywordflow">if</span> (!FreeImage.Save(e.Format, b, job.FinalPath, e.EncodingOptions)) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (job.Dest is Stream) {
+                                <span class="keywordflow">if</span> (!FreeImage.SaveToStream(b, (Stream)job.Dest, e.Format, e.EncodingOptions)) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
                             }
-                            <span class="keywordflow">if</span> (!FreeImage.Save(e.Format, b, job.FinalPath, e.EncodingOptions)) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (job.Dest is Stream) {
-                            <span class="keywordflow">if</span> (!FreeImage.SaveToStream(b, (Stream)job.Dest, e.Format, e.EncodingOptions)) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-                        }
-                    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (job.Dest == typeof(Bitmap)) {
-                        job.Result = FreeImage.GetBitmap(b);
-                    } <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-                } <span class="keywordflow">finally</span> {
-                    <span class="comment">//Ensure we unload the resulting bitmap</span>
-                   <span class="keywordflow">if</span> (!b.IsNull) FreeImage.UnloadEx(ref b);
-                }
-                <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.Cancel;
-            }<span class="keywordflow">finally</span>{
+                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (job.Dest == typeof(Bitmap)) {
+                            job.Result = FreeImage.GetBitmap(b);
+                        } <span class="keywordflow">else</span> <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+                        <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.Cancel;
+                    } <span class="keywordflow">finally</span> {
+                        <span class="keywordflow">if</span> (!b.IsNull &amp;&amp; b != original) FreeImage.UnloadEx(ref b);
+                    }
+
+                });
+            } <span class="keywordflow">finally</span> {
                 <span class="keywordflow">if</span> (s != null &amp;&amp; restoreStreamPosition &amp;&amp; s.CanSeek) s.Seek(originalPosition, SeekOrigin.Begin);
                 <span class="keywordflow">if</span> (disposeStream) s.Dispose();
             }

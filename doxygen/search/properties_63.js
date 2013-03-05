@@ -13,6 +13,8 @@ var searchData=
   ['color',['Color',['../struct_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_quantizer_1_1_color32.html#ab2578f551b426b3dc96e5db618e9dbf4',1,'ImageResizer::Plugins::PrettyGifs::Quantizer::Color32']]],
   ['colors',['Colors',['../class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html#aa310b9df6f66077c2adaa351bb772efd',1,'ImageResizer::Plugins::WicEncoder::WicEncoderPlugin']]],
   ['conf',['conf',['../class_image_resizer_1_1_intercept_module.html#a58d5e9e6dfce4ac70f2c81abbb7414ce',1,'ImageResizer::InterceptModule']]],
+  ['confidencelevelthreshold',['ConfidenceLevelThreshold',['../class_image_resizer_1_1_plugins_1_1_faces_1_1_face_detection.html#a8d8bdcd2dc4df5126f5b21ea33f02a26',1,'ImageResizer::Plugins::Faces::FaceDetection']]],
+  ['configproviders',['ConfigProviders',['../class_image_resizer_1_1_configuration_1_1_plugin_config.html#a5da572b7b973899c831ba496bfab4d14',1,'ImageResizer::Configuration::PluginConfig']]],
   ['connectionstring',['ConnectionString',['../class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_settings.html#ad0acd54cdece166b7bfed9cc1d3d5352',1,'ImageResizer::Plugins::SqlReader::SqlReaderSettings']]],
   ['contenttype',['ContentType',['../interface_image_resizer_1_1_caching_1_1_i_response_headers.html#a0e2048699acfd1ec7b5d4657116e38de',1,'ImageResizer::Caching::IResponseHeaders.ContentType()'],['../class_image_resizer_1_1_caching_1_1_response_headers.html#acadd4f200e9f63f7ae060fdd20cc6c3e',1,'ImageResizer::Caching::ResponseHeaders.ContentType()']]],
   ['contrast',['Contrast',['../class_image_resizer_1_1_instructions.html#aeb7a04aebf3dfa99f72ba794cf54c79a',1,'ImageResizer::Instructions']]],

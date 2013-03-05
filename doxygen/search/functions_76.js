@@ -1,5 +1,5 @@
 var searchData=
 [
   ['variableresolvercallback',['VariableResolverCallback',['../class_image_resizer_1_1_util_1_1_path_utils.html#a0ffdf593f69e69f70a16c35d5124b4c2',1,'ImageResizer::Util::PathUtils']]],
-  ['virtualtophysical',['VirtualToPhysical',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a93714723aad0fcc7834e3249ef326282',1,'ImageResizer::Plugins::Basic::VirtualFolder']]]
+  ['verifyauthenticity',['VerifyAuthenticity',['../interface_image_resizer_1_1_plugins_1_1_i_license_service.html#a7b71bb5a5a2f5b2cf4c851dc194f086e',1,'ImageResizer::Plugins::ILicenseService.VerifyAuthenticity()'],['../class_image_resizer_1_1_licensing_1_1_license_verifier.html#ae1d54f9391d9243077c02ae32a70eff0',1,'ImageResizer::Licensing::LicenseVerifier.VerifyAuthenticity()']]]
 ];

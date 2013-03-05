@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -141,10 +141,10 @@ Public Member Functions</h2></td></tr>
 delegate void&#160;</td><td class="memItemRight" valign="bottom"><b>RewriteBucketAndKeyPath</b> (<a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html">S3VirtualPathProvider</a> sender, <a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_path_event_args.html">S3PathEventArgs</a> e)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a448159e9a178355e5f0baecf555de3fe">FilterPath</a> (string path)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Execites the PreS3RequestFilter event and returns the result.  <a href="#a448159e9a178355e5f0baecf555de3fe"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a6a3c5d5b26d0795aedc36bee9d8cac5f">S3VirtualPathProvider</a> (S3Service service, String virtualFilesystemPrefix, TimeSpan absoluteMetadataExpiration, TimeSpan slidingMetadataExpiration, RewriteBucketAndKeyPath bucketFilterCallback, Boolean fastMode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and configure a virtual path provider.  <a href="#a6a3c5d5b26d0795aedc36bee9d8cac5f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a986a179edacb40fba95b093167ce93e8">S3VirtualPathProvider</a> (AmazonS3Client s3client, String virtualFilesystemPrefix, TimeSpan absoluteMetadataExpiration, TimeSpan slidingMetadataExpiration, RewriteBucketAndKeyPath bucketFilterCallback, Boolean fastMode)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create and configure a virtual path provider.  <a href="#a986a179edacb40fba95b093167ce93e8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a04017b8607a46423cc5279884b42c361">S3VirtualPathProvider</a> (RewriteBucketAndKeyPath bucketFilterCallback, Boolean fastMode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default settings: UseSSL=false, VirtualFileSystemPrefix = "~/s3", SlidingExpiration = 1h, AbsoluteExpiration = maxvalue No bucket filtering is performed, so any amazon-hosted bucket can be accessed through this provider unless you add a bucket filter.  <a href="#a04017b8607a46423cc5279884b42c361"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default settings: CommunicationProtocol=HTTP, VirtualFileSystemPrefix = "~/s3", SlidingExpiration = 1h, AbsoluteExpiration = maxvalue No bucket filtering is performed, so any amazon-hosted bucket can be accessed through this provider unless you add a bucket filter.  <a href="#a04017b8607a46423cc5279884b42c361"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a9dd1f1484dbbf071cbcf79b347c77fb5">IsPathVirtual</a> (string virtualPath)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines whether a specified virtual path is within the virtual file system.  <a href="#a9dd1f1484dbbf071cbcf79b347c77fb5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afa5f2d07731dcc25569033f193b27802"></a><!-- doxytag: member="ImageResizer::Plugins::S3Reader::S3VirtualPathProvider::FileExists" ref="afa5f2d07731dcc25569033f193b27802" args="(string virtualPath)" -->
@@ -169,8 +169,8 @@ Properties</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Existence and modified date metadata about files is cached for, at longest, this amount of time after it is first stored.  <a href="#a38e50849c519fedc6aeb95ad5eda1daa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">TimeSpan&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a797191245f76e16af3ce438b3742f4ad">MetadataSlidingExpiration</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Existence and modified date metadata about files is cached for this long after it is last accessed.  <a href="#a797191245f76e16af3ce438b3742f4ad"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">S3Service&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#aef3bf1f153772bd653d13602887ca4a3">Service</a><code> [get, set]</code></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets and sets the S3Service object that specifies connection details such as authentication, encryption, etc.  <a href="#aef3bf1f153772bd653d13602887ca4a3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">AmazonS3Client&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a457d939644c07374a34570b8441001ed">S3Client</a><code> [get, set]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets and sets the AmazonS3Client object that specifies connection details such as authentication, encryption, etc.  <a href="#a457d939644c07374a34570b8441001ed"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a73df927cef18b20829ed898584cfdeff">FastMode</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, existence of bucket and key is assumed as long as prefix is present. Defaults to true. Also, no modified date information is provided, so the cache never gets updated. Requires 1 request instead of 2 to download the image.  <a href="#a73df927cef18b20829ed898584cfdeff"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="events"></a>
@@ -183,15 +183,15 @@ Events</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_s3_virtual_path_provider_8cs_source.html#l00018">18</a> of file <a class="el" href="_s3_virtual_path_provider_8cs_source.html">S3VirtualPathProvider.cs</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a6a3c5d5b26d0795aedc36bee9d8cac5f"></a><!-- doxytag: member="ImageResizer::Plugins::S3Reader::S3VirtualPathProvider::S3VirtualPathProvider" ref="a6a3c5d5b26d0795aedc36bee9d8cac5f" args="(S3Service service, String virtualFilesystemPrefix, TimeSpan absoluteMetadataExpiration, TimeSpan slidingMetadataExpiration, RewriteBucketAndKeyPath bucketFilterCallback, Boolean fastMode)" -->
+<a class="anchor" id="a986a179edacb40fba95b093167ce93e8"></a><!-- doxytag: member="ImageResizer::Plugins::S3Reader::S3VirtualPathProvider::S3VirtualPathProvider" ref="a986a179edacb40fba95b093167ce93e8" args="(AmazonS3Client s3client, String virtualFilesystemPrefix, TimeSpan absoluteMetadataExpiration, TimeSpan slidingMetadataExpiration, RewriteBucketAndKeyPath bucketFilterCallback, Boolean fastMode)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a6a3c5d5b26d0795aedc36bee9d8cac5f">ImageResizer.Plugins.S3Reader.S3VirtualPathProvider.S3VirtualPathProvider</a> </td>
+          <td class="memname"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a986a179edacb40fba95b093167ce93e8">ImageResizer.Plugins.S3Reader.S3VirtualPathProvider.S3VirtualPathProvider</a> </td>
           <td>(</td>
-          <td class="paramtype">S3Service&#160;</td>
-          <td class="paramname"><em>service</em>, </td>
+          <td class="paramtype">AmazonS3Client&#160;</td>
+          <td class="paramname"><em>s3client</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -235,7 +235,7 @@ Events</h2></td></tr>
 <p>Create and configure a virtual path provider. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">service</td><td>Provide the authentication and ecryption settings. For public buckets, no settings are required. UseSSL should be false for best performance. </td></tr>
+    <tr><td class="paramname">s3client</td><td>Provide the authentication and ecryption settings. For public buckets, no settings are required. Use AmazonS3Config.CommunicationProtocol=HTTP for best performance. </td></tr>
     <tr><td class="paramname">virtualFilesystemPrefix</td><td>The virtual folder to allow client access of s3 from.</td></tr>
     <tr><td class="paramname">absoluteMetadataExpiration</td><td></td></tr>
     <tr><td class="paramname">slidingMetadataExpiration</td><td></td></tr>
@@ -248,7 +248,7 @@ Events</h2></td></tr>
 <p>Definition at line <a class="el" href="_s3_virtual_path_provider_8cs_source.html#l00109">109</a> of file <a class="el" href="_s3_virtual_path_provider_8cs_source.html">S3VirtualPathProvider.cs</a>.</p>
 <div class="fragment"><pre class="fragment">            : base()
         {
-            this.service = service;
+            this.s3Client = s3client;
             this.<a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#ab19191d1cd2f926881f09cef89100456" title="Requests starting with this path will be handled by this virtual path provider. Should be in app-rela...">VirtualFilesystemPrefix</a> = virtualFilesystemPrefix;
             this.<a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a38e50849c519fedc6aeb95ad5eda1daa" title="Existence and modified date metadata about files is cached for, at longest, this amount of time after...">MetadataAbsoluteExpiration</a> = absoluteMetadataExpiration;
             this.<a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a797191245f76e16af3ce438b3742f4ad" title="Existence and modified date metadata about files is cached for this long after it is last accessed...">MetadataSlidingExpiration</a> = slidingMetadataExpiration;
@@ -263,7 +263,7 @@ Events</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a6a3c5d5b26d0795aedc36bee9d8cac5f">ImageResizer.Plugins.S3Reader.S3VirtualPathProvider.S3VirtualPathProvider</a> </td>
+          <td class="memname"><a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a986a179edacb40fba95b093167ce93e8">ImageResizer.Plugins.S3Reader.S3VirtualPathProvider.S3VirtualPathProvider</a> </td>
           <td>(</td>
           <td class="paramtype">RewriteBucketAndKeyPath&#160;</td>
           <td class="paramname"><em>bucketFilterCallback</em>, </td>
@@ -283,7 +283,7 @@ Events</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Default settings: UseSSL=false, VirtualFileSystemPrefix = "~/s3", SlidingExpiration = 1h, AbsoluteExpiration = maxvalue No bucket filtering is performed, so any amazon-hosted bucket can be accessed through this provider unless you add a bucket filter. </p>
+<p>Default settings: CommunicationProtocol=HTTP, VirtualFileSystemPrefix = "~/s3", SlidingExpiration = 1h, AbsoluteExpiration = maxvalue No bucket filtering is performed, so any amazon-hosted bucket can be accessed through this provider unless you add a bucket filter. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">bucketFilterCallback</td><td>You should validate that the requested bucket is your own. If you only want one bucket, just prefix your bucket to the path.</td></tr>
@@ -295,8 +295,7 @@ Events</h2></td></tr>
 <p>Definition at line <a class="el" href="_s3_virtual_path_provider_8cs_source.html#l00126">126</a> of file <a class="el" href="_s3_virtual_path_provider_8cs_source.html">S3VirtualPathProvider.cs</a>.</p>
 <div class="fragment"><pre class="fragment">            : base()
         {
-            this.service = <span class="keyword">new</span> S3Service();
-            this.service.UseSsl = <span class="keyword">false</span>;
+            this.s3Client = <span class="keyword">new</span> AmazonS3Client(null,<span class="keyword">new</span> AmazonS3Config() { UseSecureStringForAwsSecretKey = <span class="keyword">false</span>, CommunicationProtocol = Amazon.S3.Model.Protocol.HTTP });
             this.<a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a0d41267dbcc02afb14afeb0cbae77492" title="Important! You should handle this event and throw an exception if a bucket that you do not own is req...">PreS3RequestFilter</a> += bucketFilterCallback;
             this.<a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a73df927cef18b20829ed898584cfdeff" title="If true, existence of bucket and key is assumed as long as prefix is present. Defaults to true...">FastMode</a> = fastMode;
         }
@@ -361,7 +360,7 @@ Events</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>true if the virtual path is within the virtual file sytem; otherwise, false. </dd></dl>
 
-<p>Definition at line <a class="el" href="_s3_virtual_path_provider_8cs_source.html#l00149">149</a> of file <a class="el" href="_s3_virtual_path_provider_8cs_source.html">S3VirtualPathProvider.cs</a>.</p>
+<p>Definition at line <a class="el" href="_s3_virtual_path_provider_8cs_source.html#l00148">148</a> of file <a class="el" href="_s3_virtual_path_provider_8cs_source.html">S3VirtualPathProvider.cs</a>.</p>
 <div class="fragment"><pre class="fragment">        {
             <span class="keywordflow">return</span> virtualPath.StartsWith(<a class="code" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#ab19191d1cd2f926881f09cef89100456" title="Requests starting with this path will be handled by this virtual path provider. Should be in app-rela...">VirtualFilesystemPrefix</a>, StringComparison.OrdinalIgnoreCase);
         }
@@ -420,18 +419,18 @@ Events</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aef3bf1f153772bd653d13602887ca4a3"></a><!-- doxytag: member="ImageResizer::Plugins::S3Reader::S3VirtualPathProvider::Service" ref="aef3bf1f153772bd653d13602887ca4a3" args="" -->
+<a class="anchor" id="a457d939644c07374a34570b8441001ed"></a><!-- doxytag: member="ImageResizer::Plugins::S3Reader::S3VirtualPathProvider::S3Client" ref="a457d939644c07374a34570b8441001ed" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">S3Service <a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#aef3bf1f153772bd653d13602887ca4a3">ImageResizer.Plugins.S3Reader.S3VirtualPathProvider.Service</a><code> [get, set]</code></td>
+          <td class="memname">AmazonS3Client <a class="el" href="class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html#a457d939644c07374a34570b8441001ed">ImageResizer.Plugins.S3Reader.S3VirtualPathProvider.S3Client</a><code> [get, set]</code></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Gets and sets the S3Service object that specifies connection details such as authentication, encryption, etc. </p>
+<p>Gets and sets the AmazonS3Client object that specifies connection details such as authentication, encryption, etc. </p>
 
 <p>Definition at line <a class="el" href="_s3_virtual_path_provider_8cs_source.html#l00089">89</a> of file <a class="el" href="_s3_virtual_path_provider_8cs_source.html">S3VirtualPathProvider.cs</a>.</p>
 

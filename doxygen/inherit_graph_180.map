@@ -1,8 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$interface_seven_zip_reduced_1_1_i_coder.html" title="SevenZipReduced.ICoder" alt="" coords="117,75,499,122"/>
-<area shape="rect" id="node3" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_m_a_1_1_decoder.html" title="SevenZipReduced.Compression.LZMA.Decoder" alt="" coords="659,41,1355,87"/>
-<area shape="rect" id="node5" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_m_a_1_1_encoder.html" title="SevenZipReduced.Compression.LZMA.Encoder" alt="" coords="659,146,1354,193"/>
-<area shape="rect" id="node6" href="$interface_seven_zip_reduced_1_1_i_set_coder_properties.html" title="SevenZipReduced.ISetCoderProperties" alt="" coords="22,146,594,193"/>
-<area shape="rect" id="node8" href="$interface_seven_zip_reduced_1_1_i_set_decoder_properties.html" title="SevenZipReduced.ISetDecoderProperties" alt="" coords="5,5,611,51"/>
-<area shape="rect" id="node10" href="$interface_seven_zip_reduced_1_1_i_write_coder_properties.html" title="SevenZipReduced.IWriteCoderProperties" alt="" coords="7,217,609,263"/>
+<area shape="rect" id="node1" href="$class_seven_zip_reduced_1_1_compression_1_1_range_coder_1_1_decoder.html" title="SevenZipReduced.Compression.RangeCoder.Decoder" alt="" coords="5,5,792,51"/>
 </map>

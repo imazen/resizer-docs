@@ -4,4 +4,5 @@
 <area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="341,102,459,149"/>
 <area shape="rect" id="node8" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i..." alt="" coords="483,102,807,149"/>
 <area shape="rect" id="node10" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html" title="IIssueProvider" alt="" coords="831,102,1053,149"/>
+<area shape="rect" id="node12" href="$interface_image_resizer_1_1_plugins_1_1_i_redact_diagnostics.html" title="Permits plugins to redact data from the diagnostics page, like passwords." alt="" coords="1079,102,1372,149"/>
 </map>

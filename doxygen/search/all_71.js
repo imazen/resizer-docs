@@ -13,6 +13,7 @@ var searchData=
   ['queryid',['QueryID',['../class_image_resizer_1_1_util_1_1yrl.html#a215a8b644c594bb58ec2ff859d300a4a',1,'ImageResizer::Util::yrl']]],
   ['querypath',['QueryPath',['../class_image_resizer_1_1_util_1_1yrl.html#a463bc5cdf3013efe8f6dc6c89c3a2232',1,'ImageResizer::Util::yrl']]],
   ['querystring',['QueryString',['../class_image_resizer_1_1_util_1_1yrl.html#a0566ffba4fd0842dd63c925df11f581b',1,'ImageResizer::Util::yrl.QueryString()'],['../class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#a4b6bda907fb801794fe3fec02eebb4e6',1,'ImageResizer::Plugins::RemoteReader::RemoteRequestEventArgs.QueryString()']]],
+  ['querystringbase_2dg',['QuerystringBase-g',['../class_image_resizer_1_1_collections_1_1_querystring_base-g.html',1,'ImageResizer::Collections']]],
   ['querystringplugins',['QuerystringPlugins',['../class_image_resizer_1_1_configuration_1_1_plugin_config.html#ae571e06c5e5e95bfe4891d4f6db05aab',1,'ImageResizer::Configuration::PluginConfig']]],
   ['queue',['Queue',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_async_1_1_async_write_collection.html#a92b45565d75d0c9c9a0d56d5b11fcac0',1,'ImageResizer::Plugins::DiskCache::Async::AsyncWriteCollection']]],
   ['queueifunique',['QueueIfUnique',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_1_1_cleanup_queue.html#a165b95e565a3705ff5cba353815c256d',1,'ImageResizer::Plugins::DiskCache::Cleanup::CleanupQueue']]],

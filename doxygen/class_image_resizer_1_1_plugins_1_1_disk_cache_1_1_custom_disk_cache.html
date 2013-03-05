@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -318,6 +318,10 @@ Events</h2></td></tr>
 
             CacheResult result = <span class="keyword">new</span> CacheResult(<a class="code" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html#afb29b25106a646c2ee694841e4b57fa8">CacheQueryResult</a>.Hit, physicalPath, relativePath);
 
+
+
+            <span class="keywordtype">bool</span> compareModifiedDates = hasModifiedDate &amp;&amp; !hashModifiedDate;
+            
             <span class="keywordtype">bool</span> asyncFailed = <span class="keyword">false</span>;
 
              <span class="comment">//On the first check, verify the file exists using System.IO directly (the last &#39;true&#39; parameter).</span>
@@ -329,7 +333,7 @@ Events</h2></td></tr>
                     <span class="comment">//On failure</span>
                     result.Result = <a class="code" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html#afb29b25106a646c2ee694841e4b57fa8">CacheQueryResult</a>.Failed;
                 }
-            }<span class="keywordflow">else</span> <span class="keywordflow">if</span> ((!hasModifiedDate || hashModifiedDate) ? !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.existsCertain(relativePath, physicalPath) : !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.modifiedDateMatchesCertainExists(sourceModifiedUtc, relativePath, physicalPath)) {
+            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!compareModifiedDates ? !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.existsCertain(relativePath, physicalPath) : !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.modifiedDateMatchesCertainExists(sourceModifiedUtc, relativePath, physicalPath)) {
                 
                 <span class="comment">//Looks like a miss. Let&#39;s enter a lock for the creation of the file. This is a different locking system than for writing to the file - far less contention, as it doesn&#39;t include the </span>
                 <span class="comment">//This prevents two identical requests from duplicating efforts. Different requests don&#39;t lock.</span>
@@ -347,7 +351,7 @@ Events</h2></td></tr>
 
                         <span class="comment">//On the second check, use cached data for speed. The cached data should be updated if another thread updated a file (but not if another process did).</span>
                         <span class="keywordflow">if</span> (t == null &amp;&amp;
-                            ((!hasModifiedDate || hashModifiedDate) ? !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.exists(relativePath, physicalPath) : !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.modifiedDateMatches(sourceModifiedUtc, relativePath, physicalPath))) {
+                            (!compareModifiedDates ? !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.exists(relativePath, physicalPath) : !<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html#abe47e92a8f0bee35ac7b08a02777b4ef" title="Provides an in-memory index of the cache.">Index</a>.modifiedDateMatches(sourceModifiedUtc, relativePath, physicalPath))) {
 
                                 result.Result = <a class="code" href="namespace_image_resizer_1_1_plugins_1_1_disk_cache.html#afb29b25106a646c2ee694841e4b57fa8">CacheQueryResult</a>.Miss;
                             <span class="comment">//Still a miss, we even rechecked the filesystem. Write to memory.</span>

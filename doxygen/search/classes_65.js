@@ -9,6 +9,6 @@ var searchData=
   ['eventcounter',['EventCounter',['../class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_event_counter.html',1,'ImageResizer::Plugins::SourceMemCache']]],
   ['eventcountingdictionary_2dg',['EventCountingDictionary-g',['../class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_event_counting_dictionary-g.html',1,'ImageResizer::Plugins::SourceMemCache']]],
   ['eventcountingstrategy',['EventCountingStrategy',['../class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_event_counting_strategy.html',1,'ImageResizer::Plugins::SourceMemCache']]],
-  ['extensionattribute',['ExtensionAttribute',['../class_system_1_1_runtime_1_1_compiler_services_1_1_extension_attribute.html',1,'System::Runtime::CompilerServices']]],
+  ['eyedetection',['EyeDetection',['../class_image_resizer_1_1_plugins_1_1_red_eye_1_1_eye_detection.html',1,'ImageResizer::Plugins::RedEye']]],
   ['eyekernels',['EyeKernels',['../class_image_resizer_1_1_plugins_1_1_red_eye_1_1_eye_kernels.html',1,'ImageResizer::Plugins::RedEye']]]
 ];

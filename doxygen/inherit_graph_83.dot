@@ -1,7 +1,0 @@
-digraph G
-{
-  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
-  node [fontname="Helvetica",fontsize="24",shape=record];
-  rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.RedEye.ResizingCanceledException",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_red_eye_1_1_resizing_canceled_exception.html"];
-}

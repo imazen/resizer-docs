@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -111,18 +111,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <!-- doxytag: class="ImageResizer::Plugins::RedEye::RedEyeFilter" -->
-<p>Extract normalized RGB channel from color image.  
+<p>Turns color images into grayscale images using a specialized filter that makes the red eyes stand out brightly against their background..  
  <a href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter.html#details">More...</a></p>
 
 <p><a href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter-members.html">List of all members.</a></p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9df3cb9a6b474885ab79cb50e44f7f41"></a><!-- doxytag: member="ImageResizer::Plugins::RedEye::RedEyeFilter::RedEyeFilter" ref="a9df3cb9a6b474885ab79cb50e44f7f41" args="()" -->
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter.html#a9df3cb9a6b474885ab79cb50e44f7f41">RedEyeFilter</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the ExtractNormalizedRGBChannel class. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter.html#a9df3cb9a6b474885ab79cb50e44f7f41">RedEyeFilter</a> ()</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter.html" title="Turns color images into grayscale images using a specialized filter that makes the red eyes stand out...">RedEyeFilter</a> class.  <a href="#a9df3cb9a6b474885ab79cb50e44f7f41"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter.html#a62647ddbf2b440f499481be4c6958f4c">RedEyeFilter</a> (short alg)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the ExtractNormalizedRGBChannel class.  <a href="#a62647ddbf2b440f499481be4c6958f4c"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a new instance of the <a class="el" href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter.html" title="Turns color images into grayscale images using a specialized filter that makes the red eyes stand out...">RedEyeFilter</a> class.  <a href="#a62647ddbf2b440f499481be4c6958f4c"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">override unsafe void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter.html#a9d9c81f3fa93728ecc6d92dd52f18d1f">ProcessFilter</a> (UnmanagedImage sourceData, UnmanagedImage destinationData)</td></tr>
@@ -136,23 +135,37 @@ Properties</h2></td></tr>
 short&#160;</td><td class="memItemRight" valign="bottom"><b>Algorithm</b><code> [get, set]</code></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock"><p>Extract normalized RGB channel from color image. </p>
-<p>Extracts specified normalized RGB channel of color image and returns it as grayscale image.</p>
-<p>&lt;note&gt;Normalized RGB color space is defined as: </p>
-<div class="fragment"><pre class="fragment">            r = R / (R + G + B ),
-            g = G / (R + G + B ),
-            b = B / (R + G + B ),
-</pre></div><p> where <b>R</b>, <b>G</b> and <b>B</b> are components of RGB color space and <b>r</b>, <b>g</b> and <b>b</b> are components of normalized RGB color space. &lt;/note&gt;</p>
-<p>The filter accepts 24, 32, 48 and 64 bpp color images and produces 8 (if source is 24 or 32 bpp image) or 16 (if source is 48 or 64 bpp image) bpp grayscale image.</p>
-<p>Sample usage:</p>
-<div class="fragment"><pre class="fragment">            <span class="comment">// create filter</span>
-            ExtractNormalizedRGBChannel filter = <span class="keyword">new</span> ExtractNormalizedRGBChannel( RGB.G );
-            <span class="comment">// apply the filter</span>
-            Bitmap channelImage = filter.Apply( image );
-</pre></div><dl class="see"><dt><b>See also:</b></dt><dd>ExtractChannel</dd></dl>
+<div class="textblock"><p>Turns color images into grayscale images using a specialized filter that makes the red eyes stand out brightly against their background.. </p>
 
-<p>Definition at line <a class="el" href="_red_eye_filter_8cs_source.html#l00045">45</a> of file <a class="el" href="_red_eye_filter_8cs_source.html">RedEyeFilter.cs</a>.</p>
+<p>Definition at line <a class="el" href="_red_eye_filter_8cs_source.html#l00015">15</a> of file <a class="el" href="_red_eye_filter_8cs_source.html">RedEyeFilter.cs</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9df3cb9a6b474885ab79cb50e44f7f41"></a><!-- doxytag: member="ImageResizer::Plugins::RedEye::RedEyeFilter::RedEyeFilter" ref="a9df3cb9a6b474885ab79cb50e44f7f41" args="()" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter.html#a9df3cb9a6b474885ab79cb50e44f7f41">ImageResizer.Plugins.RedEye.RedEyeFilter.RedEyeFilter</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Initializes a new instance of the <a class="el" href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter.html" title="Turns color images into grayscale images using a specialized filter that makes the red eyes stand out...">RedEyeFilter</a> class. </p>
+
+<p>Definition at line <a class="el" href="_red_eye_filter_8cs_source.html#l00032">32</a> of file <a class="el" href="_red_eye_filter_8cs_source.html">RedEyeFilter.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                              {
+            <span class="comment">// initialize format translation dictionary</span>
+            formatTranslations[PixelFormat.Format24bppRgb] = PixelFormat.Format8bppIndexed;
+            formatTranslations[PixelFormat.Format32bppRgb] = PixelFormat.Format8bppIndexed;
+            formatTranslations[PixelFormat.Format32bppArgb] = PixelFormat.Format8bppIndexed;
+            Algorithm = 2;
+        }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="a62647ddbf2b440f499481be4c6958f4c"></a><!-- doxytag: member="ImageResizer::Plugins::RedEye::RedEyeFilter::RedEyeFilter" ref="a62647ddbf2b440f499481be4c6958f4c" args="(short alg)" -->
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +181,7 @@ short&#160;</td><td class="memItemRight" valign="bottom"><b>Algorithm</b><code> 
 </div>
 <div class="memdoc">
 
-<p>Initializes a new instance of the ExtractNormalizedRGBChannel class. </p>
+<p>Initializes a new instance of the <a class="el" href="class_image_resizer_1_1_plugins_1_1_red_eye_1_1_red_eye_filter.html" title="Turns color images into grayscale images using a specialized filter that makes the red eyes stand out...">RedEyeFilter</a> class. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">alg</td><td>The algorithm to use for filtering the image.</td></tr>
@@ -176,10 +189,10 @@ short&#160;</td><td class="memItemRight" valign="bottom"><b>Algorithm</b><code> 
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_red_eye_filter_8cs_source.html#l00084">84</a> of file <a class="el" href="_red_eye_filter_8cs_source.html">RedEyeFilter.cs</a>.</p>
-<div class="fragment"><pre class="fragment">                : <span class="keyword">this</span>() {
-                this.Algorithm = alg;
-            }
+<p>Definition at line <a class="el" href="_red_eye_filter_8cs_source.html#l00044">44</a> of file <a class="el" href="_red_eye_filter_8cs_source.html">RedEyeFilter.cs</a>.</p>
+<div class="fragment"><pre class="fragment">            : <span class="keyword">this</span>() {
+            this.Algorithm = alg;
+        }
 </pre></div>
 </div>
 </div>
@@ -218,70 +231,52 @@ short&#160;</td><td class="memItemRight" valign="bottom"><b>Algorithm</b><code> 
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_red_eye_filter_8cs_source.html#l00096">96</a> of file <a class="el" href="_red_eye_filter_8cs_source.html">RedEyeFilter.cs</a>.</p>
-<div class="fragment"><pre class="fragment">                                                                                                                    {
-                <span class="comment">// get width and height</span>
-                <span class="keywordtype">int</span> width = sourceData.Width;
-                <span class="keywordtype">int</span> height = sourceData.Height;
+<p>Definition at line <a class="el" href="_red_eye_filter_8cs_source.html#l00054">54</a> of file <a class="el" href="_red_eye_filter_8cs_source.html">RedEyeFilter.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                                                                                {
+            <span class="comment">// get width and height</span>
+            <span class="keywordtype">int</span> width = sourceData.Width;
+            <span class="keywordtype">int</span> height = sourceData.Height;
 
-                <span class="keywordtype">int</span> pixelSize =   System.Drawing.Image.GetPixelFormatSize(sourceData.PixelFormat) / 8;
-                <span class="keywordtype">int</span> sum;
+            <span class="keywordtype">int</span> pixelSize =   System.Drawing.Image.GetPixelFormatSize(sourceData.PixelFormat) / 8;
+            <span class="keywordtype">int</span> sum;
 
-                <span class="keywordflow">if</span> (pixelSize &lt;= 4) {
-                    <span class="keywordtype">int</span> srcOffset = sourceData.Stride - width * pixelSize;
-                    <span class="keywordtype">int</span> dstOffset = destinationData.Stride - width;
+            var algorithm = Algorithm;
 
-                    <span class="comment">// do the job</span>
-                    byte* src = (byte*)sourceData.ImageData.ToPointer();
-                    byte* dst = (byte*)destinationData.ImageData.ToPointer();
+            <span class="keywordflow">if</span> (pixelSize &lt;= 4) {
+                <span class="keywordtype">int</span> srcOffset = sourceData.Stride - width * pixelSize;
+                <span class="keywordtype">int</span> dstOffset = destinationData.Stride - width;
 
-                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; height; y++) {
-                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; x++, src += pixelSize, dst++) {
-                            <span class="keywordflow">if</span> (src[RGB.R] == 0) <span class="keywordflow">continue</span>;
-                            <span class="keywordflow">if</span> (algorithm == 0) {
-                                <span class="comment">//held</span>
-                                *dst = (byte)Math.Max(src[RGB.R] - Math.Min(src[RGB.G], src[RGB.B]), 0);
-                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (algorithm == 1) {
-                                <span class="comment">//normalized r channel</span>
-                                sum = (src[RGB.R] + src[RGB.G] + src[RGB.B]);
-                                *dst = (sum != 0) ? (byte)(255 * src[RGB.R] / sum) : (byte)0;
-                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (algorithm == 2) {
-                                <span class="comment">//Smolka</span>
-                                *dst = src[RGB.R] == 0 ? (byte)0 : (byte)Math.Min(255,Math.Max(0,((<span class="keywordtype">float</span>)(src[RGB.R] - Math.Max(src[RGB.G], src[RGB.B])) * 255.0F / (<span class="keywordtype">float</span>)src[RGB.R])));
-                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (algorithm == 3) {
-                                <span class="comment">//GS</span>
-                                *dst = (byte)Math.Pow((Math.Max(0, (src[RGB.R] * 2 - src[RGB.G] - src[RGB.B]) / src[RGB.R])),2);
-                                
-                            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (algorithm == 4) {
-                                <span class="comment">//Gabautz</span>
-                                *dst = (byte)Math.Min(255, (src[RGB.R] * src[RGB.R] / (src[RGB.G] * src[RGB.G] + src[RGB.B] * src[RGB.B] + 14)));
-                            }
-                        }
-                        src += srcOffset;
-                        dst += dstOffset;
-                    }
-                } <span class="keywordflow">else</span> {
-                    pixelSize /= 2;
+                <span class="comment">// do the job</span>
+                byte* src = (byte*)sourceData.ImageData.ToPointer();
+                byte* dst = (byte*)destinationData.ImageData.ToPointer();
 
-                    byte* srcBase = (byte*)sourceData.ImageData.ToPointer();
-                    byte* dstBase = (byte*)destinationData.ImageData.ToPointer();
-                    <span class="keywordtype">int</span> srcStride = sourceData.Stride;
-                    <span class="keywordtype">int</span> dstStride = destinationData.Stride;
-
-                    <span class="comment">// for each line</span>
-                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; height; y++) {
-                        ushort* src = (ushort*)(srcBase + y * srcStride);
-                        ushort* dst = (ushort*)(dstBase + y * dstStride);
-
-                        <span class="comment">// for each pixel</span>
-                        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; x++, src += pixelSize, dst++) {
+                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt; height; y++) {
+                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt; width; x++, src += pixelSize, dst++) {
+                        <span class="keywordflow">if</span> (src[RGB.R] == 0) <span class="keywordflow">continue</span>;
+                        <span class="keywordflow">if</span> (algorithm == 0) {
+                            <span class="comment">//held</span>
+                            *dst = (byte)Math.Max(src[RGB.R] - Math.Min(src[RGB.G], src[RGB.B]), 0);
+                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (algorithm == 1) {
+                            <span class="comment">//normalized r channel</span>
                             sum = (src[RGB.R] + src[RGB.G] + src[RGB.B]);
+                            *dst = (sum != 0) ? (byte)(255 * src[RGB.R] / sum) : (byte)0;
+                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (algorithm == 2) {
+                            <span class="comment">//Smolka</span>
+                            *dst = src[RGB.R] == 0 ? (byte)0 : (byte)Math.Min(255, Math.Max(0, ((<span class="keywordtype">float</span>)(src[RGB.R] - Math.Max(src[RGB.G], src[RGB.B])) * 255.0F / (<span class="keywordtype">float</span>)src[RGB.R])));
+                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (algorithm == 3) {
+                            <span class="comment">//GS</span>
+                            *dst = (byte)Math.Pow((Math.Max(0, (src[RGB.R] * 2 - src[RGB.G] - src[RGB.B]) / src[RGB.R])), 2);
 
-                            *dst = (sum != 0) ? (ushort)(65535 * src[RGB.B] / sum) : (ushort)0;
+                        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (algorithm == 4) {
+                            <span class="comment">//Gabautz</span>
+                            *dst = (byte)Math.Min(255, (src[RGB.R] * src[RGB.R] / (src[RGB.G] * src[RGB.G] + src[RGB.B] * src[RGB.B] + 14)));
                         }
                     }
+                    src += srcOffset;
+                    dst += dstOffset;
                 }
-            }
+            } <span class="keywordflow">else</span> <span class="keywordflow">throw</span> <span class="keyword">new</span> NotImplementedException();
+        }
 </pre></div>
 </div>
 </div>
@@ -299,7 +294,7 @@ short&#160;</td><td class="memItemRight" valign="bottom"><b>Algorithm</b><code> 
 
 <p>Format translations dictionary. </p>
 
-<p>Definition at line <a class="el" href="_red_eye_filter_8cs_source.html#l00054">54</a> of file <a class="el" href="_red_eye_filter_8cs_source.html">RedEyeFilter.cs</a>.</p>
+<p>Definition at line <a class="el" href="_red_eye_filter_8cs_source.html#l00023">23</a> of file <a class="el" href="_red_eye_filter_8cs_source.html">RedEyeFilter.cs</a>.</p>
 
 </div>
 </div>

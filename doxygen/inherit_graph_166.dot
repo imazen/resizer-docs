@@ -1,7 +1,0 @@
-digraph G
-{
-  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
-  node [fontname="Helvetica",fontsize="24",shape=record];
-  rankdir="LR";
-  Node1 [label="SevenZipReduced.Compression.LZ.OutWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_out_window.html"];
-}

@@ -10,6 +10,7 @@ var searchData=
   ['addedfile',['AddedFile',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_manager.html#af60fdacd3a4d22ce298342a5db446035',1,'ImageResizer::Plugins::DiskCache::CleanupManager']]],
   ['addextension',['AddExtension',['../class_image_resizer_1_1_util_1_1_path_utils.html#a3ba9afa48f4fa28456bcb247921a075a',1,'ImageResizer::Util::PathUtils']]],
   ['addfirst',['AddFirst',['../class_image_resizer_1_1_collections_1_1_safe_list-g.html#ab0436c7c7ccdffc30f1fceb6879497d9',1,'ImageResizer::Collections::SafeList-g']]],
+  ['addinvisiblepolygon',['AddInvisiblePolygon',['../class_image_resizer_1_1_resizing_1_1_layout_builder.html#a09613377d4e8e66169b3b125f50c5301',1,'ImageResizer::Resizing::LayoutBuilder']]],
   ['addquerystring',['AddQueryString',['../class_image_resizer_1_1_util_1_1_path_utils.html#a213e5ba499d364b9f2e2bce592a09af7',1,'ImageResizer::Util::PathUtils']]],
   ['addring',['AddRing',['../class_image_resizer_1_1_resizing_1_1_layout_builder.html#a8b5037c8a03f7f0ead05ca76885ed61b',1,'ImageResizer::Resizing::LayoutBuilder']]],
   ['adjustcontrastbrightnesssaturation',['AdjustContrastBrightnessSaturation',['../class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#af52859902b49d2eb03b00262889f5f78',1,'ImageResizer::Plugins::AdvancedFilters::AdvancedFilters']]],
@@ -17,6 +18,7 @@ var searchData=
   ['alignwith',['AlignWith',['../class_image_resizer_1_1_util_1_1_polygon_math.html#ac55469f83724581600d27eabd617c582',1,'ImageResizer::Util::PolygonMath.AlignWith(RectangleF obj, RectangleF container, ContentAlignment align)'],['../class_image_resizer_1_1_util_1_1_polygon_math.html#a25285403f324ed9f8bf7f44c4f13afbe',1,'ImageResizer::Util::PolygonMath.AlignWith(PointF[] obj, PointF[] container, ContentAlignment align)']]],
   ['allowresponse',['AllowResponse',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_diagnostic.html#a1d5ec85dfb308f931baf342efec14629',1,'ImageResizer::Plugins::Basic::Diagnostic']]],
   ['analyzeimage',['AnalyzeImage',['../class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_quantizer.html#a7d6b6c7781e51d87185f1ef6c3458576',1,'ImageResizer::Plugins::PrettyGifs::Quantizer']]],
+  ['applyfiltersto',['ApplyFiltersTo',['../class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html#a69c9bc72da157f93dffe47ea1a0c9613',1,'ImageResizer::Plugins::AdvancedFilters::AdvancedFilters']]],
   ['arraysequal',['ArraysEqual',['../class_image_resizer_1_1_util_1_1_polygon_math.html#a091c43453f558cb12f8f4f4e485a711d',1,'ImageResizer::Util::PolygonMath']]],
   ['assertbucketmatches',['AssertBucketMatches',['../class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_path_event_args.html#a75dd943a80aa9bcb9f4dc3b6beb8927d',1,'ImageResizer::Plugins::S3Reader::S3PathEventArgs']]],
   ['average',['Average',['../class_image_resizer_1_1_util_1_1_polygon_math.html#a826b109164045c010e8458296f566b2c',1,'ImageResizer::Util::PolygonMath']]]

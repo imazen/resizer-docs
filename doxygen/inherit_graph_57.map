@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_bounding_box.html" title="ImageResizer.Plugins.PdfRenderer.Ghostscript.BoundingBox" alt="" coords="5,5,885,51"/>
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_faces_1_1_feature_detection_base-g.html" title="Not thread safe." alt="" coords="6,41,826,87"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_faces_1_1_face_detection.html" title="Provides a simple API for face detection." alt="" coords="879,5,1513,51"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_red_eye_1_1_eye_detection.html" title="ImageResizer.Plugins.RedEye.EyeDetection" alt="" coords="875,75,1517,122"/>
 </map>

@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -99,343 +99,350 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00016"></a>00016 
 <a name="l00017"></a><a class="code" href="namespace_image_resizer_1_1_plugins_1_1_remote_reader.html">00017</a> <span class="keyword">namespace </span>ImageResizer.Plugins.RemoteReader {
 <a name="l00018"></a>00018 
-<a name="l00019"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">00019</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a> : <a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a>, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html">IIssueProvider</a> {
+<a name="l00019"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">00019</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a> : <a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a>, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html">IIssueProvider</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_redact_diagnostics.html" title="Permits plugins to redact data from the diagnostics page, like passwords.">IRedactDiagnostics</a> {
 <a name="l00020"></a>00020 
-<a name="l00021"></a>00021         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> base64UrlKey = <span class="stringliteral">&quot;urlb64&quot;</span>;
-<a name="l00022"></a>00022 
-<a name="l00023"></a>00023         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> Base64UrlKey {
-<a name="l00024"></a>00024             <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>.base64UrlKey; }
+<a name="l00021"></a>00021         <span class="keyword">public</span> Configuration.Xml.Node RedactFrom(<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> resizer) {
+<a name="l00022"></a>00022             <span class="keywordflow">if</span> (resizer.queryFirst(<span class="stringliteral">&quot;remoteReader&quot;</span>) != null) resizer.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ade0fa8eed7dcde42449533de26726fbc" title="Sets the specified attribute value, creating parent elements if needed. Clears the query cache...">setAttr</a>(<span class="stringliteral">&quot;remoteReader.signingKey&quot;</span>, <span class="stringliteral">&quot;[redacted]&quot;</span>);
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024             <span class="keywordflow">return</span> resizer;
 <a name="l00025"></a>00025         }
-<a name="l00026"></a>00026         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> hmacKey = <span class="stringliteral">&quot;hmac&quot;</span>;
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> HmacKey {
-<a name="l00029"></a>00029             <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>.hmacKey; }
-<a name="l00030"></a>00030         }
-<a name="l00031"></a>00031 
-<a name="l00032"></a>00032         <span class="keyword">private</span> <span class="keywordtype">int</span> _allowedRedirects = 5;<span class="comment"></span>
-<a name="l00033"></a>00033 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00034"></a>00034 <span class="comment">        /// How many redirects to follow before throwing an exception. Defaults to 5.</span>
-<a name="l00035"></a>00035 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00036"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0593946e4683688cc986c63ba2aec3b4">00036</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> AllowedRedirects {
-<a name="l00037"></a>00037             <span class="keyword">get</span> { <span class="keywordflow">return</span> _allowedRedirects; }
-<a name="l00038"></a>00038             <span class="keyword">set</span> { _allowedRedirects = value; }
-<a name="l00039"></a>00039         }
-<a name="l00040"></a>00040 
-<a name="l00041"></a>00041         <span class="keyword">protected</span> <span class="keywordtype">string</span> remotePrefix = <span class="stringliteral">&quot;~/remote&quot;</span>;
-<a name="l00042"></a>00042         <a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html">Config</a> c;
-<a name="l00043"></a>00043         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>() {
-<a name="l00044"></a>00044             <span class="keywordflow">try</span> {
-<a name="l00045"></a>00045                 remotePrefix = Util.PathUtils.ResolveAppRelativeAssumeAppRelative(remotePrefix);
-<a name="l00046"></a>00046                 <span class="comment">//Remote prefix must never end in a slash - remote.jpg syntax...</span>
-<a name="l00047"></a>00047             } <span class="keywordflow">catch</span> { }
-<a name="l00048"></a>00048         }
-<a name="l00049"></a>00049 
-<a name="l00050"></a>00050         <span class="keyword">public</span> IPlugin Install(Configuration.Config c) {
-<a name="l00051"></a>00051             this.c = c;
-<a name="l00052"></a>00052             c.Plugins.add_plugin(<span class="keyword">this</span>);
-<a name="l00053"></a>00053             c.Pipeline.PostAuthorizeRequestStart += Pipeline_PostAuthorizeRequestStart;
-<a name="l00054"></a>00054             c.Pipeline.RewriteDefaults += Pipeline_RewriteDefaults;
-<a name="l00055"></a>00055             c.Pipeline.PostRewrite += Pipeline_PostRewrite;
-<a name="l00056"></a>00056             AllowedRedirects = c.get(<span class="stringliteral">&quot;remoteReader.allowedRedirects&quot;</span>,AllowedRedirects);
-<a name="l00057"></a>00057 
-<a name="l00058"></a>00058             <span class="keywordflow">return</span> <span class="keyword">this</span>;
-<a name="l00059"></a>00059         }
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <span class="keywordtype">void</span> Pipeline_PostAuthorizeRequestStart(IHttpModule sender, HttpContext context) {
-<a name="l00062"></a>00062             <span class="keywordflow">if</span> (IsRemotePath(c.Pipeline.PreRewritePath)) c.Pipeline.SkipFileTypeCheck = <span class="keyword">true</span>;
-<a name="l00063"></a>00063         }
-<a name="l00064"></a>00064 
-<a name="l00065"></a>00065 
-<a name="l00066"></a>00066         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
-<a name="l00067"></a>00067             c.Plugins.remove_plugin(<span class="keyword">this</span>);
-<a name="l00068"></a>00068             c.Pipeline.RewriteDefaults -= Pipeline_RewriteDefaults;
-<a name="l00069"></a>00069             c.Pipeline.PostAuthorizeRequestStart -= Pipeline_PostAuthorizeRequestStart;
-<a name="l00070"></a>00070             c.Pipeline.PostRewrite -= Pipeline_PostRewrite;
-<a name="l00071"></a>00071             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00072"></a>00072         }
-<a name="l00073"></a>00073 <span class="comment"></span>
-<a name="l00074"></a>00074 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00075"></a>00075 <span class="comment">        /// Allows .Build and .LoadImage to resize remote URLs</span>
-<a name="l00076"></a>00076 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00077"></a>00077 <span class="comment">        /// &lt;param name=&quot;source&quot;&gt;&lt;/param&gt;</span>
-<a name="l00078"></a>00078 <span class="comment">        /// &lt;param name=&quot;settings&quot;&gt;&lt;/param&gt;</span>
-<a name="l00079"></a>00079 <span class="comment">        /// &lt;param name=&quot;disposeStream&quot;&gt;&lt;/param&gt;</span>
-<a name="l00080"></a>00080 <span class="comment">        /// &lt;param name=&quot;path&quot;&gt;&lt;/param&gt;</span>
-<a name="l00081"></a>00081 <span class="comment">        /// &lt;param name=&quot;restoreStreamPosition&quot;&gt;&lt;/param&gt;</span>
-<a name="l00082"></a>00082 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00083"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0f381f2e35cc7aca5e283fe4a76bf334">00083</a> <span class="comment"></span>        <span class="keyword">protected</span> <span class="keyword">override</span> Stream <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0f381f2e35cc7aca5e283fe4a76bf334" title="Allows .Build and .LoadImage to resize remote URLs.">GetStream</a>(<span class="keywordtype">object</span> source, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings, ref <span class="keywordtype">bool</span> disposeStream, out <span class="keywordtype">string</span> path, out <span class="keywordtype">bool</span> restoreStreamPosition) {
-<a name="l00084"></a>00084             <span class="comment">//Turn remote URLs into URI instances</span>
-<a name="l00085"></a>00085             <span class="keywordflow">if</span> (source is <span class="keywordtype">string</span> &amp;&amp; (((<span class="keywordtype">string</span>)source).StartsWith(<span class="stringliteral">&quot;http://&quot;</span>, StringComparison.OrdinalIgnoreCase) ||
-<a name="l00086"></a>00086                                     ((<span class="keywordtype">string</span>)source).StartsWith(<span class="stringliteral">&quot;https://&quot;</span>, StringComparison.OrdinalIgnoreCase))) {
-<a name="l00087"></a>00087                 <span class="keywordflow">if</span> (Uri.IsWellFormedUriString((<span class="keywordtype">string</span>)source, UriKind.Absolute))
-<a name="l00088"></a>00088                     source = <span class="keyword">new</span> Uri((<span class="keywordtype">string</span>)source);
-<a name="l00089"></a>00089 
-<a name="l00090"></a>00090             }
-<a name="l00091"></a>00091             restoreStreamPosition = <span class="keyword">false</span>;
-<a name="l00092"></a>00092             path = null;
-<a name="l00093"></a>00093             <span class="comment">//Turn URI instances into streams</span>
-<a name="l00094"></a>00094             <span class="keywordflow">if</span> (source is Uri) {
-<a name="l00095"></a>00095                 path = ((Uri)source).ToString();
-<a name="l00096"></a>00096                 <span class="keywordflow">return</span> GetUriStream((Uri)source);
-<a name="l00097"></a>00097             }
-<a name="l00098"></a>00098             <span class="keywordflow">return</span> null;
-<a name="l00099"></a>00099         }
-<a name="l00100"></a>00100 
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103         <span class="keywordtype">void</span> Pipeline_RewriteDefaults(System.Web.IHttpModule sender, System.Web.HttpContext context, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html">IUrlEventArgs</a> e) {
-<a name="l00104"></a>00104             <span class="comment">//Set the XXX of /remote.XXX to the real extension used by the remote file.</span>
-<a name="l00105"></a>00105             <span class="comment">//Allows the output extension and mime-type default to be determined correctly</span>
-<a name="l00106"></a>00106             <span class="keywordflow">if</span> (IsRemotePath(e.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html#a0b6c6725507562965cfd4c62a2987154" title="Domain-relative path which also includes the path info portion. I.e, &#39;/app/folder/file.aspx/path/info&#39; could be a valid value. Relative to the domain root, not the site or app root.">VirtualPath</a>) &amp;&amp;
-<a name="l00107"></a>00107                     !<span class="keywordtype">string</span>.IsNullOrEmpty(e.QueryString[Base64UrlKey])) {
-<a name="l00108"></a>00108                 <span class="keywordtype">string</span> ext = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a56cb53d101d364eb3b434a89af918335" title="Grabs the last segment of the filename extension. Returns an empty string if there is no extension...">GetExtension</a>(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a5ffc6a49feee3133b31fdd4adeaef151" title="Converts a URL-safe version of base64 to a string. 64U is (no = padding, with - instead of + and _ in...">FromBase64UToString</a>(e.QueryString[Base64UrlKey]));
-<a name="l00109"></a>00109                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(ext)) e.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html#a0b6c6725507562965cfd4c62a2987154" title="Domain-relative path which also includes the path info portion. I.e, &#39;/app/folder/file.aspx/path/info&#39; could be a valid value. Relative to the domain root, not the site or app root.">VirtualPath</a> = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a6e47130783374c72a73f97760843bb07" title="Should be called SetFullExtension. Sets the file extension of the specified path to the specified val...">SetExtension</a>(e.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html#a0b6c6725507562965cfd4c62a2987154" title="Domain-relative path which also includes the path info portion. I.e, &#39;/app/folder/file.aspx/path/info&#39; could be a valid value. Relative to the domain root, not the site or app root.">VirtualPath</a>, ext);
-<a name="l00110"></a>00110             }
-<a name="l00111"></a>00111         }
-<a name="l00112"></a>00112 
-<a name="l00113"></a>00113         <span class="keywordtype">void</span> Pipeline_PostRewrite(System.Web.IHttpModule sender, System.Web.HttpContext context, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html">IUrlEventArgs</a> e) {
-<a name="l00114"></a>00114             <span class="keywordflow">if</span> (IsRemotePath(e.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html#a0b6c6725507562965cfd4c62a2987154" title="Domain-relative path which also includes the path info portion. I.e, &#39;/app/folder/file.aspx/path/info&#39; could be a valid value. Relative to the domain root, not the site or app root.">VirtualPath</a>)) {
-<a name="l00115"></a>00115                 <span class="comment">//Force images to be processed - don&#39;t allow them to only cache it.</span>
-<a name="l00116"></a>00116                 e.QueryString[<span class="stringliteral">&quot;process&quot;</span>] = <a class="code" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a" title="When to process and re-encode the file.">ProcessWhen</a>.Always.ToString().ToLowerInvariant();
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> base64UrlKey = <span class="stringliteral">&quot;urlb64&quot;</span>;
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> Base64UrlKey {
+<a name="l00030"></a>00030             <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>.base64UrlKey; }
+<a name="l00031"></a>00031         }
+<a name="l00032"></a>00032         <span class="keyword">private</span> <span class="keyword">static</span> <span class="keywordtype">string</span> hmacKey = <span class="stringliteral">&quot;hmac&quot;</span>;
+<a name="l00033"></a>00033 
+<a name="l00034"></a>00034         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">string</span> HmacKey {
+<a name="l00035"></a>00035             <span class="keyword">get</span> { <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>.hmacKey; }
+<a name="l00036"></a>00036         }
+<a name="l00037"></a>00037 
+<a name="l00038"></a>00038         <span class="keyword">private</span> <span class="keywordtype">int</span> _allowedRedirects = 5;<span class="comment"></span>
+<a name="l00039"></a>00039 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00040"></a>00040 <span class="comment">        /// How many redirects to follow before throwing an exception. Defaults to 5.</span>
+<a name="l00041"></a>00041 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00042"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0593946e4683688cc986c63ba2aec3b4">00042</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">int</span> AllowedRedirects {
+<a name="l00043"></a>00043             <span class="keyword">get</span> { <span class="keywordflow">return</span> _allowedRedirects; }
+<a name="l00044"></a>00044             <span class="keyword">set</span> { _allowedRedirects = value; }
+<a name="l00045"></a>00045         }
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047         <span class="keyword">protected</span> <span class="keywordtype">string</span> remotePrefix = <span class="stringliteral">&quot;~/remote&quot;</span>;
+<a name="l00048"></a>00048         <a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html">Config</a> c;
+<a name="l00049"></a>00049         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>() {
+<a name="l00050"></a>00050             <span class="keywordflow">try</span> {
+<a name="l00051"></a>00051                 remotePrefix = Util.PathUtils.ResolveAppRelativeAssumeAppRelative(remotePrefix);
+<a name="l00052"></a>00052                 <span class="comment">//Remote prefix must never end in a slash - remote.jpg syntax...</span>
+<a name="l00053"></a>00053             } <span class="keywordflow">catch</span> { }
+<a name="l00054"></a>00054         }
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056         <span class="keyword">public</span> IPlugin Install(Configuration.Config c) {
+<a name="l00057"></a>00057             this.c = c;
+<a name="l00058"></a>00058             c.Plugins.add_plugin(<span class="keyword">this</span>);
+<a name="l00059"></a>00059             c.Pipeline.PostAuthorizeRequestStart += Pipeline_PostAuthorizeRequestStart;
+<a name="l00060"></a>00060             c.Pipeline.RewriteDefaults += Pipeline_RewriteDefaults;
+<a name="l00061"></a>00061             c.Pipeline.PostRewrite += Pipeline_PostRewrite;
+<a name="l00062"></a>00062             AllowedRedirects = c.get(<span class="stringliteral">&quot;remoteReader.allowedRedirects&quot;</span>,AllowedRedirects);
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00065"></a>00065         }
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067         <span class="keywordtype">void</span> Pipeline_PostAuthorizeRequestStart(IHttpModule sender, HttpContext context) {
+<a name="l00068"></a>00068             <span class="keywordflow">if</span> (IsRemotePath(c.Pipeline.PreRewritePath)) c.Pipeline.SkipFileTypeCheck = <span class="keyword">true</span>;
+<a name="l00069"></a>00069         }
+<a name="l00070"></a>00070 
+<a name="l00071"></a>00071 
+<a name="l00072"></a>00072         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
+<a name="l00073"></a>00073             c.Plugins.remove_plugin(<span class="keyword">this</span>);
+<a name="l00074"></a>00074             c.Pipeline.RewriteDefaults -= Pipeline_RewriteDefaults;
+<a name="l00075"></a>00075             c.Pipeline.PostAuthorizeRequestStart -= Pipeline_PostAuthorizeRequestStart;
+<a name="l00076"></a>00076             c.Pipeline.PostRewrite -= Pipeline_PostRewrite;
+<a name="l00077"></a>00077             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00078"></a>00078         }
+<a name="l00079"></a>00079 <span class="comment"></span>
+<a name="l00080"></a>00080 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00081"></a>00081 <span class="comment">        /// Allows .Build and .LoadImage to resize remote URLs</span>
+<a name="l00082"></a>00082 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00083"></a>00083 <span class="comment">        /// &lt;param name=&quot;source&quot;&gt;&lt;/param&gt;</span>
+<a name="l00084"></a>00084 <span class="comment">        /// &lt;param name=&quot;settings&quot;&gt;&lt;/param&gt;</span>
+<a name="l00085"></a>00085 <span class="comment">        /// &lt;param name=&quot;disposeStream&quot;&gt;&lt;/param&gt;</span>
+<a name="l00086"></a>00086 <span class="comment">        /// &lt;param name=&quot;path&quot;&gt;&lt;/param&gt;</span>
+<a name="l00087"></a>00087 <span class="comment">        /// &lt;param name=&quot;restoreStreamPosition&quot;&gt;&lt;/param&gt;</span>
+<a name="l00088"></a>00088 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00089"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0f381f2e35cc7aca5e283fe4a76bf334">00089</a> <span class="comment"></span>        <span class="keyword">protected</span> <span class="keyword">override</span> Stream <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0f381f2e35cc7aca5e283fe4a76bf334" title="Allows .Build and .LoadImage to resize remote URLs.">GetStream</a>(<span class="keywordtype">object</span> source, <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a> settings, ref <span class="keywordtype">bool</span> disposeStream, out <span class="keywordtype">string</span> path, out <span class="keywordtype">bool</span> restoreStreamPosition) {
+<a name="l00090"></a>00090             <span class="comment">//Turn remote URLs into URI instances</span>
+<a name="l00091"></a>00091             <span class="keywordflow">if</span> (source is <span class="keywordtype">string</span> &amp;&amp; (((<span class="keywordtype">string</span>)source).StartsWith(<span class="stringliteral">&quot;http://&quot;</span>, StringComparison.OrdinalIgnoreCase) ||
+<a name="l00092"></a>00092                                     ((<span class="keywordtype">string</span>)source).StartsWith(<span class="stringliteral">&quot;https://&quot;</span>, StringComparison.OrdinalIgnoreCase))) {
+<a name="l00093"></a>00093                 <span class="keywordflow">if</span> (Uri.IsWellFormedUriString((<span class="keywordtype">string</span>)source, UriKind.Absolute))
+<a name="l00094"></a>00094                     source = <span class="keyword">new</span> Uri((<span class="keywordtype">string</span>)source);
+<a name="l00095"></a>00095 
+<a name="l00096"></a>00096             }
+<a name="l00097"></a>00097             restoreStreamPosition = <span class="keyword">false</span>;
+<a name="l00098"></a>00098             path = null;
+<a name="l00099"></a>00099             <span class="comment">//Turn URI instances into streams</span>
+<a name="l00100"></a>00100             <span class="keywordflow">if</span> (source is Uri) {
+<a name="l00101"></a>00101                 path = ((Uri)source).ToString();
+<a name="l00102"></a>00102                 <span class="keywordflow">return</span> GetUriStream((Uri)source);
+<a name="l00103"></a>00103             }
+<a name="l00104"></a>00104             <span class="keywordflow">return</span> null;
+<a name="l00105"></a>00105         }
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107 
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109         <span class="keywordtype">void</span> Pipeline_RewriteDefaults(System.Web.IHttpModule sender, System.Web.HttpContext context, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html">IUrlEventArgs</a> e) {
+<a name="l00110"></a>00110             <span class="comment">//Set the XXX of /remote.XXX to the real extension used by the remote file.</span>
+<a name="l00111"></a>00111             <span class="comment">//Allows the output extension and mime-type default to be determined correctly</span>
+<a name="l00112"></a>00112             <span class="keywordflow">if</span> (IsRemotePath(e.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html#a0b6c6725507562965cfd4c62a2987154" title="Domain-relative path which also includes the path info portion. I.e, &#39;/app/folder/file.aspx/path/info&#39; could be a valid value. Relative to the domain root, not the site or app root.">VirtualPath</a>) &amp;&amp;
+<a name="l00113"></a>00113                     !<span class="keywordtype">string</span>.IsNullOrEmpty(e.QueryString[Base64UrlKey])) {
+<a name="l00114"></a>00114                 <span class="keywordtype">string</span> ext = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a56cb53d101d364eb3b434a89af918335" title="Grabs the last segment of the filename extension. Returns an empty string if there is no extension...">GetExtension</a>(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a5ffc6a49feee3133b31fdd4adeaef151" title="Converts a URL-safe version of base64 to a string. 64U is (no = padding, with - instead of + and _ in...">FromBase64UToString</a>(e.QueryString[Base64UrlKey]));
+<a name="l00115"></a>00115                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(ext) &amp;&amp; c.Pipeline.IsAcceptedImageType(ext))
+<a name="l00116"></a>00116                     e.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html#a0b6c6725507562965cfd4c62a2987154" title="Domain-relative path which also includes the path info portion. I.e, &#39;/app/folder/file.aspx/path/info&#39; could be a valid value. Relative to the domain root, not the site or app root.">VirtualPath</a> = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a6e47130783374c72a73f97760843bb07" title="Should be called SetFullExtension. Sets the file extension of the specified path to the specified val...">SetExtension</a>(e.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html#a0b6c6725507562965cfd4c62a2987154" title="Domain-relative path which also includes the path info portion. I.e, &#39;/app/folder/file.aspx/path/info&#39; could be a valid value. Relative to the domain root, not the site or app root.">VirtualPath</a>, ext);
 <a name="l00117"></a>00117             }
 <a name="l00118"></a>00118         }
 <a name="l00119"></a>00119 
-<a name="l00120"></a>00120 <span class="comment"></span>
-<a name="l00121"></a>00121 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00122"></a>00122 <span class="comment">        /// Returns the currently registered RemoteReaderPlugin, or adds a new RemoteReaderPlugin automatically if one is not registered.</span>
-<a name="l00123"></a>00123 <span class="comment">        /// </span>
-<a name="l00124"></a>00124 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00125"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#ae11c0f899b3c0ce0a113eb3467ec654e">00125</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a> Current {
-<a name="l00126"></a>00126             <span class="keyword">get</span> {
-<a name="l00127"></a>00127                 <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html">Config</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a817438580b0b1f8dc08f4aa15e30f68d" title="Gets the current (app-wide) config instance.">Current</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.GetOrInstall&lt;<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>&gt;();
-<a name="l00128"></a>00128             }
-<a name="l00129"></a>00129         }
-<a name="l00130"></a>00130 <span class="comment"></span>
-<a name="l00131"></a>00131 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00132"></a>00132 <span class="comment">        /// Generates a signed domain-relative URL in the form &quot;/app/remote.jpg.ashx?width=200&amp;amp;urlb64=aHnSh3haSh...&amp;amp;hmac=913f3KJGK3hj&quot;</span>
-<a name="l00133"></a>00133 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00134"></a>00134 <span class="comment">        /// &lt;param name=&quot;remoteUrl&quot;&gt;&lt;/param&gt;</span>
-<a name="l00135"></a>00135 <span class="comment">        /// &lt;param name=&quot;settings&quot;&gt;&lt;/param&gt;</span>
-<a name="l00136"></a>00136 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00137"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0bc06d6fbf592be8748c64ebd3428b2b">00137</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0bc06d6fbf592be8748c64ebd3428b2b" title="Generates a signed domain-relative URL in the form &quot;/app/remote.jpg.ashx?width=200&amp;amp;urlb64=aHnSh3h...">CreateSignedUrl</a>(<span class="keywordtype">string</span> remoteUrl, NameValueCollection settings) {
-<a name="l00138"></a>00138             settings[Base64UrlKey] = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acc45f67bc1e770b2971878b809d3a98e" title="Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ ins...">ToBase64U</a>(remoteUrl);
-<a name="l00139"></a>00139             settings[HmacKey] = SignData(settings[Base64UrlKey]);
-<a name="l00140"></a>00140             <span class="keywordflow">return</span> remotePrefix + <span class="stringliteral">&quot;.jpg.ashx&quot;</span> + <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(settings);
-<a name="l00141"></a>00141         }
-<a name="l00142"></a>00142 
-<a name="l00143"></a>00143         <span class="keyword">public</span> <span class="keywordtype">string</span> CreateSignedUrl(<span class="keywordtype">string</span> remoteUrl, <span class="keywordtype">string</span> settings) {
-<a name="l00144"></a>00144             <span class="keywordflow">return</span> CreateSignedUrl(remoteUrl, <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a>(settings));
-<a name="l00145"></a>00145         }
-<a name="l00146"></a>00146 
-<a name="l00147"></a>00147         <span class="keyword">public</span> <span class="keywordtype">string</span> CreateSignedUrlWithKey(<span class="keywordtype">string</span> remoteUrl, <span class="keywordtype">string</span> settings, <span class="keywordtype">string</span> key) {
-<a name="l00148"></a>00148             NameValueCollection s = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a>(settings);
-<a name="l00149"></a>00149             s[Base64UrlKey] = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acc45f67bc1e770b2971878b809d3a98e" title="Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ ins...">ToBase64U</a>(remoteUrl);
-<a name="l00150"></a>00150             s[HmacKey] = SignDataWithKey(s[Base64UrlKey],key);
-<a name="l00151"></a>00151             <span class="keywordflow">return</span> remotePrefix + <span class="stringliteral">&quot;.jpg.ashx&quot;</span> + <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(s);
+<a name="l00120"></a>00120         <span class="keywordtype">void</span> Pipeline_PostRewrite(System.Web.IHttpModule sender, System.Web.HttpContext context, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html">IUrlEventArgs</a> e) {
+<a name="l00121"></a>00121             <span class="keywordflow">if</span> (IsRemotePath(e.<a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html#a0b6c6725507562965cfd4c62a2987154" title="Domain-relative path which also includes the path info portion. I.e, &#39;/app/folder/file.aspx/path/info&#39; could be a valid value. Relative to the domain root, not the site or app root.">VirtualPath</a>)) {
+<a name="l00122"></a>00122                 <span class="comment">//Force images to be processed - don&#39;t allow them to only cache it.</span>
+<a name="l00123"></a>00123                 e.QueryString[<span class="stringliteral">&quot;process&quot;</span>] = <a class="code" href="namespace_image_resizer.html#a089c1fb717c880fab9cb6c06a06cf35a" title="When to process and re-encode the file.">ProcessWhen</a>.Always.ToString().ToLowerInvariant();
+<a name="l00124"></a>00124             }
+<a name="l00125"></a>00125         }
+<a name="l00126"></a>00126 
+<a name="l00127"></a>00127 <span class="comment"></span>
+<a name="l00128"></a>00128 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00129"></a>00129 <span class="comment">        /// Returns the currently registered RemoteReaderPlugin, or adds a new RemoteReaderPlugin automatically if one is not registered.</span>
+<a name="l00130"></a>00130 <span class="comment">        /// </span>
+<a name="l00131"></a>00131 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00132"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#ae11c0f899b3c0ce0a113eb3467ec654e">00132</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">static</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a> Current {
+<a name="l00133"></a>00133             <span class="keyword">get</span> {
+<a name="l00134"></a>00134                 <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html">Config</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a817438580b0b1f8dc08f4aa15e30f68d" title="Gets the current (app-wide) config instance.">Current</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.GetOrInstall&lt;<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a>&gt;();
+<a name="l00135"></a>00135             }
+<a name="l00136"></a>00136         }
+<a name="l00137"></a>00137 <span class="comment"></span>
+<a name="l00138"></a>00138 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00139"></a>00139 <span class="comment">        /// Generates a signed domain-relative URL in the form &quot;/app/remote.jpg.ashx?width=200&amp;amp;urlb64=aHnSh3haSh...&amp;amp;hmac=913f3KJGK3hj&quot;</span>
+<a name="l00140"></a>00140 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00141"></a>00141 <span class="comment">        /// &lt;param name=&quot;remoteUrl&quot;&gt;&lt;/param&gt;</span>
+<a name="l00142"></a>00142 <span class="comment">        /// &lt;param name=&quot;settings&quot;&gt;&lt;/param&gt;</span>
+<a name="l00143"></a>00143 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00144"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0bc06d6fbf592be8748c64ebd3428b2b">00144</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keywordtype">string</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a0bc06d6fbf592be8748c64ebd3428b2b" title="Generates a signed domain-relative URL in the form &quot;/app/remote.jpg.ashx?width=200&amp;amp;urlb64=aHnSh3h...">CreateSignedUrl</a>(<span class="keywordtype">string</span> remoteUrl, NameValueCollection settings) {
+<a name="l00145"></a>00145             settings[Base64UrlKey] = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acc45f67bc1e770b2971878b809d3a98e" title="Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ ins...">ToBase64U</a>(remoteUrl);
+<a name="l00146"></a>00146             settings[HmacKey] = SignData(settings[Base64UrlKey]);
+<a name="l00147"></a>00147             <span class="keywordflow">return</span> remotePrefix + <span class="stringliteral">&quot;.jpg.ashx&quot;</span> + <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(settings);
+<a name="l00148"></a>00148         }
+<a name="l00149"></a>00149 
+<a name="l00150"></a>00150         <span class="keyword">public</span> <span class="keywordtype">string</span> CreateSignedUrl(<span class="keywordtype">string</span> remoteUrl, <span class="keywordtype">string</span> settings) {
+<a name="l00151"></a>00151             <span class="keywordflow">return</span> CreateSignedUrl(remoteUrl, <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a>(settings));
 <a name="l00152"></a>00152         }
 <a name="l00153"></a>00153 
-<a name="l00154"></a>00154         <span class="keyword">public</span> <span class="keywordtype">string</span> SignData(<span class="keywordtype">string</span> data) {
-<a name="l00155"></a>00155 
-<a name="l00156"></a>00156             <span class="keywordtype">string</span> key = c.get(<span class="stringliteral">&quot;remoteReader.signingKey&quot;</span>, String.Empty);
-<a name="l00157"></a>00157             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(key)) <span class="keywordflow">throw</span> <span class="keyword">new</span> ImageResizer.ImageProcessingException(<span class="stringliteral">&quot;You are required to set a passphrase for securing remote URLs. &lt;resizer&gt;&lt;remotereader signingKey=\&quot;put a long and randam passphrase here\&quot; /&gt; &lt;/resizer&gt;&quot;</span>);
-<a name="l00158"></a>00158             <span class="keywordflow">return</span> SignDataWithKey(data, key);
+<a name="l00154"></a>00154         <span class="keyword">public</span> <span class="keywordtype">string</span> CreateSignedUrlWithKey(<span class="keywordtype">string</span> remoteUrl, <span class="keywordtype">string</span> settings, <span class="keywordtype">string</span> key) {
+<a name="l00155"></a>00155             NameValueCollection s = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi...">ResizeSettings</a>(settings);
+<a name="l00156"></a>00156             s[Base64UrlKey] = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acc45f67bc1e770b2971878b809d3a98e" title="Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ ins...">ToBase64U</a>(remoteUrl);
+<a name="l00157"></a>00157             s[HmacKey] = SignDataWithKey(s[Base64UrlKey],key);
+<a name="l00158"></a>00158             <span class="keywordflow">return</span> remotePrefix + <span class="stringliteral">&quot;.jpg.ashx&quot;</span> + <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(s);
 <a name="l00159"></a>00159         }
-<a name="l00160"></a>00160         <span class="keyword">public</span> <span class="keywordtype">string</span> SignDataWithKey(<span class="keywordtype">string</span> data, <span class="keywordtype">string</span> key) {
-<a name="l00161"></a>00161 
-<a name="l00162"></a>00162             HMACSHA256 hmac = <span class="keyword">new</span> HMACSHA256(UTF8Encoding.UTF8.GetBytes(key));
-<a name="l00163"></a>00163             byte[] hash = hmac.ComputeHash(UTF8Encoding.UTF8.GetBytes(data));
-<a name="l00164"></a>00164             <span class="comment">//32-byte hash is a bit overkill. Truncation doesn&#39;t weaking the integrity of the algorithm.</span>
-<a name="l00165"></a>00165             byte[] shorterHash = <span class="keyword">new</span> byte[8];
-<a name="l00166"></a>00166             Array.Copy(hash, shorterHash, 8);
-<a name="l00167"></a>00167             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acc45f67bc1e770b2971878b809d3a98e" title="Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ ins...">ToBase64U</a>(shorterHash);
-<a name="l00168"></a>00168         }<span class="comment"></span>
-<a name="l00169"></a>00169 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00170"></a>00170 <span class="comment">        /// Parses the specified path and querystring. Verifies the hmac signature for querystring specified paths, parses the</span>
-<a name="l00171"></a>00171 <span class="comment">        /// human-friendly syntax for that syntax. Verifies the URL is properly formed. Returns an object containing the remote URL,</span>
-<a name="l00172"></a>00172 <span class="comment">        /// querystring remainder, and a flag stating whether the request was signed or not. Incorrectly signed requests immediately throw an exception.</span>
-<a name="l00173"></a>00173 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00174"></a>00174 <span class="comment">        /// &lt;param name=&quot;virtualPath&quot;&gt;&lt;/param&gt;</span>
-<a name="l00175"></a>00175 <span class="comment">        /// &lt;param name=&quot;query&quot;&gt;&lt;/param&gt;</span>
-<a name="l00176"></a>00176 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00177"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a6fdd3cc635507aabc9d454df6c49dd70">00177</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a6fdd3cc635507aabc9d454df6c49dd70" title="Parses the specified path and querystring. Verifies the hmac signature for querystring specified path...">ParseRequest</a>(<span class="keywordtype">string</span> virtualPath, NameValueCollection query) {
-<a name="l00178"></a>00178             query = <span class="keyword">new</span> NameValueCollection(query);
-<a name="l00179"></a>00179             <span class="keywordflow">if</span> (!IsRemotePath(virtualPath)) <span class="keywordflow">return</span> null;
-<a name="l00180"></a>00180 
-<a name="l00181"></a>00181             <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> args = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a>();
-<a name="l00182"></a>00182             args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#aaa07a958992b36efbc671f94aab9c38a" title="True if the remote url was (correctly) signed with an HMAC SHA-256 to verify that it had not be alter...">SignedRequest</a> = <span class="keyword">false</span>;
-<a name="l00183"></a>00183             args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#a4b6bda907fb801794fe3fec02eebb4e6" title="Resizing settings. These are not signed - other parties can manipulate them.">QueryString</a> = query;
-<a name="l00184"></a>00184 
-<a name="l00185"></a>00185             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(query[Base64UrlKey])) {
-<a name="l00186"></a>00186                 <span class="keywordtype">string</span> data = query[Base64UrlKey];
-<a name="l00187"></a>00187                 <span class="keywordtype">string</span> hmac = query[HmacKey];
-<a name="l00188"></a>00188                 query.Remove(Base64UrlKey);
-<a name="l00189"></a>00189                 query.Remove(HmacKey);
-<a name="l00190"></a>00190                 <span class="keywordflow">if</span> (!SignData(data).Equals(hmac))
-<a name="l00191"></a>00191                     <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;Invalid request! This request was not properly signed, or has been tampered with since transmission.&quot;</span>);
-<a name="l00192"></a>00192                 args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a> = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a5ffc6a49feee3133b31fdd4adeaef151" title="Converts a URL-safe version of base64 to a string. 64U is (no = padding, with - instead of + and _ in...">FromBase64UToString</a>(data);
-<a name="l00193"></a>00193                 args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#aaa07a958992b36efbc671f94aab9c38a" title="True if the remote url was (correctly) signed with an HMAC SHA-256 to verify that it had not be alter...">SignedRequest</a> = <span class="keyword">true</span>;
-<a name="l00194"></a>00194             } <span class="keywordflow">else</span> {
-<a name="l00195"></a>00195                 args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a> = <span class="stringliteral">&quot;http://&quot;</span> + ReplaceInLeadingSegment(virtualPath.Substring(remotePrefix.Length).TrimStart(<span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span>), <span class="stringliteral">&quot;_&quot;</span>, <span class="stringliteral">&quot;.&quot;</span>);
-<a name="l00196"></a>00196                 args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a> = Uri.EscapeUriString(args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>);
-<a name="l00197"></a>00197             }
-<a name="l00198"></a>00198             <span class="keywordflow">if</span> (!Uri.IsWellFormedUriString(args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>, UriKind.Absolute))
-<a name="l00199"></a>00199                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;Invalid request! The specified Uri is invalid: &quot;</span> + args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>);
-<a name="l00200"></a>00200             <span class="keywordflow">return</span> args;
-<a name="l00201"></a>00201         }
-<a name="l00202"></a>00202 
-<a name="l00203"></a>00203         <span class="keyword">private</span> <span class="keywordtype">string</span> ReplaceInLeadingSegment(<span class="keywordtype">string</span> path, <span class="keywordtype">string</span> from, <span class="keywordtype">string</span> to) {
-<a name="l00204"></a>00204             <span class="keywordtype">int</span> firstslash = path.IndexOf(<span class="charliteral">&#39;/&#39;</span>,1);
-<a name="l00205"></a>00205             <span class="keywordflow">if</span> (firstslash &lt; 0) firstslash = path.Length; <span class="comment">//If no forward slashes, edit whole string.</span>
-<a name="l00206"></a>00206 
-<a name="l00207"></a>00207             <span class="keywordflow">return</span> path.Substring(0, firstslash).Replace(from, to) + path.Substring(firstslash);
+<a name="l00160"></a>00160 
+<a name="l00161"></a>00161         <span class="keyword">public</span> <span class="keywordtype">string</span> SignData(<span class="keywordtype">string</span> data) {
+<a name="l00162"></a>00162 
+<a name="l00163"></a>00163             <span class="keywordtype">string</span> key = c.get(<span class="stringliteral">&quot;remoteReader.signingKey&quot;</span>, String.Empty);
+<a name="l00164"></a>00164             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(key)) <span class="keywordflow">throw</span> <span class="keyword">new</span> ImageResizer.ImageProcessingException(<span class="stringliteral">&quot;You are required to set a passphrase for securing remote URLs. &lt;resizer&gt;&lt;remotereader signingKey=\&quot;put a long and randam passphrase here\&quot; /&gt; &lt;/resizer&gt;&quot;</span>);
+<a name="l00165"></a>00165             <span class="keywordflow">return</span> SignDataWithKey(data, key);
+<a name="l00166"></a>00166         }
+<a name="l00167"></a>00167         <span class="keyword">public</span> <span class="keywordtype">string</span> SignDataWithKey(<span class="keywordtype">string</span> data, <span class="keywordtype">string</span> key) {
+<a name="l00168"></a>00168 
+<a name="l00169"></a>00169             HMACSHA256 hmac = <span class="keyword">new</span> HMACSHA256(UTF8Encoding.UTF8.GetBytes(key));
+<a name="l00170"></a>00170             byte[] hash = hmac.ComputeHash(UTF8Encoding.UTF8.GetBytes(data));
+<a name="l00171"></a>00171             <span class="comment">//32-byte hash is a bit overkill. Truncation doesn&#39;t weaking the integrity of the algorithm.</span>
+<a name="l00172"></a>00172             byte[] shorterHash = <span class="keyword">new</span> byte[8];
+<a name="l00173"></a>00173             Array.Copy(hash, shorterHash, 8);
+<a name="l00174"></a>00174             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#acc45f67bc1e770b2971878b809d3a98e" title="Converts aribtrary bytes to a URL-safe version of base64 (no = padding, with - instead of + and _ ins...">ToBase64U</a>(shorterHash);
+<a name="l00175"></a>00175         }<span class="comment"></span>
+<a name="l00176"></a>00176 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00177"></a>00177 <span class="comment">        /// Parses the specified path and querystring. Verifies the hmac signature for querystring specified paths, parses the</span>
+<a name="l00178"></a>00178 <span class="comment">        /// human-friendly syntax for that syntax. Verifies the URL is properly formed. Returns an object containing the remote URL,</span>
+<a name="l00179"></a>00179 <span class="comment">        /// querystring remainder, and a flag stating whether the request was signed or not. Incorrectly signed requests immediately throw an exception.</span>
+<a name="l00180"></a>00180 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00181"></a>00181 <span class="comment">        /// &lt;param name=&quot;virtualPath&quot;&gt;&lt;/param&gt;</span>
+<a name="l00182"></a>00182 <span class="comment">        /// &lt;param name=&quot;query&quot;&gt;&lt;/param&gt;</span>
+<a name="l00183"></a>00183 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00184"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a6fdd3cc635507aabc9d454df6c49dd70">00184</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a6fdd3cc635507aabc9d454df6c49dd70" title="Parses the specified path and querystring. Verifies the hmac signature for querystring specified path...">ParseRequest</a>(<span class="keywordtype">string</span> virtualPath, NameValueCollection query) {
+<a name="l00185"></a>00185             query = <span class="keyword">new</span> NameValueCollection(query);
+<a name="l00186"></a>00186             <span class="keywordflow">if</span> (!IsRemotePath(virtualPath)) <span class="keywordflow">return</span> null;
+<a name="l00187"></a>00187 
+<a name="l00188"></a>00188             <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> args = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a>();
+<a name="l00189"></a>00189             args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#aaa07a958992b36efbc671f94aab9c38a" title="True if the remote url was (correctly) signed with an HMAC SHA-256 to verify that it had not be alter...">SignedRequest</a> = <span class="keyword">false</span>;
+<a name="l00190"></a>00190             args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#a4b6bda907fb801794fe3fec02eebb4e6" title="Resizing settings. These are not signed - other parties can manipulate them.">QueryString</a> = query;
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(query[Base64UrlKey])) {
+<a name="l00193"></a>00193                 <span class="keywordtype">string</span> data = query[Base64UrlKey];
+<a name="l00194"></a>00194                 <span class="keywordtype">string</span> hmac = query[HmacKey];
+<a name="l00195"></a>00195                 query.Remove(Base64UrlKey);
+<a name="l00196"></a>00196                 query.Remove(HmacKey);
+<a name="l00197"></a>00197                 <span class="keywordflow">if</span> (!SignData(data).Equals(hmac))
+<a name="l00198"></a>00198                     <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;Invalid request! This request was not properly signed, or has been tampered with since transmission.&quot;</span>);
+<a name="l00199"></a>00199                 args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a> = <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html" title="A set of utility methods for manipulating virtual paths.">PathUtils</a>.<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a5ffc6a49feee3133b31fdd4adeaef151" title="Converts a URL-safe version of base64 to a string. 64U is (no = padding, with - instead of + and _ in...">FromBase64UToString</a>(data);
+<a name="l00200"></a>00200                 args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#aaa07a958992b36efbc671f94aab9c38a" title="True if the remote url was (correctly) signed with an HMAC SHA-256 to verify that it had not be alter...">SignedRequest</a> = <span class="keyword">true</span>;
+<a name="l00201"></a>00201             } <span class="keywordflow">else</span> {
+<a name="l00202"></a>00202                 args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a> = <span class="stringliteral">&quot;http://&quot;</span> + ReplaceInLeadingSegment(virtualPath.Substring(remotePrefix.Length).TrimStart(<span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;\\&#39;</span>), <span class="stringliteral">&quot;_&quot;</span>, <span class="stringliteral">&quot;.&quot;</span>);
+<a name="l00203"></a>00203                 args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a> = Uri.EscapeUriString(args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>);
+<a name="l00204"></a>00204             }
+<a name="l00205"></a>00205             <span class="keywordflow">if</span> (!Uri.IsWellFormedUriString(args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>, UriKind.Absolute))
+<a name="l00206"></a>00206                 <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(<span class="stringliteral">&quot;Invalid request! The specified Uri is invalid: &quot;</span> + args.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>);
+<a name="l00207"></a>00207             <span class="keywordflow">return</span> args;
 <a name="l00208"></a>00208         }
 <a name="l00209"></a>00209 
-<a name="l00210"></a>00210 
-<a name="l00211"></a>00211         <span class="keyword">public</span> <span class="keywordtype">bool</span> IsRemotePath(<span class="keywordtype">string</span> virtualPath) {
-<a name="l00212"></a>00212             <span class="keywordflow">return</span> (virtualPath.Length &gt; remotePrefix.Length &amp;&amp; 
-<a name="l00213"></a>00213                 virtualPath.StartsWith(remotePrefix, StringComparison.OrdinalIgnoreCase)
-<a name="l00214"></a>00214                 &amp;&amp; (virtualPath[remotePrefix.Length] == <span class="charliteral">&#39;.&#39;</span> || virtualPath[remotePrefix.Length] == <span class="charliteral">&#39;/&#39;</span>));
+<a name="l00210"></a>00210         <span class="keyword">private</span> <span class="keywordtype">string</span> ReplaceInLeadingSegment(<span class="keywordtype">string</span> path, <span class="keywordtype">string</span> from, <span class="keywordtype">string</span> to) {
+<a name="l00211"></a>00211             <span class="keywordtype">int</span> firstslash = path.IndexOf(<span class="charliteral">&#39;/&#39;</span>,1);
+<a name="l00212"></a>00212             <span class="keywordflow">if</span> (firstslash &lt; 0) firstslash = path.Length; <span class="comment">//If no forward slashes, edit whole string.</span>
+<a name="l00213"></a>00213 
+<a name="l00214"></a>00214             <span class="keywordflow">return</span> path.Substring(0, firstslash).Replace(from, to) + path.Substring(firstslash);
 <a name="l00215"></a>00215         }
 <a name="l00216"></a>00216 
-<a name="l00217"></a>00217         <span class="keyword">public</span> <span class="keywordtype">bool</span> FileExists(<span class="keywordtype">string</span> virtualPath, System.Collections.Specialized.NameValueCollection queryString) {
-<a name="l00218"></a>00218             <span class="keywordflow">return</span> IsRemotePath(virtualPath);
-<a name="l00219"></a>00219         }
-<a name="l00220"></a>00220 <span class="comment"></span>
-<a name="l00221"></a>00221 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00222"></a>00222 <span class="comment">        /// Allows you to perform programmatic white or blacklisting of remote URLs</span>
-<a name="l00223"></a>00223 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00224"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#aeb3c680f1e0c528fe3a146fcb3e93076">00224</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">event</span> RemoteRequest <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#aeb3c680f1e0c528fe3a146fcb3e93076" title="Allows you to perform programmatic white or blacklisting of remote URLs.">AllowRemoteRequest</a>;
-<a name="l00225"></a>00225 
-<a name="l00226"></a>00226         <span class="keyword">private</span> <span class="keywordtype">bool</span> IsWhitelisted(<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> request) {
-<a name="l00227"></a>00227             var rr = c.getNode(<span class="stringliteral">&quot;remotereader&quot;</span>);
-<a name="l00228"></a>00228             var domain = <span class="keyword">new</span> Uri(request.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>).Host;
-<a name="l00229"></a>00229             <span class="keywordflow">if</span> (rr == null || <span class="keywordtype">string</span>.IsNullOrEmpty(domain)) <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00230"></a>00230 
-<a name="l00231"></a>00231             <span class="keywordflow">foreach</span> (<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> n <span class="keywordflow">in</span> rr.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#a65a52ff622b046154ae1e1b05fe7f541" title="Returns the subset of Children with a matching element name. (Case-insensitive)">childrenByName</a>(<span class="stringliteral">&quot;allow&quot;</span>)) {
-<a name="l00232"></a>00232                 <span class="keywordtype">bool</span> onlyWhenSigned = n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>.Get&lt;<span class="keywordtype">bool</span>&gt;(<span class="stringliteral">&quot;onlyWhenSigned&quot;</span>, <span class="keyword">false</span>);
-<a name="l00233"></a>00233                 <span class="keywordflow">if</span> (onlyWhenSigned &amp;&amp; !request.SignedRequest) <span class="keywordflow">continue</span>;
-<a name="l00234"></a>00234 
-<a name="l00235"></a>00235                 <span class="keywordtype">bool</span> hostMatches = <span class="keyword">false</span>, regexMatches = <span class="keyword">false</span>;
-<a name="l00236"></a>00236                 <span class="keywordtype">string</span> host = n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>.Get(<span class="stringliteral">&quot;domain&quot;</span>);
-<a name="l00237"></a>00237                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(host)) {
-<a name="l00238"></a>00238                     <span class="keywordflow">if</span> (host.StartsWith(<span class="stringliteral">&quot;*.&quot;</span>, StringComparison.OrdinalIgnoreCase))
-<a name="l00239"></a>00239                         hostMatches = domain.EndsWith(host.Substring(1), StringComparison.OrdinalIgnoreCase);
-<a name="l00240"></a>00240                     <span class="keywordflow">else</span>
-<a name="l00241"></a>00241                         hostMatches = domain.Equals(host, StringComparison.OrdinalIgnoreCase);
-<a name="l00242"></a>00242 
-<a name="l00243"></a>00243                     <span class="keywordflow">if</span> (!hostMatches) <span class="keywordflow">continue</span>;<span class="comment">//If any filter doesn&#39;t match, skip rule</span>
-<a name="l00244"></a>00244                 }
-<a name="l00245"></a>00245 
-<a name="l00246"></a>00246                 <span class="keywordtype">string</span> regex = n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>.Get(<span class="stringliteral">&quot;regex&quot;</span>);
-<a name="l00247"></a>00247                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(regex)) {
-<a name="l00248"></a>00248                     var r = <span class="keyword">new</span> Regex(<span class="stringliteral">&quot;^&quot;</span> + regex + <span class="stringliteral">&quot;$&quot;</span>, RegexOptions.CultureInvariant | RegexOptions.IgnoreCase | RegexOptions.Singleline);
-<a name="l00249"></a>00249                     regexMatches = r.IsMatch(request.RemoteUrl);
-<a name="l00250"></a>00250                     <span class="keywordflow">if</span> (!regexMatches) <span class="keywordflow">continue</span>;<span class="comment">//If any filter doesn&#39;t match, skip rule</span>
+<a name="l00217"></a>00217 
+<a name="l00218"></a>00218         <span class="keyword">public</span> <span class="keywordtype">bool</span> IsRemotePath(<span class="keywordtype">string</span> virtualPath) {
+<a name="l00219"></a>00219             <span class="keywordflow">return</span> (virtualPath.Length &gt; remotePrefix.Length &amp;&amp; 
+<a name="l00220"></a>00220                 virtualPath.StartsWith(remotePrefix, StringComparison.OrdinalIgnoreCase)
+<a name="l00221"></a>00221                 &amp;&amp; (virtualPath[remotePrefix.Length] == <span class="charliteral">&#39;.&#39;</span> || virtualPath[remotePrefix.Length] == <span class="charliteral">&#39;/&#39;</span>));
+<a name="l00222"></a>00222         }
+<a name="l00223"></a>00223 
+<a name="l00224"></a>00224         <span class="keyword">public</span> <span class="keywordtype">bool</span> FileExists(<span class="keywordtype">string</span> virtualPath, System.Collections.Specialized.NameValueCollection queryString) {
+<a name="l00225"></a>00225             <span class="keywordflow">return</span> IsRemotePath(virtualPath);
+<a name="l00226"></a>00226         }
+<a name="l00227"></a>00227 <span class="comment"></span>
+<a name="l00228"></a>00228 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00229"></a>00229 <span class="comment">        /// Allows you to perform programmatic white or blacklisting of remote URLs</span>
+<a name="l00230"></a>00230 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00231"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#aeb3c680f1e0c528fe3a146fcb3e93076">00231</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">event</span> RemoteRequest <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#aeb3c680f1e0c528fe3a146fcb3e93076" title="Allows you to perform programmatic white or blacklisting of remote URLs.">AllowRemoteRequest</a>;
+<a name="l00232"></a>00232 
+<a name="l00233"></a>00233         <span class="keyword">private</span> <span class="keywordtype">bool</span> IsWhitelisted(<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> request) {
+<a name="l00234"></a>00234             var rr = c.getNode(<span class="stringliteral">&quot;remotereader&quot;</span>);
+<a name="l00235"></a>00235             var domain = <span class="keyword">new</span> Uri(request.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>).Host;
+<a name="l00236"></a>00236             <span class="keywordflow">if</span> (rr == null || <span class="keywordtype">string</span>.IsNullOrEmpty(domain)) <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00237"></a>00237 
+<a name="l00238"></a>00238             <span class="keywordflow">foreach</span> (<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> n <span class="keywordflow">in</span> rr.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#a65a52ff622b046154ae1e1b05fe7f541" title="Returns the subset of Children with a matching element name. (Case-insensitive)">childrenByName</a>(<span class="stringliteral">&quot;allow&quot;</span>)) {
+<a name="l00239"></a>00239                 <span class="keywordtype">bool</span> onlyWhenSigned = <a class="code" href="class_image_resizer_1_1_extension_methods_1_1_name_value_collection_extensions.html">NameValueCollectionExtensions</a>.Get(n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>, <span class="stringliteral">&quot;onlyWhenSigned&quot;</span>, <span class="keyword">false</span>);
+<a name="l00240"></a>00240                 <span class="keywordflow">if</span> (onlyWhenSigned &amp;&amp; !request.SignedRequest) <span class="keywordflow">continue</span>;
+<a name="l00241"></a>00241 
+<a name="l00242"></a>00242                 <span class="keywordtype">bool</span> hostMatches = <span class="keyword">false</span>, regexMatches = <span class="keyword">false</span>;
+<a name="l00243"></a>00243                 <span class="keywordtype">string</span> host = n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>.Get(<span class="stringliteral">&quot;domain&quot;</span>);
+<a name="l00244"></a>00244                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(host)) {
+<a name="l00245"></a>00245                     <span class="keywordflow">if</span> (host.StartsWith(<span class="stringliteral">&quot;*.&quot;</span>, StringComparison.OrdinalIgnoreCase))
+<a name="l00246"></a>00246                         hostMatches = domain.EndsWith(host.Substring(1), StringComparison.OrdinalIgnoreCase);
+<a name="l00247"></a>00247                     <span class="keywordflow">else</span>
+<a name="l00248"></a>00248                         hostMatches = domain.Equals(host, StringComparison.OrdinalIgnoreCase);
+<a name="l00249"></a>00249 
+<a name="l00250"></a>00250                     <span class="keywordflow">if</span> (!hostMatches) <span class="keywordflow">continue</span>;<span class="comment">//If any filter doesn&#39;t match, skip rule</span>
 <a name="l00251"></a>00251                 }
-<a name="l00252"></a>00252                 <span class="comment">//If all specified filters match, allow the request. </span>
-<a name="l00253"></a>00253                 <span class="comment">//This *is* supposed to be || not &amp;&amp;, because we already deal with non-matching filters via &#39;continue&#39;.</span>
-<a name="l00254"></a>00254                 <span class="keywordflow">if</span> (hostMatches || regexMatches) <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00255"></a>00255 
-<a name="l00256"></a>00256             }
-<a name="l00257"></a>00257             <span class="keywordflow">return</span> <span class="keyword">false</span>;
-<a name="l00258"></a>00258         }
-<a name="l00259"></a>00259 
-<a name="l00260"></a>00260         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a> GetFile(<span class="keywordtype">string</span> virtualPath, System.Collections.Specialized.NameValueCollection queryString) {
-<a name="l00261"></a>00261             <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> request = ParseRequest(virtualPath, queryString);
-<a name="l00262"></a>00262             <span class="keywordflow">if</span> (request == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException();
-<a name="l00263"></a>00263 
-<a name="l00264"></a>00264             <span class="keywordflow">if</span> (request.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#aaa07a958992b36efbc671f94aab9c38a" title="True if the remote url was (correctly) signed with an HMAC SHA-256 to verify that it had not be alter...">SignedRequest</a> &amp;&amp; c.get(<span class="stringliteral">&quot;remotereader.allowAllSignedRequests&quot;</span>, <span class="keyword">false</span>)) request.DenyRequest = <span class="keyword">false</span>;
-<a name="l00265"></a>00265 
-<a name="l00266"></a>00266             <span class="comment">//Check the whitelist</span>
-<a name="l00267"></a>00267             if (request.DenyRequest &amp;&amp; IsWhitelisted(request)) request.DenyRequest = <span class="keyword">false</span>;
-<a name="l00268"></a>00268      
-<a name="l00269"></a>00269             <span class="comment">//Fire event</span>
-<a name="l00270"></a>00270             if (AllowRemoteRequest != null) AllowRemoteRequest(<span class="keyword">this</span>, request);
-<a name="l00271"></a>00271 
-<a name="l00272"></a>00272             <span class="keywordflow">if</span> (request.DenyRequest) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(403, <span class="stringliteral">&quot;The specified remote URL is not permitted.&quot;</span>);
-<a name="l00273"></a>00273 
-<a name="l00274"></a>00274             <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html">RemoteSiteFile</a>(virtualPath, request, <span class="keyword">this</span>);
-<a name="l00275"></a>00275         }
-<a name="l00276"></a>00276 
-<a name="l00277"></a>00277         <span class="keyword">public</span> IEnumerable&lt;IIssue&gt; GetIssues() {
-<a name="l00278"></a>00278             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;();
-<a name="l00279"></a>00279             <span class="keywordtype">string</span> key = c.get(<span class="stringliteral">&quot;remoteReader.signingKey&quot;</span>, String.Empty);
-<a name="l00280"></a>00280             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(key))
-<a name="l00281"></a>00281                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;You are required to set a passphrase for securing remote URLs. Example: &lt;resizer&gt;&lt;remotereader signingKey=\&quot;put a long and randam passphrase here\&quot; /&gt; &lt;/resizer&gt;&quot;</span>));
-<a name="l00282"></a>00282             <span class="keywordflow">return</span> issues;
+<a name="l00252"></a>00252 
+<a name="l00253"></a>00253                 <span class="keywordtype">string</span> regex = n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>.Get(<span class="stringliteral">&quot;regex&quot;</span>);
+<a name="l00254"></a>00254                 <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(regex)) {
+<a name="l00255"></a>00255                     var r = <span class="keyword">new</span> Regex(<span class="stringliteral">&quot;^&quot;</span> + regex + <span class="stringliteral">&quot;$&quot;</span>, RegexOptions.CultureInvariant | RegexOptions.IgnoreCase | RegexOptions.Singleline);
+<a name="l00256"></a>00256                     regexMatches = r.IsMatch(request.RemoteUrl);
+<a name="l00257"></a>00257                     <span class="keywordflow">if</span> (!regexMatches) <span class="keywordflow">continue</span>;<span class="comment">//If any filter doesn&#39;t match, skip rule</span>
+<a name="l00258"></a>00258                 }
+<a name="l00259"></a>00259                 <span class="comment">//If all specified filters match, allow the request. </span>
+<a name="l00260"></a>00260                 <span class="comment">//This *is* supposed to be || not &amp;&amp;, because we already deal with non-matching filters via &#39;continue&#39;.</span>
+<a name="l00261"></a>00261                 <span class="keywordflow">if</span> (hostMatches || regexMatches) <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00262"></a>00262 
+<a name="l00263"></a>00263             }
+<a name="l00264"></a>00264             <span class="keywordflow">return</span> <span class="keyword">false</span>;
+<a name="l00265"></a>00265         }
+<a name="l00266"></a>00266 
+<a name="l00267"></a>00267         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a> GetFile(<span class="keywordtype">string</span> virtualPath, System.Collections.Specialized.NameValueCollection queryString) {
+<a name="l00268"></a>00268             <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> request = ParseRequest(virtualPath, queryString);
+<a name="l00269"></a>00269             <span class="keywordflow">if</span> (request == null) <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException();
+<a name="l00270"></a>00270 
+<a name="l00271"></a>00271             <span class="keywordflow">if</span> (request.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#aaa07a958992b36efbc671f94aab9c38a" title="True if the remote url was (correctly) signed with an HMAC SHA-256 to verify that it had not be alter...">SignedRequest</a> &amp;&amp; c.get(<span class="stringliteral">&quot;remotereader.allowAllSignedRequests&quot;</span>, <span class="keyword">false</span>)) request.DenyRequest = <span class="keyword">false</span>;
+<a name="l00272"></a>00272 
+<a name="l00273"></a>00273             <span class="comment">//Check the whitelist</span>
+<a name="l00274"></a>00274             if (request.DenyRequest &amp;&amp; IsWhitelisted(request)) request.DenyRequest = <span class="keyword">false</span>;
+<a name="l00275"></a>00275      
+<a name="l00276"></a>00276             <span class="comment">//Fire event</span>
+<a name="l00277"></a>00277             if (AllowRemoteRequest != null) AllowRemoteRequest(<span class="keyword">this</span>, request);
+<a name="l00278"></a>00278 
+<a name="l00279"></a>00279             <span class="keywordflow">if</span> (request.DenyRequest) <span class="keywordflow">throw</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_image_processing_exception.html" title="Represents an non-recoverable exception that occured while processing the image. Possible causes are:...">ImageProcessingException</a>(403, <span class="stringliteral">&quot;The specified remote URL is not permitted.&quot;</span>);
+<a name="l00280"></a>00280 
+<a name="l00281"></a>00281             <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html">RemoteSiteFile</a>(virtualPath, request, <span class="keyword">this</span>);
+<a name="l00282"></a>00282         }
 <a name="l00283"></a>00283 
-<a name="l00284"></a>00284         }
-<a name="l00285"></a>00285 <span class="comment"></span>
-<a name="l00286"></a>00286 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00287"></a>00287 <span class="comment">        /// Returns a stream of the HTTP response to the specified URL with a 15 second timeout. </span>
-<a name="l00288"></a>00288 <span class="comment">        /// Throws a FileNotFoundException instead of a WebException for 404 errors.</span>
-<a name="l00289"></a>00289 <span class="comment">        /// Can throw a variety of exceptions: ProtocolViolationException, WebException,  FileNotFoundException,</span>
-<a name="l00290"></a>00290 <span class="comment">        /// SecurityException, NotSupportedException?, and InvalidOperationException?.</span>
-<a name="l00291"></a>00291 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00292"></a>00292 <span class="comment">        /// &lt;param name=&quot;uri&quot;&gt;&lt;/param&gt;</span>
-<a name="l00293"></a>00293 <span class="comment">        /// &lt;param name=&quot;maxRedirects&quot;&gt;&lt;/param&gt;</span>
-<a name="l00294"></a>00294 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00295"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a01552f4561205bceb33b5f12bd748f18">00295</a> <span class="comment"></span>        <span class="keyword">public</span> Stream <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a01552f4561205bceb33b5f12bd748f18" title="Returns a stream of the HTTP response to the specified URL with a 15 second timeout. Throws a FileNotFoundException instead of a WebException for 404 errors. Can throw a variety of exceptions: ProtocolViolationException, WebException, FileNotFoundException, SecurityException, NotSupportedException?, and InvalidOperationException?.">GetUriStream</a>(Uri uri, <span class="keywordtype">int</span> maxRedirects = -1) {
-<a name="l00296"></a>00296             <span class="keywordflow">if</span> (maxRedirects == -1) maxRedirects = AllowedRedirects;
-<a name="l00297"></a>00297 
-<a name="l00298"></a>00298             HttpWebResponse response = null;
-<a name="l00299"></a>00299             <span class="keywordflow">try</span> {
-<a name="l00300"></a>00300                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
-<a name="l00301"></a>00301                 request.Timeout = 15000; <span class="comment">//Default to 15 seconds. Browser timeout is usually 30.</span>
-<a name="l00302"></a>00302                 
-<a name="l00303"></a>00303                 <span class="comment">//This is IDisposable, but only disposes the stream we are returning. So we can&#39;t dispose it, and don&#39;t need to</span>
-<a name="l00304"></a>00304                 response = request.GetResponse() as HttpWebResponse;
-<a name="l00305"></a>00305                 <span class="keywordflow">return</span> response.GetResponseStream();
-<a name="l00306"></a>00306             } <span class="keywordflow">catch</span> (WebException e) {
-<a name="l00307"></a>00307                 var resp = e.Response as HttpWebResponse;
-<a name="l00308"></a>00308 
-<a name="l00309"></a>00309                 <span class="keywordflow">if</span> (e.Status == WebExceptionStatus.ProtocolError &amp;&amp; resp != null) {
-<a name="l00310"></a>00310                     <span class="keywordflow">if</span> (resp.StatusCode == HttpStatusCode.NotFound) <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="stringliteral">&quot;404 error: \&quot;&quot;</span> + uri.ToString() + <span class="stringliteral">&quot;\&quot; not found.&quot;</span>, e);
-<a name="l00311"></a>00311 
-<a name="l00312"></a>00312                     <span class="keywordflow">if</span> (resp.StatusCode == HttpStatusCode.Forbidden) <span class="keywordflow">throw</span> <span class="keyword">new</span> HttpException(403, <span class="stringliteral">&quot;403 Not Authorized (from remote server) for : \&quot;&quot;</span> + uri.ToString() + <span class="stringliteral">&quot;\&quot;.&quot;</span>, e);
-<a name="l00313"></a>00313                     <span class="keywordflow">if</span> (resp.StatusCode == HttpStatusCode.Moved ||
-<a name="l00314"></a>00314                         resp.StatusCode == HttpStatusCode.Redirect) {
-<a name="l00315"></a>00315                             <span class="keywordflow">if</span> (maxRedirects &lt; 1) <span class="keywordflow">throw</span> <span class="keyword">new</span> HttpException(500, <span class="stringliteral">&quot;Too many redirects, stopped while looking for \&quot;&quot;</span> + uri.ToString() + <span class="stringliteral">&quot;\&quot;.&quot;</span>);
-<a name="l00316"></a>00316                             <span class="keywordtype">string</span> loc = resp.GetResponseHeader(<span class="stringliteral">&quot;Location&quot;</span>);
-<a name="l00317"></a>00317                             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(loc) &amp;&amp; Uri.IsWellFormedUriString(loc, UriKind.RelativeOrAbsolute)) {
-<a name="l00318"></a>00318                                 Uri newLoc = Uri.IsWellFormedUriString(loc, UriKind.Absolute) ? <span class="keyword">new</span> Uri(loc) : <span class="keyword">new</span> Uri(uri, <span class="keyword">new</span> Uri(loc));
-<a name="l00319"></a>00319                                 response.Close(); response = null; 
-<a name="l00320"></a>00320                                 <span class="keywordflow">return</span> GetUriStream(newLoc, maxRedirects - 1);
-<a name="l00321"></a>00321                             }
-<a name="l00322"></a>00322                     }
-<a name="l00323"></a>00323                 }
-<a name="l00324"></a>00324                 <span class="comment">//if (resp != null)resp.Close();</span>
-<a name="l00325"></a>00325                 <span class="keywordflow">if</span> (response != null) response.Close();
-<a name="l00326"></a>00326                 <span class="keywordflow">throw</span> e;
-<a name="l00327"></a>00327             } 
-<a name="l00328"></a>00328         }
-<a name="l00329"></a>00329     }
-<a name="l00330"></a>00330 
-<a name="l00331"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html">00331</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html">RemoteSiteFile</a> : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t...">IVirtualFileSourceCacheKey</a> {
-<a name="l00332"></a>00332 
-<a name="l00333"></a>00333         <span class="keyword">protected</span> <span class="keywordtype">string</span> virtualPath;
-<a name="l00334"></a>00334         <span class="keyword">protected</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a> parent;
-<a name="l00335"></a>00335         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> request;
-<a name="l00336"></a>00336 
-<a name="l00337"></a>00337         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html">RemoteSiteFile</a>(<span class="keywordtype">string</span> virtualPath, <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> request, <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a> parent) {
-<a name="l00338"></a>00338             this.virtualPath = virtualPath;
-<a name="l00339"></a>00339             this.request = request;
-<a name="l00340"></a>00340             this.parent = parent;
-<a name="l00341"></a>00341         }
-<a name="l00342"></a>00342 
-<a name="l00343"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html#a37cf9a61c4d0178d7ea9d4b32fb56585">00343</a>         <span class="keyword">public</span> <span class="keywordtype">string</span> VirtualPath {
-<a name="l00344"></a>00344             <span class="keyword">get</span> { <span class="keywordflow">return</span> virtualPath; }
-<a name="l00345"></a>00345         }
-<a name="l00346"></a>00346 
-<a name="l00347"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html#a07a3de944642de435e324d0ad0254868">00347</a>         <span class="keyword">public</span> System.IO.Stream <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html#a07a3de944642de435e324d0ad0254868" title="Returns an opened stream to the file contents.">Open</a>() {
-<a name="l00348"></a>00348             <span class="keywordflow">return</span> parent.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a01552f4561205bceb33b5f12bd748f18" title="Returns a stream of the HTTP response to the specified URL with a 15 second timeout. Throws a FileNotFoundException instead of a WebException for 404 errors. Can throw a variety of exceptions: ProtocolViolationException, WebException, FileNotFoundException, SecurityException, NotSupportedException?, and InvalidOperationException?.">GetUriStream</a>(<span class="keyword">new</span> Uri(this.request.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>));
-<a name="l00349"></a>00349         }
-<a name="l00350"></a>00350 
-<a name="l00351"></a>00351         <span class="keyword">public</span> <span class="keywordtype">string</span> GetCacheKey(<span class="keywordtype">bool</span> includeModifiedDate) {
-<a name="l00352"></a>00352             <span class="keywordflow">return</span> this.request.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>;
-<a name="l00353"></a>00353         }
-<a name="l00354"></a>00354     }
-<a name="l00355"></a>00355 }
+<a name="l00284"></a>00284         <span class="keyword">public</span> IEnumerable&lt;IIssue&gt; GetIssues() {
+<a name="l00285"></a>00285             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;();
+<a name="l00286"></a>00286             <span class="keywordtype">string</span> key = c.get(<span class="stringliteral">&quot;remoteReader.signingKey&quot;</span>, String.Empty);
+<a name="l00287"></a>00287             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(key))
+<a name="l00288"></a>00288                 issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;You are required to set a passphrase for securing remote URLs. Example: &lt;resizer&gt;&lt;remotereader signingKey=\&quot;put a long and randam passphrase here\&quot; /&gt; &lt;/resizer&gt;&quot;</span>));
+<a name="l00289"></a>00289             <span class="keywordflow">return</span> issues;
+<a name="l00290"></a>00290 
+<a name="l00291"></a>00291         }
+<a name="l00292"></a>00292 <span class="comment"></span>
+<a name="l00293"></a>00293 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00294"></a>00294 <span class="comment">        /// Returns a stream of the HTTP response to the specified URL with a 15 second timeout. </span>
+<a name="l00295"></a>00295 <span class="comment">        /// Throws a FileNotFoundException instead of a WebException for 404 errors.</span>
+<a name="l00296"></a>00296 <span class="comment">        /// Can throw a variety of exceptions: ProtocolViolationException, WebException,  FileNotFoundException,</span>
+<a name="l00297"></a>00297 <span class="comment">        /// SecurityException, NotSupportedException?, and InvalidOperationException?.</span>
+<a name="l00298"></a>00298 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00299"></a>00299 <span class="comment">        /// &lt;param name=&quot;uri&quot;&gt;&lt;/param&gt;</span>
+<a name="l00300"></a>00300 <span class="comment">        /// &lt;param name=&quot;maxRedirects&quot;&gt;&lt;/param&gt;</span>
+<a name="l00301"></a>00301 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00302"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a01552f4561205bceb33b5f12bd748f18">00302</a> <span class="comment"></span>        <span class="keyword">public</span> Stream <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a01552f4561205bceb33b5f12bd748f18" title="Returns a stream of the HTTP response to the specified URL with a 15 second timeout. Throws a FileNotFoundException instead of a WebException for 404 errors. Can throw a variety of exceptions: ProtocolViolationException, WebException, FileNotFoundException, SecurityException, NotSupportedException?, and InvalidOperationException?.">GetUriStream</a>(Uri uri, <span class="keywordtype">int</span> maxRedirects = -1) {
+<a name="l00303"></a>00303             <span class="keywordflow">if</span> (maxRedirects == -1) maxRedirects = AllowedRedirects;
+<a name="l00304"></a>00304 
+<a name="l00305"></a>00305             HttpWebResponse response = null;
+<a name="l00306"></a>00306             <span class="keywordflow">try</span> {
+<a name="l00307"></a>00307                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(uri);
+<a name="l00308"></a>00308                 request.Timeout = 15000; <span class="comment">//Default to 15 seconds. Browser timeout is usually 30.</span>
+<a name="l00309"></a>00309                 
+<a name="l00310"></a>00310                 <span class="comment">//This is IDisposable, but only disposes the stream we are returning. So we can&#39;t dispose it, and don&#39;t need to</span>
+<a name="l00311"></a>00311                 response = request.GetResponse() as HttpWebResponse;
+<a name="l00312"></a>00312                 <span class="keywordflow">return</span> response.GetResponseStream();
+<a name="l00313"></a>00313             } <span class="keywordflow">catch</span> (WebException e) {
+<a name="l00314"></a>00314                 var resp = e.Response as HttpWebResponse;
+<a name="l00315"></a>00315 
+<a name="l00316"></a>00316                 <span class="keywordflow">if</span> (e.Status == WebExceptionStatus.ProtocolError &amp;&amp; resp != null) {
+<a name="l00317"></a>00317                     <span class="keywordflow">if</span> (resp.StatusCode == HttpStatusCode.NotFound) <span class="keywordflow">throw</span> <span class="keyword">new</span> FileNotFoundException(<span class="stringliteral">&quot;404 error: \&quot;&quot;</span> + uri.ToString() + <span class="stringliteral">&quot;\&quot; not found.&quot;</span>, e);
+<a name="l00318"></a>00318 
+<a name="l00319"></a>00319                     <span class="keywordflow">if</span> (resp.StatusCode == HttpStatusCode.Forbidden) <span class="keywordflow">throw</span> <span class="keyword">new</span> HttpException(403, <span class="stringliteral">&quot;403 Not Authorized (from remote server) for : \&quot;&quot;</span> + uri.ToString() + <span class="stringliteral">&quot;\&quot;.&quot;</span>, e);
+<a name="l00320"></a>00320                     <span class="keywordflow">if</span> (resp.StatusCode == HttpStatusCode.Moved ||
+<a name="l00321"></a>00321                         resp.StatusCode == HttpStatusCode.Redirect) {
+<a name="l00322"></a>00322                             <span class="keywordflow">if</span> (maxRedirects &lt; 1) <span class="keywordflow">throw</span> <span class="keyword">new</span> HttpException(500, <span class="stringliteral">&quot;Too many redirects, stopped while looking for \&quot;&quot;</span> + uri.ToString() + <span class="stringliteral">&quot;\&quot;.&quot;</span>);
+<a name="l00323"></a>00323                             <span class="keywordtype">string</span> loc = resp.GetResponseHeader(<span class="stringliteral">&quot;Location&quot;</span>);
+<a name="l00324"></a>00324                             <span class="keywordflow">if</span> (!<span class="keywordtype">string</span>.IsNullOrEmpty(loc) &amp;&amp; Uri.IsWellFormedUriString(loc, UriKind.RelativeOrAbsolute)) {
+<a name="l00325"></a>00325                                 Uri newLoc = Uri.IsWellFormedUriString(loc, UriKind.Absolute) ? <span class="keyword">new</span> Uri(loc) : <span class="keyword">new</span> Uri(uri, <span class="keyword">new</span> Uri(loc));
+<a name="l00326"></a>00326                                 response.Close(); response = null; 
+<a name="l00327"></a>00327                                 <span class="keywordflow">return</span> GetUriStream(newLoc, maxRedirects - 1);
+<a name="l00328"></a>00328                             }
+<a name="l00329"></a>00329                     }
+<a name="l00330"></a>00330                 }
+<a name="l00331"></a>00331                 <span class="comment">//if (resp != null)resp.Close();</span>
+<a name="l00332"></a>00332                 <span class="keywordflow">if</span> (response != null) response.Close();
+<a name="l00333"></a>00333                 <span class="keywordflow">throw</span> e;
+<a name="l00334"></a>00334             } 
+<a name="l00335"></a>00335         }
+<a name="l00336"></a>00336     }
+<a name="l00337"></a>00337 
+<a name="l00338"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html">00338</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html">RemoteSiteFile</a> : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t...">IVirtualFileSourceCacheKey</a> {
+<a name="l00339"></a>00339 
+<a name="l00340"></a>00340         <span class="keyword">protected</span> <span class="keywordtype">string</span> virtualPath;
+<a name="l00341"></a>00341         <span class="keyword">protected</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a> parent;
+<a name="l00342"></a>00342         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> request;
+<a name="l00343"></a>00343 
+<a name="l00344"></a>00344         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html">RemoteSiteFile</a>(<span class="keywordtype">string</span> virtualPath, <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html">RemoteRequestEventArgs</a> request, <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html">RemoteReaderPlugin</a> parent) {
+<a name="l00345"></a>00345             this.virtualPath = virtualPath;
+<a name="l00346"></a>00346             this.request = request;
+<a name="l00347"></a>00347             this.parent = parent;
+<a name="l00348"></a>00348         }
+<a name="l00349"></a>00349 
+<a name="l00350"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html#a37cf9a61c4d0178d7ea9d4b32fb56585">00350</a>         <span class="keyword">public</span> <span class="keywordtype">string</span> VirtualPath {
+<a name="l00351"></a>00351             <span class="keyword">get</span> { <span class="keywordflow">return</span> virtualPath; }
+<a name="l00352"></a>00352         }
+<a name="l00353"></a>00353 
+<a name="l00354"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html#a07a3de944642de435e324d0ad0254868">00354</a>         <span class="keyword">public</span> System.IO.Stream <a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html#a07a3de944642de435e324d0ad0254868" title="Returns an opened stream to the file contents.">Open</a>() {
+<a name="l00355"></a>00355             <span class="keywordflow">return</span> parent.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html#a01552f4561205bceb33b5f12bd748f18" title="Returns a stream of the HTTP response to the specified URL with a 15 second timeout. Throws a FileNotFoundException instead of a WebException for 404 errors. Can throw a variety of exceptions: ProtocolViolationException, WebException, FileNotFoundException, SecurityException, NotSupportedException?, and InvalidOperationException?.">GetUriStream</a>(<span class="keyword">new</span> Uri(this.request.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>));
+<a name="l00356"></a>00356         }
+<a name="l00357"></a>00357 
+<a name="l00358"></a>00358         <span class="keyword">public</span> <span class="keywordtype">string</span> GetCacheKey(<span class="keywordtype">bool</span> includeModifiedDate) {
+<a name="l00359"></a>00359             <span class="keywordflow">return</span> this.request.<a class="code" href="class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_request_event_args.html#ac33422938cdc7ec46c2806058ba9d087" title="The url to the remotely hosted image.">RemoteUrl</a>;
+<a name="l00360"></a>00360         }
+<a name="l00361"></a>00361     }
+<a name="l00362"></a>00362 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

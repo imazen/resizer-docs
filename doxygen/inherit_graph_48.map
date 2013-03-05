@@ -1,3 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache_exception.html" title="Indicates a problem with disk caching. Causes include a missing (or too small) ImageDiskCacheDir sett..." alt="" coords="6,5,794,51"/>
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_1_1_cleanup_queue.html" title="ImageResizer.Plugins.DiskCache.Cleanup.CleanupQueue" alt="" coords="5,5,843,51"/>
 </map>

@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -116,7 +116,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_image_resizer_1_1_configuration_1_1_config.html">Config</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_current_config_provider.html#aa618be9ed4f51d1714efa46771ac43f4">GetCurrentConfig</a> ()</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a Config instance appropriate for the current request. If null is returned, the default/root instance will be used. Implementations MUST return the same instance of Config for two identical requests. Multiple Config instances per tenant/area will cause problems.  <a href="#aa618be9ed4f51d1714efa46771ac43f4"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a Config instance appropriate for the current request. If null is returned, the default/root instance will be used. Implementations MUST return the same instance of Config for two identical requests. Multiple Config instances per tenant/area will cause problems. MUST be thread-safe, concurrent calls WILL ocurr, and WILL occur during initial call.  <a href="#aa618be9ed4f51d1714efa46771ac43f4"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Allows multi-tenancy support. The 'root' config only needs one plugin, which implements this interface. </p>
@@ -137,7 +137,7 @@ Public Member Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Returns a Config instance appropriate for the current request. If null is returned, the default/root instance will be used. Implementations MUST return the same instance of Config for two identical requests. Multiple Config instances per tenant/area will cause problems. </p>
+<p>Returns a Config instance appropriate for the current request. If null is returned, the default/root instance will be used. Implementations MUST return the same instance of Config for two identical requests. Multiple Config instances per tenant/area will cause problems. MUST be thread-safe, concurrent calls WILL ocurr, and WILL occur during initial call. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
 </div>

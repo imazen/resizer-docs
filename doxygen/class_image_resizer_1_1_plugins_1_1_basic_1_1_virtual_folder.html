@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -146,8 +146,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html" title="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration.">VirtualFolder</a> plugin as a virtual path provider.  <a href="#a9761b1a23ef4918aaac5ee68fee6ec33"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a492853a24151106234ba0dad23d6aaf2">Uninstall</a> (<a class="el" href="class_image_resizer_1_1_configuration_1_1_config.html">Config</a> c)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Uninstalls the plugin. Should reverse all changes made during Install.  <a href="#a492853a24151106234ba0dad23d6aaf2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a93714723aad0fcc7834e3249ef326282">VirtualToPhysical</a> (string virtualPath)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a virtual path in this folder to a physical path. Returns null if the virtual path is outside the folder.  <a href="#a93714723aad0fcc7834e3249ef326282"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93714723aad0fcc7834e3249ef326282"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::VirtualToPhysical" ref="a93714723aad0fcc7834e3249ef326282" args="(string virtualPath)" -->
+string&#160;</td><td class="memItemRight" valign="bottom"><b>VirtualToPhysical</b> (string virtualPath)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a4abb6be3a039108115bc7677d26b2e52">LocalMapPath</a> (string virtualPath)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts any virtual path in this folder to a physical path. Returns null if the virtual path is outside the folder.  <a href="#a4abb6be3a039108115bc7677d26b2e52"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ae5dae2cdf6772f6f585f13ff0464a67f">IsVirtualPath</a> (string virtualPath)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the specified path is inside this virtual folder.  <a href="#ae5dae2cdf6772f6f585f13ff0464a67f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">DateTime&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a7568a5fec26644bc3fc8e9c6c62e3d21">GetDateModifiedUtc</a> (string virtualPath)</td></tr>
@@ -166,12 +168,12 @@ Public Member Functions</h2></td></tr>
 IEnumerable&lt; <a class="el" href="interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue.html">IIssue</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>GetIssues</b> ()</td></tr>
 <tr><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed7c8d4e3dce6e1c12f90c33b51e8f1c"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::normalizeVirtualPath" ref="aed7c8d4e3dce6e1c12f90c33b51e8f1c" args="(string path)" -->
-string&#160;</td><td class="memItemRight" valign="bottom"><b>normalizeVirtualPath</b> (string path)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa0b59acc876e62aec1897e53300d762e"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::resolvePhysicalPath" ref="aa0b59acc876e62aec1897e53300d762e" args="(string path)" -->
-string&#160;</td><td class="memItemRight" valign="bottom"><b>resolvePhysicalPath</b> (string path)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4585ac1429c6cafbf72840a174c7a788"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::collapsePath" ref="a4585ac1429c6cafbf72840a174c7a788" args="(string path)" -->
-string&#160;</td><td class="memItemRight" valign="bottom"><b>collapsePath</b> (string path)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#aed7c8d4e3dce6e1c12f90c33b51e8f1c">normalizeVirtualPath</a> (string path)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts relative and app-relative paths to domain-relative virtual paths.  <a href="#aed7c8d4e3dce6e1c12f90c33b51e8f1c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#aa0b59acc876e62aec1897e53300d762e">resolvePhysicalPath</a> (string path)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to convert a phyiscal path into a collapsed rooted physical path.  <a href="#aa0b59acc876e62aec1897e53300d762e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a4585ac1429c6cafbf72840a174c7a788">collapsePath</a> (string path)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Collapses any .. segments.  <a href="#a4585ac1429c6cafbf72840a174c7a788"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a81c5d77c8affafb8c2b039bb0e52b717"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::collapseOneLevel" ref="a81c5d77c8affafb8c2b039bb0e52b717" args="(string path)" -->
 string&#160;</td><td class="memItemRight" valign="bottom"><b>collapseOneLevel</b> (string path)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a390f35aaea793cc6a9e20b9c1050c3f0"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::getStream" ref="a390f35aaea793cc6a9e20b9c1050c3f0" args="(string virtualPath)" -->
@@ -192,8 +194,44 @@ Properties</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Functions exactly like an IIS virtual folder, but doesn't require IIS configuration. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00021">21</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00022">22</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a4585ac1429c6cafbf72840a174c7a788"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::collapsePath" ref="a4585ac1429c6cafbf72840a174c7a788" args="(string path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a4585ac1429c6cafbf72840a174c7a788">ImageResizer.Plugins.Basic.VirtualFolder.collapsePath</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Collapses any .. segments. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00137">137</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                   {
+            <span class="keywordtype">string</span> oldPath = path;
+            <span class="keywordflow">do</span> {
+                oldPath = path;
+                path = collapseOneLevel(oldPath);
+            } <span class="keywordflow">while</span> (oldPath != path);
+            <span class="keywordflow">return</span> path;
+        }
+</pre></div>
+</div>
+</div>
 <a class="anchor" id="aa42b7d6fda2cea008cec82fae9627a9c"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::FileExists" ref="aa42b7d6fda2cea008cec82fae9627a9c" args="(string virtualPath, NameValueCollection queryString)" -->
 <div class="memitem">
 <div class="memproto">
@@ -231,14 +269,14 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html#adc1f2caa76c242e3c0bb8ed2d824f9c3">ImageResizer.Plugins.IVirtualImageProvider</a>.</p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00210">210</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00230">230</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                    {
             <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ab8bd68930f844ef5350cb7424d453715" title="True if the plugin has detected it doesn&#39;t have sufficient IOPermission to operate.">NoIOPermission</a>) <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">//Because File.Exists is always false when IOPermission is missing, anyhow.</span>
             <span class="keywordflow">if</span> (!<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ae5dae2cdf6772f6f585f13ff0464a67f" title="Returns true if the specified path is inside this virtual folder.">IsVirtualPath</a>(virtualPath)) <span class="keywordflow">return</span> <span class="keyword">false</span>; <span class="comment">//It&#39;s not even in our area.</span>
-            <span class="keywordflow">if</span> (File.Exists(<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a93714723aad0fcc7834e3249ef326282" title="Converts a virtual path in this folder to a physical path. Returns null if the virtual path is outsid...">VirtualToPhysical</a>(virtualPath))){
+            <span class="keywordflow">if</span> (File.Exists(<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a4abb6be3a039108115bc7677d26b2e52" title="Converts any virtual path in this folder to a physical path. Returns null if the virtual path is outs...">LocalMapPath</a>(virtualPath))){
                 <span class="comment">//Ok, we could serve it, but existing files take precedence.</span>
                 <span class="comment">//Return false if we would be masking an existing file.</span>
-                <span class="keywordflow">return</span> !File.Exists(HostingEnvironment.MapPath(normalizeVirtualPath(virtualPath)));
+                <span class="keywordflow">return</span> !File.Exists(HostingEnvironment.MapPath(<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#aed7c8d4e3dce6e1c12f90c33b51e8f1c" title="Converts relative and app-relative paths to domain-relative virtual paths.">normalizeVirtualPath</a>(virtualPath)));
             }
             <span class="keywordflow">return</span> <span class="keyword">false</span>;
         }
@@ -269,10 +307,10 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00238">238</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00258">258</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                            {
             <span class="keywordflow">if</span> (isOnlyVirtualPath(virtualPath))
-                <span class="keywordflow">return</span> File.Exists(<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a93714723aad0fcc7834e3249ef326282" title="Converts a virtual path in this folder to a physical path. Returns null if the virtual path is outsid...">VirtualToPhysical</a>(virtualPath));
+                <span class="keywordflow">return</span> File.Exists(<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a4abb6be3a039108115bc7677d26b2e52" title="Converts any virtual path in this folder to a physical path. Returns null if the virtual path is outs...">LocalMapPath</a>(virtualPath));
             <span class="keywordflow">else</span>
                 <span class="keywordflow">return</span> Previous.FileExists(virtualPath);
         }
@@ -321,7 +359,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00262">262</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00282">282</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                             {
 
               <span class="keywordflow">if</span> (!isOnlyVirtualPath(virtualPath)) <span class="keywordflow">return</span> Previous.GetCacheDependency(virtualPath, virtualPathDependencies, utcStart);
@@ -332,7 +370,7 @@ Properties</h2></td></tr>
             }
 
 
-             <span class="keywordflow">return</span> <span class="keyword">new</span> CacheDependency(<span class="keyword">new</span> <span class="keywordtype">string</span>[] { <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a93714723aad0fcc7834e3249ef326282" title="Converts a virtual path in this folder to a physical path. Returns null if the virtual path is outsid...">VirtualToPhysical</a>(virtualPath) }, deps.ToArray(), utcStart);
+             <span class="keywordflow">return</span> <span class="keyword">new</span> CacheDependency(<span class="keyword">new</span> <span class="keywordtype">string</span>[] { <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a4abb6be3a039108115bc7677d26b2e52" title="Converts any virtual path in this folder to a physical path. Returns null if the virtual path is outs...">LocalMapPath</a>(virtualPath) }, deps.ToArray(), utcStart);
 
         }
 </pre></div>
@@ -362,9 +400,9 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00196">196</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00216">216</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                               {
-            <span class="keywordtype">string</span> physicalPath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a93714723aad0fcc7834e3249ef326282" title="Converts a virtual path in this folder to a physical path. Returns null if the virtual path is outsid...">VirtualToPhysical</a>(virtualPath);
+            <span class="keywordtype">string</span> physicalPath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a4abb6be3a039108115bc7677d26b2e52" title="Converts any virtual path in this folder to a physical path. Returns null if the virtual path is outs...">LocalMapPath</a>(virtualPath);
             <span class="keywordflow">if</span> (System.IO.File.Exists(physicalPath))
                 <span class="keywordflow">return</span> System.IO.File.GetLastWriteTimeUtc(physicalPath);
             <span class="keywordflow">else</span> <span class="keywordflow">return</span> DateTime.MinValue;
@@ -409,7 +447,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html#aa3bb3191e4ed5cbf957c961d607d611b">ImageResizer.Plugins.IVirtualImageProvider</a>.</p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00227">227</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00247">247</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                         {
             <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ab8bd68930f844ef5350cb7424d453715" title="True if the plugin has detected it doesn&#39;t have sufficient IOPermission to operate.">NoIOPermission</a>) <span class="keywordflow">return</span> null;
             <span class="keywordflow">if</span> (!<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ae5dae2cdf6772f6f585f13ff0464a67f" title="Returns true if the specified path is inside this virtual folder.">IsVirtualPath</a>(virtualPath)) <span class="keywordflow">return</span> null; <span class="comment">//It&#39;s not even in our area.</span>
@@ -442,7 +480,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00249">249</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00269">269</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                {
             <span class="keywordflow">if</span> (isOnlyVirtualPath(virtualPath))
                 <span class="keywordflow">return</span> <span class="keyword">new</span> VirtualFolderProviderVirtualFile(virtualPath, <span class="keyword">this</span>);
@@ -472,7 +510,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134">ImageResizer.Plugins.IPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00086">86</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00081">81</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                         {
             <span class="keywordflow">if</span> (!<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ab8bd68930f844ef5350cb7424d453715" title="True if the plugin has detected it doesn&#39;t have sufficient IOPermission to operate.">NoIOPermission</a> &amp;&amp; <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a86a0f4d2cd650294499895a18d407c05" title="If true, the plugin will attempt to register itself as an application-wide VirtualPathProvider instea...">RegisterAsVpp</a>) {
                 <span class="keywordflow">try</span> {
@@ -512,10 +550,117 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00174">174</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00186">186</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                      {
-            virtualPath = normalizeVirtualPath(virtualPath);
+            virtualPath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#aed7c8d4e3dce6e1c12f90c33b51e8f1c" title="Converts relative and app-relative paths to domain-relative virtual paths.">normalizeVirtualPath</a>(virtualPath);
             <span class="keywordflow">return</span> virtualPath.StartsWith(this.<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ab0c6a53316642080d5500c7a656f16e7" title="The virtual path served by the VirtualFolder.">VirtualPath</a>, StringComparison.OrdinalIgnoreCase);
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="a4abb6be3a039108115bc7677d26b2e52"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::LocalMapPath" ref="a4abb6be3a039108115bc7677d26b2e52" args="(string virtualPath)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a4abb6be3a039108115bc7677d26b2e52">ImageResizer.Plugins.Basic.VirtualFolder.LocalMapPath</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>virtualPath</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Converts any virtual path in this folder to a physical path. Returns null if the virtual path is outside the folder. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">virtualPath</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00174">174</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                       {
+            virtualPath = <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#aed7c8d4e3dce6e1c12f90c33b51e8f1c" title="Converts relative and app-relative paths to domain-relative virtual paths.">normalizeVirtualPath</a>(virtualPath);
+            <span class="keywordflow">if</span> (virtualPath.StartsWith(<span class="keyword">this</span>.VirtualPath, StringComparison.OrdinalIgnoreCase)) {
+                <span class="keywordflow">return</span> Path.Combine(<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a8acf5f07add4086166790d079740e95e" title="The physical path.">PhysicalPath</a>, virtualPath.Substring(<span class="keyword">this</span>.VirtualPath.Length).TrimStart(<span class="charliteral">&#39;/&#39;</span>).Replace(<span class="charliteral">&#39;/&#39;</span>, Path.DirectorySeparatorChar));
+            }
+            <span class="keywordflow">return</span> null;
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aed7c8d4e3dce6e1c12f90c33b51e8f1c"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::normalizeVirtualPath" ref="aed7c8d4e3dce6e1c12f90c33b51e8f1c" args="(string path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#aed7c8d4e3dce6e1c12f90c33b51e8f1c">ImageResizer.Plugins.Basic.VirtualFolder.normalizeVirtualPath</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Converts relative and app-relative paths to domain-relative virtual paths. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00111">111</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                           {
+            <span class="keywordflow">if</span> (!path.StartsWith(<span class="stringliteral">&quot;/&quot;</span>)) path = HostingEnvironment.ApplicationVirtualPath.TrimEnd(<span class="charliteral">&#39;/&#39;</span>) + <span class="charliteral">&#39;/&#39;</span> + (path.StartsWith(<span class="stringliteral">&quot;~&quot;</span>) ? path.Substring(1) : path).TrimStart(<span class="charliteral">&#39;/&#39;</span>);
+            <span class="keywordflow">return</span> path;
+        }
+</pre></div>
+</div>
+</div>
+<a class="anchor" id="aa0b59acc876e62aec1897e53300d762e"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::resolvePhysicalPath" ref="aa0b59acc876e62aec1897e53300d762e" args="(string path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#aa0b59acc876e62aec1897e53300d762e">ImageResizer.Plugins.Basic.VirtualFolder.resolvePhysicalPath</a> </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td><code> [inline, protected]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Attempts to convert a phyiscal path into a collapsed rooted physical path. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
+
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00120">120</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                                          {
+            
+            <span class="keywordflow">if</span> (!Path.IsPathRooted(path)) path = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, path);
+            <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#ab8bd68930f844ef5350cb7424d453715" title="True if the plugin has detected it doesn&#39;t have sufficient IOPermission to operate.">NoIOPermission</a>) <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a4585ac1429c6cafbf72840a174c7a788" title="Collapses any .. segments.">collapsePath</a>(path);
+
+            <span class="keywordflow">try</span> {
+                <span class="keywordflow">return</span> Path.GetFullPath(path);
+            } <span class="keywordflow">catch</span> (SecurityException) {
+                noIOPermission = <span class="keyword">true</span>;
+                <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a4585ac1429c6cafbf72840a174c7a788" title="Collapses any .. segments.">collapsePath</a>(path);
+            }
         }
 </pre></div>
 </div>
@@ -546,45 +691,10 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f">ImageResizer.Plugins.IPlugin</a>.</p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00098">98</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00093">93</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                        {
             c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a0aae69c8ce761b0b5869fd63e2bcb863" title="For use only by plugins during .Uninstall. Removes the specified plugin from AllPlugins, QuerystringPlugins, CachingSystems, ImageEncoders, and ImageBuiderExtensions, based on which interfaces the instance implements. Plugins may register event handlers and modify settings - thus you should use the plugin&#39;s method to uninstall them vs. using this method.">remove_plugin</a>(<span class="keyword">this</span>);
             <span class="keywordflow">return</span> !registeredVpp;<span class="comment">//Cannot truly remove a VPP</span>
-        }
-</pre></div>
-</div>
-</div>
-<a class="anchor" id="a93714723aad0fcc7834e3249ef326282"></a><!-- doxytag: member="ImageResizer::Plugins::Basic::VirtualFolder::VirtualToPhysical" ref="a93714723aad0fcc7834e3249ef326282" args="(string virtualPath)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a93714723aad0fcc7834e3249ef326282">ImageResizer.Plugins.Basic.VirtualFolder.VirtualToPhysical</a> </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>virtualPath</em></td><td>)</td>
-          <td><code> [inline]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Converts a virtual path in this folder to a physical path. Returns null if the virtual path is outside the folder. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">virtualPath</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
-
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00162">162</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
-<div class="fragment"><pre class="fragment">                                                            {
-            virtualPath = normalizeVirtualPath(virtualPath);
-            <span class="keywordflow">if</span> (virtualPath.StartsWith(<span class="keyword">this</span>.VirtualPath, StringComparison.OrdinalIgnoreCase)) {
-                <span class="keywordflow">return</span> Path.Combine(<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html#a8acf5f07add4086166790d079740e95e" title="The physical path.">PhysicalPath</a>, virtualPath.Substring(<span class="keyword">this</span>.VirtualPath.Length).TrimStart(<span class="charliteral">&#39;/&#39;</span>).Replace(<span class="charliteral">&#39;/&#39;</span>, Path.DirectorySeparatorChar));
-            }
-            <span class="keywordflow">return</span> null;
         }
 </pre></div>
 </div>
@@ -603,7 +713,7 @@ Properties</h2></td></tr>
 
 <p>True if the provider attempted to register itself as a VirtualPathProvider and failed due to limited security clearance. False if it did not attempt (say, due to missing IOPermission) , or if it succeeded. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00049">49</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00048">48</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 
 </div>
 </div>
@@ -620,7 +730,7 @@ Properties</h2></td></tr>
 
 <p>True if the plugin has detected it doesn't have sufficient IOPermission to operate. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00107">107</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00102">102</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 
 </div>
 </div>
@@ -637,7 +747,7 @@ Properties</h2></td></tr>
 
 <p>The physical path. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00075">75</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00070">70</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 
 </div>
 </div>
@@ -654,7 +764,7 @@ Properties</h2></td></tr>
 
 <p>If true, the plugin will attempt to register itself as an application-wide VirtualPathProvider instead of a image resizer-specific <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a>. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00057">57</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00055">55</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 
 </div>
 </div>
@@ -671,7 +781,7 @@ Properties</h2></td></tr>
 
 <p>The virtual path served by the <a class="el" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html" title="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration.">VirtualFolder</a>. </p>
 
-<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00066">66</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_virtual_folder_8cs_source.html#l00061">61</a> of file <a class="el" href="_virtual_folder_8cs_source.html">VirtualFolder.cs</a>.</p>
 
 </div>
 </div>

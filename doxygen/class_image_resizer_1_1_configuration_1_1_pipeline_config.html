@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -186,6 +186,8 @@ volatile Dictionary&lt; string, bool &gt;&#160;</td><td class="memItemRight" val
 volatile IList&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_fakeExtensions</b> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a00040166eae7ed83c377ed5bc9f036eb"></a><!-- doxytag: member="ImageResizer::Configuration::PipelineConfig::firedFirstRequest" ref="a00040166eae7ed83c377ed5bc9f036eb" args="" -->
 volatile bool&#160;</td><td class="memItemRight" valign="bottom"><b>firedFirstRequest</b> = false</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae23b6c61650954ea4eb522abd47d8b61"></a><!-- doxytag: member="ImageResizer::Configuration::PipelineConfig::firstRequestFinished" ref="ae23b6c61650954ea4eb522abd47d8b61" args="" -->
+volatile bool&#160;</td><td class="memItemRight" valign="bottom"><b>firstRequestFinished</b> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a2122bed609705a8def23b598c85a55"></a><!-- doxytag: member="ImageResizer::Configuration::PipelineConfig::firedFirstRequestSync" ref="a5a2122bed609705a8def23b598c85a55" args="" -->
 object&#160;</td><td class="memItemRight" valign="bottom"><b>firedFirstRequestSync</b> = new object()</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e62f717ecda56a09aa28ff009c7aa4e"></a><!-- doxytag: member="ImageResizer::Configuration::PipelineConfig::processedCount" ref="a0e62f717ecda56a09aa28ff009c7aa4e" args="" -->
@@ -344,7 +346,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#af29d01f9928d72fb9bd0aaf8fa787758">ImageResizer.Configuration.IPipelineConfig</a>.</p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00293">293</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00298">298</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                    {
             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a> p <span class="keywordflow">in</span> c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a517fd7bc29acf4eb910573fbe34997f7" title="Plugins which provide virtual files are registered here.">VirtualProviderPlugins</a>) {
                 <span class="keywordflow">if</span> (p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html#adc1f2caa76c242e3c0bb8ed2d824f9c3" title="Returns true if the specified file exists.">FileExists</a>(virtualPath, queryString)) <span class="keywordflow">return</span> <span class="keyword">true</span>;
@@ -373,7 +375,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a875fc6f5b30023392b7de162b776769c">ImageResizer.Configuration.IPipelineConfig</a>.</p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00305">305</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00310">310</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                 {
             <span class="keywordflow">return</span> <span class="keyword">this</span>;
         }
@@ -417,7 +419,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_caching_1_1_i_cache_provider.html#a52be77cf11cd203bda140a42d63a3890">ImageResizer.Caching.ICacheProvider</a>.</p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00436">436</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00444">444</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                           {
             <a class="code" href="interface_image_resizer_1_1_caching_1_1_i_cache.html" title="Provides caching behavior.">ICache</a> defaultCache = null;
             <span class="comment">//Grab the first cache that claims it can process the request.</span>
@@ -478,7 +480,12 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a> p <span class="keywordflow">in</span> c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a517fd7bc29acf4eb910573fbe34997f7" title="Plugins which provide virtual files are registered here.">VirtualProviderPlugins</a>) {
                 <span class="keywordflow">if</span> (p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html#adc1f2caa76c242e3c0bb8ed2d824f9c3" title="Returns true if the specified file exists.">FileExists</a>(virtualPath, queryString)) { f = p.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html#aa3bb3191e4ed5cbf957c961d607d611b" title="Returns a virtual file instance for the specified path and querystring.">GetFile</a>(virtualPath, queryString); <span class="keywordflow">break</span>; }
             }
-            <span class="keywordflow">if</span> (f == null &amp;&amp;  HostingEnvironment.VirtualPathProvider != null &amp;&amp; HostingEnvironment.VirtualPathProvider.FileExists(virtualPath)) f =  <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_virtual_file_wrapper.html" title="Wraps a standard ASP.NET VirtualFile instance in an IVirtualFile-compatible wrapper.">VirtualFileWrapper</a>(HostingEnvironment.VirtualPathProvider.GetFile(virtualPath));
+            <span class="keywordflow">if</span> (f == null &amp;&amp;  HostingEnvironment.VirtualPathProvider != null &amp;&amp; HostingEnvironment.VirtualPathProvider.FileExists(virtualPath))
+            {
+                var vf = HostingEnvironment.VirtualPathProvider.GetFile(virtualPath);
+                <span class="keywordflow">if</span> (vf is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a>) f = (IVirtualFile)vf;
+                <span class="keywordflow">else</span> f = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_virtual_file_wrapper.html" title="Wraps a standard ASP.NET VirtualFile instance in an IVirtualFile-compatible wrapper.">VirtualFileWrapper</a>(vf);
+            }
             <span class="keywordflow">if</span> (f == null) <span class="keywordflow">return</span> null;
 
             <span class="comment">//Now we have a reference to the real virtual file, let&#39;s see if it is source-cached.</span>
@@ -511,7 +518,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#ac486ccc78554683bb7dd409a2f787bb3">ImageResizer.Configuration.IPipelineConfig</a>.</p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00301">301</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00306">306</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                              {
             <span class="keywordflow">return</span> c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a9b11da5f1856427a835034d52700c093" title="Returns a shared instance of ImageManager, (or a subclass if it has been upgraded). Instances change whenever ImageBuilderExtensions change.">CurrentImageBuilder</a>;
         }
@@ -616,7 +623,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html#a8cdb3583477eb87a90d7689c80b9a9cb">ImageResizer.Plugins.ISettingsModifier</a>.</p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00455">455</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00463">463</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                              {
             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to...">ISettingsModifier</a> m <span class="keywordflow">in</span> c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#aa8cdada7d657ec3078e5d16310f198f7" title="Access and modify plugins.">Plugins</a>.<a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a84cb6f5d6e18e51b2c572244888fa0d9" title="Plugins which modify image processing settings.">SettingsModifierPlugins</a>)
                 settings = m.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html#a8cdb3583477eb87a90d7689c80b9a9cb" title="Implementations should support being called on their own result multiple times without behavioral dif...">Modify</a>(settings);
@@ -788,7 +795,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html#a5a7c1509252e72852a83246f52de4eed">ImageResizer.Configuration.IPipelineConfig</a>.</p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00466">466</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00474">474</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 
 </div>
 </div>
@@ -824,7 +831,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>The number of images processed by this pipeline. </p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00417">417</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00425">425</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 
 </div>
 </div>
@@ -935,7 +942,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Fired after all rewriting is finished. e.AllowAccess defaults to the result of the UrlAuthorization module's verdict. It can be changed. Set e.AllowAccess to true to cause and 403 Access Dened result. </p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00343">343</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00348">348</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_disk_cache_8cs_source.html#l00195">ImageResizer.Plugins.DiskCache.DiskCache.Install()</a>, and <a class="el" href="_disk_cache_8cs_source.html#l00216">ImageResizer.Plugins.DiskCache.DiskCache.Uninstall()</a>.</p>
 
@@ -954,7 +961,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Fired when the specified image doesn't exist. Only called for images that would normally be processed. May be called during PostAuthorizeRequest or later - End the request completely with a redirect if you want alternate behavior. </p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00350">350</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00355">355</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 
 </div>
 </div>
@@ -971,7 +978,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Fired once, on the first PostAuthorizeRequest event. </p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00312">312</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00317">317</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 
 </div>
 </div>
@@ -988,9 +995,9 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Fires during the PostAuthorizeRequest phase, prior to any module-specific logic. Executes for every request to the website. Use only as a last resort. Other events occur only for image requests, and thus have lower overhead. </p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00317">317</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00322">322</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_handler_syntax_8cs_source.html#l00018">ImageResizer.Plugins.Basic.ImageHandlerSyntax.Install()</a>.</p>
+<p>Referenced by <a class="el" href="_image_handler_syntax_8cs_source.html#l00021">ImageResizer.Plugins.Basic.ImageHandlerSyntax.Install()</a>.</p>
 
 </div>
 </div>
@@ -1008,7 +1015,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 <p>Fired after all other rewrite events. </p>
 <p>Only fired on accepted image types. (see Rewrite)</p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00337">337</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00342">342</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 
 </div>
 </div>
@@ -1025,7 +1032,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 
 <p>Fired immediately before the image request is sent off to the caching system for proccessing. Allows modification of response headers, caching arguments, and callbacks. </p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00356">356</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00361">361</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 
 </div>
 </div>
@@ -1043,7 +1050,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 <p>Fired during PostAuthorizeRequest, after ResizeExtension has been removed. On fired on requests with extensions that match supported image types. </p>
 <p>You can add additonal supported image extentions by registering a plugin that implementes IQuerystringPlugin, or you can add an extra extension in the URL and remove it here. Example: .psd.jpg</p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00326">326</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00331">331</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 
 </div>
 </div>
@@ -1061,7 +1068,7 @@ CacheSelectionHandler&#160;</td><td class="memItemRight" valign="bottom"><b>Sele
 <p>Fired during PostAuthorizeRequest, after Rewrite. Any changes made here (which conflict) will be overwritten by the the current querystring values. I.e, this is a good place to specify default settings. </p>
 <p>Only fired on accepted image types. (see Rewrite)</p>
 
-<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00332">332</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_pipeline_config_8cs_source.html#l00337">337</a> of file <a class="el" href="_pipeline_config_8cs_source.html">PipelineConfig.cs</a>.</p>
 
 </div>
 </div>

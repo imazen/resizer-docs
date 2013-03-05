@@ -1,7 +1,0 @@
-digraph G
-{
-  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
-  node [fontname="Helvetica",fontsize="24",shape=record];
-  rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.RequestLimiting.RequestLimiting",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_request_limiting_1_1_request_limiting.html",tooltip="Prevents DOS attacks by refusing requests that don&#39;t fall inside the configured limits."];
-}

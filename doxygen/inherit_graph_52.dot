@@ -1,7 +1,0 @@
-digraph G
-{
-  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
-  node [fontname="Helvetica",fontsize="24",shape=record];
-  rankdir="LR";
-  Node1 [label="ImageResizer.Plugins.ICurrentConfigProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_current_config_provider.html",tooltip="Allows multi-tenancy support. The &#39;root&#39; config only needs one plugin, which implements this interfac..."];
-}

@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -140,7 +140,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>Uninstall</b> (<a cla
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_source_mem_cache_8cs_source.html#l00011">11</a> of file <a class="el" href="_source_mem_cache_8cs_source.html">SourceMemCache.cs</a>.</p>
+<p>Definition at line <a class="el" href="_source_mem_cache_8cs_source.html#l00012">12</a> of file <a class="el" href="_source_mem_cache_8cs_source.html">SourceMemCache.cs</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="ac47ea6d5f3d99242ec41277553fb9a6d"></a><!-- doxytag: member="ImageResizer::Plugins::SourceMemCache::SourceMemCachePlugin::SourceMemCachePlugin" ref="ac47ea6d5f3d99242ec41277553fb9a6d" args="()" -->
 <div class="memitem">
@@ -158,8 +158,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>Uninstall</b> (<a cla
 
 <p>Defaults to 10MB limit, and samples usage over the last 10 minutes when deciding what to remove. Stuff not used in the last 10 minutes gets discarded even if the limit hasn't been reached. </p>
 
-<p>Definition at line <a class="el" href="_source_mem_cache_8cs_source.html#l00016">16</a> of file <a class="el" href="_source_mem_cache_8cs_source.html">SourceMemCache.cs</a>.</p>
-<div class="fragment"><pre class="fragment">: <span class="keyword">this</span>(1024 * 1024 * 1024, <span class="keyword">new</span> TimeSpan(0, 10, 0)) { }
+<p>Definition at line <a class="el" href="_source_mem_cache_8cs_source.html#l00017">17</a> of file <a class="el" href="_source_mem_cache_8cs_source.html">SourceMemCache.cs</a>.</p>
+<div class="fragment"><pre class="fragment">: <span class="keyword">this</span>(10 * 1024 * 1024, <span class="keyword">new</span> TimeSpan(0, 10, 0)) { }
 </pre></div>
 </div>
 </div>

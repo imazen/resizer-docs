@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -117,10 +117,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00034"></a>00034             <span class="keywordflow">if</span> (mins &gt; 0)
 <a name="l00035"></a>00035                 e.ResponseHeaders.Expires = DateTime.UtcNow.AddMinutes(mins);
 <a name="l00036"></a>00036 
-<a name="l00037"></a>00037             <span class="comment">//Send the last-modified date if present</span>
-<a name="l00038"></a>00038             DateTime lastModified = e.GetModifiedDateUTC();
-<a name="l00039"></a>00039             <span class="keywordflow">if</span> (lastModified != DateTime.MinValue) e.ResponseHeaders.LastModified = lastModified;
-<a name="l00040"></a>00040 
+<a name="l00037"></a>00037             <span class="comment">//NDJ Jan-16-2013. The last modified date sent in the headers should NOT match the source modified date when using DiskCaching.</span>
+<a name="l00038"></a>00038             <span class="comment">//Setting this will prevent 304s from being sent properly.</span>
+<a name="l00039"></a>00039             <span class="comment">// (Moved to NoCache)</span>
+<a name="l00040"></a>00040      
 <a name="l00041"></a>00041             <span class="comment">//Authenticated requests only allow caching on the client. </span>
 <a name="l00042"></a>00042             <span class="comment">//Anonymous requests get caching on the server, proxy and client</span>
 <a name="l00043"></a>00043             <span class="keywordflow">if</span> (context.Request.IsAuthenticated)

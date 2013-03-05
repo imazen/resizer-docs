@@ -4,4 +4,5 @@
 <area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="341,102,459,149"/>
 <area shape="rect" id="node8" href="$interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html" title="For plugins that add support for new source file image extensions." alt="" coords="484,102,791,149"/>
 <area shape="rect" id="node10" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html" title="IIssueProvider" alt="" coords="815,102,1037,149"/>
+<area shape="rect" id="node12" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="1063,102,1345,149"/>
 </map>

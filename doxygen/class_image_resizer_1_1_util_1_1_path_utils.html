@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -321,7 +321,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00249">249</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00137">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.CreateSignedUrl()</a>, <a class="el" href="_image_request_action_8cs_source.html#l00144">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>, <a class="el" href="_instructions_8cs_source.html#l00057">ImageResizer.Instructions.ToQueryString()</a>, <a class="el" href="_resize_settings_8cs_source.html#l00381">ImageResizer.ResizeSettings.ToString()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00388">ImageResizer.ResizeSettings.ToStringEncoded()</a>.</p>
+<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00144">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.CreateSignedUrl()</a>, <a class="el" href="_image_request_action_8cs_source.html#l00144">ImageResizer.Mvc.ImageRequestAction.ExecuteVirtualFileResult()</a>, <a class="el" href="_intercept_module_8cs_source.html#l00171">ImageResizer.InterceptModule.HandleRequest()</a>, <a class="el" href="_instructions_8cs_source.html#l00059">ImageResizer.Instructions.ToQueryString()</a>, <a class="el" href="_resize_settings_8cs_source.html#l00382">ImageResizer.ResizeSettings.ToString()</a>, and <a class="el" href="_resize_settings_8cs_source.html#l00389">ImageResizer.ResizeSettings.ToStringEncoded()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                               {
             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(QueryString, <span class="keyword">true</span>);
         }
@@ -492,7 +492,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00271">271</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_instructions_8cs_source.html#l00049">ImageResizer.Instructions.ToString()</a>.</p>
+<p>Referenced by <a class="el" href="_instructions_8cs_source.html#l00051">ImageResizer.Instructions.ToString()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                        {
             <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#ac50e452cbcb5cea21318669c89632755" title="Returns a string querystring in the form &quot;?key=value&amp;amp;key=value&quot;. Keys and values are UrlEncoded a...">BuildQueryString</a>(QueryString, urlEncode, <span class="keyword">true</span>, <span class="charliteral">&#39;;&#39;</span>, <span class="charliteral">&#39;;&#39;</span>, <span class="charliteral">&#39;=&#39;</span>);
         }
@@ -536,7 +536,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00583">583</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                            {
-            <span class="keywordflow">return</span> query.Keep(keepKeys);
+            <span class="keywordflow">return</span> <a class="code" href="class_image_resizer_1_1_extension_methods_1_1_name_value_collection_extensions.html">NameValueCollectionExtensions</a>.<a class="code" href="class_image_resizer_1_1_extension_methods_1_1_name_value_collection_extensions.html#ad4012050b4abf03e4b5a3f8d9bd5430a" title="Creates and returns a new NameValueCollection instance that contains only the specified keys from the...">Keep</a>(query, keepKeys);
         }
 </pre></div>
 </div>
@@ -601,7 +601,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00462">462</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00177">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.ParseRequest()</a>.</p>
+<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00184">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.ParseRequest()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                              {
             <span class="keywordflow">return</span> UTF8Encoding.UTF8.GetString(<a class="code" href="class_image_resizer_1_1_util_1_1_path_utils.html#a6943e50a715d4daf25cb6aa6e07d1a0a" title="Converts a URL-safe version of base64 to a byte array. (no = padding, with - instead of + and _ inste...">FromBase64UToBytes</a>(data));
         }
@@ -1268,7 +1268,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00066">66</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_mongo_reader_plugin_8cs_source.html#l00086">ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile.Open()</a>.</p>
+<p>Referenced by <a class="el" href="_mongo_reader_plugin_8cs_source.html#l00094">ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile.Open()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                              {
             <span class="keywordtype">int</span> query = path.IndexOfAny(QueryOrFragment);
             <span class="keywordflow">if</span> (query &lt; 0) query = path.Length;
@@ -1589,7 +1589,7 @@ Properties</h2></td></tr>
 
 <p>Definition at line <a class="el" href="_path_utils_8cs_source.html#l00437">437</a> of file <a class="el" href="_path_utils_8cs_source.html">PathUtils.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00137">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.CreateSignedUrl()</a>.</p>
+<p>Referenced by <a class="el" href="_remote_reader_plugin_8cs_source.html#l00144">ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin.CreateSignedUrl()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                    {
             <span class="keywordflow">return</span> Convert.ToBase64String(data).Replace(<span class="stringliteral">&quot;=&quot;</span>, String.Empty).Replace(<span class="charliteral">&#39;+&#39;</span>, <span class="charliteral">&#39;-&#39;</span>).Replace(<span class="charliteral">&#39;/&#39;</span>, <span class="charliteral">&#39;_&#39;</span>);
         }

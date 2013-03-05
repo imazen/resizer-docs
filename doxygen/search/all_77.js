@@ -6,6 +6,8 @@ var searchData=
   ['watermarkplugin',['WatermarkPlugin',['../class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html',1,'ImageResizer::Plugins::Watermark']]],
   ['webconfigcontents',['webConfigContents',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_web_config_writer.html#a2b06618f9c2fd1c24a6c5f7762b1208a',1,'ImageResizer::Plugins::DiskCache::WebConfigWriter']]],
   ['webconfigwriter',['WebConfigWriter',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_web_config_writer.html',1,'ImageResizer::Plugins::DiskCache']]],
+  ['webpdecoderplugin',['WebPDecoderPlugin',['../class_image_resizer_1_1_plugins_1_1_web_p_decoder_1_1_web_p_decoder_plugin.html',1,'ImageResizer::Plugins::WebPDecoder']]],
+  ['webpencoderplugin',['WebPEncoderPlugin',['../class_image_resizer_1_1_plugins_1_1_web_p_encoder_1_1_web_p_encoder_plugin.html',1,'ImageResizer::Plugins::WebPEncoder']]],
   ['weightedcenter',['WeightedCenter',['../class_image_resizer_1_1_plugins_1_1_red_eye_1_1_adaptive_circle_fill.html#a998869cc9b8fc3c230808043eef53005',1,'ImageResizer::Plugins::RedEye::AdaptiveCircleFill']]],
   ['whitespacetrimmerplugin',['WhitespaceTrimmerPlugin',['../class_image_resizer_1_1_plugins_1_1_whitespace_trimmer_1_1_whitespace_trimmer_plugin.html',1,'ImageResizer::Plugins::WhitespaceTrimmer']]],
   ['wicbitmappadder',['WicBitmapPadder',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_wic_bitmap_padder.html',1,'ImageResizer::Plugins::Wic']]],
@@ -31,5 +33,6 @@ var searchData=
   ['write',['Write',['../interface_image_resizer_1_1_encoding_1_1_i_encoder.html#a9cf9397f4528608e91785410afb73eb6',1,'ImageResizer::Encoding::IEncoder.Write()'],['../class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a60d2c551e5991c4ce2bb8c436cd539e7',1,'ImageResizer::Plugins::Basic::DefaultEncoder.Write()'],['../class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_pretty_gifs.html#aaad3f625c9f3e6d3520eeaa7090583c8',1,'ImageResizer::Plugins::PrettyGifs::PrettyGifs.Write()']]],
   ['writediagnosticsto',['WriteDiagnosticsTo',['../class_image_resizer_1_1_configuration_1_1_config.html#ab440cdc9c6af50dcef6e4b3668b65f78',1,'ImageResizer::Configuration::Config']]],
   ['writeflip',['writeFlip',['../class_image_resizer_1_1_util_1_1_utils.html#a95d1c52cb26885b95be5537d77e38a36',1,'ImageResizer::Util::Utils']]],
-  ['writeitemcallback',['WriteItemCallback',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_batch_resize_worker.html#a0ff0bb7cf4c5235a8b76bf3e7feddd1a',1,'ImageResizer::Plugins::BatchZipper::BatchResizeWorker']]]
+  ['writeitemcallback',['WriteItemCallback',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_batch_resize_worker.html#a0ff0bb7cf4c5235a8b76bf3e7feddd1a',1,'ImageResizer::Plugins::BatchZipper::BatchResizeWorker']]],
+  ['written',['written',['../class_image_resizer_1_1_plugins_1_1_tiny_cache_1_1_cache_entry.html#ac6bcd92569532d91f84a8a43fb881ee7',1,'ImageResizer::Plugins::TinyCache::CacheEntry']]]
 ];

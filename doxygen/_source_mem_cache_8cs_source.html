@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -89,102 +89,109 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00006"></a>00006 <span class="keyword">using</span> ImageResizer.Util;
 <a name="l00007"></a>00007 <span class="keyword">using</span> System.Collections.Specialized;
 <a name="l00008"></a>00008 <span class="keyword">using</span> ImageResizer.ExtensionMethods;
-<a name="l00009"></a>00009 
-<a name="l00010"></a>00010 <span class="keyword">namespace </span>ImageResizer.Plugins.SourceMemCache {
-<a name="l00011"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html">00011</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html">SourceMemCachePlugin</a>: <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_cache.html" title="Implement this if you are caching files provided by a virtual image provider (For example...">IVirtualFileCache</a> {
-<a name="l00012"></a>00012 <span class="comment"></span>
-<a name="l00013"></a>00013 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00014"></a>00014 <span class="comment">        /// Defaults to 10MB limit, and samples usage over the last 10 minutes when deciding what to remove. Stuff not used in the last 10 minutes gets discarded even if the limit hasn&#39;t been reached.</span>
-<a name="l00015"></a>00015 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00016"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html#ac47ea6d5f3d99242ec41277553fb9a6d">00016</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html#ac47ea6d5f3d99242ec41277553fb9a6d" title="Defaults to 10MB limit, and samples usage over the last 10 minutes when deciding what to remove...">SourceMemCachePlugin</a>() : this(1024 * 1024 * 1024, new TimeSpan(0, 10, 0)) { }
-<a name="l00017"></a>00017 
-<a name="l00018"></a>00018         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html">SourceMemCachePlugin</a>(<span class="keywordtype">long</span> maxBytes, TimeSpan usageWindow) {
-<a name="l00019"></a>00019             <span class="comment">//Cleanup at most once per minute, unless hitting the limits. </span>
-<a name="l00020"></a>00020             cache = <span class="keyword">new</span> ConstrainedCache&lt;string, CachedVirtualFile&gt;(StringComparer.OrdinalIgnoreCase, delegate(<span class="keywordtype">string</span> key, <a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html">CachedVirtualFile</a> file) {
-<a name="l00021"></a>00021                 <span class="keywordflow">return</span> key.Length * 4 + file.BytesOccupied;
-<a name="l00022"></a>00022             }, maxBytes, usageWindow, <span class="keyword">new</span> TimeSpan(0, 1, 0)); 
-<a name="l00023"></a>00023 
-<a name="l00024"></a>00024         }
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026         <span class="keyword">private</span> ConstrainedCache&lt;string, CachedVirtualFile&gt; cache;
-<a name="l00027"></a>00027 
-<a name="l00028"></a>00028         <span class="keyword">public</span> IVirtualFile GetFileIfCached(<span class="keywordtype">string</span> virtualPath, System.Collections.Specialized.NameValueCollection queryString, IVirtualFile original) {
-<a name="l00029"></a>00029             <span class="comment">//Use alternate cache key if provided</span>
-<a name="l00030"></a>00030             <span class="keywordtype">string</span> key = original is IVirtualFileSourceCacheKey ? ((IVirtualFileSourceCacheKey)original).GetCacheKey(<span class="keyword">true</span>) : original.VirtualPath;
-<a name="l00031"></a>00031             <span class="comment">//If cached, serve it. </span>
-<a name="l00032"></a>00032             CachedVirtualFile c = cache.Get(key);
-<a name="l00033"></a>00033             <span class="keywordflow">if</span> (c != null) <span class="keywordflow">return</span> c;
-<a name="l00034"></a>00034             <span class="comment">//If not, let&#39;s cache it.</span>
-<a name="l00035"></a>00035             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;mem&quot;</span>.Equals(queryString[<span class="stringliteral">&quot;scache&quot;</span>], StringComparison.OrdinalIgnoreCase)) {
-<a name="l00036"></a>00036                 <span class="comment">//Optimization idea - use LockProvider to prevent duplicate requests. Would mean merging with DiskCache :(</span>
-<a name="l00037"></a>00037                 <span class="keyword">using</span> (Stream data = original.Open()) {<span class="comment">//Very long-running call</span>
-<a name="l00038"></a>00038                     c = <span class="keyword">new</span> CachedVirtualFile(original.VirtualPath,  data.CopyToBytes(<span class="keyword">true</span>)); 
-<a name="l00039"></a>00039                 }
-<a name="l00040"></a>00040                 cache.Set(key, c); <span class="comment">//Save to cache (may trigger cleanup)</span>
-<a name="l00041"></a>00041                 <span class="keywordflow">return</span> c;
-<a name="l00042"></a>00042             }
-<a name="l00043"></a>00043             <span class="keywordflow">return</span> null;
-<a name="l00044"></a>00044         }
-<a name="l00045"></a>00045 
-<a name="l00046"></a>00046         <span class="keyword">public</span> IPlugin Install(Configuration.Config c) {
-<a name="l00047"></a>00047             c.Plugins.add_plugin(<span class="keyword">this</span>);
-<a name="l00048"></a>00048             <span class="keywordflow">return</span> <span class="keyword">this</span>;
-<a name="l00049"></a>00049         }
-<a name="l00050"></a>00050 
-<a name="l00051"></a>00051         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
-<a name="l00052"></a>00052             c.Plugins.remove_plugin(<span class="keyword">this</span>);
-<a name="l00053"></a>00053             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00054"></a>00054         }
-<a name="l00055"></a>00055 
-<a name="l00056"></a>00056 
-<a name="l00057"></a>00057     }
-<a name="l00058"></a>00058 
-<a name="l00059"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html">00059</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html">CachedVirtualFile</a> : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a> {
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html">CachedVirtualFile</a>(<span class="keywordtype">string</span> virtualPath, byte[] data) {
-<a name="l00062"></a>00062             this.virtualPath = virtualPath;
-<a name="l00063"></a>00063             this.data = data;
-<a name="l00064"></a>00064         }
-<a name="l00065"></a>00065         <span class="keywordtype">string</span> virtualPath;
-<a name="l00066"></a>00066         byte[] data;
-<a name="l00067"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html#a5a3a85cf73857a0d63c40fe33733bf66">00067</a>         <span class="keyword">public</span> <span class="keywordtype">string</span> VirtualPath {
-<a name="l00068"></a>00068             <span class="keyword">get</span> { <span class="keywordflow">return</span> virtualPath; }
-<a name="l00069"></a>00069         }
-<a name="l00070"></a>00070 
-<a name="l00071"></a>00071         <span class="keyword">private</span> <span class="keywordtype">bool</span> checkIntegrity = <span class="keyword">true</span>;
-<a name="l00072"></a>00072 
-<a name="l00073"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html#aa5e21c1d163d3f9df17355f418bc50e2">00073</a>         <span class="keyword">public</span> System.IO.Stream <a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html#aa5e21c1d163d3f9df17355f418bc50e2" title="Returns an opened stream to the file contents.">Open</a>() {
-<a name="l00074"></a>00074             <span class="keywordflow">if</span> (checkIntegrity) {
-<a name="l00075"></a>00075                 <span class="keywordflow">if</span> (originalHash == -1) originalHash = CaluclateHash();
-<a name="l00076"></a>00076                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> (originalHash != CaluclateHash()) <span class="keywordflow">throw</span> <span class="keyword">new</span> AccessViolationException(<span class="stringliteral">&quot;A read-only memory stream was somehow modified.&quot;</span>);
-<a name="l00077"></a>00077             }
-<a name="l00078"></a>00078 
-<a name="l00079"></a>00079             <span class="keywordflow">return</span> <span class="keyword">new</span> MemoryStream(data, <span class="keyword">false</span>);
-<a name="l00080"></a>00080         }
-<a name="l00081"></a>00081 
-<a name="l00082"></a>00082         <span class="keyword">protected</span> <span class="keywordtype">int</span> originalHash = -1;
-<a name="l00083"></a>00083         <span class="keyword">protected</span> <span class="keywordtype">int</span> CaluclateHash() {
-<a name="l00084"></a>00084             unchecked {
-<a name="l00085"></a>00085                 <span class="keyword">const</span> <span class="keywordtype">int</span> p = 16777619;
-<a name="l00086"></a>00086                 <span class="keywordtype">int</span> hash = (int)2166136261;
-<a name="l00087"></a>00087 
-<a name="l00088"></a>00088                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; data.Length; i++)
-<a name="l00089"></a>00089                     hash = (hash ^ data[i]) * p;
-<a name="l00090"></a>00090 
-<a name="l00091"></a>00091                 hash += hash &lt;&lt; 13;
-<a name="l00092"></a>00092                 hash ^= hash &gt;&gt; 7;
-<a name="l00093"></a>00093                 hash += hash &lt;&lt; 3;
-<a name="l00094"></a>00094                 hash ^= hash &gt;&gt; 17;
-<a name="l00095"></a>00095                 hash += hash &lt;&lt; 5;
-<a name="l00096"></a>00096                 <span class="keywordflow">return</span> hash;
-<a name="l00097"></a>00097             }
-<a name="l00098"></a>00098         }
-<a name="l00099"></a>00099 
-<a name="l00100"></a>00100         <span class="keyword">public</span> <span class="keywordtype">long</span> BytesOccupied { <span class="keyword">get</span> { <span class="keywordflow">return</span> data.Length + virtualPath.Length * 4 + 32; } }
-<a name="l00101"></a>00101 
-<a name="l00102"></a>00102 
-<a name="l00103"></a>00103     }
-<a name="l00104"></a>00104 }
+<a name="l00009"></a>00009 <span class="keyword">using</span> ImageResizer.Plugins.DiskCache;
+<a name="l00010"></a>00010 
+<a name="l00011"></a>00011 <span class="keyword">namespace </span>ImageResizer.Plugins.SourceMemCache {
+<a name="l00012"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html">00012</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html">SourceMemCachePlugin</a>: <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file_cache.html" title="Implement this if you are caching files provided by a virtual image provider (For example...">IVirtualFileCache</a> {
+<a name="l00013"></a>00013 <span class="comment"></span>
+<a name="l00014"></a>00014 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00015"></a>00015 <span class="comment">        /// Defaults to 10MB limit, and samples usage over the last 10 minutes when deciding what to remove. Stuff not used in the last 10 minutes gets discarded even if the limit hasn&#39;t been reached.</span>
+<a name="l00016"></a>00016 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00017"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html#ac47ea6d5f3d99242ec41277553fb9a6d">00017</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html#ac47ea6d5f3d99242ec41277553fb9a6d" title="Defaults to 10MB limit, and samples usage over the last 10 minutes when deciding what to remove...">SourceMemCachePlugin</a>() : this(10 * 1024 * 1024, new TimeSpan(0, 10, 0)) { }
+<a name="l00018"></a>00018 
+<a name="l00019"></a>00019         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html">SourceMemCachePlugin</a>(<span class="keywordtype">long</span> maxBytes, TimeSpan usageWindow) {
+<a name="l00020"></a>00020             <span class="comment">//Cleanup at most once per minute, unless hitting the limits. </span>
+<a name="l00021"></a>00021             cache = <span class="keyword">new</span> ConstrainedCache&lt;string, CachedVirtualFile&gt;(StringComparer.OrdinalIgnoreCase, delegate(<span class="keywordtype">string</span> key, <a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html">CachedVirtualFile</a> file) {
+<a name="l00022"></a>00022                 <span class="keywordflow">return</span> key.Length * 4 + file.BytesOccupied;
+<a name="l00023"></a>00023             }, maxBytes, usageWindow, <span class="keyword">new</span> TimeSpan(0, 1, 0)); 
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025         }
+<a name="l00026"></a>00026 
+<a name="l00027"></a>00027         <span class="keyword">private</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_lock_provider.html" title="Provides locking based on a string key. Locks are local to the LockProvider instance. The class handles disposing of unused locks. Generally used for coordinating writes to files (of which there can be millions). Only keeps key/lock pairs in memory which are in use. Thread-safe.">LockProvider</a> locks = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_lock_provider.html" title="Provides locking based on a string key. Locks are local to the LockProvider instance. The class handles disposing of unused locks. Generally used for coordinating writes to files (of which there can be millions). Only keeps key/lock pairs in memory which are in use. Thread-safe.">LockProvider</a>();
+<a name="l00028"></a>00028 
+<a name="l00029"></a>00029         <span class="keyword">private</span> ConstrainedCache&lt;string, CachedVirtualFile&gt; cache;
+<a name="l00030"></a>00030 
+<a name="l00031"></a>00031         <span class="keyword">public</span> IVirtualFile GetFileIfCached(<span class="keywordtype">string</span> virtualPath, System.Collections.Specialized.NameValueCollection queryString, IVirtualFile original) {
+<a name="l00032"></a>00032             <span class="comment">//Use alternate cache key if provided</span>
+<a name="l00033"></a>00033             <span class="keywordtype">string</span> key = original is IVirtualFileSourceCacheKey ? ((IVirtualFileSourceCacheKey)original).GetCacheKey(<span class="keyword">true</span>) : original.VirtualPath;
+<a name="l00034"></a>00034             <span class="comment">//If cached, serve it. </span>
+<a name="l00035"></a>00035             CachedVirtualFile c = cache.Get(key);
+<a name="l00036"></a>00036             <span class="keywordflow">if</span> (c != null) <span class="keywordflow">return</span> c;
+<a name="l00037"></a>00037             <span class="comment">//If not, let&#39;s cache it.</span>
+<a name="l00038"></a>00038             <span class="keywordflow">if</span> (<span class="stringliteral">&quot;mem&quot;</span>.Equals(queryString[<span class="stringliteral">&quot;scache&quot;</span>], StringComparison.OrdinalIgnoreCase)) {
+<a name="l00039"></a>00039                 locks.TryExecute(key, 3000, delegate() {
+<a name="l00040"></a>00040                     c = cache.Get(key);
+<a name="l00041"></a>00041                     <span class="keywordflow">if</span> (c == null) {
+<a name="l00042"></a>00042                         <span class="keyword">using</span> (Stream data = original.Open()) {<span class="comment">//Very long-running call</span>
+<a name="l00043"></a>00043                             c = <span class="keyword">new</span> CachedVirtualFile(original.VirtualPath, <a class="code" href="class_image_resizer_1_1_extension_methods_1_1_stream_extensions.html" title="Provides extension methods for copying streams.">StreamExtensions</a>.<a class="code" href="class_image_resizer_1_1_extension_methods_1_1_stream_extensions.html#afee19807fe5e2ed408204859d5898c9c" title="Copies the remaining data in the current stream to a byte[] array of exact size.">CopyToBytes</a>(data, <span class="keyword">true</span>));
+<a name="l00044"></a>00044                         }
+<a name="l00045"></a>00045                         cache.Set(key, c);<span class="comment">//Save to cache (may trigger cleanup)</span>
+<a name="l00046"></a>00046                     }
+<a name="l00047"></a>00047                 });
+<a name="l00048"></a>00048                 <span class="keywordflow">return</span> c;
+<a name="l00049"></a>00049             }
+<a name="l00050"></a>00050             <span class="keywordflow">return</span> null;
+<a name="l00051"></a>00051         }
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053         <span class="keyword">public</span> IPlugin Install(Configuration.Config c) {
+<a name="l00054"></a>00054             c.Plugins.add_plugin(<span class="keyword">this</span>);
+<a name="l00055"></a>00055             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00056"></a>00056         }
+<a name="l00057"></a>00057 
+<a name="l00058"></a>00058         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
+<a name="l00059"></a>00059             c.Plugins.remove_plugin(<span class="keyword">this</span>);
+<a name="l00060"></a>00060             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063 
+<a name="l00064"></a>00064     }
+<a name="l00065"></a>00065 
+<a name="l00066"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html">00066</a>     <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html">CachedVirtualFile</a> : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider.">IVirtualFile</a> {
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html">CachedVirtualFile</a>(<span class="keywordtype">string</span> virtualPath, byte[] data) {
+<a name="l00069"></a>00069             this.virtualPath = virtualPath;
+<a name="l00070"></a>00070             this.data = data;
+<a name="l00071"></a>00071         }
+<a name="l00072"></a>00072         <span class="keywordtype">string</span> virtualPath;
+<a name="l00073"></a>00073         byte[] data;
+<a name="l00074"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html#a5a3a85cf73857a0d63c40fe33733bf66">00074</a>         <span class="keyword">public</span> <span class="keywordtype">string</span> VirtualPath {
+<a name="l00075"></a>00075             <span class="keyword">get</span> { <span class="keywordflow">return</span> virtualPath; }
+<a name="l00076"></a>00076         }
+<a name="l00077"></a>00077 
+<a name="l00078"></a>00078         <span class="keyword">private</span> <span class="keywordtype">bool</span> checkIntegrity = <span class="keyword">true</span>;
+<a name="l00079"></a>00079 
+<a name="l00080"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html#aa5e21c1d163d3f9df17355f418bc50e2">00080</a>         <span class="keyword">public</span> System.IO.Stream <a class="code" href="class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html#aa5e21c1d163d3f9df17355f418bc50e2" title="Returns an opened stream to the file contents.">Open</a>() {
+<a name="l00081"></a>00081             <span class="keywordflow">if</span> (checkIntegrity) {
+<a name="l00082"></a>00082                 <span class="keywordflow">if</span> (originalHash == -1) originalHash = CaluclateHash();
+<a name="l00083"></a>00083                 <span class="keywordflow">else</span> <span class="keywordflow">if</span> (originalHash != CaluclateHash()) <span class="keywordflow">throw</span> <span class="keyword">new</span> AccessViolationException(<span class="stringliteral">&quot;A read-only memory stream was somehow modified.&quot;</span>);
+<a name="l00084"></a>00084             }
+<a name="l00085"></a>00085 
+<a name="l00086"></a>00086             <span class="keywordflow">return</span> <span class="keyword">new</span> MemoryStream(data, <span class="keyword">false</span>);
+<a name="l00087"></a>00087         }
+<a name="l00088"></a>00088 
+<a name="l00089"></a>00089         <span class="keyword">protected</span> <span class="keywordtype">int</span> originalHash = -1;
+<a name="l00090"></a>00090         <span class="keyword">protected</span> <span class="keywordtype">int</span> CaluclateHash() {
+<a name="l00091"></a>00091             unchecked {
+<a name="l00092"></a>00092                 <span class="keyword">const</span> <span class="keywordtype">int</span> p = 16777619;
+<a name="l00093"></a>00093                 <span class="keywordtype">int</span> hash = (int)2166136261;
+<a name="l00094"></a>00094 
+<a name="l00095"></a>00095                 <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; data.Length; i++)
+<a name="l00096"></a>00096                     hash = (hash ^ data[i]) * p;
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098                 hash += hash &lt;&lt; 13;
+<a name="l00099"></a>00099                 hash ^= hash &gt;&gt; 7;
+<a name="l00100"></a>00100                 hash += hash &lt;&lt; 3;
+<a name="l00101"></a>00101                 hash ^= hash &gt;&gt; 17;
+<a name="l00102"></a>00102                 hash += hash &lt;&lt; 5;
+<a name="l00103"></a>00103                 <span class="keywordflow">return</span> hash;
+<a name="l00104"></a>00104             }
+<a name="l00105"></a>00105         }
+<a name="l00106"></a>00106 
+<a name="l00107"></a>00107         <span class="keyword">public</span> <span class="keywordtype">long</span> BytesOccupied { <span class="keyword">get</span> { <span class="keywordflow">return</span> data.Length + virtualPath.Length * 4 + 32; } }
+<a name="l00108"></a>00108 
+<a name="l00109"></a>00109 
+<a name="l00110"></a>00110     }
+<a name="l00111"></a>00111 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -150,6 +150,8 @@ Properties</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of colors to use. Only applicable for png, gif, and bmp photos where palletes can be used. The default is -1, which means "as much color fidelity as possible".  <a href="#aa310b9df6f66077c2adaa351bb772efd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html#a7b8e01edf0c589a9b2aa8f95e95f8443">Dither</a><code> [get, set]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, error-diffusion dithering will be applied to 8-bit output images.  <a href="#a7b8e01edf0c589a9b2aa8f95e95f8443"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html#ac0213964004954cf995f771cecfcfce0">Interlace</a><code> [get, set]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">If true, PNGs will be encoded in interlaced form.  <a href="#ac0213964004954cf995f771cecfcfce0"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -192,7 +194,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html#ad63c950ef185945b7e1d9bab7a094354">ImageResizer.Encoding.IEncoder</a>.</p>
 
-<p>Definition at line <a class="el" href="_wic_encoder_8cs_source.html#l00075">75</a> of file <a class="el" href="_wic_encoder_8cs_source.html">WicEncoder.cs</a>.</p>
+<p>Definition at line <a class="el" href="_wic_encoder_8cs_source.html#l00081">81</a> of file <a class="el" href="_wic_encoder_8cs_source.html">WicEncoder.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                   {
 
             ImageFormat requestedFormat = <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html" title="Provides basic encoding functionality for Jpeg, png, and gif output. Allows adjustable Jpeg compressi...">DefaultEncoder</a>.<a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a6112f4c23eeeda6ce64653aa01f072c2" title="Tries to parse an ImageFormat from the settings.Format value. If an unrecogized format is specified...">GetRequestedFormat</a>(settings.Format, ImageFormat.Jpeg);
@@ -235,6 +237,23 @@ Properties</h2></td></tr>
 <p>If true, error-diffusion dithering will be applied to 8-bit output images. </p>
 
 <p>Definition at line <a class="el" href="_wic_encoder_8cs_source.html#l00041">41</a> of file <a class="el" href="_wic_encoder_8cs_source.html">WicEncoder.cs</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac0213964004954cf995f771cecfcfce0"></a><!-- doxytag: member="ImageResizer::Plugins::WicEncoder::WicEncoderPlugin::Interlace" ref="ac0213964004954cf995f771cecfcfce0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html#ac0213964004954cf995f771cecfcfce0">ImageResizer.Plugins.WicEncoder.WicEncoderPlugin.Interlace</a><code> [get, set]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>If true, PNGs will be encoded in interlaced form. </p>
+
+<p>Definition at line <a class="el" href="_wic_encoder_8cs_source.html#l00046">46</a> of file <a class="el" href="_wic_encoder_8cs_source.html">WicEncoder.cs</a>.</p>
 
 </div>
 </div>

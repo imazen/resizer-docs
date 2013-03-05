@@ -1,3 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_collections_1_1_read_only_dictionary-g.html" title="ImageResizer.Collections.ReadOnlyDictionary\&lt; TKey, TValue \&gt;" alt="" coords="6,5,917,51"/>
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_collections_1_1_querystring_base-g.html" title="ImageResizer.Collections.QuerystringBase\&lt; TK \&gt;" alt="" coords="6,41,725,87"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_instructions.html" title="A name/value collection of image processsing instructions. The successor to ResizeSettings. Just because a key doesn&#39;t have a property wrapper doesn&#39;t mean you can&#39;t use it. i[&quot;key&quot;] = value; isnt&#39; that scary." alt="" coords="797,5,1185,51"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="774,75,1207,122"/>
 </map>

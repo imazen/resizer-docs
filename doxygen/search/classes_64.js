@@ -6,7 +6,7 @@ var searchData=
   ['decoder',['Decoder',['../class_seven_zip_reduced_1_1_compression_1_1_l_z_m_a_1_1_decoder.html',1,'SevenZipReduced::Compression::LZMA']]],
   ['defaultencoder',['DefaultEncoder',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html',1,'ImageResizer::Plugins::Basic']]],
   ['defaultsettings',['DefaultSettings',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_default_settings.html',1,'ImageResizer::Plugins::Basic']]],
-  ['detectionplugin',['DetectionPlugin',['../class_image_resizer_1_1_plugins_1_1_red_eye_1_1_detection_plugin.html',1,'ImageResizer::Plugins::RedEye']]],
+  ['detectionresponse_2dg',['DetectionResponse-g',['../class_image_resizer_1_1_plugins_1_1_faces_1_1_detection_response-g.html',1,'ImageResizer::Plugins::Faces']]],
   ['diagnostic',['Diagnostic',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_diagnostic.html',1,'ImageResizer::Plugins::Basic']]],
   ['diagnosticdisabledhandler',['DiagnosticDisabledHandler',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_diagnostic_disabled_handler.html',1,'ImageResizer::Plugins::Basic']]],
   ['diagnosticpagehandler',['DiagnosticPageHandler',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_diagnostic_page_handler.html',1,'ImageResizer::Plugins::Basic']]],

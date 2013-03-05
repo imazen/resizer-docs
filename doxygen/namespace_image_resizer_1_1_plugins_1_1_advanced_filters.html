@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -100,7 +100,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">Package ImageResizer.Plugins.AdvancedFilters</div>  </div>
 </div><!--header-->
@@ -109,7 +110,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_advanced_filters.html">AdvancedFilters</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_auto_white_balance.html">AutoWhiteBalance</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_feather_edge.html">FeatherEdge</a></td></tr>
+<tr><td colspan="2"><h2><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_image_resizer_1_1_plugins_1_1_advanced_filters.html#a7a2b91bebff5f5da23b87878e278b4bb">HistogramThresholdAlgorithm</a> { <a class="el" href="namespace_image_resizer_1_1_plugins_1_1_advanced_filters.html#a7a2b91bebff5f5da23b87878e278b4bb">Simple</a>, 
+<a class="el" href="namespace_image_resizer_1_1_plugins_1_1_advanced_filters.html#a7a2b91bebff5f5da23b87878e278b4bb">Area</a>, 
+<a class="el" href="namespace_image_resizer_1_1_plugins_1_1_advanced_filters.html#a7a2b91bebff5f5da23b87878e278b4bb">GIMP</a>
+ }</td></tr>
 </table>
+<hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="a7a2b91bebff5f5da23b87878e278b4bb"></a><!-- doxytag: member="ImageResizer::Plugins::AdvancedFilters::HistogramThresholdAlgorithm" ref="a7a2b91bebff5f5da23b87878e278b4bb" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespace_image_resizer_1_1_plugins_1_1_advanced_filters.html#a7a2b91bebff5f5da23b87878e278b4bb">ImageResizer::Plugins::AdvancedFilters::HistogramThresholdAlgorithm</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="a7a2b91bebff5f5da23b87878e278b4bb"></a><!-- doxytag: member="Simple" ref="a7a2b91bebff5f5da23b87878e278b4bb" args="" -->Simple</em>&nbsp;</td><td>
+<p>Simple upper and lower usage thresholds are applied to the values in each channel's histogram to determine the input start/stop points for each individual channel. The start/stop points are used to calcualte the scale factor and offset for the channel. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a7a2b91bebff5f5da23b87878e278b4bb"></a><!-- doxytag: member="Area" ref="a7a2b91bebff5f5da23b87878e278b4bb" args="" -->Area</em>&nbsp;</td><td>
+<p>Threshold is applied based on cumulative area at the lower and upper ends of the histogram. Much larger thresholds are required for this than SimpleThreshold. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a7a2b91bebff5f5da23b87878e278b4bb"></a><!-- doxytag: member="GIMP" ref="a7a2b91bebff5f5da23b87878e278b4bb" args="" -->GIMP</em>&nbsp;</td><td>
+<p>Threshold is applied based on strangely skewed cumulative area, identical to the process used by GIMP. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_auto_white_balance_8cs_source.html#l00012">12</a> of file <a class="el" href="_auto_white_balance_8cs_source.html">AutoWhiteBalance.cs</a>.</p>
+<div class="fragment"><pre class="fragment">                                            {<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Simple upper and lower usage thresholds are applied to the values in each channel&#39;s histogram to determine the input start/stop points for each individual channel. The start/stop points are used to calcualte the scale factor and offset for the channel.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        Simple,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Threshold is applied based on cumulative area at the lower and upper ends of the histogram. Much larger thresholds are required for this than SimpleThreshold.</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        [EnumString(<span class="stringliteral">&quot;true&quot;</span>)]
+        Area,<span class="comment"></span>
+<span class="comment">        /// &lt;summary&gt;</span>
+<span class="comment">        /// Threshold is applied based on strangely skewed cumulative area, identical to the process used by GIMP</span>
+<span class="comment">        /// &lt;/summary&gt;</span>
+<span class="comment"></span>        GIMP
+    }
+</pre></div>
+</div>
+</div>
 </div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

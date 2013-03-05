@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -101,18 +101,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00018"></a>00018 <span class="comment">    /// &lt;summary&gt;</span>
 <a name="l00019"></a>00019 <span class="comment">    /// Provides extensibility points for drawing watermarks and even modifying resizing/image settings</span>
 <a name="l00020"></a>00020 <span class="comment">    /// &lt;/summary&gt;</span>
-<a name="l00021"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html">00021</a> <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html" title="Provides extensibility points for drawing watermarks and even modifying resizing/image settings...">WatermarkPlugin</a> : <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_legacy_watermark_features.html" title="Provides extensibility points for drawing watermarks and even modifying resizing/image settings...">LegacyWatermarkFeatures</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)">IQuerystringPlugin</a>
+<a name="l00021"></a>00021 <span class="comment"></span>    <span class="keyword">public</span> <span class="keyword">class </span>WatermarkPlugin : LegacyWatermarkFeatures, IPlugin, IQuerystringPlugin
 <a name="l00022"></a>00022     {
-<a name="l00023"></a>00023         <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html" title="Provides extensibility points for drawing watermarks and even modifying resizing/image settings...">WatermarkPlugin</a>() {
+<a name="l00023"></a>00023         <span class="keyword">public</span> WatermarkPlugin() {
 <a name="l00024"></a>00024         }
 <a name="l00025"></a>00025 
-<a name="l00026"></a>00026         <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_image_layer.html">ImageLayer</a> _otherImages = <span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_image_layer.html">ImageLayer</a>(null);<span class="comment"></span>
+<a name="l00026"></a>00026         ImageLayer _otherImages = <span class="keyword">new</span> ImageLayer(null);<span class="comment"></span>
 <a name="l00027"></a>00027 <span class="comment">        /// &lt;summary&gt;</span>
 <a name="l00028"></a>00028 <span class="comment">        /// When a &amp;amp;watermark command does not specify a named preset, it is assumed to be a file name. </span>
 <a name="l00029"></a>00029 <span class="comment">        /// Set OtherImages.Path to the search folder. All watermark images (except for presets) must be in the root of the search folder. </span>
 <a name="l00030"></a>00030 <span class="comment">        /// The remainder of the settings affect how each watermrak will be positioned and displayed.</span>
 <a name="l00031"></a>00031 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00032"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a0831df14ed77ceafcf314bfac6a0c997">00032</a> <span class="comment"></span>        <span class="keyword">public</span> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_image_layer.html">ImageLayer</a> OtherImages {
+<a name="l00032"></a>00032 <span class="comment"></span>        <span class="keyword">public</span> ImageLayer OtherImages {
 <a name="l00033"></a>00033             <span class="keyword">get</span> { <span class="keywordflow">return</span> _otherImages; }
 <a name="l00034"></a>00034             <span class="keyword">set</span> { _otherImages = value; }
 <a name="l00035"></a>00035         }
@@ -120,139 +120,160 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00037"></a>00037 <span class="comment">        /// &lt;summary&gt;</span>
 <a name="l00038"></a>00038 <span class="comment">        /// This dictionary contains watermarks keyed by name. Values are enumerations of layers - a watermark can have multiple layers.</span>
 <a name="l00039"></a>00039 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00040"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a552a42a9be3f3b29195f4404f636b53f">00040</a> <span class="comment"></span>        <span class="keyword">public</span> Dictionary&lt;string, IEnumerable&lt;Layer&gt;&gt; NamedWatermarks {
+<a name="l00040"></a>00040 <span class="comment"></span>        <span class="keyword">public</span> Dictionary&lt;string, IEnumerable&lt;Layer&gt;&gt; NamedWatermarks {
 <a name="l00041"></a>00041             <span class="keyword">get</span> { <span class="keywordflow">return</span> _namedWatermarks; }
 <a name="l00042"></a>00042             <span class="keyword">set</span> { _namedWatermarks = value; }
 <a name="l00043"></a>00043         }
-<a name="l00044"></a>00044         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
+<a name="l00044"></a>00044         <span class="keyword">public</span> IPlugin Install(Configuration.Config c) {
 <a name="l00045"></a>00045             c.Plugins.add_plugin(<span class="keyword">this</span>);
 <a name="l00046"></a>00046             this.c = c;
 <a name="l00047"></a>00047             this.OtherImages.ConfigInstance = c;
 <a name="l00048"></a>00048             _namedWatermarks = ParseWatermarks(c.getConfigXml().queryFirst(<span class="stringliteral">&quot;watermarks&quot;</span>), ref _otherImages);
-<a name="l00049"></a>00049             <span class="keywordflow">return</span> <span class="keyword">this</span>;
-<a name="l00050"></a>00050         }
-<a name="l00051"></a>00051 
-<a name="l00052"></a>00052         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
-<a name="l00053"></a>00053             c.Plugins.remove_plugin(<span class="keyword">this</span>);
-<a name="l00054"></a>00054             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00055"></a>00055         }
-<a name="l00056"></a>00056 
-<a name="l00057"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a59dca67631783ff5b817dfe6b0da0326">00057</a>         <span class="keyword">public</span> IEnumerable&lt;string&gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a59dca67631783ff5b817dfe6b0da0326" title="If the plugin reads any values from the querystring, the names of the keys should be specified here...">GetSupportedQuerystringKeys</a>() {
-<a name="l00058"></a>00058             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;watermark&quot;</span> };
-<a name="l00059"></a>00059         }
-<a name="l00060"></a>00060 
-<a name="l00061"></a>00061         <span class="keyword">protected</span> Dictionary&lt;string, IEnumerable&lt;Layer&gt;&gt; ParseWatermarks(<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> n, ref <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_image_layer.html">ImageLayer</a> otherImageDefaults) {
-<a name="l00062"></a>00062             Dictionary&lt;string, IEnumerable&lt;Layer&gt;&gt; dict = <span class="keyword">new</span> Dictionary&lt;string, IEnumerable&lt;Layer&gt;&gt;(StringComparer.OrdinalIgnoreCase);
-<a name="l00063"></a>00063             <span class="keywordflow">if</span> (n == null || n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ab4b05d6bd3d05d834c02125bacde089c" title="Child nodes.">Children</a> == null) <span class="keywordflow">return</span> dict;
-<a name="l00064"></a>00064             <span class="keywordflow">foreach</span> (<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> c <span class="keywordflow">in</span> n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ab4b05d6bd3d05d834c02125bacde089c" title="Child nodes.">Children</a>) {
-<a name="l00065"></a>00065                 <span class="comment">//Verify the name is specified and is unique.</span>
-<a name="l00066"></a>00066                 <span class="keywordtype">string</span> name = c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>[<span class="stringliteral">&quot;name&quot;</span>];
-<a name="l00067"></a>00067                 <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;image&quot;</span>, StringComparison.OrdinalIgnoreCase) 
-<a name="l00068"></a>00068                     || c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;text&quot;</span>, StringComparison.OrdinalIgnoreCase)
-<a name="l00069"></a>00069                     || c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;group&quot;</span>, StringComparison.OrdinalIgnoreCase)) {
-<a name="l00070"></a>00070                     <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) || dict.ContainsKey(name)) {
-<a name="l00071"></a>00071                         this.c.configurationSectionIssues.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;WatermarkPlugin&quot;</span>, <span class="stringliteral">&quot;The name attribute for each watermark or watermark group must be specified, and must be unique.&quot;</span>,
-<a name="l00072"></a>00072                         <span class="stringliteral">&quot;XML: &quot;</span> + c.ToString(), <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
-<a name="l00073"></a>00073                         <span class="keywordflow">continue</span>;
-<a name="l00074"></a>00074                     }
-<a name="l00075"></a>00075                 }
-<a name="l00076"></a>00076 
-<a name="l00077"></a>00077                 
+<a name="l00049"></a>00049             c.Pipeline.PostRewrite += Pipeline_PostRewrite;
+<a name="l00050"></a>00050             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00051"></a>00051         }
+<a name="l00052"></a>00052 
+<a name="l00053"></a>00053       
+<a name="l00054"></a>00054         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
+<a name="l00055"></a>00055             c.Plugins.remove_plugin(<span class="keyword">this</span>);
+<a name="l00056"></a>00056             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00057"></a>00057         }
+<a name="l00058"></a>00058 
+<a name="l00059"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a59dca67631783ff5b817dfe6b0da0326">00059</a>         <span class="keyword">public</span> IEnumerable&lt;string&gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a59dca67631783ff5b817dfe6b0da0326" title="If the plugin reads any values from the querystring, the names of the keys should be specified here...">GetSupportedQuerystringKeys</a>() {
+<a name="l00060"></a>00060             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;watermark&quot;</span> };
+<a name="l00061"></a>00061         }
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="keyword">protected</span> Dictionary&lt;string, IEnumerable&lt;Layer&gt;&gt; ParseWatermarks(<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> n, ref <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_image_layer.html">ImageLayer</a> otherImageDefaults) {
+<a name="l00064"></a>00064             Dictionary&lt;string, IEnumerable&lt;Layer&gt;&gt; dict = <span class="keyword">new</span> Dictionary&lt;string, IEnumerable&lt;Layer&gt;&gt;(StringComparer.OrdinalIgnoreCase);
+<a name="l00065"></a>00065             <span class="keywordflow">if</span> (n == null || n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ab4b05d6bd3d05d834c02125bacde089c" title="Child nodes.">Children</a> == null) <span class="keywordflow">return</span> dict;
+<a name="l00066"></a>00066             <span class="keywordflow">foreach</span> (<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> c <span class="keywordflow">in</span> n.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ab4b05d6bd3d05d834c02125bacde089c" title="Child nodes.">Children</a>) {
+<a name="l00067"></a>00067                 <span class="comment">//Verify the name is specified and is unique.</span>
+<a name="l00068"></a>00068                 <span class="keywordtype">string</span> name = c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>[<span class="stringliteral">&quot;name&quot;</span>];
+<a name="l00069"></a>00069                 <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;image&quot;</span>, StringComparison.OrdinalIgnoreCase) 
+<a name="l00070"></a>00070                     || c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;text&quot;</span>, StringComparison.OrdinalIgnoreCase)
+<a name="l00071"></a>00071                     || c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;group&quot;</span>, StringComparison.OrdinalIgnoreCase)) {
+<a name="l00072"></a>00072                     <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(name) || dict.ContainsKey(name)) {
+<a name="l00073"></a>00073                         this.c.configurationSectionIssues.AcceptIssue(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;WatermarkPlugin&quot;</span>, <span class="stringliteral">&quot;The name attribute for each watermark or watermark group must be specified, and must be unique.&quot;</span>,
+<a name="l00074"></a>00074                         <span class="stringliteral">&quot;XML: &quot;</span> + c.ToString(), <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.ConfigurationError));
+<a name="l00075"></a>00075                         <span class="keywordflow">continue</span>;
+<a name="l00076"></a>00076                     }
+<a name="l00077"></a>00077                 }
 <a name="l00078"></a>00078 
-<a name="l00079"></a>00079                 <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;otherimages&quot;</span>, StringComparison.OrdinalIgnoreCase)) otherImageDefaults = <span class="keyword">new</span> ImageLayer(c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>, <span class="keyword">this</span>.c);
-<a name="l00080"></a>00080                 <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;image&quot;</span>, StringComparison.OrdinalIgnoreCase)) dict.Add(name, <span class="keyword">new</span> Layer[]{<span class="keyword">new</span> ImageLayer(c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>, <span class="keyword">this</span>.c)});
-<a name="l00081"></a>00081                 <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;text&quot;</span>, StringComparison.OrdinalIgnoreCase)) dict.Add(name, <span class="keyword">new</span> Layer[] {<span class="keyword">new</span> TextLayer(c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>) });
-<a name="l00082"></a>00082                 <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;group&quot;</span>, StringComparison.OrdinalIgnoreCase)) {
-<a name="l00083"></a>00083                     
-<a name="l00084"></a>00084                     List&lt;Layer&gt; layers = <span class="keyword">new</span> List&lt;Layer&gt;();
-<a name="l00085"></a>00085                     <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ab4b05d6bd3d05d834c02125bacde089c" title="Child nodes.">Children</a> != null) {
-<a name="l00086"></a>00086                         <span class="keywordflow">foreach</span> (<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> layer <span class="keywordflow">in</span> c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ab4b05d6bd3d05d834c02125bacde089c" title="Child nodes.">Children</a>) {
-<a name="l00087"></a>00087                             <span class="keywordflow">if</span> (layer.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;image&quot;</span>, StringComparison.OrdinalIgnoreCase)) layers.Add(<span class="keyword">new</span> ImageLayer(layer.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>, <span class="keyword">this</span>.c));
-<a name="l00088"></a>00088                             <span class="keywordflow">if</span> (layer.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;text&quot;</span>, StringComparison.OrdinalIgnoreCase)) layers.Add(<span class="keyword">new</span> TextLayer(layer.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>));
-<a name="l00089"></a>00089                         }
-<a name="l00090"></a>00090                     }
-<a name="l00091"></a>00091                     dict.Add(name, layers);
-<a name="l00092"></a>00092                 }  
-<a name="l00093"></a>00093             }
-<a name="l00094"></a>00094             <span class="keywordflow">return</span> dict;
-<a name="l00095"></a>00095         }
-<a name="l00096"></a>00096         <span class="comment">/*&lt;resizer&gt;</span>
-<a name="l00097"></a>00097 <span class="comment">         * &lt;watermarks&gt;</span>
-<a name="l00098"></a>00098 <span class="comment">         *  &lt;otherimages path=&quot;~/watermarks&quot; align=&quot;topleft&quot; width=&quot;50%&quot; /&gt;</span>
-<a name="l00099"></a>00099 <span class="comment">         *  &lt;group name=&quot;wmark&quot;&gt;</span>
-<a name="l00100"></a>00100 <span class="comment">         *   &lt;image path=&quot;~/watermarks/image.png&quot; align=&quot;topleft&quot; width=&quot;50px&quot; height=&quot;50px&quot; /&gt;</span>
-<a name="l00101"></a>00101 <span class="comment">         *  &lt;/group&gt;</span>
-<a name="l00102"></a>00102 <span class="comment">         */</span>
-<a name="l00103"></a>00103         <span class="comment">//top, left, bottom, right = px or percentages (relative to container)</span>
-<a name="l00104"></a>00104         <span class="comment">//relativeTo = image|imageArea|padding|border|margin|canvas</span>
-<a name="l00105"></a>00105         <span class="comment">//drawAs overlay|background</span>
-<a name="l00106"></a>00106         <span class="comment">//image</span>
-<a name="l00107"></a>00107         <span class="comment">//imagesettings</span>
-<a name="l00108"></a>00108         <span class="comment">//align = topleft|topright|bottomleft|bottomright|...</span>
-<a name="l00109"></a>00109 
-<a name="l00110"></a>00110 
+<a name="l00079"></a>00079                 
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081                 <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;otherimages&quot;</span>, StringComparison.OrdinalIgnoreCase)) otherImageDefaults = <span class="keyword">new</span> ImageLayer(c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>, <span class="keyword">this</span>.c);
+<a name="l00082"></a>00082                 <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;image&quot;</span>, StringComparison.OrdinalIgnoreCase)) dict.Add(name, <span class="keyword">new</span> Layer[]{<span class="keyword">new</span> ImageLayer(c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>, <span class="keyword">this</span>.c)});
+<a name="l00083"></a>00083                 <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;text&quot;</span>, StringComparison.OrdinalIgnoreCase)) dict.Add(name, <span class="keyword">new</span> Layer[] {<span class="keyword">new</span> TextLayer(c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>) });
+<a name="l00084"></a>00084                 <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;group&quot;</span>, StringComparison.OrdinalIgnoreCase)) {
+<a name="l00085"></a>00085                     
+<a name="l00086"></a>00086                     List&lt;Layer&gt; layers = <span class="keyword">new</span> List&lt;Layer&gt;();
+<a name="l00087"></a>00087                     <span class="keywordflow">if</span> (c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ab4b05d6bd3d05d834c02125bacde089c" title="Child nodes.">Children</a> != null) {
+<a name="l00088"></a>00088                         <span class="keywordflow">foreach</span> (<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> layer <span class="keywordflow">in</span> c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ab4b05d6bd3d05d834c02125bacde089c" title="Child nodes.">Children</a>) {
+<a name="l00089"></a>00089                             <span class="keywordflow">if</span> (layer.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;image&quot;</span>, StringComparison.OrdinalIgnoreCase)) layers.Add(<span class="keyword">new</span> ImageLayer(layer.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>, <span class="keyword">this</span>.c));
+<a name="l00090"></a>00090                             <span class="keywordflow">if</span> (layer.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#ac247c3179e03ec3d4fe77015d77a4acd" title="The name of the element.">Name</a>.Equals(<span class="stringliteral">&quot;text&quot;</span>, StringComparison.OrdinalIgnoreCase)) layers.Add(<span class="keyword">new</span> TextLayer(layer.<a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html#aaf04540927cdc63a65fff0a519e4fd31" title="Attributes.">Attrs</a>));
+<a name="l00091"></a>00091                         }
+<a name="l00092"></a>00092                     }
+<a name="l00093"></a>00093                     dict.Add(name, layers);
+<a name="l00094"></a>00094                 }  
+<a name="l00095"></a>00095             }
+<a name="l00096"></a>00096             <span class="keywordflow">return</span> dict;
+<a name="l00097"></a>00097         }
+<a name="l00098"></a>00098         <span class="comment">/*&lt;resizer&gt;</span>
+<a name="l00099"></a>00099 <span class="comment">         * &lt;watermarks&gt;</span>
+<a name="l00100"></a>00100 <span class="comment">         *  &lt;otherimages path=&quot;~/watermarks&quot; align=&quot;topleft&quot; width=&quot;50%&quot; /&gt;</span>
+<a name="l00101"></a>00101 <span class="comment">         *  &lt;group name=&quot;wmark&quot;&gt;</span>
+<a name="l00102"></a>00102 <span class="comment">         *   &lt;image path=&quot;~/watermarks/image.png&quot; align=&quot;topleft&quot; width=&quot;50px&quot; height=&quot;50px&quot; /&gt;</span>
+<a name="l00103"></a>00103 <span class="comment">         *  &lt;/group&gt;</span>
+<a name="l00104"></a>00104 <span class="comment">         */</span>
+<a name="l00105"></a>00105         <span class="comment">//top, left, bottom, right = px or percentages (relative to container)</span>
+<a name="l00106"></a>00106         <span class="comment">//relativeTo = image|imageArea|padding|border|margin|canvas</span>
+<a name="l00107"></a>00107         <span class="comment">//drawAs overlay|background</span>
+<a name="l00108"></a>00108         <span class="comment">//image</span>
+<a name="l00109"></a>00109         <span class="comment">//imagesettings</span>
+<a name="l00110"></a>00110         <span class="comment">//align = topleft|topright|bottomleft|bottomright|...</span>
 <a name="l00111"></a>00111 
-<a name="l00112"></a>00112         <span class="keyword">protected</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> RenderLayersForLevel(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s, Layer.LayerPlacement only) {
-<a name="l00113"></a>00113             <span class="keywordtype">string</span> watermark = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;watermark&quot;</span>]; <span class="comment">//from the querystring</span>
-<a name="l00114"></a>00114             Graphics g = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a14723e4f7de63667e37fcbdb6a00055b" title="A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic.">destGraphics</a>;
-<a name="l00115"></a>00115             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(watermark) || g == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-<a name="l00116"></a>00116 
-<a name="l00117"></a>00117             <span class="keywordtype">string</span>[] parts = watermark.Split(<span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;,&quot;</span> }, StringSplitOptions.RemoveEmptyEntries);
-<a name="l00118"></a>00118             <span class="keywordtype">bool</span> foundPart = <span class="keyword">false</span>;
-<a name="l00119"></a>00119 
-<a name="l00120"></a>00120             <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> w <span class="keywordflow">in</span> parts) {
-<a name="l00121"></a>00121                 <span class="keywordflow">if</span> (NamedWatermarks.ContainsKey(w)) {
-<a name="l00122"></a>00122                     IEnumerable&lt;Layer&gt; layers = NamedWatermarks[w];
-<a name="l00123"></a>00123                     <span class="keywordflow">foreach</span> (Layer l <span class="keywordflow">in</span> layers) {
-<a name="l00124"></a>00124                         <span class="keywordflow">if</span> (l.DrawAs == only) {
-<a name="l00125"></a>00125                             l.RenderTo(s);
-<a name="l00126"></a>00126                         }
+<a name="l00112"></a>00112         <span class="keywordtype">void</span> Pipeline_PostRewrite(IHttpModule sender, HttpContext context, <a class="code" href="interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html">IUrlEventArgs</a> e)
+<a name="l00113"></a>00113         {
+<a name="l00114"></a>00114             <span class="comment">//Cache breaking</span>
+<a name="l00115"></a>00115             <span class="keywordtype">string</span> watermark = e.QueryString[<span class="stringliteral">&quot;watermark&quot;</span>]; <span class="comment">//from the querystring</span>
+<a name="l00116"></a>00116             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(watermark)) <span class="keywordflow">return</span>;
+<a name="l00117"></a>00117 
+<a name="l00118"></a>00118             <span class="keywordtype">string</span>[] parts = watermark.Split(<span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;,&quot;</span> }, StringSplitOptions.RemoveEmptyEntries);
+<a name="l00119"></a>00119             <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> w <span class="keywordflow">in</span> parts)
+<a name="l00120"></a>00120             {
+<a name="l00121"></a>00121                 <span class="keywordflow">if</span> (NamedWatermarks.ContainsKey(w))
+<a name="l00122"></a>00122                 {
+<a name="l00123"></a>00123                     IEnumerable&lt;Layer&gt; layers = NamedWatermarks[w];
+<a name="l00124"></a>00124                     <span class="keywordflow">foreach</span> (Layer l <span class="keywordflow">in</span> layers)
+<a name="l00125"></a>00125                     {
+<a name="l00126"></a>00126                         e.QueryString[<span class="stringliteral">&quot;watermark-cachebreak&quot;</span>] = (e.QueryString[<span class="stringliteral">&quot;watermark-cachebreak&quot;</span>] ?? <span class="stringliteral">&quot;&quot;</span>) + <span class="stringliteral">&quot;_&quot;</span> + l.GetDataHash().ToString();
 <a name="l00127"></a>00127                     }
-<a name="l00128"></a>00128                     foundPart = <span class="keyword">true</span>;
-<a name="l00129"></a>00129                 }
-<a name="l00130"></a>00130             }
-<a name="l00131"></a>00131             <span class="keywordflow">if</span> ( !foundPart &amp;&amp; only == Layer.LayerPlacement.Overlay) {
-<a name="l00132"></a>00132                 <span class="comment">//Parse named watermark files</span>
-<a name="l00133"></a>00133                 
-<a name="l00134"></a>00134                 <span class="keywordflow">if</span> (watermark.IndexOfAny(System.IO.Path.GetInvalidFileNameChars()) &gt; -1 ||
-<a name="l00135"></a>00135                     watermark.IndexOfAny(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;\\&#39;</span>, <span class="charliteral">&#39;/&#39;</span> }) &gt; -1)
-<a name="l00136"></a>00136                     <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Watermark value contained invalid file name characters: &quot;</span> + watermark);
+<a name="l00128"></a>00128                 }
+<a name="l00129"></a>00129             }
+<a name="l00130"></a>00130         }
+<a name="l00131"></a>00131 
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133         <span class="keyword">protected</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> RenderLayersForLevel(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s, Layer.LayerPlacement only) {
+<a name="l00134"></a>00134             <span class="keywordtype">string</span> watermark = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179" title="The commands to apply to the bitmap.">settings</a>[<span class="stringliteral">&quot;watermark&quot;</span>]; <span class="comment">//from the querystring</span>
+<a name="l00135"></a>00135             Graphics g = s.<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html#a14723e4f7de63667e37fcbdb6a00055b" title="A graphics object to write to the destination bitmap. If null, skip drawing commands, but continue layout logic.">destGraphics</a>;
+<a name="l00136"></a>00136             <span class="keywordflow">if</span> (<span class="keywordtype">string</span>.IsNullOrEmpty(watermark) || g == null) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
 <a name="l00137"></a>00137 
-<a name="l00138"></a>00138 
-<a name="l00139"></a>00139 
+<a name="l00138"></a>00138             <span class="keywordtype">string</span>[] parts = watermark.Split(<span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;,&quot;</span> }, StringSplitOptions.RemoveEmptyEntries);
+<a name="l00139"></a>00139             <span class="keywordtype">bool</span> foundPart = <span class="keyword">false</span>;
 <a name="l00140"></a>00140 
-<a name="l00141"></a>00141                 <span class="keywordflow">if</span> (OtherImages != null &amp;&amp; OtherImages.Path != null) {
-<a name="l00142"></a>00142                     ImageLayer layer = OtherImages.Copy();
-<a name="l00143"></a>00143 
-<a name="l00144"></a>00144                     <span class="comment">//Is the watermark dir a physical path?</span>
-<a name="l00145"></a>00145                     <span class="keywordtype">char</span> slash = layer.Path.Contains(<span class="stringliteral">&quot;/&quot;</span>) ? <span class="charliteral">&#39;/&#39;</span> : <span class="charliteral">&#39;\\&#39;</span>;
-<a name="l00146"></a>00146                     layer.Path = layer.Path.TrimEnd(slash) + slash + watermark.TrimStart(slash);
-<a name="l00147"></a>00147 
-<a name="l00148"></a>00148 
-<a name="l00149"></a>00149                     <span class="comment">//If it&#39;s a forward-slash, and we&#39;re in asp.net,  verify the file exists</span>
-<a name="l00150"></a>00150                     <span class="keywordflow">if</span> (slash == <span class="charliteral">&#39;/&#39;</span> &amp;&amp; HttpContext.Current != null &amp;&amp; !c.Pipeline.FileExists(layer.Path, layer.ImageQuery)) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
-<a name="l00151"></a>00151                     layer.RenderTo(s);
-<a name="l00152"></a>00152 
-<a name="l00153"></a>00153 
-<a name="l00154"></a>00154                 } <span class="keywordflow">else</span> {
-<a name="l00155"></a>00155                     this.LegacyDrawWatermark(s); 
-<a name="l00156"></a>00156                 }
-<a name="l00157"></a>00157             }
-<a name="l00158"></a>00158             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+<a name="l00141"></a>00141             <span class="keywordflow">foreach</span> (<span class="keywordtype">string</span> w <span class="keywordflow">in</span> parts) {
+<a name="l00142"></a>00142                 <span class="keywordflow">if</span> (NamedWatermarks.ContainsKey(w)) {
+<a name="l00143"></a>00143                     IEnumerable&lt;Layer&gt; layers = NamedWatermarks[w];
+<a name="l00144"></a>00144                     <span class="keywordflow">foreach</span> (Layer l <span class="keywordflow">in</span> layers) {
+<a name="l00145"></a>00145                         <span class="keywordflow">if</span> (l.DrawAs == only) {
+<a name="l00146"></a>00146                             l.RenderTo(s);
+<a name="l00147"></a>00147                         }
+<a name="l00148"></a>00148                     }
+<a name="l00149"></a>00149                     foundPart = <span class="keyword">true</span>;
+<a name="l00150"></a>00150                 }
+<a name="l00151"></a>00151             }
+<a name="l00152"></a>00152             <span class="keywordflow">if</span> ( !foundPart &amp;&amp; only == Layer.LayerPlacement.Overlay) {
+<a name="l00153"></a>00153                 <span class="comment">//Parse named watermark files</span>
+<a name="l00154"></a>00154                 
+<a name="l00155"></a>00155                 <span class="keywordflow">if</span> (watermark.IndexOfAny(System.IO.Path.GetInvalidFileNameChars()) &gt; -1 ||
+<a name="l00156"></a>00156                     watermark.IndexOfAny(<span class="keyword">new</span> <span class="keywordtype">char</span>[] { <span class="charliteral">&#39;\\&#39;</span>, <span class="charliteral">&#39;/&#39;</span> }) &gt; -1)
+<a name="l00157"></a>00157                     <span class="keywordflow">throw</span> <span class="keyword">new</span> ArgumentException(<span class="stringliteral">&quot;Watermark value contained invalid file name characters: &quot;</span> + watermark);
+<a name="l00158"></a>00158 
 <a name="l00159"></a>00159 
-<a name="l00160"></a>00160         }
+<a name="l00160"></a>00160 
 <a name="l00161"></a>00161 
-<a name="l00162"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a28e444bfa184e9b79bf1894ed040683a">00162</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a28e444bfa184e9b79bf1894ed040683a" title="Process.5(Render).2 After the background color is rendered.">PostRenderBackground</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
-<a name="l00163"></a>00163             <span class="keywordflow">return</span> RenderLayersForLevel(s, <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a>.LayerPlacement.Background);
-<a name="l00164"></a>00164         }
-<a name="l00165"></a>00165 
-<a name="l00166"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#ab722389770fa8971c6312616a5f127b3">00166</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#ab722389770fa8971c6312616a5f127b3" title="Process.5(Render).15: Watermarks can be rendered here. All image processing should be done...">RenderOverlays</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
-<a name="l00167"></a>00167             <span class="keywordflow">return</span> RenderLayersForLevel(s, <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a>.LayerPlacement.Overlay);
-<a name="l00168"></a>00168         }
+<a name="l00162"></a>00162                 <span class="keywordflow">if</span> (OtherImages != null &amp;&amp; OtherImages.Path != null) {
+<a name="l00163"></a>00163                     ImageLayer layer = OtherImages.Copy();
+<a name="l00164"></a>00164 
+<a name="l00165"></a>00165                     <span class="comment">//Is the watermark dir a physical path?</span>
+<a name="l00166"></a>00166                     <span class="keywordtype">char</span> slash = layer.Path.Contains(<span class="stringliteral">&quot;/&quot;</span>) ? <span class="charliteral">&#39;/&#39;</span> : <span class="charliteral">&#39;\\&#39;</span>;
+<a name="l00167"></a>00167                     layer.Path = layer.Path.TrimEnd(slash) + slash + watermark.TrimStart(slash);
+<a name="l00168"></a>00168 
 <a name="l00169"></a>00169 
-<a name="l00170"></a>00170 
-<a name="l00171"></a>00171     }
-<a name="l00172"></a>00172 }
+<a name="l00170"></a>00170                     <span class="comment">//If it&#39;s a forward-slash, and we&#39;re in asp.net,  verify the file exists</span>
+<a name="l00171"></a>00171                     <span class="keywordflow">if</span> (slash == <span class="charliteral">&#39;/&#39;</span> &amp;&amp; HttpContext.Current != null &amp;&amp; !c.Pipeline.FileExists(layer.Path, layer.ImageQuery)) <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+<a name="l00172"></a>00172                     layer.RenderTo(s);
+<a name="l00173"></a>00173 
+<a name="l00174"></a>00174 
+<a name="l00175"></a>00175                 } <span class="keywordflow">else</span> {
+<a name="l00176"></a>00176                     this.LegacyDrawWatermark(s); 
+<a name="l00177"></a>00177                 }
+<a name="l00178"></a>00178             }
+<a name="l00179"></a>00179             <span class="keywordflow">return</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a>.None;
+<a name="l00180"></a>00180 
+<a name="l00181"></a>00181         }
+<a name="l00182"></a>00182 
+<a name="l00183"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a28e444bfa184e9b79bf1894ed040683a">00183</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#a28e444bfa184e9b79bf1894ed040683a" title="Process.5(Render).2 After the background color is rendered.">PostRenderBackground</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
+<a name="l00184"></a>00184             <span class="keywordflow">return</span> RenderLayersForLevel(s, <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a>.LayerPlacement.Background);
+<a name="l00185"></a>00185         }
+<a name="l00186"></a>00186 
+<a name="l00187"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#ab722389770fa8971c6312616a5f127b3">00187</a>         <span class="keyword">protected</span> <span class="keyword">override</span> <a class="code" href="namespace_image_resizer_1_1_resizing.html#a22bbb53580a122efe469a26ad584fa86" title="What to do about remaining handlers/methods for the specified section.">RequestedAction</a> <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_watermark_plugin.html#ab722389770fa8971c6312616a5f127b3" title="Process.5(Render).15: Watermarks can be rendered here. All image processing should be done...">RenderOverlays</a>(<a class="code" href="class_image_resizer_1_1_resizing_1_1_image_state.html" title="Encapsulates the state of an image being resized. Can be used to simulate a resize as well as actuall...">ImageState</a> s) {
+<a name="l00188"></a>00188             <span class="keywordflow">return</span> RenderLayersForLevel(s, <a class="code" href="class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html">Layer</a>.LayerPlacement.Overlay);
+<a name="l00189"></a>00189         }
+<a name="l00190"></a>00190 
+<a name="l00191"></a>00191 
+<a name="l00192"></a>00192     }
+<a name="l00193"></a>00193 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

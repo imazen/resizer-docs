@@ -1,0 +1,8 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_azure_reader2_1_1_azure_reader2_plugin.html" title="ImageResizer.Plugins.AzureReader2.AzureReader2Plugin" alt="" coords="671,5,1510,51"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_reader.html" title="ImageResizer.Plugins.AzureReader.AzureReader" alt="" coords="733,75,1448,122"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin.html" title="ImageResizer.Plugins.MongoReader.MongoReaderPlugin" alt="" coords="675,146,1506,193"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html" title="ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin" alt="" coords="661,217,1520,263"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html" title="ImageResizer.Plugins.S3Reader.S3Reader" alt="" coords="777,287,1405,334"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html" title="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..." alt="" coords="727,358,1455,405"/>
+</map>

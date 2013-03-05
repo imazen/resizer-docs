@@ -1,5 +1,3 @@
 <map id="G" name="G">
-<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_psd_composer_1_1_i_psd_renderer.html" title="ImageResizer.Plugins.PsdComposer.IPsdRenderer" alt="" coords="5,41,744,87"/>
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_graphics_mill_renderer.html" title="An Aurigma.GraphicsMill&#45;based renderer. GraphicsMill was far too limited to do what we needed..." alt="" coords="792,5,1643,51"/>
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_plugin_renderer.html" title="ImageResizer.Plugins.PsdComposer.PsdPluginRenderer" alt="" coords="808,75,1627,122"/>
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_engine.html" title="Provides a managed interface to Ghostscript API." alt="" coords="5,5,960,51"/>
 </map>

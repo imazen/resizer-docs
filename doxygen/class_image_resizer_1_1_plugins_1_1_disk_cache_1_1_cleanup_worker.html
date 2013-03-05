@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -292,7 +292,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00209">209</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
+<p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00210">210</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                  {
             <span class="keywordflow">if</span> (queue.IsEmpty) <span class="keywordflow">return</span> <span class="keyword">false</span>;
 
@@ -336,7 +336,8 @@ Properties</h2></td></tr>
 <p>Definition at line <a class="el" href="_cleanup_worker_8cs_source.html#l00190">190</a> of file <a class="el" href="_cleanup_worker_8cs_source.html">CleanupWorker.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                        {
             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;(base.GetIssues());
-            issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;An external process indicates it is managing cleanup of the disk cache. &quot;</span> + 
+            <span class="keywordflow">if</span> (<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html#a0b8a95928ada6c495c6d45d649888a46" title="When true, indicates that another process is managing cleanup operations - this thread is idle...">ExteralProcessCleaning</a>) 
+                issues.Add(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;An external process indicates it is managing cleanup of the disk cache. &quot;</span> + 
                 <span class="stringliteral">&quot;This process is not currently managing disk cache cleanup. If configured as a web garden, keep in mind that the negligible performance gains are likely to be outweighed by the loss of cache optimization quality.&quot;</span>, <a class="code" href="namespace_image_resizer_1_1_configuration_1_1_issues.html#ada2af2a44c17c99a124cadb8a92f8555">IssueSeverity</a>.Warning));
             lock (_timesLock) {
                 <span class="keywordflow">if</span> (this.<a class="code" href="class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html#aedf9b3712a10720fd0b97895de07baca" title="The last time a cache folder exceeded both the optimum and maximum limits for file count...">lastFoundItemsOverMax</a> &gt; (DateTime.UtcNow.Subtract(<span class="keyword">new</span> TimeSpan(0, 5, 0)).Ticks))

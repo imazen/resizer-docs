@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -199,6 +199,8 @@ Protected Attributes</h2></td></tr>
 volatile bool&#160;</td><td class="memItemRight" valign="bottom"><b>_pluginsLoaded</b> = false</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82780ccf3438f08d56d2c9e91b02284b"></a><!-- doxytag: member="ImageResizer::Configuration::PluginConfig::_loadPluginsSync" ref="a82780ccf3438f08d56d2c9e91b02284b" args="" -->
 object&#160;</td><td class="memItemRight" valign="bottom"><b>_loadPluginsSync</b> = new object()</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac09ee5216d30c480970ebce12acc17ae"></a><!-- doxytag: member="ImageResizer::Configuration::PluginConfig::configProviders" ref="ac09ee5216d30c480970ebce12acc17ae" args="" -->
+SafeList&lt; <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_current_config_provider.html">ICurrentConfigProvider</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>configProviders</b> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a79a135dd3ecfcceb91b648b5e5efd87d"></a><!-- doxytag: member="ImageResizer::Configuration::PluginConfig::imageBuilderExtensions" ref="a79a135dd3ecfcceb91b648b5e5efd87d" args="" -->
 SafeList&lt; <a class="el" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html">BuilderExtension</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>imageBuilderExtensions</b> = null</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adb92e14ff530c4efc2615942fe929694"></a><!-- doxytag: member="ImageResizer::Configuration::PluginConfig::imageEncoders" ref="adb92e14ff530c4efc2615942fe929694" args="" -->
@@ -221,6 +223,8 @@ SafeList&lt; <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_plugi
 Properties</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a7d209b043c9336ad088a652f1db15a2a">PluginsLoaded</a><code> [get]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the &lt;plugins&gt; section has been processed.  <a href="#a7d209b043c9336ad088a652f1db15a2a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">SafeList&lt; <a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_current_config_provider.html">ICurrentConfigProvider</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a5da572b7b973899c831ba496bfab4d14">ConfigProviders</a><code> [get]</code></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently registered ICurrentConfigProviders.  <a href="#a5da572b7b973899c831ba496bfab4d14"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">SafeList&lt; <a class="el" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html">BuilderExtension</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a6555e94f68458b99912b041482cdd318">ImageBuilderExtensions</a><code> [get]</code></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Currently registered set of ImageBuilderExtensions.  <a href="#a6555e94f68458b99912b041482cdd318"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">SafeList&lt; <a class="el" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html">IEncoder</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#aa31cc94b310381ae022cac5b3d05af3d">ImageEncoders</a><code> [get]</code></td></tr>
@@ -281,6 +285,7 @@ Properties</h2></td></tr>
             allPlugins = <span class="keyword">new</span> SafeList&lt;IPlugin&gt;();
             virtualProviderPlugins = <span class="keyword">new</span> SafeList&lt;IVirtualImageProvider&gt;();
             settingsModifierPlugins = <span class="keyword">new</span> SafeList&lt;ISettingsModifier&gt;();
+            configProviders = <span class="keyword">new</span> SafeList&lt;ICurrentConfigProvider&gt;();
         }
 </pre></div>
 </div>
@@ -309,9 +314,9 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00519">519</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00531">531</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_image_handler_syntax_8cs_source.html#l00018">ImageResizer.Plugins.Basic.ImageHandlerSyntax.Install()</a>, <a class="el" href="_psd_composer_plugin_8cs_source.html#l00029">ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.Install()</a>, <a class="el" href="_trial_8cs_source.html#l00031">ImageResizer.Plugins.Basic.Trial.Install()</a>, <a class="el" href="_virtual_folder_8cs_source.html#l00086">ImageResizer.Plugins.Basic.VirtualFolder.Install()</a>, <a class="el" href="_disk_cache_8cs_source.html#l00195">ImageResizer.Plugins.DiskCache.DiskCache.Install()</a>, and <a class="el" href="_pdf_renderer_8cs_source.html#l00277">ImageResizer.Plugins.PdfRenderer.PdfRendererPlugin.Install()</a>.</p>
+<p>Referenced by <a class="el" href="_web_p_encoder_8cs_source.html#l00014">ImageResizer.Plugins.WebPEncoder.WebPEncoderPlugin.Install()</a>, <a class="el" href="_image_handler_syntax_8cs_source.html#l00021">ImageResizer.Plugins.Basic.ImageHandlerSyntax.Install()</a>, <a class="el" href="_psd_composer_plugin_8cs_source.html#l00029">ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.Install()</a>, <a class="el" href="_trial_8cs_source.html#l00031">ImageResizer.Plugins.Basic.Trial.Install()</a>, <a class="el" href="_virtual_folder_8cs_source.html#l00081">ImageResizer.Plugins.Basic.VirtualFolder.Install()</a>, <a class="el" href="_disk_cache_8cs_source.html#l00195">ImageResizer.Plugins.DiskCache.DiskCache.Install()</a>, <a class="el" href="_pdf_renderer_8cs_source.html#l00277">ImageResizer.Plugins.PdfRenderer.PdfRendererPlugin.Install()</a>, <a class="el" href="_license_verifier_8cs_source.html#l00536">ImageResizer.Licensing.LicenseVerifier.Install()</a>, and <a class="el" href="_license_verifier_8cs_source.html#l00580">ImageResizer.Licensing.LicenseStore.Install()</a>.</p>
 <div class="fragment"><pre class="fragment">                                               {
             <span class="keywordflow">if</span> (!(plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once...">IMultiInstancePlugin</a>) &amp;&amp; <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a2a6ae3b69f516e4eb985364e12e7ef05" title="Returns true if at least one plugin of the specified type is registered.">HasPlugin</a>(plugin.GetType())) {
                 <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html#ae4b3a9ebcb465010e151ba701bc28e2f" title="Adds the specified issue to the list unless it is an exact duplicate of another instance.">AcceptIssue</a>(<span class="keyword">new</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html">Issue</a>(<span class="stringliteral">&quot;An instance of the specified plugin (&quot;</span> + plugin.GetType().ToString() + <span class="stringliteral">&quot;) has already been registered.&quot;</span>,
@@ -327,6 +332,7 @@ Properties</h2></td></tr>
             <span class="keywordflow">if</span> (plugin is <a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a6555e94f68458b99912b041482cdd318" title="Currently registered set of ImageBuilderExtensions.">ImageBuilderExtensions</a>.Add(plugin as BuilderExtension);
             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a517fd7bc29acf4eb910573fbe34997f7" title="Plugins which provide virtual files are registered here.">VirtualProviderPlugins</a>.Add(plugin as IVirtualImageProvider);
             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to...">ISettingsModifier</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a84cb6f5d6e18e51b2c572244888fa0d9" title="Plugins which modify image processing settings.">SettingsModifierPlugins</a>.Add(plugin as ISettingsModifier);
+            <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_current_config_provider.html" title="Allows multi-tenancy support. The &#39;root&#39; config only needs one plugin, which implements this interfac...">ICurrentConfigProvider</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a5da572b7b973899c831ba496bfab4d14" title="Currently registered ICurrentConfigProviders.">ConfigProviders</a>.Add(plugin as ICurrentConfigProvider);
             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a9f23aa7ba7f123b82a9bc17fcbac3a06" title="Returns the most recently registered Logging plugin, or null.">LogManager</a> = plugin as ILogManager;
         }
 </pre></div>
@@ -356,7 +362,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00355">355</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00366">366</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                      {
             Type t = null;
 
@@ -461,7 +467,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00144">144</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00145">145</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                           {
             Type t = typeof(T);
             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab9e6deb9f5ec91b7d9aff1304dae8470" title="All plugins should be registered here. Used for diagnostic purposes.">AllPlugins</a>)
@@ -495,7 +501,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00108">108</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00109">109</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                    {
             List&lt;T&gt; results = <span class="keyword">new</span> List&lt;T&gt;();
             Type t = typeof(T);
@@ -544,7 +550,7 @@ Properties</h2></td></tr>
 
 <p>Implements <a class="el" href="interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html#ae0f3610b127ea2d51bff25cf931e7c3b">ImageResizer.Encoding.IEncoderProvider</a>.</p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00275">275</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00284">284</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                             {
             
             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec...">IEncoder</a> e <span class="keywordflow">in</span> this.<a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#aa31cc94b310381ae022cac5b3d05af3d" title="Currently registered IEncoders.">ImageEncoders</a>) {
@@ -575,7 +581,7 @@ Properties</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html#ab9f594eb58538973713786a0b76fdc52">ImageResizer.Configuration.Issues.IssueSink</a>.</p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00566">566</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00579">579</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                        {
             List&lt;IIssue&gt; issues = <span class="keyword">new</span> List&lt;IIssue&gt;(base.GetIssues());
             <span class="comment">//Verify all plugins are registered as IPlugins also.</span>
@@ -637,15 +643,17 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00326">326</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00335">335</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                                                                {
             List&lt;string&gt; assemblies = <span class="keyword">new</span> List&lt;string&gt;();
             <span class="comment">//1) If an assembly was specified, search it first</span>
             <span class="keywordflow">if</span> (assemblyName != null) assemblies.Add(assemblyName);
             <span class="comment">//2) Follow by searching the Core, the currently executing assembly</span>
             assemblies.Add(<span class="stringliteral">&quot;&quot;</span>); <span class="comment">// Defaults to current assembly</span>
+            <span class="comment">//3) Add ImageResizer.Plugins.X if it has no dot.</span>
+            <span class="keywordflow">if</span> (!pluginName.Contains(<span class="stringliteral">&quot;.&quot;</span>)) assemblies.Add(<span class="stringliteral">&quot;ImageResizer.Plugins.&quot;</span> + pluginName);
 
-            <span class="comment">//3) Next, add all assemblies that have &quot;ImageResizer&quot; in their name </span>
+            <span class="comment">//4) Next, add all assemblies that have &quot;ImageResizer&quot; in their name </span>
 
 
             List&lt;string&gt; otherAssemblies = <span class="keyword">new</span> List&lt;string&gt;();
@@ -656,7 +664,7 @@ Properties</h2></td></tr>
                 <span class="keywordflow">else</span>
                     otherAssemblies.Add(<span class="stringliteral">&quot;, &quot;</span> + aname);
             }
-            <span class="comment">//4) Last, add all remaining assemblies</span>
+            <span class="comment">//5) Last, add all remaining assemblies</span>
             assemblies.AddRange(otherAssemblies);
             <span class="keywordflow">return</span> assemblies;
         }
@@ -694,7 +702,7 @@ Properties</h2></td></tr>
 </dl>
 </div>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00157">157</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00158">158</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                           : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>, <span class="keyword">new</span>() {
             T instance = <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab473dcee16e081791fe61d052840661c" title="Returns the first registerd instance of the specified plugin. For IMultiInstancePlugins, use GetAll()">Get&lt;T&gt;</a>();
             <span class="keywordflow">if</span> (instance != null) <span class="keywordflow">return</span> instance;
@@ -743,7 +751,7 @@ Properties</h2></td></tr>
 </dl>
 </div>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00172">172</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00173">173</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                        : <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> {
             T instance = <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab473dcee16e081791fe61d052840661c" title="Returns the first registerd instance of the specified plugin. For IMultiInstancePlugins, use GetAll()">Get&lt;T&gt;</a>();
             <span class="keywordflow">if</span> (instance != null) <span class="keywordflow">return</span> instance;
@@ -780,7 +788,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00096">96</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00097">97</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                                    {
             List&lt;IPlugin&gt; results = <span class="keyword">new</span> List&lt;IPlugin&gt;();
             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab9e6deb9f5ec91b7d9aff1304dae8470" title="All plugins should be registered here. Used for diagnostic purposes.">AllPlugins</a>)
@@ -814,7 +822,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00134">134</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00135">135</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                             {
             <span class="keywordflow">return</span> Comparer&lt;T&gt;.Default.Compare(<a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab473dcee16e081791fe61d052840661c" title="Returns the first registerd instance of the specified plugin. For IMultiInstancePlugins, use GetAll()">Get&lt;T&gt;</a>(), <span class="keywordflow">default</span>(T)) != 0;
         }
@@ -845,7 +853,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00122">122</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00123">123</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                         {
             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab9e6deb9f5ec91b7d9aff1304dae8470" title="All plugins should be registered here. Used for diagnostic purposes.">AllPlugins</a>)
                 <span class="keywordflow">if</span> (type.IsAssignableFrom(p.GetType())) <span class="comment">//Like instance of. Can be a subclass</span>
@@ -879,7 +887,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00189">189</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00190">190</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                               {
             <span class="keywordflow">return</span> plugin.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#acca01a73bba24037b9b3ade1b4e3c134" title="Installs the plugin in the specified Config instance. The plugin must handle all the work of loading ...">Install</a>(this.c);
         }
@@ -902,7 +910,7 @@ Properties</h2></td></tr>
 
 <p>Processes the &lt;plugins&gt; section if they are not already loaded. Thread safe. Only executes once. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00055">55</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00056">56</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                  {
             lock (_loadPluginsSync) {
                 <span class="keywordflow">if</span> (_pluginsLoaded) <span class="keywordflow">return</span>;
@@ -929,7 +937,7 @@ Properties</h2></td></tr>
 
 <p>Not thread safe. Performs actual work. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00074">74</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00075">75</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                             {
             <a class="code" href="class_image_resizer_1_1_configuration_1_1_xml_1_1_node.html" title="No support for namespaces, no intention of eventual serialization. Everything is case-insensitive, but preserves case. Not thread safe.">Node</a> plugins = c.<a class="code" href="class_image_resizer_1_1_configuration_1_1_config.html#a88b0d3c3b0457e5f8f0cacb35cb7d267" title="Returns a deep copy of the specified node.">getNode</a>(<span class="stringliteral">&quot;plugins&quot;</span>); 
             <span class="keywordflow">if</span> (plugins == null) <span class="keywordflow">return</span>;
@@ -973,9 +981,9 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00499">499</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00510">510</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_size_limiting_8cs_source.html#l00033">ImageResizer.Plugins.Basic.SizeLimiting.Uninstall()</a>, <a class="el" href="_psd_composer_plugin_8cs_source.html#l00035">ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.Uninstall()</a>, <a class="el" href="_virtual_folder_8cs_source.html#l00098">ImageResizer.Plugins.Basic.VirtualFolder.Uninstall()</a>, <a class="el" href="_disk_cache_8cs_source.html#l00216">ImageResizer.Plugins.DiskCache.DiskCache.Uninstall()</a>, and <a class="el" href="_pdf_renderer_8cs_source.html#l00286">ImageResizer.Plugins.PdfRenderer.PdfRendererPlugin.Uninstall()</a>.</p>
+<p>Referenced by <a class="el" href="_web_p_encoder_8cs_source.html#l00019">ImageResizer.Plugins.WebPEncoder.WebPEncoderPlugin.Uninstall()</a>, <a class="el" href="_size_limiting_8cs_source.html#l00033">ImageResizer.Plugins.Basic.SizeLimiting.Uninstall()</a>, <a class="el" href="_psd_composer_plugin_8cs_source.html#l00035">ImageResizer.Plugins.PsdComposer.PsdComposerPlugin.Uninstall()</a>, <a class="el" href="_virtual_folder_8cs_source.html#l00093">ImageResizer.Plugins.Basic.VirtualFolder.Uninstall()</a>, <a class="el" href="_disk_cache_8cs_source.html#l00216">ImageResizer.Plugins.DiskCache.DiskCache.Uninstall()</a>, and <a class="el" href="_pdf_renderer_8cs_source.html#l00286">ImageResizer.Plugins.PdfRenderer.PdfRendererPlugin.Uninstall()</a>.</p>
 <div class="fragment"><pre class="fragment">                                                 {
             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab9e6deb9f5ec91b7d9aff1304dae8470" title="All plugins should be registered here. Used for diagnostic purposes.">AllPlugins</a>.Remove(plugin as IPlugin);
             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)">IQuerystringPlugin</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ae571e06c5e5e95bfe4891d4f6db05aab" title="Plugins which accept querystring arguments are registered here.">QuerystringPlugins</a>.Remove(plugin as IQuerystringPlugin);
@@ -985,6 +993,7 @@ Properties</h2></td></tr>
             <span class="keywordflow">if</span> (plugin is <a class="code" href="class_image_resizer_1_1_resizing_1_1_builder_extension.html" title="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods.">BuilderExtension</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a6555e94f68458b99912b041482cdd318" title="Currently registered set of ImageBuilderExtensions.">ImageBuilderExtensions</a>.Remove(plugin as BuilderExtension);
             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i...">IVirtualImageProvider</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a517fd7bc29acf4eb910573fbe34997f7" title="Plugins which provide virtual files are registered here.">VirtualProviderPlugins</a>.Remove(plugin as IVirtualImageProvider);
             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html" title="Provides a way to modify settings before they reach the managed API. Does not execute early enough to...">ISettingsModifier</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a84cb6f5d6e18e51b2c572244888fa0d9" title="Plugins which modify image processing settings.">SettingsModifierPlugins</a>.Remove(plugin as ISettingsModifier);
+            <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_current_config_provider.html" title="Allows multi-tenancy support. The &#39;root&#39; config only needs one plugin, which implements this interfac...">ICurrentConfigProvider</a>) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a5da572b7b973899c831ba496bfab4d14" title="Currently registered ICurrentConfigProviders.">ConfigProviders</a>.Remove(plugin as ICurrentConfigProvider);
             <span class="keywordflow">if</span> (plugin is <a class="code" href="interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html">ILogManager</a> &amp;&amp; <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a9f23aa7ba7f123b82a9bc17fcbac3a06" title="Returns the most recently registered Logging plugin, or null.">LogManager</a> == plugin) <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a9f23aa7ba7f123b82a9bc17fcbac3a06" title="Returns the most recently registered Logging plugin, or null.">LogManager</a> = null;
         }
 </pre></div>
@@ -1006,7 +1015,7 @@ Properties</h2></td></tr>
 
 <p>Removes all plugins, of every kind. Logs any errors encountered. (Not all plugins support uninstallation) </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00543">543</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00556">556</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                {
             <span class="comment">//Follow uninstall protocol</span>
             <span class="keywordflow">foreach</span> (<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> p <span class="keywordflow">in</span> <a class="code" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#ab9e6deb9f5ec91b7d9aff1304dae8470" title="All plugins should be registered here. Used for diagnostic purposes.">AllPlugins</a>)
@@ -1054,7 +1063,7 @@ Properties</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd></dd></dl>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00199">199</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00200">200</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 <div class="fragment"><pre class="fragment">                                              {
             <span class="keywordflow">return</span> plugin.<a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html#a047c1f46ce451fefc5f2ba3c16b64e8f" title="Uninstalls the plugin. Should reverse all changes made during Install.">Uninstall</a>(this.c);
         }
@@ -1075,7 +1084,7 @@ Properties</h2></td></tr>
 
 <p>All plugins should be registered here. Used for diagnostic purposes. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00252">252</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00261">261</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_size_limiting_8cs_source.html#l00025">ImageResizer.Plugins.Basic.SizeLimiting.Install()</a>.</p>
 
@@ -1094,9 +1103,26 @@ Properties</h2></td></tr>
 
 <p>Currently registered ICache instances. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00219">219</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00228">228</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_pipeline_config_8cs_source.html#l00436">ImageResizer.Configuration.PipelineConfig.GetCachingSystem()</a>.</p>
+<p>Referenced by <a class="el" href="_pipeline_config_8cs_source.html#l00444">ImageResizer.Configuration.PipelineConfig.GetCachingSystem()</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5da572b7b973899c831ba496bfab4d14"></a><!-- doxytag: member="ImageResizer::Configuration::PluginConfig::ConfigProviders" ref="a5da572b7b973899c831ba496bfab4d14" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SafeList&lt;<a class="el" href="interface_image_resizer_1_1_plugins_1_1_i_current_config_provider.html">ICurrentConfigProvider</a>&gt; <a class="el" href="class_image_resizer_1_1_configuration_1_1_plugin_config.html#a5da572b7b973899c831ba496bfab4d14">ImageResizer.Configuration.PluginConfig.ConfigProviders</a><code> [get]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Currently registered ICurrentConfigProviders. </p>
+
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00209">209</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
 </div>
 </div>
@@ -1113,7 +1139,7 @@ Properties</h2></td></tr>
 
 <p><a class="el" href="namespace_image_resizer_1_1_configuration_1_1_plugins.html">Plugins</a> which accept new file extensions (in the url) are registered here. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00232">232</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00241">241</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_pipeline_config_8cs_source.html#l00047">ImageResizer.Configuration.PipelineConfig._cacheUrlData()</a>.</p>
 
@@ -1132,7 +1158,7 @@ Properties</h2></td></tr>
 
 <p>Currently registered set of ImageBuilderExtensions. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00207">207</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00216">216</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_size_limiting_8cs_source.html#l00025">ImageResizer.Plugins.Basic.SizeLimiting.Install()</a>.</p>
 
@@ -1151,7 +1177,7 @@ Properties</h2></td></tr>
 
 <p>Currently registered IEncoders. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00213">213</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00222">222</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
 </div>
 </div>
@@ -1168,7 +1194,7 @@ Properties</h2></td></tr>
 
 <p>Returns the most recently registered <a class="el" href="namespace_image_resizer_1_1_configuration_1_1_logging.html">Logging</a> plugin, or null. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00261">261</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00270">270</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_disk_cache_8cs_source.html#l00195">ImageResizer.Plugins.DiskCache.DiskCache.Install()</a>.</p>
 
@@ -1187,7 +1213,7 @@ Properties</h2></td></tr>
 
 <p>Returns true if the &lt;plugins&gt; section has been processed. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00065">65</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00066">66</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
 </div>
 </div>
@@ -1204,7 +1230,7 @@ Properties</h2></td></tr>
 
 <p><a class="el" href="namespace_image_resizer_1_1_configuration_1_1_plugins.html">Plugins</a> which accept querystring arguments are registered here. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00225">225</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00234">234</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
 <p>Referenced by <a class="el" href="_pipeline_config_8cs_source.html#l00047">ImageResizer.Configuration.PipelineConfig._cacheUrlData()</a>.</p>
 
@@ -1223,9 +1249,9 @@ Properties</h2></td></tr>
 
 <p><a class="el" href="namespace_image_resizer_1_1_configuration_1_1_plugins.html">Plugins</a> which modify image processing settings. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00245">245</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00254">254</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_pipeline_config_8cs_source.html#l00455">ImageResizer.Configuration.PipelineConfig.Modify()</a>.</p>
+<p>Referenced by <a class="el" href="_pipeline_config_8cs_source.html#l00463">ImageResizer.Configuration.PipelineConfig.Modify()</a>.</p>
 
 </div>
 </div>
@@ -1242,9 +1268,9 @@ Properties</h2></td></tr>
 
 <p><a class="el" href="namespace_image_resizer_1_1_configuration_1_1_plugins.html">Plugins</a> which provide virtual files are registered here. </p>
 
-<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00239">239</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
+<p>Definition at line <a class="el" href="_plugin_config_8cs_source.html#l00248">248</a> of file <a class="el" href="_plugin_config_8cs_source.html">PluginConfig.cs</a>.</p>
 
-<p>Referenced by <a class="el" href="_pipeline_config_8cs_source.html#l00293">ImageResizer.Configuration.PipelineConfig.FileExists()</a>, and <a class="el" href="_pipeline_config_8cs_source.html#l00270">ImageResizer.Configuration.PipelineConfig.GetFile()</a>.</p>
+<p>Referenced by <a class="el" href="_pipeline_config_8cs_source.html#l00298">ImageResizer.Configuration.PipelineConfig.FileExists()</a>, and <a class="el" href="_pipeline_config_8cs_source.html#l00270">ImageResizer.Configuration.PipelineConfig.GetFile()</a>.</p>
 
 </div>
 </div>

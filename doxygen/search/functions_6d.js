@@ -6,6 +6,7 @@ var searchData=
   ['mappathifapprelative',['MapPathIfAppRelative',['../class_image_resizer_1_1_util_1_1_path_utils.html#acb4e92f50556202cd20d914384a1965d',1,'ImageResizer::Util::PathUtils']]],
   ['markeye',['MarkEye',['../class_image_resizer_1_1_plugins_1_1_red_eye_1_1_adaptive_circle_fill.html#a3748ea3e2c5de315db88f0a10f907fae',1,'ImageResizer::Plugins::RedEye::AdaptiveCircleFill']]],
   ['mayhavework',['MayHaveWork',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html#a6f8933ffeb392bb1fab226f585c819dc',1,'ImageResizer::Plugins::DiskCache::CleanupWorker']]],
+  ['memcacheplugin',['MemCachePlugin',['../class_image_resizer_1_1_plugins_1_1_mem_cache_1_1_mem_cache_plugin.html#ad8bbee446e5f990ccfd941d5e276a248',1,'ImageResizer::Plugins::MemCache::MemCachePlugin']]],
   ['mergeoverwritequerystring',['MergeOverwriteQueryString',['../class_image_resizer_1_1_util_1_1_path_utils.html#ae552f710cc6327b8508ab4111f75d8c9',1,'ImageResizer::Util::PathUtils']]],
   ['mergequerystring',['MergeQueryString',['../class_image_resizer_1_1_util_1_1_path_utils.html#a08767ea3c8bee6716bb5484ae78df1da',1,'ImageResizer::Util::PathUtils']]],
   ['modifieddatedelegate',['ModifiedDateDelegate',['../namespace_image_resizer_1_1_caching.html#aa07f9e07e851742ccee15c9caf69c1ba',1,'ImageResizer::Caching']]],

@@ -3,6 +3,7 @@ var searchData=
   ['cachedfileinfo',['CachedFileInfo',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_file_info.html',1,'ImageResizer::Plugins::DiskCache']]],
   ['cachedfolder',['CachedFolder',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cached_folder.html',1,'ImageResizer::Plugins::DiskCache']]],
   ['cachedvirtualfile',['CachedVirtualFile',['../class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html',1,'ImageResizer::Plugins::SourceMemCache']]],
+  ['cacheentry',['CacheEntry',['../class_image_resizer_1_1_plugins_1_1_tiny_cache_1_1_cache_entry.html',1,'ImageResizer::Plugins::TinyCache']]],
   ['cacheindex',['CacheIndex',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_index.html',1,'ImageResizer::Plugins::DiskCache']]],
   ['cacheresult',['CacheResult',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html',1,'ImageResizer::Plugins::DiskCache']]],
   ['cacheselectioneventargs',['CacheSelectionEventArgs',['../class_image_resizer_1_1_configuration_1_1_cache_selection_event_args.html',1,'ImageResizer::Configuration']]],
@@ -25,7 +26,7 @@ var searchData=
   ['consts',['Consts',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_consts.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes']]],
   ['conversionutils',['ConversionUtils',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_conversion_utils.html',1,'ImageResizer::Plugins::Wic']]],
   ['crc',['CRC',['../class_seven_zip_reduced_1_1_c_r_c.html',1,'SevenZipReduced']]],
-  ['csearcher',['CSearcher',['../class_image_resizer_1_1_plugins_1_1_red_eye_1_1_c_searcher.html',1,'ImageResizer::Plugins::RedEye']]],
+  ['croparoundplugin',['CropAroundPlugin',['../class_image_resizer_1_1_plugins_1_1_crop_around_1_1_crop_around_plugin.html',1,'ImageResizer::Plugins::CropAround']]],
   ['customdiskcache',['CustomDiskCache',['../class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_custom_disk_cache.html',1,'ImageResizer::Plugins::DiskCache']]],
   ['cy',['CY',['../struct_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_unmanaged_prop_variant_1_1_c_y.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes::UnmanagedPropVariant']]]
 ];

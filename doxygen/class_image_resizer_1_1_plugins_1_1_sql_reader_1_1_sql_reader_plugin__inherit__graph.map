@@ -3,4 +3,5 @@
 <area shape="rect" id="node4" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html" title="IIssueProvider" alt="" coords="147,6,369,53"/>
 <area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i..." alt="" coords="394,6,717,53"/>
 <area shape="rect" id="node8" href="$interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once..." alt="" coords="743,6,1049,53"/>
+<area shape="rect" id="node10" href="$interface_image_resizer_1_1_plugins_1_1_i_redact_diagnostics.html" title="Permits plugins to redact data from the diagnostics page, like passwords." alt="" coords="1073,6,1367,53"/>
 </map>

@@ -25,12 +25,12 @@
  <tbody>
  <tr style="height: 56px;">
   
-  <td id="projectlogo"><img alt="Logo" src="resizer-icon-64.png"/></td>
+  <td id="projectlogo"><img alt="Logo" src="imageresizer-logo-00aec4.png"/></td>
   
   
   <td style="padding-left: 0.5em;">
    <div id="projectname">ImageResizer
-   &#160;<span id="projectnumber">3.2.1</span>
+   &#160;<span id="projectnumber">3.3.3</span>
    </div>
    
   </td>
@@ -416,70 +416,72 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00333"></a>00333             <span class="keywordflow">if</span> (quality &gt; 100) quality = 100;
 <a name="l00334"></a>00334             <span class="comment">//Prepare paramater for encoder</span>
 <a name="l00335"></a>00335             <span class="keyword">using</span> (EncoderParameters p = <span class="keyword">new</span> EncoderParameters(1)) {
-<a name="l00336"></a>00336 
-<a name="l00337"></a>00337                 p.Param[0] = <span class="keyword">new</span> EncoderParameter(System.Drawing.Imaging.Encoder.Quality, (<span class="keywordtype">long</span>)quality);
-<a name="l00338"></a>00338                 <span class="comment">//save</span>
-<a name="l00339"></a>00339                 b.Save(target, GetImageCodeInfo(<span class="stringliteral">&quot;image/jpeg&quot;</span>), p);
-<a name="l00340"></a>00340             }
-<a name="l00341"></a>00341         }
-<a name="l00342"></a>00342         <span class="comment"></span>
-<a name="l00343"></a>00343 <span class="comment">         /// &lt;summary&gt;</span>
-<a name="l00344"></a>00344 <span class="comment">        /// Saves the image in png form. If Stream &#39;target&#39; is not seekable, a temporary MemoryStream will be used to buffer the image data into the stream</span>
-<a name="l00345"></a>00345 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00346"></a>00346 <span class="comment">        /// &lt;param name=&quot;img&quot;&gt;&lt;/param&gt;</span>
-<a name="l00347"></a>00347 <span class="comment">        /// &lt;param name=&quot;target&quot;&gt;&lt;/param&gt;</span>
-<a name="l00348"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a0f22c5561167bc2644cb0557c456d2b2">00348</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> SavePng(Image img, Stream target)
-<a name="l00349"></a>00349         {
-<a name="l00350"></a>00350             <span class="keywordflow">if</span> (!target.CanSeek) {
-<a name="l00351"></a>00351                 <span class="comment">//Write to an intermediate, seekable memory stream (PNG compression requires it)</span>
-<a name="l00352"></a>00352                 <span class="keyword">using</span> (MemoryStream ms = <span class="keyword">new</span> MemoryStream(4096)) {
-<a name="l00353"></a>00353                     img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-<a name="l00354"></a>00354                     ms.WriteTo(target);
-<a name="l00355"></a>00355                 }
-<a name="l00356"></a>00356             } <span class="keywordflow">else</span> {
-<a name="l00357"></a>00357                 <span class="comment">//image/png</span>
-<a name="l00358"></a>00358                 <span class="comment">//  The parameter list requires 0 bytes.</span>
-<a name="l00359"></a>00359                 img.Save(target, System.Drawing.Imaging.ImageFormat.Png);
-<a name="l00360"></a>00360             }
-<a name="l00361"></a>00361         }
-<a name="l00362"></a>00362         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> SaveBmp(Image img, Stream target)
-<a name="l00363"></a>00363         {
-<a name="l00364"></a>00364             <span class="comment">//  image/bmp</span>
-<a name="l00365"></a>00365             <span class="comment">//  The parameter list requires 0 bytes.</span>
-<a name="l00366"></a>00366             img.Save(target, ImageFormat.Bmp);
-<a name="l00367"></a>00367         }
-<a name="l00368"></a>00368 
-<a name="l00369"></a>00369 
-<a name="l00370"></a>00370         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> SaveGif(Image img, Stream target) {
-<a name="l00371"></a>00371             <span class="comment">//image/gif</span>
-<a name="l00372"></a>00372             <span class="comment">//  The parameter list requires 0 bytes.</span>
-<a name="l00373"></a>00373             img.Save(target, ImageFormat.Gif);
-<a name="l00374"></a>00374         }
-<a name="l00375"></a>00375 
-<a name="l00376"></a>00376 <span class="preprocessor">        #endregion</span>
-<a name="l00377"></a>00377 <span class="preprocessor"></span>
-<a name="l00378"></a>00378 
-<a name="l00379"></a>00379 
-<a name="l00380"></a>00380      <span class="comment"></span>
-<a name="l00381"></a>00381 <span class="comment">        /// &lt;summary&gt;</span>
-<a name="l00382"></a>00382 <span class="comment">        /// Returns the querystring keys used by DefaultEncoder (quality, format, and thumbnail)</span>
-<a name="l00383"></a>00383 <span class="comment">        /// &lt;/summary&gt;</span>
-<a name="l00384"></a>00384 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
-<a name="l00385"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#afd73cde8c564226c474e497006dd63f3">00385</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">virtual</span> IEnumerable&lt;string&gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#afd73cde8c564226c474e497006dd63f3" title="Returns the querystring keys used by DefaultEncoder (quality, format, and thumbnail)">GetSupportedQuerystringKeys</a>() {
-<a name="l00386"></a>00386             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;quality&quot;</span>, <span class="stringliteral">&quot;format&quot;</span>, <span class="stringliteral">&quot;thumbnail&quot;</span> };
-<a name="l00387"></a>00387         }
-<a name="l00388"></a>00388 
-<a name="l00389"></a>00389         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
-<a name="l00390"></a>00390             c.Plugins.add_plugin(<span class="keyword">this</span>);
-<a name="l00391"></a>00391             <span class="keywordflow">return</span> <span class="keyword">this</span>;
-<a name="l00392"></a>00392         }
-<a name="l00393"></a>00393 
-<a name="l00394"></a>00394         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
-<a name="l00395"></a>00395             c.Plugins.remove_plugin(<span class="keyword">this</span>);
-<a name="l00396"></a>00396             <span class="keywordflow">return</span> <span class="keyword">true</span>;
-<a name="l00397"></a>00397         }
-<a name="l00398"></a>00398     }
-<a name="l00399"></a>00399 }
+<a name="l00336"></a>00336                 <span class="keyword">using</span> (var ep = <span class="keyword">new</span> EncoderParameter(System.Drawing.Imaging.Encoder.Quality, (<span class="keywordtype">long</span>)quality))
+<a name="l00337"></a>00337                 {
+<a name="l00338"></a>00338                     p.Param[0] = ep;
+<a name="l00339"></a>00339                     <span class="comment">//save</span>
+<a name="l00340"></a>00340                     b.Save(target, GetImageCodeInfo(<span class="stringliteral">&quot;image/jpeg&quot;</span>), p);
+<a name="l00341"></a>00341                 }
+<a name="l00342"></a>00342             }
+<a name="l00343"></a>00343         }
+<a name="l00344"></a>00344         <span class="comment"></span>
+<a name="l00345"></a>00345 <span class="comment">         /// &lt;summary&gt;</span>
+<a name="l00346"></a>00346 <span class="comment">        /// Saves the image in png form. If Stream &#39;target&#39; is not seekable, a temporary MemoryStream will be used to buffer the image data into the stream</span>
+<a name="l00347"></a>00347 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00348"></a>00348 <span class="comment">        /// &lt;param name=&quot;img&quot;&gt;&lt;/param&gt;</span>
+<a name="l00349"></a>00349 <span class="comment">        /// &lt;param name=&quot;target&quot;&gt;&lt;/param&gt;</span>
+<a name="l00350"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#a0f22c5561167bc2644cb0557c456d2b2">00350</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> SavePng(Image img, Stream target)
+<a name="l00351"></a>00351         {
+<a name="l00352"></a>00352             <span class="keywordflow">if</span> (!target.CanSeek) {
+<a name="l00353"></a>00353                 <span class="comment">//Write to an intermediate, seekable memory stream (PNG compression requires it)</span>
+<a name="l00354"></a>00354                 <span class="keyword">using</span> (MemoryStream ms = <span class="keyword">new</span> MemoryStream(4096)) {
+<a name="l00355"></a>00355                     img.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+<a name="l00356"></a>00356                     ms.WriteTo(target);
+<a name="l00357"></a>00357                 }
+<a name="l00358"></a>00358             } <span class="keywordflow">else</span> {
+<a name="l00359"></a>00359                 <span class="comment">//image/png</span>
+<a name="l00360"></a>00360                 <span class="comment">//  The parameter list requires 0 bytes.</span>
+<a name="l00361"></a>00361                 img.Save(target, System.Drawing.Imaging.ImageFormat.Png);
+<a name="l00362"></a>00362             }
+<a name="l00363"></a>00363         }
+<a name="l00364"></a>00364         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> SaveBmp(Image img, Stream target)
+<a name="l00365"></a>00365         {
+<a name="l00366"></a>00366             <span class="comment">//  image/bmp</span>
+<a name="l00367"></a>00367             <span class="comment">//  The parameter list requires 0 bytes.</span>
+<a name="l00368"></a>00368             img.Save(target, ImageFormat.Bmp);
+<a name="l00369"></a>00369         }
+<a name="l00370"></a>00370 
+<a name="l00371"></a>00371 
+<a name="l00372"></a>00372         <span class="keyword">public</span> <span class="keyword">static</span> <span class="keywordtype">void</span> SaveGif(Image img, Stream target) {
+<a name="l00373"></a>00373             <span class="comment">//image/gif</span>
+<a name="l00374"></a>00374             <span class="comment">//  The parameter list requires 0 bytes.</span>
+<a name="l00375"></a>00375             img.Save(target, ImageFormat.Gif);
+<a name="l00376"></a>00376         }
+<a name="l00377"></a>00377 
+<a name="l00378"></a>00378 <span class="preprocessor">        #endregion</span>
+<a name="l00379"></a>00379 <span class="preprocessor"></span>
+<a name="l00380"></a>00380 
+<a name="l00381"></a>00381 
+<a name="l00382"></a>00382      <span class="comment"></span>
+<a name="l00383"></a>00383 <span class="comment">        /// &lt;summary&gt;</span>
+<a name="l00384"></a>00384 <span class="comment">        /// Returns the querystring keys used by DefaultEncoder (quality, format, and thumbnail)</span>
+<a name="l00385"></a>00385 <span class="comment">        /// &lt;/summary&gt;</span>
+<a name="l00386"></a>00386 <span class="comment">        /// &lt;returns&gt;&lt;/returns&gt;</span>
+<a name="l00387"></a><a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#afd73cde8c564226c474e497006dd63f3">00387</a> <span class="comment"></span>        <span class="keyword">public</span> <span class="keyword">virtual</span> IEnumerable&lt;string&gt; <a class="code" href="class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#afd73cde8c564226c474e497006dd63f3" title="Returns the querystring keys used by DefaultEncoder (quality, format, and thumbnail)">GetSupportedQuerystringKeys</a>() {
+<a name="l00388"></a>00388             <span class="keywordflow">return</span> <span class="keyword">new</span> <span class="keywordtype">string</span>[] { <span class="stringliteral">&quot;quality&quot;</span>, <span class="stringliteral">&quot;format&quot;</span>, <span class="stringliteral">&quot;thumbnail&quot;</span> };
+<a name="l00389"></a>00389         }
+<a name="l00390"></a>00390 
+<a name="l00391"></a>00391         <span class="keyword">public</span> <a class="code" href="interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal.">IPlugin</a> Install(Configuration.Config c) {
+<a name="l00392"></a>00392             c.Plugins.add_plugin(<span class="keyword">this</span>);
+<a name="l00393"></a>00393             <span class="keywordflow">return</span> <span class="keyword">this</span>;
+<a name="l00394"></a>00394         }
+<a name="l00395"></a>00395 
+<a name="l00396"></a>00396         <span class="keyword">public</span> <span class="keywordtype">bool</span> Uninstall(Configuration.Config c) {
+<a name="l00397"></a>00397             c.Plugins.remove_plugin(<span class="keyword">this</span>);
+<a name="l00398"></a>00398             <span class="keywordflow">return</span> <span class="keyword">true</span>;
+<a name="l00399"></a>00399         }
+<a name="l00400"></a>00400     }
+<a name="l00401"></a>00401 }
 </pre></div></div><!-- contents -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"

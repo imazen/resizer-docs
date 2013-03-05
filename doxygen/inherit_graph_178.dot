@@ -1,7 +1,0 @@
-digraph G
-{
-  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
-  node [fontname="Helvetica",fontsize="24",shape=record];
-  rankdir="LR";
-  Node1 [label="SevenZipReduced.ICodeProgress",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_seven_zip_reduced_1_1_i_code_progress.html"];
-}

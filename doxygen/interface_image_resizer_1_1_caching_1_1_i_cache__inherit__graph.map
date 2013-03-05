@@ -1,4 +1,6 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_no_cache.html" title="Default cache when DiskCache isn&#39;t installed. Useful for debugging purposes but unsuited for producti..." alt="" coords="5,102,560,149"/>
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html" title="Provides methods for creating, maintaining, and securing the disk cache." alt="" coords="585,102,1236,149"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_no_cache.html" title="Default cache when DiskCache isn&#39;t installed. Useful for debugging purposes but unsuited for producti..." alt="" coords="607,5,1161,51"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html" title="Provides methods for creating, maintaining, and securing the disk cache." alt="" coords="558,75,1210,122"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_mem_cache_1_1_mem_cache_plugin.html" title="ImageResizer.Plugins.MemCache.MemCachePlugin" alt="" coords="505,146,1263,193"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_tiny_cache_1_1_tiny_cache_plugin.html" title="ImageResizer.Plugins.TinyCache.TinyCachePlugin" alt="" coords="517,217,1251,263"/>
 </map>
