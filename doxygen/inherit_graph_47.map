@@ -1,3 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cache_result.html" title="ImageResizer.Plugins.DiskCache.CacheResult" alt="" coords="5,5,685,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache_exception.html" title="Indicates a problem with disk caching. Causes include a missing (or too small) ImageDiskCacheDir sett..." alt="" coords="255,5,665,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_faces_1_1_alternate_response_exception.html" title="ImageResizer.Plugins.Faces.\lAlternateResponseException" alt="" coords="244,110,676,191"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_exception.html" title="ImageResizer.Plugins.Pdf\lRenderer.Ghostscript.Ghostscript\lException" alt="" coords="213,215,707,331"/>
 </map>

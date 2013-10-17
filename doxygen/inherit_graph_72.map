@@ -1,3 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_exception.html" title="ImageResizer.Plugins.PdfRenderer.Ghostscript.GhostscriptException" alt="" coords="5,5,997,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_psd_composer_1_1_i_psd_layer.html" title="ImageResizer.Plugins.Psd\lComposer.IPsdLayer" alt="" coords="6,5,397,86"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_layer_base.html" title="ImageResizer.Plugins.Psd\lComposer.PsdLayerBase" alt="" coords="446,5,837,86"/>
 </map>

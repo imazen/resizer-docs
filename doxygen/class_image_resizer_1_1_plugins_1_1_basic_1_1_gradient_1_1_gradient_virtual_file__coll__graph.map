@@ -1,7 +1,6 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="171,5,343,51"/>
+<map id="ImageResizer.Plugins.Basic.Gradient.GradientVirtualFile" name="ImageResizer.Plugins.Basic.Gradient.GradientVirtualFile">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider " alt="" coords="171,5,343,51"/>
 <area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_bitmap_file.html" title="For virtual files who want to provide their data in Bitmap form (like a PSD reader or gradient genera..." alt="" coords="642,35,913,82"/>
 <area shape="rect" id="node7" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..." alt="" coords="569,106,985,153"/>
 <area shape="rect" id="node9" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="561,177,994,223"/>
-<area shape="rect" id="node11" href="$class_image_resizer_1_1_collections_1_1_querystring_base-g.html" title="QuerystringBase\&lt;ResizeSettings\&gt;" alt="" coords="5,177,509,223"/>
 </map>

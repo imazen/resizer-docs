@@ -1,0 +1,9 @@
+digraph "C:/Users/nathanael/Documents/resizer/Core/Util" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_c6310732a22f63c0c2fc5595561e68f1 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Core" fontname="Helvetica", fontsize="24", URL="dir_c6310732a22f63c0c2fc5595561e68f1.html"]
+  dir_268dce770e77c81dfde144f255ab40a9 [shape=box, label="Util", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_268dce770e77c81dfde144f255ab40a9.html"];
+  }
+}

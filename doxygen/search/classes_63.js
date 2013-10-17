@@ -22,7 +22,6 @@ var searchData=
   ['commitattribute',['CommitAttribute',['../class_image_resizer_1_1_util_1_1_commit_attribute.html',1,'ImageResizer::Util']]],
   ['config',['Config',['../class_image_resizer_1_1_configuration_1_1_config.html',1,'ImageResizer::Configuration']]],
   ['configchecker',['ConfigChecker',['../class_image_resizer_1_1_configuration_1_1_issues_1_1_config_checker.html',1,'ImageResizer::Configuration::Issues']]],
-  ['constrainedcache_2dg',['ConstrainedCache-g',['../class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_constrained_cache-g.html',1,'ImageResizer::Plugins::SourceMemCache']]],
   ['consts',['Consts',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_consts.html',1,'ImageResizer::Plugins::Wic::InteropServices::ComTypes']]],
   ['conversionutils',['ConversionUtils',['../class_image_resizer_1_1_plugins_1_1_wic_1_1_conversion_utils.html',1,'ImageResizer::Plugins::Wic']]],
   ['crc',['CRC',['../class_seven_zip_reduced_1_1_c_r_c.html',1,'SevenZipReduced']]],

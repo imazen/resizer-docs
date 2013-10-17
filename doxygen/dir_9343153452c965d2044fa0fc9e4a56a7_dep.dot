@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/AzureReader2" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_9343153452c965d2044fa0fc9e4a56a7 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_9343153452c965d2044fa0fc9e4a56a7.html"];
+    dir_9343153452c965d2044fa0fc9e4a56a7 [shape=plaintext label="AzureReader2"];
+    dir_153f577c910b2fd117d02b62c64c500c [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_153f577c910b2fd117d02b62c64c500c.html"];
+  }
+  }
+}

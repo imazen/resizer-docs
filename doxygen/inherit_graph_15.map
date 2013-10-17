@@ -1,3 +1,8 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_configuration_1_1_xml_1_1_selector.html" title="Encapsulates a node/attribute selection query, such as &quot;node.node.attribute&quot;." alt="" coords="6,5,607,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_extension_methods_1_1_enum_string_attribute.html" title="ImageResizer.ExtensionMethods.\lEnumStringAttribute" alt="" coords="195,5,685,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_util_1_1_build_type_attribute.html" title="ImageResizer.Util.BuildType\lAttribute" alt="" coords="231,110,649,191"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_util_1_1_bundle_attribute.html" title="ImageResizer.Util.Bundle\lAttribute" alt="" coords="251,215,629,297"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_util_1_1_commit_attribute.html" title="ImageResizer.Util.Commit\lAttribute" alt="" coords="245,321,635,402"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_util_1_1_edition_attribute.html" title="ImageResizer.Util.Edition\lAttribute" alt="" coords="253,426,627,507"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_util_1_1_native_dependencies_attribute.html" title="ImageResizer.Util.Native\lDependenciesAttribute" alt="" coords="257,531,623,613"/>
 </map>

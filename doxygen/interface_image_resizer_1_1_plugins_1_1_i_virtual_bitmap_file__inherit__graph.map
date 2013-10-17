@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient_1_1_gradient_virtual_file.html" title="ImageResizer.Plugins.Basic.Gradient.GradientVirtualFile" alt="" coords="862,5,1677,51"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_virtual_file.html" title="ImageResizer.Plugins.PsdComposer.PsdVirtualFile" alt="" coords="899,75,1639,122"/>
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="6,41,178,87"/>
+<map id="ImageResizer.Plugins.IVirtualBitmapFile" name="ImageResizer.Plugins.IVirtualBitmapFile">
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient_1_1_gradient_virtual_file.html" title="ImageResizer.Plugins.Basic.\lGradient.GradientVirtualFile" alt="" coords="713,5,1135,86"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_virtual_file.html" title="ImageResizer.Plugins.Psd\lComposer.PsdVirtualFile" alt="" coords="729,110,1119,191"/>
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider " alt="" coords="6,75,178,122"/>
 </map>

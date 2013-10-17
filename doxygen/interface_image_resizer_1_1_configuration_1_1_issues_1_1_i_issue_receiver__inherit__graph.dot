@@ -1,0 +1,23 @@
+digraph "ImageResizer.Configuration.Issues.IIssueReceiver"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ImageResizer.Configuration.\lIssues.IIssueReceiver",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="ImageResizer.Configuration.\lIssues.IssueSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="ImageResizer.Configuration.\lPluginConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_plugin_config.html",tooltip="Provides thread-safe access to plugin addition, removal, and querying methods "];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="ImageResizer.Configuration.\lPlugins.NativeDependencyManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_plugins_1_1_native_dependency_manager.html",tooltip="Provides automatic download of native dependencies (which VS doesn&#39;t see). Gets the correct bitness a..."];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node5 [label="ImageResizer.Plugins.Basic.\lSizeLimits",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_basic_1_1_size_limits.html",tooltip="Enforces two kinds of maximum size constraints: a Total size limit, and an Image size limit..."];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node6 [label="ImageResizer.Plugins.Disk\lCache.CleanupStrategy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node7 [label="ImageResizer.Plugins.Disk\lCache.CleanupWorker",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html"];
+  Node2 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node8 [label="ImageResizer.Plugins.Encrypted.\lEncryptedPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_encrypted_1_1_encrypted_plugin.html"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node9 [label="ImageResizer.Licensing.License\lStore",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip="Implementation of ILicenseStore that uses a file in App_Data "];
+}

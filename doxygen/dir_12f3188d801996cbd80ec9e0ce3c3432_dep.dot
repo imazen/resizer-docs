@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/Wpf" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_12f3188d801996cbd80ec9e0ce3c3432 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_12f3188d801996cbd80ec9e0ce3c3432.html"];
+    dir_12f3188d801996cbd80ec9e0ce3c3432 [shape=plaintext label="Wpf"];
+    dir_6c0ca62a9c4ee4575630acc72f859788 [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_6c0ca62a9c4ee4575630acc72f859788.html"];
+  }
+  }
+}

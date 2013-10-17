@@ -1,0 +1,10 @@
+digraph "ImageResizer.Plugins.FreeImageEncoder.FreeImageEncoderPlugin"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  Node1 [label="ImageResizer.Plugins.Free\lImageEncoder.FreeImageEncoderPlugin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="IPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html",tooltip="All plugins must implement this. Enables web.config addition and removal. "];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="IEncoder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_encoding_1_1_i_encoder.html",tooltip="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec..."];
+}

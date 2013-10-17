@@ -1,6 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder_1_1_virtual_folder_provider_virtual_file.html" title="ImageResizer.Plugins.Basic.VirtualFolder.VirtualFolderProviderVirtualFile" alt="" coords="1014,5,2061,51"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html" title="ImageResizer.Plugins.S3Reader.S3File" alt="" coords="1249,75,1826,122"/>
-<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_database_file.html" title="Represents a blob stored in the database. Provides methods for verifying existence, opening a stream, and checking the modified date. Modified date and existence values are cached after the first query." alt="" coords="1199,146,1876,193"/>
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="6,75,178,122"/>
+<map id="ImageResizer.Plugins.IVirtualFileWithModifiedDate" name="ImageResizer.Plugins.IVirtualFileWithModifiedDate">
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder_1_1_virtual_folder_provider_virtual_file.html" title="ImageResizer.Plugins.Basic.\lVirtualFolder.VirtualFolderProvider\lVirtualFile" alt="" coords="713,5,1218,121"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_s3_reader2_1_1_s3_file.html" title="ImageResizer.Plugins.S3Reader2.\lS3File" alt="" coords="713,145,1218,226"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html" title="ImageResizer.Plugins.S3Reader.\lS3File" alt="" coords="722,250,1209,331"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_database_file.html" title="Represents a blob stored in the database. Provides methods for verifying existence, opening a stream, and checking the modified date. Modified date and existence values are cached after the first query. " alt="" coords="774,355,1157,437"/>
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider " alt="" coords="6,215,178,262"/>
 </map>

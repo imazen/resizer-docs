@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/BatchZipper" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_06eebca5bdf328c30c1d6e48a9c496ef {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_06eebca5bdf328c30c1d6e48a9c496ef.html"];
+    dir_06eebca5bdf328c30c1d6e48a9c496ef [shape=plaintext label="BatchZipper"];
+    dir_c826af40318bc4c5de6f9aa6f338e32e [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_c826af40318bc4c5de6f9aa6f338e32e.html"];
+  }
+  }
+}

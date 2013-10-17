@@ -1,0 +1,19 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="Attribute",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="ImageResizer.ExtensionMethods.\lEnumStringAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_extension_methods_1_1_enum_string_attribute.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="ImageResizer.Util.BuildType\lAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_util_1_1_build_type_attribute.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="ImageResizer.Util.Bundle\lAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_util_1_1_bundle_attribute.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node5 [label="ImageResizer.Util.Commit\lAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_util_1_1_commit_attribute.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node6 [label="ImageResizer.Util.Edition\lAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_util_1_1_edition_attribute.html"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node7 [label="ImageResizer.Util.Native\lDependenciesAttribute",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_util_1_1_native_dependencies_attribute.html"];
+}

@@ -1,3 +1,3 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_faces_1_1_i_feature.html" title="Represents a detected feature, such as a face, eye, or eye pair." alt="" coords="186,6,325,53"/>
+<map id="ImageResizer.Plugins.Faces.Face" name="ImageResizer.Plugins.Faces.Face">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_faces_1_1_i_feature.html" title="Represents a detected feature, such as a face, eye, or eye pair " alt="" coords="186,6,325,53"/>
 </map>

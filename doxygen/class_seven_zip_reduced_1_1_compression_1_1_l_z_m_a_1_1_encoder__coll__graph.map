@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_seven_zip_reduced_1_1_i_coder.html" title="ICoder" alt="" coords="58,6,173,53"/>
-<area shape="rect" id="node4" href="$interface_seven_zip_reduced_1_1_i_set_coder_properties.html" title="ISetCoderProperties" alt="" coords="199,6,505,53"/>
-<area shape="rect" id="node6" href="$interface_seven_zip_reduced_1_1_i_write_coder_properties.html" title="IWriteCoderProperties" alt="" coords="530,6,864,53"/>
+<map id="SevenZipReduced.Compression.LZMA.Encoder" name="SevenZipReduced.Compression.LZMA.Encoder">
+<area shape="rect" id="node2" href="$interface_seven_zip_reduced_1_1_i_coder.html" title="ICoder" alt="" coords="5,6,120,53"/>
+<area shape="rect" id="node4" href="$interface_seven_zip_reduced_1_1_i_set_coder_properties.html" title="ISetCoderProperties" alt="" coords="145,6,452,53"/>
+<area shape="rect" id="node6" href="$interface_seven_zip_reduced_1_1_i_write_coder_properties.html" title="IWriteCoderProperties" alt="" coords="477,6,811,53"/>
 </map>

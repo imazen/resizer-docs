@@ -1,0 +1,9 @@
+digraph "C:/Users/nathanael/Documents/resizer/Contrib/PdfRenderer/PdfRenderer/Ghostscript" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_edaf2809ddd543c19cb57d3df979c4d1 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="PdfRenderer" fontname="Helvetica", fontsize="24", URL="dir_edaf2809ddd543c19cb57d3df979c4d1.html"]
+  dir_375eed7174672c5f5c59295d4d1c822d [shape=box, label="Ghostscript", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_375eed7174672c5f5c59295d4d1c822d.html"];
+  }
+}

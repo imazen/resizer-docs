@@ -1,0 +1,14 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/SeamCarving/SevenZipReduced" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_5293a575f6e6fc58d67da2918ddeecba {
+    graph [ bgcolor="#ddddee", pencolor="black", label="SeamCarving" fontname="Helvetica", fontsize="24", URL="dir_5293a575f6e6fc58d67da2918ddeecba.html"]
+  subgraph clusterdir_7078388ffe2a13cf5c7a2d13892526a6 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_7078388ffe2a13cf5c7a2d13892526a6.html"];
+    dir_7078388ffe2a13cf5c7a2d13892526a6 [shape=plaintext label="SevenZipReduced"];
+    dir_d4e4f4f7d04100c53550a93481015a6b [shape=box label="Common" color="black" fillcolor="white" style="filled" URL="dir_d4e4f4f7d04100c53550a93481015a6b.html"];
+    dir_53fd8875e9b0551f05374f8fd73272c4 [shape=box label="Compress" color="red" fillcolor="white" style="filled" URL="dir_53fd8875e9b0551f05374f8fd73272c4.html"];
+  }
+  }
+}

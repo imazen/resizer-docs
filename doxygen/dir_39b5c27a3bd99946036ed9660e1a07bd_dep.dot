@@ -1,0 +1,9 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/DiskCache/Async" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_c40d1be011819c7d3f0b5389486b8856 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="DiskCache" fontname="Helvetica", fontsize="24", URL="dir_c40d1be011819c7d3f0b5389486b8856.html"]
+  dir_39b5c27a3bd99946036ed9660e1a07bd [shape=box, label="Async", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_39b5c27a3bd99946036ed9660e1a07bd.html"];
+  }
+}

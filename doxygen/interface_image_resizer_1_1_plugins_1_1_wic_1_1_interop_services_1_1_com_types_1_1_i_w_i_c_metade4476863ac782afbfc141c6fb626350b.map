@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node5" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_reader_info.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataReaderInfo" alt="" coords="1568,5,2715,51"/>
-<area shape="rect" id="node7" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_writer_info.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataWriterInfo" alt="" coords="1575,75,2707,122"/>
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_component_info.html" title="IWICComponentInfo" alt="" coords="5,41,317,87"/>
+<map id="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataHandlerInfo" name="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICMetadataHandlerInfo">
+<area shape="rect" id="node5" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_reader_info.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICMetadata\lReaderInfo" alt="" coords="1027,5,1639,121"/>
+<area shape="rect" id="node7" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_writer_info.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICMetadata\lWriterInfo" alt="" coords="1027,145,1639,261"/>
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_component_info.html" title="IWICComponentInfo" alt="" coords="5,110,317,157"/>
 </map>

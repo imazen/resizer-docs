@@ -1,3 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html" title="ImageResizer.Plugins.SourceMemCache.SourceMemCachePlugin" alt="" coords="5,102,963,149"/>
+<map id="ImageResizer.Plugins.IVirtualFileCache" name="ImageResizer.Plugins.IVirtualFileCache">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_source_disk_cache_1_1_source_disk_cache_plugin.html" title="ImageResizer.Plugins.Source\lDiskCache.SourceDiskCachePlugin" alt="" coords="500,5,1025,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_source_mem_cache_plugin.html" title="ImageResizer.Plugins.Source\lMemCache.SourceMemCachePlugin" alt="" coords="491,110,1034,191"/>
 </map>

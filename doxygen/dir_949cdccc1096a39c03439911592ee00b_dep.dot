@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/UploadHelper" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_949cdccc1096a39c03439911592ee00b {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_949cdccc1096a39c03439911592ee00b.html"];
+    dir_949cdccc1096a39c03439911592ee00b [shape=plaintext label="UploadHelper"];
+    dir_897993fa2a0e058aab5d4d6a1d5b4707 [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_897993fa2a0e058aab5d4d6a1d5b4707.html"];
+  }
+  }
+}

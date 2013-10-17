@@ -1,0 +1,9 @@
+digraph "C:/Users/nathanael/Documents/resizer/Core/ExtensionMethods" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_c6310732a22f63c0c2fc5595561e68f1 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Core" fontname="Helvetica", fontsize="24", URL="dir_c6310732a22f63c0c2fc5595561e68f1.html"]
+  dir_d721416388a93978ec2314e607cecfd0 [shape=box, label="ExtensionMethods", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_d721416388a93978ec2314e607cecfd0.html"];
+  }
+}

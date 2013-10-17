@@ -1,0 +1,14 @@
+digraph "ImageResizer.Plugins.Basic.AutoRotate"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  Node1 [label="ImageResizer.Plugins.Basic.\lAutoRotate",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="BuilderExtension",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_resizing_1_1_builder_extension.html",tooltip="Provides a useable base class that can be used to modify the behavior of ImageBuilder. When registered with an ImageBuilder instance, the ImageBuilder will call the corresponding methods on the extension prior to executing its own methods. "];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="AbstractImageProcessor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html",tooltip="Not for external use. Inherit from BuilderExtension instead. Dual-purpose base class for both ImageBu..."];
+  Node4 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="IPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html",tooltip="All plugins must implement this. Enables web.config addition and removal. "];
+  Node5 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node5 [label="IQuerystringPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html",tooltip="For plugins that access the query string (important!) "];
+}

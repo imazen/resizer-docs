@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node5" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_bin_tree.html" title="SevenZipReduced.Compression.LZ.BinTree" alt="" coords="43,198,683,245"/>
-<area shape="rect" id="node2" href="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_in_window_stream.html" title="IInWindowStream" alt="" coords="225,6,500,53"/>
+<map id="SevenZipReduced.Compression.LZ.IMatchFinder" name="SevenZipReduced.Compression.LZ.IMatchFinder">
+<area shape="rect" id="node5" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_bin_tree.html" title="SevenZipReduced.Compression.\lLZ.BinTree" alt="" coords="5,233,488,314"/>
+<area shape="rect" id="node2" href="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_in_window_stream.html" title="IInWindowStream" alt="" coords="109,6,384,53"/>
 </map>

@@ -1,3 +1,3 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="403,6,521,53"/>
+<map id="ImageResizer.Plugins.MvcRoutingShim.MvcRoutingShimPlugin" name="ImageResizer.Plugins.MvcRoutingShim.MvcRoutingShimPlugin">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal. " alt="" coords="217,6,335,53"/>
 </map>

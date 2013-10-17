@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="SevenZipReduced.Compression.\lRangeCoder.BitDecoder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct_seven_zip_reduced_1_1_compression_1_1_range_coder_1_1_bit_decoder.html"];
+}

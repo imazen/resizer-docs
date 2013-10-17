@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="147,6,319,53"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..." alt="" coords="344,6,760,53"/>
+<map id="ImageResizer.Plugins.RemoteReader.RemoteSiteFile" name="ImageResizer.Plugins.RemoteReader.RemoteSiteFile">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider " alt="" coords="5,6,176,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..." alt="" coords="201,6,617,53"/>
 </map>

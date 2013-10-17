@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/Wic/InteropServices" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_631d991aa83f8e307d4242057f5c6ccd {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Wic" fontname="Helvetica", fontsize="24", URL="dir_631d991aa83f8e307d4242057f5c6ccd.html"]
+  subgraph clusterdir_57684dc2deca03b6a4e2c57aa36b00d2 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_57684dc2deca03b6a4e2c57aa36b00d2.html"];
+    dir_57684dc2deca03b6a4e2c57aa36b00d2 [shape=plaintext label="InteropServices"];
+    dir_1695506acb7e624f12f07cdf50a1c662 [shape=box label="ComTypes" color="black" fillcolor="white" style="filled" URL="dir_1695506acb7e624f12f07cdf50a1c662.html"];
+  }
+  }
+}

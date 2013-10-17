@@ -1,0 +1,6 @@
+digraph "C:/Users/nathanael/Documents/resizer/Core.Mvc" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  dir_771c15179cd6c1075f5c8a18cd98d67d [shape=box, label="Core.Mvc", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_771c15179cd6c1075f5c8a18cd98d67d.html"];
+}

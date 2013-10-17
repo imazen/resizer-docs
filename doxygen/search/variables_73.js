@@ -3,7 +3,7 @@ var searchData=
   ['s',['s',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_batch_resize_worker.html#aac370f3af218b20bcccf0014ca493533',1,'ImageResizer::Plugins::BatchZipper::BatchResizeWorker']]],
   ['safer',['Safer',['../class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_argument.html#a135d1b12abf6c2274e2016162b6e5331',1,'ImageResizer::Plugins::PdfRenderer::Ghostscript::GhostscriptArgument']]],
   ['savingcompletedeventargs',['savingCompletedEventArgs',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_batch_resize_worker.html#a2d594ed90e08f8e454550f088d283a6e',1,'ImageResizer::Plugins::BatchZipper::BatchResizeWorker']]],
-  ['scaledbounds',['scaledBounds',['../class_image_resizer_1_1_plugins_1_1_faces_1_1_feature_detection_base-g.html#a4b24fefdc2fedc2c67f5185b88424768',1,'ImageResizer::Plugins::Faces::FeatureDetectionBase-g']]],
+  ['scaledbounds',['scaledBounds',['../class_image_resizer_1_1_plugins_1_1_faces_1_1_feature_detection_base_3_01_t_01_4.html#a4b24fefdc2fedc2c67f5185b88424768',1,'ImageResizer::Plugins::Faces::FeatureDetectionBase&lt; T &gt;']]],
   ['settings',['settings',['../class_image_resizer_1_1_resizing_1_1_image_state.html#a7229be6e840514ac987e571bfa7a9179',1,'ImageResizer::Resizing::ImageState']]],
   ['showannotations',['ShowAnnotations',['../class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_argument.html#aa70e973de6c19682f9b979f66c7b6635',1,'ImageResizer::Plugins::PdfRenderer::Ghostscript::GhostscriptArgument']]],
   ['sizeinbytes',['sizeInBytes',['../class_image_resizer_1_1_plugins_1_1_tiny_cache_1_1_cache_entry.html#a473f6e7768e1e6dfd7738e26430e0a2a',1,'ImageResizer::Plugins::TinyCache::CacheEntry']]],

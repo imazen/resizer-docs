@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html" title="Always implement this if possible. Allows caching systems to detect changes to source files and inval..." alt="" coords="317,102,739,149"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="317,6,488,53"/>
-<area shape="rect" id="node7" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..." alt="" coords="764,102,1180,149"/>
+<map id="ImageResizer.Plugins.Basic.VirtualFolder.VirtualFolderProviderVirtualFile" name="ImageResizer.Plugins.Basic.VirtualFolder.VirtualFolderProviderVirtualFile">
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html" title="Always implement this if possible. Allows caching systems to detect changes to source files and inval..." alt="" coords="243,102,665,149"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider " alt="" coords="243,6,415,53"/>
+<area shape="rect" id="node9" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..." alt="" coords="691,102,1107,149"/>
 </map>

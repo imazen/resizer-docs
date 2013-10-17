@@ -1,3 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_codec_progress_notification.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICBitmapCodecProgressNotification" alt="" coords="6,5,1338,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_block_reader.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICMetadata\lBlockReader" alt="" coords="6,5,618,121"/>
+<area shape="rect" id="node3" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_metadata_block_writer.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICMetadata\lBlockWriter" alt="" coords="667,5,1279,121"/>
 </map>

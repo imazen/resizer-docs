@@ -1,0 +1,45 @@
+digraph "ImageResizer.Plugins.IVirtualFile"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ImageResizer.Plugins.IVirtualFile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="ImageResizer.Plugins.Azure\lReader2.AzureFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_azure_reader2_1_1_azure_file.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="ImageResizer.Plugins.Azure\lReader.AzureFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_file.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="ImageResizer.Plugins.Basic.\lGradient.GradientVirtualFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient_1_1_gradient_virtual_file.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node5 [label="ImageResizer.Plugins.Basic.\lVirtualFolder.VirtualFolderProvider\lVirtualFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder_1_1_virtual_folder_provider_virtual_file.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node6 [label="ImageResizer.Plugins.FFmpeg.\lFFmpegVirtualFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_f_fmpeg_1_1_f_fmpeg_virtual_file.html"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node7 [label="ImageResizer.Plugins.IVirtual\lBitmapFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_virtual_bitmap_file.html",tooltip="For virtual files who want to provide their data in Bitmap form (like a PSD reader or gradient genera..."];
+  Node7 -> Node4 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node8 [label="ImageResizer.Plugins.Psd\lComposer.PsdVirtualFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_virtual_file.html"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node9 [label="ImageResizer.Plugins.IVirtual\lFileWithModifiedDate",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html",tooltip="Always implement this if possible. Allows caching systems to detect changes to source files and inval..."];
+  Node9 -> Node5 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node10 [label="ImageResizer.Plugins.S3Reader2.\lS3File",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_s3_reader2_1_1_s3_file.html"];
+  Node9 -> Node11 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node11 [label="ImageResizer.Plugins.S3Reader.\lS3File",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html"];
+  Node9 -> Node12 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node12 [label="ImageResizer.Plugins.Sql\lReader.DatabaseFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_database_file.html",tooltip="Represents a blob stored in the database. Provides methods for verifying existence, opening a stream, and checking the modified date. Modified date and existence values are cached after the first query. "];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node13 [label="ImageResizer.Plugins.Mongo\lReader.MongoReaderPlugin.Mongo\lVirtualFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin_1_1_mongo_virtual_file.html",tooltip="Represents a file stored in GridFS and the requested resize settings "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node14 [label="ImageResizer.Plugins.Remote\lReader.RemoteSiteFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node15 [label="ImageResizer.Plugins.Source\lDiskCache.SourceDiskCachePlugin.\lSourceVirtualFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_source_disk_cache_1_1_source_disk_cache_plugin_1_1_source_virtual_file.html"];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node16 [label="ImageResizer.Plugins.Source\lMemCache.CachedVirtualFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node17 [label="ImageResizer.Plugins.Virtual\lFileWrapper",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_virtual_file_wrapper.html",tooltip="Wraps a standard ASP.NET VirtualFile instance in an IVirtualFile-compatible wrapper. "];
+}

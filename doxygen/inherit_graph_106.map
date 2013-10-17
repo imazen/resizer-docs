@@ -1,3 +1,12 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_watermark_1_1_distance_unit.html" title="ImageResizer.Plugins.Watermark.DistanceUnit" alt="" coords="5,5,688,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_source.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICBitmap\lSource" alt="" coords="6,461,586,577"/>
+<area shape="rect" id="node3" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICBitmap" alt="" coords="637,5,1217,86"/>
+<area shape="rect" id="node5" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_clipper.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICBitmap\lClipper" alt="" coords="637,110,1217,226"/>
+<area shape="rect" id="node7" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_flip_rotator.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICBitmap\lFlipRotator" alt="" coords="637,250,1217,366"/>
+<area shape="rect" id="node9" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_frame_decode.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICBitmap\lFrameDecode" alt="" coords="637,390,1217,506"/>
+<area shape="rect" id="node13" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_scaler.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICBitmap\lScaler" alt="" coords="637,530,1217,646"/>
+<area shape="rect" id="node15" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_color_transform.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICColor\lTransform" alt="" coords="648,670,1205,786"/>
+<area shape="rect" id="node17" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_format_converter.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICFormat\lConverter" alt="" coords="635,810,1218,926"/>
+<area shape="rect" id="node19" href="$class_image_resizer_1_1_plugins_1_1_wic_1_1_wic_bitmap_padder.html" title="ImageResizer.Plugins.Wic.\lWicBitmapPadder" alt="" coords="726,950,1127,1031"/>
+<area shape="rect" id="node11" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_develop_raw.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICDevelopRaw" alt="" coords="1267,407,1925,489"/>
 </map>

@@ -1,0 +1,9 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/PsdComposer/Properties" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_8f35505109cabab3805886764bde2c2e {
+    graph [ bgcolor="#ddddee", pencolor="black", label="PsdComposer" fontname="Helvetica", fontsize="24", URL="dir_8f35505109cabab3805886764bde2c2e.html"]
+  dir_807c2a2e62559f5aa4d1cc246c4e10f4 [shape=box, label="Properties", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_807c2a2e62559f5aa4d1cc246c4e10f4.html"];
+  }
+}

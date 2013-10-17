@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/WebP" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_40f65f6f2b9ad2d16cb74ae80165a056 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_40f65f6f2b9ad2d16cb74ae80165a056.html"];
+    dir_40f65f6f2b9ad2d16cb74ae80165a056 [shape=plaintext label="WebP"];
+    dir_e1844616798aab60930dcee5aa06b8ff [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_e1844616798aab60930dcee5aa06b8ff.html"];
+  }
+  }
+}

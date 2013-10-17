@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="109,105,280,151"/>
-<area shape="rect" id="node4" href="$class_image_resizer_1_1_plugins_1_1_azure_reader2_1_1_azure_virtual_path_provider.html" title="ImageResizer.Plugins.AzureReader2.AzureVirtualPathProvider" alt="" coords="305,105,1207,151"/>
-<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i..." alt="" coords="594,6,917,53"/>
+<map id="ImageResizer.Plugins.AzureReader2.AzureFile" name="ImageResizer.Plugins.AzureReader2.AzureFile">
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider " alt="" coords="547,75,719,122"/>
+<area shape="rect" id="node6" href="$class_image_resizer_1_1_plugins_1_1_azure_reader2_1_1_azure_virtual_path_provider.html" title="ImageResizer.Plugins.Azure\lReader2.AzureVirtualPathProvider" alt="" coords="381,146,885,227"/>
+<area shape="rect" id="node10" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_image_provider.html" title="Implement this to allow your class (or VirtualPathProvider subclass) to be used without registering i..." alt="" coords="6,198,330,245"/>
 </map>

@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/WhitespaceTrimmer" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_0460de3f8955014450cdedf447d6ef89 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_0460de3f8955014450cdedf447d6ef89.html"];
+    dir_0460de3f8955014450cdedf447d6ef89 [shape=plaintext label="WhitespaceTrimmer"];
+    dir_5057dfb91a5c9b969ba04de657cb5939 [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_5057dfb91a5c9b969ba04de657cb5939.html"];
+  }
+  }
+}

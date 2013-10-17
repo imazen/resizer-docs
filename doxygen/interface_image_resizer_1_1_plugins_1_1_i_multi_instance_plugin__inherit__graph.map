@@ -1,9 +1,10 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_azure_reader2_1_1_azure_reader2_plugin.html" title="ImageResizer.Plugins.AzureReader2.AzureReader2Plugin" alt="" coords="678,5,1517,51"/>
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_reader.html" title="ImageResizer.Plugins.AzureReader.AzureReader" alt="" coords="740,75,1455,122"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html" title="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration." alt="" coords="796,146,1399,193"/>
-<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_encrypted_1_1_encrypted_plugin.html" title="ImageResizer.Plugins.Encrypted.EncryptedPlugin" alt="" coords="739,217,1455,263"/>
-<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin.html" title="ImageResizer.Plugins.MongoReader.MongoReaderPlugin" alt="" coords="682,287,1513,334"/>
-<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html" title="ImageResizer.Plugins.S3Reader.S3Reader" alt="" coords="783,358,1411,405"/>
-<area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html" title="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..." alt="" coords="733,429,1461,475"/>
+<map id="ImageResizer.Plugins.IMultiInstancePlugin" name="ImageResizer.Plugins.IMultiInstancePlugin">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_azure_reader2_1_1_azure_reader2_plugin.html" title="ImageResizer.Plugins.Azure\lReader2.AzureReader2Plugin" alt="" coords="502,5,943,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_reader.html" title="ImageResizer.Plugins.Azure\lReader.AzureReader" alt="" coords="513,110,932,191"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html" title="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration. " alt="" coords="511,215,934,297"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_encrypted_1_1_encrypted_plugin.html" title="ImageResizer.Plugins.Encrypted.\lEncryptedPlugin" alt="" coords="479,321,966,402"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin.html" title="An ImageResizer Plugin that retrieves images from a MongoDB/GridFS store " alt="" coords="506,426,939,507"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_s3_reader2_1_1_s3_reader2.html" title="ImageResizer.Plugins.S3Reader2.\lS3Reader2" alt="" coords="470,531,975,613"/>
+<area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html" title="ImageResizer.Plugins.S3Reader.\lS3Reader" alt="" coords="479,637,966,718"/>
+<area shape="rect" id="node17" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html" title="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..." alt="" coords="531,742,914,823"/>
 </map>

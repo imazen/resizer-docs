@@ -1,0 +1,40 @@
+digraph "ImageResizer.Plugins.BatchZipper.BatchResizeSettings"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ImageResizer.Plugins.Batch\lZipper.BatchResizeSettings",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" conf" ,fontname="Helvetica"];
+  Node2 [label="ImageResizer.Configuration.\lConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_config.html"];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _imageBuilder" ,fontname="Helvetica"];
+  Node3 [label="ImageResizer.ImageBuilder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_image_builder.html",tooltip="Provides methods for generating resized images, and for reading and writing them to disk..."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="AbstractImageProcessor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html",tooltip="Not for external use. Inherit from BuilderExtension instead. Dual-purpose base class for both ImageBu..."];
+  Node5 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node5 [label="IQuerystringPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html",tooltip="For plugins that access the query string (important!) "];
+  Node6 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node6 [label="IFileExtensionPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html",tooltip="For plugins that add support for new source file image extensions. "];
+  Node7 -> Node3 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _encoderProvider" ,fontname="Helvetica"];
+  Node7 [label="ImageResizer.Encoding.IEncoder\lProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html",tooltip="A provider (or selector) of IEncoder instances. "];
+  Node8 -> Node3 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _settingsModifier" ,fontname="Helvetica"];
+  Node8 [label="ImageResizer.Plugins.ISettings\lModifier",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_settings_modifier.html",tooltip="Provides a way to modify settings before they reach the managed API. Does not execute early enough to..."];
+  Node9 -> Node2 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" plugins" ,fontname="Helvetica"];
+  Node9 [label="ImageResizer.Configuration.\lPluginConfig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_plugin_config.html",tooltip="Provides thread-safe access to plugin addition, removal, and querying methods "];
+  Node10 -> Node9 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node10 [label="IssueSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html"];
+  Node11 -> Node10 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node11 [label="IIssueProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html"];
+  Node12 -> Node10 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node12 [label="IIssueReceiver",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_receiver.html"];
+  Node13 -> Node9 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node13 [label="IEncoderProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_encoding_1_1_i_encoder_provider.html",tooltip="A provider (or selector) of IEncoder instances. "];
+  Node2 -> Node9 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" c" ,fontname="Helvetica"];
+  Node14 -> Node9 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" ndeps" ,fontname="Helvetica"];
+  Node14 [label="ImageResizer.Configuration.\lPlugins.NativeDependencyManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_plugins_1_1_native_dependency_manager.html",tooltip="Provides automatic download of native dependencies (which VS doesn&#39;t see). Gets the correct bitness a..."];
+  Node15 -> Node14 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node15 [label="Issues::IssueSink",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html"];
+  Node11 -> Node15 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node12 -> Node15 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node16 -> Node9 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" _logManager" ,fontname="Helvetica"];
+  Node16 [label="ImageResizer.Configuration.\lLogging.ILogManager",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html"];
+}

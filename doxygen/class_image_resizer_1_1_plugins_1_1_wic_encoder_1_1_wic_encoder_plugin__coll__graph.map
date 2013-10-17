@@ -1,6 +1,7 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html" title="Provides basic encoding functionality for Jpeg, png, and gif output. Allows adjustable Jpeg compressi..." alt="" coords="275,102,515,149"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec..." alt="" coords="81,6,228,53"/>
-<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!)" alt="" coords="253,6,536,53"/>
-<area shape="rect" id="node8" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="561,6,679,53"/>
+<map id="ImageResizer.Plugins.WicEncoder.WicEncoderPlugin" name="ImageResizer.Plugins.WicEncoder.WicEncoderPlugin">
+<area shape="rect" id="node2" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html" title="Provides basic encoding functionality for Jpeg, png, and gif output. Allows adjustable Jpeg compressi..." alt="" coords="305,102,545,149"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_encoding_1_1_i_encoder.html" title="An image encoder. Exposes methods for suitability checking, encoding, transparency compatibility chec..." alt="" coords="5,6,152,53"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html" title="For plugins that access the query string (important!) " alt="" coords="177,6,460,53"/>
+<area shape="rect" id="node8" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal. " alt="" coords="842,6,960,53"/>
+<area shape="rect" id="node10" href="$interface_image_resizer_1_1_plugins_1_1_i_file_signature_provider.html" title="IFileSignatureProvider" alt="" coords="484,6,817,53"/>
 </map>

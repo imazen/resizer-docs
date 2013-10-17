@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="318,6,436,53"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_cache.html" title="Implement this if you are caching files provided by a virtual image provider (For example..." alt="" coords="461,6,723,53"/>
+<map id="ImageResizer.Plugins.SourceMemCache.SourceMemCachePlugin" name="ImageResizer.Plugins.SourceMemCache.SourceMemCachePlugin">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal. " alt="" coords="110,6,228,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_cache.html" title="Implement this if you are caching files provided by a virtual image provider (For example..." alt="" coords="253,6,515,53"/>
 </map>

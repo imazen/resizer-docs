@@ -1,0 +1,12 @@
+digraph "SevenZipReduced.Compression.LZ.BinTree"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  Node1 [label="SevenZipReduced.Compression.\lLZ.BinTree",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="InWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_in_window.html"];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="IMatchFinder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_match_finder.html"];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="IInWindowStream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_in_window_stream.html"];
+}

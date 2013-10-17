@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_in_window.html" title="InWindow" alt="" coords="140,102,303,149"/>
-<area shape="rect" id="node4" href="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_match_finder.html" title="IMatchFinder" alt="" coords="327,102,535,149"/>
-<area shape="rect" id="node6" href="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_in_window_stream.html" title="IInWindowStream" alt="" coords="293,6,568,53"/>
+<map id="SevenZipReduced.Compression.LZ.BinTree" name="SevenZipReduced.Compression.LZ.BinTree">
+<area shape="rect" id="node2" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_in_window.html" title="InWindow" alt="" coords="61,102,224,149"/>
+<area shape="rect" id="node4" href="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_match_finder.html" title="IMatchFinder" alt="" coords="248,102,456,149"/>
+<area shape="rect" id="node6" href="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_in_window_stream.html" title="IInWindowStream" alt="" coords="215,6,489,53"/>
 </map>

@@ -1,0 +1,14 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/Wic" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_631d991aa83f8e307d4242057f5c6ccd {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_631d991aa83f8e307d4242057f5c6ccd.html"];
+    dir_631d991aa83f8e307d4242057f5c6ccd [shape=plaintext label="Wic"];
+    dir_57684dc2deca03b6a4e2c57aa36b00d2 [shape=box label="InteropServices" color="red" fillcolor="white" style="filled" URL="dir_57684dc2deca03b6a4e2c57aa36b00d2.html"];
+    dir_894a35e9f4ba3789cd212ba62040dcb0 [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_894a35e9f4ba3789cd212ba62040dcb0.html"];
+  }
+  }
+}

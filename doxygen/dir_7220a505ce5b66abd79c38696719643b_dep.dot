@@ -1,0 +1,9 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/RedEye/Unused" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_9a50efadf190a9f16b9d0124f419b35f {
+    graph [ bgcolor="#ddddee", pencolor="black", label="RedEye" fontname="Helvetica", fontsize="24", URL="dir_9a50efadf190a9f16b9d0124f419b35f.html"]
+  dir_7220a505ce5b66abd79c38696719643b [shape=box, label="Unused", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_7220a505ce5b66abd79c38696719643b.html"];
+  }
+}

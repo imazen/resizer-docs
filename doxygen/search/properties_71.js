@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['quality',['Quality',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#aa82bfe2e02917c4c259cb812bcf4e47d',1,'ImageResizer::Plugins::Basic::DefaultEncoder.Quality()'],['../class_image_resizer_1_1_resize_settings.html#ac666f0cc3f8bc60bac7a5d82246c7e85',1,'ImageResizer::ResizeSettings.Quality()']]],
+  ['quality',['Quality',['../class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html#aa82bfe2e02917c4c259cb812bcf4e47d',1,'ImageResizer.Plugins.Basic.DefaultEncoder.Quality()'],['../class_image_resizer_1_1_resize_settings.html#ac666f0cc3f8bc60bac7a5d82246c7e85',1,'ImageResizer.ResizeSettings.Quality()']]],
   ['querydir',['QueryDir',['../class_image_resizer_1_1_util_1_1yrl.html#ad7f214b791bc8edb71aa0dc6ffca7151',1,'ImageResizer::Util::yrl']]],
   ['queryfindid',['QueryFindID',['../class_image_resizer_1_1_util_1_1yrl.html#a1c9a262b8f265e434e5dfcbbebb01857',1,'ImageResizer::Util::yrl']]],
   ['queryid',['QueryID',['../class_image_resizer_1_1_util_1_1yrl.html#a215a8b644c594bb58ec2ff859d300a4a',1,'ImageResizer::Util::yrl']]],

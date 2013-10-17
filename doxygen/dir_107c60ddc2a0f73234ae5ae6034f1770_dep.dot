@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Contrib/PdfRenderer" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_90b50c2f20916556cfbebf8e7729840d {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Contrib" fontname="Helvetica", fontsize="24", URL="dir_90b50c2f20916556cfbebf8e7729840d.html"]
+  subgraph clusterdir_107c60ddc2a0f73234ae5ae6034f1770 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_107c60ddc2a0f73234ae5ae6034f1770.html"];
+    dir_107c60ddc2a0f73234ae5ae6034f1770 [shape=plaintext label="PdfRenderer"];
+    dir_edaf2809ddd543c19cb57d3df979c4d1 [shape=box label="PdfRenderer" color="red" fillcolor="white" style="filled" URL="dir_edaf2809ddd543c19cb57d3df979c4d1.html"];
+  }
+  }
+}

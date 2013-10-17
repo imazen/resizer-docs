@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node5" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_develop_raw.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICDevelopRaw" alt="" coords="65,198,1103,245"/>
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_source.html" title="IWICBitmapSource" alt="" coords="437,6,731,53"/>
+<map id="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICBitmapFrameDecode" name="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICBitmapFrameDecode">
+<area shape="rect" id="node5" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_develop_raw.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICDevelopRaw" alt="" coords="5,267,664,349"/>
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_source.html" title="IWICBitmapSource" alt="" coords="188,6,481,53"/>
 </map>

@@ -1,3 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_mvc_1_1_image_request_action.html" title="This action result is NOT a replacement for the InterceptModule and MvcRoutingShim. It cannot hope to achieve the same performance, compatibility, or flexibility. It does not support all the plugins, nor all the Pipeline events. It does not support the CloudFront, Image404, or ImageHandlerSyntax plugins. RemoteReader, SqlReader, S3Reader, , Image404, ClientCache, It doesn&#39;t even work yet." alt="" coords="6,5,589,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_auto_white_balance.html" title="ImageResizer.Plugins.Advanced\lFilters.AutoWhiteBalance" alt="" coords="413,5,888,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_advanced_filters_1_1_feather_edge.html" title="ImageResizer.Plugins.Advanced\lFilters.FeatherEdge" alt="" coords="413,110,888,191"/>
 </map>

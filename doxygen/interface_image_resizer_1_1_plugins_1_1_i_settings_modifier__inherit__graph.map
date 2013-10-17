@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_configuration_1_1_pipeline_config.html" title="ImageResizer.Configuration.PipelineConfig" alt="" coords="634,5,1259,51"/>
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_default_settings.html" title="ImageResizer.Plugins.Basic.DefaultSettings" alt="" coords="627,75,1266,122"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_presets.html" title="ImageResizer.Plugins.Basic.Presets" alt="" coords="681,146,1212,193"/>
+<map id="ImageResizer.Plugins.ISettingsModifier" name="ImageResizer.Plugins.ISettingsModifier">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_configuration_1_1_pipeline_config.html" title="ImageResizer.Configuration.\lPipelineConfig" alt="" coords="515,5,938,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_default_settings.html" title="ImageResizer.Plugins.Basic.\lDefaultSettings" alt="" coords="515,110,938,191"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_presets.html" title="ImageResizer.Plugins.Basic.\lPresets" alt="" coords="515,215,938,297"/>
 </map>

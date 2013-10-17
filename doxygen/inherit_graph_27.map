@@ -1,3 +1,20 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_animated_gifs_1_1_gif_class.html" title="Dissects a GIF image into its component parts." alt="" coords="5,5,664,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider " alt="" coords="6,715,493,762"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_azure_reader2_1_1_azure_file.html" title="ImageResizer.Plugins.Azure\lReader2.AzureFile" alt="" coords="1179,325,1597,406"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_file.html" title="ImageResizer.Plugins.Azure\lReader.AzureFile" alt="" coords="1179,430,1597,511"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient_1_1_gradient_virtual_file.html" title="ImageResizer.Plugins.Basic.\lGradient.GradientVirtualFile" alt="" coords="1177,1237,1599,1318"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder_1_1_virtual_folder_provider_virtual_file.html" title="ImageResizer.Plugins.Basic.\lVirtualFolder.VirtualFolderProvider\lVirtualFile" alt="" coords="1135,641,1641,757"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_f_fmpeg_1_1_f_fmpeg_virtual_file.html" title="ImageResizer.Plugins.FFmpeg.\lFFmpegVirtualFile" alt="" coords="577,5,1041,86"/>
+<area shape="rect" id="node13" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_bitmap_file.html" title="For virtual files who want to provide their data in Bitmap form (like a PSD reader or gradient genera..." alt="" coords="591,1237,1027,1318"/>
+<area shape="rect" id="node16" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_virtual_file.html" title="ImageResizer.Plugins.Psd\lComposer.PsdVirtualFile" alt="" coords="1193,1342,1583,1423"/>
+<area shape="rect" id="node18" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_with_modified_date.html" title="Always implement this if possible. Allows caching systems to detect changes to source files and inval..." alt="" coords="591,737,1027,818"/>
+<area shape="rect" id="node21" href="$class_image_resizer_1_1_plugins_1_1_s3_reader2_1_1_s3_file.html" title="ImageResizer.Plugins.S3Reader2.\lS3File" alt="" coords="1135,886,1641,967"/>
+<area shape="rect" id="node23" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html" title="ImageResizer.Plugins.S3Reader.\lS3File" alt="" coords="1145,781,1631,862"/>
+<area shape="rect" id="node25" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_database_file.html" title="Represents a blob stored in the database. Provides methods for verifying existence, opening a stream, and checking the modified date. Modified date and existence values are cached after the first query. " alt="" coords="1197,535,1579,617"/>
+<area shape="rect" id="node27" href="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin_1_1_mongo_virtual_file.html" title="Represents a file stored in GridFS and the requested resize settings " alt="" coords="1126,991,1650,1107"/>
+<area shape="rect" id="node30" href="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html" title="ImageResizer.Plugins.Remote\lReader.RemoteSiteFile" alt="" coords="1165,1131,1611,1213"/>
+<area shape="rect" id="node34" href="$class_image_resizer_1_1_plugins_1_1_source_disk_cache_1_1_source_disk_cache_plugin_1_1_source_virtual_file.html" title="ImageResizer.Plugins.Source\lDiskCache.SourceDiskCachePlugin.\lSourceVirtualFile" alt="" coords="542,110,1077,226"/>
+<area shape="rect" id="node36" href="$class_image_resizer_1_1_plugins_1_1_source_mem_cache_1_1_cached_virtual_file.html" title="ImageResizer.Plugins.Source\lMemCache.CachedVirtualFile" alt="" coords="588,250,1031,331"/>
+<area shape="rect" id="node39" href="$class_image_resizer_1_1_plugins_1_1_virtual_file_wrapper.html" title="Wraps a standard ASP.NET VirtualFile instance in an IVirtualFile&#45;compatible wrapper. " alt="" coords="596,355,1023,437"/>
+<area shape="rect" id="node40" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..." alt="" coords="591,945,1027,1026"/>
 </map>

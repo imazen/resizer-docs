@@ -1,8 +1,8 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html" title="Provides basic encoding functionality for Jpeg, png, and gif output. Allows adjustable Jpeg compressi..." alt="" coords="710,78,1351,125"/>
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html" title="ImageResizer.Plugins.WicEncoder.WicEncoderPlugin" alt="" coords="1565,30,2344,77"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_encoder_plugin.html" title="ImageResizer.Plugins.WpfBuilder.WpfEncoderPlugin" alt="" coords="1571,114,2338,161"/>
-<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_free_image_encoder_1_1_free_image_encoder_plugin.html" title="ImageResizer.Plugins.FreeImageEncoder.FreeImageEncoderPlugin" alt="" coords="545,201,1517,248"/>
-<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_pretty_gifs.html" title="ImageResizer.Plugins.PrettyGifs.PrettyGifs" alt="" coords="717,272,1344,318"/>
-<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_web_p_encoder_1_1_web_p_encoder_plugin.html" title="ImageResizer.Plugins.WebPEncoder.WebPEncoderPlugin" alt="" coords="609,342,1452,389"/>
+<map id="ImageResizer.Encoding.IEncoder" name="ImageResizer.Encoding.IEncoder">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html" title="Provides basic encoding functionality for Jpeg, png, and gif output. Allows adjustable Jpeg compressi..." alt="" coords="629,70,1051,151"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html" title="ImageResizer.Plugins.Wic\lEncoder.WicEncoderPlugin" alt="" coords="1184,5,1592,86"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_encoder_plugin.html" title="ImageResizer.Plugins.Wpf\lBuilder.WpfEncoderPlugin" alt="" coords="1190,123,1586,205"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_free_image_encoder_1_1_free_image_encoder_plugin.html" title="ImageResizer.Plugins.Free\lImageEncoder.FreeImageEncoderPlugin" alt="" coords="544,227,1136,309"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_pretty_gifs_1_1_pretty_gifs.html" title="ImageResizer.Plugins.Pretty\lGifs.PrettyGifs" alt="" coords="631,333,1049,414"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_web_p_encoder_1_1_web_p_encoder_plugin.html" title="ImageResizer.Plugins.Web\lPEncoder.WebPEncoderPlugin" alt="" coords="609,438,1071,519"/>
 </map>

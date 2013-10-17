@@ -1,7 +1,8 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient_1_1_gradient_virtual_file.html" title="ImageResizer.Plugins.Basic.Gradient.GradientVirtualFile" alt="" coords="915,5,1730,51"/>
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder_1_1_virtual_folder_provider_virtual_file.html" title="ImageResizer.Plugins.Basic.VirtualFolder.VirtualFolderProviderVirtualFile" alt="" coords="799,75,1846,122"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin_1_1_mongo_virtual_file.html" title="ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile" alt="" coords="785,146,1861,193"/>
-<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html" title="ImageResizer.Plugins.RemoteReader.RemoteSiteFile" alt="" coords="936,217,1709,263"/>
-<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html" title="ImageResizer.Plugins.S3Reader.S3File" alt="" coords="1034,287,1611,334"/>
+<map id="ImageResizer.Plugins.IVirtualFileSourceCacheKey" name="ImageResizer.Plugins.IVirtualFileSourceCacheKey">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient_1_1_gradient_virtual_file.html" title="ImageResizer.Plugins.Basic.\lGradient.GradientVirtualFile" alt="" coords="542,5,965,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder_1_1_virtual_folder_provider_virtual_file.html" title="ImageResizer.Plugins.Basic.\lVirtualFolder.VirtualFolderProvider\lVirtualFile" alt="" coords="501,110,1006,226"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin_1_1_mongo_virtual_file.html" title="Represents a file stored in GridFS and the requested resize settings " alt="" coords="491,250,1015,366"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_site_file.html" title="ImageResizer.Plugins.Remote\lReader.RemoteSiteFile" alt="" coords="530,390,977,471"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_s3_reader2_1_1_s3_file.html" title="ImageResizer.Plugins.S3Reader2.\lS3File" alt="" coords="501,495,1006,577"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_file.html" title="ImageResizer.Plugins.S3Reader.\lS3File" alt="" coords="510,601,997,682"/>
 </map>

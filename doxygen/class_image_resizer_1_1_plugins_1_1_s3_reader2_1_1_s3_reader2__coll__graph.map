@@ -1,0 +1,5 @@
+<map id="ImageResizer.Plugins.S3Reader2.S3Reader2" name="ImageResizer.Plugins.S3Reader2.S3Reader2">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal. " alt="" coords="5,6,123,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html" title="Tag your plugin with this interface if it supports having multiple instances registered at once ..." alt="" coords="148,6,455,53"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_plugins_1_1_i_redact_diagnostics.html" title="Permits plugins to redact data from the diagnostics page, like passwords " alt="" coords="479,6,772,53"/>
+</map>

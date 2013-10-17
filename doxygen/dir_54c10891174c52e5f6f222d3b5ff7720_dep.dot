@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/S3Reader2" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_54c10891174c52e5f6f222d3b5ff7720 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_54c10891174c52e5f6f222d3b5ff7720.html"];
+    dir_54c10891174c52e5f6f222d3b5ff7720 [shape=plaintext label="S3Reader2"];
+    dir_85a89736b7547b5eb3def17906794070 [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_85a89736b7547b5eb3def17906794070.html"];
+  }
+  }
+}

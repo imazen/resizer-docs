@@ -1,0 +1,8 @@
+digraph "ImageResizer.Plugins.RedEye.AdaptiveCircleFill"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  Node1 [label="ImageResizer.Plugins.Red\lEye.AdaptiveCircleFill",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" StartAt" ,fontname="Helvetica"];
+  Node2 [label="System",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+}

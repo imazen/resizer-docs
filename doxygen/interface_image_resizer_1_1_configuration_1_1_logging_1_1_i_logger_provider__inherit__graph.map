@@ -1,3 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html" title="Provides methods for creating, maintaining, and securing the disk cache." alt="" coords="61,102,712,149"/>
+<map id="ImageResizer.Configuration.Logging.ILoggerProvider" name="ImageResizer.Configuration.Logging.ILoggerProvider">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html" title="Provides methods for creating, maintaining, and securing the disk cache. " alt="" coords="541,5,939,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_source_disk_cache_1_1_source_disk_cache_plugin.html" title="ImageResizer.Plugins.Source\lDiskCache.SourceDiskCachePlugin" alt="" coords="477,110,1003,191"/>
 </map>

@@ -1,0 +1,5 @@
+<map id="ImageResizer.Plugins.SourceDiskCache.SourceDiskCachePlugin" name="ImageResizer.Plugins.SourceDiskCache.SourceDiskCachePlugin">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_cache.html" title="Implement this if you are caching files provided by a virtual image provider (For example..." alt="" coords="5,6,267,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal. " alt="" coords="291,6,409,53"/>
+<area shape="rect" id="node6" href="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_logger_provider.html" title="ILoggerProvider" alt="" coords="434,6,677,53"/>
+</map>

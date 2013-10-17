@@ -1,5 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node5" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_decoder_info.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICBitmapDecoderInfo" alt="" coords="1517,5,2648,51"/>
-<area shape="rect" id="node7" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_encoder_info.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICBitmapEncoderInfo" alt="" coords="1517,75,2648,122"/>
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_component_info.html" title="IWICComponentInfo" alt="" coords="5,41,317,87"/>
+<map id="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICBitmapCodecInfo" name="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IWICBitmapCodecInfo">
+<area shape="rect" id="node5" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_decoder_info.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICBitmap\lDecoderInfo" alt="" coords="995,5,1575,121"/>
+<area shape="rect" id="node7" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_bitmap_encoder_info.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICBitmap\lEncoderInfo" alt="" coords="995,145,1575,261"/>
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_component_info.html" title="IWICComponentInfo" alt="" coords="5,110,317,157"/>
 </map>

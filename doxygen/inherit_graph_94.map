@@ -1,3 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_path_event_args.html" title="Class to allow modifying the bucket and key request path." alt="" coords="5,5,741,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_watermark_1_1_layer.html" title="ImageResizer.Plugins.Watermark.\lLayer" alt="" coords="6,58,509,139"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_watermark_1_1_image_layer.html" title="ImageResizer.Plugins.Watermark.\lImageLayer" alt="" coords="558,5,1061,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_watermark_1_1_text_layer.html" title="ImageResizer.Plugins.Watermark.\lTextLayer" alt="" coords="558,110,1061,191"/>
 </map>

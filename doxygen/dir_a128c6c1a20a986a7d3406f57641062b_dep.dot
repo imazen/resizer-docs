@@ -1,0 +1,9 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/Logging/Properties" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_327595a47f14c9dfa3d1543cb680d90e {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Logging" fontname="Helvetica", fontsize="24", URL="dir_327595a47f14c9dfa3d1543cb680d90e.html"]
+  dir_a128c6c1a20a986a7d3406f57641062b [shape=box, label="Properties", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_a128c6c1a20a986a7d3406f57641062b.html"];
+  }
+}

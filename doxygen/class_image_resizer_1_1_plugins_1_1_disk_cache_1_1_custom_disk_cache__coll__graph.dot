@@ -1,0 +1,11 @@
+digraph "ImageResizer.Plugins.DiskCache.CustomDiskCache"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ImageResizer.Plugins.Disk\lCache.CustomDiskCache",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" lp" ,fontname="Helvetica"];
+  Node2 [label="ImageResizer.Configuration.\lLogging.ILoggerProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_logger_provider.html"];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="24",style="dashed",label=" locks\nqueueLocks" ,fontname="Helvetica"];
+  Node3 [label="ImageResizer.Plugins.Disk\lCache.LockProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_lock_provider.html",tooltip="Provides locking based on a string key. Locks are local to the LockProvider instance. The class handles disposing of unused locks. Generally used for coordinating writes to files (of which there can be millions). Only keeps key/lock pairs in memory which are in use. Thread-safe. "];
+}

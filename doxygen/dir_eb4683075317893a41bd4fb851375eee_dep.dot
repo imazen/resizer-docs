@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/TinyCache" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_eb4683075317893a41bd4fb851375eee {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_eb4683075317893a41bd4fb851375eee.html"];
+    dir_eb4683075317893a41bd4fb851375eee [shape=plaintext label="TinyCache"];
+    dir_5cad130502537c34bd770d0452fe0330 [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_5cad130502537c34bd770d0452fe0330.html"];
+  }
+  }
+}

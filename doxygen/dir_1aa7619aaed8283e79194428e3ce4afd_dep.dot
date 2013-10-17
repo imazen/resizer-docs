@@ -1,0 +1,15 @@
+digraph "C:/Users/nathanael/Documents/resizer/Core/Configuration" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_c6310732a22f63c0c2fc5595561e68f1 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Core" fontname="Helvetica", fontsize="24", URL="dir_c6310732a22f63c0c2fc5595561e68f1.html"]
+  subgraph clusterdir_1aa7619aaed8283e79194428e3ce4afd {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_1aa7619aaed8283e79194428e3ce4afd.html"];
+    dir_1aa7619aaed8283e79194428e3ce4afd [shape=plaintext label="Configuration"];
+    dir_3bb313b193794f14d0e92034a4d6bb13 [shape=box label="Issues" color="black" fillcolor="white" style="filled" URL="dir_3bb313b193794f14d0e92034a4d6bb13.html"];
+    dir_62a4b3e84f30abca4dfcf9d691f95221 [shape=box label="Logging" color="black" fillcolor="white" style="filled" URL="dir_62a4b3e84f30abca4dfcf9d691f95221.html"];
+    dir_9979ff77cce1c9441e3b8873617fb00f [shape=box label="Xml" color="black" fillcolor="white" style="filled" URL="dir_9979ff77cce1c9441e3b8873617fb00f.html"];
+  }
+  }
+}

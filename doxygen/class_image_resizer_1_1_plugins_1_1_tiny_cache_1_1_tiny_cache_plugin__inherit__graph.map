@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_caching_1_1_i_cache.html" title="Provides caching behavior." alt="" coords="239,6,361,53"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="386,6,504,53"/>
+<map id="ImageResizer.Plugins.TinyCache.TinyCachePlugin" name="ImageResizer.Plugins.TinyCache.TinyCachePlugin">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_caching_1_1_i_cache.html" title="Provides caching behavior " alt="" coords="69,6,192,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal. " alt="" coords="217,6,335,53"/>
 </map>

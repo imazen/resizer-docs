@@ -1,10 +1,10 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html" title="ImageResizer.Configuration.Issues.IssueSink" alt="" coords="784,182,1445,229"/>
-<area shape="rect" id="node17" href="$class_image_resizer_1_1_licensing_1_1_license_store.html" title="Implementation of ILicenseStore that uses a file in App_Data." alt="" coords="839,253,1390,299"/>
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_configuration_1_1_plugin_config.html" title="Provides thread&#45;safe access to plugin addition, removal, and querying methods." alt="" coords="1653,5,2256,51"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_configuration_1_1_plugins_1_1_native_dependency_manager.html" title="Provides automatic download of native dependencies (which VS doesn&#39;t see). Gets the correct bitness a..." alt="" coords="1493,75,2416,122"/>
-<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_size_limits.html" title="Enforces two kinds of maximum size constraints: a Total size limit, and an Image size limit..." alt="" coords="1671,146,2238,193"/>
-<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html" title="ImageResizer.Plugins.DiskCache.CleanupStrategy" alt="" coords="1589,217,2321,263"/>
-<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html" title="ImageResizer.Plugins.DiskCache.CleanupWorker" alt="" coords="1595,287,2315,334"/>
-<area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_encrypted_1_1_encrypted_plugin.html" title="ImageResizer.Plugins.Encrypted.EncryptedPlugin" alt="" coords="1597,358,2313,405"/>
+<map id="ImageResizer.Configuration.Issues.IIssueReceiver" name="ImageResizer.Configuration.Issues.IIssueReceiver">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue_sink.html" title="ImageResizer.Configuration.\lIssues.IssueSink" alt="" coords="505,269,927,350"/>
+<area shape="rect" id="node17" title="Implementation of ILicenseStore that uses a file in App_Data " alt="" coords="478,374,954,455"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_configuration_1_1_plugin_config.html" title="Provides thread&#45;safe access to plugin addition, removal, and querying methods " alt="" coords="1053,5,1475,86"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_configuration_1_1_plugins_1_1_native_dependency_manager.html" title="Provides automatic download of native dependencies (which VS doesn&#39;t see). Gets the correct bitness a..." alt="" coords="1003,110,1525,191"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_size_limits.html" title="Enforces two kinds of maximum size constraints: a Total size limit, and an Image size limit..." alt="" coords="1053,215,1475,297"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_strategy.html" title="ImageResizer.Plugins.Disk\lCache.CleanupStrategy" alt="" coords="1065,321,1463,402"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_cleanup_worker.html" title="ImageResizer.Plugins.Disk\lCache.CleanupWorker" alt="" coords="1065,426,1463,507"/>
+<area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_encrypted_1_1_encrypted_plugin.html" title="ImageResizer.Plugins.Encrypted.\lEncryptedPlugin" alt="" coords="1021,531,1507,613"/>
 </map>

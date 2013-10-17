@@ -1,0 +1,15 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/SeamCarving/SevenZipReduced/Compress" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_7078388ffe2a13cf5c7a2d13892526a6 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="SevenZipReduced" fontname="Helvetica", fontsize="24", URL="dir_7078388ffe2a13cf5c7a2d13892526a6.html"]
+  subgraph clusterdir_53fd8875e9b0551f05374f8fd73272c4 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_53fd8875e9b0551f05374f8fd73272c4.html"];
+    dir_53fd8875e9b0551f05374f8fd73272c4 [shape=plaintext label="Compress"];
+    dir_40b13a4ee4cc143dd2aadb086703750d [shape=box label="LZ" color="black" fillcolor="white" style="filled" URL="dir_40b13a4ee4cc143dd2aadb086703750d.html"];
+    dir_c603e7fdaa2df9f2653b18b8fa7ead58 [shape=box label="LZMA" color="black" fillcolor="white" style="filled" URL="dir_c603e7fdaa2df9f2653b18b8fa7ead58.html"];
+    dir_20766f9e5ee07887d36ca0c2ec064270 [shape=box label="RangeCoder" color="black" fillcolor="white" style="filled" URL="dir_20766f9e5ee07887d36ca0c2ec064270.html"];
+  }
+  }
+}

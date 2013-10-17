@@ -1,0 +1,7 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ImageResizer.ExtensionMethods.\lEnumExtensions",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_extension_methods_1_1_enum_extensions.html",tooltip="Extends enumerations by allowing them to define alternate strings with the [EnumString(&quot;Alternate Nam..."];
+}

@@ -1,3 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_property_bag2.html" title="ImageResizer.Plugins.Wic.InteropServices.ComTypes.IPropertyBag2" alt="" coords="6,5,994,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_imaging_factory.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICImaging\lFactory" alt="" coords="5,5,600,121"/>
+<area shape="rect" id="node3" href="$interface_image_resizer_1_1_plugins_1_1_wic_1_1_interop_services_1_1_com_types_1_1_i_w_i_c_component_factory.html" title="ImageResizer.Plugins.Wic.\lInteropServices.ComTypes.IWICComponent\lFactory" alt="" coords="648,5,1293,121"/>
 </map>

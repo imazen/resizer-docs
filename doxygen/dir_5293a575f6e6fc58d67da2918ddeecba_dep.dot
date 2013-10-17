@@ -1,0 +1,14 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/SeamCarving" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_5293a575f6e6fc58d67da2918ddeecba {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_5293a575f6e6fc58d67da2918ddeecba.html"];
+    dir_5293a575f6e6fc58d67da2918ddeecba [shape=plaintext label="SeamCarving"];
+    dir_24c0a35271a8bb1ba8b8a1b2b0a54542 [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_24c0a35271a8bb1ba8b8a1b2b0a54542.html"];
+    dir_7078388ffe2a13cf5c7a2d13892526a6 [shape=box label="SevenZipReduced" color="red" fillcolor="white" style="filled" URL="dir_7078388ffe2a13cf5c7a2d13892526a6.html"];
+  }
+  }
+}

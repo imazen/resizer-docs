@@ -1,0 +1,14 @@
+digraph "ImageResizer.Plugins.AzureReader.AzureReader"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  Node1 [label="ImageResizer.Plugins.Azure\lReader.AzureReader",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="IPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html",tooltip="All plugins must implement this. Enables web.config addition and removal. "];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="IIssueProvider",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue_provider.html"];
+  Node4 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="IMultiInstancePlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_multi_instance_plugin.html",tooltip="Tag your plugin with this interface if it supports having multiple instances registered at once ..."];
+  Node5 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node5 [label="IRedactDiagnostics",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_redact_diagnostics.html",tooltip="Permits plugins to redact data from the diagnostics page, like passwords "];
+}

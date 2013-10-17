@@ -1,0 +1,8 @@
+digraph "SevenZipReduced.IWriteCoderProperties"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  Node1 [label="SevenZipReduced.IWriteCoder\lProperties",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="SevenZipReduced.Compression.\lLZMA.Encoder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_seven_zip_reduced_1_1_compression_1_1_l_z_m_a_1_1_encoder.html"];
+}

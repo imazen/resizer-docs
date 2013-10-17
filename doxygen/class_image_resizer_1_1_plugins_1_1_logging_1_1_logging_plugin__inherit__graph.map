@@ -1,4 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html" title="ILogManager" alt="" coords="137,6,343,53"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="367,6,485,53"/>
+<map id="ImageResizer.Plugins.Logging.LoggingPlugin" name="ImageResizer.Plugins.Logging.LoggingPlugin">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_configuration_1_1_logging_1_1_i_log_manager.html" title="ILogManager" alt="" coords="37,6,243,53"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal. " alt="" coords="267,6,385,53"/>
 </map>

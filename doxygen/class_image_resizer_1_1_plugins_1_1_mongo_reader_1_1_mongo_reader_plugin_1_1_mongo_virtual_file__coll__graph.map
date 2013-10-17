@@ -1,6 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider." alt="" coords="138,105,309,151"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..." alt="" coords="335,105,751,151"/>
-<area shape="rect" id="node6" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="775,105,1208,151"/>
-<area shape="rect" id="node8" href="$class_image_resizer_1_1_collections_1_1_querystring_base-g.html" title="QuerystringBase\&lt;ResizeSettings\&gt;" alt="" coords="740,6,1244,53"/>
+<map id="ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile" name="ImageResizer.Plugins.MongoReader.MongoReaderPlugin.MongoVirtualFile">
+<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file.html" title="A virtual file to support IVirtualImageProvider " alt="" coords="5,105,176,151"/>
+<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_virtual_file_source_cache_key.html" title="This interface has nothing to do with output caching. This allows VirtualFile instances to override t..." alt="" coords="201,105,617,151"/>
+<area shape="rect" id="node6" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="642,105,1075,151"/>
 </map>

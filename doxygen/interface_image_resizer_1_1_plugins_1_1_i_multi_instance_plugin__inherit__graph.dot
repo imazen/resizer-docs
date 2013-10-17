@@ -1,0 +1,23 @@
+digraph "ImageResizer.Plugins.IMultiInstancePlugin"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ImageResizer.Plugins.IMulti\lInstancePlugin",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="ImageResizer.Plugins.Azure\lReader2.AzureReader2Plugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_azure_reader2_1_1_azure_reader2_plugin.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="ImageResizer.Plugins.Azure\lReader.AzureReader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_reader.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="ImageResizer.Plugins.Basic.\lVirtualFolder",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html",tooltip="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration. "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node5 [label="ImageResizer.Plugins.Encrypted.\lEncryptedPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_encrypted_1_1_encrypted_plugin.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node6 [label="ImageResizer.Plugins.Mongo\lReader.MongoReaderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin.html",tooltip="An ImageResizer Plugin that retrieves images from a MongoDB/GridFS store "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node7 [label="ImageResizer.Plugins.S3Reader2.\lS3Reader2",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_s3_reader2_1_1_s3_reader2.html"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node8 [label="ImageResizer.Plugins.S3Reader.\lS3Reader",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_reader.html"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node9 [label="ImageResizer.Plugins.Sql\lReader.SqlReaderPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html",tooltip="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..."];
+}

@@ -1,3 +1,6 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_resizing_1_1_bitmap_tag.html" title="ImageResizer.Resizing.BitmapTag" alt="" coords="5,5,509,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_in_window_stream.html" title="SevenZipReduced.Compression.\lLZ.IInWindowStream" alt="" coords="5,5,488,86"/>
+<area shape="rect" id="node3" href="$interface_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_i_match_finder.html" title="SevenZipReduced.Compression.\lLZ.IMatchFinder" alt="" coords="536,5,1019,86"/>
+<area shape="rect" id="node5" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_bin_tree.html" title="SevenZipReduced.Compression.\lLZ.BinTree" alt="" coords="1067,58,1549,139"/>
+<area shape="rect" id="node6" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_1_1_in_window.html" title="SevenZipReduced.Compression.\lLZ.InWindow" alt="" coords="536,110,1019,191"/>
 </map>

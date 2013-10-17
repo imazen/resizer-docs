@@ -1,0 +1,9 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/SeamCarving/SevenZipReduced/Compress/RangeCoder" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_53fd8875e9b0551f05374f8fd73272c4 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Compress" fontname="Helvetica", fontsize="24", URL="dir_53fd8875e9b0551f05374f8fd73272c4.html"]
+  dir_20766f9e5ee07887d36ca0c2ec064270 [shape=box, label="RangeCoder", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_20766f9e5ee07887d36ca0c2ec064270.html"];
+  }
+}

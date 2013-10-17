@@ -1,13 +1,15 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html" title="ImageResizer.Configuration.IPipelineConfig" alt="" coords="827,5,1461,51"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_azure_reader2_1_1_azure_virtual_path_provider.html" title="ImageResizer.Plugins.AzureReader2.AzureVirtualPathProvider" alt="" coords="693,75,1595,122"/>
-<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_virtual_path_provider.html" title="ImageResizer.Plugins.AzureReader.AzureVirtualPathProvider" alt="" coords="703,146,1585,193"/>
-<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient.html" title="Allows gradients to be dynamically generated like so:" alt="" coords="872,217,1416,263"/>
-<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html" title="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration." alt="" coords="843,287,1445,334"/>
-<area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin.html" title="ImageResizer.Plugins.MongoReader.MongoReaderPlugin" alt="" coords="729,358,1559,405"/>
-<area shape="rect" id="node17" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html" title="ImageResizer.Plugins.PsdComposer.PsdComposerPlugin" alt="" coords="728,429,1560,475"/>
-<area shape="rect" id="node19" href="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html" title="ImageResizer.Plugins.RemoteReader.RemoteReaderPlugin" alt="" coords="715,499,1573,546"/>
-<area shape="rect" id="node21" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html" title="Allows clients to request objects located on another amazon S3 server through this server..." alt="" coords="745,570,1543,617"/>
-<area shape="rect" id="node23" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html" title="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..." alt="" coords="780,641,1508,687"/>
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_configuration_1_1_pipeline_config.html" title="ImageResizer.Configuration.PipelineConfig" alt="" coords="1643,5,2269,51"/>
+<map id="ImageResizer.Plugins.IVirtualImageProvider" name="ImageResizer.Plugins.IVirtualImageProvider">
+<area shape="rect" id="node3" href="$interface_image_resizer_1_1_configuration_1_1_i_pipeline_config.html" title="ImageResizer.Configuration.\lIPipelineConfig" alt="" coords="533,5,955,86"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_azure_reader2_1_1_azure_virtual_path_provider.html" title="ImageResizer.Plugins.Azure\lReader2.AzureVirtualPathProvider" alt="" coords="492,110,996,191"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_azure_reader_1_1_azure_virtual_path_provider.html" title="ImageResizer.Plugins.Azure\lReader.AzureVirtualPathProvider" alt="" coords="501,215,987,297"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_gradient.html" title="Allows gradients to be dynamically generated like so: " alt="" coords="533,321,955,402"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_virtual_folder.html" title="Functions exactly like an IIS virtual folder, but doesn&#39;t require IIS configuration. " alt="" coords="533,426,955,507"/>
+<area shape="rect" id="node15" href="$class_image_resizer_1_1_plugins_1_1_f_fmpeg_1_1_f_fmpeg_plugin.html" title="ImageResizer.Plugins.FFmpeg.\lFFmpegPlugin" alt="" coords="512,531,976,613"/>
+<area shape="rect" id="node17" href="$class_image_resizer_1_1_plugins_1_1_mongo_reader_1_1_mongo_reader_plugin.html" title="An ImageResizer Plugin that retrieves images from a MongoDB/GridFS store " alt="" coords="527,637,961,718"/>
+<area shape="rect" id="node19" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_composer_plugin.html" title="ImageResizer.Plugins.Psd\lComposer.PsdComposerPlugin" alt="" coords="513,742,975,823"/>
+<area shape="rect" id="node21" href="$class_image_resizer_1_1_plugins_1_1_remote_reader_1_1_remote_reader_plugin.html" title="ImageResizer.Plugins.Remote\lReader.RemoteReaderPlugin" alt="" coords="521,847,967,929"/>
+<area shape="rect" id="node23" href="$class_image_resizer_1_1_plugins_1_1_s3_reader2_1_1_s3_virtual_path_provider.html" title="Allows clients to request objects located on another amazon S3 server through this server..." alt="" coords="491,953,997,1034"/>
+<area shape="rect" id="node25" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_virtual_path_provider.html" title="Allows clients to request objects located on another amazon S3 server through this server..." alt="" coords="501,1058,987,1139"/>
+<area shape="rect" id="node27" href="$class_image_resizer_1_1_plugins_1_1_sql_reader_1_1_sql_reader_plugin.html" title="Specialized VirtualPathProvider that allows accessing database images as if they are on disk..." alt="" coords="553,1163,935,1245"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_configuration_1_1_pipeline_config.html" title="ImageResizer.Configuration.\lPipelineConfig" alt="" coords="1046,5,1469,86"/>
 </map>

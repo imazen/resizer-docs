@@ -1,0 +1,13 @@
+digraph "Graphical Class Hierarchy"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  rankdir="LR";
+  Node1 [label="ApplicationException",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="ImageResizer.Plugins.Batch\lZipper.JobCancelledException",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_job_cancelled_exception.html",tooltip="Not always the execption you&#39;ll see in the JobEvent handler when you cancel a job. "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="SevenZipReduced.DataError\lException",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_seven_zip_reduced_1_1_data_error_exception.html",tooltip="The exception that is thrown when an error in input stream occurs during decoding. "];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="SevenZipReduced.InvalidParam\lException",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_seven_zip_reduced_1_1_invalid_param_exception.html",tooltip="The exception that is thrown when the value of an argument is outside the allowable range..."];
+}

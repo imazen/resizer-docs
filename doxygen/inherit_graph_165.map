@@ -1,3 +1,8 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_util_1_1_stream_utils.html" title="ImageResizer.Util.StreamUtils" alt="" coords="5,5,448,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_seven_zip_reduced_1_1_i_coder.html" title="SevenZipReduced.ICoder" alt="" coords="46,110,429,157"/>
+<area shape="rect" id="node3" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_m_a_1_1_decoder.html" title="SevenZipReduced.Compression.\lLZMA.Decoder" alt="" coords="517,41,1000,122"/>
+<area shape="rect" id="node5" href="$class_seven_zip_reduced_1_1_compression_1_1_l_z_m_a_1_1_encoder.html" title="SevenZipReduced.Compression.\lLZMA.Encoder" alt="" coords="517,181,1000,262"/>
+<area shape="rect" id="node6" href="$interface_seven_zip_reduced_1_1_i_set_coder_properties.html" title="SevenZipReduced.ISetCoder\lProperties" alt="" coords="23,181,452,262"/>
+<area shape="rect" id="node8" href="$interface_seven_zip_reduced_1_1_i_set_decoder_properties.html" title="SevenZipReduced.ISetDecoder\lProperties" alt="" coords="6,5,469,86"/>
+<area shape="rect" id="node10" href="$interface_seven_zip_reduced_1_1_i_write_coder_properties.html" title="SevenZipReduced.IWriteCoder\lProperties" alt="" coords="8,286,467,367"/>
 </map>

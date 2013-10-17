@@ -1,5 +1,4 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$class_image_resizer_1_1_resizing_1_1_layout_builder.html" title="ImageResizer.Resizing.LayoutBuilder" alt="" coords="5,105,549,151"/>
-<area shape="rect" id="node4" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="574,105,1007,151"/>
-<area shape="rect" id="node6" href="$class_image_resizer_1_1_collections_1_1_querystring_base-g.html" title="QuerystringBase\&lt;ResizeSettings\&gt;" alt="" coords="539,6,1043,53"/>
+<map id="ImageResizer.Resizing.ImageState" name="ImageResizer.Resizing.ImageState">
+<area shape="rect" id="node4" href="$class_image_resizer_1_1_resizing_1_1_layout_builder.html" title="ImageResizer.Resizing.Layout\lBuilder" alt="" coords="214,105,660,186"/>
+<area shape="rect" id="node6" href="$class_image_resizer_1_1_resize_settings.html" title="Represents the settings which will be used to process the image. Extends NameValueCollection to provi..." alt="" coords="685,122,1117,169"/>
 </map>

@@ -160,12 +160,15 @@ Use ImageBuilder.Current to get the current instance (as configured in the appli
 				<li><a href="../ImageResizer/ImageBuilder.htm#Build">Build</a></li>
 				<li><a href="../ImageResizer/ImageBuilder.htm#Build">Build</a></li>
 				<li><a href="../ImageResizer/ImageBuilder.htm#Build">Build</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#Build">Build</a></li>
 				<li><a href="../ImageResizer/ImageBuilder.htm#Copy">Copy</a></li>
 				<li><a href="../ImageResizer/ImageBuilder.htm#Create">Create</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#GetFinalSize">GetFinalSize</a></li>
 				<li><a href="../ImageResizer/ImageBuilder.htm#GetFinalSize">GetFinalSize</a></li>
 				<li><a href="../ImageResizer/ImageBuilder.htm#GetStreamFromSource">GetStreamFromSource</a></li>
 				<li><a href="../ImageResizer/ImageBuilder.htm#LoadImage">LoadImage</a></li>
 				<li><a href="../ImageResizer/ImageBuilder.htm#LoadImage">LoadImage</a></li>
+				<li><a href="../ImageResizer/ImageBuilder.htm#LoadImageInfo">LoadImageInfo</a></li>
 				<li><a href="../ImageResizer/ImageBuilder.htm#Process">Process</a></li>
 				<li><a href="../ImageResizer/ImageBuilder.htm#TranslatePoints">TranslatePoints</a></li>
 			</ul>
@@ -182,6 +185,38 @@ Use ImageBuilder.Current to get the current instance (as configured in the appli
 	
 	<h3 class="section">Public instance methods</h3>
 
+	<div id="Build" class="method">
+		<h4>
+			<a href="../ImageResizer/ImageJob.htm">ImageJob</a> <strong>Build</strong>(<span title="System.object">object</span> source, <span title="System.object">object</span> dest, <a href="../ImageResizer/Instructions.htm">Instructions</a> instructions)
+		</h4>
+		<div class="content">Resizes and processes the specified source image and stores the encoded result in the specified destination.
+If passed a source Stream, Bitmap, or Image instance, it will be disposed after use. Use disposeSource=False to disable that behavior. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dd>May be an instance of string (a physical path or app-relative virtual path), VirtualFile, IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream. App-relative virtual paths will use the VirtualPathProvider system 
+						</dd>
+						<dt>
+							<code><span title="System.object">object</span></code> dest
+						</dt>
+						<dd>May be a physical path (string), or a Stream instance. Does not have to be seekable. 
+						</dd>
+						<dt>
+							<code><a href="../ImageResizer/Instructions.htm">Instructions</a></code> instructions
+						</dt>
+						<dd>Resizing and processing command to apply to the image. 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
 	<div id="Build" class="method">
 		<h4>
 			<span title="System.void">void</span> <strong>Build</strong>(<span title="System.object">object</span> source, <span title="System.object">object</span> dest, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.bool">bool</span> disposeSource)
@@ -212,6 +247,41 @@ If passed a source Stream, Bitmap, or Image instance, it will not be disposed un
 							<code><span title="System.bool">bool</span></code> disposeSource
 						</dt>
 						<dd>True to dispose 'source' after use. False to leave intact. 
+						</dd>
+				</dl>
+			</div>
+
+
+		</div>
+	</div>
+	<div id="Build" class="method">
+		<h4>
+			<span title="System.Drawing.Bitmap">Bitmap</span> <strong>Build</strong>(<span title="System.object">object</span> source, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.bool">bool</span> disposeSource)
+		</h4>
+		<div class="content">Resizes and processes the specified source image and returns a bitmap of the result.
+Note!
+This method assumes that transparency will be supported in the final output format, and therefore does not apply a matte color. Use &bgcolor to specify a background color
+if you use this method with a non-transparent format such as Jpeg.
+If passed a source Stream, Bitmap, or Image instance, it will not be disposed unless disposeSource=true. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dd>May be an instance of string (a physical path), VirtualFile, IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream. 
+						</dd>
+						<dt>
+							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
+						</dt>
+						<dd>Resizing and processing command to apply to the. 
+						</dd>
+						<dt>
+							<code><span title="System.bool">bool</span></code> disposeSource
+						</dt>
+						<dd>If false, 'source' will not be disposed. 
 						</dd>
 				</dl>
 			</div>
@@ -283,6 +353,17 @@ If passed a source Stream, Bitmap, or Image instance, it will be disposed after 
 	</div>
 	<div id="Build" class="method">
 		<h4>
+			<a href="../ImageResizer/ImageJob.htm">ImageJob</a> <strong>Build</strong>(<a href="../ImageResizer/ImageJob.htm">ImageJob</a> job)
+		</h4>
+		<div class="content">The most flexible method for processing an image 
+
+
+
+
+		</div>
+	</div>
+	<div id="Build" class="method">
+		<h4>
 			<span title="System.string">string</span> <strong>Build</strong>(<span title="System.object">object</span> source, <span title="System.object">object</span> dest, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.bool">bool</span> disposeSource, <span title="System.bool">bool</span> addFileExtension)
 		</h4>
 		<div class="content">Resizes and processes the specified source image and stores the encoded result in the specified destination.
@@ -324,52 +405,6 @@ If passed a path destination, the physical path of the written file will be retu
 
 		</div>
 	</div>
-	<div id="Build" class="method">
-		<h4>
-			<span title="System.Drawing.Bitmap">Bitmap</span> <strong>Build</strong>(<span title="System.object">object</span> source, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.bool">bool</span> disposeSource)
-		</h4>
-		<div class="content">Resizes and processes the specified source image and returns a bitmap of the result.
-Note!
-This method assumes that transparency will be supported in the final output format, and therefore does not apply a matte color. Use &bgcolor to specify a background color
-if you use this method with a non-transparent format such as Jpeg.
-If passed a source Stream, Bitmap, or Image instance, it will not be disposed unless disposeSource=true. 
-
-
-			<div class="parameters">
-				<h5>Parameters</h5>
-				<dl>
-						<dt>
-							<code><span title="System.object">object</span></code> source
-						</dt>
-						<dd>May be an instance of string (a physical path), VirtualFile, IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream. 
-						</dd>
-						<dt>
-							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
-						</dt>
-						<dd>Resizing and processing command to apply to the. 
-						</dd>
-						<dt>
-							<code><span title="System.bool">bool</span></code> disposeSource
-						</dt>
-						<dd>If false, 'source' will not be disposed. 
-						</dd>
-				</dl>
-			</div>
-
-
-		</div>
-	</div>
-	<div id="Build" class="method">
-		<h4>
-			<a href="../ImageResizer/ImageJob.htm">ImageJob</a> <strong>Build</strong>(<a href="../ImageResizer/ImageJob.htm">ImageJob</a> job)
-		</h4>
-		<div class="content">
-
-
-
-
-		</div>
-	</div>
 	<div id="Copy" class="method">
 		<h4>
 			<a href="../ImageResizer/ImageBuilder.htm">ImageBuilder</a> <strong>Copy</strong>()
@@ -403,6 +438,17 @@ If passed a source Stream, Bitmap, or Image instance, it will not be disposed un
 
 		</div>
 	</div>
+	<div id="GetFinalSize" class="method">
+		<h4>
+			<span title="System.Drawing.Size">Size</span> <strong>GetFinalSize</strong>(<span title="System.Drawing.Size">Size</span> originalSize, <a href="../ImageResizer/Instructions.htm">Instructions</a> q)
+		</h4>
+		<div class="content">Gets the final size of an image 
+
+
+
+
+		</div>
+	</div>
 	<div id="GetStreamFromSource" class="method">
 		<h4>
 			<span title="System.IO.Stream">Stream</span> <strong>GetStreamFromSource</strong>(<span title="System.object">object</span> source, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings, <span title="System.Boolean&">Boolean&amp;</span> disposeStream, <span title="System.String&">String&amp;</span> path, <span title="System.Boolean&">Boolean&amp;</span> restoreStreamPosition)
@@ -411,44 +457,6 @@ If passed a source Stream, Bitmap, or Image instance, it will not be disposed un
 
 
 
-
-		</div>
-	</div>
-	<div id="LoadImage" class="method">
-		<h4>
-			<span title="System.Drawing.Bitmap">Bitmap</span> <strong>LoadImage</strong>(<span title="System.object">object</span> source, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings)
-		</h4>
-		<div class="content">Loads a Bitmap from the specified source. If a filename is available, it will be attached to bitmap.Tag in a BitmapTag instance. The Bitmap.Tag.Path value may be a virtual, relative, UNC, windows, or unix path.
-Does not dispose 'source' if it is a Stream or Image instance - that's the responsibility of the calling code. 
-
-
-			<div class="parameters">
-				<h5>Parameters</h5>
-				<dl>
-						<dt>
-							<code><span title="System.object">object</span></code> source
-						</dt>
-						<dd>May  be an instance of string, VirtualFile, IVirtualFile IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream.  If passed an Image instance, the image will be cloned, which will cause metadata, indexed state, and any additional frames to be lost. Accepts physical paths and application relative paths. (C:\... and ~/path) 
-						</dd>
-						<dt>
-							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
-						</dt>
-						<dd>Will ignore ICC profile if ?ignoreicc=true. 
-						</dd>
-				</dl>
-			</div>
-
-			<div class="return">
-
-				<h5>Returns</h5>
-				<dl>
-					<dt>
-						<code><span title="System.Drawing.Bitmap">Bitmap</span></code>
-					</dt>
-					<dd>A Bitmap. The.Tag property will include a BitmapTag instance. If.Tag.Source is not null, remember to dispose it when you dispose the Bitmap. 
-					</dd>
-				</dl>
-			</div>
 
 		</div>
 	</div>
@@ -492,6 +500,68 @@ Does not dispose 'source' if it is a Stream or Image instance - that's the respo
 					</dd>
 				</dl>
 			</div>
+
+		</div>
+	</div>
+	<div id="LoadImage" class="method">
+		<h4>
+			<span title="System.Drawing.Bitmap">Bitmap</span> <strong>LoadImage</strong>(<span title="System.object">object</span> source, <a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a> settings)
+		</h4>
+		<div class="content">Loads a Bitmap from the specified source. If a filename is available, it will be attached to bitmap.Tag in a BitmapTag instance. The Bitmap.Tag.Path value may be a virtual, relative, UNC, windows, or unix path.
+Does not dispose 'source' if it is a Stream or Image instance - that's the responsibility of the calling code. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dd>May  be an instance of string, VirtualFile, IVirtualFile IVirtualBitmapFile, HttpPostedFile, Bitmap, Image, or Stream.  If passed an Image instance, the image will be cloned, which will cause metadata, indexed state, and any additional frames to be lost. Accepts physical paths and application relative paths. (C:\... and ~/path) 
+						</dd>
+						<dt>
+							<code><a href="../ImageResizer/ResizeSettings.htm">ResizeSettings</a></code> settings
+						</dt>
+						<dd>Will ignore ICC profile if ?ignoreicc=true. 
+						</dd>
+				</dl>
+			</div>
+
+			<div class="return">
+
+				<h5>Returns</h5>
+				<dl>
+					<dt>
+						<code><span title="System.Drawing.Bitmap">Bitmap</span></code>
+					</dt>
+					<dd>A Bitmap. The.Tag property will include a BitmapTag instance. If.Tag.Source is not null, remember to dispose it when you dispose the Bitmap. 
+					</dd>
+				</dl>
+			</div>
+
+		</div>
+	</div>
+	<div id="LoadImageInfo" class="method">
+		<h4>
+			<span title="System.Collections.Generic.IDictionary<string, object>">IDictionary&lt;string, object&gt;</span> <strong>LoadImageInfo</strong>(<span title="System.object">object</span> source, <span title="System.Collections.Generic.IEnumerable<string>">IEnumerable&lt;string&gt;</span> requestedInfo)
+		</h4>
+		<div class="content">Returns a dictionary of information about the given image. 
+
+
+			<div class="parameters">
+				<h5>Parameters</h5>
+				<dl>
+						<dt>
+							<code><span title="System.object">object</span></code> source
+						</dt>
+						<dt>
+							<code><span title="System.Collections.Generic.IEnumerable<string>">IEnumerable&lt;string&gt;</span></code> requestedInfo
+						</dt>
+						<dd>Pass null to get the defaults ("source.width", source.height") 
+						</dd>
+				</dl>
+			</div>
+
 
 		</div>
 	</div>
@@ -556,7 +626,7 @@ Can be overriden by a plugin with the OnProcess method
 	</div>
 	</section>
 	</article><footer>
-	<span id="version">Built from v3.3.3.123 of ImageResizer.Core (Image Resizer)</span>
+	<span id="version">Built from v3.4.0.292 of ImageResizer.Core (Image Resizer)</span>
 	<span id="docu-link">
 		Generated by <a href="http://docu.jagregory.com">docu</a>
 	</span>

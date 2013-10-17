@@ -1,4 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node2" href="$interface_image_resizer_1_1_plugins_1_1_i_license_service.html" title="Provides license verification and enforcement services. Do not access directly; use your local embedd..." alt="" coords="171,102,415,149"/>
-<area shape="rect" id="node4" href="$interface_image_resizer_1_1_plugins_1_1_i_plugin.html" title="All plugins must implement this. Enables web.config addition and removal." alt="" coords="234,6,352,53"/>
-</map>

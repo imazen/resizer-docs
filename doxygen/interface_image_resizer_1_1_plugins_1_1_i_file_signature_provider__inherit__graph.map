@@ -1,0 +1,5 @@
+<map id="ImageResizer.Plugins.IFileSignatureProvider" name="ImageResizer.Plugins.IFileSignatureProvider">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_default_encoder.html" title="Provides basic encoding functionality for Jpeg, png, and gif output. Allows adjustable Jpeg compressi..." alt="" coords="451,58,874,139"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_wic_encoder_1_1_wic_encoder_plugin.html" title="ImageResizer.Plugins.Wic\lEncoder.WicEncoderPlugin" alt="" coords="923,5,1331,86"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_wpf_builder_1_1_wpf_encoder_plugin.html" title="ImageResizer.Plugins.Wpf\lBuilder.WpfEncoderPlugin" alt="" coords="929,110,1325,191"/>
+</map>

@@ -1,6 +1,6 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_no_cache.html" title="Default cache when DiskCache isn&#39;t installed. Useful for debugging purposes but unsuited for producti..." alt="" coords="607,5,1161,51"/>
-<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html" title="Provides methods for creating, maintaining, and securing the disk cache." alt="" coords="558,75,1210,122"/>
-<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_mem_cache_1_1_mem_cache_plugin.html" title="ImageResizer.Plugins.MemCache.MemCachePlugin" alt="" coords="505,146,1263,193"/>
-<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_tiny_cache_1_1_tiny_cache_plugin.html" title="ImageResizer.Plugins.TinyCache.TinyCachePlugin" alt="" coords="517,217,1251,263"/>
+<map id="ImageResizer.Caching.ICache" name="ImageResizer.Caching.ICache">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_no_cache.html" title="Default cache when DiskCache isn&#39;t installed. Useful for debugging purposes but unsuited for producti..." alt="" coords="505,5,927,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_disk_cache_1_1_disk_cache.html" title="Provides methods for creating, maintaining, and securing the disk cache. " alt="" coords="517,110,915,191"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_mem_cache_1_1_mem_cache_plugin.html" title="ImageResizer.Plugins.Mem\lCache.MemCachePlugin" alt="" coords="512,215,920,297"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_tiny_cache_1_1_tiny_cache_plugin.html" title="ImageResizer.Plugins.Tiny\lCache.TinyCachePlugin" alt="" coords="518,321,914,402"/>
 </map>

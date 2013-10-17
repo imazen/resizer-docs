@@ -1,3 +1,5 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_pdf_renderer_1_1_ghostscript_1_1_ghostscript_settings.html" title="Ghostscript settings collection." alt="" coords="5,5,976,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$interface_image_resizer_1_1_plugins_1_1_psd_composer_1_1_i_psd_renderer.html" title="ImageResizer.Plugins.Psd\lComposer.IPsdRenderer" alt="" coords="6,58,397,139"/>
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_graphics_mill_renderer.html" title="An Aurigma.GraphicsMill&#45;based renderer. GraphicsMill was far too limited to do what we needed..." alt="" coords="445,5,928,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_psd_composer_1_1_psd_plugin_renderer.html" title="ImageResizer.Plugins.Psd\lComposer.PsdPluginRenderer" alt="" coords="462,110,911,191"/>
 </map>

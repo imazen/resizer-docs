@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/FreeImage" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_0b4eaef40a1fe20bedafe9e8e719ce66 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Plugins" fontname="Helvetica", fontsize="24", URL="dir_0b4eaef40a1fe20bedafe9e8e719ce66.html"]
+  subgraph clusterdir_2b8a7e51301740cdceb090103a025d6d {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_2b8a7e51301740cdceb090103a025d6d.html"];
+    dir_2b8a7e51301740cdceb090103a025d6d [shape=plaintext label="FreeImage"];
+    dir_b0933279e53478838ba9bf44202d03e6 [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_b0933279e53478838ba9bf44202d03e6.html"];
+  }
+  }
+}

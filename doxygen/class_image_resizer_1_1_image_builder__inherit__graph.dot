@@ -1,0 +1,12 @@
+digraph "ImageResizer.ImageBuilder"
+{
+  edge [fontname="Helvetica",fontsize="24",labelfontname="Helvetica",labelfontsize="24"];
+  node [fontname="Helvetica",fontsize="24",shape=record];
+  Node1 [label="ImageResizer.ImageBuilder",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node2 [label="AbstractImageProcessor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_image_resizer_1_1_resizing_1_1_abstract_image_processor.html",tooltip="Not for external use. Inherit from BuilderExtension instead. Dual-purpose base class for both ImageBu..."];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node3 [label="IQuerystringPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_querystring_plugin.html",tooltip="For plugins that access the query string (important!) "];
+  Node4 -> Node1 [dir="back",color="midnightblue",fontsize="24",style="solid",fontname="Helvetica"];
+  Node4 [label="IFileExtensionPlugin",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_image_resizer_1_1_plugins_1_1_i_file_extension_plugin.html",tooltip="For plugins that add support for new source file image extensions. "];
+}

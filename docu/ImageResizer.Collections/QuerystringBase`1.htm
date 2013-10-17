@@ -107,17 +107,21 @@
 			<ul>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Add">Add</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Add">Add</a></li>
+				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Clear">Clear</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#CopyTo">CopyTo</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Get">Get</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Get">Get</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Get``1">Get&lt;T&gt;</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Get``1">Get&lt;T&gt;</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Get``1">Get&lt;T&gt;</a></li>
+				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#GetEnumerator">GetEnumerator</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#GetKey">GetKey</a></li>
+				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#GetObjectData">GetObjectData</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#GetValues">GetValues</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#GetValues">GetValues</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#HasKeys">HasKeys</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#OnDeserialization">OnDeserialization</a></li>
+				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Remove">Remove</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Set">Set</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#Set``1">Set&lt;T&gt;</a></li>
 				<li><a href="../ImageResizer.Collections/QuerystringBase`1.htm#SetAsString``1">SetAsString&lt;T&gt;</a></li>
@@ -137,7 +141,7 @@
 
 	<div id="Add" class="method">
 		<h4>
-			<span title="System.void">void</span> <strong>Add</strong>(<span title="System.string">string</span> name, <span title="System.string">string</span> value)
+			<span title="System.void">void</span> <strong>Add</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> c)
 		</h4>
 		<div class="content">
 
@@ -148,7 +152,18 @@
 	</div>
 	<div id="Add" class="method">
 		<h4>
-			<span title="System.void">void</span> <strong>Add</strong>(<span title="System.Collections.Specialized.NameValueCollection">NameValueCollection</span> c)
+			<span title="System.void">void</span> <strong>Add</strong>(<span title="System.string">string</span> name, <span title="System.string">string</span> value)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Clear" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Clear</strong>()
 		</h4>
 		<div class="content">
 
@@ -170,7 +185,7 @@
 	</div>
 	<div id="Get" class="method">
 		<h4>
-			<span title="System.string">string</span> <strong>Get</strong>(<span title="System.string">string</span> name)
+			<span title="System.string">string</span> <strong>Get</strong>(<span title="System.int">int</span> index)
 		</h4>
 		<div class="content">
 
@@ -181,7 +196,7 @@
 	</div>
 	<div id="Get" class="method">
 		<h4>
-			<span title="System.string">string</span> <strong>Get</strong>(<span title="System.int">int</span> index)
+			<span title="System.string">string</span> <strong>Get</strong>(<span title="System.string">string</span> name)
 		</h4>
 		<div class="content">
 
@@ -203,7 +218,7 @@
 	</div>
 	<div id="Get``1" class="method">
 		<h4>
-			<span title="System.Nullable<T>">Nullable&lt;T&gt;</span> <strong>Get&lt;T&gt;</strong>(<span title="System.string">string</span> name, <span title="System.Nullable<T>">Nullable&lt;T&gt;</span> defaultValue)
+			<span title="ImageResizer.Collections.T">T</span> <strong>Get&lt;T&gt;</strong>(<span title="System.string">string</span> name, <span title="ImageResizer.Collections.T">T</span> defaultValue)
 		</h4>
 		<div class="content">Provides culture-invariant parsing of byte, int, double, float, bool, and enum values. 
 
@@ -214,9 +229,20 @@
 	</div>
 	<div id="Get``1" class="method">
 		<h4>
-			<span title="ImageResizer.Collections.T">T</span> <strong>Get&lt;T&gt;</strong>(<span title="System.string">string</span> name, <span title="ImageResizer.Collections.T">T</span> defaultValue)
+			<span title="System.Nullable<T>">Nullable&lt;T&gt;</span> <strong>Get&lt;T&gt;</strong>(<span title="System.string">string</span> name, <span title="System.Nullable<T>">Nullable&lt;T&gt;</span> defaultValue)
 		</h4>
 		<div class="content">Provides culture-invariant parsing of byte, int, double, float, bool, and enum values. 
+
+
+
+
+		</div>
+	</div>
+	<div id="GetEnumerator" class="method">
+		<h4>
+			<span title="System.Collections.IEnumerator">IEnumerator</span> <strong>GetEnumerator</strong>()
+		</h4>
+		<div class="content">
 
 
 
@@ -234,9 +260,9 @@
 
 		</div>
 	</div>
-	<div id="GetValues" class="method">
+	<div id="GetObjectData" class="method">
 		<h4>
-			<span title="System.String[]">String[]</span> <strong>GetValues</strong>(<span title="System.string">string</span> name)
+			<span title="System.void">void</span> <strong>GetObjectData</strong>(<span title="System.Runtime.Serialization.SerializationInfo">SerializationInfo</span> info, <span title="System.Runtime.Serialization.StreamingContext">StreamingContext</span> context)
 		</h4>
 		<div class="content">
 
@@ -248,6 +274,17 @@
 	<div id="GetValues" class="method">
 		<h4>
 			<span title="System.String[]">String[]</span> <strong>GetValues</strong>(<span title="System.int">int</span> index)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="GetValues" class="method">
+		<h4>
+			<span title="System.String[]">String[]</span> <strong>GetValues</strong>(<span title="System.string">string</span> name)
 		</h4>
 		<div class="content">
 
@@ -270,6 +307,17 @@
 	<div id="OnDeserialization" class="method">
 		<h4>
 			<span title="System.void">void</span> <strong>OnDeserialization</strong>(<span title="System.object">object</span> sender)
+		</h4>
+		<div class="content">
+
+
+
+
+		</div>
+	</div>
+	<div id="Remove" class="method">
+		<h4>
+			<span title="System.void">void</span> <strong>Remove</strong>(<span title="System.string">string</span> name)
 		</h4>
 		<div class="content">
 
@@ -349,7 +397,7 @@
 	</div>
 	</section>
 	</article><footer>
-	<span id="version">Built from v3.3.3.123 of ImageResizer.Core (Image Resizer)</span>
+	<span id="version">Built from v3.4.0.292 of ImageResizer.Core (Image Resizer)</span>
 	<span id="docu-link">
 		Generated by <a href="http://docu.jagregory.com">docu</a>
 	</span>

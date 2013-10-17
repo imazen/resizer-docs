@@ -1,0 +1,13 @@
+digraph "C:/Users/nathanael/Documents/resizer/Core/Plugins" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_c6310732a22f63c0c2fc5595561e68f1 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Core" fontname="Helvetica", fontsize="24", URL="dir_c6310732a22f63c0c2fc5595561e68f1.html"]
+  subgraph clusterdir_364894e5d93bffffc1006b71d92cbe0f {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_364894e5d93bffffc1006b71d92cbe0f.html"];
+    dir_364894e5d93bffffc1006b71d92cbe0f [shape=plaintext label="Plugins"];
+    dir_60328e56982a9e41f408510e21651238 [shape=box label="Basic" color="black" fillcolor="white" style="filled" URL="dir_60328e56982a9e41f408510e21651238.html"];
+  }
+  }
+}

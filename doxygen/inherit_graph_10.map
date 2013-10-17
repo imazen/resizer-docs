@@ -1,4 +1,10 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$interface_image_resizer_1_1_configuration_1_1_issues_1_1_i_issue.html" title="ImageResizer.Configuration.Issues.IIssue" alt="" coords="5,5,613,51"/>
-<area shape="rect" id="node3" href="$class_image_resizer_1_1_configuration_1_1_issues_1_1_issue.html" title="ImageResizer.Configuration.Issues.Issue" alt="" coords="662,5,1261,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_configuration_1_1_url_authorization_event_args.html" title="ImageResizer.Configuration.\lUrlAuthorizationEventArgs" alt="" coords="519,5,942,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_configuration_1_1_url_event_args.html" title="ImageResizer.Configuration.\lUrlEventArgs" alt="" coords="519,110,942,191"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_item_event_args.html" title="ImageResizer.Plugins.Batch\lZipper.ItemEventArgs" alt="" coords="521,426,940,507"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_job_event_args.html" title="ImageResizer.Plugins.Batch\lZipper.JobEventArgs" alt="" coords="521,531,940,613"/>
+<area shape="rect" id="node11" href="$class_image_resizer_1_1_plugins_1_1_s3_reader2_1_1_s3_path_event_args.html" title="Class to allow modifying the bucket and key request path " alt="" coords="478,215,983,297"/>
+<area shape="rect" id="node13" href="$class_image_resizer_1_1_plugins_1_1_s3_reader_1_1_s3_path_event_args.html" title="Class to allow modifying the bucket and key request path " alt="" coords="487,321,974,402"/>
+<area shape="rect" id="node14" href="$interface_image_resizer_1_1_configuration_1_1_i_url_authorization_event_args.html" title="ImageResizer.Configuration.\lIUrlAuthorizationEventArgs" alt="" coords="6,5,429,86"/>
+<area shape="rect" id="node16" href="$interface_image_resizer_1_1_configuration_1_1_i_url_event_args.html" title="ImageResizer.Configuration.\lIUrlEventArgs" alt="" coords="6,110,429,191"/>
 </map>

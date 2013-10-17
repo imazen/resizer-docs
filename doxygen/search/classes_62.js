@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['base',['Base',['../class_seven_zip_reduced_1_1_compression_1_1_l_z_m_a_1_1_base.html',1,'SevenZipReduced::Compression::LZMA']]],
   ['batchresizeitem',['BatchResizeItem',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_batch_resize_item.html',1,'ImageResizer::Plugins::BatchZipper']]],
   ['batchresizemanager',['BatchResizeManager',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_batch_resize_manager.html',1,'ImageResizer::Plugins::BatchZipper']]],
   ['batchresizesettings',['BatchResizeSettings',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_batch_resize_settings.html',1,'ImageResizer::Plugins::BatchZipper']]],

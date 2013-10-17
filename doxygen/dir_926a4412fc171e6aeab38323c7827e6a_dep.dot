@@ -1,0 +1,9 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/DiskCache/Cleanup" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_c40d1be011819c7d3f0b5389486b8856 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="DiskCache" fontname="Helvetica", fontsize="24", URL="dir_c40d1be011819c7d3f0b5389486b8856.html"]
+  dir_926a4412fc171e6aeab38323c7827e6a [shape=box, label="Cleanup", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_926a4412fc171e6aeab38323c7827e6a.html"];
+  }
+}

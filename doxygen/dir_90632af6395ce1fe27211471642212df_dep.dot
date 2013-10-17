@@ -1,0 +1,9 @@
+digraph "C:/Users/nathanael/Documents/resizer/Plugins/Security/Cryptography" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_771a5d1ad4b01255c75a4a4a41d3c402 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Security" fontname="Helvetica", fontsize="24", URL="dir_771a5d1ad4b01255c75a4a4a41d3c402.html"]
+  dir_90632af6395ce1fe27211471642212df [shape=box, label="Cryptography", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_90632af6395ce1fe27211471642212df.html"];
+  }
+}

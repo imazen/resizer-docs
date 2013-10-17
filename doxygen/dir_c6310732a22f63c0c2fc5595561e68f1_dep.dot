@@ -1,0 +1,18 @@
+digraph "C:/Users/nathanael/Documents/resizer/Core" {
+  compound=true
+  node [ fontsize="24", fontname="Helvetica"];
+  edge [ labelfontsize="24", labelfontname="Helvetica"];
+  subgraph clusterdir_c6310732a22f63c0c2fc5595561e68f1 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_c6310732a22f63c0c2fc5595561e68f1.html"];
+    dir_c6310732a22f63c0c2fc5595561e68f1 [shape=plaintext label="Core"];
+    dir_ce65b6ad7852f673678e224bcbe34427 [shape=box label="Caching" color="black" fillcolor="white" style="filled" URL="dir_ce65b6ad7852f673678e224bcbe34427.html"];
+    dir_a62f54d30bac0e19278c929993e6b1a7 [shape=box label="Collections" color="black" fillcolor="white" style="filled" URL="dir_a62f54d30bac0e19278c929993e6b1a7.html"];
+    dir_1aa7619aaed8283e79194428e3ce4afd [shape=box label="Configuration" color="red" fillcolor="white" style="filled" URL="dir_1aa7619aaed8283e79194428e3ce4afd.html"];
+    dir_14bd828a222b40e5e5f74fa343803a88 [shape=box label="Encoding" color="black" fillcolor="white" style="filled" URL="dir_14bd828a222b40e5e5f74fa343803a88.html"];
+    dir_d721416388a93978ec2314e607cecfd0 [shape=box label="ExtensionMethods" color="black" fillcolor="white" style="filled" URL="dir_d721416388a93978ec2314e607cecfd0.html"];
+    dir_364894e5d93bffffc1006b71d92cbe0f [shape=box label="Plugins" color="red" fillcolor="white" style="filled" URL="dir_364894e5d93bffffc1006b71d92cbe0f.html"];
+    dir_53a2ebecadac6b73cd1c4a7607cd22eb [shape=box label="Properties" color="black" fillcolor="white" style="filled" URL="dir_53a2ebecadac6b73cd1c4a7607cd22eb.html"];
+    dir_30461bcd6cb93fd37f3634d3097c622f [shape=box label="Resizing" color="black" fillcolor="white" style="filled" URL="dir_30461bcd6cb93fd37f3634d3097c622f.html"];
+    dir_268dce770e77c81dfde144f255ab40a9 [shape=box label="Util" color="black" fillcolor="white" style="filled" URL="dir_268dce770e77c81dfde144f255ab40a9.html"];
+  }
+}

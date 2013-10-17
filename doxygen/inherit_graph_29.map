@@ -1,3 +1,6 @@
-<map id="G" name="G">
-<area shape="rect" id="node1" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_diagnostic_disabled_handler.html" title="ImageResizer.Plugins.Basic.DiagnosticDisabledHandler" alt="" coords="6,5,807,51"/>
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node3" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_diagnostic_disabled_handler.html" title="ImageResizer.Plugins.Basic.\lDiagnosticDisabledHandler" alt="" coords="254,5,677,86"/>
+<area shape="rect" id="node5" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_diagnostic_page_handler.html" title="ImageResizer.Plugins.Basic.\lDiagnosticPageHandler" alt="" coords="254,110,677,191"/>
+<area shape="rect" id="node7" href="$class_image_resizer_1_1_plugins_1_1_basic_1_1_no_cache_handler.html" title="Implements IHttpHandler, serves content for the NoCache plugin " alt="" coords="254,215,677,297"/>
+<area shape="rect" id="node9" href="$class_image_resizer_1_1_plugins_1_1_mem_cache_1_1_mem_cache_handler.html" title="ImageResizer.Plugins.Mem\lCache.MemCacheHandler" alt="" coords="261,321,669,402"/>
 </map>

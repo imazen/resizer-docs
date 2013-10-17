@@ -7,6 +7,7 @@ var searchData=
   ['jobeventargs',['JobEventArgs',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_job_event_args.html',1,'ImageResizer::Plugins::BatchZipper']]],
   ['jobresult',['JobResult',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_job_result.html',1,'ImageResizer::Plugins::BatchZipper']]],
   ['jobstats',['JobStats',['../class_image_resizer_1_1_plugins_1_1_batch_zipper_1_1_job_stats.html',1,'ImageResizer::Plugins::BatchZipper']]],
+  ['jpeg',['Jpeg',['../namespace_image_resizer.html#ad8a20ccdc3ff113284bb7760d959aca3a5023eac1d7fffa77b37c0e6797c97773',1,'ImageResizer']]],
   ['jpegquality',['JpegQuality',['../class_image_resizer_1_1_instructions.html#a9d22f20734c0cb932f897f89efe15f8f',1,'ImageResizer::Instructions']]],
   ['jpegsubsampling',['JpegSubsampling',['../class_image_resizer_1_1_instructions.html#ad07d4530b469b9eb1980dbb374943df5',1,'ImageResizer::Instructions']]],
   ['jpegsubsamplingmode',['JpegSubsamplingMode',['../namespace_image_resizer.html#a5392ed6374eb68201b1b0f1591712632',1,'ImageResizer']]]
